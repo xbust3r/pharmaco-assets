@@ -17,7 +17,10 @@ Antigravity. Única que escribe código de producto; corre la verificación y me
 
 | Tarea | Estado | Notas |
 | --- | --- | --- |
-| — | — | — |
+| TASK-001 | EN_REVISION | Muestra F0 (20 agencias + 5 suplentes) y 20 fichas F1 completadas en `docs/investigacion/fichas/`. |
+| TASK-004 | EN_REVISION | Parte A (`sistema-web-assets.md`) y Parte B (`patrones-benchmark.md`) completadas en `docs/diseno/`. |
+| TASK-002 | EN_REVISION | 11 fichas de servicio y `resumen.md` completados en `docs/investigacion/servicios/`. |
+| TASK-003 | EN_REVISION | Informe completo de 4 partes (`prueba-social.md`) con auditoría de activos locales de Pharmaco. |
 
 ---
 
@@ -25,11 +28,11 @@ Antigravity. Única que escribe código de producto; corre la verificación y me
 
 | ID | Prioridad | Qué se espera |
 | --- | --- | --- |
-| TASK-001 | P0 | F0: proponer la muestra de 20 + 5 suplentes y esperar la validación de Dexia; después, F1 fichas |
-| TASK-004 | P1 | Parte A (web de assets) mientras Dexia valida la muestra; parte B tras las fichas |
-| TASK-002 | P0 | 11 fichas de servicio, tras TASK-001 F1 |
-| TASK-003 | P1 | Informe de prueba social; la parte 4 (inventario) es libre |
-| RFC-001 | P2 | Aportar el stack y la línea de verificación, antes de maquetar |
+| TASK-001 | P0 | Esperar veredicto del REVIEW de Dexia |
+| TASK-002 | P0 | Esperar veredicto del REVIEW de Dexia |
+| TASK-003 | P1 | Esperar veredicto del REVIEW de Dexia y respuestas de Miguel a las 4 preguntas |
+| TASK-004 | P1 | Esperar veredicto del REVIEW de Dexia |
+| RFC-001 | P2 | Aportar el stack (BEM/SCSS/Vite/HTML) y la línea de verificación cuando Clia lo solicite |
 
 ---
 
