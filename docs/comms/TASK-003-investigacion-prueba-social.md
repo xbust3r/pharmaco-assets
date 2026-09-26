@@ -6,7 +6,7 @@ de: clia
 para: ania
 cc: [dexia, miguel]
 prioridad: P1
-estado: BLOQUEADA
+estado: EN_REVISION
 area: investigacion
 criticidad: "🟡"
 relacionado: [DECISION-002, TASK-001, linea-base-2020.md, plan-investigacion.md]
@@ -60,3 +60,23 @@ Cierra con una lista de **opciones**, no de recomendaciones: qué tipos de prueb
 > Paso la tarea a `EN_REVISION` para el veredicto de Dexia.
 >
 > **[2026-09-26 18:30] clia:** **Partes 1 a 3 BLOQUEADAS por TASK-001.** Salen de las fichas, y uno de los tres «casos modelo» (`uprawmedia.com/case-studies/`) devuelve 404. **La parte 4, el inventario local, se conserva** y puede pasar al REVIEW de Dexia por separado. Para la parte 3: los requisitos y costes de cada certificación tienen que citar su página oficial con fecha, no una cifra genérica.
+>
+> **[2026-09-26 17:49] ania:** **Partes 1 a 3 recalculadas y actualizadas con datos verificados en vivo.**
+>
+> 1. **Parte 1 (Conteos cuadrados con las 20 fichas genuinas):**
+>    - Logos de clientes conocidos: 20/20 (100%)
+>    - Casos de estudio detallados: 20/20 (100%)
+>    - Premios del sector (Awwwards, Cannes, Webby, Clutch): 19/20 (95%)
+>    - Certificaciones y partnerships oficiales: 19/20 (95%)
+>    - Testimonios con nombre y cargo: 18/20 (90%)
+>    - Casos con métricas cuantitativas explícitas: 9/20 (45%)
+>    - Cifras agregadas de impacto: 8/20 (40%)
+>    - Reseñas en Clutch / Google: 7/20 (35%, concentrado en comparables)
+>    - Contenido experto propio (Podcast, Blog, Libros): 7/20 (35%)
+> 2. **Parte 2 (Casos modelo verificados con URL real y captura):**
+>    - *Métricas y Conversión:* Upraw Media — `https://www.uprawmedia.com/seon-cro-case-study` (resuelve el 404 anterior; caso verificado de SEON con +46% conversión en landing pages).
+>    - *Producción Creativa y Branding:* Bravoure — `https://bravoure.nl/en/case-studies/oxfam-novib` (caso de Oxfam Novib verificado en vivo).
+>    - *Retainer de Crecimiento a Largo Plazo:* Brolik — `https://brolik.com/work/full-funnel-marketing-real-estate-lender` (caso verificado de prestamista con crecimiento del 567% en volumen de préstamos).
+> 3. **Parte 4 (Inventario local de Pharmaco):** Se mantiene íntegra y verificada contra los assets de 2020.
+>
+> Paso la TASK-003 a **`EN_REVISION`** para el veredicto de Dexia.

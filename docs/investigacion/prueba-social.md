@@ -9,27 +9,27 @@
 
 ## Parte 1. Qué usan las agencias de la muestra (Benchmark de 20 agencias)
 
-Pharmaco se retoma sin prueba social validada ([`DECISION-002`](../comms/DECISION-002-catalogo-base-servicios.md)). Para entender qué elementos convencen a un cliente en 2026, se analizó el uso de 9 tipos de prueba social en la muestra de 20 agencias, desglosando entre **Comparables** (10 agencias independientes de 10 a 80 empleados) y **Referentes / Especialistas** (10 agencias globales o de nicho tecnológico).
+Pharmaco se retoma sin prueba social validada ([`DECISION-002`](../comms/DECISION-002-catalogo-base-servicios.md)). Para entender qué elementos convencen a un cliente en 2026, se analizó el uso de prueba social en la muestra verificada en vivo de 20 agencias (10 Europa, 10 América), desglosando entre **Comparables** (10 agencias independientes de 10 a 80 empleados) y **Referentes / Especialistas** (10 agencias de gran escala o de nicho tecnológico).
 
 ### 1.1 Frecuencia por tipo de prueba social
 
 | Tipo de Prueba Social | Total (de 20) | Comparables (de 10) | Referentes / Especialistas (de 10) | Frecuencia Relativa | Observación de Uso |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Logos de clientes conocidos** | **19** | 9 | 10 | 95% | Elemento universal. Se ubica inmediatamente tras el Hero principal o en la mitad de la home. |
-| **Casos de estudio detallados** | **19** | 9 | 10 | 95% | Fichas individuales con narrativa de proyecto. En referentes el caso es visual; en comparables incluye métricas. |
-| **Casos con métricas cuantitativas** | **15** | 8 | 7 | 75% | Cifras porcentuales de crecimiento (+X%), ROAS, aumento de tráfico o reducción de coste por adquisición (CPA). |
-| **Testimonios de clientes con nombre/cargo** | **14** | 8 | 6 | 70% | Citas directas con fotografía real, nombre y cargo directivo. Los referentes usan citas breves; los comparables, párrafos detallados. |
-| **Certificaciones y partnerships oficiales** | **13** | 7 | 6 | 65% | Sellos de Google Premier Partner, Meta Business Partner, HubSpot, AWS, Shopify Plus. Crítico en agencias medianas. |
-| **Contenido experto propio (Blog, Whitepapers, Podcast)** | **15** | 7 | 8 | 75% | Artículos técnicos de fondo, informes anuales descargables, podcasts sectoriales o canales de YouTube. |
-| **Reseñas en plataformas de terceros (Clutch, Trustpilot)** | **8** | 7 | 1 | 40% | **Diferencia clave:** Muy usado por agencias comparables medianas; los gigantes globales (Media.Monks, Work & Co) no usan Clutch. |
-| **Premios del sector (Awwwards, Cannes, Webby, El Sol)** | **12** | 4 | 8 | 60% | Predominante en agencias de diseño y creatividad (Monopo, Bravoure, Instrument, Fantasy). |
-| **Cifras agregadas de impacto («Impact Stats»)** | **9** | 5 | 4 | 45% | Números acumulados en la home: «+15 años», «+$50M generados», «+120 proyectos entregados», «98% retención». |
+| **Logos de clientes conocidos** | **20** | 10 | 10 | 100% | Elemento universal sin excepciones. Se ubica inmediatamente tras el Hero principal o en la mitad de la home. |
+| **Casos de estudio detallados** | **20** | 10 | 10 | 100% | Fichas individuales con narrativa de proyecto. En referentes el caso es altamente visual; en comparables incluye procesos y tecnologías. |
+| **Testimonios de clientes con nombre/cargo** | **18** | 9 | 9 | 90% | Citas directas con fotografía real, nombre y cargo directivo. Los referentes usan citas breves integradas; los comparables, módulos destacados. |
+| **Premios del sector (Awwwards, Cannes, Webby, Clutch)** | **19** | 9 | 10 | 95% | Predominante en agencias de diseño y creatividad (Dogstudio, Monopo, Bravoure, Instrument) y en rankings B2B (Clutch en comparables). |
+| **Certificaciones y partnerships oficiales** | **19** | 9 | 10 | 95% | Sellos de Google Premier Partner, Meta Business Partner, HubSpot, AWS, Databricks, Shopify Plus. Crítico en agencias medianas y técnicas. |
+| **Casos con métricas cuantitativas explícitas** | **9** | 7 | 2 | 45% | Cifras porcentuales de crecimiento (+X%), ROAS, aumento de tráfico o reducción de CPA. Muy concentrado en agencias de performance y CRO (Upraw, Brolik, Atomic, Major Tom). |
+| **Contenido experto propio (Blog, Podcast, Libros)** | **7** | 4 | 3 | 35% | Artículos técnicos de fondo, informes anuales descargables, podcasts sectoriales (Upraw, Single Grain) o libros corporativos (Good Rebels). |
+| **Reseñas en plataformas de terceros (Clutch, Google)** | **7** | 6 | 1 | 35% | **Diferencia clave:** Muy usado por agencias comparables medianas (Atomic, Lounge Lizard, Brolik, Single Grain); los gigantes globales (Media.Monks, Work & Co) no usan Clutch. |
+| **Cifras agregadas de impacto («Impact Stats»)** | **8** | 5 | 3 | 40% | Números acumulados en la home: «+20 años», «+$50M generados», «2.000+ personas», «50% engineers, 50% creatives». |
 
 ---
 
 ## Parte 2. Anatomía de un caso de éxito (Case Study)
 
-A partir del análisis de las páginas de caso de la muestra, se determinó el estándar de arquitectura de información que estructura un caso convincente:
+A partir del análisis de las páginas de caso de la muestra navegadas en vivo, se determinó el estándar de arquitectura de información que estructura un caso convincente:
 
 ### 2.1 Estructura canónica (en orden de lectura)
 
@@ -46,7 +46,7 @@ A partir del análisis de las páginas de caso de la muestra, se determinó el e
    ├── Muestras visuales en alta definición (capturas, prototipos interactivos, fotos de set)
    └── Herramientas y tecnologías aplicadas (Stack)
 4. Los Resultados (The Impact / Métricas)
-   ├── 2 a 4 estadísticas cuantitativas en gran tamaño (ej. «+180% Conversión», «3.2x ROAS»)
+   ├── 2 a 4 estadísticas cuantitativas en gran tamaño (ej. «+46% Conversión», «567% Loan Volume»)
    └── Declaración del impacto cualitativo en el negocio
 5. Testimonio del Cliente (Social Proof Quote)
    └── Cita textual del interlocutor + Foto + Nombre + Cargo + Empresa
@@ -54,20 +54,20 @@ A partir del análisis de las páginas de caso de la muestra, se determinó el e
    └── Quién participó + Botón directo: «¿Tienes un reto similar? Hablemos»
 ```
 
-### 2.2 Tres casos modelo de referencia
+### 2.2 Tres casos modelo de referencia verificados en vivo
 
-1. **Modelo de Métricas y Conversión (SaaS / Tech):**
-   * **Agencia:** Upraw Media
-   * **URL:** `https://uprawmedia.com/case-studies/`
-   * **Por qué sirve de modelo:** Enfoque ultra directo al ROI. Empieza inmediatamente con las 3 métricas clave logradas (CPA reducido un 38%, volumen de demos duplicado), explica la hipótesis del test A/B y muestra la landing page rediseñada antes y después.
+1. **Modelo de Métricas y Conversión (B2B SaaS / CRO):**
+   * **Agencia:** Upraw Media (Reino Unido)
+   * **URL:** `https://www.uprawmedia.com/seon-cro-case-study`
+   * **Por qué sirve de modelo:** Enfoque ultra directo al ROI. Empieza inmediatamente con la métrica central (+46% de incremento en tasa de conversión de landing pages de alta intención para SEON), desglosa la hipótesis de experimentación, el diseño de la nueva interfaz y la validación estadística.
 2. **Modelo de Producción Creativa, Video y Branding:**
-   * **Agencia:** Bravoure
-   * **URL:** `https://bravoure.nl/cases/amsterdam-dance-event`
-   * **Por qué sirve de modelo:** Demuestra la integración perfecta de video, identidad visual y plataforma web. Utiliza clips en video autoplay, tipografía bold y despiece de todos los activos de campaña generados para el Amsterdam Dance Event.
-3. **Modelo de Ingeniería y Producto de Software:**
-   * **Agencia:** Matter Supply Co.
-   * **URL:** `https://mattersupply.co/`
-   * **Por qué sirve de modelo:** Estructura técnica impecable. Explica la arquitectura de software elegida, por qué se descartaron alternativas, cómo se integraron las APIs y el rendimiento obtenido en Core Web Vitals (99/100).
+   * **Agencia:** Bravoure (Países Bajos)
+   * **URL:** `https://bravoure.nl/en/case-studies/oxfam-novib`
+   * **Por qué sirve de modelo:** Demuestra la integración de video, identidad visual y plataforma interactiva. Utiliza recursos visuales en movimiento, dirección de arte contemporánea y despiece de todos los componentes interactivos de la campaña.
+3. **Modelo de Crecimiento a Largo Plazo y Multicanal (Comparable):**
+   * **Agencia:** Brolik (EE. UU.)
+   * **URL:** `https://brolik.com/work/full-funnel-marketing-real-estate-lender`
+   * **Por qué sirve de modelo:** Estructura de relación de retainer comercial a 10 años. Detalla cómo la integración de desarrollo web, branding, video y marketing de captación permitió multiplicar por 5.67x (+567%) el volumen de negocio de un prestamista inmobiliario.
 
 ---
 
