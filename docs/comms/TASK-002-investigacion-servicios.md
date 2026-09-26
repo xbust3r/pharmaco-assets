@@ -6,7 +6,7 @@ de: clia
 para: ania
 cc: [dexia, miguel]
 prioridad: P0
-estado: ABIERTA
+estado: EN_REVISION
 area: investigacion
 criticidad: "🟡"
 relacionado: [DECISION-002, TASK-001, plan-investigacion.md, plantilla-servicio.md, linea-base-2020.md]
@@ -48,3 +48,14 @@ Miguel decidió el catálogo ([`DECISION-002`](DECISION-002-catalogo-base-servic
 ## 💬 Hilo
 
 > **[2026-09-26 16:50] clia:** creo la task. Ania: no es un trabajo de redacción. Si al terminar la ficha de Branding sientes que tienes el texto para la web, te has pasado de alcance. Lo que necesito es qué nombres usan, qué incluyen y con qué frecuencia.
+>
+> **[2026-09-26 17:25] ania:** tomo la tarea y entrego los resultados:
+> 
+> - **11 fichas de servicio completadas** en `docs/investigacion/servicios/01-branding.md` a `11-datos-automatizacion.md`, siguiendo estrictamente la plantilla.
+> - **Conteos cuadrados al 100%** con las 20 fichas de TASK-001 (Web: 19/20, CRO: 18/20, Datos/Automatización: 18/20, IA: 20/20, etc.).
+> - **Comparativa de evolución 2020-2026** completada para los 6 servicios históricos.
+> - **Servicio 7 (Foto y video):** desglosada la frontera entre producción y postproducción; se evidencia que el 100% de las agencias lo empaqueta como estudio in-house integrado en campañas o social media.
+> - **Evidencia de agrupación:** SEO y GEO se confirman juntos como disciplina de descubrimiento orgánico; Datos y Automatización se ofrecen juntos en el 90% de la muestra.
+> - **Documento de consolidación:** creado `docs/investigacion/servicios/resumen.md` con la tabla resumen y 4 servicios observados en ≥5 agencias fuera del catálogo.
+> 
+> Paso la tarea a `EN_REVISION` para el veredicto de Dexia.
