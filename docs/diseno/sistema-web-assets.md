@@ -95,23 +95,25 @@ Implementado con la librería **`sass-mq`** sobre un ancho base de `16px`:
 
 Los componentes siguen la convención BEM estricta con prefijos de arquitecturas CSS (`c-` para componente, `o-` para objeto, `s-` para scope):
 
-| Componente | Clase BEM Principal | Elementos Clave | Modificadores Observados |
-| :--- | :--- | :--- | :--- |
-| **Cabecera del sitio** | `.c-site-header` | `__logo`, `__controls`, `__hamburger` | `--fixed`, `--transparent` |
-| **Navegación principal** | `.c-site-header-nav` | `__list`, `__item`, `__link`, `__close` | `.is-active`, `.is-open` |
-| **Overlay modal** | `.c-overlay` | — | `.is-visible` |
-| **Héroe de página** | `.c-hero` | `__title`, `__subtitle`, `__text`, `__pic`, `__img`, `__controls` | `--home`, `--servicios`, `--us`, `--portafolio`, `--contact` |
-| **Botones interactivos** | `.c-button` | `__wrapper`, `__icon` | `--purple`, `--dark-purple`, `--blue`, `--sky-blue`, `--large`, `--circle`, `--next` |
-| **Sección genérica** | `.c-section` | `__title`, `__subtitle`, `__intro`, `__content`, `__tag` | `--gray`, `--clients`, `--contact`, `--contact-form` |
-| **Bloque multimedia** | `.c-media-block` | `__figure`, `__img`, `__content`, `__text` | `--left-media`, `--right-media`, `--reasons`, `--services` |
-| **Teasers de servicios** | `.c-services-teaser` | `__item`, `__img`, `__content`, `__title`, `__text`, `__link` | En contenedor `.c-services-teasers` con grid responsive |
-| **Teasers de proyectos** | `.c-project-teaser` | `__pic-link`, `__pic`, `__img`, `__content`, `__title`, `__text` | En contenedor `.c-projects-teasers` |
-| **Miembros de equipo** | `.c-team-member` | `__pic`, `__img`, `__name`, `__job`, `__social` | En contenedor `.c-team-members` |
-| **Slider de clientes** | `.c-clients` | `__slider`, `__slide`, `__client`, `__slider-controls` | Controles prev/next asistidos por `tiny-slider` |
-| **Formulario de contacto** | `.c-contact-form` | `__field`, `__label`, `__input`, `__textarea`, `__submit`, `__error` | Incluye radios `.c-contact-form-radios` y checkboxes `.c-contact-form-checkboxes` |
-| **Opciones de contacto** | `.c-contact-options` | `__item`, `__icon`, `__text`, `__link` | Canales: teléfono, email, dirección física |
-| **Pie de página** | `.c-site-footer` | `__text`, `__social`, `__nav`, `__legal`, `__copy` | Subcomponentes `.c-site-footer-social` y `.c-site-footer-nav` |
-| **Módulos de portafolio** | `.c-gallery`, `.c-videos`, `.c-format-canvas`, `.c-format-album` | `__grid`, `__pic`, `__item` | Bloques para casos ricos (CyberWow, Iveco, Stralis) |
+| Componente | Clase BEM Principal | Elementos Clave | Modificadores Observados | Capturas Asociadas |
+| :--- | :--- | :--- | :--- | :--- |
+| **Cabecera del sitio** | `.c-site-header` | `__logo`, `__controls`, `__hamburger` | `--fixed`, `--transparent` | `capturas/home-desktop.png`, `capturas/home-mobile-375px.png` |
+| **Navegación principal** | `.c-site-header-nav` | `__list`, `__item`, `__link`, `__close` | `.is-active`, `.is-open` | `capturas/home-desktop.png`, `capturas/home-mobile-375px.png` |
+| **Overlay modal** | `.c-overlay` | — | `.is-visible` | — |
+| **Héroe de página** | `.c-hero` | `__title`, `__subtitle`, `__text`, `__pic`, `__img`, `__controls` | `--home`, `--servicios`, `--us`, `--portafolio`, `--contact` | `capturas/home-desktop.png`, `capturas/servicios-desktop.png`, `capturas/home-mobile-375px.png` |
+| **Botones interactivos** | `.c-button` | `__wrapper`, `__icon` | `--purple`, `--dark-purple`, `--blue`, `--sky-blue`, `--large`, `--circle`, `--next` | `capturas/home-desktop.png`, `capturas/contacto-desktop.png` |
+| **Sección genérica** | `.c-section` | `__title`, `__subtitle`, `__intro`, `__content`, `__tag` | `--gray`, `--clients`, `--contact`, `--contact-form` | `capturas/home-desktop.png`, `capturas/nosotros-desktop.png` |
+| **Bloque multimedia** | `.c-media-block` | `__figure`, `__img`, `__content`, `__text` | `--left-media`, `--right-media`, `--reasons`, `--services` | `capturas/home-desktop.png`, `capturas/nosotros-desktop.png` |
+| **Teasers de servicios** | `.c-services-teaser` | `__item`, `__img`, `__content`, `__title`, `__text`, `__link` | En contenedor `.c-services-teasers` con grid responsive | `capturas/servicios-desktop.png`, `capturas/servicios-mobile-375px.png` |
+| **Teasers de proyectos** | `.c-project-teaser` | `__pic-link`, `__pic`, `__img`, `__content`, `__title`, `__text` | En contenedor `.c-projects-teasers` | `capturas/portafolio-desktop.png`, `capturas/portafolio-mobile-375px.png` |
+| **Miembros de equipo** | `.c-team-member` | `__pic`, `__img`, `__name`, `__job`, `__social` | En contenedor `.c-team-members` | `capturas/nosotros-desktop.png`, `capturas/nosotros-mobile-375px.png` |
+| **Slider de clientes** | `.c-clients` | `__slider`, `__slide`, `__client`, `__slider-controls` | Controles prev/next asistidos por `tiny-slider` | `capturas/home-desktop.png`, `capturas/home-mobile-375px.png` |
+| **Formulario de contacto** | `.c-contact-form` | `__field`, `__label`, `__input`, `__textarea`, `__submit`, `__error` | Incluye radios `.c-contact-form-radios` y checkboxes `.c-contact-form-checkboxes` | `capturas/contacto-desktop.png`, `capturas/contacto-mobile-375px.png` |
+| **Opciones de contacto** | `.c-contact-options` | `__item`, `__icon`, `__text`, `__link` | Canales: teléfono, email, dirección física | `capturas/contacto-desktop.png`, `capturas/contacto-mobile-375px.png` |
+| **Pie de página** | `.c-site-footer` | `__text`, `__social`, `__nav`, `__legal`, `__copy` | Subcomponentes `.c-site-footer-social` y `.c-site-footer-nav` | `capturas/home-desktop.png`, `capturas/home-mobile-375px.png` |
+| **Módulos de portafolio** | `.c-gallery`, `.c-videos`, `.c-format-canvas`, `.c-format-album` | `__grid`, `__pic`, `__item` | Bloques para casos ricos (CyberWow, Iveco, Stralis) | `capturas/servicio-detalle-desktop.png`, `capturas/servicio-detalle-mobile-375px.png` |
+
+> **Evidencia visual generada:** Las capturas de los componentes y maquetas servidas vía servidor local HTTP se encuentran almacenadas en `docs/diseno/capturas/` (`home-desktop.png`, `home-mobile-375px.png`, `servicios-desktop.png`, `servicios-mobile-375px.png`, `servicio-detalle-desktop.png`, `servicio-detalle-mobile-375px.png`, `portafolio-desktop.png`, `portafolio-mobile-375px.png`, `nosotros-desktop.png`, `nosotros-mobile-375px.png`, `contacto-desktop.png`, `contacto-mobile-375px.png`).
 
 ---
 
@@ -158,8 +160,9 @@ Del análisis exhaustivo de `main.css.map`, `main.css`, los scripts y el tema Wo
 | :--- | :--- | :--- | :--- |
 | **CSS Architecture** | **InuitCSS + BEM** | Metodología de CSS modular por capas (generic, elements, objects, components, utilities). | **Sí**, la arquitectura BEM es limpia, ordenada y escalable. |
 | **CSS Preprocessor** | **SCSS (Sass)** con `sass-mq` | Manejo de variables, mixins de medios y nesting. | **Sí**, estándar de la industria. |
-| **Animaciones en scroll** | **AOS (Animate On Scroll v2.3.4)** | Efectos `fade-up`, `fade-right` en tarjetas y títulos. | **Sí**, ligero y sin dependencias pesadas. |
-| **Sliders / Carruseles** | **Tiny-Slider v2.9.2** | Carrusel táctil para clientes y formatos publicitarios. | **Sí**, es zero-dependencies (vanilla JS). |
+| **Animaciones en scroll** | **AOS (Animate On Scroll)** | Efectos `fade-up`, `fade-right` en tarjetas y títulos (sin versión explícita en archivos). | **Sí**, ligero y sin dependencias pesadas. |
+| **Sliders / Carruseles** | **Tiny-Slider** | Carrusel táctil para clientes y formatos publicitarios (sin versión explícita en archivos). | **Sí**, es zero-dependencies (vanilla JS). |
 | **Modales / Lightbox** | **Modaal (jQuery)** | Ventanas modales para visualización de videos/imágenes. | **Condicional**: requiere jQuery; modernizable a `<dialog>` nativo de HTML5 o micromodal. |
 | **Gestión de iconos** | **SVG Sprite (`icons.svg`)** | Uso de `<use href="images/icons/icons.svg#icon-name">`. | **Sí**, estándar accesible y de alto rendimiento. |
 | **Tipografía** | **Webfonts locales en WOFF2/WOFF** | Eliminó dependencia de Google Fonts externo (GDPR-friendly y más rápido). | **Sí**. |
+

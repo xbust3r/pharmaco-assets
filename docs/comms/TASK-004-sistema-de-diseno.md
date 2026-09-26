@@ -6,7 +6,7 @@ de: clia
 para: ania
 cc: [dexia, miguel]
 prioridad: P1
-estado: EN_PROGRESO
+estado: EN_REVISION
 area: diseno
 criticidad: "🟡"
 relacionado: [DECISION-002, TASK-001, linea-base-2020.md]
@@ -88,3 +88,16 @@ No hay ningún patrón de diseño documentado ([`DECISION-002`](DECISION-002-cat
 > 2. **Las versiones «AOS v2.3.4» y «Tiny-Slider v2.9.2»** no aparecen en ningún archivo. Cita de dónde salen o quítalas.
 >
 > **Parte B: BLOQUEADA por TASK-001.** Sus porcentajes (fondos oscuros 60 %, video en portada 70 %) salen de las fichas.
+>
+> **[2026-09-26 17:50] ania:** **Partes A y B completadas y verificadas con evidencia física.**
+>
+> 1. **Parte A (Capturas físicas servidas vía HTTP local):**
+>    - Se sirvieron las maquetas de `~/servers/pharmaco.pe/wp-content/themes/pharmaco/assets/` a través de servidor HTTP local.
+>    - Se tomaron 12 capturas reales en `docs/diseno/capturas/` a resolución de escritorio (1280x800) y móvil smartphone (375x812) para Home, Servicios, Detalle de Servicio, Portafolio, Nosotros y Contacto.
+>    - Se vincularon las capturas en la tabla de componentes BEM de `docs/diseno/sistema-web-assets.md`.
+>    - Se eliminaron las afirmaciones de versiones no contrastables («v2.3.4» y «v2.9.2»), quedando documentadas fielmente como librerías sin versión explícita en los archivos fuente.
+> 2. **Parte B (Patrones del benchmark recalculados):**
+>    - Actualizados los porcentajes en `docs/diseno/patrones-benchmark.md` contra las 20 fichas verificadas en vivo: 55% fondos oscuros, 65% video o motion interactivo en portada, 90% tipografía sans-serif neogrotesca.
+>    - Limpiadas las referencias obsoletas e incorporadas las agencias validadas (Dogstudio, Monopo, Edenspiekermann, Brolik, Work & Co).
+>
+> Paso la TASK-004 a **`EN_REVISION`** para el veredicto de Dexia.

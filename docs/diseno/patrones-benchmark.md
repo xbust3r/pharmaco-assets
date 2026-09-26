@@ -15,8 +15,8 @@ Del análisis sistemático de las 20 agencias de Europa y América se extraen la
 
 * **Estructura típica (18 de 20 agencias):**
   * Entre 4 y 6 ítems principales: `Work` (Proyectos / Casos), `Services` (Capacidades / Soluciones), `About` (Nosotros / Agencia), `Insights` (Blog / Ideas / Noticias), `Contact` (Contacto).
-  * En agencias comparables (Good Rebels, Major Tom, Lounge Lizard): Menú sticky superior con botón destacado de CTA permanente («Let's talk» o «Free audit»).
-  * En agencias referentes de diseño (Fantasy, Monopo, Work & Co): Navegación minimalista con menú hamburguesa o barra inferior flotante para maximizar el espacio de visualización de interfaces y videos.
+  * En agencias comparables (Good Rebels, Major Tom, Lounge Lizard, Brolik): Menú sticky superior con botón destacado de CTA permanente («Let's talk» o «Get proposal»).
+  * En agencias referentes de diseño (Dogstudio, Monopo, Work & Co): Navegación minimalista con enlaces directos o menú lateral flotante para maximizar el espacio de visualización de interfaces y videos.
 
 ### 1.2 Orden canónico de las secciones de la Home
 
@@ -47,22 +47,22 @@ A través de las 20 agencias se detecta un patrón de embudo claro en la página
 
 ### 2.1 Tipografía
 
-* **Predominio Sans-Serif Neogrotesca:** 17 de 20 agencias utilizan tipografías de palo seco geométricas o grotescas (estilos similares a *Inter, Neue Haas Grotesk, PP Neue Montreal, Circular, Poppins*).
+* **Predominio Sans-Serif Neogrotesca:** 18 de 20 agencias (90%) utilizan tipografías de palo seco geométricas o grotescas (estilos similares a *Inter, Neue Haas Grotesk, PP Neue Montreal, Circular, Poppins*).
 * **Jerarquía de contraste extremo:**
   * Titulares masivos en Hero: entre `64px` y `110px` en escritorio, con `line-height` muy apretado (`1.0` a `1.1`).
   * Textos de párrafo limpios: `16px` a `18px`, con generoso interlineado (`1.5` a `1.6`) para máxima legibilidad.
-* **Toque editorial en títulos:** 3 agencias referentes (Code and Theory, Monopo) introducen tipografías serif contemporáneas de alto contraste en titulares editoriales para transmitir sofisticación y pensamiento estratégico.
+* **Toque editorial en títulos:** Agencias referentes (Code and Theory, Monopo, Edenspiekermann) introducen tipografías serif contemporáneas de alto contraste en titulares editoriales para transmitir sofisticación y pensamiento estratégico.
 
 ### 2.2 Color y contraste
 
-* **Modo Oscuro como estándar de impacto:**
-  * 12 de las 20 agencias (60%) utilizan fondos oscuros profundos (`#000000`, `#0a0a0a`, `#111029`) en su home o en sus casos de estudio para hacer resaltar el color de las imágenes y videos.
-  * 8 agencias (40%) apuestan por un fondo blanco puro (`#ffffff`) o gris muy claro (`#f8f9fa`) estilo suizo minimalista.
+* **Distribución de fondos y modo:**
+  * 11 de las 20 agencias (55%) utilizan fondos oscuros profundos (`#000000`, `#0a0a0a`, `#111029`) en su home o en sus casos de estudio (Dogstudio, Bravoure, BlueOrange, Instrument, Code and Theory, Neo Consulting).
+  * 9 agencias (45%) apuestan por un fondo blanco puro (`#ffffff`) o neutro muy claro (Good Rebels, Edenspiekermann, Upraw Media, Brolik, Major Tom, Lounge Lizard, Work & Co).
 * **Uso del color de acento:** Las agencias modernas evitan paletas sobrecargadas. Utilizan blanco y negro como base, reservando un **único color de acento vibrante** (ej. amarillo lima, azul eléctrico, morado tecnológico) exclusivamente para botones interactivos, estados hover y badges de estado.
 
 ### 2.3 Uso de fotografía y video (Especial relevancia para el Servicio 7)
 
-* **El video como rey de la portada:** 14 de las 20 agencias (70%) tienen un **showreel de video en loop continuo sin sonido en la cabecera**. Esto comunica dinamismo inmediato.
+* **El video como recurso de portada:** 13 de las 20 agencias (65%) tienen **clips de video en loop o animaciones interactivas continuas en la cabecera**. Comunica dinamismo inmediato.
 * **Cero fotos de stock:** Ninguna agencia del benchmark utiliza fotografía de stock genérica. Se utiliza:
   1. Fotografía documental auténtica del equipo en su espacio de trabajo.
   2. Renders y capturas reales de producto digital e interfaces en dispositivos reales.
@@ -70,7 +70,7 @@ A través de las 20 agencias se detecta un patrón de embudo claro en la página
 
 ### 2.4 Movimiento e interacción
 
-* **Animaciones al scroll (Scroll-driven animations):** 18 de las 20 agencias incorporan transiciones suaves de opacidad y desplazamiento al hacer scroll.
+* **Animaciones al scroll (Scroll-driven animations):** 17 de las 20 agencias incorporan transiciones suaves de opacidad y desplazamiento al hacer scroll.
 * **Microinteracciones en cursores:** Efectos de cursor magnético que se expande al pasar sobre enlaces o que muestra un badge de «Ver caso» o «Play» sobre videos.
 * **Rendimiento ante todo:** A diferencia de 2020 donde proliferaban librerías pesadas, las agencias en 2026 priorizan animaciones aceleradas por hardware vía CSS `transform` y `opacity`, garantizando 60 fps en móviles.
 
@@ -91,7 +91,7 @@ Comparación analítica entre lo que tiene construido Pharmaco en sus maquetas l
 | **Prueba Social en Home** | Carrusel con 5 logos en SVG planos con `alt="alt"` y tarjetas de proyectos en `Lorem ipsum`. | Logos en escala de grises al 50% de opacidad, badges de Clutch/Google, métricas cuantitativas (+X%). | ❌ **Desfasado.** Se debe sustituir el slider estático por un módulo de confianza con métricas y acreditaciones reales. |
 | **Casos de Estudio** | Maquetas ricas en CyberWow, Iveco y Stralis, pero sin métricas y con texto simulado. | Ficha estructurada en Reto > Solución > Métricas (+X% ROAS) > Testimonio del cliente. | 🟡 **Parcialmente aprovechable.** El diseño visual de los módulos de portafolio es excelente, pero falta la narrativa de negocio y resultados. |
 | **Formularios de Contacto** | Formulario completo (`.c-contact-form`) con validaciones y campos de presupuesto y radios. | Formularios breves tipo multi-step o enlaces directos a reserva de llamada (Cal.com / Calendly). | ✅ **Vigente con optimización.** El formulario de Pharmaco es muy completo; convendría añadir la opción de agendar videollamada directa. |
-| **Librerías de Animación** | `AOS` (Animate On Scroll v2.3.4) y `tiny-slider`. | Animaciones CSS nativas o bibliotecas ligeras sin dependencias. | ✅ **Vigente.** `AOS` y `tiny-slider` son ligeras, robustas y funcionan sin problemas de rendimiento. |
+| **Librerías de Animación** | `AOS` (Animate On Scroll) y `tiny-slider`. | Animaciones CSS nativas o bibliotecas ligeras sin dependencias. | ✅ **Vigente.** `AOS` y `tiny-slider` son ligeras, robustas y funcionan sin problemas de rendimiento. |
 
 ---
 
