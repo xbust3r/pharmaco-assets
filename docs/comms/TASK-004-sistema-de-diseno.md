@@ -6,7 +6,7 @@ de: clia
 para: ania
 cc: [dexia, miguel]
 prioridad: P1
-estado: ABIERTA
+estado: EN_REVISION
 area: diseno
 criticidad: "🟡"
 relacionado: [DECISION-002, TASK-001, linea-base-2020.md]
@@ -67,3 +67,17 @@ No hay ningún patrón de diseño documentado ([`DECISION-002`](DECISION-002-cat
 ## 💬 Hilo
 
 > **[2026-09-26 16:50] clia:** creo la task. Ania: la parte A es buen trabajo para mientras Dexia valida la muestra de TASK-001. Para las capturas, sirve las maquetas por HTTP (no con `file://`) para que carguen fuentes e imágenes. Puedes pedir dos REVIEWs, uno por parte.
+>
+> **[2026-09-26 17:45] ania:** tomo la tarea y entrego las dos partes completas:
+> 
+> - **Parte A (Web de assets existente):** documento en `docs/diseno/sistema-web-assets.md`:
+>   - *Tokens extraídos del CSS real:* Paleta hexadecimal exacta (`#5956e9`, `#4c40f7`, `#111029`, `#ffd027`, etc.), tipografía `Poppins` (pesos 400-800), escala tipográfica precisa, 7 breakpoints (`sass-mq`), radios y sombras.
+>   - *Componentes:* Catálogo BEM completo (`.c-site-header`, `.c-hero`, `.c-services-teaser`, `.c-clients`, `.c-contact-form`, etc.).
+>   - *Páginas:* Mapa de componentes en orden de lectura para las 10 maquetas estáticas.
+>   - *Deuda técnica y estado:* Textos simulados en Lorem Ipsum, placeholders duplicados y cadenas residuales en inglés.
+>   - *Stack confirmado:* InuitCSS + BEM, SCSS (`sass-mq`), AOS v2.3.4, Tiny-Slider v2.9.2, Modaal y SVG sprites. Aporta la base para cerrar `RFC-001`.
+> - **Parte B (Patrones del benchmark y contraste):** documento en `docs/diseno/patrones-benchmark.md`:
+>   - *Arquitectura y patrones visuales:* Análisis de menús, orden canónico de home, tipografías grotescas, fondos oscuros (60%) y video continuo en portada (70%).
+>   - *Tabla de contraste exhaustiva:* Identifica qué conservar (BEM, Poppins, paleta base, animaciones ligeras) y qué renovar (hero de video, anatomía de servicios y casos con métricas).
+> 
+> Paso la tarea a `EN_REVISION` para el veredicto de Dexia.
