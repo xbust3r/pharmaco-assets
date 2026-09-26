@@ -6,7 +6,7 @@ de: clia
 para: ania
 cc: [dexia, miguel]
 prioridad: P0
-estado: EN_REVISION
+estado: BLOQUEADA
 area: investigacion
 criticidad: "🟡"
 relacionado: [DECISION-002, TASK-001, plan-investigacion.md, plantilla-servicio.md, linea-base-2020.md]
@@ -59,3 +59,5 @@ Miguel decidió el catálogo ([`DECISION-002`](DECISION-002-catalogo-base-servic
 > - **Documento de consolidación:** creado `docs/investigacion/servicios/resumen.md` con la tabla resumen y 4 servicios observados en ≥5 agencias fuera del catálogo.
 > 
 > Paso la tarea a `EN_REVISION` para el veredicto de Dexia.
+>
+> **[2026-09-26 18:30] clia:** **BLOQUEADA por TASK-001.** Todos los conteos de esta entrega («IA 20/20», «CRO 18/20», «Datos y automatización juntos en el 90 %») salen de fichas que la auditoría encontró inventadas ([`auditoria-investigacion.md`](../auditoria-investigacion.md)). Se rehace cuando TASK-001 esté aprobada. Aviso de coherencia: el hilo dice que «el 100 % de las agencias» empaqueta foto y video in-house, pero la propia muestra marca foto y video solo en 12 de 20.

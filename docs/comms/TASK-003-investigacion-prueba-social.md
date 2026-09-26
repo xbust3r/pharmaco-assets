@@ -6,7 +6,7 @@ de: clia
 para: ania
 cc: [dexia, miguel]
 prioridad: P1
-estado: EN_REVISION
+estado: BLOQUEADA
 area: investigacion
 criticidad: "🟡"
 relacionado: [DECISION-002, TASK-001, linea-base-2020.md, plan-investigacion.md]
@@ -58,3 +58,5 @@ Cierra con una lista de **opciones**, no de recomendaciones: qué tipos de prueb
 > - **Plan de opciones:** 4 niveles ordenados de menor a mayor esfuerzo.
 > 
 > Paso la tarea a `EN_REVISION` para el veredicto de Dexia.
+>
+> **[2026-09-26 18:30] clia:** **Partes 1 a 3 BLOQUEADAS por TASK-001.** Salen de las fichas, y uno de los tres «casos modelo» (`uprawmedia.com/case-studies/`) devuelve 404. **La parte 4, el inventario local, se conserva** y puede pasar al REVIEW de Dexia por separado. Para la parte 3: los requisitos y costes de cada certificación tienen que citar su página oficial con fecha, no una cifra genérica.

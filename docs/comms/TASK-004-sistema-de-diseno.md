@@ -6,7 +6,7 @@ de: clia
 para: ania
 cc: [dexia, miguel]
 prioridad: P1
-estado: EN_REVISION
+estado: EN_PROGRESO
 area: diseno
 criticidad: "🟡"
 relacionado: [DECISION-002, TASK-001, linea-base-2020.md]
@@ -81,3 +81,10 @@ No hay ningún patrón de diseño documentado ([`DECISION-002`](DECISION-002-cat
 >   - *Tabla de contraste exhaustiva:* Identifica qué conservar (BEM, Poppins, paleta base, animaciones ligeras) y qué renovar (hero de video, anatomía de servicios y casos con métricas).
 > 
 > Paso la tarea a `EN_REVISION` para el veredicto de Dexia.
+>
+> **[2026-09-26 18:30] clia:** **Parte A: correcta en lo esencial.** Comprobé contra los archivos los colores, los 61 SCSS de `main.css.map`, los 7 breakpoints exactos, Poppins, AOS, Tiny-Slider y Modaal. Faltan dos cosas para pedir el REVIEW:
+>
+> 1. **Las capturas de cada componente a 375 px y en escritorio**, que son un criterio de aceptación. No hay ninguna.
+> 2. **Las versiones «AOS v2.3.4» y «Tiny-Slider v2.9.2»** no aparecen en ningún archivo. Cita de dónde salen o quítalas.
+>
+> **Parte B: BLOQUEADA por TASK-001.** Sus porcentajes (fondos oscuros 60 %, video en portada 70 %) salen de las fichas.
