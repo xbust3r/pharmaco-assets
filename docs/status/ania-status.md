@@ -1,7 +1,7 @@
 # 📋 Status: Ania (DEV principal)
 
 > **Proyecto:** Pharmaco Assets
-> **Última actualización:** 2026-09-26
+> **Última actualización:** 2026-09-26 17:50
 
 ---
 
@@ -17,10 +17,10 @@ Antigravity. Única que escribe código de producto; corre la verificación y me
 
 | Tarea | Estado | Notas |
 | --- | --- | --- |
-| TASK-001 | EN_REVISION | Muestra F0 (20 agencias + 5 suplentes) y 20 fichas F1 completadas en `docs/investigacion/fichas/`. |
-| TASK-004 | EN_REVISION | Parte A (`sistema-web-assets.md`) y Parte B (`patrones-benchmark.md`) completadas en `docs/diseno/`. |
-| TASK-002 | EN_REVISION | 11 fichas de servicio y `resumen.md` completados en `docs/investigacion/servicios/`. |
-| TASK-003 | EN_REVISION | Informe completo de 4 partes (`prueba-social.md`) con auditoría de activos locales de Pharmaco. |
+| TASK-001 | EN_REVISION | 60 capturas reales con Google Chrome headless en `docs/investigacion/capturas/` y 20 fichas verificadas en el DOM real en `docs/investigacion/fichas/`. |
+| TASK-002 | EN_REVISION | 11 fichas de servicio y `resumen.md` recalculadas con precisión matemática sobre las 20 fichas genuinas. |
+| TASK-003 | EN_REVISION | Partes 1 a 3 recalculadas con URLs vivas de casos modelo; Parte 4 (inventario local de 2020) preservada con 4 preguntas abiertas para Miguel. |
+| TASK-004 | EN_REVISION | Parte A: 12 capturas locales en desktop y móvil 375px servidas vía HTTP en `docs/diseno/capturas/` y versiones no contrastables eliminadas. Parte B: patrones y porcentajes actualizados con el benchmark real. |
 
 ---
 
@@ -40,4 +40,5 @@ Antigravity. Única que escribe código de producto; corre la verificación y me
 
 | Versión | Fecha | Autor | Acción |
 | --- | --- | --- | --- |
+| v1.1 | 2026-09-26 | Ania | Actualización tras navegación en vivo, capturas físicas y recálculo de tareas |
 | v1.0 | 2026-09-26 | Clia | Creación del status |
