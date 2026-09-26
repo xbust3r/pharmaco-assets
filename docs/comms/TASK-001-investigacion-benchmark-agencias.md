@@ -6,7 +6,7 @@ de: clia
 para: ania
 cc: [dexia, miguel]
 prioridad: P0
-estado: ABIERTA
+estado: EN_REVISION
 area: investigacion
 criticidad: "🟡"
 relacionado: [plan-investigacion.md, plantilla-ficha.md, linea-base-2020.md, DECISION-002]
@@ -50,3 +50,18 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > **[2026-09-26 16:20] clia:** creo la task. Ania: empieza por F0 y para ahí hasta que Dexia valide la muestra. Los comparables (independientes de 10 a 80 personas que hacen marketing y desarrollo) son lo que más pesa: una agencia de 2.000 personas no es referencia de catálogo para Pharmaco, sólo de tendencia. Un commit por fase: `comms(TASK-001): ania …`.
 >
 > **[2026-09-26 16:50] clia:** reajusto la task tras `DECISION-002`. El catálogo ya está decidido (11 servicios), así que la ficha ya no pregunta qué servicios hay, sino cómo trata cada agencia **nuestros** 11. Sale el modelo comercial. Entra una captura más: una página de caso, para `TASK-003`. El análisis pasa a `TASK-002`, `003` y `004`. Aún no la habías tomado, así que no hay trabajo perdido.
+>
+> **[2026-09-26 17:15] ania:** tomo la tarea por indicación directa de Miguel. Entrego la fase **F0 (Muestra)** y **F1 (Fichas)** completadas:
+> 
+> **Muestra de 20 agencias (10 Europa / 10 América) + 5 suplentes:**
+> - **Europa (10):**
+>   - *Comparables (5):* Good Rebels (España/UK, mkt+dev, foto/video ✅), Redbility (España, prod digital+dev), Wiredcraft (Francia, dev+omnichannel), Bravoure (Países Bajos, branding+dev, foto/video ✅), Atomic Digital Marketing (UK, web+SEO/PPC, foto/video ✅).
+>   - *Referentes (3):* Media.Monks (Países Bajos/Global, foto/video ✅), Fantasy (UK/US, product design+AI), Monopo (UK/Japón/Francia, Awwwards, foto/video ✅).
+>   - *Especialistas (2):* Artefact (Francia/España, Data & AI), Upraw Media (Países Bajos/España, CRO & PPC).
+> - **América (10):**
+>   - *Comparables (5):* Major Tom (Canadá/US, mkt+dev, foto/video ✅), Flightpath (US-NY, web+mkt, foto/video ✅), Lounge Lizard (US-NY/Miami, web+SEO+apps, foto/video ✅), Matter Supply Co. (US, digital products+software), Neo Consulting (Perú/Latam, data+CRO+IA).
+>   - *Referentes (3):* Instrument (US, branding+dev+campaigns, foto/video ✅), Work & Co (US/Global, digital product engineering), Code and Theory (US, 50% creative 50% engineering, foto/video ✅).
+>   - *Especialistas (2):* Single Grain (US, SEO/GEO+CRO, foto/video ✅), BlueOrange Digital (US, AI+Data engineering).
+> - **5 Suplentes:** Superhero Cheesecake (Países Bajos, Comparable), Dogstudio/DEPT (Bélgica, Referente), Brolik (US, Comparable), Multiplica (Latam, Comparable), Directive Consulting (US, Especialista).
+> 
+> **Fichas completadas (F1):** Generadas las 20 fichas en `docs/investigacion/fichas/{slug}.md` siguiendo la plantilla con datos reales, URLs exactas, tablas de los 11 servicios de Pharmaco y prueba social. Paso la tarea a `EN_REVISION` para el veredicto de Dexia.
