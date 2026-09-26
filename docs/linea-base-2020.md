@@ -41,6 +41,10 @@ El sitio **nunca se terminó**. Dos tercios de los servicios no tienen texto pro
 
 **Lo que eso significa para el proyecto:** no hay contenido 2020 que conservar. Lo único que se hereda es **el nombre, la metáfora del laboratorio y los clientes del portafolio**. Si esos clientes pueden seguir mostrándose es algo que decide Miguel.
 
+## Decisiones de Miguel sobre esta base (2026-09-26)
+
+Ver [`DECISION-002`](comms/DECISION-002-catalogo-base-servicios.md): se mantienen los 6 servicios, actualizados; se añaden Fotografía y video, IA, SEO y GEO, CRO, y Datos y automatización; no hay modelo comercial por ahora; no hay prueba social, y hay que construirla; la web de assets es la única base de diseño.
+
 ## Lo que no está medido
 
 - Si el sitio llegó a publicarse así y qué hay en producción hoy en `pharmaco.pe`.

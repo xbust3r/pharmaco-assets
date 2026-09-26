@@ -8,43 +8,48 @@
 | Tamaño del equipo | (o «no verificado») | |
 | Año de fundación | | |
 | Fecha de consulta | AAAA-MM-DD | — |
-| Capturas | `capturas/{slug}-home.png`, `capturas/{slug}-servicios.png` | — |
+| Capturas | `capturas/{slug}-home.png`, `capturas/{slug}-servicios.png`, `capturas/{slug}-caso.png` | — |
 
 ## Propuesta de valor
 (su claim principal, resumido; la frase literal, si es corta, entre comillas)
 
-## Servicios (P1)
+## Cómo organizan sus servicios
 | Pilar / categoría (literal) | Servicios que incluye (literal) | Traducción | URL |
 | --- | --- | --- | --- |
 
-## Frente a Pharmaco 2020 (P2)
-| Servicio Pharmaco 2020 | ¿Lo ofrecen? | ¿Con qué nombre? |
-| --- | --- | --- |
-| Branding | | |
-| Social Media | | |
-| Desarrollo Web | | |
-| Campañas publicitarias | | |
-| Performance | | |
-| Desarrollo de apps y software | | |
+## Frente al catálogo de Pharmaco (alimenta TASK-002)
+| # | Servicio Pharmaco | ¿Lo ofrecen? | Nombre literal que usan | URL de su página |
+| --- | --- | --- | --- | --- |
+| 1 | Branding | | | |
+| 2 | Social Media | | | |
+| 3 | Desarrollo Web | | | |
+| 4 | Campañas publicitarias | | | |
+| 5 | Performance | | | |
+| 6 | Desarrollo de apps y software | | | |
+| 7 | Fotografía y video | | | |
+| 8 | Inteligencia artificial | | | |
+| 9 | SEO y GEO | | | |
+| 10 | CRO | | | |
+| 11 | Datos y automatización | | | |
 
-## Servicios nuevos (P3)
-(los que no están en la tabla de arriba; marcar qué hipótesis del plan confirman)
+**Servicios suyos que no están en la tabla:** (lista literal; es información, no una propuesta)
 
-## Estructura de la web (P4)
+## Prueba social (alimenta TASK-003)
+- Casos: cuántos, si tienen métricas y cómo está armada la página de un caso
+- Logos de clientes:
+- Testimonios (formato: texto, video, con nombre y cargo…):
+- Premios, rankings, reseñas (Clutch, Google):
+- Certificaciones o partnerships (Google, Meta, HubSpot, Shopify…):
+- Otros (contenido propio, equipo visible, cifras agregadas):
+
+## Estructura de la web y diseño (alimenta TASK-004)
 - Menú principal:
 - Secciones de la home, en orden:
-- Página de servicio (qué bloques tiene):
-- CTA principal:
+- Anatomía de una página de servicio (bloques, en orden):
+- CTA principal y dónde aparece:
 - Idiomas:
-
-## Modelo comercial (P5)
-(retainer, sprints, paquetes, precios o «no publican»)
-
-## Prueba social (P6)
-(casos con métricas, logos, premios, testimonios)
-
-## Diseño e interacción (P7)
-(patrones visuales y de movimiento)
+- Patrones visuales (tipografía, color, layout, uso de foto y video):
+- Movimiento e interacción:
 
 ## Observaciones de Ania
 (opinión propia, separada de los hechos)

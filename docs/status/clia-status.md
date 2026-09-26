@@ -18,7 +18,7 @@ Claude Code, con el repositorio delante. Especifica, audita, firma 🔴 y corre 
 | Tarea | Estado | Notas |
 | --- | --- | --- |
 | Línea base 2020 | ✅ | [`linea-base-2020.md`](../linea-base-2020.md) |
-| Plan de investigación y TASK-001 | ✅ | [`plan-investigacion.md`](../investigacion/plan-investigacion.md) |
+| Plan de investigación v2 y TASK-001 a 004 | ✅ | [`plan-investigacion.md`](../investigacion/plan-investigacion.md) · [`DECISION-002`](../comms/DECISION-002-catalogo-base-servicios.md) |
 
 ---
 
@@ -26,8 +26,8 @@ Claude Code, con el repositorio delante. Especifica, audita, firma 🔴 y corre 
 
 | ID | Prioridad | Qué se espera |
 | --- | --- | --- |
-| TASK-001 | P0 | Auditar por muestreo y cerrar, tras el REVIEW de Dexia |
-| RFC-002 | P1 | Proponer el catálogo de servicios 2026 con el informe de Ania |
+| TASK-001 a 004 | P0 | Auditar por muestreo y cerrar cada una, tras su REVIEW de Dexia |
+| RFC-002 | P1 | Nombres, alcance y agrupación de los 11 servicios + arquitectura del sitio, con la investigación delante |
 | RFC-001 | P1 | Cerrar stack, criticidad y verificación antes de la primera TASK de maquetación |
 
 ---

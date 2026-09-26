@@ -2,7 +2,7 @@
 
 Nuevo sitio HTML de **Pharmaco**, laboratorio digital de marketing y software (Perú, 2020), que se retoma con un catálogo de servicios actualizado.
 
-**Etapa actual:** investigación — [`TASK-001`](docs/comms/TASK-001-investigacion-benchmark-agencias.md).
+**Etapa actual:** investigación — [`TASK-001`](docs/comms/TASK-001-investigacion-benchmark-agencias.md) a [`TASK-004`](docs/comms/TASK-004-sistema-de-diseno.md). Catálogo decidido en [`DECISION-002`](docs/comms/DECISION-002-catalogo-base-servicios.md).
 
 El trabajo lo llevan tres agentes y Miguel, comunicándose por MDs commiteados.
 **Empieza por [`AGENTS.md`](AGENTS.md).**
