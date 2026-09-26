@@ -1,0 +1,12 @@
+# Credenciales y claves: nunca entran al repositorio
+*.pem
+*.key
+.env
+.env.*
+
+# Respaldos y volcados
+backups/
+*.sql
+*.sql.gz
+
+.DS_Store
