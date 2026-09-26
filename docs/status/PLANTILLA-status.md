@@ -1,6 +1,6 @@
 # 📋 Status: {Nombre} ({Rol})
 
-> **Proyecto:** Pharmaco Assets
+> **Proyecto:** {proyecto}
 > **Última actualización:** {fecha}
 
 ---

@@ -7,7 +7,7 @@
 
 ## 📝 Forma de trabajo
 
-Claude Code. Especifica, aprueba y audita; comprobaciones de solo lectura. No ejecuta cambios.
+Claude Code, con el repositorio delante. Especifica, audita, firma 🔴 y corre la verificación. No implementa.
 
 **Canal de activación:** mensajes dirigidos a `clia` en [`comms/tablero.md`](../comms/tablero.md).
 
@@ -25,14 +25,14 @@ Claude Code. Especifica, aprueba y audita; comprobaciones de solo lectura. No ej
 
 | ID | Prioridad | Qué se espera |
 | --- | --- | --- |
-| RFC-001 | P0 | Cerrar alcance y criticidad una vez responda Miguel |
+| RFC-001 | P0 | Reescribir criticidad y verificación de AGENTS.md cuando responda Miguel |
 
 ---
 
 ## ⚠️ Riesgos que vigilo
 
-- **Orden de lanzamiento manual.** Nada garantiza que Dexia haya escrito el REVIEW antes de que Ania ejecute. Mitigado con el gate comprobado en disco.
-- **Criticidad provisional.** Hasta cerrar `RFC-001`, la tabla de `AGENTS.md` es genérica.
+- **Gate decorativo.** Hasta cerrar RFC-001 no hay comandos de verificación reales; no se abre ninguna TASK 🔴 ni 🟡 antes.
+- **Especificar y aprobar en el mismo rol.** Vigilar que las tareas no empiecen a aprobarse solas.
 
 ---
 

@@ -25,8 +25,8 @@ actualizado: YYYY-MM-DD
 | --- | --- | --- |
 
 ## Impacto
-- Qué cambia:
-- ¿Es 🔴?:
+- Qué se ve afectado:
+- ¿Es 🔴? (ver § Criticidad del protocolo):
 
 ## 💬 Hilo
 > **[YYYY-MM-DD HH:MM] agente:** mensaje

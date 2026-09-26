@@ -3,10 +3,11 @@ tipo: REVIEW
 id: REVIEW-XXX
 titulo:
 de: dexia
-para: ania
+para:
 cc: [clia]
 estado: EN_REVISION  # EN_REVISION | APROBADO | APROBADO_CON_CAMBIOS | RECHAZADO
-task: TASK-XXX       # ← lo consulta el gate en disco; mantenlo exacto
+task: TASK-XXX
+rama:
 criticidad: "🟡"
 creado: YYYY-MM-DD
 actualizado: YYYY-MM-DD
@@ -15,13 +16,13 @@ actualizado: YYYY-MM-DD
 # REVIEW-XXX — (título)
 
 ## Alcance revisado
-(comandos literales, diff, archivos o commits)
+(archivos y commits)
 
 ## Veredicto
 ✅ APROBADO · ⚠️ APROBADO CON CAMBIOS · ❌ RECHAZADO
 
 ## Hallazgos
-| # | Archivo:línea / paso | Severidad | Hallazgo |
+| # | Archivo:línea | Severidad | Hallazgo |
 | --- | --- | --- | --- |
 | 1 | | 🔴 / 🟡 / 🟢 | |
 

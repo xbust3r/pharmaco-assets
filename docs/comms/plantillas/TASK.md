@@ -7,8 +7,8 @@ para:
 cc: []
 prioridad: P1        # P0 | P1 | P2
 estado: ABIERTA      # ABIERTA | EN_PROGRESO | EN_REVISION | BLOQUEADA | CERRADA | RECHAZADA
-area:                # assets | codigo | despliegue | contenido | docs
-criticidad: "🟡"     # 🔴 | 🟡 | 🟢 — ver AGENTS.md
+area:                # ⏳ se fija en RFC-001 según el stack
+criticidad: "🟡"     # 🔴 | 🟡 | 🟢 — ver § Criticidad del protocolo
 relacionado: []
 creado: YYYY-MM-DD
 actualizado: YYYY-MM-DD
@@ -17,26 +17,17 @@ actualizado: YYYY-MM-DD
 # TASK-XXX — (título)
 
 ## Contexto
-(por qué existe esta tarea)
+(por qué existe esta tarea; enlaces a docs)
 
 ## Pedido
-(qué se espera exactamente)
-
-## Fuera de alcance
-(lo que NO se toca; si hace falta, se para y se pide en el hilo)
+(qué se espera exactamente; qué queda fuera del alcance)
 
 ## Criterios de aceptación
-- [ ] (criterio verificable con un número, no con una valoración)
-- [ ] Estado previo / conteo anotado en el hilo, antes de operar
-- [ ] Plan literal (comandos o diff) pegado en el hilo antes de ejecutar
-- [ ] Salida real de cada comando pegada en el hilo
-- [ ] REVIEW de Dexia ✅ (+ sign-off de Clia si 🔴), comprobado en el disco
-
-## 🚦 Gate 🔴 — requisitos previos (borrar si no es 🔴)
-- [ ] Respaldo verificado y restaurable
-- [ ] TASKs de las que depende, cerradas
-- [ ] Dexia ha revisado **los comandos literales / el diff**, antes de ejecutar
-- [ ] Clia ha firmado en el REVIEW
+- [ ]
+- [ ] Verificación completa de `AGENTS.md` en verde, con la salida real pegada en el hilo
+- [ ] Comprobado en el resultado servido/final, si el cambio se ve
+- [ ] Pendientes declarados, no resueltos inventando
+- [ ] REVIEW de Dexia ✅ (+ sign-off del CTO si 🔴)
 
 ## 💬 Hilo
 > **[YYYY-MM-DD HH:MM] agente:** mensaje

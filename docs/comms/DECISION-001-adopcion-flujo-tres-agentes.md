@@ -16,27 +16,31 @@ actualizado: 2026-09-26
 
 ## Contexto
 
-Pharmaco Assets arranca vacío. Miguel pide implantar el mismo método de tres agentes que se usó en CoverageFox.
+Pharmaco Assets arranca vacío. Miguel pide implantar el método multiagente del equipo (paquete `flujo-multiagente`, copia en `docs/metodo/`).
 
 ## Decisión
 
-Se adopta el método tal como quedó en CoverageFox **tras sus correcciones**, no en su versión inicial:
+Se adopta el método tal como viene en el paquete, con tres puntos a confirmar por Miguel, los mismos que se aprobaron donde se estrenó:
 
-1. **Tres roles y un jefe**: Clia (CTO, especifica y audita), Dexia (review exclusivo), Ania (ejecuta), Miguel (veto).
-2. **Los MD son los mensajes y Git es el bus**, desde el primer commit. Repositorio local, sin remoto.
-3. **El gate se comprueba en el disco** (lección de `DECISION-002` de CoverageFox): antes de ejecutar un cambio 🔴 o 🟡, Ania consulta con un `grep` que el REVIEW existe y está aprobado.
-4. **El alcance de una TASK no se amplía sobre la marcha** (misma lección).
-5. **Dexia revisa antes de ejecutar**: el comando literal o el diff, no una descripción.
+1. **El CTO absorbe las funciones de PM y Arquitecto** —crear TASKs, priorizar y aprobar RFCs— mientras el equipo sea de tres.
+2. **El gate 🔴 con doble aprobación**: REVIEW de Dexia + sign-off de Clia.
+3. **Cierre de DECISION por silencio de 48h** en decisiones no estratégicas; las estratégicas necesitan el ✅ explícito de Miguel.
+
+Además se incorporan como reglas de Git en `AGENTS.md` las lecciones que el paquete documenta como fallos:
+
+- Si un commit toca lo crítico, lo dice su primera línea.
+- Las ramas no se apilan.
+- Una firma vale para un estado concreto del código.
 
 ## Motivo
 
-En CoverageFox el gate se saltó dos veces porque el orden de lanzamiento manual de los agentes no garantizaba que el REVIEW existiera cuando Ania empezaba. Incorporar esas dos correcciones desde el día uno evita repetir la lección.
+Es el método del equipo; lo único que se adapta es lo que el propio paquete manda adaptar: los nombres (se mantienen), la criticidad y los comandos del gate.
 
 ## Consecuencias
 
-- `AGENTS.md`, `CLAUDE.md`, `docs/equipo.md` y `docs/comms/protocolo.md` quedan como la norma del proyecto.
-- La **criticidad es provisional** hasta cerrar `RFC-001`.
-- Hasta el ✅ de Miguel, el protocolo figura como PROPUESTO.
+- `AGENTS.md`, `docs/equipo.md` y `docs/comms/protocolo.md` quedan como norma.
+- **La criticidad y la verificación son provisionales** hasta cerrar `RFC-001`. Sin comandos reales el gate es decorativo, así que no se abren TASKs 🔴 ni 🟡 antes.
+- Con el ✅ de Miguel, el protocolo pasa a ACTIVO.
 
 ## Vigencia
 
@@ -44,4 +48,4 @@ Estratégica: requiere el ✅ explícito de Miguel en el hilo.
 
 ## 💬 Hilo
 
-> **[2026-09-26 15:10] clia:** emito la decisión y dejo montada la estructura. Miguel, falta tu ✅ aquí y tus respuestas en `RFC-001` para calibrar la criticidad al proyecto real.
+> **[2026-09-26 15:40] clia:** emito la decisión. Miguel, faltan tu ✅ a los tres puntos y tus respuestas en `RFC-001`.

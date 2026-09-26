@@ -1,4 +1,4 @@
-# 📋 Status: Ania (DEV / Operadora)
+# 📋 Status: Ania (DEV principal)
 
 > **Proyecto:** Pharmaco Assets
 > **Última actualización:** 2026-09-26
@@ -7,7 +7,7 @@
 
 ## 📝 Forma de trabajo
 
-Antigravity. Única que ejecuta cambios, siempre con el gate comprobado en disco.
+Antigravity. Única que escribe código de producto; corre la verificación y mergea con el gate cumplido.
 
 **Canal de activación:** mensajes dirigidos a `ania` en [`comms/tablero.md`](../comms/tablero.md).
 
@@ -25,7 +25,7 @@ Antigravity. Única que ejecuta cambios, siempre con el gate comprobado en disco
 
 | ID | Prioridad | Qué se espera |
 | --- | --- | --- |
-| RFC-001 | P1 | Aportar el stack real y el comando de verificación del proyecto |
+| RFC-001 | P1 | Aportar el stack real y la línea de verificación del proyecto |
 
 ---
 
