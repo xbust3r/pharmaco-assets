@@ -2,57 +2,57 @@
 
 | Campo | Valor | Fuente |
 | --- | --- | --- |
-| URL | https://monopo.london/ | Consulta directa a sitio oficial |
-| País / ciudades | Reino Unido (Londres) / Japón (Tokio) / Francia (París) | Web corporativa |
-| Bloque · perfil | Europa · referente | Muestra investigada (TASK-001) |
-| Tamaño del equipo | ~50 empleados | Monopo network data & Awwwards profile |
-| Año de fundación | 2011 | Registro corporativo / Web oficial |
-| Fecha de consulta | 2026-09-26 | Consulta directa online |
-| Capturas | `capturas/monopo-home.png`, `capturas/monopo-servicios.png`, `capturas/monopo-caso.png` | Repositorio de capturas |
+| URL | https://monopo.london/ | https://monopo.london/ |
+| País / ciudades | Reino Unido (Londres), Francia (París), Japón (Tokio - estudio asociado) | https://monopo.london/services |
+| Bloque · perfil | Europa · referente | — |
+| Tamaño del equipo | «no publicado» | https://monopo.london/services |
+| Año de fundación | 2019 (monopo london) | https://monopo.london/services |
+| Fecha de consulta | 2026-09-26 | — |
+| Capturas | `capturas/monopo-home.png`, `capturas/monopo-servicios.png`, `capturas/monopo-caso.png` | — |
 
 ## Propuesta de valor
-«A Tokyo-born, London-bred design and innovation agency». Especialistas en branding transcultural, experiencias digitales inmersivas, desarrollo creativo y dirección de arte cinematográfica.
+«We are a brand of collective creativity. We build expressive brands.» Estudio de diseño y comunicación creativa en Londres y París que fusiona diseño de marca con cultura digital, diseño interactivo y producción de campañas.
 
 ## Cómo organizan sus servicios
 | Pilar / categoría (literal) | Servicios que incluye (literal) | Traducción | URL |
 | --- | --- | --- | --- |
-| Brand Strategy & Identity | Visual identity, cross-cultural branding, naming, packaging | Identidad visual, branding transcultural, naming, packaging | https://monopo.london/ |
-| Digital & Creative Tech | Creative development, WebGL websites, 3D interaction, mobile apps | Desarrollo creativo, webs en WebGL, interacción 3D, apps móviles | https://monopo.london/ |
-| Content & Film | Film direction, commercial photography, campaign assets, art direction | Dirección de cine/video, fotografía comercial, piezas de campaña, dirección de arte | https://monopo.london/ |
+| Brand Identity | Brand Strategy, Visual Identity Systems, Tone of Voice, Naming | Estrategia de marca, identidad visual, tono de voz y naming | https://monopo.london/services |
+| Digital Design & Web | UX/UI, Creative Web Development, E-commerce, Design Systems | UX/UI, desarrollo web creativo, comercio electrónico | https://monopo.london/services |
+| Campaigns & Content | Creative Direction, Film, Photography, Social Campaigns | Dirección creativa, cine/vídeo, fotografía, campañas sociales | https://monopo.london/services |
 
 ## Frente al catálogo de Pharmaco (alimenta TASK-002)
 | # | Servicio Pharmaco | ¿Lo ofrecen? | Nombre literal que usan | URL de su página |
 | --- | --- | --- | --- | --- |
-| 1 | Branding | Sí | Brand Creation & Global Positioning | https://monopo.london/ |
-| 2 | Social Media | Sí | Creative Social Campaigns & Visual Content | https://monopo.london/ |
-| 3 | Desarrollo Web | Sí | Award-Winning Web Design & Interactive Development | https://monopo.london/ |
-| 4 | Campañas publicitarias | Sí | Global Campaigns & Creative Direction | https://monopo.london/ |
-| 5 | Performance | No | No gestionan pauta técnica directa; producen los activos creativos | https://monopo.london/ |
-| 6 | Desarrollo de apps y software | Sí | Interactive Digital Installations & Mobile Experiences | https://monopo.london/ |
-| 7 | Fotografía y video | Sí | Full Film Production, Editorial Photography & Motion | https://monopo.london/ |
-| 8 | Inteligencia artificial | Sí | Generative AI Art Direction & Experiential Tech | https://monopo.london/ |
-| 9 | SEO y GEO | No | No mencionado como servicio comercial | https://monopo.london/ |
-| 10 | CRO | No | Orientados a brand engagement y diseño editorial interactivo | https://monopo.london/ |
-| 11 | Datos y automatización | No | No lo ofrecen | https://monopo.london/ |
+| 1 | Branding | Sí | Brand Strategy & Visual Identity Systems | https://monopo.london/services |
+| 2 | Social Media | Sí | Social Campaigns & Digital Content | https://monopo.london/services |
+| 3 | Desarrollo Web | Sí | Creative Web Development & Digital Platforms | https://monopo.london/services |
+| 4 | Campañas publicitarias | Sí | Campaigns & Creative Direction | https://monopo.london/services |
+| 5 | Performance | No | | |
+| 6 | Desarrollo de apps y software | No | | |
+| 7 | Fotografía y video | Sí | Film Production, Photography & Art Direction | https://monopo.london/services |
+| 8 | Inteligencia artificial | No | | |
+| 9 | SEO y GEO | No | | |
+| 10 | CRO | No | | |
+| 11 | Datos y automatización | No | | |
 
-**Servicios suyos que no están en la tabla:** Spatial Sound Design, Physical-Digital Installations, Luxury Packaging
+**Servicios suyos que no están en la tabla:** Spatial Design & Pop-up Experiences, Cultural Research.
 
 ## Prueba social (alimenta TASK-003)
-- **Casos:** Casos visuales completos donde cada proyecto es una obra de arte digital con créditos pormenorizados de fotografía, código y dirección artística.
-- **Logos de clientes:** Shiseido, Sony, Yamaha, Nike Japan, Asics, Red Bull, Google.
-- **Testimonios:** Reconocimiento de directores de marca globales.
-- **Premios, rankings, reseñas:** Múltiples Awwwards Site of the Month y Site of the Year, D&AD Yellow Pencil, Tokyo TDC.
-- **Certificaciones o partnerships:** Miembros del jurado de Awwwards y FWA.
-- **Otros:** Comunidad creativa propia (Poweredby.tokyo) y publicaciones editoriales impresas.
+- Casos: Monografías visuales de campañas y diseño de marca (Onitsuka Tiger, Barbour x Wallace & Gromit, Outfry Korean Fried Chicken, Nkora Coffee, Shiseido). Cada caso contiene fotografía editorial, vídeos y muestras de packaging/web.
+- Logos de clientes: Onitsuka Tiger, Barbour, Shiseido, Yamaha, Outfry, Nkora Coffee.
+- Testimonios: No usan testimonios directos en texto; la prueba social se fundamenta en la reputación de sus marcas clientes y en la cobertura en revistas de diseño.
+- Premios, rankings, reseñas: Premios D&AD, Awwwards Site of the Day, Tokyo TDC, The One Show.
+- Certificaciones o partnerships: «no publicado».
+- Otros: Organización de eventos comunitarios creativos («Powered by monopo»).
 
 ## Estructura de la web y diseño (alimenta TASK-004)
-- **Menú principal:** Works, About, Contact
-- **Secciones de la home, en orden:** Hero tipográfico dinámico y experimental → Carrusel vertical/horizontal de casos premiados → Manifiesto de agencia → Footer directo
-- **Anatomía de una página de servicio:** Los servicios se presentan integrados en los casos y en una página About exhaustiva.
-- **CTA principal y dónde aparece:** «Say hello»
-- **Idiomas:** Inglés y Japonés.
-- **Patrones visuales:** Vanguardia visual, estética editorial contemporánea japonesa-londinense, gran uso de espacios en blanco y tipografías con carácter.
-- **Movimiento e interacción:** Efectos de distorsión WebGL, transiciones de pantalla líquidas, animaciones de tipografía fluidas.
+- Menú principal: Work, Services, About, Contact, Studio Selector (London / Paris / Tokyo).
+- Secciones de la home, en orden: Hero con vídeo conceptual y manifiesto («Collective creativity»), grid de proyectos seleccionados con preview en vídeo, síntesis de servicios, enlaces de contacto.
+- Anatomía de una página de servicio: Planteamiento empático («You need a fresh perspective», «You want to capture the imagination»), capacidades detalladas en lista, proyectos destacados por servicio.
+- CTA principal y dónde aparece: «Say Hello» / «Contact Us» en navbar y footer.
+- Idiomas: Inglés.
+- Patrones visuales: Dirección de arte impecable, fotografía hiper-estilizada, tipografía editorial sans-serif elegante, paleta de colores adaptable al contenido visual de cada caso.
+- Movimiento e interacción: Transiciones cinematográficas, micro-animaciones al pasar el cursor y carga asíncrona de páginas sin parpadeo.
 
 ## Observaciones de Ania
-Demuestra cómo una agencia de 50 personas puede posicionarse en la cima global integrando de forma natural fotografía, video, branding y desarrollo web.
+Monopo representa la cúspide de la dirección de arte contemporánea en Europa, integrando identidad de marca, producción audiovisual (foto y vídeo) y desarrollo web bajo una sola mirada creativa. Es la mejor referencia para Pharmaco en cómo presentar el servicio 7 (Fotografía y video) integrado con diseño de marca.

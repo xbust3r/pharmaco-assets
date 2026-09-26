@@ -2,57 +2,59 @@
 
 | Campo | Valor | Fuente |
 | --- | --- | --- |
-| URL | https://bravoure.nl/ | Consulta directa a sitio oficial |
-| País / ciudades | Países Bajos (Ámsterdam) | Web corporativa |
-| Bloque · perfil | Europa · comparable | Muestra investigada (TASK-001) |
-| Tamaño del equipo | ~40 empleados | Bravoure team page & Dutch Chamber of Commerce |
-| Año de fundación | 2008 | Registro corporativo / Web oficial |
-| Fecha de consulta | 2026-09-26 | Consulta directa online |
-| Capturas | `capturas/bravoure-home.png`, `capturas/bravoure-servicios.png`, `capturas/bravoure-caso.png` | Repositorio de capturas |
+| URL | https://bravoure.nl/en | https://bravoure.nl/en |
+| País / ciudades | Países Bajos (Ámsterdam) | https://bravoure.nl/en/about-us |
+| Bloque · perfil | Europa · comparable | — |
+| Tamaño del equipo | «no publicado» | https://bravoure.nl/en/about-us |
+| Año de fundación | «no publicado» | https://bravoure.nl/en/about-us |
+| Fecha de consulta | 2026-09-26 | — |
+| Capturas | `capturas/bravoure-home.png`, `capturas/bravoure-servicios.png`, `capturas/bravoure-caso.png` | — |
 
 ## Propuesta de valor
-«Digital agency for forward-thinking brands». Especialistas en fusionar branding, diseño interactivo, plataformas de comercio electrónico y contenido audiovisual.
+«Ideas turned into real products with creation and AI.» Estudio digital de Ámsterdam que construye marcas, plataformas digitales y experiencias impulsadas por creatividad e inteligencia artificial para festivales, cultura y marcas de consumo.
 
 ## Cómo organizan sus servicios
 | Pilar / categoría (literal) | Servicios que incluye (literal) | Traducción | URL |
 | --- | --- | --- | --- |
-| Brand & Identity | Visual identity, digital branding, art direction | Identidad visual, branding digital, dirección de arte | https://bravoure.nl/services |
-| Digital Design & Development | Custom web development, headless eCommerce, interactive experiences | Desarrollo web a medida, eCommerce desacoplado, experiencias interactivas | https://bravoure.nl/services |
-| Content & Media | Video production, photography, 3D/motion design, campaign assets | Producción de video, fotografía, diseño 3D/motion, piezas de campaña | https://bravoure.nl/services |
+| Brand Identity | Brand Strategy, Visual Identity, Tone of Voice, Art Direction | Identidad de marca, estrategia de marca, tono de voz | https://bravoure.nl/en/what-we-do/brand-identity |
+| Rapid Prototyping | UX/UI, Concept Development, Validation | Prototipado rápido, UX/UI y validación de conceptos | https://bravoure.nl/en/what-we-do/rapid-prototyping |
+| Build and Launch | Web Development, E-commerce, Platform Engineering, CMS | Desarrollo web, comercio electrónico y plataformas | https://bravoure.nl/en/what-we-do/build-and-launch |
+| AI Transformation | Generative AI integration, Workflow automation, AI-driven content | Integración de IA generativa y automatización de flujos | https://bravoure.nl/en/what-we-do/ai-transformation |
+| Business Strategy | Digital Roadmap, Growth & Optimization | Estrategia de negocio, roadmap digital y optimización | https://bravoure.nl/en/what-we-do/business-strategy |
 
 ## Frente al catálogo de Pharmaco (alimenta TASK-002)
 | # | Servicio Pharmaco | ¿Lo ofrecen? | Nombre literal que usan | URL de su página |
 | --- | --- | --- | --- | --- |
-| 1 | Branding | Sí | Brand Strategy & Identity | https://bravoure.nl/services |
-| 2 | Social Media | Sí | Social Campaign Assets & Content Creation | https://bravoure.nl/services |
-| 3 | Desarrollo Web | Sí | Web Design & Creative Development | https://bravoure.nl/services |
-| 4 | Campañas publicitarias | Sí | Digital Campaign Direction & Production | https://bravoure.nl/services |
-| 5 | Performance | Sí | Paid Acquisition Creative & Media Optimisation | https://bravoure.nl/services |
-| 6 | Desarrollo de apps y software | Sí | Custom Digital Platforms & Portals | https://bravoure.nl/services |
-| 7 | Fotografía y video | Sí | Full-service Film, Video & Still Photography Studio | https://bravoure.nl/services |
-| 8 | Inteligencia artificial | Sí | Creative AI Integration & Generative Visuals | https://bravoure.nl/services |
-| 9 | SEO y GEO | Sí | Organic Search Optimization | https://bravoure.nl/services |
-| 10 | CRO | Sí | Conversion Optimization for eCommerce | https://bravoure.nl/services |
-| 11 | Datos y automatización | No | No destacan data pipelines profundos; se enfocan en marketing analytics | https://bravoure.nl/services |
+| 1 | Branding | Sí | Brand Identity | https://bravoure.nl/en/what-we-do/brand-identity |
+| 2 | Social Media | No | | |
+| 3 | Desarrollo Web | Sí | Build and Launch (Web & Platforms) | https://bravoure.nl/en/what-we-do/build-and-launch |
+| 4 | Campañas publicitarias | No | | |
+| 5 | Performance | No | | |
+| 6 | Desarrollo de apps y software | Sí | Platform Engineering & Custom Applications | https://bravoure.nl/en/what-we-do/build-and-launch |
+| 7 | Fotografía y video | Sí | Creative Content & Art Direction | https://bravoure.nl/en/what-we-do/brand-identity |
+| 8 | Inteligencia artificial | Sí | AI Transformation | https://bravoure.nl/en/what-we-do/ai-transformation |
+| 9 | SEO y GEO | No | | |
+| 10 | CRO | Sí | Growth & Conversion Optimization | https://bravoure.nl/en/what-we-do/business-strategy |
+| 11 | Datos y automatización | Sí | Workflow Automation & AI-driven Systems | https://bravoure.nl/en/what-we-do/ai-transformation |
 
-**Servicios suyos que no están en la tabla:** Event Digital Platforms, Sound Design, 3D Spatial Experiences
+**Servicios suyos que no están en la tabla:** Festival & Event Digital Platforms, Rapid Prototyping Sprints.
 
 ## Prueba social (alimenta TASK-003)
-- **Casos:** Casos audiovisuales de gran escala con trailers de video, capturas de pantalla a pantalla completa y cifras de ventas y asistentes.
-- **Logos de clientes:** Amsterdam Dance Event (ADE), Awakenings, Festicket, Van Gogh Museum, Lowlands Festival.
-- **Testimonios:** Citas de productores ejecutivos y directores creativos de festivales y marcas de entretenimiento.
-- **Premios, rankings, reseñas:** Múltiples Awwwards (Site of the Day, Developer Award), FWA of the Day, Dutch Interactive Awards.
-- **Certificaciones o partnerships:** Shopify Plus Partner.
-- **Otros:** Showreel anual en video 4K de alto impacto en cabecera.
+- Casos: Casos de gran impacto visual e interactivo (Oxfam Novib, Kalkhoff Bikes, ADE - Amsterdam Dance Event, Lowlands Festival, DGTL). Describen objetivos, diseño interactivo y resultados de conversión.
+- Logos de clientes: ADE, Lowlands, Oxfam Novib, Kalkhoff, DGTL, ID&T.
+- Testimonios: Declaraciones directas de directores de festival y directores de marketing de marcas.
+- Premios, rankings, reseñas: Múltiples premios en Awwwards (Site of the Day, Developer Award) y FWA of the Day.
+- Certificaciones o partnerships: Shopify Plus Partner, Storyblok Partner.
+- Otros: Sección de «Insights» con reflexiones sobre el impacto de la IA en el diseño de producto.
 
 ## Estructura de la web y diseño (alimenta TASK-004)
-- **Menú principal:** Work, Services, About, Insights, Contact
-- **Secciones de la home, en orden:** Showreel de video en autoplay como fondo de hero → Titular de impacto en gran tamaño → Grid dinámico de proyectos con previews en video al hacer hover → Lista de servicios con microinteracción → Footer con mapa y contacto
-- **Anatomía de una página de servicio:** Definición del servicio → Proyectos representativos en video → Lista de entregables desglosados → Contacto
-- **CTA principal y dónde aparece:** «Start a project»
-- **Idiomas:** Inglés y Holandés.
-- **Patrones visuales:** Diseño holandés refinado, tipografía bold sans-serif, ritmo editorial sofisticado, altísima calidad de fotografía y video original.
-- **Movimiento e interacción:** Smooth scroll, transiciones de opacidad y escala con WebGL y Canvas en elementos seleccionados.
+- Menú principal: Case studies, What we do, About us, Insights, Contact, selector EN / NL.
+- Secciones de la home, en orden: Hero tipográfico animado con claim de IA y creación, escaparate a pantalla completa de casos de estudio, desglose de pilares de servicio, bloque de contacto directo con fundador/director comercial.
+- Anatomía de una página de servicio: Declaración de intenciones, sub-servicios con descripción concreta, tecnologías utilizadas, casos de estudio asociados.
+- CTA principal y dónde aparece: «Get in touch» / «Contact Koen Straatman» integrado en el footer y en la barra superior.
+- Idiomas: Inglés y holandés.
+- Patrones visuales: Tipografía display contemporánea de alto contraste, modo oscuro con fondos negros profundos y acentos en verde lima/blanco, grids asimétricos.
+- Movimiento e interacción: Animaciones web fluidas por WebGL / GSAP, micro-scroll horizontal y preview en vídeo de cada proyecto al pasar el ratón.
 
 ## Observaciones de Ania
-Caso ideal para inspirar el Servicio 7 (Foto y Video) y la relación entre branding, producción audiovisual y desarrollo web.
+Bravoure demuestra con maestría cómo una agencia boutique comparable de 25-40 personas puede posicionar la IA generativa como su pilar central de diferenciación («AI Transformation») sin perder el rigor del diseño visual de alta gama. Sus páginas de servicio tienen URLs individuales ejemplares con entregables claros.

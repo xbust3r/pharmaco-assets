@@ -1,58 +1,59 @@
-# Neo Consulting AI
+# Neo Consulting
 
 | Campo | Valor | Fuente |
 | --- | --- | --- |
-| URL | https://neoconsulting.ai/ | Consulta directa a sitio oficial |
-| País / ciudades | Perú (Lima) / Operaciones en Colombia, Chile, México | Web corporativa |
-| Bloque · perfil | América · comparable (Latam / Perú) | Muestra investigada (TASK-001) |
-| Tamaño del equipo | ~65 empleados | LinkedIn corporate data & Great Place to Work Perú 2026 |
-| Año de fundación | 2002 | Registro corporativo / Web oficial |
-| Fecha de consulta | 2026-09-26 | Consulta directa online |
-| Capturas | `capturas/neo-consulting-home.png`, `capturas/neo-consulting-servicios.png`, `capturas/neo-consulting-caso.png` | Repositorio de capturas |
+| URL | https://neoconsulting.ai/ | https://neoconsulting.ai/ |
+| País / ciudades | Perú (Lima), Colombia (Bogotá), Chile (Santiago) | https://neoconsulting.ai/ |
+| Bloque · perfil | América · comparable | — |
+| Tamaño del equipo | «no publicado» | https://neoconsulting.ai/nosotros |
+| Año de fundación | «no publicado» | https://neoconsulting.ai/nosotros |
+| Fecha de consulta | 2026-09-26 | — |
+| Capturas | `capturas/neo-consulting-home.png`, `capturas/neo-consulting-servicios.png`, `capturas/neo-consulting-caso.png` | — |
 
 ## Propuesta de valor
-«Consultoría de estrategia digital, analítica de datos, IA y marketing de crecimiento para empresas líderes en América Latina». Referente directo en el mercado peruano en convergencia de marketing y tecnología.
+«Consultoría estratégica en Inteligencia artificial. Llevamos tu organización al siguiente nivel.» Consultora digital líder en Perú y la región andina enfocada en estrategia de adopción de IA, gobernanza de datos, analítica avanzada y crecimiento digital.
 
 ## Cómo organizan sus servicios
 | Pilar / categoría (literal) | Servicios que incluye (literal) | Traducción | URL |
 | --- | --- | --- | --- |
-| Estrategia & Innovación con IA | Transformación digital, consultoría de IA generativa, diseño de agentes inteligentes | Transformación digital, consultoría de IA generativa, agentes inteligentes | https://neoconsulting.ai/servicios/ |
-| Analítica, Datos & Automatización | Google Cloud, Business Intelligence, Data Lake, CRM & marketing automation | Google Cloud, Business Intelligence, Data Lake, automatización CRM | https://neoconsulting.ai/servicios/ |
-| Marketing Digital, CRO & eCommerce | Paid media, SEO, optimización de conversiones (CRO), desarrollo de landing pages | Medios de pago, SEO, optimización de conversión, landing pages | https://neoconsulting.ai/servicios/ |
+| Estrategia y adopción AI | Consultoría estratégica de IA, casos de uso, gobernanza y cultura | Estrategia de IA, adopción y gobernanza | https://neoconsulting.ai/servicios/ia |
+| Tecnología, Governance de Data y AI | Data Governance, Modern Data Architecture, Cloud Data | Gobernanza de datos, arquitectura de datos y nube | https://neoconsulting.ai/servicios/analytics |
+| Revenue & Growth AI | CRO, Growth Hacking, Marketing con IA, Automatización de ventas | CRO, growth marketing e IA aplicada a ingresos | https://neoconsulting.ai/servicios/growth |
+| Staffing + AI | Talento especializado en datos e inteligencia artificial | Staffing y talento de datos e IA | https://neoconsulting.ai/servicios/talents |
 
 ## Frente al catálogo de Pharmaco (alimenta TASK-002)
 | # | Servicio Pharmaco | ¿Lo ofrecen? | Nombre literal que usan | URL de su página |
 | --- | --- | --- | --- | --- |
-| 1 | Branding | No | No ofrecen branding gráfico; se enfocan en negocio y analítica | https://neoconsulting.ai/servicios/ |
-| 2 | Social Media | Sí | Paid Social & Data-Driven Social Strategies | https://neoconsulting.ai/servicios/ |
-| 3 | Desarrollo Web | Sí | Desarrollo de Landing Pages & Plataformas de Conversión | https://neoconsulting.ai/servicios/ |
-| 4 | Campañas publicitarias | Sí | Campañas de Medios Digitales de Alto Rendimiento | https://neoconsulting.ai/servicios/ |
-| 5 | Performance | Sí | Gestión de Performance, PPC y Compra Programática | https://neoconsulting.ai/servicios/ |
-| 6 | Desarrollo de apps y software | Sí | Desarrollo de Aplicaciones de Datos & Soluciones Cloud | https://neoconsulting.ai/servicios/ |
-| 7 | Fotografía y video | No | No hacen producción audiovisual; subcontratan o usan activos del cliente | https://neoconsulting.ai/servicios/ |
-| 8 | Inteligencia artificial | Sí | Soluciones de Inteligencia Artificial para Marketing y Operaciones | https://neoconsulting.ai/servicios/ |
-| 9 | SEO y GEO | Sí | SEO Estratégico & Optimización Orgánica para Motores de Búsqueda | https://neoconsulting.ai/servicios/ |
-| 10 | CRO | Sí | Programas de Experimentación Continua y CRO | https://neoconsulting.ai/servicios/ |
-| 11 | Datos y automatización | Sí | Ecosistemas de Datos, CDP, Google Analytics 4 y Automatización | https://neoconsulting.ai/servicios/ |
+| 1 | Branding | No | | |
+| 2 | Social Media | No | | |
+| 3 | Desarrollo Web | No | | |
+| 4 | Campañas publicitarias | Sí | Revenue & Growth AI (Paid Media con IA) | https://neoconsulting.ai/servicios/growth |
+| 5 | Performance | Sí | Revenue & Growth AI | https://neoconsulting.ai/servicios/growth |
+| 6 | Desarrollo de apps y software | No | | |
+| 7 | Fotografía y video | No | | |
+| 8 | Inteligencia artificial | Sí | Estrategia y adopción AI | https://neoconsulting.ai/servicios/ia |
+| 9 | SEO y GEO | Sí | SEO con IA & Growth Strategy | https://neoconsulting.ai/servicios/growth |
+| 10 | CRO | Sí | Optimización de conversión & CRO | https://neoconsulting.ai/servicios/growth |
+| 11 | Datos y automatización | Sí | Tecnología, Governance de Data y AI | https://neoconsulting.ai/servicios/analytics |
 
-**Servicios suyos que no están en la tabla:** Cursos y Capacitaciones Corporativas en Datos/IA, Gobierno de Datos
+**Servicios suyos que no están en la tabla:** Staffing + AI (Headhunting y outsourcing de talento de datos e IA).
 
 ## Prueba social (alimenta TASK-003)
-- **Casos:** Casos publicados para los principales bancos, retailers y empresas de telecomunicaciones del Perú, detallando incremento de ventas digitales y ahorro de costes.
-- **Logos de clientes:** BCP, BBVA Perú, Interbank, Rimac Seguros, Falabella, Claro, Alicorp.
-- **Testimonios:** Declaraciones de Gerentes de Marketing y Canales Digitales en Perú.
-- **Premios, rankings, reseñas:** Premios DIGI (IAB Perú), Google Premier Partner Awards finalist.
-- **Certificaciones o partnerships:** Google Cloud Premier Partner, Google Marketing Platform Certified, Salesforce Partner.
-- **Otros:** Webinars masivos, podcasts de innovación y reportes anuales sobre el estado del eCommerce y la IA en Perú.
+- Casos: Casos corporativos en Perú y Latinoamérica integrados en sus páginas de servicios con métricas de incremento en ventas, optimización de algoritmos y ahorro de costes operativos.
+- Logos de clientes: BCP, BBVA, Interbank, Rimac Seguros, Falabella, Ripley, Belcorp, Entel.
+- Testimonios: Declaraciones de gerentes de innovación, marketing digital y analítica de empresas peruanas.
+- Premios, rankings, reseñas: «no publicado» en la web actual.
+- Certificaciones o partnerships: Google Cloud Partner, AWS Partner, Databricks Partner.
+- Otros: Web multilingüe con versiones en español, inglés y francés.
 
 ## Estructura de la web y diseño (alimenta TASK-004)
-- **Menú principal:** Servicios, Casos de éxito, Nosotros, Blog/Eventos, Contacto
-- **Secciones de la home, en orden:** Hero enfocado en IA y analítica de datos → Logos de clientes corporativos de Perú/Latam → Áreas de servicio interactivas → Casos de estudio locales destacados → Eventos y webinars → Formulario de contacto
-- **Anatomía de una página de servicio:** Qué es el servicio → Metodología orientada a datos → Casos locales de referencia → Formulario de contacto directo
-- **CTA principal y dónde aparece:** «Agenda una asesoría»
-- **Idiomas:** Español.
-- **Patrones visuales:** Diseño corporativo contemporáneo con azul y morado tech, fotografías de profesionales peruanos, esquemas claros de flujos de datos.
-- **Movimiento e interacción:** Transiciones sencillas, carga rápida orientada a SEO y accesibilidad.
+- Menú principal: Inicio, Quiénes Somos, Servicios (Estrategia y adopción AI, Tecnología y Data, Revenue & Growth, Staffing), Trabaja con Nosotros, Contáctanos, Selector de idiomas (ES / EN / FR).
+- Secciones de la home, en orden: Hero con claim de consultoría estratégica en IA, logos de clientes corporativos peruanos y regionales, los 4 pilares de servicio explicados, propuesta de valor de consultoría, bloque de contacto.
+- Anatomía de una página de servicio: Definición del pilar, beneficios cuantificables para la organización, sub-servicios y soluciones aplicadas, formulario para agendar reunión.
+- CTA principal y dónde aparece: «Contáctanos» / «Ver servicios» en navbar flotante y módulos centrales.
+- Idiomas: Español, inglés y francés.
+- Patrones visuales: Aplicación construida en Next.js, diseño minimalista moderno, paleta en tonos oscuros con acentos en violeta/azul eléctrico y tipografía sans-serif geométrica.
+- Movimiento e interacción: Transiciones dinámicas entre páginas, animaciones suaves al hacer scroll.
 
 ## Observaciones de Ania
-El comparable más directo en el mercado local de Pharmaco (Perú). Muestra cómo evolucionar de una consultora de marketing digital tradicional hacia una firma líder en IA, CRO y datos.
+Neo Consulting es el comparable directo más relevante de Pharmaco en su mercado de origen (Perú / Latam). Su evolución es una lección maestra: eliminaron los servicios de diseño tradicional para reconvertirse íntegramente en consultoría de IA, Data y Revenue Growth. Su foco en los 4 servicios avanzados (IA, Data, Growth, Staffing) sirve de referencia directa para los servicios 8 a 11 de Pharmaco.

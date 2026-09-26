@@ -1,58 +1,59 @@
-# Work & Co (parte de Accenture Song)
+# Work & Co
 
 | Campo | Valor | Fuente |
 | --- | --- | --- |
-| URL | https://work.co/ | Consulta directa a sitio oficial |
-| País / ciudades | Estados Unidos (Brooklyn, NY / San Francisco) / Europa / Brasil | Web corporativa |
-| Bloque · perfil | América · referente | Muestra investigada (TASK-001) |
-| Tamaño del equipo | ~450 empleados | Work & Co company profile 2026 |
-| Año de fundación | 2013 | Registro corporativo / Web oficial |
-| Fecha de consulta | 2026-09-26 | Consulta directa online |
-| Capturas | `capturas/work-and-co-home.png`, `capturas/work-and-co-servicios.png`, `capturas/work-and-co-caso.png` | Repositorio de capturas |
+| URL | https://work.co/ | https://work.co/ |
+| País / ciudades | EE. UU. (Brooklyn - Nueva York - sede principal) | https://work.co/company/ |
+| Bloque · perfil | América · referente | — |
+| Tamaño del equipo | «no publicado» | https://work.co/company/ |
+| Año de fundación | 2013 | https://work.co/company/ |
+| Fecha de consulta | 2026-09-26 | — |
+| Capturas | `capturas/work-and-co-home.png`, `capturas/work-and-co-servicios.png`, `capturas/work-and-co-caso.png` | — |
 
 ## Propuesta de valor
-«We define, design, and build digital products and experiences used by millions of people every day». Reconocida mundialmente por su enfoque purista en diseño y desarrollo de productos de software.
+«We solve complex problems through design & technology. From Ambiguity to Impact™.» Compañía de diseño y desarrollo de productos y plataformas digitales a escala masiva, integrada en Accenture Song.
 
 ## Cómo organizan sus servicios
 | Pilar / categoría (literal) | Servicios que incluye (literal) | Traducción | URL |
 | --- | --- | --- | --- |
-| Digital Product Design | Product strategy, UX/UI design, mobile apps, web applications, design systems | Estrategia de producto, diseño UX/UI, apps móviles, apps web, sistemas de diseño | https://work.co/how-we-work/ |
-| Engineering & Technology | Full-stack development, mobile architecture, cloud infrastructure, QA | Desarrollo full-stack, arquitectura móvil, infraestructura cloud, QA | https://work.co/how-we-work/ |
-| AI & Data Platforms | AI interfaces, data integration, machine learning features | Interfaces de IA, integración de datos, funciones de machine learning | https://work.co/how-we-work/ |
+| Product Strategy | Digital Transformation, Discovery, Vision & Roadmap, Market Analysis | Estrategia de producto, transformación y roadmap digital | https://work.co/company/ |
+| Digital Design | Design Systems, UX/UI Design, Prototyping, Brand Expression | Sistemas de diseño, UX/UI y diseño de interacción | https://work.co/company/ |
+| Engineering | Full-stack Engineering, Mobile Apps, Cloud Platforms, AI Integration | Ingeniería de software, aplicaciones móviles y nube | https://work.co/company/ |
+| AI Transformation | Generative AI Prototypes, AI-assisted Software Delivery, Enterprise Models | Prototipos de IA generativa y entrega de software asistida por IA | https://work.co/ai/ |
 
 ## Frente al catálogo de Pharmaco (alimenta TASK-002)
 | # | Servicio Pharmaco | ¿Lo ofrecen? | Nombre literal que usan | URL de su página |
 | --- | --- | --- | --- | --- |
-| 1 | Branding | Sí | Brand Identity Systems for Digital Products | https://work.co/how-we-work/ |
-| 2 | Social Media | No | No gestionan redes sociales | https://work.co/how-we-work/ |
-| 3 | Desarrollo Web | Sí | Digital Platforms & Flagship Websites | https://work.co/how-we-work/ |
-| 4 | Campañas publicitarias | No | No hacen campañas publicitarias de medios masivos | https://work.co/how-we-work/ |
-| 5 | Performance | No | No gestionan compra de medios | https://work.co/how-we-work/ |
-| 6 | Desarrollo de apps y software | Sí | Native Mobile Applications & Enterprise Software | https://work.co/how-we-work/ |
-| 7 | Fotografía y video | Sí | Motion Design, 3D Assets & Product Video | https://work.co/how-we-work/ |
-| 8 | Inteligencia artificial | Sí | Generative AI Interfaces & Machine Learning Systems | https://work.co/how-we-work/ |
-| 9 | SEO y GEO | Sí | Technical SEO as part of Web Platform Builds | https://work.co/how-we-work/ |
-| 10 | CRO | Sí | Product Analytics & Continuous Optimization | https://work.co/how-we-work/ |
-| 11 | Datos y automatización | Sí | Data Architecture, Cloud Infrastructure & APIs | https://work.co/how-we-work/ |
+| 1 | Branding | Sí | Brand Expression in Digital Products | https://work.co/company/ |
+| 2 | Social Media | No | | |
+| 3 | Desarrollo Web | Sí | Web Platforms & Commerce Engineering | https://work.co/clients/ikea/ |
+| 4 | Campañas publicitarias | No | | |
+| 5 | Performance | No | | |
+| 6 | Desarrollo de apps y software | Sí | Mobile & Custom Software Engineering | https://work.co/company/ |
+| 7 | Fotografía y video | No | | |
+| 8 | Inteligencia artificial | Sí | AI Practice & Generative Experience Design | https://work.co/ai/ |
+| 9 | SEO y GEO | No | | |
+| 10 | CRO | Sí | Commerce Experience Optimization & Checkout Overhauls | https://work.co/clients/ikea/ |
+| 11 | Datos y automatización | Sí | Enterprise Cloud Systems & Data Integration | https://work.co/company/ |
 
-**Servicios suyos que no están en la tabla:** Kiosk & Physical POS Interfaces, Accessibility Audits & Remediation
+**Servicios suyos que no están en la tabla:** In-store Touchpoints & Hardware Integration, Design System Governance.
 
 ## Prueba social (alimenta TASK-003)
-- **Casos:** Casos detallados con descripciones precisas de las soluciones creadas para plataformas que procesan miles de millones de dólares.
-- **Logos de clientes:** Apple, IKEA, PGA Tour, Gatorade, Virgin America, Google, Mailchimp.
-- **Testimonios:** Citas de CEOs y Chief Product Officers de clientes de primer nivel.
-- **Premios, rankings, reseñas:** Fast Company Most Innovative Companies, Cannes Lions, D&AD, Red Dot.
-- **Certificaciones o partnerships:** Líder reconocido en ingeniería y diseño por Forrester y Gartner.
-- **Otros:** Modelo de trabajo único: equipos senior sin capas intermedias de cuentas ni project managers junior.
+- Casos: Proyectos emblemáticos que procesan miles de millones de dólares en transacciones (IKEA: rediseño global de e-commerce y tiendas físicas; Apple; MTA - metro de Nueva York; Philz Coffee; Aesop; VistaPrint).
+- Logos de clientes: Apple, IKEA, Google, Nike, MTA, Mercedes-Benz, Aesop, Gatorade.
+- Testimonios: Respaldados por líderes mundiales de tecnología y diseño en notas de prensa de Fast Company y Harvard Business Review.
+- Premios, rankings, reseñas: Más de 50 premios Webby, Fast Company Most Innovative Companies (varios años consecutivos).
+- Certificaciones o partnerships: Parte de Accenture Song (declarado formalmente en el pie de página de la web).
+- Otros: Sección especial `/grid` y `/ai/` que detalla su nuevo modelo de entrega de software acelerado por inteligencia artificial.
 
 ## Estructura de la web y diseño (alimenta TASK-004)
-- **Menú principal:** Clients, How We Work, Company, News, Careers, Contact
-- **Secciones de la home, en orden:** Página ultra-minimalista: grid dinámico de proyectos sin distracciones → Metodología de trabajo en una sola frase → Lista de clientes → Enlace de contacto
-- **Anatomía de una página de servicio:** Se presentan bajo la metodología «How We Work»: prototipado rápido, equipos senior integrados, código desde el día uno.
-- **CTA principal y dónde aparece:** «Work with us»
-- **Idiomas:** Inglés.
-- **Patrones visuales:** Perfeccionismo tipográfico suizo, contraste puro blanco/negro/rojo, sin animaciones gratuitas, foco absoluto en el producto final.
-- **Movimiento e interacción:** Navegación instantánea y fluida, carga ultra-optimizada.
+- Menú principal: Clients, Company, News, AI, Grid, Careers, Contact.
+- Secciones de la home, en orden: Hero tipográfico sin rodeos («We solve complex problems through design & technology»), cuadrícula modular de clientes y proyectos emblemáticos con enlaces a casos monográficos, enlaces a artículos de liderazgo técnico, pie de página con políticas de Accenture.
+- Anatomía de una página de servicio: Presentada en la sección `/company/` con su manifiesto operativo («From Ambiguity to Impact™»), desglosando estrategia, diseño e ingeniería de software.
+- CTA principal y dónde aparece: Enlaces directos a correos ejecutivos (`newbiz@work.co`, `press@work.co`) visibles en navegación y pie.
+- Idiomas: Inglés.
+- Patrones visuales: Máximo rigor minimalista suizo, fondo blanco pulcro, tipografía sans-serif de trazo grueso, layout en cuadrícula estricta sin distracciones decorativas.
+- Movimiento e interacción: Velocidad instantánea, transiciones limpias y nula ornamentación superflua.
 
 ## Observaciones de Ania
-El referente mundial indiscutible en ingeniería de software y diseño de apps. Esencial para fijar el listón de calidad en el Servicio 6 (Software y Apps).
+Work & Co es el referente supremo en ingeniería de software y diseño de productos a escala global. Como hallazgo relevante de la navegación en vivo (resaltado en la auditoría), su pertenencia a Accenture Song se evidencia en sus políticas legales. Su nueva división de IA (`/ai/`) y el manifiesto «The new model of software delivery» muestran hacia dónde se dirige el desarrollo de software profesional.

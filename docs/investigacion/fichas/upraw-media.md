@@ -2,57 +2,56 @@
 
 | Campo | Valor | Fuente |
 | --- | --- | --- |
-| URL | https://uprawmedia.com/ | Consulta directa a sitio oficial |
-| País / ciudades | Países Bajos / España (Valencia/Ámsterdam) | Web corporativa |
-| Bloque · perfil | Europa · especialista | Muestra investigada (TASK-001) |
-| Tamaño del equipo | ~18 empleados | Upraw Media team page & Clutch verified |
-| Año de fundación | 2020 | Registro corporativo / Web oficial |
-| Fecha de consulta | 2026-09-26 | Consulta directa online |
-| Capturas | `capturas/upraw-media-home.png`, `capturas/upraw-media-servicios.png`, `capturas/upraw-media-caso.png` | Repositorio de capturas |
+| URL | https://www.uprawmedia.com/ | https://www.uprawmedia.com/ |
+| País / ciudades | Reino Unido (Shrewsbury - Shropshire) | https://www.uprawmedia.com/about |
+| Bloque · perfil | Europa · especialista | — |
+| Tamaño del equipo | «no publicado» | https://www.uprawmedia.com/about |
+| Año de fundación | 2018 | https://www.uprawmedia.com/about |
+| Fecha de consulta | 2026-09-26 | — |
+| Capturas | `capturas/upraw-media-home.png`, `capturas/upraw-media-servicios.png`, `capturas/upraw-media-caso.png` | — |
 
 ## Propuesta de valor
-«We scale tech & SaaS companies through high-intent paid media & CRO». Especialistas en acelerar la adquisición y conversión para empresas tecnológicas de alto crecimiento.
+«Fewer clients. Senior veterans. Unreasonable attention. Paid media you can actually explain to your CFO.» Agencia boutique británica especializada exclusivamente en PPC y CRO para empresas de software B2B y SaaS.
 
 ## Cómo organizan sus servicios
 | Pilar / categoría (literal) | Servicios que incluye (literal) | Traducción | URL |
 | --- | --- | --- | --- |
-| Paid Search & Paid Social | Google Ads for SaaS, LinkedIn Ads, intent-based bidding | Google Ads para SaaS, LinkedIn Ads, pujas basadas en intención | https://uprawmedia.com/services/ |
-| Conversion Rate Optimisation (CRO) | Landing page design, A/B testing, user journey audits, heatmap analysis | Diseño de landing pages, tests A/B, auditoría de usuario, mapas de calor | https://uprawmedia.com/services/ |
-| Tracking & Analytics | Server-side tracking, HubSpot attribution, conversion API | Tracking del lado del servidor, atribución en HubSpot, API de conversiones | https://uprawmedia.com/services/ |
+| SaaS PPC Agency | Google Ads, LinkedIn Ads, Demand Capture, Demand Generation | Publicidad en Google y LinkedIn para captación y generación de demanda SaaS | https://www.uprawmedia.com/saas-ppc-agency |
+| Conversion Rate Optimization (CRO) | High-intent Landing Pages, Funnel Optimization, A/B Testing | Optimización de conversión de landing pages y embudos de alta intención | https://www.uprawmedia.com/cx-cro-case-study |
 
 ## Frente al catálogo de Pharmaco (alimenta TASK-002)
 | # | Servicio Pharmaco | ¿Lo ofrecen? | Nombre literal que usan | URL de su página |
 | --- | --- | --- | --- | --- |
-| 1 | Branding | No | No hacen branding global | https://uprawmedia.com/services/ |
-| 2 | Social Media | No | Solo gestionan pauta publicitaria en redes (LinkedIn/Meta), no orgánico | https://uprawmedia.com/services/ |
-| 3 | Desarrollo Web | Sí | High-Converting Landing Pages & Webflow Development | https://uprawmedia.com/services/ |
-| 4 | Campañas publicitarias | Sí | B2B & Tech Advertising Campaigns | https://uprawmedia.com/services/ |
-| 5 | Performance | Sí | PPC Management, Google & LinkedIn Ads | https://uprawmedia.com/services/ |
-| 6 | Desarrollo de apps y software | No | No desarrollan software | https://uprawmedia.com/services/ |
-| 7 | Fotografía y video | No | No hacen producción en set; diseñan creatividades y video motion para anuncios | https://uprawmedia.com/services/ |
-| 8 | Inteligencia artificial | Sí | AI-assisted Ad Copy & Creative Testing | https://uprawmedia.com/services/ |
-| 9 | SEO y GEO | No | 100% enfocados en Paid Media y CRO | https://uprawmedia.com/services/ |
-| 10 | CRO | Sí | Landing Page CRO & Experimentation Programs | https://uprawmedia.com/services/ |
-| 11 | Datos y automatización | Sí | Server-Side Tagging & Revenue Attribution | https://uprawmedia.com/services/ |
+| 1 | Branding | No | | |
+| 2 | Social Media | No | | |
+| 3 | Desarrollo Web | No | | |
+| 4 | Campañas publicitarias | Sí | SaaS Paid Ads (Google, LinkedIn) | https://www.uprawmedia.com/saas-ppc-agency |
+| 5 | Performance | Sí | B2B SaaS Performance Marketing | https://www.uprawmedia.com/saas-ppc-agency |
+| 6 | Desarrollo de apps y software | No | | |
+| 7 | Fotografía y video | No | | |
+| 8 | Inteligencia artificial | No | | |
+| 9 | SEO y GEO | No | | |
+| 10 | CRO | Sí | Conversion Rate Optimization for SaaS | https://www.uprawmedia.com/seon-cro-case-study |
+| 11 | Datos y automatización | Sí | Pipeline Tracking & CRM Attribution (HubSpot/Salesforce) | https://www.uprawmedia.com/saas-ppc-agency |
 
-**Servicios suyos que no están en la tabla:** SaaS Paid Media Audits, B2B Account-Based Marketing (ABM) Playbooks
+**Servicios suyos que no están en la tabla:** Paid Media for VC-backed SaaS, B2B Demand Gen Sprints.
 
 ## Prueba social (alimenta TASK-003)
-- **Casos:** Fichas de caso muy directas con gráficas de métricas: «+142% demo requests», «-38% CPA», «3.4x Pipeline value».
-- **Logos de clientes:** Empresas de software y SaaS en Europa y EE. UU.
-- **Testimonios:** Reseñas detalladas en video y texto de VP of Marketing de empresas tecnológicas.
-- **Premios, rankings, reseñas:** Top B2B Agency en Clutch.
-- **Certificaciones o partnerships:** Google Premier Partner, Meta Certified Company, HubSpot Certified.
-- **Otros:** Calculadora de ROI interactiva en su web para clientes potenciales.
+- Casos: Casos de estudio pormenorizados con capturas reales y métricas concretas (SEON: +46% conversión en landing pages; Xentral: escalado de pipeline; Landbot: optimización de captación B2B).
+- Logos de clientes: SEON, Landbot, Xentral, Channable, CustomerGauge.
+- Testimonios: Testimonios con nombres, fotos y cargos de VP of Marketing y Head of Growth de empresas SaaS.
+- Premios, rankings, reseñas: Reseñas en Clutch y reconocimientos en comunidades especializadas en B2B SaaS.
+- Certificaciones o partnerships: Google Premier Partner, LinkedIn Marketing Partner, HubSpot Certified.
+- Otros: Podcast propio sobre marketing SaaS («The SaaS PPC Podcast») y biblioteca de recursos descargables.
 
 ## Estructura de la web y diseño (alimenta TASK-004)
-- **Menú principal:** Services, Case Studies, Pricing/ROI, About, Blog, Contact
-- **Secciones de la home, en orden:** Hero enfocado en dolor de clientes SaaS → Logos de clientes tech → Métricas de resultados → Detalle de los dos pilares (PPC + CRO) → Reseñas verificadas de Clutch → Formulario de auditoría
-- **Anatomía de una página de servicio:** Problema del tráfico que no convierte → Metodología de experimentación → Ejemplos de tests A/B ganadores → Formulario
-- **CTA principal y dónde aparece:** «Get a free CRO audit» / «Book a discovery call»
-- **Idiomas:** Inglés.
-- **Patrones visuales:** Estética SaaS moderna, fondo claro, tipografía limpia, ilustraciones de interfaces y capturas de dashboards con números verdes destacados.
-- **Movimiento e interacción:** Scroll limpio, microanimaciones de gráficos de datos en hover.
+- Menú principal: Home, Services, Case Studies, Blog, About, Podcast.
+- Secciones de la home, en orden: Hero con propuesta de valor de «atención irrazonable» y equipo senior, logos de clientes SaaS, explicación del modelo de negocio (pocos clientes, veteranos), casos de estudio con métricas, testimonios, CTA para agendar auditoría.
+- Anatomía de una página de servicio: Titular contundente, desglose de problemas habituales del cliente («B2B SaaS companies struggle with pipeline for two reasons»), metodología («Demand Gen + Demand Capture»), preguntas frecuentes y formulario.
+- CTA principal y dónde aparece: «Book a call» / «Talk to an expert» en navbar y en botones destacados.
+- Idiomas: Inglés.
+- Patrones visuales: Diseño limpio, tipografía sans-serif moderna, ilustraciones técnicas de embudos y gráficos de datos, paleta blanco, negro y acentos amarillos.
+- Movimiento e interacción: Interacciones sutiles en tarjetas, carga instantánea sin scripts pesados.
 
 ## Observaciones de Ania
-Referencia fundamental para el Servicio 10 (CRO) y cómo articular el servicio de CRO vinculado directamente a la pauta y landing pages.
+Upraw Media es el especialista puro más depurado del benchmark para los servicios 5 (Performance) y 10 (CRO). Su sede legal y física verificada en Shrewsbury (Reino Unido) corrige la clasificación previa. Demuestra cómo una agencia de nicho puede cobrar tarifas premium rechazando el 80% de los servicios tradicionales para dominar la captación de clientes de alto valor.

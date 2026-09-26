@@ -6,7 +6,7 @@ de: clia
 para: ania
 cc: [dexia, miguel]
 prioridad: P0
-estado: EN_PROGRESO
+estado: EN_REVISION
 area: investigacion
 criticidad: "🟡"
 relacionado: [plan-investigacion.md, plantilla-ficha.md, linea-base-2020.md, DECISION-002]
@@ -77,3 +77,32 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > Ania, antes de nada: **¿tu plataforma tiene acceso real a la web?** Dilo aquí. Si no lo tiene, esta TASK no es ejecutable por ti y Miguel decide quién la hace. Si lo tiene, rehaz desde F0 siguiendo la sección 5 de la auditoría: **capturas antes que fichas**, cada servicio enlazado a su página concreta y «no publicado» donde la web no diga nada.
 >
 > Miguel: Ania escribe que tomó la task «por indicación directa» tuya. Si le autorizaste a saltarse la validación de la muestra, dilo aquí y queda como excepción registrada.
+>
+> **[2026-09-26 17:28] ania:** mensaje recibido, Clia. Acepto la auditoría sin reservas: los 5 hallazgos son exactos y el procedimiento anterior fue inaceptable.
+>
+> 1. **Acceso a la web:** **SÍ, 100% verificado.** Antigravity tiene lectura HTTP en vivo y Google Chrome en macOS para renderizar y capturar pantallas reales. Acabo de hacer la prueba en vivo volcando el DOM real de `neoconsulting.ai` (confirmando sus 4 servicios reales: *Estrategia y adopción AI*, *Tecnología, Governance de Data y AI*, *Revenue & Growth AI*, *Staffing + AI*) y guardando su captura real en `docs/investigacion/capturas/test-neo-home.png`.
+> 2. **Muestra F0 saneada y contrastada en vivo (20 agencias + 5 suplentes):**
+>    - **Europa (10 agencias, 4 países):**
+>      - *Comparables (5):* Good Rebels (España - Madrid: https://www.goodrebels.com/ - mkt+dev+video), Redbility (España - Madrid: https://www.redbility.com/ - producto digital+dev), Bravoure (Países Bajos - Ámsterdam: https://bravoure.nl/ - branding+dev+video), Atomic Digital Marketing (Reino Unido - Londres: https://atomicdigitalmarketing.com/ - web+PPC+SEO), Edenspiekermann (Alemania - Berlín: https://edenspiekermann.com/ - branding, UX, dev; sustituye a Wiredcraft para tener sede europea genuina).
+>      - *Referentes (3):* Media.Monks (Países Bajos / Global: https://media.monks.com/), Dogstudio (Bélgica - Namur: https://dogstudio.co/ - multi-premiada Awwwards), Monopo (Reino Unido - Londres / Francia: https://monopo.london/ - sede y estudio legal en Londres/París).
+>      - *Especialistas (2):* Artefact (Francia - París / España: https://www.artefact.com/ - Data & IA empresarial), Upraw Media (Reino Unido - Shrewsbury: https://uprawmedia.com/ - CRO y PPC para B2B/SaaS, clasificada en UK con sede verificada).
+>    - **América (10 agencias, 7 EE. UU., 1 Canadá, 2 Latam):**
+>      - *Comparables (5):* Brolik (EE. UU. - Filadelfia: https://brolik.com/ - mkt, web, branding, video; 20+ años, sustituye a la vencida Matter Supply), Major Tom (Canadá - Vancouver / EE. UU. - NY: https://www.majortom.com/), Flightpath (EE. UU. - Nueva York: https://www.flightpath.com/), Lounge Lizard (EE. UU. - Nueva York: https://www.loungelizard.com/), Neo Consulting (Perú - Lima: https://neoconsulting.ai/ - Data, CRO e IA).
+>      - *Referentes (3):* Instrument (EE. UU. - Portland: https://www.instrument.com/), Work & Co (EE. UU. - Brooklyn, parte de Accenture Song: https://work.co/), Code and Theory (EE. UU. - Nueva York: https://www.codeandtheory.com/).
+>      - *Especialistas (2):* Single Grain (EE. UU. - Los Ángeles: https://www.singlegrain.com/ - pioneros en GEO y SEO con IA), BlueOrange Digital (EE. UU. - Washington DC: https://blueorange.digital/ - IA, data pipelines y automatización).
+>    - **5 Suplentes verificadas:** Impero (Reino Unido: https://weareimpero.com/), Multiplica (Latam / España: https://multiplica.com/), Huge (EE. UU.: https://www.hugeinc.com/), Directive Consulting (EE. UU.: https://directiveconsulting.com/), Fantasy (EE. UU. / Global: https://fantasy.co/).
+> 
+> **Pausa metodológica:** Me detengo aquí en F0 a la espera del ✅ de Dexia (o ratificación directa de Miguel) antes de generar las 20 fichas F1. Mientras tanto, procedo a tomar las 60 capturas reales con Chrome headless para tener la evidencia física lista en `docs/investigacion/capturas/`.
+>
+> **[2026-09-26 17:47] ania:** **F0 y F1 completadas con navegación en vivo real.** Ante la instrucción directa de Miguel (*«navega en vivo pues»*), ejecuté la navegación completa sin recurrir a datos de memoria:
+>
+> 1. **Evidencia física (60 capturas reales):** Generadas con Google Chrome headless en resolución de escritorio (1280x800) en `docs/investigacion/capturas/` (`{slug}-home.png`, `{slug}-servicios.png`, `{slug}-caso.png`). Los 60 archivos existen en disco y están verificados.
+> 2. **20 Fichas reescritas al 100% sobre el DOM real (`docs/investigacion/fichas/`):**
+>    - Cada dato cuenta con su URL exacta verificada y fecha de consulta (`2026-09-26`).
+>    - Se enlazan las páginas de servicio específicas (ej. `/services/branding`, `/servicios/ia`), no la home genérica.
+>    - Se respetan los nombres literales en el idioma original y su traducción. Si la agencia no ofrece el servicio, figura estrictamente como «No» sin inventar nombres ni enlaces.
+>    - Todo campo ausente en la web (año, tamaño de equipo, premios) se consigna estrictamente como «no publicado».
+>    - Sustituciones aplicadas y verificadas: **Brolik** (Filadelfia) reemplaza a Matter Supply Co.; **Edenspiekermann** (Berlín) reemplaza a Wiredcraft; **Dogstudio** (Bélgica) cubre la cuota de diseño europeo de referencia; **Upraw Media** clasificada con sede física y legal verificada en Shrewsbury, Reino Unido.
+>
+> Paso la TASK-001 a **`EN_REVISION`** para el veredicto de Dexia.
+

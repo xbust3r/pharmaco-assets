@@ -1,58 +1,59 @@
-# Lounge Lizard Worldwide
+# Lounge Lizard
 
 | Campo | Valor | Fuente |
 | --- | --- | --- |
-| URL | https://www.loungelizard.com/ | Consulta directa a sitio oficial |
-| País / ciudades | Estados Unidos (Nueva York, Miami, Nashville, Washington DC) | Web corporativa |
-| Bloque · perfil | América · comparable | Muestra investigada (TASK-001) |
-| Tamaño del equipo | ~45 empleados | Clutch verified profile & Lounge Lizard About page |
-| Año de fundación | 1998 | Registro corporativo / Web oficial |
-| Fecha de consulta | 2026-09-26 | Consulta directa online |
-| Capturas | `capturas/lounge-lizard-home.png`, `capturas/lounge-lizard-servicios.png`, `capturas/lounge-lizard-caso.png` | Repositorio de capturas |
+| URL | https://www.loungelizard.com/ | https://www.loungelizard.com/ |
+| País / ciudades | EE. UU. (Nueva York, Long Island, Miami, Nashville, Washington DC) | https://www.loungelizard.com/contact-us/ |
+| Bloque · perfil | América · comparable | — |
+| Tamaño del equipo | «no publicado» | https://www.loungelizard.com/about-us/ |
+| Año de fundación | 1998 | https://www.loungelizard.com/ |
+| Fecha de consulta | 2026-09-26 | — |
+| Capturas | `capturas/lounge-lizard-home.png`, `capturas/lounge-lizard-servicios.png`, `capturas/lounge-lizard-caso.png` | — |
 
 ## Propuesta de valor
-«Brandtenders creating bespoke websites, digital marketing campaigns, and mobile apps». Mezcla de branding creativo ("Brandtenders") con ingeniería web, apps móviles y marketing de adquisición.
+«New York Web Design Company & Digital Marketing Agency Since 1998. Brand tenders & marketing mixologists creating digital experiences that drive results.» Agencia veterana centrada en branding, desarrollo web de alta gama y marketing de captación multicanal.
 
 ## Cómo organizan sus servicios
 | Pilar / categoría (literal) | Servicios que incluye (literal) | Traducción | URL |
 | --- | --- | --- | --- |
-| Brand Strategy & Design | Brand voice, logo design, visual identity, collateral | Voz de marca, diseño de logos, identidad visual, papelería | https://www.loungelizard.com/services/ |
-| Web & Mobile App Development | Custom website design, mobile apps (iOS/Android), eCommerce, WordPress | Diseño web a medida, apps móviles, comercio electrónico, WordPress | https://www.loungelizard.com/services/ |
-| Digital Marketing & SEO | SEO, PPC management, social media marketing, content marketing, CRO | SEO, gestión PPC, marketing en redes sociales, contenidos, CRO | https://www.loungelizard.com/services/ |
+| Web Design & Development | Custom Website Design, E-commerce, WordPress, Shopify, Web Apps | Diseño web a medida, comercio electrónico, WordPress, Shopify | https://www.loungelizard.com/services/web-design/ |
+| Digital Marketing | SEO, PPC Management, Social Media, Email Marketing, Content Marketing | SEO, gestión PPC, redes sociales, email marketing | https://www.loungelizard.com/services/digital-marketing/ |
+| Brand Strategy | Brand Identity, Logo Design, Brand Messaging, Guidelines | Identidad de marca, diseño de logos, mensajes y manuales | https://www.loungelizard.com/services/branding/ |
+| Mobile App Development | iOS Apps, Android Apps, Cross-platform Apps | Desarrollo de aplicaciones iOS, Android y multiplataforma | https://www.loungelizard.com/services/mobile-apps/ |
 
 ## Frente al catálogo de Pharmaco (alimenta TASK-002)
 | # | Servicio Pharmaco | ¿Lo ofrecen? | Nombre literal que usan | URL de su página |
 | --- | --- | --- | --- | --- |
-| 1 | Branding | Sí | Brand Strategy & Identity Design | https://www.loungelizard.com/services/ |
-| 2 | Social Media | Sí | Social Media Marketing & Management | https://www.loungelizard.com/services/ |
-| 3 | Desarrollo Web | Sí | Custom Website Design & Development | https://www.loungelizard.com/services/ |
-| 4 | Campañas publicitarias | Sí | Digital Advertising & Creative Campaigns | https://www.loungelizard.com/services/ |
-| 5 | Performance | Sí | Pay-Per-Click (PPC) Management | https://www.loungelizard.com/services/ |
-| 6 | Desarrollo de apps y software | Sí | Mobile App Development & Custom Web Applications | https://www.loungelizard.com/services/ |
-| 7 | Fotografía y video | Sí | Video Production & Commercial Photography for Campaigns | https://www.loungelizard.com/services/ |
-| 8 | Inteligencia artificial | Sí | AI-Driven SEO & Automation Tools Integration | https://www.loungelizard.com/services/ |
-| 9 | SEO y GEO | Sí | SEO & Local Search Engine Optimization | https://www.loungelizard.com/services/ |
-| 10 | CRO | Sí | Conversion Rate Optimization (CRO) | https://www.loungelizard.com/services/ |
-| 11 | Datos y automatización | Sí | Marketing Automation & Lead Nurturing | https://www.loungelizard.com/services/ |
+| 1 | Branding | Sí | Brand Strategy & Identity | https://www.loungelizard.com/services/branding/ |
+| 2 | Social Media | Sí | Social Media Marketing | https://www.loungelizard.com/services/digital-marketing/ |
+| 3 | Desarrollo Web | Sí | Web Design & Custom Web Development | https://www.loungelizard.com/services/web-design/ |
+| 4 | Campañas publicitarias | Sí | PPC & Paid Advertising | https://www.loungelizard.com/services/digital-marketing/ |
+| 5 | Performance | Sí | Performance Marketing & Lead Gen | https://www.loungelizard.com/services/digital-marketing/ |
+| 6 | Desarrollo de apps y software | Sí | Mobile App Development & Web Apps | https://www.loungelizard.com/services/mobile-apps/ |
+| 7 | Fotografía y video | Sí | Video Production & Motion Graphics | https://www.loungelizard.com/services/digital-marketing/ |
+| 8 | Inteligencia artificial | No | | |
+| 9 | SEO y GEO | Sí | SEO Services | https://www.loungelizard.com/services/digital-marketing/ |
+| 10 | CRO | Sí | Website Maintenance & CRO | https://www.loungelizard.com/services/website-maintenance/ |
+| 11 | Datos y automatización | Sí | Marketing Automation & Email Workflows | https://www.loungelizard.com/services/digital-marketing/email-marketing/ |
 
-**Servicios suyos que no están en la tabla:** Influencer Marketing, Reputation Management, Podcast Production
+**Servicios suyos que no están en la tabla:** Amazon Marketing Services, Website Maintenance Retainers.
 
 ## Prueba social (alimenta TASK-003)
-- **Casos:** Amplio catálogo de casos con desglose paso a paso: Reto, Estrategia de Branding, Desarrollo Técnico y Resultados de Negocio.
-- **Logos de clientes:** Disney, Canon, Dylan's Candy Bar, Random House, Honeywell, St. Regis.
-- **Testimonios:** Reseñas en video de clientes y testimonios extensos con foto y enlace a sus empresas.
-- **Premios, rankings, reseñas:** Top Web Design Agency en Clutch (puntuación 4.9/5 con >100 reseñas), W3 Gold Awards, MarCom Awards.
-- **Certificaciones o partnerships:** Google Premier Partner, Shopify Partner, BigCommerce Elite Partner.
-- **Otros:** Posicionamiento humorístico de marca como «Brandtenders» que sirve como diferenciador creativo.
+- Casos: Decenas de casos con métricas de ventas y diseño de experiencias (MIND GAMES Fragrance, Rubberform, MoMA, Disney, Canon, Honeywell).
+- Logos de clientes: Disney, Canon, MoMA, Honeywell, Reuters, Motorola, Random House.
+- Testimonios: Testimonios con nombres de CEOs y valoraciones estelares en Clutch y Google.
+- Premios, rankings, reseñas: Calificación 4.9/5 en Clutch con cientos de reseñas verificadas; premios Davey, W3, Webby Honorees.
+- Certificaciones o partnerships: Google Premier Partner, Shopify Plus Partner, BigCommerce Elite Partner, HubSpot Partner.
+- Otros: Reclamación explícita de «Since 1998» en el logotipo y cabecera.
 
 ## Estructura de la web y diseño (alimenta TASK-004)
-- **Menú principal:** Work, Services, About, Brandtenders, Blog, Contact
-- **Secciones de la home, en orden:** Hero de alto impacto con videos de proyectos en un cocktail shaker → Badges de Clutch y premios en header visible → Grid de servicios detallados → Testimonios de clientes en carrusel → Formulario de consulta rápido en footer
-- **Anatomía de una página de servicio:** Encabezado con propuesta de valor → Por qué contratar a Lounge Lizard → Capacidades y entregables → Casos recientes del servicio → FAQs de clientes → CTA
-- **CTA principal y dónde aparece:** «Request a proposal» / «Talk with a Brandtender»
-- **Idiomas:** Inglés.
-- **Patrones visuales:** Personalidad de marca distintiva con metáfora de bar/cocktail, paleta oscura con acentos rojos y amarillos, tipografía condensada audaz.
-- **Movimiento e interacción:** Microanimaciones interactivas al pasar el cursor sobre casos y menús desplegables fluidos.
+- Menú principal: Services, Work, About, Industries, Blog, Contact Us, Teléfono directo.
+- Secciones de la home, en orden: Hero con formulario rápido y acreditaciones de premios, logos de grandes clientes corporativos, selección de proyectos destacados, catálogo de servicios, opiniones de clientes en Clutch, footer exhaustivo.
+- Anatomía de una página de servicio: Titular SEO directo, puntos clave de diferenciación («Why choose us»), metodología de ejecución, casos de estudio y formulario de contacto.
+- CTA principal y dónde aparece: «Request a Proposal» y teléfono visible permanentemente en cabecera.
+- Idiomas: Inglés.
+- Patrones visuales: Diseño vibrante y altamente comercial, metáfora visual de cócteles/bar («Brand Tenders»), colores rojo brillante, negro y blanco.
+- Movimiento e interacción: Efectos hover sobre tarjetas de clientes, interactividad dinámica al navegar el portafolio.
 
 ## Observaciones de Ania
-Tiene una identidad basada en una metáfora («Brandtenders»), exactamente igual que la metáfora de «Laboratorio» de Pharmaco. Demuestra que este concepto funciona comercialmente.
+Lounge Lizard es una máquina comercial de captación digital en Estados Unidos. Su posicionamiento como «Brand Tenders» y su agresiva prueba social en Clutch y Google Reviews demuestran el poder de exhibir reseñas verificadas en cada página para cerrar ventas sin fricción.

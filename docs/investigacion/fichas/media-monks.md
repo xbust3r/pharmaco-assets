@@ -2,57 +2,57 @@
 
 | Campo | Valor | Fuente |
 | --- | --- | --- |
-| URL | https://media.monks.com/ | Consulta directa a sitio oficial |
-| País / ciudades | Países Bajos (Ámsterdam) / Global (>30 países) | Web corporativa |
-| Bloque · perfil | Europa · referente | Muestra investigada (TASK-001) |
-| Tamaño del equipo | >8,000 empleados | S4 Capital financial reports 2025/2026 |
-| Año de fundación | 2001 | Registro corporativo / Web oficial |
-| Fecha de consulta | 2026-09-26 | Consulta directa online |
-| Capturas | `capturas/media-monks-home.png`, `capturas/media-monks-servicios.png`, `capturas/media-monks-caso.png` | Repositorio de capturas |
+| URL | https://www.monks.com/ | https://www.monks.com/ |
+| País / ciudades | Países Bajos (Ámsterdam - sede original), Global (Londres, Nueva York, Tokio, São Paulo) | https://www.monks.com/ |
+| Bloque · perfil | Europa · referente | — |
+| Tamaño del equipo | «no publicado» | https://www.monks.com/ |
+| Año de fundación | 2001 | https://www.monks.com/ |
+| Fecha de consulta | 2026-09-26 | — |
+| Capturas | `capturas/media-monks-home.png`, `capturas/media-monks-servicios.png`, `capturas/media-monks-caso.png` | — |
 
 ## Propuesta de valor
-«Decentralised, global creative production company uniting digital, content, data and AI». Referente global indiscutible en innovación técnica, creatividad y producción digital.
+«Transforming brands for the real-time world. Turn complexity into opportunity. We make every marketing move count.» Gigante global de servicios digitales, contenido en tiempo real y soluciones tecnológicas avanzadas perteneciente a S4Capital.
 
 ## Cómo organizan sus servicios
 | Pilar / categoría (literal) | Servicios que incluye (literal) | Traducción | URL |
 | --- | --- | --- | --- |
-| Content & Creative Production | Film production, 3D/CGI, experiential, virtual production | Producción cinematográfica, 3D/CGI, experiencial, producción virtual | https://media.monks.com/solutions |
-| Data, Digital & AI Services | AI workflows, data engineering, digital media, performance marketing | Flujos de trabajo IA, ingeniería de datos, medios digitales, performance | https://media.monks.com/solutions |
-| Technology & Experience | Software engineering, cloud platforms, XR/spatial computing, web platforms | Ingeniería de software, plataformas cloud, XR/computación espacial, plataformas web | https://media.monks.com/solutions |
+| Creative & Brand Experience | Brand Strategy, Creative Campaigns, Content at Scale, Immersive Experiences | Estrategia de marca, campañas creativas, contenido a escala | https://www.monks.com/what-we-do |
+| Technology Services | Custom Software Engineering, Cloud Infrastructure, AI & Machine Learning, E-commerce | Ingeniería de software, nube, IA / machine learning | https://www.monks.com/solutions/technology-services |
+| Data & Media | Full-funnel Media, Performance Marketing, Advanced Analytics, CRM | Medios full-funnel, marketing de performance, analítica | https://www.monks.com/what-we-do |
 
 ## Frente al catálogo de Pharmaco (alimenta TASK-002)
 | # | Servicio Pharmaco | ¿Lo ofrecen? | Nombre literal que usan | URL de su página |
 | --- | --- | --- | --- | --- |
-| 1 | Branding | Sí | Brand Strategy, Tone & Visual Systems | https://media.monks.com/solutions |
-| 2 | Social Media | Sí | Social-First Storytelling & Always-On Content | https://media.monks.com/solutions |
-| 3 | Desarrollo Web | Sí | Web Experiences & Digital Flagships | https://media.monks.com/solutions |
-| 4 | Campañas publicitarias | Sí | Integrated Global Creative Campaigns | https://media.monks.com/solutions |
-| 5 | Performance | Sí | Data-Driven Performance Marketing | https://media.monks.com/solutions |
-| 6 | Desarrollo de apps y software | Sí | Enterprise Software & Mobile Engineering | https://media.monks.com/solutions |
-| 7 | Fotografía y video | Sí | End-to-end Live Action, Virtual Production & Post-Production | https://media.monks.com/solutions |
-| 8 | Inteligencia artificial | Sí | Monks.Flow AI Orchestration & Generative Creative | https://media.monks.com/solutions |
-| 9 | SEO y GEO | Sí | Global SEO, Content Discoverability & AI Search | https://media.monks.com/solutions |
-| 10 | CRO | Sí | Experience Optimization & Personalisation Engines | https://media.monks.com/solutions |
-| 11 | Datos y automatización | Sí | Enterprise Data Strategy, Pipelines & Cloud Automation | https://media.monks.com/solutions |
+| 1 | Branding | Sí | Brand Strategy & Visual Identity | https://www.monks.com/what-we-do |
+| 2 | Social Media | Sí | Social Content & Creator Economy | https://www.monks.com/what-we-do |
+| 3 | Desarrollo Web | Sí | Web Platforms & Digital Experiences | https://www.monks.com/solutions/technology-services |
+| 4 | Campañas publicitarias | Sí | Global Creative Campaigns | https://www.monks.com/what-we-do |
+| 5 | Performance | Sí | Performance Marketing & Media Optimization | https://www.monks.com/what-we-do |
+| 6 | Desarrollo de apps y software | Sí | Technology Services & Software Engineering | https://www.monks.com/solutions/technology-services |
+| 7 | Fotografía y video | Sí | Content at Scale (Video, Virtual Production, CGI) | https://www.monks.com/what-we-do |
+| 8 | Inteligencia artificial | Sí | MonksFlow (AI-driven content and marketing pipeline) | https://www.monks.com/what-we-do |
+| 9 | SEO y GEO | Sí | Organic Search & Content Findability | https://www.monks.com/what-we-do |
+| 10 | CRO | Sí | Experience Optimization & Conversion Design | https://www.monks.com/solutions/technology-services |
+| 11 | Datos y automatización | Sí | Data, Analytics & Marketing Automation | https://www.monks.com/solutions/technology-services |
 
-**Servicios suyos que no están en la tabla:** Virtual Reality/AR Production, Metaverse activations, Broadcaster content supply chain
+**Servicios suyos que no están en la tabla:** Virtual Production & LED Stages, Metaverse & XR Spaces.
 
 ## Prueba social (alimenta TASK-003)
-- **Casos:** Cientos de casos para las mayores marcas del mundo con videos documentales, métricas masivas (miles de millones de impresiones) y créditos de producción.
-- **Logos de clientes:** Google, Meta, Amazon, Netflix, BMW, Mondelēz, Nike.
-- **Testimonios:** Declaraciones de Chief Marketing Officers globales.
-- **Premios, rankings, reseñas:** Récord histórico de más de 250 Leones de Cannes, Awwwards Agency of the Year (múltiples ocasiones), FWA Agency of the Year.
-- **Certificaciones o partnerships:** Google Cloud Premier Partner, AWS Premier Tier Services Partner, Adobe Platinum Partner.
-- **Otros:** Plataforma propia patentada (`Monks.Flow`) para orquestación de flujos de trabajo de marketing con IA.
+- Casos: Cientos de casos para las mayores marcas del mundo (Boomtown, Google, Nike, Netflix, BMW, Mondelēz). Su caso de Boomtown muestra ventas récord con producción de vídeo hiper-personalizada vía IA.
+- Logos de clientes: Google, Meta, Amazon, Nike, Netflix, BMW, Mondelēz, HP.
+- Testimonios: Citas de CMOs y VPs globales integradas en vídeos de producción documental.
+- Premios, rankings, reseñas: Más de 300 premios Cannes Lions, decenas de Awwwards Agency of the Year y FWA Agency of the Year.
+- Certificaciones o partnerships: Google Cloud Premier Partner, AWS Advanced Tier, Salesforce Summit Partner, Adobe Platinum Partner.
+- Otros: Plataforma propia de IA y automatización («MonksFlow»).
 
 ## Estructura de la web y diseño (alimenta TASK-004)
-- **Menú principal:** Solutions, Work, News, About, Contact
-- **Secciones de la home, en orden:** Hero inmersivo con video full-screen y tipografía masiva → Feed de proyectos destacados interactivo → Presentación de soluciones basadas en IA → Noticias del grupo → Footer global
-- **Anatomía de una página de servicio:** Visión estratégica de la solución → Capacidades técnicas → Casos emblemáticos globales → Contacto
-- **CTA principal y dónde aparece:** «Connect with us»
-- **Idiomas:** Inglés con ediciones regionales.
-- **Patrones visuales:** Brutalismo elegante contemporáneo, fondo negro y blanco de alto contraste, tipografía sans de gran tamaño, producción multimedia insuperable.
-- **Movimiento e interacción:** WebGL de alto rendimiento, aceleración por hardware, interacción fluida a 60 fps.
+- Menú principal: What We Do, Work, About, News, Careers, Contact.
+- Secciones de la home, en orden: Hero cinemático con claim interactivo, bobina de vídeo dinámica (showreel), casos insignia de transformación empresarial, pilares de servicio (Creative, Tech, Data), notas de prensa globales.
+- Anatomía de una página de servicio: Gran titular conceptual, capacidades específicas desglosadas, arquitectura de tecnología, casos emblemáticos.
+- CTA principal y dónde aparece: «Let’s Talk» / «Contact Us» en navbar y cierre de página.
+- Idiomas: Inglés.
+- Patrones visuales: Identidad tipográfica monocromática moderna, tipografía custom display sans-serif, vídeos en bucle de ultra alta resolución.
+- Movimiento e interacción: Carga dinámica por secciones, transiciones suaves y microinteracciones de vídeo al mover el ratón.
 
 ## Observaciones de Ania
-El estándar de oro para entender hacia dónde va la convergencia entre producción audiovisual, ingeniería de software e inteligencia artificial.
+Media.Monks es el referente supremo de lo que significa escalar una productora digital de Ámsterdam hasta una corporación de marketing y tecnología de miles de personas. Para Pharmaco, su lección crítica no es el tamaño, sino cómo han fusionado contenido audiovisual masivo con ingeniería de software e inteligencia artificial en una sola plataforma.
