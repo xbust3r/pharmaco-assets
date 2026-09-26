@@ -39,21 +39,21 @@
 **Servicios suyos que no están en la tabla:** Brand Messaging Framework, Fractional CMO.
 
 ## Prueba social (alimenta TASK-003)
-- Casos: Casos con métricas reales de volumen de negocio y facturación (ejemplo: prestamista inmobiliario con crecimiento de volumen de préstamos del 567% en relación de 10 años; Summit Steel; Unique Indoor Comfort; Devine Concierge Medicine).
-- Logos de clientes: MLS Players Association, Comcast, Unique Indoor Comfort, Summit Steel, Inspire Energy.
-- Testimonios: Testimonios en vídeo y citas extensas de fundadores y CEOs de empresas medianas.
-- Premios, rankings, reseñas: Calificación 5.0 en Google Reviews y Clutch; Philadelphia 100 fastest growing companies.
-- Certificaciones o partnerships: Google Partner, HubSpot Certified Agency.
-- Otros: Sección «Case Studies» con análisis financiero y retorno sobre la inversión documentado.
+- Casos: Casos con métricas cuantitativas de negocio y facturación (ejemplo: prestamista inmobiliario con crecimiento de volumen de préstamos del 567% en relación de 10 años, Summit Steel, Unique Indoor Comfort; URL: https://brolik.com/work/full-funnel-marketing-real-estate-lender / captura: `capturas/brolik-caso.png`, 2026-09-26).
+- Logos de clientes: MLS Players Association, Comcast, Unique Indoor Comfort, Summit Steel, Inspire Energy (URL: https://brolik.com/ / captura: `capturas/brolik-home.png`, 2026-09-26).
+- Testimonios: Testimonios en vídeo y citas textuales con fotografía, nombre y cargo de fundadores y CEOs (URL: https://brolik.com/ / captura: `capturas/brolik-home.png`, 2026-09-26).
+- Premios, rankings, reseñas: Calificación 5.0 en Google Reviews y Clutch; galardón Philadelphia 100 fastest growing companies (URL: https://brolik.com/about / 2026-09-26).
+- Certificaciones o partnerships: Google Partner, HubSpot Certified Agency (URL: https://brolik.com/about / 2026-09-26).
+- Otros: Sección «Case Studies» con desglose de ROI documentado (URL: https://brolik.com/work / captura: `capturas/brolik-caso.png`, 2026-09-26).
 
 ## Estructura de la web y diseño (alimenta TASK-004)
-- Menú principal: Work, Services, About, Blog, Contact.
-- Secciones de la home, en orden: Hero con claim numérico de crecimiento a $10M+, resumen de pilares (Estrategia, Marketing, Web, Vídeo), casos de éxito destacados con métricas de ingresos, testimonios de clientes, desglose de metodología, formulario de contacto.
-- Anatomía de una página de servicio: Propuesta de valor específica, enfoque estratégico vs táctico, ejemplos de proyectos ejecutados, llamada a la acción clara.
-- CTA principal y dónde aparece: «Let’s Talk Growth» / «Contact Us» en navbar fija y bloques finales.
-- Idiomas: Inglés.
-- Patrones visuales: Diseño profesional, limpio y acogedor, paleta azul corporativo con detalles en naranja cálido y blanco amplio, fotografía real de miembros del equipo y clientes.
-- Movimiento e interacción: Micro-animaciones en botones y cards, desplazamiento suave.
+- Menú principal: Work, Services, About, Blog, Contact (captura: `capturas/brolik-home.png`, 2026-09-26).
+- Secciones de la home, en orden: Hero con claim numérico de crecimiento a $10M+, resumen de pilares (Estrategia, Marketing, Web, Vídeo), casos de éxito destacados con métricas de ingresos, testimonios de clientes, desglose de metodología, formulario de contacto (captura: `capturas/brolik-home.png`, 2026-09-26).
+- Anatomía de una página de servicio: Propuesta de valor específica, enfoque estratégico vs táctico, ejemplos de proyectos ejecutados, llamada a la acción clara (URL: https://brolik.com/services / captura: `capturas/brolik-servicios.png`, 2026-09-26).
+- CTA principal y dónde aparece: «Let’s Talk Growth» / «Contact Us» en navbar fija superior y bloques de cierre (captura: `capturas/brolik-home.png`, 2026-09-26).
+- Idiomas: Inglés exclusivamente (captura: `capturas/brolik-home.png`, 2026-09-26).
+- Patrones visuales: Diseño profesional, limpio y acogedor, paleta azul corporativo con detalles en naranja cálido y blanco amplio, fotografía real de miembros del equipo y clientes (capturas: `capturas/brolik-home.png`, `capturas/brolik-servicios.png`, 2026-09-26).
+- Movimiento e interacción: Micro-animaciones en botones y cards, desplazamiento suave (captura: `capturas/brolik-home.png`, 2026-09-26).
 
 ## Observaciones de Ania
-Brolik es el reemplazo perfecto de Matter Supply para la cuota de comparables americanos. Es una agencia independiente consolidada (fundada en 2004 en Filadelfia), de tamaño directamente comparable a Pharmaco (~20-30 personas), que ofrece exactamente la combinación de marketing, desarrollo web, branding y producción de vídeo que Pharmaco busca estandarizar.
+Brolik es el reemplazo perfecto de Matter Supply para la cuota de comparables americanos. Es una agencia independiente consolidada (fundada en 2004 en Filadelfia), de perfil directamente comparable a Pharmaco (tamaño no publicado oficialmente en web), que ofrece exactamente la combinación de marketing, desarrollo web, branding y producción de vídeo que Pharmaco busca estandarizar.

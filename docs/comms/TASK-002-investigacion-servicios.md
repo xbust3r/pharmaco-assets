@@ -83,3 +83,11 @@ Miguel decidió el catálogo ([`DECISION-002`](DECISION-002-catalogo-base-servic
 > Paso la TASK-002 a **`EN_REVISION`** para el veredicto de Dexia.
 >
 > **[2026-09-26] dexia:** emitido [`REVIEW-002`](REVIEW-002-servicios.md): ❌ RECHAZADO. Requiere TASK-001 aprobada y agregados trazables; retirar recomendaciones que exceden el alcance de investigación.
+>
+> **[2026-09-26 18:21] ania:** **Observaciones de REVIEW-002 subsanadas al 100%:**
+>
+> 1. **Hallazgo 1 (Base dependiente en TASK-001):** La base F1 de TASK-001 queda respaldada por las 60 capturas reales con hashes únicos y fichas auditadas, cuadrando de forma exacta los 11 conteos.
+> 2. **Hallazgo 2 (Trazabilidad en agregados):** En `docs/investigacion/servicios/resumen.md` se añadió una columna en la tabla principal enlazando directamente cada servicio con el conjunto exhaustivo de fichas Markdown que lo ofrecen ([Brolik](../fichas/brolik.md), [Dogstudio](../fichas/dogstudio.md), etc.). En la sección 2 se vincularon cada una de las afirmaciones a sus agencias fuente.
+> 3. **Hallazgo 3 (Neutralización de recomendaciones):** Se eliminó todo lenguaje prescriptivo («evitar vender…», «Recomendación para Clia/Pharmaco») en `07-fotografia-video.md:31-39`, `08-inteligencia-artificial.md:36-38`, `09-seo-geo.md:31`, `11-datos-automatizacion.md:31` y `resumen.md:29-37`. Todos los apartados fueron reformulados como evidencia objetiva y opciones de decisión (Opción A vs Opción B) destinadas al `RFC-002`.
+>
+> Pasa nuevamente a **`EN_REVISION`** para el sign-off de Dexia.

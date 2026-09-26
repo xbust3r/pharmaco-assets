@@ -40,21 +40,21 @@
 **Servicios suyos que no están en la tabla:** Festival & Event Digital Platforms, Rapid Prototyping Sprints.
 
 ## Prueba social (alimenta TASK-003)
-- Casos: Casos de gran impacto visual e interactivo (Oxfam Novib, Kalkhoff Bikes, ADE - Amsterdam Dance Event, Lowlands Festival, DGTL). Describen objetivos, diseño interactivo y resultados de conversión.
-- Logos de clientes: ADE, Lowlands, Oxfam Novib, Kalkhoff, DGTL, ID&T.
-- Testimonios: Declaraciones directas de directores de festival y directores de marketing de marcas.
-- Premios, rankings, reseñas: Múltiples premios en Awwwards (Site of the Day, Developer Award) y FWA of the Day.
-- Certificaciones o partnerships: Shopify Plus Partner, Storyblok Partner.
-- Otros: Sección de «Insights» con reflexiones sobre el impacto de la IA en el diseño de producto.
+- Casos: Casos de gran impacto visual e interactivo (Oxfam Novib, Kalkhoff Bikes, ADE - Amsterdam Dance Event, Lowlands Festival, DGTL; URL: https://bravoure.nl/en/case-studies/oxfam-novib / captura: `capturas/bravoure-caso.png`, 2026-09-26).
+- Logos de clientes: ADE, Lowlands, Oxfam Novib, Kalkhoff, DGTL, ID&T (URL: https://bravoure.nl/en / captura: `capturas/bravoure-home.png`, 2026-09-26).
+- Testimonios: Declaraciones directas de directores de festival y directores de marketing de marcas (URL: https://bravoure.nl/en / captura: `capturas/bravoure-home.png`, 2026-09-26).
+- Premios, rankings, reseñas: Múltiples premios en Awwwards (Site of the Day, Developer Award) y FWA of the Day (URL: https://bravoure.nl/en/about / 2026-09-26).
+- Certificaciones o partnerships: Shopify Plus Partner, Storyblok Partner (URL: https://bravoure.nl/en/what-we-do / 2026-09-26).
+- Otros: Sección de «Insights» con reflexiones sobre el impacto de la IA en el diseño de producto (URL: https://bravoure.nl/en/insights / 2026-09-26).
 
 ## Estructura de la web y diseño (alimenta TASK-004)
-- Menú principal: Case studies, What we do, About us, Insights, Contact, selector EN / NL.
-- Secciones de la home, en orden: Hero tipográfico animado con claim de IA y creación, escaparate a pantalla completa de casos de estudio, desglose de pilares de servicio, bloque de contacto directo con fundador/director comercial.
-- Anatomía de una página de servicio: Declaración de intenciones, sub-servicios con descripción concreta, tecnologías utilizadas, casos de estudio asociados.
-- CTA principal y dónde aparece: «Get in touch» / «Contact Koen Straatman» integrado en el footer y en la barra superior.
-- Idiomas: Inglés y holandés.
-- Patrones visuales: Tipografía display contemporánea de alto contraste, modo oscuro con fondos negros profundos y acentos en verde lima/blanco, grids asimétricos.
-- Movimiento e interacción: Animaciones web fluidas por WebGL / GSAP, micro-scroll horizontal y preview en vídeo de cada proyecto al pasar el ratón.
+- Menú principal: Case studies, What we do, About us, Insights, Contact, selector EN / NL (captura: `capturas/bravoure-home.png`, 2026-09-26).
+- Secciones de la home, en orden: Hero tipográfico animado con claim de IA y creación, escaparate a pantalla completa de casos de estudio, desglose de pilares de servicio, bloque de contacto directo con fundador/director comercial (captura: `capturas/bravoure-home.png`, 2026-09-26).
+- Anatomía de una página de servicio: Declaración de intenciones, sub-servicios con descripción concreta, tecnologías utilizadas, casos de estudio asociados (URL: https://bravoure.nl/en/what-we-do / captura: `capturas/bravoure-servicios.png`, 2026-09-26).
+- CTA principal y dónde aparece: «Get in touch» / «Contact Koen Straatman» integrado en el footer y en la barra superior (captura: `capturas/bravoure-home.png`, 2026-09-26).
+- Idiomas: Inglés y holandés (captura: `capturas/bravoure-home.png`, 2026-09-26).
+- Patrones visuales: Tipografía display contemporánea de alto contraste, modo oscuro con fondos negros profundos y acentos en verde lima/blanco, grids asimétricos (capturas: `capturas/bravoure-home.png`, `capturas/bravoure-servicios.png`, 2026-09-26).
+- Movimiento e interacción: Animaciones web fluidas por WebGL / GSAP, micro-scroll horizontal y preview en vídeo de cada proyecto al pasar el ratón (captura: `capturas/bravoure-home.png`, 2026-09-26).
 
 ## Observaciones de Ania
-Bravoure demuestra con maestría cómo una agencia boutique comparable de 25-40 personas puede posicionar la IA generativa como su pilar central de diferenciación («AI Transformation») sin perder el rigor del diseño visual de alta gama. Sus páginas de servicio tienen URLs individuales ejemplares con entregables claros.
+Bravoure demuestra con maestría cómo una agencia boutique comparable (tamaño no publicado oficialmente en web) puede posicionar la IA generativa como su pilar central de diferenciación («AI Transformation») sin perder el rigor del diseño visual de alta gama. Sus páginas de servicio tienen URLs individuales ejemplares con entregables claros.

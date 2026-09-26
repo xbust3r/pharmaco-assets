@@ -38,21 +38,21 @@
 **Servicios suyos que no están en la tabla:** Spatial Design & Pop-up Experiences, Cultural Research.
 
 ## Prueba social (alimenta TASK-003)
-- Casos: Monografías visuales de campañas y diseño de marca (Onitsuka Tiger, Barbour x Wallace & Gromit, Outfry Korean Fried Chicken, Nkora Coffee, Shiseido). Cada caso contiene fotografía editorial, vídeos y muestras de packaging/web.
-- Logos de clientes: Onitsuka Tiger, Barbour, Shiseido, Yamaha, Outfry, Nkora Coffee.
-- Testimonios: No usan testimonios directos en texto; la prueba social se fundamenta en la reputación de sus marcas clientes y en la cobertura en revistas de diseño.
-- Premios, rankings, reseñas: Premios D&AD, Awwwards Site of the Day, Tokyo TDC, The One Show.
-- Certificaciones o partnerships: «no publicado».
-- Otros: Organización de eventos comunitarios creativos («Powered by monopo»).
+- Casos: Monografías visuales de campañas y diseño de marca (Onitsuka Tiger, Barbour x Wallace & Gromit, Outfry Korean Fried Chicken, Nkora Coffee, Shiseido; URL: https://monopo.london/work/onitsuka-tiger-finish-line-cafe / captura: `capturas/monopo-caso.png`, 2026-09-26).
+- Logos de clientes: Onitsuka Tiger, Barbour, Shiseido, Yamaha, Outfry, Nkora Coffee (URL: https://monopo.london/ / captura: `capturas/monopo-home.png`, 2026-09-26).
+- Testimonios: «no publicado» (la prueba social se fundamenta en la reputación de sus marcas clientes y en la cobertura en revistas de diseño; URL: https://monopo.london/ / captura: `capturas/monopo-home.png`, 2026-09-26).
+- Premios, rankings, reseñas: Premios D&AD, Awwwards Site of the Day, Tokyo TDC, The One Show (URL: https://monopo.london/about / 2026-09-26).
+- Certificaciones o partnerships: «no publicado» (URL: https://monopo.london/about / 2026-09-26).
+- Otros: Organización de eventos comunitarios creativos «Powered by monopo» (URL: https://monopo.london/about / 2026-09-26).
 
 ## Estructura de la web y diseño (alimenta TASK-004)
-- Menú principal: Work, Services, About, Contact, Studio Selector (London / Paris / Tokyo).
-- Secciones de la home, en orden: Hero con vídeo conceptual y manifiesto («Collective creativity»), grid de proyectos seleccionados con preview en vídeo, síntesis de servicios, enlaces de contacto.
-- Anatomía de una página de servicio: Planteamiento empático («You need a fresh perspective», «You want to capture the imagination»), capacidades detalladas en lista, proyectos destacados por servicio.
-- CTA principal y dónde aparece: «Say Hello» / «Contact Us» en navbar y footer.
-- Idiomas: Inglés.
-- Patrones visuales: Dirección de arte impecable, fotografía hiper-estilizada, tipografía editorial sans-serif elegante, paleta de colores adaptable al contenido visual de cada caso.
-- Movimiento e interacción: Transiciones cinematográficas, micro-animaciones al pasar el cursor y carga asíncrona de páginas sin parpadeo.
+- Menú principal: Work, Services, About, Contact, Studio Selector (London / Paris / Tokyo) (captura: `capturas/monopo-home.png`, 2026-09-26).
+- Secciones de la home, en orden: Hero con vídeo conceptual y manifiesto («Collective creativity»), grid de proyectos seleccionados con preview en vídeo, síntesis de servicios, enlaces de contacto (captura: `capturas/monopo-home.png`, 2026-09-26).
+- Anatomía de una página de servicio: Planteamiento empático («You need a fresh perspective», «You want to capture the imagination»), capacidades detalladas en lista, proyectos destacados por servicio (URL: https://monopo.london/services / captura: `capturas/monopo-servicios.png`, 2026-09-26).
+- CTA principal y dónde aparece: «Say Hello» / «Contact Us» en navbar y footer (captura: `capturas/monopo-home.png`, 2026-09-26).
+- Idiomas: Inglés exclusivamente (captura: `capturas/monopo-home.png`, 2026-09-26).
+- Patrones visuales: Dirección de arte cuidada, fotografía estilizada, tipografía editorial sans-serif elegante, paleta adaptable al contenido visual de cada caso (capturas: `capturas/monopo-home.png`, `capturas/monopo-servicios.png`, 2026-09-26).
+- Movimiento e interacción: Transiciones cinematográficas, micro-animaciones al pasar el cursor y carga asíncrona de páginas sin parpadeo (captura: `capturas/monopo-home.png`, 2026-09-26).
 
 ## Observaciones de Ania
-Monopo representa la cúspide de la dirección de arte contemporánea en Europa, integrando identidad de marca, producción audiovisual (foto y vídeo) y desarrollo web bajo una sola mirada creativa. Es la mejor referencia para Pharmaco en cómo presentar el servicio 7 (Fotografía y video) integrado con diseño de marca.
+Monopo representa la dirección de arte contemporánea en Europa, integrando identidad de marca, producción audiovisual (foto y vídeo) y desarrollo web bajo una sola mirada creativa. Es la referencia para Pharmaco en cómo presentar el servicio 7 (Fotografía y video) integrado con diseño de marca.

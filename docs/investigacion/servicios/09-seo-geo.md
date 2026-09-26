@@ -27,5 +27,6 @@
 
 ## 3. ¿Se ofrecen juntos o separados?
 
-* **Evidencia del benchmark:** El 100% de las agencias que tratan GEO (como Single Grain y agencias de growth avanzadas) lo incorporan **como una evolución del servicio de SEO**, nunca como una disciplina aislada.
-* **Recomendación para Pharmaco:** Mantener "SEO y GEO" en un único servicio integrado de búsqueda orgánica y descubribilidad.
+* **Opciones observadas para RFC-002:**
+  - Opción A: Mantener «SEO y GEO» en un único servicio integrado de búsqueda orgánica y descubribilidad (modelo adoptado por agencias avanzadas como [Single Grain](../fichas/single-grain.md) y [Neo Consulting](../fichas/neo-consulting.md)).
+  - Opción B: Presentar SEO clásico y GEO como dos submódulos claramente diferenciados dentro del catálogo.

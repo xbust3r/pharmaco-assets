@@ -58,16 +58,19 @@ A partir del análisis de las páginas de caso de la muestra navegadas en vivo, 
 
 1. **Modelo de Métricas y Conversión (B2B SaaS / CRO):**
    * **Agencia:** Upraw Media (Reino Unido)
-   * **URL:** `https://www.uprawmedia.com/seon-cro-case-study`
-   * **Por qué sirve de modelo:** Enfoque ultra directo al ROI. Empieza inmediatamente con la métrica central (+46% de incremento en tasa de conversión de landing pages de alta intención para SEON), desglosa la hipótesis de experimentación, el diseño de la nueva interfaz y la validación estadística.
+   * **URL:** https://www.uprawmedia.com/seon-cro-case-study
+   * **Evidencia visual capturada:** [`capturas/upraw-media-caso.png`](capturas/upraw-media-caso.png) (consultado: 2026-09-26).
+   * **Anatomía observable en la captura:** Cabecera con titular de impacto numérico (+46% de incremento en tasa de conversión para SEON), badges de categoría (SaaS PPC & CRO), desglose del reto técnico, visualización del test A/B y resultados cuantitativos verificables.
 2. **Modelo de Producción Creativa, Video y Branding:**
    * **Agencia:** Bravoure (Países Bajos)
-   * **URL:** `https://bravoure.nl/en/case-studies/oxfam-novib`
-   * **Por qué sirve de modelo:** Demuestra la integración de video, identidad visual y plataforma interactiva. Utiliza recursos visuales en movimiento, dirección de arte contemporánea y despiece de todos los componentes interactivos de la campaña.
+   * **URL:** https://bravoure.nl/en/case-studies/oxfam-novib
+   * **Evidencia visual capturada:** [`capturas/bravoure-caso.png`](capturas/bravoure-caso.png) (consultado: 2026-09-26).
+   * **Anatomía observable en la captura:** Hero visual con material audiovisual a pantalla completa, manifiesto del proyecto, dirección de arte contemporánea, módulos interactivos y despiece de activos digitales de campaña.
 3. **Modelo de Crecimiento a Largo Plazo y Multicanal (Comparable):**
    * **Agencia:** Brolik (EE. UU.)
-   * **URL:** `https://brolik.com/work/full-funnel-marketing-real-estate-lender`
-   * **Por qué sirve de modelo:** Estructura de relación de retainer comercial a 10 años. Detalla cómo la integración de desarrollo web, branding, video y marketing de captación permitió multiplicar por 5.67x (+567%) el volumen de negocio de un prestamista inmobiliario.
+   * **URL:** https://brolik.com/work/full-funnel-marketing-real-estate-lender
+   * **Evidencia visual capturada:** [`capturas/brolik-caso.png`](capturas/brolik-caso.png) (consultado: 2026-09-26).
+   * **Anatomía observable en la captura:** Desglose del caso en narrativa cronológica (relación de 10 años), métrica central (+567% en volumen de préstamos), integración de web, branding y video, y cita testimonial de interlocutor directivo.
 
 ---
 
@@ -79,26 +82,28 @@ Para una agencia en fase de reactivación que no cuenta con un histórico recien
 
 Las certificaciones de partners aportan validación técnica externa garantizada por corporaciones globales:
 
-| Certificación / Programa | Requisitos Oficiales | Coste | Tiempo de Obtención | Fuente Oficial (consultada 2026) | Agencias que lo usan |
+| Certificación / Programa | Requisitos Oficiales | Coste | Tiempo Estimado | Fuente Oficial (Sección y Fecha de Consulta) | Agencias que lo usan |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Google Cloud / Google Analytics 4 Certification** | Aprobar los exámenes oficiales en Google Skillshop (80% aciertos). Demostrar dominio en medición, GA4 y Tag Manager. | **Gratuito** | 1 a 2 semanas por persona | [Google Skillshop](https://skillshop.docebosaas.com/) | Artefact, Neo Consulting, Upraw Media |
-| **Meta Certified Media & Marketing Science** | Aprobar exámenes en Meta Blueprint (100-101 / 400-101) sobre planificación de medios, compra publicitaria y atribución. | **$99 - $150 USD** por examen | 2 a 3 semanas | [Meta Blueprint Certification](https://www.facebook.com/business/learn/certification) | Good Rebels, Atomic, Major Tom |
-| **HubSpot Solutions Partner / Inbound Certified** | Certificaciones gratuitas en HubSpot Academy (Inbound, Marketing Hub, CRM). Para partner de soluciones, gestionar al menos 1 cuenta cliente en tier starter. | Exámenes **gratuitos**; programa partner desde $50/mes | 1 a 2 semanas | [HubSpot Partner Program](https://www.hubspot.com/partners) | Major Tom, Good Rebels, Single Grain |
-| **Shopify / Webflow Partner** | Registro como desarrollador, aprobación de cursos de diseño y construcción de plantillas o tiendas de desarrollo. | **Gratuito** | Inmediato / 3 días | [Shopify Partners](https://www.shopify.com/partners) | Bravoure, Atomic Digital Marketing, Single Grain |
+| **Google Cloud / Google Analytics 4 Certification** | Aprobar los exámenes oficiales en Google Skillshop (mínimo 80% de aciertos). Acredita dominio en medición analítica, GA4 y Google Tag Manager. | **Gratuito** | 1 a 2 semanas por persona | [Google Skillshop - Analytics Academy](https://skillshop.docebosaas.com/) (Sección: *Google Analytics Certification*, consultado: 2026-09-26) | [Artefact](fichas/artefact.md), [Neo Consulting](fichas/neo-consulting.md), [Upraw](fichas/upraw-media.md) |
+| **Meta Certified Media & Marketing Science** | Aprobar exámenes oficiales en Meta Blueprint (100-101 / 400-101) sobre planificación de medios, compra publicitaria en red Meta y modelos de atribución. | **$99 - $150 USD** por examen oficial | 2 a 3 semanas | [Meta Blueprint Certification](https://www.facebook.com/business/learn/certification) (Sección: *Media Planning & Buying Certification*, consultado: 2026-09-26) | [Good Rebels](fichas/good-rebels.md), [Atomic](fichas/atomic-digital-marketing.md), [Major Tom](fichas/major-tom.md) |
+| **HubSpot Solutions Partner / Inbound Certified** | Evaluaciones en HubSpot Academy (Inbound Marketing, Marketing Hub, Service & CRM). Para tier de partner corporativo, gestionar al menos 1 cuenta cliente en tier starter. | Cursos y exámenes: **Gratuito**; tier partner oficial desde $50 USD/mes | 1 a 2 semanas | [HubSpot Partner Program](https://www.hubspot.com/partners) (Sección: *Solutions Partner Directory & Requirements*, consultado: 2026-09-26) | [Major Tom](fichas/major-tom.md), [Good Rebels](fichas/good-rebels.md), [Single Grain](fichas/single-grain.md) |
+| **Shopify / Webflow Partner** | Registro en el portal de partners, realización de cursos de diseño de tiendas/temas y despliegue de tiendas de desarrollo. | **Gratuito** | Inmediato / 3 días | [Shopify Partners Portal](https://www.shopify.com/partners) (Sección: *Partner Program Agreement & Tracks*, consultado: 2026-09-26) | [Bravoure](fichas/bravoure.md), [Atomic](fichas/atomic-digital-marketing.md), [Single Grain](fichas/single-grain.md) |
 
 ---
 
 ### 3.2 Plataformas de reputación de terceros (Clutch y Google Business Profile)
 
 * **Clutch.co:**
-  * **Qué es:** El directorio de agencias B2B más respetado en EE. UU., Europa y Latam.
-  * **Requisito:** Perfil gratuito. Para obtener la primera insignia verificada basta con conseguir que **3 a 5 clientes o colaboradores pasen una entrevista telefónica breve de 10 minutos con el equipo de Clutch** (validan que el proyecto existió realmente y califican de 1 a 5 estrellas).
-  * **Coste:** Gratuito (el perfil básico y las reseñas verificadas son 100% gratis).
-  * **Efectividad:** Es el activo número 1 de prueba social para agencias medianas (Atomic, Lounge Lizard, Single Grain).
+  * **Qué es:** Directorio B2B especializado de agencias y empresas de tecnología.
+  * **Requisito observado:** Perfil básico gratuito. Para obtener reseña verificada por Clutch, un cliente o colaborador atiende una breve entrevista de verificación técnica conducida por el equipo de Clutch.
+  * **Coste:** Gratuito en modalidad básica (verificación de reseñas sin coste; opciones patrocinadas de pago).
+  * **Fuente:** [Clutch Agency Reviews](https://clutch.co/how-it-works) (Sección: *How Clutch Reviews Work*, consultado: 2026-09-26).
+  * **Uso en benchmark:** Activo prioritario en agencias comparables ([Atomic](fichas/atomic-digital-marketing.md), [Lounge Lizard](fichas/lounge-lizard.md), [Single Grain](fichas/single-grain.md)).
 * **Google Business Profile (Perfil de Empresa en Google):**
-  * **Requisito:** Dirección física verificada en Perú (recibir código o videollamada de verificación).
+  * **Requisito:** Dirección postal verificada para recepción de código postal o comprobación por vídeo.
   * **Coste:** Gratuito.
-  * **Efectividad:** Vital para el Servicio 9 (SEO y GEO local) y para aparecer en Google Maps y búsquedas locales de Lima.
+  * **Fuente:** [Google Business Profile Help](https://support.google.com/business/) (Sección: *Verify your business on Google*, consultado: 2026-09-26).
+  * **Uso en benchmark:** Soporte de visibilidad en búsquedas locales y SEO/GEO geográfico.
 
 ---
 
@@ -161,20 +166,21 @@ Siguiendo el protocolo, Ania no inventa autorizaciones ni asume acuerdos comerci
 
 ---
 
-## Parte 5. Plan de Opciones para Pharmaco (Ordenadas por esfuerzo)
+## Parte 5. Opciones de Prueba Social para Decisión en RFC-002 (Clasificadas por Dependencia)
 
-Opciones concretas de prueba social que Pharmaco puede activar, ordenadas de menor a mayor esfuerzo:
+Las siguientes alternativas describen vías objetivas documentadas en el benchmark para dotar de prueba social a una agencia en reactivación, presentadas como opciones para el RFC-002 sin carácter prescriptivo:
 
 ```mermaid
 flowchart LR
-    A["Opción 1: Certificaciones Técnicas Oficiales (Bajo)"] --> B["Opción 2: Perfil Verificado en Clutch (Medio-Bajo)"]
-    B --> C["Opción 3: Redacción de Casos Propios de Laboratorio (Medio)"]
-    C --> D["Opción 4: Casos con Clientes Históricos Autorizados (Medio-Alto)"]
+    A["Opción A: Certificaciones Oficiales de Plataforma"] 
+    B["Opción B: Plataformas de Reputación de Terceros"]
+    C["Opción C: Proyectos Internos y Laboratorio Técnico"]
+    D["Opción D: Casos Históricos Locales (Sujeto a Miguel)"]
 ```
 
-| Nivel de Esfuerzo | Opción de Prueba Social | Acciones Concretas | Evidencia / Beneficio Inmediato |
+| Opción Estructural | Requisitos y Dependencias | Evidencia Observada en el Benchmark | Alcance de Decisión para RFC-002 |
 | :--- | :--- | :--- | :--- |
-| **Nivel 1: Inmediato (1 - 2 semanas)** | **Certificaciones Oficiales del Equipo** | Completar certificaciones gratuitas de Google Analytics 4, Google Ads, Meta Blueprint y HubSpot. Colocar los sellos oficiales de partner en el footer y en los servicios 5, 8, 9 y 11. | Valida competencia técnica objetiva sin requerir aprobación de clientes. Usado por el 65% de la muestra. |
-| **Nivel 2: Rápido (2 - 3 semanas)** | **Activación de Perfil en Clutch.co con 3 Reseñas** | Crear perfil corporativo en Clutch y solicitar a 3 clientes o socios de confianza del historial de Miguel que completen la reseña verificada. Insertar el widget de valoración (ej. 5.0 ★). | Aporta credibilidad auditada e independiente. Es el factor decisivo en comparables como Atomic, Lounge Lizard y Single Grain. |
-| **Nivel 3: Medio (3 - 4 semanas)** | **Lanzamiento de «Pharmaco Lab» (Casos Propios)** | Publicar 2 estudios de caso desarrollados internamente: 1) Auditoría de velocidad y Core Web Vitals en empresas de Perú, y 2) Un prototipo interactivo de agente IA para atención al cliente. | Demuestra capacidad de ejecución en desarrollo de software, IA y CRO sin depender de permisos de confidencialidad. |
-| **Nivel 4: Dependiente de Miguel** | **Documentación de Casos Históricos Reales** | Con el visto bueno de Miguel, redactar los casos de CyberWow, Iveco y Venturi sustituyendo el `Lorem ipsum` por el reto real de negocio y fotografías auténticas. | Convierte el portafolio inactivo de 2020 en casos de estudio con narrativa profesional. |
+| **Opción A: Certificaciones de Plataforma** | Depende exclusivamente de acreditaciones técnicas individuales (Google Skillshop, Meta Blueprint, HubSpot Academy, Shopify). No requiere interlocución externa. | Presente en el 95% de la muestra (19 agencias, ej. [Artefact](fichas/artefact.md), [Neo Consulting](fichas/neo-consulting.md), [Upraw](fichas/upraw-media.md)). | Definir qué sellos de certificación se integran en el footer y páginas de servicio (5, 8, 9, 11). |
+| **Opción B: Plataformas de Reputación B2B (Clutch / Google Profile)** | Requiere creación de perfil corporativo y registro formal de dirección física o verificación externa según protocolo de cada plataforma. | Presente en agencias comparables independientes ([Atomic](fichas/atomic-digital-marketing.md), [Lounge Lizard](fichas/lounge-lizard.md), [Single Grain](fichas/single-grain.md)). | Decidir si se incorpora un widget de calificación externa en la arquitectura web. |
+| **Opción C: Proyectos Propios de Laboratorio («Pharmaco Lab»)** | Depende del desarrollo de pruebas de concepto (PoC) o estudios sectoriales generados internamente sin intervención de terceros ni acuerdos de confidencialidad. | Modelo observado en [Monopo](fichas/monopo.md) (proyectos culturales propios) y [Artefact](fichas/artefact.md) (whitepapers técnicos). | Evaluar si se reservan fichas de caso para experimentos y prototipos técnicos propios. |
+| **Opción D: Activación de Portafolio Histórico Local** | Depende estrictamente de la autorización comercial de Miguel y la provisión de datos reales sobre CyberWow, Iveco y Venturi. | Estructura de caso estándar observada en las 20 agencias (Problema > Solución > Métricas). | Decidir si los activos locales de 2020 se adaptan al estándar o se mantienen en reserva. |

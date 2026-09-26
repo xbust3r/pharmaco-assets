@@ -33,6 +33,7 @@
 
 ---
 
-## 4. Agrupación recomendada para Pharmaco
+## 4. Opciones de agrupación observadas para RFC-002
 
-* Agrupar en el pilar **AI, Technology & Data**.
+* **Opción A (Pilar tecnológico conjunto):** Agrupar en un pilar unificado de tecnología y datos («AI, Technology & Data»). Evidencia: observado en [Artefact](../fichas/artefact.md), [BlueOrange Digital](../fichas/blueorange-digital.md) y [Neo Consulting](../fichas/neo-consulting.md).
+* **Opción B (Capacidad transversal por servicio):** Integrar la IA como capacidad transversal aplicada dentro de cada servicio (branding generativo, desarrollo con agentes, optimización predictiva), como lo estructuran [Bravoure](../fichas/bravoure.md) y [Work & Co](../fichas/work-and-co.md).

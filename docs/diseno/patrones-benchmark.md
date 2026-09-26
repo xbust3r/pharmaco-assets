@@ -47,62 +47,62 @@ A través de las 20 agencias se detecta un patrón de embudo claro en la página
 
 ### 2.1 Tipografía
 
-* **Predominio Sans-Serif Neogrotesca:** 18 de 20 agencias (90%) utilizan tipografías de palo seco geométricas o grotescas (estilos similares a *Inter, Neue Haas Grotesk, PP Neue Montreal, Circular, Poppins*).
+* **Predominio Sans-Serif Neogrotesca:** 18 de 20 agencias (90%) utilizan tipografías de palo seco geométricas o grotescas (estilos similares a *Inter, Neue Haas Grotesk, PP Neue Montreal, Circular, Poppins*). Evidencia trazable en fichas: [Bravoure](../investigacion/fichas/bravoure.md), [Brolik](../investigacion/fichas/brolik.md), [Dogstudio](../investigacion/fichas/dogstudio.md), [Edenspiekermann](../investigacion/fichas/edenspiekermann.md), [Instrument](../investigacion/fichas/instrument.md), [Work & Co](../investigacion/fichas/work-and-co.md) (ver capturas: [`capturas/bravoure-home.png`](../investigacion/capturas/bravoure-home.png), [`capturas/brolik-home.png`](../investigacion/capturas/brolik-home.png)).
 * **Jerarquía de contraste extremo:**
   * Titulares masivos en Hero: entre `64px` y `110px` en escritorio, con `line-height` muy apretado (`1.0` a `1.1`).
-  * Textos de párrafo limpios: `16px` a `18px`, con generoso interlineado (`1.5` a `1.6`) para máxima legibilidad.
-* **Toque editorial en títulos:** Agencias referentes (Code and Theory, Monopo, Edenspiekermann) introducen tipografías serif contemporáneas de alto contraste en titulares editoriales para transmitir sofisticación y pensamiento estratégico.
+  * Textos de párrafo limpios: `16px` a `18px`, con generoso interlineado (`1.5` a `1.6`) para legibilidad.
+* **Toque editorial en títulos:** Agencias referentes ([Code and Theory](../investigacion/fichas/code-and-theory.md), [Monopo](../investigacion/fichas/monopo.md), [Edenspiekermann](../investigacion/fichas/edenspiekermann.md)) introducen tipografías serif contemporáneas de alto contraste en titulares editoriales (ver captura: [`capturas/monopo-home.png`](../investigacion/capturas/monopo-home.png)).
 
 ### 2.2 Color y contraste
 
 * **Distribución de fondos y modo:**
-  * 11 de las 20 agencias (55%) utilizan fondos oscuros profundos (`#000000`, `#0a0a0a`, `#111029`) en su home o en sus casos de estudio (Dogstudio, Bravoure, BlueOrange, Instrument, Code and Theory, Neo Consulting).
-  * 9 agencias (45%) apuestan por un fondo blanco puro (`#ffffff`) o neutro muy claro (Good Rebels, Edenspiekermann, Upraw Media, Brolik, Major Tom, Lounge Lizard, Work & Co).
-* **Uso del color de acento:** Las agencias modernas evitan paletas sobrecargadas. Utilizan blanco y negro como base, reservando un **único color de acento vibrante** (ej. amarillo lima, azul eléctrico, morado tecnológico) exclusivamente para botones interactivos, estados hover y badges de estado.
+  * 11 de las 20 agencias (55%) utilizan fondos oscuros profundos (`#000000`, `#0a0a0a`, `#111029`) en su home o en sus casos de estudio ([Dogstudio](../investigacion/fichas/dogstudio.md), [Bravoure](../investigacion/fichas/bravoure.md), [BlueOrange](../investigacion/fichas/blueorange-digital.md), [Instrument](../investigacion/fichas/instrument.md), [Code and Theory](../investigacion/fichas/code-and-theory.md), [Neo Consulting](../investigacion/fichas/neo-consulting.md); capturas: [`capturas/bravoure-home.png`](../investigacion/capturas/bravoure-home.png), [`capturas/dogstudio-home.png`](../investigacion/capturas/dogstudio-home.png)).
+  * 9 agencias (45%) apuestan por un fondo blanco puro (`#ffffff`) o neutro muy claro ([Good Rebels](../investigacion/fichas/good-rebels.md), [Edenspiekermann](../investigacion/fichas/edenspiekermann.md), [Upraw Media](../investigacion/fichas/upraw-media.md), [Brolik](../investigacion/fichas/brolik.md), [Major Tom](../investigacion/fichas/major-tom.md), [Lounge Lizard](../investigacion/fichas/lounge-lizard.md), [Work & Co](../investigacion/fichas/work-and-co.md); capturas: [`capturas/brolik-home.png`](../investigacion/capturas/brolik-home.png), [`capturas/upraw-media-home.png`](../investigacion/capturas/upraw-media-home.png)).
+* **Uso del color de acento:** Las agencias modernas evitan paletas sobrecargadas. Utilizan blanco y negro como base, reservando un **único color de acento vibrante** (ej. amarillo lima, azul eléctrico, morado tecnológico) para botones interactivos, estados hover y badges de estado.
 
 ### 2.3 Uso de fotografía y video (Especial relevancia para el Servicio 7)
 
-* **El video como recurso de portada:** 13 de las 20 agencias (65%) tienen **clips de video en loop o animaciones interactivas continuas en la cabecera**. Comunica dinamismo inmediato.
-* **Cero fotos de stock:** Ninguna agencia del benchmark utiliza fotografía de stock genérica. Se utiliza:
+* **El video como recurso de portada:** 13 de las 20 agencias (65%) tienen **clips de video en loop o animaciones interactivas continuas en la cabecera** ([Monopo](../investigacion/fichas/monopo.md), [Media.Monks](../investigacion/fichas/media-monks.md), [Dogstudio](../investigacion/fichas/dogstudio.md), [Bravoure](../investigacion/fichas/bravoure.md); capturas: [`capturas/monopo-home.png`](../investigacion/capturas/monopo-home.png), [`capturas/media-monks-home.png`](../investigacion/capturas/media-monks-home.png)).
+* **Tratamiento de imágenes reales:** Ninguna agencia del benchmark utiliza fotografía de stock genérica. Se observa:
   1. Fotografía documental auténtica del equipo en su espacio de trabajo.
   2. Renders y capturas reales de producto digital e interfaces en dispositivos reales.
   3. Video comercial en alta definición de las campañas producidas.
 
 ### 2.4 Movimiento e interacción
 
-* **Animaciones al scroll (Scroll-driven animations):** 17 de las 20 agencias incorporan transiciones suaves de opacidad y desplazamiento al hacer scroll.
-* **Microinteracciones en cursores:** Efectos de cursor magnético que se expande al pasar sobre enlaces o que muestra un badge de «Ver caso» o «Play» sobre videos.
-* **Rendimiento ante todo:** A diferencia de 2020 donde proliferaban librerías pesadas, las agencias en 2026 priorizan animaciones aceleradas por hardware vía CSS `transform` y `opacity`, garantizando 60 fps en móviles.
+* **Animaciones al scroll (Scroll-driven animations):** 17 de las 20 agencias incorporan transiciones suaves de opacidad y desplazamiento al hacer scroll ([Dogstudio](../investigacion/fichas/dogstudio.md), [Bravoure](../investigacion/fichas/bravoure.md), [Instrument](../investigacion/fichas/instrument.md)).
+* **Microinteracciones en cursores:** Efectos de cursor magnético o badges contextuales sobre videos.
+* **Optimización técnica:** Priorización de animaciones CSS aceleradas por hardware vía `transform` y `opacity`.
 
 ---
 
 ## 3. Tabla de contraste: Web de assets (Pharmaco 2020-2021) vs. Benchmark 2026
 
-Comparación analítica entre lo que tiene construido Pharmaco en sus maquetas locales ([`sistema-web-assets.md`](sistema-web-assets.md)) y los estándares detectados en las agencias de referencia internacional:
+Comparación analítica neutral entre los elementos existentes en las maquetas locales ([`sistema-web-assets.md`](sistema-web-assets.md)) y los patrones observados en el benchmark internacional, para servir de evidencia objetiva a las decisiones de `RFC-002`:
 
-| Patrón de Diseño / Arquitectura | Web de Assets de Pharmaco (2020-2021) | Benchmark Internacional (2026) | Veredicto / Estado para Pharmaco |
+| Elemento / Dimensión | Web de Assets de Pharmaco (2020-2021) | Benchmark Internacional (2026) | Opciones Observadas para RFC-002 |
 | :--- | :--- | :--- | :--- |
-| **Arquitectura de Maquetación** | BEM modular con `inuitcss`, capas bien estructuradas (`generic`, `objects`, `components`, `utilities`). | CSS modular, CSS variables nativas, Tailwind o arquitecturas de componentes modernas. | ✅ **Vigente y reutilizable.** La base BEM de Pharmaco es sólida y técnicamente limpia. |
-| **Tipografía Base** | `Poppins` en 5 pesos (400 a 800) servida localmente en WOFF2. | Familias grotescas geométricas (*Inter*, *Montreal*, *Poppins*) en pesos bold y regular. | ✅ **Vigente.** `Poppins` sigue siendo moderna, legible y está bien implementada localmente. |
-| **Escala Tipográfica** | Títulos de sección a 35px/40px. Hero grande a 77px/84px. | Titulares de impacto de 80px a 110px en escritorio con espaciado compacto. | 🟡 **Actualizar ligeramente.** El Hero actual funciona, pero los títulos intermedios necesitan mayor diferenciación jerárquica. |
-| **Paleta de Colores** | Morado primario (`#5956e9`), Azul tech (`#4c40f7`), Fondo oscuro (`#111029`), Acento amarillo (`#ffd027`). | Blanco/negro de base con un acento vibrante (morado o azul eléctrico). Fondos oscuros en casos. | ✅ **Vigente.** La combinación de `#5956e9` y fondo oscuro `#111029` encaja perfectamente con la tendencia tecnológica actual. |
-| **Hero de Portada** | Estático con ilustración/fotografía lateral y textos fijos (`c-hero--home`). | Video showreel en autoplay o fondo dinámico inmersivo a ancho completo. | ❌ **Desfasado.** La home de Pharmaco requiere incorporar video/motion en su Hero para reflejar el Servicio 7 (Foto y Video). |
-| **Estructura de Servicios** | Lista estática de tarjetas con textos repetidos y sin despiece de entregables. | Páginas con tabs interactivos, despiece de metodología, herramientas usadas y casos vinculados. | ❌ **Desfasado.** Las páginas de servicio de Pharmaco deben reestructurarse con la anatomía moderna documentada en TASK-002. |
-| **Prueba Social en Home** | Carrusel con 5 logos en SVG planos con `alt="alt"` y tarjetas de proyectos en `Lorem ipsum`. | Logos en escala de grises al 50% de opacidad, badges de Clutch/Google, métricas cuantitativas (+X%). | ❌ **Desfasado.** Se debe sustituir el slider estático por un módulo de confianza con métricas y acreditaciones reales. |
-| **Casos de Estudio** | Maquetas ricas en CyberWow, Iveco y Stralis, pero sin métricas y con texto simulado. | Ficha estructurada en Reto > Solución > Métricas (+X% ROAS) > Testimonio del cliente. | 🟡 **Parcialmente aprovechable.** El diseño visual de los módulos de portafolio es excelente, pero falta la narrativa de negocio y resultados. |
-| **Formularios de Contacto** | Formulario completo (`.c-contact-form`) con validaciones y campos de presupuesto y radios. | Formularios breves tipo multi-step o enlaces directos a reserva de llamada (Cal.com / Calendly). | ✅ **Vigente con optimización.** El formulario de Pharmaco es muy completo; convendría añadir la opción de agendar videollamada directa. |
-| **Librerías de Animación** | `AOS` (Animate On Scroll) y `tiny-slider`. | Animaciones CSS nativas o bibliotecas ligeras sin dependencias. | ✅ **Vigente.** `AOS` y `tiny-slider` son ligeras, robustas y funcionan sin problemas de rendimiento. |
+| **Arquitectura CSS** | BEM modular con `inuitcss`, capas (`generic`, `objects`, `components`, `utilities`). | CSS modular, CSS variables nativas o utilitarios modernos. | **Opción A:** Reutilizar la arquitectura BEM existente.<br>**Opción B:** Migrar a CSS variables nativas o utilidades. |
+| **Tipografía Base** | `Poppins` en 5 pesos (400 a 800) servida localmente en WOFF2. | Familias grotescas geométricas (*Inter*, *Montreal*, *Poppins*) en pesos bold y regular. | **Opción A:** Conservar `Poppins` local.<br>**Opción B:** Explorar fuentes del sistema o variables neogrotescas. |
+| **Escala Tipográfica** | Títulos de sección a 35px/40px. Hero a 77px/84px. | Titulares de impacto de 80px a 110px en escritorio con interlineado compacto. | **Opción A:** Mantener escala 2020.<br>**Opción B:** Aumentar escala del Hero y jerarquía de contraste. |
+| **Paleta de Colores** | Morado primario (`#5956e9`), Azul tech (`#4c40f7`), Fondo oscuro (`#111029`), Acento amarillo (`#ffd027`). | Blanco/negro de base con un único acento vibrante. Fondos oscuros presentes en 55% de la muestra. | **Opción A:** Conservar paleta morado/noche.<br>**Opción B:** Simplificar a base monocromática con un solo acento. |
+| **Hero de Portada** | Estático con ilustración/fotografía lateral y textos fijos (`c-hero--home`). | Video showreel en loop o animaciones interactivas continuas (65% de la muestra). | **Opción A:** Mantener Hero estático.<br>**Opción B:** Incorporar módulo de video en loop vinculado al Servicio 7. |
+| **Estructura de Servicios** | Lista estática de tarjetas con textos genéricos y sin entregables específicos. | Páginas con tabs interactivos, metodología, herramientas y casos vinculados. | **Opción A:** Mantener formato tarjeta.<br>**Opción B:** Adoptar la anatomía canónica observada en TASK-002. |
+| **Prueba Social en Home** | Carrusel con 5 logos en SVG planos con `alt="alt"` y tarjetas de proyectos en `Lorem ipsum`. | Logos en escala de grises al 50%, badges de Clutch/Google, métricas cuantitativas (+X%). | **Opción A:** Conservar slider de logos plano.<br>**Opción B:** Reestructurar módulo de confianza con métricas y acreditaciones. |
+| **Casos de Estudio** | Maquetas completas (CyberWow, Iveco, Stralis), con textos simulados y sin métricas de negocio. | Ficha estructurada en Reto > Solución > Métricas (+X%) > Testimonio. | **Opción A:** Galería visual orientada a diseño.<br>**Opción B:** Caso de estudio estructurado con impacto de negocio. |
+| **Formularios de Contacto** | Formulario completo (`.c-contact-form`) con validaciones y selector de presupuesto. | Formularios breves o enlaces a reserva de reunión directa (Cal.com / Calendly). | **Opción A:** Mantener formulario nativo.<br>**Opción B:** Integrar opción híbrida de reserva de calendario. |
+| **Librerías de Animación** | `AOS` (Animate On Scroll) y `tiny-slider`. | Animaciones CSS nativas o bibliotecas ligeras sin dependencias. | **Opción A:** Reutilizar AOS y tiny-slider.<br>**Opción B:** Reemplazar por animaciones CSS nativas al scroll. |
 
 ---
 
-## 4. Conclusiones para la Redacción de `RFC-002`
+## 4. Alternativas de Decisión para la Redacción de `RFC-002`
 
-1. **Lo que Pharmaco debe conservar:**
-   * La arquitectura CSS con metodología BEM y preprocesador SCSS.
-   * La paleta corporativa basada en el morado `#5956e9` y el fondo noche `#111029`.
-   * La tipografía `Poppins` alojada localmente.
-   * El sistema de iconos SVG sprites.
-2. **Lo que Pharmaco debe transformar:**
-   * El Hero estático de la home debe evolucionar hacia un formato audiovisual (aprovechando la incorporación del servicio de Fotografía y Video).
-   * La página de Servicios debe abandonar los textos genéricos e implementar la estructura canónica descubierta en el benchmark (Problema > Metodología > Entregables > Herramientas > Casos > CTA).
-   * El portafolio debe abandonar el enfoque de "galería de fotos" para convertirse en estudios de caso estructurados orientados a resolver problemas de negocio.
+A partir de la evidencia analizada, se identifican las siguientes alternativas estructurales para consideración de Clia y Miguel en el `RFC-002`:
+
+1. **Enfoque de Continuidad Técnica (Aprovechamiento de Assets 2020):**
+   * Preservar la arquitectura BEM (`inuitcss`), la tipografía `Poppins` y la paleta `#5956e9` / `#111029`.
+   * Actualizar el contenido de los bloques existentes con los textos reales de los 11 servicios y la prueba social disponible.
+2. **Enfoque de Renovación Estructural (Alineamiento con Benchmark 2026):**
+   * Evolucionar el Hero hacia un formato con soporte de video showreel (alineado con la incorporación del servicio de Fotografía y Video).
+   * Reestructurar las páginas de servicio y de caso según la anatomía modular documentada en TASK-002 y TASK-003.
+   * Modernizar el sistema de animación hacia propiedades nativas CSS con aceleración gráfica.

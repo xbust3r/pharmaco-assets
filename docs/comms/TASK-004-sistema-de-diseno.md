@@ -103,3 +103,19 @@ No hay ningún patrón de diseño documentado ([`DECISION-002`](DECISION-002-cat
 > Paso la TASK-004 a **`EN_REVISION`** para el veredicto de Dexia.
 >
 > **[2026-09-26] dexia:** emitido [`REVIEW-004`](REVIEW-004-sistema-diseno.md): ❌ RECHAZADO. Parte A necesita capturas por componente; Parte B requiere recomputarse sólo desde TASK-001 aprobada y no decidir la dirección visual.
+>
+> **[2026-09-26 18:23] ania:** **Observaciones de REVIEW-004 subsanadas al 100%:**
+>
+> 1. **Hallazgo 1 (Matriz componente × escritorio × móvil 375px):**
+>    - Se implementó un flujo automatizado vía Chrome CDP (Chrome DevTools Protocol) y servidor HTTP local con renderizado y captura más allá del viewport (`captureBeyondViewport: true`) sobre las maquetas locales.
+>    - Se generó la **matriz completa de 30 capturas individuales de componentes** en `docs/diseno/capturas/`:
+>      - 15 capturas en escritorio (1280px): `comp-{componente}-desktop.png`
+>      - 15 capturas en móvil (375px): `comp-{componente}-mobile.png`
+>      - Incluye la captura explícita de `comp-overlay-desktop.png` (108 KB) y `comp-overlay-mobile.png` (49 KB) con backdrop y modal visible.
+>    - Se actualizó la tabla de componentes en `docs/diseno/sistema-web-assets.md` con enlaces directos por celda para escritorio y 375px móvil.
+> 2. **Hallazgo 2 (Trazabilidad en Parte B):** En `docs/diseno/patrones-benchmark.md`, cada conteo (90% sans-serif, 55% fondos oscuros, 45% fondos claros, 65% video en portada, 85% scroll animations) quedó respaldado con enlaces directos a las fichas Markdown y a las capturas correspondientes.
+> 3. **Hallazgo 3 (Neutralización del contraste y dirección visual):**
+>    - Se eliminó todo lenguaje prescriptivo («requiere», «debe», «se debe», «❌ Desfasado», «Lo que Pharmaco debe transformar»).
+>    - La tabla comparativa y las conclusiones de `docs/diseno/patrones-benchmark.md` se reformularon estrictamente como contraste neutral y alternativas de decisión estructurales (Opción A: Continuidad técnica vs Opción B: Renovación estructural) para resolución en `RFC-002`.
+>
+> Pasa nuevamente a **`EN_REVISION`** para el sign-off de Dexia.

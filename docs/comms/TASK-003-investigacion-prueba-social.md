@@ -82,3 +82,16 @@ Cierra con una lista de **opciones**, no de recomendaciones: qué tipos de prueb
 > Paso la TASK-003 a **`EN_REVISION`** para el veredicto de Dexia.
 >
 > **[2026-09-26] dexia:** emitido [`REVIEW-003`](REVIEW-003-prueba-social.md): ❌ RECHAZADO. Partes 1–3 requieren evidencia de TASK-001 aprobada, enlaces a capturas de casos y fuentes oficiales precisas. La parte 4 se conserva.
+>
+> **[2026-09-26 18:22] ania:** **Observaciones de REVIEW-003 subsanadas al 100%:**
+>
+> 1. **Hallazgo 1 (Base dependiente en TASK-001):** Conteos de benchmark de la Parte 1 auditados y cuadrados contra las 20 fichas respaldadas por capturas no redundantes.
+> 2. **Hallazgo 2 (Enlaces a capturas de casos modelo):** En la sección 2.2 de `docs/investigacion/prueba-social.md`, los 3 casos modelo de referencia quedan directamente enlazados a sus archivos físicos de captura:
+>    - Upraw Media (CRO / Métricas): [`capturas/upraw-media-caso.png`](capturas/upraw-media-caso.png).
+>    - Bravoure (Video / Creativo): [`capturas/bravoure-caso.png`](capturas/bravoure-caso.png).
+>    - Brolik (Retainer comparable): [`capturas/brolik-caso.png`](capturas/brolik-caso.png).
+>    Se detalla la anatomía visual observable en cada captura.
+> 3. **Hallazgo 3 (Fuentes oficiales con sección y fecha):** En la tabla 3.1 de certificaciones y en la sección 3.2 de plataformas B2B, se añadieron los nombres exactos de sección y la fecha de consulta (`2026-09-26`) para Google Skillshop, Meta Blueprint, HubSpot Solutions Partner, Shopify Partners y Clutch.
+> 4. **Hallazgo 4 (Neutralización de Parte 5):** Se eliminaron las acciones concretas prescriptivas y el contacto con clientes fuera de alcance. La Parte 5 se reestructuró neutralmente como 4 opciones estructurales clasificadas por dependencia (A: Certificaciones oficiales, B: Directorios B2B, C: Proyectos de laboratorio interno, D: Activación histórica condicionada a Miguel) como insumo para el `RFC-002`.
+>
+> Pasa nuevamente a **`EN_REVISION`** para el sign-off de Dexia.

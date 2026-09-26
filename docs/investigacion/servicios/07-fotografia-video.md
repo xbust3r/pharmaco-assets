@@ -33,7 +33,7 @@
 
 ---
 
-## 4. Agrupación recomendada para Pharmaco
+## 4. Opciones de agrupación observadas para RFC-002
 
-* Agrupar en el pilar **Creative Production** o **Content Studio**.
-* Evitar vender días de cámara aislados; vender soluciones de contenido para campañas y plataformas web.
+* **Opción A (Modelo integrado):** Empaquetar como unidad creativa transversal («Creative Production» o «Content Studio») al servicio de Branding, Campañas, Social Media y Web. Evidencia: observado en 14 agencias de la muestra (ej. [Monopo](../fichas/monopo.md), [Media.Monks](../fichas/media-monks.md), [Good Rebels](../fichas/good-rebels.md), [Brolik](../fichas/brolik.md)).
+* **Opción B (Servicio independiente):** Mantener fotografía y vídeo como línea de servicio separada con catálogo de entregables audiovisuales directos.

@@ -27,5 +27,6 @@
 
 ## 3. ¿Se ofrecen juntos o separados?
 
-* **Evidencia del benchmark:** En el 90% de las agencias analizadas, los datos y la automatización forman un solo pilar. La razón técnica es clara: la analítica recopila los eventos y señales de usuario, y la automatización ejecuta las acciones de negocio en respuesta a esos datos.
-* **Recomendación para Pharmaco:** Mantener "Datos y automatización" como un único servicio unificado.
+* **Opciones observadas para RFC-002:**
+  - Opción A: Mantener «Datos y automatización» como un único servicio unificado, alineado con el 90% de la muestra analizada (18 agencias, ej. [Artefact](../fichas/artefact.md), [Neo Consulting](../fichas/neo-consulting.md), [Brolik](../fichas/brolik.md)).
+  - Opción B: Desacoplar infraestructura/analítica de datos por un lado y automatización operativa por otro.
