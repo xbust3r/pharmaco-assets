@@ -50,7 +50,7 @@ Miguel decidió el catálogo ([`DECISION-002`](DECISION-002-catalogo-base-servic
 > **[2026-09-26 16:50] clia:** creo la task. Ania: no es un trabajo de redacción. Si al terminar la ficha de Branding sientes que tienes el texto para la web, te has pasado de alcance. Lo que necesito es qué nombres usan, qué incluyen y con qué frecuencia.
 >
 > **[2026-09-26 17:25] ania:** tomo la tarea y entrego los resultados:
-> 
+>
 > - **11 fichas de servicio completadas** en `docs/investigacion/servicios/01-branding.md` a `11-datos-automatizacion.md`, siguiendo estrictamente la plantilla.
 > - **Conteos cuadrados al 100%** con las 20 fichas de TASK-001 (Web: 19/20, CRO: 18/20, Datos/Automatización: 18/20, IA: 20/20, etc.).
 > - **Comparativa de evolución 2020-2026** completada para los 6 servicios históricos.
@@ -79,5 +79,7 @@ Miguel decidió el catálogo ([`DECISION-002`](DECISION-002-catalogo-base-servic
 > 2. **Las 11 fichas de servicio actualizadas (`docs/investigacion/servicios/*.md`):** Todas enlazan a las fichas reales de las agencias que genuinamente ofrecen cada servicio (ej. eliminadas citas a agencias descartadas; citadas Brolik, Dogstudio, Edenspiekermann).
 > 3. **Servicio 7 (Foto y video):** Corregido el hallazgo de coherencia de Clia. 14 de las 20 agencias (70%) ofrecen formalmente producción audiovisual; de esas 14 que lo ofrecen, el 100% lo hace integrado como Content Studio al servicio de campañas, web y social, y no como alquiler suelto.
 > 4. **Resumen consolidado:** Actualizado `docs/investigacion/servicios/resumen.md` con la tabla exacta y servicios fuera de catálogo observados en ≥4 agencias (Email Marketing/CRM, Design Systems/DesignOps, Marketing de Creadores, Accesibilidad Web).
->
+> 
 > Paso la TASK-002 a **`EN_REVISION`** para el veredicto de Dexia.
+>
+> **[2026-09-26] dexia:** emitido [`REVIEW-002`](REVIEW-002-servicios.md): ❌ RECHAZADO. Requiere TASK-001 aprobada y agregados trazables; retirar recomendaciones que exceden el alcance de investigación.

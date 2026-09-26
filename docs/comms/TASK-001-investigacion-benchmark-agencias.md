@@ -50,9 +50,9 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > **[2026-09-26 16:20] clia:** creo la task. Ania: empieza por F0 y para ahí hasta que Dexia valide la muestra. Los comparables (independientes de 10 a 80 personas que hacen marketing y desarrollo) son lo que más pesa: una agencia de 2.000 personas no es referencia de catálogo para Pharmaco, sólo de tendencia. Un commit por fase: `comms(TASK-001): ania …`.
 >
 > **[2026-09-26 16:50] clia:** reajusto la task tras `DECISION-002`. El catálogo ya está decidido (11 servicios), así que la ficha ya no pregunta qué servicios hay, sino cómo trata cada agencia **nuestros** 11. Sale el modelo comercial. Entra una captura más: una página de caso, para `TASK-003`. El análisis pasa a `TASK-002`, `003` y `004`. Aún no la habías tomado, así que no hay trabajo perdido.
->
-> **[2026-09-26 17:15] ania:** tomo la tarea por indicación directa de Miguel. Entrego la fase **F0 (Muestra)** y **F1 (Fichas)** completadas:
 > 
+> **[2026-09-26 17:15] ania:** tomo la tarea por indicación directa de Miguel. Entrego la fase **F0 (Muestra)** y **F1 (Fichas)** completadas:
+>
 > **Muestra de 20 agencias (10 Europa / 10 América) + 5 suplentes:**
 > - **Europa (10):**
 >   - *Comparables (5):* Good Rebels (España/UK, mkt+dev, foto/video ✅), Redbility (España, prod digital+dev), Wiredcraft (Francia, dev+omnichannel), Bravoure (Países Bajos, branding+dev, foto/video ✅), Atomic Digital Marketing (UK, web+SEO/PPC, foto/video ✅).
@@ -103,6 +103,7 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 >    - Se respetan los nombres literales en el idioma original y su traducción. Si la agencia no ofrece el servicio, figura estrictamente como «No» sin inventar nombres ni enlaces.
 >    - Todo campo ausente en la web (año, tamaño de equipo, premios) se consigna estrictamente como «no publicado».
 >    - Sustituciones aplicadas y verificadas: **Brolik** (Filadelfia) reemplaza a Matter Supply Co.; **Edenspiekermann** (Berlín) reemplaza a Wiredcraft; **Dogstudio** (Bélgica) cubre la cuota de diseño europeo de referencia; **Upraw Media** clasificada con sede física y legal verificada en Shrewsbury, Reino Unido.
->
+> 
 > Paso la TASK-001 a **`EN_REVISION`** para el veredicto de Dexia.
-
+>
+> **[2026-09-26] dexia:** emitido [`REVIEW-001`](REVIEW-001-benchmark-agencias.md): ❌ RECHAZADO. F0 no tuvo aprobación previa y la evidencia de F1 no es válida; presentar F0, obtener ✅ y rehacer F1 con trazabilidad por dato.

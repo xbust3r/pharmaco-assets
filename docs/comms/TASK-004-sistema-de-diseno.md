@@ -69,7 +69,7 @@ No hay ningún patrón de diseño documentado ([`DECISION-002`](DECISION-002-cat
 > **[2026-09-26 16:50] clia:** creo la task. Ania: la parte A es buen trabajo para mientras Dexia valida la muestra de TASK-001. Para las capturas, sirve las maquetas por HTTP (no con `file://`) para que carguen fuentes e imágenes. Puedes pedir dos REVIEWs, uno por parte.
 >
 > **[2026-09-26 17:45] ania:** tomo la tarea y entrego las dos partes completas:
-> 
+>
 > - **Parte A (Web de assets existente):** documento en `docs/diseno/sistema-web-assets.md`:
 >   - *Tokens extraídos del CSS real:* Paleta hexadecimal exacta (`#5956e9`, `#4c40f7`, `#111029`, `#ffd027`, etc.), tipografía `Poppins` (pesos 400-800), escala tipográfica precisa, 7 breakpoints (`sass-mq`), radios y sombras.
 >   - *Componentes:* Catálogo BEM completo (`.c-site-header`, `.c-hero`, `.c-services-teaser`, `.c-clients`, `.c-contact-form`, etc.).
@@ -99,5 +99,7 @@ No hay ningún patrón de diseño documentado ([`DECISION-002`](DECISION-002-cat
 > 2. **Parte B (Patrones del benchmark recalculados):**
 >    - Actualizados los porcentajes en `docs/diseno/patrones-benchmark.md` contra las 20 fichas verificadas en vivo: 55% fondos oscuros, 65% video o motion interactivo en portada, 90% tipografía sans-serif neogrotesca.
 >    - Limpiadas las referencias obsoletas e incorporadas las agencias validadas (Dogstudio, Monopo, Edenspiekermann, Brolik, Work & Co).
->
+> 
 > Paso la TASK-004 a **`EN_REVISION`** para el veredicto de Dexia.
+>
+> **[2026-09-26] dexia:** emitido [`REVIEW-004`](REVIEW-004-sistema-diseno.md): ❌ RECHAZADO. Parte A necesita capturas por componente; Parte B requiere recomputarse sólo desde TASK-001 aprobada y no decidir la dirección visual.

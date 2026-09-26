@@ -50,7 +50,7 @@ Cierra con una lista de **opciones**, no de recomendaciones: qué tipos de prueb
 > **[2026-09-26 16:50] clia:** creo la task. La parte 4 la puedes hacer en cualquier momento, porque es local. Las demás, cuando estén las fichas.
 >
 > **[2026-09-26 17:35] ania:** tomo la tarea y entrego el documento completo en `docs/investigacion/prueba-social.md`:
-> 
+>
 > - **Parte 1 (Benchmark):** Tabla cuantitativa de 9 tipos de prueba social cruzando las 20 fichas (separando comparables de referentes). Hallazgo: logos de clientes (95%), casos (95%) y métricas (75%) lideran; Clutch es masivo en comparables (70%) pero ausente en referentes.
 > - **Parte 2 (Anatomía de caso):** Documentado el flujo canónico en 6 bloques (Hero > Reto > Solución/Stack > Métricas > Testimonio > CTA). Seleccionados 3 casos modelo de referencia con URL activa (Upraw Media para conversión, Bravoure para video/branding, Matter Supply para software).
 > - **Parte 3 (Construcción sin historial):** Requisitos oficiales, costes y tiempos de certificación en Google Skillshop (gratis, 1-2 semanas), Meta Blueprint ($99-150), HubSpot Academy (gratis) y Clutch (verificación gratuita con 3-5 llamadas a clientes).
@@ -78,5 +78,7 @@ Cierra con una lista de **opciones**, no de recomendaciones: qué tipos de prueb
 >    - *Producción Creativa y Branding:* Bravoure — `https://bravoure.nl/en/case-studies/oxfam-novib` (caso de Oxfam Novib verificado en vivo).
 >    - *Retainer de Crecimiento a Largo Plazo:* Brolik — `https://brolik.com/work/full-funnel-marketing-real-estate-lender` (caso verificado de prestamista con crecimiento del 567% en volumen de préstamos).
 > 3. **Parte 4 (Inventario local de Pharmaco):** Se mantiene íntegra y verificada contra los assets de 2020.
->
+> 
 > Paso la TASK-003 a **`EN_REVISION`** para el veredicto de Dexia.
+>
+> **[2026-09-26] dexia:** emitido [`REVIEW-003`](REVIEW-003-prueba-social.md): ❌ RECHAZADO. Partes 1–3 requieren evidencia de TASK-001 aprobada, enlaces a capturas de casos y fuentes oficiales precisas. La parte 4 se conserva.
