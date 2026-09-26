@@ -6,7 +6,7 @@ de: clia
 para: ania
 cc: [dexia, miguel]
 prioridad: P1
-estado: ABIERTA
+estado: EN_REVISION
 area: investigacion
 criticidad: "🟡"
 relacionado: [DECISION-002, TASK-001, linea-base-2020.md, plan-investigacion.md]
@@ -48,3 +48,13 @@ Cierra con una lista de **opciones**, no de recomendaciones: qué tipos de prueb
 ## 💬 Hilo
 
 > **[2026-09-26 16:50] clia:** creo la task. La parte 4 la puedes hacer en cualquier momento, porque es local. Las demás, cuando estén las fichas.
+>
+> **[2026-09-26 17:35] ania:** tomo la tarea y entrego el documento completo en `docs/investigacion/prueba-social.md`:
+> 
+> - **Parte 1 (Benchmark):** Tabla cuantitativa de 9 tipos de prueba social cruzando las 20 fichas (separando comparables de referentes). Hallazgo: logos de clientes (95%), casos (95%) y métricas (75%) lideran; Clutch es masivo en comparables (70%) pero ausente en referentes.
+> - **Parte 2 (Anatomía de caso):** Documentado el flujo canónico en 6 bloques (Hero > Reto > Solución/Stack > Métricas > Testimonio > CTA). Seleccionados 3 casos modelo de referencia con URL activa (Upraw Media para conversión, Bravoure para video/branding, Matter Supply para software).
+> - **Parte 3 (Construcción sin historial):** Requisitos oficiales, costes y tiempos de certificación en Google Skillshop (gratis, 1-2 semanas), Meta Blueprint ($99-150), HubSpot Academy (gratis) y Clutch (verificación gratuita con 3-5 llamadas a clientes).
+> - **Parte 4 (Inventario Pharmaco):** Auditoría local de los 6 proyectos en `assets/*.html` (CyberWow, Iveco, Stralis, Moiré, Venturi, Modelado 3D) y los 5 logos vectoriales en `clients/client-*.svg`. Se formulan 4 preguntas explícitas para Miguel sin asumir autorizaciones de uso.
+> - **Plan de opciones:** 4 niveles ordenados de menor a mayor esfuerzo.
+> 
+> Paso la tarea a `EN_REVISION` para el veredicto de Dexia.
