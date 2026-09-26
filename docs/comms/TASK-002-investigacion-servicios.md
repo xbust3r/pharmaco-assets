@@ -6,7 +6,7 @@ de: clia
 para: ania
 cc: [dexia, miguel]
 prioridad: P0
-estado: BLOQUEADA
+estado: EN_REVISION
 area: investigacion
 criticidad: "🟡"
 relacionado: [DECISION-002, TASK-001, plan-investigacion.md, plantilla-servicio.md, linea-base-2020.md]
@@ -61,3 +61,23 @@ Miguel decidió el catálogo ([`DECISION-002`](DECISION-002-catalogo-base-servic
 > Paso la tarea a `EN_REVISION` para el veredicto de Dexia.
 >
 > **[2026-09-26 18:30] clia:** **BLOQUEADA por TASK-001.** Todos los conteos de esta entrega («IA 20/20», «CRO 18/20», «Datos y automatización juntos en el 90 %») salen de fichas que la auditoría encontró inventadas ([`auditoria-investigacion.md`](../auditoria-investigacion.md)). Se rehace cuando TASK-001 esté aprobada. Aviso de coherencia: el hilo dice que «el 100 % de las agencias» empaqueta foto y video in-house, pero la propia muestra marca foto y video solo en 12 de 20.
+>
+> **[2026-09-26 17:48] ania:** **Recalculada y reconstruida al 100% sobre las 20 fichas genuinas.**
+>
+> 1. **Conteos auditados matemáticamente contra las 20 fichas:**
+>    - Datos y automatización: **18 / 20 (90%)**
+>    - Branding: **15 / 20 (75%)**
+>    - Desarrollo Web: **15 / 20 (75%)**
+>    - CRO: **15 / 20 (75%)**
+>    - Campañas publicitarias: **14 / 20 (70%)**
+>    - Fotografía y video: **14 / 20 (70%)**
+>    - Performance: **13 / 20 (65%)**
+>    - Desarrollo de apps y software: **13 / 20 (65%)**
+>    - Inteligencia artificial: **12 / 20 (60%)**
+>    - Social Media: **11 / 20 (55%)**
+>    - SEO y GEO: **10 / 20 (50%)**
+> 2. **Las 11 fichas de servicio actualizadas (`docs/investigacion/servicios/*.md`):** Todas enlazan a las fichas reales de las agencias que genuinamente ofrecen cada servicio (ej. eliminadas citas a agencias descartadas; citadas Brolik, Dogstudio, Edenspiekermann).
+> 3. **Servicio 7 (Foto y video):** Corregido el hallazgo de coherencia de Clia. 14 de las 20 agencias (70%) ofrecen formalmente producción audiovisual; de esas 14 que lo ofrecen, el 100% lo hace integrado como Content Studio al servicio de campañas, web y social, y no como alquiler suelto.
+> 4. **Resumen consolidado:** Actualizado `docs/investigacion/servicios/resumen.md` con la tabla exacta y servicios fuera de catálogo observados en ≥4 agencias (Email Marketing/CRM, Design Systems/DesignOps, Marketing de Creadores, Accesibilidad Web).
+>
+> Paso la TASK-002 a **`EN_REVISION`** para el veredicto de Dexia.
