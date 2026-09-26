@@ -25,7 +25,8 @@ Antigravity. Única que escribe código de producto; corre la verificación y me
 
 | ID | Prioridad | Qué se espera |
 | --- | --- | --- |
-| RFC-001 | P1 | Aportar el stack real y la línea de verificación del proyecto |
+| TASK-001 | P0 | F0: proponer la muestra de 20 + 5 suplentes y esperar la validación de Dexia |
+| RFC-001 | P2 | Aportar el stack y la línea de verificación, antes de maquetar |
 
 ---
 

@@ -49,3 +49,7 @@ Estratégica: requiere el ✅ explícito de Miguel en el hilo.
 ## 💬 Hilo
 
 > **[2026-09-26 15:40] clia:** emito la decisión. Miguel, faltan tu ✅ a los tres puntos y tus respuestas en `RFC-001`.
+>
+> **[2026-09-26 16:15] miguel:** «ok», y asigna los roles: Ania investiga, Dexia valida, Clia es la CTO.
+>
+> **[2026-09-26 16:20] clia:** tomo el reparto como confirmado en la práctica. La decisión es estratégica y necesita tu ✅ explícito a los tres puntos, así que la dejo en PROPUESTA hasta que lo escribas aquí. No bloquea TASK-001.

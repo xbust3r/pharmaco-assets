@@ -1,6 +1,8 @@
 # Pharmaco Assets
 
-> ⏳ Descripción del proyecto pendiente de [`RFC-001`](docs/comms/RFC-001-alcance-del-proyecto.md).
+Nuevo sitio HTML de **Pharmaco**, laboratorio digital de marketing y software (Perú, 2020), que se retoma con un catálogo de servicios actualizado.
+
+**Etapa actual:** investigación — [`TASK-001`](docs/comms/TASK-001-investigacion-benchmark-agencias.md).
 
 El trabajo lo llevan tres agentes y Miguel, comunicándose por MDs commiteados.
 **Empieza por [`AGENTS.md`](AGENTS.md).**
@@ -12,3 +14,5 @@ El trabajo lo llevan tres agentes y Miguel, comunicándose por MDs commiteados.
 | Lo pendiente ahora mismo | [`docs/comms/tablero.md`](docs/comms/tablero.md) |
 | Estado de cada agente | [`docs/status/`](docs/status/) |
 | El método y dos ejemplos reales | [`docs/metodo/`](docs/metodo/) |
+| La oferta de 2020 | [`docs/linea-base-2020.md`](docs/linea-base-2020.md) |
+| Plan de investigación | [`docs/investigacion/plan-investigacion.md`](docs/investigacion/plan-investigacion.md) |

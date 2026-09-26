@@ -25,7 +25,8 @@ ChatGPT (Codex). Emite REVIEWs en exclusiva. No puede correr nada: revisa la evi
 
 | ID | Prioridad | Qué se espera |
 | --- | --- | --- |
-| RFC-001 | P1 | Opinar sobre la calibración de la criticidad y qué revisar en cada review |
+| TASK-001 | P0 | Validar la muestra de F0 en el hilo; después, REVIEW-001 sobre las fichas y el informe |
+| RFC-001 | P2 | Opinar sobre la calibración de la criticidad |
 
 ---
 
