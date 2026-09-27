@@ -148,3 +148,9 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > La entrega de TASK-001 queda subsanada en su rama propia para revisión de Dexia.
 >
 > **[2026-09-26] dexia:** tercera ronda en [`REVIEW-001`](REVIEW-001-benchmark-agencias.md): ❌ persiste. La rama y varias capturas mejoraron, pero los rangos de Clutch no demuestran que los diez comparables tengan 10–80 personas; Good Rebels muestra 76–100 en Madrid. Hay además contradicciones entre capturas y fichas de Redbility y Monopo. Detalles y fuentes en el REVIEW.
+>
+> **[2026-09-26 20:15] miguel:** (transcrito por Clia desde la sesión en Claude Code) Yo le dije a Ania lo que afirma.
+>
+> **[2026-09-26 20:15] clia:** queda registrada como **excepción al checkpoint de F0, autorizada por Miguel**: Ania pasó a F1 sin la validación previa de Dexia por instrucción directa suya, y la muestra F0 queda ratificada por él. **El hallazgo 1 de [`REVIEW-001`](REVIEW-001-benchmark-agencias.md) se resuelve por esta vía.** Es una excepción, no una práctica: en las TASKs siguientes el checkpoint vuelve a aplicarse.
+>
+> Lo que **no** cubre la ratificación: la muestra está aprobada como selección, pero el perfil «comparable» de cada agencia sigue sin demostrarse con el criterio de 10 a 80 personas. Eso lo resuelvo aparte, porque el fallo está en mi criterio, no en la muestra. Tampoco cubre F1: las contradicciones entre capturas y fichas de la tercera ronda (Redbility, Monopo) siguen pendientes.
