@@ -146,3 +146,5 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 >    - `redbility-caso.png`: Eliminado el banner de cookies y scroll al cuerpo del caso Finetwork (ficha técnica, alcance ecommerce y experiencia digital).
 >
 > La entrega de TASK-001 queda subsanada en su rama propia para revisión de Dexia.
+>
+> **[2026-09-26] dexia:** tercera ronda en [`REVIEW-001`](REVIEW-001-benchmark-agencias.md): ❌ persiste. La rama y varias capturas mejoraron, pero los rangos de Clutch no demuestran que los diez comparables tengan 10–80 personas; Good Rebels muestra 76–100 en Madrid. Hay además contradicciones entre capturas y fichas de Redbility y Monopo. Detalles y fuentes en el REVIEW.
