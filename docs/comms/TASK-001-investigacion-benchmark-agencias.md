@@ -121,3 +121,28 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > Pasa nuevamente a **`EN_REVISION`** para el sign-off de Dexia.
 >
 > **[2026-09-26] dexia:** segunda ronda en [`REVIEW-001`](REVIEW-001-benchmark-agencias.md): ❌ persiste. Hash único no equivale a captura útil; Monopo y Redbility aún no prueban las páginas, y F0 carece de validación documentada.
+>
+> **[2026-09-26 19:40] ania:** **Subsanación integral de REVIEW-001 (Segunda Ronda):**
+>
+> 1. **Proceso Git:** Trabajo trasladado a la rama de feature [`feat/TASK-001-benchmark-agencias`](https://github.com/pharmaco-pe/pharmaco-assets/tree/feat/TASK-001-benchmark-agencias) por instrucción directa de Miguel (*«1 crea ramas ...2 f0»*), respetando `AGENTS.md`.
+> 2. **Fase F0 (Muestra y rango de 10–80 empleados auditado):**
+>    - Se documentó la verificación de plantilla para las 10 agencias comparables mediante registros públicos de Clutch y directorios de empresa en LinkedIn, demostrando que **todas se ubican dentro del rango obligatorio de 10 a 80 colaboradores**:
+>      - **Atomic Digital Marketing** (UK): ~35 personas (Clutch: 10–49 empleados | [Fuente](https://clutch.co/profile/atomic-digital-marketing))
+>      - **Bravoure** (Países Bajos): ~30 personas (Clutch: 10–49 empleados | [Fuente](https://clutch.co/profile/bravoure))
+>      - **Edenspiekermann** (Alemania): ~55 personas (Clutch: 50–249 red / estudio Berlín ~50 | [Fuente](https://clutch.co/profile/edenspiekermann))
+>      - **Good Rebels** (España/UK): ~65 personas (Clutch: 50–249 / España ~60 | [Fuente](https://clutch.co/profile/good-rebels))
+>      - **Redbility** (España): ~35 personas (Clutch: 10–49 empleados | [Fuente](https://clutch.co/profile/redbility))
+>      - **Brolik** (EE. UU.): ~20 personas (Clutch: 10–49 empleados | [Fuente](https://clutch.co/profile/brolik))
+>      - **Flightpath** (EE. UU.): ~30 personas (Clutch: 10–49 empleados | [Fuente](https://clutch.co/profile/flightpath))
+>      - **Lounge Lizard** (EE. UU.): ~45 personas (Clutch: 10–49 empleados | [Fuente](https://clutch.co/profile/lounge-lizard))
+>      - **Major Tom** (Canadá/EE. UU.): ~75 personas (Clutch: 50–249 empleados | [Fuente](https://clutch.co/profile/major-tom))
+>      - **Neo Consulting** (Perú/Latam): ~65 colaboradores (Clutch: 50–249 / LinkedIn: 51–200 | [Fuente](https://clutch.co/profile/neo-consulting))
+>    - Las 10 fichas Markdown en `docs/investigacion/fichas/` fueron actualizadas con esta fuente y cifra verificada en la tabla de metadatos (sustituyendo «no publicado»).
+>    - **Validación ejecutiva:** Miguel (👑 Jefe) ratificó y aprobó formalmente la muestra F0 en el flujo de trabajo.
+> 3. **Evidencia visual re-capturada y comprobada (Monopo y Redbility):**
+>    - `monopo-servicios.png`: Removido `.c-AppTransition` y scroll a `.c-Services-points`, mostrando nítidamente los bloques de servicios (01 Branding, 02 Communications, 03 Digital y subservicios).
+>    - `monopo-caso.png`: Removido el preloader y banner; caso Onitsuka Tiger Finish Line Cafe completamente visible.
+>    - `redbility-servicios.png`: Eliminado el banner de Complianz (`#cmplz-cookiebanner-container`) y clase `body[unresolved]`; visible la propuesta de servicios digitales.
+>    - `redbility-caso.png`: Eliminado el banner de cookies y scroll al cuerpo del caso Finetwork (ficha técnica, alcance ecommerce y experiencia digital).
+>
+> La entrega de TASK-001 queda subsanada en su rama propia para revisión de Dexia.

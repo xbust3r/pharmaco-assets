@@ -17,10 +17,10 @@ Antigravity. Única que escribe código de producto; corre la verificación y me
 
 | Tarea | Estado | Notas |
 | --- | --- | --- |
-| TASK-001 | EN_REVISION | 60 capturas reales con Google Chrome headless en `docs/investigacion/capturas/` y 20 fichas verificadas en el DOM real en `docs/investigacion/fichas/`. |
-| TASK-002 | EN_REVISION | 11 fichas de servicio y `resumen.md` recalculadas con precisión matemática sobre las 20 fichas genuinas. |
-| TASK-003 | EN_REVISION | Partes 1 a 3 recalculadas con URLs vivas de casos modelo; Parte 4 (inventario local de 2020) preservada con 4 preguntas abiertas para Miguel. |
-| TASK-004 | EN_REVISION | Parte A: 12 capturas locales en desktop y móvil 375px servidas vía HTTP en `docs/diseno/capturas/` y versiones no contrastables eliminadas. Parte B: patrones y porcentajes actualizados con el benchmark real. |
+| TASK-001 | EN_REVISION | Rama `feat/TASK-001-benchmark-agencias`. F0 validada con fuentes Clutch/LinkedIn comprobando 10–80 empleados; ratificación de Miguel. Capturas de Monopo y Redbility limpias sin cargador ni cookies. |
+| TASK-002 | EN_REVISION | Pendiente de sign-off en TASK-001; completando plantilla y 3 nombres más usados. |
+| TASK-003 | EN_REVISION | Captura Upraw corregida mostrando caso +46%; fuentes de certificación ajustadas. |
+| TASK-004 | EN_REVISION | Capturas de overlay auténtico del tema y matriz 20xpatrones en preparación. |
 
 ---
 

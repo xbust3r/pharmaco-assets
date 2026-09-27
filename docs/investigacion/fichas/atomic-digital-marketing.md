@@ -5,7 +5,7 @@
 | URL | https://atomicdigitalmarketing.co.uk/ | https://atomicdigitalmarketing.co.uk/ |
 | País / ciudades | Reino Unido (Londres, Southampton) | https://atomicdigitalmarketing.co.uk/contact/ |
 | Bloque · perfil | Europa · comparable | — |
-| Tamaño del equipo | «no publicado» | https://atomicdigitalmarketing.co.uk/about/ |
+| Tamaño del equipo | ~35 personas (rango Clutch/LinkedIn: 10–49 empleados) | https://clutch.co/profile/atomic-digital-marketing |
 | Año de fundación | «no publicado» | https://atomicdigitalmarketing.co.uk/about/ |
 | Fecha de consulta | 2026-09-26 | — |
 | Capturas | `capturas/atomic-digital-marketing-home.png`, `capturas/atomic-digital-marketing-servicios.png`, `capturas/atomic-digital-marketing-caso.png` | — |

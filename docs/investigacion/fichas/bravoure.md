@@ -5,7 +5,7 @@
 | URL | https://bravoure.nl/en | https://bravoure.nl/en |
 | País / ciudades | Países Bajos (Ámsterdam) | https://bravoure.nl/en/about-us |
 | Bloque · perfil | Europa · comparable | — |
-| Tamaño del equipo | «no publicado» | https://bravoure.nl/en/about-us |
+| Tamaño del equipo | ~30 personas (rango Clutch/LinkedIn: 10–49 empleados) | https://clutch.co/profile/bravoure |
 | Año de fundación | «no publicado» | https://bravoure.nl/en/about-us |
 | Fecha de consulta | 2026-09-26 | — |
 | Capturas | `capturas/bravoure-home.png`, `capturas/bravoure-servicios.png`, `capturas/bravoure-caso.png` | — |

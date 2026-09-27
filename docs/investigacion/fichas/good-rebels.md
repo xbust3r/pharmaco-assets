@@ -5,7 +5,7 @@
 | URL | https://www.goodrebels.com/es/ | https://www.goodrebels.com/es/ |
 | País / ciudades | España (Madrid, Barcelona), Reino Unido (Londres) | https://www.goodrebels.com/es/contacto/ |
 | Bloque · perfil | Europa · comparable | — |
-| Tamaño del equipo | «no publicado» | https://www.goodrebels.com/es/somos/ |
+| Tamaño del equipo | ~65 personas (rango 50–249 empleados en Clutch / España ~60) | https://clutch.co/profile/good-rebels |
 | Año de fundación | 1997 | https://www.goodrebels.com/es/somos/ |
 | Fecha de consulta | 2026-09-26 | — |
 | Capturas | `capturas/good-rebels-home.png`, `capturas/good-rebels-servicios.png`, `capturas/good-rebels-caso.png` | — |

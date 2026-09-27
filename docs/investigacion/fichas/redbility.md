@@ -5,7 +5,7 @@
 | URL | https://www.redbility.com/ | https://www.redbility.com/ |
 | País / ciudades | España (Madrid) | https://www.redbility.com/contacta/ |
 | Bloque · perfil | Europa · comparable | — |
-| Tamaño del equipo | «no publicado» | https://www.redbility.com/nosotros/ |
+| Tamaño del equipo | ~35 personas (rango Clutch/LinkedIn: 10–49 empleados) | https://clutch.co/profile/redbility |
 | Año de fundación | 2004 | https://www.redbility.com/nosotros/ |
 | Fecha de consulta | 2026-09-26 | — |
 | Capturas | `capturas/redbility-home.png`, `capturas/redbility-servicios.png`, `capturas/redbility-caso.png` | — |
