@@ -84,6 +84,8 @@ Dentro de cada bloque:
 
 **Pregunta propia de las comparables** (`DECISION-003`): cómo cubre un estudio pequeño un catálogo amplio (freelancers, partners, marca blanca, especialización). Solo lo que diga su web.
 
+**Modelo operativo** ([`DECISION-004`](../comms/DECISION-004-modelo-operativo-senior-ia.md)): Pharmaco será un estudio senior aumentado con agentes de IA y con capacidad limitada. Entre las 10 comparables, al menos 3 que se presenten como estudio senior o *AI-native*. Entre las especialistas vale una agencia pequeña *AI-native*.
+
 **Muy deseable:** que al menos 4 de las 20 ofrezcan producción de foto y video, para que el servicio 7 tenga base.
 
 **Dónde buscar:** Clutch, Awwwards (agencias), CSS Design Awards, The Drum, Campaign, Ad Age (*Small Agency of the Year*), Sortlist, Agency Spotter, y las webs de los premiados en los últimos dos años.
@@ -131,6 +133,7 @@ docs/diseno/
 | Versión | Fecha | Autor | Acción |
 | --- | --- | --- | --- |
 | v1 | 2026-09-26 | Clia | Plan abierto: descubrir qué servicios ofrecer |
+| v2.4 | 2026-09-26 | Clia | `DECISION-004`: modelo senior + IA con capacidad limitada; campos nuevos en la ficha |
 | v2.3 | 2026-09-26 | Clia | `DECISION-003`: comparables de 2 a 15 personas con evidencia comprobable; las medianas pasan a anexo |
 | v2.1 | 2026-09-26 | Clia | Tras la auditoría: regla 9, capturas antes que fichas |
 | v2 | 2026-09-26 | Clia | Tras `DECISION-002`: catálogo fijo de 11 servicios, fuera el modelo comercial, cuatro líneas en cuatro TASKs |

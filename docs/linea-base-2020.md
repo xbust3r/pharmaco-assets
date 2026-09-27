@@ -15,7 +15,7 @@
 | Sede | Perú |
 | Metáfora de marca | Laboratorio / química (de ahí «Pharmaco»; en «Nosotros» aparece la foto de un doctor) |
 | Equipo publicado | 3 personas: Director, Diseñadora gráfica Jr., Medios digitales |
-| Equipo previsto en 2026 | Unas 5 personas, según Miguel (`DECISION-003`) |
+| Equipo previsto en 2026 | Unas 5 personas senior, con agentes de IA y capacidad limitada (`DECISION-003`, `DECISION-004`) |
 
 ## Catálogo de servicios (6)
 

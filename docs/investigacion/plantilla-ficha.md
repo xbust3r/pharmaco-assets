@@ -41,6 +41,11 @@
 - En qué se especializan y qué no ofrecen:
 - Alianzas (productoras, estudios de foto y video, desarrollo):
 
+**Modelo operativo (DECISION-004):**
+- ¿Se presentan como equipo senior o «sin juniors»?
+- ¿Declaran el uso de IA o de agentes en la entrega? ¿Cómo lo cuentan (proceso, ventaja, servicio)?
+- ¿Declaran capacidad limitada (cupos, lista de espera, clientes por trimestre, disponibilidad)?
+
 (Solo lo que diga la web, con URL. Si no lo dice: «no publicado».)
 
 ## Prueba social (alimenta TASK-003)
