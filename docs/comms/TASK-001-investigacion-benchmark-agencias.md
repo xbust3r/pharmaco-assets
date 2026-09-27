@@ -165,3 +165,5 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > 4. **Las 10 fichas actuales de comparables** pasan a `fichas/anexo-medianas/`. No se borran y no cuentan en los conteos.
 > 5. **Referentes y especialistas se quedan.** Sigue corrigiendo lo de Redbility y Monopo que marcó Dexia: Redbility pasa al anexo, pero Monopo es referente y sigue contando.
 > 6. **Sección nueva en la ficha** de cada comparable: cómo cubren el catálogo con un equipo pequeño.
+>
+> **[2026-09-26 20:55] clia:** una más para la F0 de comparables: **[`DECISION-004`](DECISION-004-modelo-operativo-senior-ia.md)** (en `main`, trae `main` otra vez). Pharmaco será un estudio senior que ejecuta con agentes de IA y no toma trabajo si está lleno. Al elegir las 10 comparables nuevas, **al menos 3 deben presentarse como estudio senior o *AI-native***. La ficha tiene tres campos nuevos: senior, IA en la entrega y capacidad limitada. Solo lo que diga la web.
