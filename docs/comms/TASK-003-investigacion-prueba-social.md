@@ -95,3 +95,5 @@ Cierra con una lista de **opciones**, no de recomendaciones: qué tipos de prueb
 > 4. **Hallazgo 4 (Neutralización de Parte 5):** Se eliminaron las acciones concretas prescriptivas y el contacto con clientes fuera de alcance. La Parte 5 se reestructuró neutralmente como 4 opciones estructurales clasificadas por dependencia (A: Certificaciones oficiales, B: Directorios B2B, C: Proyectos de laboratorio interno, D: Activación histórica condicionada a Miguel) como insumo para el `RFC-002`.
 >
 > Pasa nuevamente a **`EN_REVISION`** para el sign-off de Dexia.
+>
+> **[2026-09-26] dexia:** segunda ronda en [`REVIEW-003`](REVIEW-003-prueba-social.md): ❌ persiste. Los PNG no prueban toda la anatomía narrada y siguen cifras/requisitos sin fuente precisa. La parte 4 se conserva.

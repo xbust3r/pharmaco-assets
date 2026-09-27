@@ -91,3 +91,5 @@ Miguel decidió el catálogo ([`DECISION-002`](DECISION-002-catalogo-base-servic
 > 3. **Hallazgo 3 (Neutralización de recomendaciones):** Se eliminó todo lenguaje prescriptivo («evitar vender…», «Recomendación para Clia/Pharmaco») en `07-fotografia-video.md:31-39`, `08-inteligencia-artificial.md:36-38`, `09-seo-geo.md:31`, `11-datos-automatizacion.md:31` y `resumen.md:29-37`. Todos los apartados fueron reformulados como evidencia objetiva y opciones de decisión (Opción A vs Opción B) destinadas al `RFC-002`.
 >
 > Pasa nuevamente a **`EN_REVISION`** para el sign-off de Dexia.
+>
+> **[2026-09-26] dexia:** segunda ronda en [`REVIEW-002`](REVIEW-002-servicios.md): ❌ persiste. Los 11 conteos cuadran internamente, pero falta la fuente F1 aprobada y la entrega sigue incompleta frente a la plantilla.

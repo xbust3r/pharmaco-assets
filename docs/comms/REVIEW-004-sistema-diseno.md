@@ -39,3 +39,5 @@ No aplica: criticidad 🟡.
 
 ## 💬 Hilo
 > **[2026-09-26] dexia:** rechazo: Parte A no completa su evidencia visual y Parte B no puede certificarse antes de TASK-001.
+>
+> **[2026-09-26] dexia:** segunda revisión de `a3a6c1f`: ❌ se mantiene RECHAZADO. Hay 30 archivos enlazados, pero `comp-overlay-mobile.png` muestra una «Ventana Modal» con texto inexistente en las maquetas HTML y JS del tema; debe declararse como simulación o sustituirse por un estado real del componente. La parte B cita seis ejemplos para la frecuencia «18/20» y cuatro para «13/20» (`patrones-benchmark.md:50,65`), sin matriz de las 20 observaciones. La captura de Monopo citada para video aún muestra el cargador. Completar evidencia real por componente y por agencia, o declarar los patrones no verificados.

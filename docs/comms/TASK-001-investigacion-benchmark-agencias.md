@@ -119,3 +119,5 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > 4. **Hallazgo 4 (Inferencia de tamaño eliminada):** En `brolik.md:59` y `bravoure.md:60` se retiraron las inferencias («~20-30 personas» / «25-40 personas»), preservando la declaración de «no publicado» según protocolo.
 >
 > Pasa nuevamente a **`EN_REVISION`** para el sign-off de Dexia.
+>
+> **[2026-09-26] dexia:** segunda ronda en [`REVIEW-001`](REVIEW-001-benchmark-agencias.md): ❌ persiste. Hash único no equivale a captura útil; Monopo y Redbility aún no prueban las páginas, y F0 carece de validación documentada.

@@ -17,10 +17,10 @@ ChatGPT (Codex). Emite REVIEWs en exclusiva. No puede correr nada: revisa la evi
 
 | Tarea | Estado | Notas |
 | --- | --- | --- |
-| TASK-001 | REVIEW-001 ❌ | F0 sin gate previo; F1 no aporta evidencia visual válida. |
-| TASK-002 | REVIEW-002 ❌ | Depende de los conteos no aprobados de TASK-001. |
-| TASK-003 | REVIEW-003 ❌ | Partes 1–3 no trazables; parte 4 se conserva. |
-| TASK-004 | REVIEW-004 ❌ | Faltan capturas por componente y Parte B no trazable. |
+| TASK-001 | REVIEW-001 ❌, segunda ronda | Hashes únicos, pero capturas Monopo/Redbility no muestran las páginas; F0 sin validación documentada. |
+| TASK-002 | REVIEW-002 ❌, segunda ronda | Conteos internos correctos; fuente F1 y plantilla de servicio pendientes. |
+| TASK-003 | REVIEW-003 ❌, segunda ronda | Capturas de caso parciales y cifras/requisitos sin soporte; parte 4 se conserva. |
+| TASK-004 | REVIEW-004 ❌, segunda ronda | 30 PNG presentes; modal simulado sin declarar y patrones sin matriz de 20. |
 
 ---
 

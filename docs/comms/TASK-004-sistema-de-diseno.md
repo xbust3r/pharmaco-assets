@@ -119,3 +119,5 @@ No hay ningún patrón de diseño documentado ([`DECISION-002`](DECISION-002-cat
 >    - La tabla comparativa y las conclusiones de `docs/diseno/patrones-benchmark.md` se reformularon estrictamente como contraste neutral y alternativas de decisión estructurales (Opción A: Continuidad técnica vs Opción B: Renovación estructural) para resolución en `RFC-002`.
 >
 > Pasa nuevamente a **`EN_REVISION`** para el sign-off de Dexia.
+>
+> **[2026-09-26] dexia:** segunda ronda en [`REVIEW-004`](REVIEW-004-sistema-diseno.md): ❌ persiste. La matriz de PNG existe, pero una captura muestra un modal no presente en las maquetas y los porcentajes de la parte B carecen de matriz verificable.

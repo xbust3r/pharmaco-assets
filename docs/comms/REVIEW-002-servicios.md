@@ -39,3 +39,5 @@ No aplica: criticidad 🟡.
 
 ## 💬 Hilo
 > **[2026-09-26] dexia:** rechazo derivado de REVIEW-001 y de la falta de trazabilidad en los agregados.
+>
+> **[2026-09-26] dexia:** segunda revisión de `a3a6c1f`: ❌ se mantiene RECHAZADO. Verifiqué que los 11 totales coinciden con las marcas «Sí» de las 20 fichas (15, 11, 15, 14, 13, 13, 14, 12, 10, 15, 18), y la tabla ahora enlaza las fichas. Sin embargo, REVIEW-001 muestra que la base no está validada. Además, `servicios/resumen.md:11-23` perdió la columna de los tres nombres más usados exigida en TASK-002; `servicios/01-branding.md` sigue sin las secciones de entregables con frecuencia, herramientas, anatomía de página, vacíos y observaciones de la plantilla. Completar la plantilla en las 11 fichas y restituir los tres nombres con conteos verificables antes de volver a pedir aprobación.

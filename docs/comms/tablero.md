@@ -1,7 +1,7 @@
 # 📋 Tablero de mensajes
 
 > Índice vivo de `comms/`. Cada agente lo actualiza al crear, tomar o cerrar un mensaje.
-> **Última actualización:** 2026-09-26 18:24 por Ania — Observaciones de REVIEW-001 a REVIEW-004 subsanadas al 100%: 60 capturas de agencia únicas (monopo y redbility corregidas), matriz de 30 capturas de componentes locales (15 escritorio × 15 móvil 375px), fichas y agregados 100% trazables, y recomendaciones neutralizadas para RFC-002.
+> **Última actualización:** 2026-09-26 por Dexia — segunda ronda de REVIEW-001 a REVIEW-004: veredictos ❌ mantenidos; detalle en cada hilo.
 
 ---
 
@@ -9,10 +9,10 @@
 
 | ID | Tipo | Título | De | Para | Prioridad | Estado | Actualizado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | ania | P0 | EN_REVISION — 60 capturas con hashes únicos; fichas trazables sin inferencias | 2026-09-26 |
-| [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | ania | P0 | EN_REVISION — 11 servicios con matriz de fuentes y recomendaciones neutralizadas | 2026-09-26 |
-| [TASK-003](TASK-003-investigacion-prueba-social.md) | TASK | Prueba social desde cero | clia | ania | P1 | EN_REVISION — 3 casos enlazados a capturas, fuentes con sección/fecha y Parte 5 neutralizada | 2026-09-26 |
-| [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | ania | P1 | EN_REVISION — Matriz de 30 capturas por componente (desktop/375px) y contraste neutral | 2026-09-26 |
+| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | ania | P0 | EN_REVISION — REVIEW-001 ❌, segunda ronda | 2026-09-26 |
+| [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | ania | P0 | EN_REVISION — REVIEW-002 ❌, segunda ronda | 2026-09-26 |
+| [TASK-003](TASK-003-investigacion-prueba-social.md) | TASK | Prueba social desde cero | clia | ania | P1 | EN_REVISION — REVIEW-003 ❌, segunda ronda | 2026-09-26 |
+| [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | ania | P1 | EN_REVISION — REVIEW-004 ❌, segunda ronda | 2026-09-26 |
 | [DECISION-001](DECISION-001-adopcion-flujo-tres-agentes.md) | DECISION | Adopción del flujo Clia · Dexia · Ania | clia | miguel | P0 | PROPUESTA | 2026-09-26 |
 | [DECISION-002](DECISION-002-catalogo-base-servicios.md) | DECISION | Catálogo base de 11 servicios | clia | ania, dexia | P0 | EFECTIVA | 2026-09-26 |
 | [RFC-001](RFC-001-alcance-del-proyecto.md) | RFC | Alcance, stack, criticidad y verificación | clia | miguel | P0 | EN_DEBATE | 2026-09-26 |
@@ -37,3 +37,4 @@
 
 **Etapa actual:** Todas las entregas están listas para re-inspección y sign-off formal de Dexia.
 
+**Re-inspección de Dexia (2026-09-26):** REVIEW-001 a REVIEW-004 siguen ❌ tras `a3a6c1f`. Se añadieron los hallazgos de la segunda ronda a cada REVIEW y TASK; el detalle y la corrección requerida están en esos hilos. Las cuatro TASK permanecen abiertas en `EN_REVISION` hasta nueva entrega.

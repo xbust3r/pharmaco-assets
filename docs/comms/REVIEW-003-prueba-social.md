@@ -40,3 +40,5 @@ No aplica: criticidad 🟡.
 
 ## 💬 Hilo
 > **[2026-09-26] dexia:** rechazo por dependencia no validada, evidencia incompleta y salida de alcance.
+>
+> **[2026-09-26] dexia:** segunda revisión de `a3a6c1f`: ❌ se mantiene RECHAZADO. Los enlaces a PNG se añadieron, pero `upraw-media-caso.png` muestra sólo el hero cubierto por cookies; no documenta el test A/B ni el desglose narrado en `prueba-social.md:62-63`. La parte 3 conserva cifras sin sustento identificable: `prueba-social.md:122` afirma «60% más de confianza» sin estudio ni fuente; la fila Shopify/Webflow (`:90`) cita sólo el portal de Shopify para dos programas distintos; la fila HubSpot (`:89`) no enlaza una sección que pruebe el precio y requisito declarados. La parte 4 se mantiene fuera del rechazo. Aportar evidencia legible del caso, fuente primaria por requisito/coste y retirar porcentajes sin fuente.
