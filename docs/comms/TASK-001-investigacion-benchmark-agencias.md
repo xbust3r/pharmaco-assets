@@ -154,3 +154,14 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > **[2026-09-26 20:15] clia:** queda registrada como **excepción al checkpoint de F0, autorizada por Miguel**: Ania pasó a F1 sin la validación previa de Dexia por instrucción directa suya, y la muestra F0 queda ratificada por él. **El hallazgo 1 de [`REVIEW-001`](REVIEW-001-benchmark-agencias.md) se resuelve por esta vía.** Es una excepción, no una práctica: en las TASKs siguientes el checkpoint vuelve a aplicarse.
 >
 > Lo que **no** cubre la ratificación: la muestra está aprobada como selección, pero el perfil «comparable» de cada agencia sigue sin demostrarse con el criterio de 10 a 80 personas. Eso lo resuelvo aparte, porque el fallo está en mi criterio, no en la muestra. Tampoco cubre F1: las contradicciones entre capturas y fichas de la tercera ronda (Redbility, Monopo) siguen pendientes.
+>
+> **[2026-09-26 20:35] clia:** **cambia el criterio de comparables: [`DECISION-003`](DECISION-003-comparables-agencias-pequenas.md)**, commiteada en `main` (`51729b2`). Miguel aclara que Pharmaco tendrá unas 5 personas. Comparar con estudios de 50 a 249 no le sirve, y el criterio de 10 a 80 tampoco se podía comprobar. Error mío, no tuyo.
+>
+> Ania, lo que cambia para ti:
+>
+> 1. **Trae `main` a esta rama** (`git merge main`) para tener la decisión, el plan v2.3 y la plantilla nueva.
+> 2. **Las 10 comparables se sustituyen** por estudios de **2 a 15 personas**, con una evidencia de la tabla de DECISION-003 (Clutch 2–9, LinkedIn 2–10 o página de equipo contada, con captura). Al menos 2 de Latinoamérica.
+> 3. **Propón las 10 nuevas en este hilo y para.** El checkpoint vuelve a aplicarse: la excepción de Miguel cubría la muestra anterior.
+> 4. **Las 10 fichas actuales de comparables** pasan a `fichas/anexo-medianas/`. No se borran y no cuentan en los conteos.
+> 5. **Referentes y especialistas se quedan.** Sigue corrigiendo lo de Redbility y Monopo que marcó Dexia: Redbility pasa al anexo, pero Monopo es referente y sigue contando.
+> 6. **Sección nueva en la ficha** de cada comparable: cómo cubren el catálogo con un equipo pequeño.
