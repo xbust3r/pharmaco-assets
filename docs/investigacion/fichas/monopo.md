@@ -16,20 +16,20 @@
 ## Cómo organizan sus servicios
 | Pilar / categoría (literal) | Servicios que incluye (literal) | Traducción | URL |
 | --- | --- | --- | --- |
-| Brand Identity | Brand Strategy, Visual Identity Systems, Tone of Voice, Naming | Estrategia de marca, identidad visual, tono de voz y naming | https://monopo.london/services |
-| Digital Design & Web | UX/UI, Creative Web Development, E-commerce, Design Systems | UX/UI, desarrollo web creativo, comercio electrónico | https://monopo.london/services |
-| Campaigns & Content | Creative Direction, Film, Photography, Social Campaigns | Dirección creativa, cine/vídeo, fotografía, campañas sociales | https://monopo.london/services |
+| 01 Branding | Brand strategy, Visual identity, Copywriting, Creative Direction | Estrategia de marca, identidad visual, redacción y dirección creativa | https://monopo.london/services |
+| 02 Communications | Advertising, Print, Social media, Photography & Film, Art direction, Retail, Assets production | Publicidad, medios impresos, redes sociales, fotografía y cine, dirección de arte, retail y producción de activos | https://monopo.london/services |
+| 03 Digital | Web design, Augmented reality, Digital experiences, Installations | Diseño web, realidad aumentada, experiencias digitales e instalaciones | https://monopo.london/services |
 
 ## Frente al catálogo de Pharmaco (alimenta TASK-002)
 | # | Servicio Pharmaco | ¿Lo ofrecen? | Nombre literal que usan | URL de su página |
 | --- | --- | --- | --- | --- |
-| 1 | Branding | Sí | Brand Strategy & Visual Identity Systems | https://monopo.london/services |
-| 2 | Social Media | Sí | Social Campaigns & Digital Content | https://monopo.london/services |
-| 3 | Desarrollo Web | Sí | Creative Web Development & Digital Platforms | https://monopo.london/services |
-| 4 | Campañas publicitarias | Sí | Campaigns & Creative Direction | https://monopo.london/services |
+| 1 | Branding | Sí | 01 Branding (Brand strategy, Visual identity) | https://monopo.london/services |
+| 2 | Social Media | Sí | 02 Communications (Social media) | https://monopo.london/services |
+| 3 | Desarrollo Web | Sí | 03 Digital (Web design, Digital experiences) | https://monopo.london/services |
+| 4 | Campañas publicitarias | Sí | 02 Communications (Advertising) | https://monopo.london/services |
 | 5 | Performance | No | | |
 | 6 | Desarrollo de apps y software | No | | |
-| 7 | Fotografía y video | Sí | Film Production, Photography & Art Direction | https://monopo.london/services |
+| 7 | Fotografía y video | Sí | 02 Communications (Photography & Film) | https://monopo.london/services |
 | 8 | Inteligencia artificial | No | | |
 | 9 | SEO y GEO | No | | |
 | 10 | CRO | No | | |
