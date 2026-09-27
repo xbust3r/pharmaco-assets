@@ -72,8 +72,8 @@ Dentro de cada bloque:
 
 | Perfil | Por bloque | Por qué |
 | --- | --- | --- |
-| **Comparables:** independientes de 10 a 80 personas que hacen marketing **y** desarrollo | 5 | Es el tamaño y la mezcla de Pharmaco: la referencia útil de verdad |
-| **Referentes:** agencias grandes o premiadas | 3 | Dicen hacia dónde va el sector |
+| **Comparables pequeñas:** estudios independientes de **2 a 15 personas** que hacen marketing **y** desarrollo (criterio y evidencia en [`DECISION-003`](../comms/DECISION-003-comparables-agencias-pequenas.md)); al menos 2 de Latinoamérica | 5 | Pharmaco tendrá unas 5 personas: es el único modelo de escala real |
+| **Referentes:** agencias grandes o premiadas | 3 | Dicen hacia dónde va el sector. **No son modelo de escala** |
 | **Especialistas nuevas:** nacidas o reconvertidas después de 2021 alrededor de IA, SEO/GEO, CRO o datos | 2 | Referencia de los servicios 8 a 11 |
 
 **Criterios de inclusión, todos obligatorios:**
@@ -81,6 +81,10 @@ Dentro de cada bloque:
 1. Hace marketing **y** desarrollo, o uno de los servicios 8 a 11 a nivel de referencia (sólo las especialistas).
 2. Web propia activa y actualizada en 2025-2026 (casos, blog o noticias con fecha).
 3. Lista de servicios visible en la web.
+
+**Pregunta propia de las comparables** (`DECISION-003`): cómo cubre un estudio pequeño un catálogo amplio (freelancers, partners, marca blanca, especialización). Solo lo que diga su web.
+
+**Modelo operativo** ([`DECISION-004`](../comms/DECISION-004-modelo-operativo-senior-ia.md)): Pharmaco será un estudio senior aumentado con agentes de IA y con capacidad limitada. Entre las 10 comparables, al menos 3 que se presenten como estudio senior o *AI-native*. Entre las especialistas vale una agencia pequeña *AI-native*.
 
 **Muy deseable:** que al menos 4 de las 20 ofrezcan producción de foto y video, para que el servicio 7 tenga base.
 
@@ -129,5 +133,7 @@ docs/diseno/
 | Versión | Fecha | Autor | Acción |
 | --- | --- | --- | --- |
 | v1 | 2026-09-26 | Clia | Plan abierto: descubrir qué servicios ofrecer |
+| v2.4 | 2026-09-26 | Clia | `DECISION-004`: modelo senior + IA con capacidad limitada; campos nuevos en la ficha |
+| v2.3 | 2026-09-26 | Clia | `DECISION-003`: comparables de 2 a 15 personas con evidencia comprobable; las medianas pasan a anexo |
 | v2.1 | 2026-09-26 | Clia | Tras la auditoría: regla 9, capturas antes que fichas |
 | v2 | 2026-09-26 | Clia | Tras `DECISION-002`: catálogo fijo de 11 servicios, fuera el modelo comercial, cuatro líneas en cuatro TASKs |

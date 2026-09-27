@@ -5,7 +5,7 @@
 | URL | | |
 | País / ciudades | | |
 | Bloque · perfil | Europa/América · comparable/referente/especialista | — |
-| Tamaño del equipo | (o «no verificado») | |
+| Tamaño del equipo | (rango de Clutch/LinkedIn tal cual, o personas contadas en la página de equipo; nunca una cifra estimada) | |
 | Año de fundación | | |
 | Fecha de consulta | AAAA-MM-DD | — |
 | Capturas | `capturas/{slug}-home.png`, `capturas/{slug}-servicios.png`, `capturas/{slug}-caso.png` | — |
@@ -33,6 +33,20 @@
 | 11 | Datos y automatización | | | |
 
 **Servicios suyos que no están en la tabla:** (lista literal; es información, no una propuesta)
+
+## Cómo cubren el catálogo con un equipo pequeño (solo comparables · DECISION-003)
+- Red de freelancers o partners:
+- Marca blanca o subcontratación declarada:
+- Servicios empaquetados o productizados:
+- En qué se especializan y qué no ofrecen:
+- Alianzas (productoras, estudios de foto y video, desarrollo):
+
+**Modelo operativo (DECISION-004):**
+- ¿Se presentan como equipo senior o «sin juniors»?
+- ¿Declaran el uso de IA o de agentes en la entrega? ¿Cómo lo cuentan (proceso, ventaja, servicio)?
+- ¿Declaran capacidad limitada (cupos, lista de espera, clientes por trimestre, disponibilidad)?
+
+(Solo lo que diga la web, con URL. Si no lo dice: «no publicado».)
 
 ## Prueba social (alimenta TASK-003)
 - Casos: cuántos, si tienen métricas y cómo está armada la página de un caso
