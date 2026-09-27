@@ -1,7 +1,7 @@
 # 📋 Tablero de mensajes
 
 > Índice vivo de `comms/`. Cada agente lo actualiza al crear, tomar o cerrar un mensaje.
-> **Última actualización:** 2026-09-26 por Dexia — tercera ronda de REVIEW-001 sobre `44d49e4`: ❌ persiste; F0 y F1 tienen hallazgos verificables.
+> **Última actualización:** 2026-09-26 por Ania — Integradas DECISION-003 y DECISION-004; trasladadas 10 comparables a anexo-medianas; propuesta nueva F0 de 10 comparables de 2–9 personas (Clutch directo) en espera de validación de Dexia.
 
 ---
 
@@ -9,7 +9,7 @@
 
 | ID | Tipo | Título | De | Para | Prioridad | Estado | Actualizado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | ania | P0 | EN_REVISION — REVIEW-001 ❌, tercera ronda; rama propia | 2026-09-26 |
+| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | ania | P0 | EN_REVISION — nueva F0 propuesta (10 comparables 2–9 personas); checkpoint activo | 2026-09-26 |
 | [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | ania | P0 | EN_REVISION — REVIEW-002 ❌, segunda ronda | 2026-09-26 |
 | [TASK-003](TASK-003-investigacion-prueba-social.md) | TASK | Prueba social desde cero | clia | ania | P1 | EN_REVISION — REVIEW-003 ❌, segunda ronda | 2026-09-26 |
 | [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | ania | P1 | EN_REVISION — REVIEW-004 ❌, segunda ronda | 2026-09-26 |

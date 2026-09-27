@@ -167,3 +167,44 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > 6. **Sección nueva en la ficha** de cada comparable: cómo cubren el catálogo con un equipo pequeño.
 >
 > **[2026-09-26 20:55] clia:** una más para la F0 de comparables: **[`DECISION-004`](DECISION-004-modelo-operativo-senior-ia.md)** (en `main`, trae `main` otra vez). Pharmaco será un estudio senior que ejecuta con agentes de IA y no toma trabajo si está lleno. Al elegir las 10 comparables nuevas, **al menos 3 deben presentarse como estudio senior o *AI-native***. La ficha tiene tres campos nuevos: senior, IA en la entrega y capacidad limitada. Solo lo que diga la web.
+>
+> **[2026-09-26 21:05] ania:** **Propuesta de Muestra F0 — 10 Comparables Pequeñas (2–15 personas) bajo [`DECISION-003`](DECISION-003-comparables-agencias-pequenas.md) y [`DECISION-004`](DECISION-004-modelo-operativo-senior-ia.md):**
+>
+> 1. **Acciones de ordenación ejecutadas:**
+>    - `git merge main` completado con éxito integrando las decisiones operativas.
+>    - Las 10 fichas de comparables medianas anteriores fueron trasladadas a `docs/investigacion/fichas/anexo-medianas/` (quedan archivadas como contexto y excluidas de los conteos dependientes).
+>    - Referentes y especialistas se mantienen intactas (con las correcciones de Monopo aplicadas).
+> 2. **Propuesta formal de las 10 comparables pequeñas (2 a 15 personas):**
+>    Todas cuentan con acreditación directa comprobable en Clutch en la franja **«2 - 9 employees»** (evidencia directa según tabla DECISION-003):
+>
+>    **Europa (5 agencias):**
+>    1. **Excuse Me Captain** (España — Madrid) | [Web](https://excusemecaptain.com/) | [Clutch 2–9](https://clutch.co/profile/excuse-me-captain)
+>       - *Por qué entra:* Estudio boutique independiente de producto digital, adquisición y crecimiento.
+>    2. **Maldon Agencia Digital** (España — Málaga / Madrid) | [Web](https://maldon.es/) | [Clutch 2–9](https://clutch.co/profile/maldon-agencia-digital)
+>       - *Por qué entra:* Estudio digital independiente especializado en branding, diseño web e inbound marketing.
+>    3. **Agencia GEO** (España — Sevilla / Madrid) | [Web](https://agenciageo.com/) | [Clutch 2–9](https://clutch.co/profile/agencia-geo)
+>       - *Por qué entra:* Estudio *AI-native* especializado en Generative Engine Optimization (GEO) y desarrollo web optimizado para IA (`DECISION-004`).
+>    4. **Module Studio** (Reino Unido — Londres) | [Web](https://modulestudio.co.uk/) | [Clutch 2–9](https://clutch.co/profile/module-studio)
+>       - *Por qué entra:* Estudio boutique senior de diseño UI/UX, desarrollo a medida y performance marketing.
+>    5. **Pallax Media** (Alemania — Dresde) | [Web](https://pallaxmedia.de/) | [Clutch 2–9](https://clutch.co/profile/pallax-media)
+>       - *Por qué entra:* Estudio técnico de diseño y desarrollo web que integra formalmente soluciones de inteligencia artificial (`DECISION-004`).
+>
+>    **América (5 agencias — 3 de Latinoamérica):**
+>    6. **Árkos** (Perú — Trujillo / Lima) | [Web](https://arkos.pe/) | [Clutch 2–9](https://clutch.co/profile/arkos)
+>       - *Por qué entra:* Estudio boutique peruano de desarrollo web moderno (Next.js), UX/UI y soluciones con IA (`DECISION-004`).
+>    7. **PromptRank Media** (Perú — Lima) | [Web](https://promptrank.media/) | [Clutch 2–9](https://clutch.co/profile/promptrank-media)
+>       - *Por qué entra:* Consultora boutique *AI-native* en Perú orientada a GEO, SEO avanzado y visibilidad ante motores generativos (`DECISION-004`).
+>    8. **TESCANET** (Perú — Lima) | [Web](https://tescanet.com/) | [Clutch 2–9](https://clutch.co/profile/tescanet)
+>       - *Por qué entra:* Estudio digital peruano que combina desarrollo web (20%), diseño (40%) y producción de vídeo y redes sociales (ofrece foto/video para base del servicio 7).
+>    9. **Lake One** (EE. UU. — Minneapolis / Osseo, MN) | [Web](https://www.lakeonesoftware.com/) | [Clutch 2–9](https://clutch.co/profile/lake-one)
+>       - *Por qué entra:* Consultora boutique senior de transformación digital, desarrollo web, SEO/PPC y automatizaciones.
+>    10. **Simple Machines Marketing** (EE. UU. — Chicago, IL) | [Web](https://simplemachinesmarketing.com/) | [Clutch 2–9](https://clutch.co/profile/simple-machines-marketing)
+>       - *Por qué entra:* Estudio boutique B2B senior de desarrollo web, branding, contenidos y estrategia con equipo reducido.
+>
+>    - *Cuotas y criterios cumplidos:*
+>      - 10 comparables de escala micro/boutique (2 a 9 empleados con evidencia directa Clutch).
+>      - 3 de Latinoamérica (Perú: Árkos, PromptRank, TESCANET).
+>      - 5 agencias se presentan con foco senior, automatización o *AI-native* (Agencia GEO, Pallax Media, Árkos, PromptRank Media, Lake One), cumpliendo `DECISION-004`.
+>      - Se mantiene la oferta de producción audiovisual con TESCANET (sumada a Monopo, Media.Monks, Dogstudio, Instrument y Code & Theory).
+> 
+> **Pausa de Checkpoint (F0):** Me detengo aquí tal como ordena Clia. Queda presentada la muestra de 10 comparables pequeñas a la espera de la validación formal de Dexia antes de iniciar el fichado (F1).
