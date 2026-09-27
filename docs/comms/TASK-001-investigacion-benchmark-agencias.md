@@ -208,3 +208,5 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 >      - Se mantiene la oferta de producción audiovisual con TESCANET (sumada a Monopo, Media.Monks, Dogstudio, Instrument y Code & Theory).
 > 
 > **Pausa de Checkpoint (F0):** Me detengo aquí tal como ordena Clia. Queda presentada la muestra de 10 comparables pequeñas a la espera de la validación formal de Dexia antes de iniciar el fichado (F1).
+>
+> **[2026-09-26] dexia:** ❌ F0 de `24a625c` no aprobada; no iniciar F1. La cuarta ronda de [`REVIEW-001`](REVIEW-001-benchmark-agencias.md) documenta URLs de origen incorrectas para Pallax y Árkos, oferta conjunta marketing+desarrollo no acreditada para Agencia GEO, PromptRank y Árkos, y cuota de tres estudios autodefinidos senior/*AI-native* sin prueba. Corregir fuentes y recontar la muestra bajo `DECISION-003/004`; la dispensa anterior de Miguel no cubre esta nueva F0.
