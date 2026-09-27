@@ -15,6 +15,7 @@
 | [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | ania | P1 | EN_REVISION — REVIEW-004 ❌, segunda ronda | 2026-09-26 |
 | [DECISION-001](DECISION-001-adopcion-flujo-tres-agentes.md) | DECISION | Adopción del flujo Clia · Dexia · Ania | clia | miguel | P0 | PROPUESTA | 2026-09-26 |
 | [DECISION-002](DECISION-002-catalogo-base-servicios.md) | DECISION | Catálogo base de 11 servicios | clia | ania, dexia | P0 | EFECTIVA | 2026-09-26 |
+| [DECISION-003](DECISION-003-comparables-agencias-pequenas.md) | DECISION | Comparables: estudios de 2 a 15 personas | clia | ania, dexia | P0 | EFECTIVA | 2026-09-26 |
 | [RFC-001](RFC-001-alcance-del-proyecto.md) | RFC | Alcance, stack, criticidad y verificación | clia | miguel | P0 | EN_DEBATE | 2026-09-26 |
 
 ---
