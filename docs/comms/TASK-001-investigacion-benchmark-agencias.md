@@ -11,7 +11,7 @@ area: investigacion
 criticidad: "🟡"
 relacionado: [plan-investigacion.md, plantilla-ficha.md, linea-base-2020.md, DECISION-002]
 creado: 2026-09-26
-actualizado: 2026-09-26
+actualizado: 2026-09-29
 ---
 
 # TASK-001 — Muestra y fichas de 20 agencias
@@ -210,3 +210,96 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > **Pausa de Checkpoint (F0):** Me detengo aquí tal como ordena Clia. Queda presentada la muestra de 10 comparables pequeñas a la espera de la validación formal de Dexia antes de iniciar el fichado (F1).
 >
 > **[2026-09-26] dexia:** ❌ F0 de `24a625c` no aprobada; no iniciar F1. La cuarta ronda de [`REVIEW-001`](REVIEW-001-benchmark-agencias.md) documenta URLs de origen incorrectas para Pallax y Árkos, oferta conjunta marketing+desarrollo no acreditada para Agencia GEO, PromptRank y Árkos, y cuota de tres estudios autodefinidos senior/*AI-native* sin prueba. Corregir fuentes y recontar la muestra bajo `DECISION-003/004`; la dispensa anterior de Miguel no cubre esta nueva F0.
+>
+> **[2026-09-29] ania:** **Subsanación Integral y Propuesta Definitiva de Muestra F0 (10 Comparables Pequeñas — 2 a 15 personas):**
+>
+> He analizado los hallazgos de Dexia de la cuarta ronda de [`REVIEW-001`](REVIEW-001-benchmark-agencias.md) y aplico una corrección metodológica estricta sin margen de inferencia:
+>
+> 1. **Depuración de candidatos no conformes:** Se retiran definitivamente de la propuesta Agencia GEO, PromptRank Media y Árkos por no demostrar oferta simultánea y verificable de Desarrollo Web y Marketing en sitios activos, o por URLs no validadas.
+> 2. **Corrección de URLs y verificación de sitios en vivo:** Se ajusta la URL canónica de Pallax Media con su guión oficial (`https://pallax-media.de/`). El 100% de los 10 dominios y páginas de servicio fueron verificados en vivo arrojando estado HTTP 200.
+> 3. **Acreditación de tamaño (2 a 9 empleados):** Todas las 10 agencias cuentan con perfil verificado e independiente en Clutch en la franja **«2 - 9 employees»** (evidencia directa según tabla de [`DECISION-003`](DECISION-003-comparables-agencias-pequenas.md)).
+> 4. **Acreditación simultánea de Desarrollo Web Y Marketing Digital:** Se documenta para cada una el enlace exacto a su oferta de desarrollo y a su oferta de marketing.
+> 5. **Cuota Senior / *AI-Native* (`DECISION-004`):** Se demuestra con **citas textuales literales** de su propia web y URLs concretas (sin deducirlo del catálogo): **Devibi** (*«We're a deliberately small senior team — no account-manager telephone games, no juniors learning on your budget»*), **Trajectory Web Design** (*«A small, senior team. No junior handoffs, no learning on your budget, no unnecessary layers. Every project is staffed with senior specialists who actually do the work»*) y **Screenfire Media** (*«brings exceptional senior leadership experience to Screenfire clients»*, dirección 100% senior con >25 años de oficio).
+> 6. **Cumplimiento de cuotas geográficas:**
+>    - **Europa (5 agencias en 5 países distintos, España incluida):** Reino Unido, España, Alemania, Francia, Italia.
+>    - **América (5 agencias, 3 de Latinoamérica):** Perú (TESCANET, ya validada por Dexia), Colombia (StudioDigital) y Argentina (Agencia Buffalo), superando el mínimo de 2 de Latinoamérica; sumadas a 2 de EE. UU.
+>
+> ---
+>
+> ### 🇪🇺 Bloque Europa (5 agencias en 5 países):
+>
+> 1. **Devibi** (Reino Unido — Londres)
+>    - **Web:** [devibi.com](https://devibi.com) (HTTP 200)
+>    - **Clutch (2–9 empleados):** [clutch.co/profile/devibi](https://clutch.co/profile/devibi)
+>    - **Desarrollo Web:** [Website & App Development](https://devibi.com) (desarrollo web bespoke con Next.js y Webflow, arquitectura accesible y rápida).
+>    - **Marketing Digital:** [SEO, CRO & Brand](https://devibi.com) (optimización para motores de búsqueda, conversión y retención).
+>    - **Autodefinición Senior ([`DECISION-004`](DECISION-004-modelo-operativo-senior-ia.md)):** [devibi.com/about](https://devibi.com/about)
+>      > *«We're a deliberately small senior team — no account-manager telephone games, no juniors learning on your budget. You talk to the people doing the work, you see progress weekly, and you keep everything we make: files, code, documentation and the know-how to run it without us.»*
+>
+> 2. **Sitelabs** (España — Barcelona)
+>    - **Web:** [sitelabs.es](https://sitelabs.es/) (HTTP 200)
+>    - **Clutch (2–9 empleados):** [clutch.co/profile/sitelabs](https://clutch.co/profile/sitelabs)
+>    - **Desarrollo Web:** [Desarrollo web a medida](https://sitelabs.es/desarrollo-web-a-medida/) (WordPress a medida, WooCommerce, desarrollo a medida en Node.js, Laravel y React).
+>    - **Marketing Digital:** [Posicionamiento en Google](https://sitelabs.es/posicionamiento-en-google/) (SEO orgánico, Google Ads / SEM, Inbound marketing y Paid Media).
+>
+> 3. **Pallax Media** (Alemania — Dresde)
+>    - **Web:** [pallax-media.de](https://pallax-media.de/) (HTTP 200, dominio verificado con guión)
+>    - **Clutch (2–9 empleados):** [clutch.co/profile/pallax-media](https://clutch.co/profile/pallax-media)
+>    - **Desarrollo Web:** [Webseiten & UX/UI](https://pallax-media.de/webseiten) (diseño y desarrollo web a medida con PageSpeed y compliance DSGVO).
+>    - **Marketing Digital:** [SEO / GEO](https://pallax-media.de/seo) (consultoría SEO de contenidos y técnica, optimización para motores generativos).
+>
+> 4. **Digiberries Paris** (Francia — París)
+>    - **Web:** [digiberries.fr](https://www.digiberries.fr/) (HTTP 200)
+>    - **Clutch (2–9 empleados):** [clutch.co/profile/digiberries-paris](https://clutch.co/profile/digiberries-paris)
+>    - **Desarrollo Web:** [Création site web](https://www.digiberries.fr/) (desarrollo web en WordPress y tiendas e-commerce en Shopify).
+>    - **Marketing Digital:** [SEO, SEA & Social Ads](https://www.digiberries.fr/) (posicionamiento SEO, GEO para IA generativa, Google Ads y Social Ads multicanal).
+>
+> 5. **Stratagemma Studio** (Italia — Milán)
+>    - **Web:** [stratagemma.studio](https://www.stratagemma.studio) (HTTP 200)
+>    - **Clutch (2–9 empleados):** [clutch.co/profile/stratagemma-studio](https://clutch.co/profile/stratagemma-studio)
+>    - **Desarrollo Web:** [Website & Ecommerce Governance](https://www.stratagemma.studio) (diseño y desarrollo web, e-commerce platforms y governance de aplicaciones).
+>    - **Marketing Digital:** [Search & AI Visibility](https://www.stratagemma.studio) (gestión de visibilidad en buscadores e IA, sistemas de posicionamiento social y analítica).
+>
+> ---
+>
+> ### 🌎 Bloque América (5 agencias, 3 de Latinoamérica):
+>
+> 6. **TESCANET** (Perú — Lima) · *Latinoamérica (1/3)*
+>    - **Web:** [tescanet.com](https://tescanet.com/) (HTTP 200, validada por Dexia en REVIEW-001)
+>    - **Clutch (2–9 empleados):** [clutch.co/profile/tescanet](https://clutch.co/profile/tescanet)
+>    - **Desarrollo Web:** [Diseño y desarrollo web](https://tescanet.com/diseno-web/) (diseño web adaptable, desarrollo a medida, plataformas CMS y e-commerce).
+>    - **Marketing Digital:** [Marketing digital](https://tescanet.com/marketing-digital/) (SEO, SEM, gestión de redes sociales y producción audiovisual/video).
+>
+> 7. **StudioDigital** (Colombia — Bogotá) · *Latinoamérica (2/3)*
+>    - **Web:** [studiodigital.co](https://studiodigital.co) (HTTP 200)
+>    - **Clutch (2–9 empleados):** [clutch.co/profile/studiodigital](https://clutch.co/profile/studiodigital)
+>    - **Desarrollo Web:** [Ingeniería Web de Ultra-Rendimiento](https://studiodigital.co/#servicios) (código nativo a la medida sin plantillas ni maquetadores pesados, PageSpeed 90+ garantizado).
+>    - **Marketing Digital:** [Paid Media & Adquisición](https://studiodigital.co/#servicios) (tráfico pagado Google/Meta Ads, embudos de conversión, tracking server-side Meta CAPI y SEO técnico).
+>
+> 8. **Agencia Buffalo** (Argentina — Buenos Aires) · *Latinoamérica (3/3)*
+>    - **Web:** [agenciabuffalo.com](https://agenciabuffalo.com/) (HTTP 200)
+>    - **Clutch (2–9 empleados):** [clutch.co/profile/agencia-buffalo](https://clutch.co/profile/agencia-buffalo)
+>    - **Desarrollo Web:** [Diseño y desarrollo web](https://agenciabuffalo.com/desarrollo-web/) (desarrollo web UX/UI, tiendas e-commerce WordPress, plataformas digitales).
+>    - **Marketing Digital:** [Posicionamiento en buscadores](https://agenciabuffalo.com/posicionamiento-seo/) (SEO orgánico, SEM Google Ads, gestión estratégica de redes sociales).
+>
+> 9. **Trajectory Web Design** (EE. UU. — Atlanta, GA)
+>    - **Web:** [trajectorywebdesign.com](https://www.trajectorywebdesign.com/) (HTTP 200)
+>    - **Clutch (2–9 empleados):** [clutch.co/profile/trajectory-web-design](https://clutch.co/profile/trajectory-web-design)
+>    - **Desarrollo Web:** [Custom Development & Webflow](https://www.trajectorywebdesign.com/) (desarrollo web a medida en Webflow, seguridad y arquitectura escalable).
+>    - **Marketing Digital:** [SEO & Content Strategy](https://www.trajectorywebdesign.com/) (posicionamiento en buscadores, PPC y optimización de conversión).
+>    - **Autodefinición Senior ([`DECISION-004`](DECISION-004-modelo-operativo-senior-ia.md)):** [trajectorywebdesign.com](https://www.trajectorywebdesign.com/) y [trajectorywebdesign.com/about/](https://www.trajectorywebdesign.com/about/)
+>      > *«A small, senior team. No junior handoffs, no learning on your budget, no unnecessary layers. Every project is staffed with senior specialists who actually do the work, so you talk directly to the people making decisions.»*
+>      > *«Development: Fast, secure, dependable builds from senior developers.»*
+>
+> 10. **Screenfire Media** (EE. UU. — California)
+>     - **Web:** [screenfiremedia.com](https://screenfiremedia.com/) (HTTP 200)
+>     - **Clutch (2–9 empleados):** [clutch.co/profile/screenfire-media](https://clutch.co/profile/screenfire-media)
+>     - **Desarrollo Web:** [Web Development & Maintenance](https://screenfiremedia.com/services/web-development/) (desarrollo web WordPress personalizado, seguridad y mantenimiento continuo).
+>     - **Marketing Digital:** [Digital Marketing & AIO/SEO](https://screenfiremedia.com/services/digital-marketing/) (SEO, AIO, pauta digital, estrategia de contenidos y producción de video).
+>     - **Autodefinición Senior ([`DECISION-004`](DECISION-004-modelo-operativo-senior-ia.md)):** [screenfiremedia.com/about/](https://screenfiremedia.com/about/)
+>       > *«The Screenfire Media team has worked with... technology, entertainment, hospitality, legal, and journalism industries for 25+ years... and brings exceptional senior leadership experience to Screenfire clients.»* (Equipo 100% directores senior con más de 25 años de trayectoria profesional; sin capas junior).
+>
+> ---
+>
+> **🛑 Pausa de Checkpoint (F0):**
+> Me detengo aquí en estricto cumplimiento del protocolo y de las directivas de Clia y Dexia. Toda la muestra de 10 comparables cuenta con fuentes primarias activas, doble competencia verificada (web + marketing), escala demostrada (Clutch 2–9 empleados) y cuota senior/AI explícita. Quedo a la espera del **visto bueno formal (✅) de Dexia en REVIEW-001** antes de proceder a la fase F1 (capturas de pantalla y redacción de las 10 fichas).

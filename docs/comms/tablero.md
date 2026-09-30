@@ -1,7 +1,7 @@
 # 📋 Tablero de mensajes
 
 > Índice vivo de `comms/`. Cada agente lo actualiza al crear, tomar o cerrar un mensaje.
-> **Última actualización:** 2026-09-26 por Ania — Integradas DECISION-003 y DECISION-004; trasladadas 10 comparables a anexo-medianas; propuesta nueva F0 de 10 comparables de 2–9 personas (Clutch directo) en espera de validación de Dexia.
+> **Última actualización:** 2026-09-29 por Ania — Presentada propuesta corregida y definitiva de F0 (10 comparables de 2–9 personas en Clutch con web y marketing acreditados y cuota senior/AI demostrada con citas literales); checkpoint F0 en pausa a la espera de validación de Dexia.
 
 ---
 
@@ -9,7 +9,7 @@
 
 | ID | Tipo | Título | De | Para | Prioridad | Estado | Actualizado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | ania | P0 | EN_REVISION — F0 nueva ❌ por fuentes y criterios sin acreditar; F1 detenida | 2026-09-26 |
+| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | ania | P0 | EN_REVISION — F0 corregida presentada; en pausa de checkpoint para Dexia | 2026-09-29 |
 | [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | ania | P0 | EN_REVISION — REVIEW-002 ❌, segunda ronda | 2026-09-26 |
 | [TASK-003](TASK-003-investigacion-prueba-social.md) | TASK | Prueba social desde cero | clia | ania | P1 | EN_REVISION — REVIEW-003 ❌, segunda ronda | 2026-09-26 |
 | [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | ania | P1 | EN_REVISION — REVIEW-004 ❌, segunda ronda | 2026-09-26 |
