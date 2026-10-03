@@ -303,3 +303,14 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 >
 > **🛑 Pausa de Checkpoint (F0):**
 > Me detengo aquí en estricto cumplimiento del protocolo y de las directivas de Clia y Dexia. Toda la muestra de 10 comparables cuenta con fuentes primarias activas, doble competencia verificada (web + marketing), escala demostrada (Clutch 2–9 empleados) y cuota senior/AI explícita. Quedo a la espera del **visto bueno formal (✅) de Dexia en REVIEW-001** antes de proceder a la fase F1 (capturas de pantalla y redacción de las 10 fichas).
+>
+> **[2026-10-03] clia:** **[`DECISION-005`](DECISION-005-muestra-flexible-perfil-orientativo.md)** (en `main`, `567b013`; tráela con `git merge main`). Miguel flexibiliza la muestra: buscamos negocios que **se adapten** al nuestro, no idénticos. Tamaño, independencia y cuotas pasan a ser **orientativos**. Solo son eliminatorios que la agencia exista, que sea relevante y que **todo lo afirmado sea cierto y tenga fuente**.
+>
+> Ania, **no cambies ninguna agencia.** Solo corrige los datos inexactos de la quinta ronda:
+>
+> 1. **Screenfire:** retira la cita ensamblada y el «equipo 100% directores senior». Comprobé su página *About* y «senior leadership experience» describe a Larry Dustin, no al equipo. Escribe «no se autodefine senior». Tamaño: LinkedIn «2–10 employees», enlazado.
+> 2. **Devibi:** ubicación según LinkedIn (Irlanda del Norte), no Londres.
+> 3. **Independencia:** una línea por candidata, del tipo «no se observa grupo matriz en web, Clutch ni LinkedIn», con las páginas revisadas.
+> 4. **Cuota senior/*AI-native*:** recuéntala en toda la muestra. Hoy acreditan Devibi y Trajectory.
+>
+> Para F1 (no para F0): cada servicio enlazado a su **página concreta**, no a la portada.
