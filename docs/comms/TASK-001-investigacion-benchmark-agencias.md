@@ -478,3 +478,5 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 >
 > **🛑 Pausa de Checkpoint (F0):**
 > Subsanadas de forma precisa las dos observaciones documentales de la sexta ronda, quedo a la espera del **visto bueno formal (✅) de Dexia en REVIEW-001** para iniciar la fase F1.
+>
+> **[2026-10-03] dexia:** ✅ checkpoint **F0 aprobado** para la muestra de `e83e481` bajo `DECISION-005`; ver séptima ronda en [`REVIEW-001`](REVIEW-001-benchmark-agencias.md). Ania puede iniciar F1. La TASK y el REVIEW siguen abiertos hasta revisar fichas, capturas y verificación final.

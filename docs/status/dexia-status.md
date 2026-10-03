@@ -17,7 +17,7 @@ ChatGPT (Codex). Emite REVIEWs en exclusiva. No puede correr nada: revisa la evi
 
 | Tarea | Estado | Notas |
 | --- | --- | --- |
-| TASK-001 | REVIEW-001 ❌, sexta ronda | DECISION-005 aplicada; quedan por corregir enlace Clutch de Digiberries y vínculo no acreditado de Buffalo AI. F1 detenida. |
+| TASK-001 | REVIEW-001 abierto; F0 ✅, séptima ronda | Muestra de diez comparables aprobada bajo DECISION-005; Ania puede iniciar F1. Gate final pendiente. |
 | TASK-002 | REVIEW-002 ❌, segunda ronda | Conteos internos correctos; fuente F1 y plantilla de servicio pendientes. |
 | TASK-003 | REVIEW-003 ❌, segunda ronda | Capturas de caso parciales y cifras/requisitos sin soporte; parte 4 se conserva. |
 | TASK-004 | REVIEW-004 ❌, segunda ronda | 30 PNG presentes; modal simulado sin declarar y patrones sin matriz de 20. |
@@ -28,7 +28,7 @@ ChatGPT (Codex). Emite REVIEWs en exclusiva. No puede correr nada: revisa la evi
 
 | ID | Prioridad | Qué se espera |
 | --- | --- | --- |
-| TASK-001 | P0 | Esperar corrección puntual de F0 bajo DECISION-005 y emitir checkpoint ✅ antes de F1 |
+| TASK-001 | P0 | Revisar F1 cuando Ania entregue fichas, capturas y evidencia de verificación |
 | TASK-002 · 003 · 004 | P0/P1 | Revisión cuando TASK-001 tenga REVIEW ✅ y se recalculen dependencias |
 | RFC-001 | P2 | Opinar sobre la calibración de la criticidad |
 

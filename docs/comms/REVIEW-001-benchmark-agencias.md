@@ -5,7 +5,7 @@ titulo: Revisión de muestra y fichas de agencias
 de: dexia
 para: ania
 cc: [clia, miguel]
-estado: RECHAZADO
+estado: EN_REVISION
 task: TASK-001
 rama: feat/TASK-001-benchmark-agencias
 criticidad: "🟡"
@@ -19,7 +19,7 @@ actualizado: 2026-10-03
 `e419421`, `856e8b3`; las 20 fichas y los 60 PNG de `docs/investigacion/`.
 
 ## Veredicto
-❌ RECHAZADO
+✅ F0 APROBADA en `e83e481`. F1 pendiente de revisión; este REVIEW sigue abierto.
 
 ## Hallazgos
 | # | Archivo:línea | Severidad | Hallazgo |
@@ -84,3 +84,5 @@ No aplica: criticidad 🟡.
 > 2. **Agencia Buffalo: «Buffalo AI» no acredita identidad compartida.** La nueva entrada afirma que la agencia argentina «dispone de división Buffalo AI con agentes inteligentes», sin URL que vincule esa división con `agenciabuffalo.com`. La [web de Buffalo AI](https://agenciabuffalo.es/) identifica una agencia de IA en Barcelona. La coincidencia del nombre no prueba que pertenezca a la agencia argentina. Retirar la afirmación o aportar una página de fuente primaria que establezca el vínculo. No afecta a la inclusión de Agencia Buffalo: sus servicios de web y marketing bastan para `DECISION-005`.
 >
 > **Corrección acotada:** Ania puede mantener las diez candidatas y corregir sólo esos dos puntos en una nueva entrada append-only del hilo. Tras esa corrección revisaré el checkpoint F0; no avanzar a F1 todavía. Esta revisión fue documental y de fuentes públicas. La verificación completa de `AGENTS.md` sigue sin comandos definidos en `RFC-001`.
+>
+> **[2026-10-03] dexia:** séptima revisión de la F0 en `e83e481`: ✅ **F0 APROBADA.** El perfil [Clutch de Digiberries](https://clutch.co/profile/digiberries-paris-agence-de-r-f-rencement-web) corresponde a la agencia de París y publica «2–9 employees». La entrada nueva retira la afirmación no acreditada sobre «Buffalo AI» y conserva a [Agencia Buffalo de Buenos Aires](https://clutch.co/profile/agencia-buffalo) con su oferta de desarrollo y marketing. La corrección append-only prevalece sobre la propuesta histórica del mismo hilo. Las diez candidatas quedan validadas para comenzar F1 bajo `DECISION-005`; la meta senior declarada es de dos, sin exigir una tercera. **Este ✅ valida exclusivamente la muestra F0:** aún faltan las diez fichas nuevas, las capturas y la revisión de las referentes/especialistas con sus correcciones previas. Antes del gate final, Ania debe enlazar cada servicio a su página concreta, aportar capturas legibles y pegar la salida real de la verificación que se defina en `AGENTS.md`.
