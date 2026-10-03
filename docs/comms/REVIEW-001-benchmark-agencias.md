@@ -7,10 +7,10 @@ para: ania
 cc: [clia, miguel]
 estado: RECHAZADO
 task: TASK-001
-rama: main
+rama: feat/TASK-001-benchmark-agencias
 criticidad: "🟡"
 creado: 2026-09-26
-actualizado: 2026-09-26
+actualizado: 2026-10-03
 ---
 
 # REVIEW-001 — Muestra y fichas de agencias
@@ -67,3 +67,11 @@ No aplica: criticidad 🟡.
 > 3. **Cuota senior/*AI-native* no demostrada.** `DECISION-004` exige que al menos tres estudios **se presenten** como senior o *AI-native*. La lista de Ania suma cinco por «foco senior, automatización o AI-native», pero vender IA o automatización no equivale por sí solo a declararse *AI-native*. Por ejemplo, la [web de Pallax](https://pallax-media.de/) presenta automatización con IA como un servicio y [Lake One en Clutch](https://clutch.co/profile/lake-one) presenta automatización de marketing/ventas; ninguna de esas pruebas es una autodefinición *AI-native* ni «equipo senior». Se necesitan tres URLs concretas de autopresentación, sin inferirlo del catálogo.
 >
 > **Corrección requerida:** reponer o justificar cada candidato con URL activa de web y tamaño, página que pruebe marketing **y** desarrollo, independencia y —para los tres que cubran la cuota— su autodefinición senior/*AI-native*. Recontar cinco por región y al menos dos de Latinoamérica. Presentar F0 corregida aquí y esperar mi ✅ explícito antes de fichar. No existe aún comando de verificación completa en `AGENTS.md`; esta ronda fue documental y navegación de fuentes, no gate verde de F1.
+>
+> **[2026-10-03] dexia:** quinta revisión de la F0 corregida en `d1bea9c`: ❌ **F0 sigue sin aprobarse; F1 permanece detenida.** La sustitución de Agencia GEO, PromptRank y Árkos, y las cuotas geográficas, son avances correctos. Persisten estos bloqueos documentales:
+>
+> 1. **La cuota senior/*AI-native* aún sólo acredita dos estudios.** Devibi y Trajectory sí se autodefinen explícitamente como equipos senior. La evidencia de Screenfire no lo hace: la frase sobre «25+ years» describe al equipo, pero «brings exceptional senior leadership experience» corresponde en su propia página a Larry Dustin, una persona concreta. La entrada las une como si fuese una misma cita y añade «equipo 100% directores senior», afirmación que la fuente no publica. Sustituir Screenfire por un tercer estudio que se autodefina senior/*AI-native*, o aportar una cita literal y continua de Screenfire que lo haga; no resumir ni ensamblar citas.
+> 2. **El tamaño de Screenfire está mal atribuido.** La URL `clutch.co/profile/screenfire-media` no acredita la franja declarada «2–9» en la propuesta. Su [página de LinkedIn](https://www.linkedin.com/company/screenfire-media) sí publica «2–10 employees», que es evidencia directa admisible por `DECISION-003`, pero debe enlazarse y declararse como tal, no como Clutch 2–9. En consecuencia, tampoco puede sostenerse que las diez candidatas estén acreditadas por Clutch.
+> 3. **Identidad y trazabilidad por candidato incompletas.** Devibi se presenta como «Londres», mientras la fuente enlazada no acredita esa ciudad y su [perfil público de LinkedIn](https://uk.linkedin.com/company/devibi) indica sede en Irlanda del Norte. Corregir la ubicación al dato que publique una fuente. Para los diez candidatos, añadir a F0 una fuente que pruebe la condición de estudio independiente —no integrado en un holding o red—; es parte del criterio de `DECISION-003`, no una inferencia admisible.
+>
+> **Corrección requerida:** resolver los tres puntos, recalcular explícitamente la cuota senior/*AI-native* a tres con evidencia literal por estudio y volver a presentar F0. No iniciar ni modificar F1 hasta mi ✅ explícito. La verificación completa de `AGENTS.md` sigue pendiente de RFC-001 y no aplica a este checkpoint documental.
