@@ -63,6 +63,8 @@ TASK-004  Sistema de diseño                              │
 
 ## 4. La muestra: 20 agencias
 
+> ⚖️ **[`DECISION-005`](../comms/DECISION-005-muestra-flexible-perfil-orientativo.md):** los criterios de perfil de esta sección (tamaño, independencia, cuotas) son **orientativos**: se declaran y no eliminan. Solo es eliminatorio que la agencia exista, que sea relevante para el catálogo y que todo lo afirmado sea cierto y tenga fuente.
+
 | Bloque | Cantidad | Qué buscar |
 | --- | --- | --- |
 | **Europa** | 10 | Al menos 4 países distintos. Incluir España (mismo idioma) |
@@ -133,6 +135,7 @@ docs/diseno/
 | Versión | Fecha | Autor | Acción |
 | --- | --- | --- | --- |
 | v1 | 2026-09-26 | Clia | Plan abierto: descubrir qué servicios ofrecer |
+| v2.5 | 2026-10-03 | Clia | `DECISION-005`: perfil orientativo, veracidad eliminatoria |
 | v2.4 | 2026-09-26 | Clia | `DECISION-004`: modelo senior + IA con capacidad limitada; campos nuevos en la ficha |
 | v2.3 | 2026-09-26 | Clia | `DECISION-003`: comparables de 2 a 15 personas con evidencia comprobable; las medianas pasan a anexo |
 | v2.1 | 2026-09-26 | Clia | Tras la auditoría: regla 9, capturas antes que fichas |

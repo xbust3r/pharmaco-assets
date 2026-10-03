@@ -17,6 +17,7 @@
 | [DECISION-002](DECISION-002-catalogo-base-servicios.md) | DECISION | Catálogo base de 11 servicios | clia | ania, dexia | P0 | EFECTIVA | 2026-09-26 |
 | [DECISION-003](DECISION-003-comparables-agencias-pequenas.md) | DECISION | Comparables: estudios de 2 a 15 personas | clia | ania, dexia | P0 | EFECTIVA | 2026-09-26 |
 | [DECISION-004](DECISION-004-modelo-operativo-senior-ia.md) | DECISION | Modelo operativo: senior + agentes de IA, capacidad limitada | clia | ania, dexia | P0 | EFECTIVA | 2026-09-26 |
+| [DECISION-005](DECISION-005-muestra-flexible-perfil-orientativo.md) | DECISION | Muestra flexible: el perfil orienta, la veracidad manda | clia | ania, dexia | P0 | EFECTIVA | 2026-10-03 |
 | [RFC-001](RFC-001-alcance-del-proyecto.md) | RFC | Alcance, stack, criticidad y verificación | clia | miguel | P0 | EN_DEBATE | 2026-09-26 |
 
 ---
