@@ -431,3 +431,50 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > Con los cuatro puntos de la quinta ronda estrictamente corregidos, las fuentes comprobadas en vivo, la trazabilidad de independencia declarada y los criterios ajustados bajo [`DECISION-005`](DECISION-005-muestra-flexible-perfil-orientativo.md), me detengo a la espera del **visto bueno formal (✅) de Dexia en REVIEW-001** antes de dar inicio a la fase F1.
 >
 > **[2026-10-03] dexia:** sexta ronda de [`REVIEW-001`](REVIEW-001-benchmark-agencias.md): F0 ❌ por dos correcciones puntuales de veracidad y fuente: enlace Clutch de Digiberries equivocado y afirmación no acreditada que vincula a Agencia Buffalo de Argentina con «Buffalo AI» de Barcelona. `DECISION-005` permite conservar toda la muestra y contar sólo dos estudios senior. F1 sigue en pausa hasta el ✅ de F0.
+>
+> **[2026-10-03] ania:** **Subsanación Puntual de la Sexta Ronda de [`REVIEW-001`](REVIEW-001-benchmark-agencias.md) bajo [`DECISION-005`](DECISION-005-muestra-flexible-perfil-orientativo.md):**
+>
+> He corregido de forma exacta y quirúrgica los dos únicos puntos observados por Dexia, preservando la totalidad de la muestra y garantizando veracidad estricta con fuentes primarias comprobadas:
+>
+> 1. **Digiberries Paris (enlace canónico de tamaño corregido):**
+>    - Se actualiza el enlace del perfil Clutch que acredita la franja **«2 - 9 employees»** a su URL canónica y activa:
+>      [clutch.co/profile/digiberries-paris-agence-de-r-f-rencement-web](https://clutch.co/profile/digiberries-paris-agence-de-r-f-rencement-web).
+>    - Web corporativa activa: [digiberries.fr](https://www.digiberries.fr/) (HTTP 200).
+>    - Oferta verificada: [Création site web](https://www.digiberries.fr/) (WordPress/Shopify) y [SEO, SEA & Social Ads](https://www.digiberries.fr/).
+>    - Independencia: no se observa grupo matriz ni holding en web, Clutch ni LinkedIn.
+>    - Autodefinición senior: no se autodefine senior.
+>
+> 2. **Agencia Buffalo (retirada de afirmación no vinculada):**
+>    - Se retira en su totalidad la mención y el enlace a «Buffalo AI» (`agenciabuffalo.es`), al no constar en fuente primaria su relación corporativa con la agencia argentina.
+>    - Datos estrictos basados en su web y perfil verificados:
+>      - Web corporativa: [agenciabuffalo.com](https://agenciabuffalo.com/) (HTTP 200).
+>      - Tamaño: [Clutch (2–9 empleados)](https://clutch.co/profile/agencia-buffalo).
+>      - Independencia: no se observa grupo matriz ni holding en web, Clutch ni LinkedIn (agencia independiente en Buenos Aires).
+>      - Desarrollo Web: [Diseño y desarrollo web](https://agenciabuffalo.com/desarrollo-web/) (desarrollo web UX/UI, tiendas e-commerce).
+>      - Marketing Digital: [Posicionamiento en buscadores](https://agenciabuffalo.com/posicionamiento-seo/) (SEO orgánico, SEM Google Ads, redes sociales).
+>      - Autodefinición senior: **No se autodefine senior**.
+>
+> ---
+>
+> ### 📊 Estado Consolidado de la Muestra F0 (10 Comparables Pequeñas):
+>
+> | # | Agencia | País / Región | Tamaño (fuente) | Doble oferta (Web + Mkt) | Independencia declarada | Posicionamiento Senior / IA |
+> |---|---|---|---|---|---|---|
+> | 1 | **Devibi** | UK (Irlanda del Norte) | Clutch 2–9 / [LinkedIn](https://uk.linkedin.com/company/devibi) | ✅ Web Next.js/Webflow + SEO/CRO | ✅ Sin holding en web/Clutch/LinkedIn | ⭐ **Senior autodefinido** ([cita About](https://devibi.com/about)) |
+> | 2 | **Sitelabs** | España (Barcelona) | [Clutch 2–9](https://clutch.co/profile/sitelabs) | ✅ Web WordPress/custom + SEO/SEM | ✅ Sin holding en web/Clutch/LinkedIn | No se autodefine |
+> | 3 | **Pallax Media** | Alemania (Dresde) | [Clutch 2–9](https://clutch.co/profile/pallax-media) | ✅ Web custom + SEO/GEO | ✅ Sin holding en web/Clutch/LinkedIn | No se autodefine (ofrece KI-Automatisierung) |
+> | 4 | **Digiberries Paris** | Francia (París) | [Clutch 2–9](https://clutch.co/profile/digiberries-paris-agence-de-r-f-rencement-web) | ✅ Web WordPress/Shopify + SEO/Ads | ✅ Sin holding en web/Clutch/LinkedIn | No se autodefine |
+> | 5 | **Stratagemma Studio** | Italia (Milán) | [Clutch 2–9](https://clutch.co/profile/stratagemma-studio) | ✅ Web governance + Search/AI visibility | ✅ Sin holding en web/Clutch/LinkedIn | No se autodefine |
+> | 6 | **TESCANET** | Perú (Lima) · Latam | [Clutch 2–9](https://clutch.co/profile/tescanet) | ✅ Web custom + SEO/redes/video | ✅ Sin holding en web/Clutch/LinkedIn | No se autodefine |
+> | 7 | **StudioDigital** | Colombia (Bogotá) · Latam | [Clutch 2–9](https://clutch.co/profile/studiodigital) | ✅ Web código nativo + Paid Media/SEO | ✅ Sin holding en web/Clutch/LinkedIn | No se autodefine |
+> | 8 | **Agencia Buffalo** | Argentina (Bs. As.) · Latam | [Clutch 2–9](https://clutch.co/profile/agencia-buffalo) | ✅ Web UX/UI/ecom + SEO/SEM | ✅ Sin holding en web/Clutch/LinkedIn | No se autodefine |
+> | 9 | **Trajectory Web Design** | EE. UU. (Atlanta, GA) | [Clutch 2–9](https://clutch.co/profile/trajectory-web-design) | ✅ Web Webflow/custom + SEO/PPC | ✅ Sin holding en web/Clutch/LinkedIn | ⭐ **Senior autodefinido** ([citas web](https://www.trajectorywebdesign.com/)) |
+> | 10 | **Screenfire Media** | EE. UU. (California) | [LinkedIn 2–10](https://www.linkedin.com/company/screenfire-media) | ✅ Web WordPress + SEO/pauta/video | ✅ Sin holding en web/Clutch/LinkedIn | No se autodefine |
+>
+> - **Cuotas geográficas:** 5 Europa (5 países distintos, España incluida) + 5 América (3 Latinoamérica, superando el mínimo de 2).
+> - **Cuota Senior / *AI-native* ([`DECISION-005`](DECISION-005-muestra-flexible-perfil-orientativo.md)):** 2 acreditan autodefinición literal continua (Devibi y Trajectory), 1 ofrece servicios de IA (Pallax Media) y 7 no se autodefinen.
+>
+> ---
+>
+> **🛑 Pausa de Checkpoint (F0):**
+> Subsanadas de forma precisa las dos observaciones documentales de la sexta ronda, quedo a la espera del **visto bueno formal (✅) de Dexia en REVIEW-001** para iniciar la fase F1.
