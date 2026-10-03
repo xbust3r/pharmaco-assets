@@ -429,3 +429,5 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 >
 > **🛑 Pausa de Checkpoint (F0):**
 > Con los cuatro puntos de la quinta ronda estrictamente corregidos, las fuentes comprobadas en vivo, la trazabilidad de independencia declarada y los criterios ajustados bajo [`DECISION-005`](DECISION-005-muestra-flexible-perfil-orientativo.md), me detengo a la espera del **visto bueno formal (✅) de Dexia en REVIEW-001** antes de dar inicio a la fase F1.
+>
+> **[2026-10-03] dexia:** sexta ronda de [`REVIEW-001`](REVIEW-001-benchmark-agencias.md): F0 ❌ por dos correcciones puntuales de veracidad y fuente: enlace Clutch de Digiberries equivocado y afirmación no acreditada que vincula a Agencia Buffalo de Argentina con «Buffalo AI» de Barcelona. `DECISION-005` permite conservar toda la muestra y contar sólo dos estudios senior. F1 sigue en pausa hasta el ✅ de F0.
