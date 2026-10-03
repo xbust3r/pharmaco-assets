@@ -11,7 +11,7 @@ area: investigacion
 criticidad: "🟡"
 relacionado: [plan-investigacion.md, plantilla-ficha.md, linea-base-2020.md, DECISION-002]
 creado: 2026-09-26
-actualizado: 2026-09-29
+actualizado: 2026-10-03
 ---
 
 # TASK-001 — Muestra y fichas de 20 agencias
@@ -314,3 +314,118 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > 4. **Cuota senior/*AI-native*:** recuéntala en toda la muestra. Hoy acreditan Devibi y Trajectory.
 >
 > Para F1 (no para F0): cada servicio enlazado a su **página concreta**, no a la portada.
+>
+> **[2026-10-03] ania:** **F0 Actualizada conforme a [`DECISION-005`](DECISION-005-muestra-flexible-perfil-orientativo.md) — Subsanación exacta de la quinta ronda de [`REVIEW-001`](REVIEW-001-benchmark-agencias.md):**
+>
+> Integrada `DECISION-005` vía `git merge main` (`02b5a08`). Siguiendo la directiva de Clia y Miguel, mantengo exactamente la muestra de 10 comparables de `d1bea9c` y aplico la corrección rigurosa y verídica de los 4 datos señalados:
+>
+> 1. **Screenfire Media (corrección de cita y tamaño):**
+>    - Retirada la cita ensamblada y el claim inferido de «equipo 100% directores senior». Queda registrado explícitamente: **«no se autodefine senior»** (su página *About* destaca trayectoria dilatada individual de directores, pero no publica un claim corporativo de estudio senior).
+>    - Tamaño acreditado: **[LinkedIn (2–10 employees)](https://www.linkedin.com/company/screenfire-media)** (evidencia directa admisible según tabla de `DECISION-003`). Se rectifica la atribución: 9 agencias están acreditadas en Clutch (2–9) y Screenfire en LinkedIn (2–10).
+> 2. **Devibi (corrección de sede):**
+>    - Sede corregida según su fuente pública: **Reino Unido — Irlanda del Norte** (acreditado en su [perfil de LinkedIn](https://uk.linkedin.com/company/devibi)), retirando la referencia a Londres.
+> 3. **Trazabilidad de Independencia para las 10 agencias:**
+>    - Se añade para cada una la comprobación explícita: *«Independencia: no se observa grupo matriz ni holding en web oficial, Clutch ni LinkedIn (revisadas web, perfil Clutch y perfil LinkedIn)»*.
+> 4. **Recuento de cuota senior / *AI-native* (`DECISION-004` / `DECISION-005`):**
+>    - Conforme a `DECISION-005`, la cuota pasa a ser una meta orientativa y se recuenta con veracidad estricta:
+>      - **Acreditan autodefinición senior con cita literal y continua (2 comparables):** **Devibi** (*«We're a deliberately small senior team — no account-manager telephone games, no juniors learning on your budget»*) y **Trajectory Web Design** (*«A small, senior team. No junior handoffs, no learning on your budget, no unnecessary layers. Every project is staffed with senior specialists who actually do the work»*).
+>      - **Servicios de IA / Automatización / Agentes (2 comparables):** **Pallax Media** (KI-Automatisierung) y **Agencia Buffalo** (unidad Buffalo AI).
+>      - **No se autodefinen senior (6 comparables):** Screenfire Media, Sitelabs, Digiberries Paris, Stratagemma Studio, TESCANET, StudioDigital.
+> 5. **Compromiso para F1:**
+>    - Queda anotado que en la redacción de fichas F1 cada servicio se enlazará a su URL interna específica (no a la portada).
+>
+> ---
+>
+> ### 🇪🇺 Bloque Europa (5 agencias en 5 países):
+>
+> 1. **Devibi** (Reino Unido — Irlanda del Norte)
+>    - **Web:** [devibi.com](https://devibi.com) (HTTP 200)
+>    - **Tamaño:** [Clutch (2–9 empleados)](https://clutch.co/profile/devibi) · **Sede:** [LinkedIn (Irlanda del Norte)](https://uk.linkedin.com/company/devibi)
+>    - **Independencia:** No se observa grupo matriz ni holding en web, Clutch ni LinkedIn (estudio digital independiente).
+>    - **Desarrollo Web:** [Website & App Development](https://devibi.com) (desarrollo web bespoke con Next.js y Webflow).
+>    - **Marketing Digital:** [SEO, CRO & Brand](https://devibi.com) (optimización de motores de búsqueda y tasa de conversión).
+>    - **Autodefinición Senior ([`DECISION-004`](DECISION-004-modelo-operativo-senior-ia.md)):** [devibi.com/about](https://devibi.com/about)
+>      > *«We're a deliberately small senior team — no account-manager telephone games, no juniors learning on your budget. You talk to the people doing the work, you see progress weekly, and you keep everything we make: files, code, documentation and the know-how to run it without us.»*
+>
+> 2. **Sitelabs** (España — Barcelona)
+>    - **Web:** [sitelabs.es](https://sitelabs.es/) (HTTP 200)
+>    - **Tamaño:** [Clutch (2–9 empleados)](https://clutch.co/profile/sitelabs)
+>    - **Independencia:** No se observa grupo matriz ni holding en web, Clutch ni LinkedIn (laboratorio web independiente).
+>    - **Desarrollo Web:** [Desarrollo web a medida](https://sitelabs.es/desarrollo-web-a-medida/) (WordPress a medida, WooCommerce, desarrollo a medida en Node.js, Laravel y React).
+>    - **Marketing Digital:** [Posicionamiento en Google](https://sitelabs.es/posicionamiento-en-google/) (SEO orgánico, Google Ads / SEM, Inbound marketing).
+>    - **Autodefinición Senior:** No se autodefine senior.
+>
+> 3. **Pallax Media** (Alemania — Dresde)
+>    - **Web:** [pallax-media.de](https://pallax-media.de/) (HTTP 200)
+>    - **Tamaño:** [Clutch (2–9 empleados)](https://clutch.co/profile/pallax-media)
+>    - **Independencia:** No se observa grupo matriz ni holding en web, Clutch ni LinkedIn (estudio digital independiente).
+>    - **Desarrollo Web:** [Webseiten & UX/UI](https://pallax-media.de/webseiten) (diseño y desarrollo web a medida).
+>    - **Marketing Digital:** [SEO / GEO](https://pallax-media.de/seo) (consultoría SEO técnica y optimización para motores generativos).
+>    - **Autodefinición Senior:** No se autodefine senior (presenta servicio de KI-Automatisierung en [pallax-media.de/ki-tools](https://pallax-media.de/ki-tools)).
+>
+> 4. **Digiberries Paris** (Francia — París)
+>    - **Web:** [digiberries.fr](https://www.digiberries.fr/) (HTTP 200)
+>    - **Tamaño:** [Clutch (2–9 empleados)](https://clutch.co/profile/digiberries-paris)
+>    - **Independencia:** No se observa grupo matriz ni holding en web, Clutch ni LinkedIn (agencia digital boutique independiente).
+>    - **Desarrollo Web:** [Création site web](https://www.digiberries.fr/) (desarrollo web WordPress y tiendas Shopify).
+>    - **Marketing Digital:** [SEO, SEA & Social Ads](https://www.digiberries.fr/) (SEO, GEO para IA, Google Ads y Social Ads).
+>    - **Autodefinición Senior:** No se autodefine senior.
+>
+> 5. **Stratagemma Studio** (Italia — Milán)
+>    - **Web:** [stratagemma.studio](https://www.stratagemma.studio) (HTTP 200)
+>    - **Tamaño:** [Clutch (2–9 empleados)](https://clutch.co/profile/stratagemma-studio)
+>    - **Independencia:** No se observa grupo matriz ni holding en web, Clutch ni LinkedIn (estudio boutique independiente).
+>    - **Desarrollo Web:** [Website & Ecommerce Governance](https://www.stratagemma.studio) (desarrollo web y plataformas de venta).
+>    - **Marketing Digital:** [Search & AI Visibility](https://www.stratagemma.studio) (posicionamiento en búsqueda e IA, social positioning).
+>    - **Autodefinición Senior:** No se autodefine senior.
+>
+> ---
+>
+> ### 🌎 Bloque América (5 agencias, 3 de Latinoamérica):
+>
+> 6. **TESCANET** (Perú — Lima) · *Latinoamérica (1/3)*
+>    - **Web:** [tescanet.com](https://tescanet.com/) (HTTP 200, validada por Dexia en REVIEW-001)
+>    - **Tamaño:** [Clutch (2–9 empleados)](https://clutch.co/profile/tescanet)
+>    - **Independencia:** No se observa grupo matriz ni holding en web, Clutch ni LinkedIn (estudio digital independiente en Lima).
+>    - **Desarrollo Web:** [Diseño y desarrollo web](https://tescanet.com/diseno-web/) (diseño web, desarrollo a medida y e-commerce).
+>    - **Marketing Digital:** [Marketing digital](https://tescanet.com/marketing-digital/) (SEO, SEM, redes sociales y producción de video).
+>    - **Autodefinición Senior:** No se autodefine senior.
+>
+> 7. **StudioDigital** (Colombia — Bogotá) · *Latinoamérica (2/3)*
+>    - **Web:** [studiodigital.co](https://studiodigital.co) (HTTP 200)
+>    - **Tamaño:** [Clutch (2–9 empleados)](https://clutch.co/profile/studiodigital)
+>    - **Independencia:** No se observa grupo matriz ni holding en web, Clutch ni LinkedIn (estudio boutique independiente de ingeniería digital).
+>    - **Desarrollo Web:** [Ingeniería Web de Ultra-Rendimiento](https://studiodigital.co/#servicios) (código nativo a medida, PageSpeed 90+ garantizado).
+>    - **Marketing Digital:** [Paid Media & Adquisición](https://studiodigital.co/#servicios) (tráfico pagado Google/Meta Ads, atribución server-side Meta CAPI y SEO técnico).
+>    - **Autodefinición Senior:** No se autodefine senior.
+>
+> 8. **Agencia Buffalo** (Argentina — Buenos Aires) · *Latinoamérica (3/3)*
+>    - **Web:** [agenciabuffalo.com](https://agenciabuffalo.com/) (HTTP 200)
+>    - **Tamaño:** [Clutch (2–9 empleados)](https://clutch.co/profile/agencia-buffalo)
+>    - **Independencia:** No se observa grupo matriz ni holding en web, Clutch ni LinkedIn (agencia creativa digital independiente).
+>    - **Desarrollo Web:** [Diseño y desarrollo web](https://agenciabuffalo.com/desarrollo-web/) (desarrollo web UX/UI, tiendas e-commerce).
+>    - **Marketing Digital:** [Posicionamiento en buscadores](https://agenciabuffalo.com/posicionamiento-seo/) (SEO orgánico, SEM Google Ads, redes sociales).
+>    - **Autodefinición Senior:** No se autodefine senior (dispone de división Buffalo AI con agentes inteligentes).
+>
+> 9. **Trajectory Web Design** (EE. UU. — Atlanta, GA)
+>    - **Web:** [trajectorywebdesign.com](https://www.trajectorywebdesign.com/) (HTTP 200)
+>    - **Tamaño:** [Clutch (2–9 empleados)](https://clutch.co/profile/trajectory-web-design)
+>    - **Independencia:** No se observa grupo matriz ni holding en web, Clutch ni LinkedIn (estudio boutique independiente fundado por Josh Worden).
+>    - **Desarrollo Web:** [Custom Development & Webflow](https://www.trajectorywebdesign.com/) (desarrollo web a medida en Webflow).
+>    - **Marketing Digital:** [SEO & Content Strategy](https://www.trajectorywebdesign.com/) (posicionamiento orgánico y estrategia de contenidos).
+>    - **Autodefinición Senior ([`DECISION-004`](DECISION-004-modelo-operativo-senior-ia.md)):** [trajectorywebdesign.com](https://www.trajectorywebdesign.com/) y [trajectorywebdesign.com/about/](https://www.trajectorywebdesign.com/about/)
+>      > *«A small, senior team. No junior handoffs, no learning on your budget, no unnecessary layers. Every project is staffed with senior specialists who actually do the work, so you talk directly to the people making decisions.»*
+>      > *«Development: Fast, secure, dependable builds from senior developers.»*
+>
+> 10. **Screenfire Media** (EE. UU. — California)
+>     - **Web:** [screenfiremedia.com](https://screenfiremedia.com/) (HTTP 200)
+>     - **Tamaño:** [LinkedIn (2–10 employees)](https://www.linkedin.com/company/screenfire-media) (evidencia directa según `DECISION-003`)
+>     - **Independencia:** No se observa grupo matriz ni holding en web, Clutch ni LinkedIn (estudio boutique independiente liderado por Marc Zasada).
+>     - **Desarrollo Web:** [Web Development & Maintenance](https://screenfiremedia.com/services/web-development/) (desarrollo web WordPress a medida, mantenimiento y seguridad).
+>     - **Marketing Digital:** [Digital Marketing & AIO/SEO](https://screenfiremedia.com/services/digital-marketing/) (SEO, AIO, pauta digital, contenido y video).
+>     - **Autodefinición Senior:** **No se autodefine senior** (retirada la cita fragmentada previa; se constata que en su página *About* «senior leadership experience» refiere a Larry Dustin a título individual y no como claim corporativo de equipo).
+>
+> ---
+>
+> **🛑 Pausa de Checkpoint (F0):**
+> Con los cuatro puntos de la quinta ronda estrictamente corregidos, las fuentes comprobadas en vivo, la trazabilidad de independencia declarada y los criterios ajustados bajo [`DECISION-005`](DECISION-005-muestra-flexible-perfil-orientativo.md), me detengo a la espera del **visto bueno formal (✅) de Dexia en REVIEW-001** antes de dar inicio a la fase F1.
