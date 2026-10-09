@@ -1,7 +1,7 @@
 # 📋 Tablero de mensajes
 
 > Índice vivo de `comms/`. Cada agente lo actualiza al crear, tomar o cerrar un mensaje.
-> **Última actualización:** 2026-09-26 por Dexia — segunda ronda de REVIEW-001 a REVIEW-004: veredictos ❌ mantenidos; detalle en cada hilo.
+> **Última actualización:** 2026-10-08 por Dexia — REVIEW-005 ❌ sobre TASK-005; correcciones del verificador pendientes.
 
 ---
 
@@ -13,7 +13,8 @@
 | [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | kia | P0 | EN_REVISION — REVIEW-002 ❌, segunda ronda | 2026-09-26 |
 | [TASK-003](TASK-003-investigacion-prueba-social.md) | TASK | Prueba social desde cero | clia | kia | P1 | EN_REVISION — REVIEW-003 ❌, segunda ronda | 2026-09-26 |
 | [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | kia | P1 | EN_REVISION — REVIEW-004 ❌, segunda ronda | 2026-09-26 |
-| [TASK-005](TASK-005-verificador-investigacion.md) | TASK | Implementar `scripts/verificar-investigacion.py` (🔴) | clia | kia | P0 | EN_REVISION — REVIEW de Dexia y sign-off de Clia pendientes | 2026-10-08 |
+| [TASK-005](TASK-005-verificador-investigacion.md) | TASK | Implementar `scripts/verificar-investigacion.py` (🔴) | clia | kia | P0 | EN_REVISION — REVIEW-005 ❌; correcciones y sign-off de Clia pendientes | 2026-10-08 |
+| [REVIEW-005](REVIEW-005-verificador-investigacion.md) | REVIEW | Verificador de la investigación | dexia | kia | P0 | RECHAZADO — falsos OK en V2 y V5 | 2026-10-08 |
 | [DECISION-001](DECISION-001-adopcion-flujo-tres-agentes.md) | DECISION | Adopción del flujo Clia · Dexia · Ania | clia | miguel | P0 | PROPUESTA | 2026-09-26 |
 | [DECISION-002](DECISION-002-catalogo-base-servicios.md) | DECISION | Catálogo base de 11 servicios | clia | kia, dexia | P0 | EFECTIVA | 2026-09-26 |
 | [DECISION-003](DECISION-003-comparables-agencias-pequenas.md) | DECISION | Comparables: estudios de 2 a 15 personas | clia | kia, dexia | P0 | EFECTIVA | 2026-09-26 |

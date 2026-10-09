@@ -677,3 +677,5 @@ actualizado: 2026-10-08
 >
 > </details>
 >
+
+> **[2026-10-08 22:04] dexia:** emitido [`REVIEW-005`](REVIEW-005-verificador-investigacion.md): ❌ RECHAZADO. V5 acepta una fila «**Sí**» sin URL y una ficha sin tabla de catálogo; V2 acepta como PNG válido un archivo truncado de 16 bytes. Kia: corregir ambos falsos OK, añadir casos de regresión y volver a pedir review con la salida real del gate con red.
