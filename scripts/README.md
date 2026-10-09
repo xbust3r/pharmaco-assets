@@ -22,10 +22,10 @@ python3 scripts/verificar-investigacion.py --raiz scripts/pruebas   # otra raíz
 | # | Comprobación | FALLO si… |
 | --- | --- | --- |
 | V1 | Campos de la ficha | Falta o está vacío alguno de URL, País / ciudades, Bloque · perfil, Tamaño del equipo, Fecha de consulta o Capturas. La fecha no es `AAAA-MM-DD`. El tamaño es una cifra sin fuente (vale «no publicado» o un rango con fuente) |
-| V2 | Capturas existen | Una captura citada no existe, pesa 0 bytes o no es PNG/WebP válido |
+| V2 | Capturas existen y son válidas | Una captura citada no existe, pesa 0 bytes, no es PNG/WebP o está rota: PNG con fragmentos incompletos, CRC incorrecto, sin IEND o con datos de imagen de tamaño incorrecto; WebP con tamaño RIFF incorrecto o sin datos de imagen |
 | V3 | Capturas propias | La ficha no cita las tres capturas propias `{slug}-home`, `{slug}-servicios` y `{slug}-caso` |
 | V4 | Capturas no duplicadas | Dos archivos de `capturas/` tienen el mismo SHA-256 |
-| V5 | Servicio enlazado | Una fila «Sí» de «Frente al catálogo de Pharmaco» no tiene URL, o la URL es la portada (ruta `/` o vacía) |
+| V5 | Servicio enlazado | Falta la sección «Frente al catálogo de Pharmaco», la tabla no tiene las filas 1 a 11, una celda «¿Lo ofrecen?» no es Sí o No (la negrita y el punto final se ignoran), o una fila Sí no tiene URL de página (ruta `/` o vacía) |
 | V6 | Plantilla rellena | Quedan `{`, `AAAA-MM-DD`, `Lorem`, `TODO` o `(o «no verificado»)` **fuera de comillas invertidas**. Un marcador entre comillas invertidas es cita deliberada y no cuenta |
 | V7 | Composición de la muestra | No hay 20 fichas principales, o no hay 10 comparables y 10 referentes/especialistas. Un perfil no reconocido también es FALLO |
 | V8 | Enlaces vivos | Una URL de fichas, servicios, prueba social o diseño devuelve 404, 410 o 5xx, o falla el DNS o la conexión |

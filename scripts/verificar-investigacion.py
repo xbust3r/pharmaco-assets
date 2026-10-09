@@ -19,11 +19,13 @@ import hashlib
 import http.client
 import os
 import re
+import struct
 import sys
 import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
+import zlib
 from collections import Counter
 
 RAIZ_REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,6 +43,9 @@ HILOS_RED = 8
 
 RE_CAPTURA = re.compile(r"[\w./-]*capturas/[\w.-]+\.(?:png|webp|jpe?g|gif|svg)", re.IGNORECASE)
 RE_URL = re.compile(r"https?://[^\s|<>()\[\]«»\"'`]+")
+FRENTE = "## Frente al catálogo de Pharmaco"
+SERVICIOS_CATALOGO = 11
+RE_MARCA = re.compile(r"[*_`~]")  # negrita, cursiva y código alrededor de «Sí» o «No»
 RE_CITA = re.compile(r"`[^`]*`")  # DECISION-006 (aclaración 2): un marcador entre comillas invertidas es cita
 
 
@@ -109,14 +114,81 @@ def buscar_captura(cita, carpeta_doc, bases):
     return None
 
 
+def validar_png(datos):
+    """Estructura completa: fragmentos con CRC, IHDR primero, IDAT con tamaño de imagen correcto, IEND."""
+    pos, tipos, idat, ihdr = 8, [], b"", None
+    while True:
+        if pos + 8 > len(datos):
+            return "PNG truncado (sin IEND)"
+        longitud, tipo = struct.unpack(">I4s", datos[pos:pos + 8])
+        fin = pos + 12 + longitud
+        if fin > len(datos):
+            return "PNG truncado (fragmento incompleto)"
+        cuerpo = datos[pos + 8:pos + 8 + longitud]
+        crc = struct.unpack(">I", datos[pos + 8 + longitud:fin])[0]
+        if zlib.crc32(tipo + cuerpo) & 0xFFFFFFFF != crc:
+            return f"PNG: CRC incorrecto en {tipo.decode('ascii', 'replace')}"
+        if not tipos and tipo != b"IHDR":
+            return "PNG: el primer fragmento no es IHDR"
+        if tipo == b"IHDR":
+            if longitud != 13:
+                return "PNG: IHDR de longitud incorrecta"
+            ihdr = struct.unpack(">IIBBBBB", cuerpo)
+        if tipo == b"IDAT":
+            idat += cuerpo
+        tipos.append(tipo)
+        pos = fin
+        if tipo == b"IEND":
+            break
+    if b"IDAT" not in tipos:
+        return "PNG sin datos de imagen"
+    ancho, alto, profundidad, color, _, _, entrelazado = ihdr
+    if ancho == 0 or alto == 0:
+        return "PNG sin dimensiones"
+    try:
+        bruto = zlib.decompress(idat)
+    except zlib.error:
+        return "PNG: datos de imagen corruptos"
+    if entrelazado == 0:
+        canales = {0: 1, 2: 3, 3: 1, 4: 2, 6: 4}.get(color)
+        if canales is None:
+            return "PNG: tipo de color no válido"
+        bytes_fila = (ancho * canales * profundidad + 7) // 8
+        if len(bruto) != alto * (1 + bytes_fila):
+            return "PNG: el tamaño de los datos de imagen no corresponde a las dimensiones"
+    return None
+
+
+def validar_webp(datos):
+    """RIFF con tamaño que cuadra con el archivo, fragmentos completos y uno de imagen VP8/VP8L/VP8X."""
+    if struct.unpack("<I", datos[4:8])[0] + 8 != len(datos):
+        return "WebP: el tamaño RIFF no coincide con el archivo"
+    pos, imagen = 12, False
+    while pos < len(datos):
+        if pos + 8 > len(datos):
+            return "WebP truncado"
+        tipo = datos[pos:pos + 4]
+        longitud = struct.unpack("<I", datos[pos + 4:pos + 8])[0]
+        fin = pos + 8 + longitud + (longitud & 1)
+        if fin > len(datos):
+            return "WebP truncado (fragmento incompleto)"
+        imagen = imagen or tipo in (b"VP8 ", b"VP8L", b"VP8X")
+        pos = fin
+    if not imagen:
+        return "WebP sin datos de imagen"
+    return None
+
+
 def error_formato(ruta):
     if os.path.getsize(ruta) == 0:
         return "pesa 0 bytes"
     with open(ruta, "rb") as f:
-        cabecera = f.read(16)
-    es_png = cabecera[:8] == b"\x89PNG\r\n\x1a\n" and cabecera[12:16] == b"IHDR"
-    es_webp = cabecera[:4] == b"RIFF" and cabecera[8:12] == b"WEBP"
-    return None if (es_png or es_webp) else "no es PNG ni WebP válido"
+        datos = f.read()
+    if datos[:8] == b"\x89PNG\r\n\x1a\n":
+        return validar_png(datos)
+    if datos[:4] == b"RIFF" and datos[8:12] == b"WEBP":
+        return validar_webp(datos)
+    return "no es PNG ni WebP válido"
 
 
 def sin_www(url):
@@ -214,17 +286,30 @@ def v4_duplicadas(carpetas):
 
 
 def v5_portada(texto):
+    if not any(linea.startswith(FRENTE) for linea in texto.splitlines()):
+        return [("FALLO", f"falta la sección «{FRENTE[3:]}»")]
     problemas = []
-    for celdas in filas_tabla(seccion(texto, "## Frente al catálogo de Pharmaco")):
-        if len(celdas) < 5 or not celdas[0].isdigit():
+    filas = [c for c in filas_tabla(seccion(texto, FRENTE)) if c and c[0].isdigit()]
+    if sorted(int(c[0]) for c in filas) != list(range(1, SERVICIOS_CATALOGO + 1)):
+        problemas.append(("FALLO", f"la tabla de servicios debe tener las filas 1 a {SERVICIOS_CATALOGO} "
+                                   f"(hay {len(filas)})"))
+    for celdas in filas:
+        if len(celdas) < 5:
+            problemas.append(("FALLO", f"fila {celdas[0]} incompleta"))
             continue
-        servicio, oferta, url = celdas[1], celdas[2], celdas[4]
-        if not sin_acentos(oferta).startswith("si"):
+        servicio, url_celda = celdas[1], celdas[4]
+        oferta = sin_acentos(RE_MARCA.sub("", celdas[2])).strip().rstrip(".")
+        if oferta not in ("si", "no"):
+            problemas.append(("FALLO", f"«{servicio}»: valor no reconocido en «¿Lo ofrecen?» ({celdas[2]})"))
+            continue
+        if oferta == "no":
             continue
         if "portada unica" in sin_acentos(" ".join(celdas)):
             problemas.append(("AVISO", f"«{servicio}»: portada única declarada; respaldar con la captura de la home"))
-        elif not url.startswith(("http://", "https://")) or urllib.parse.urlsplit(url).path in ("", "/"):
-            problemas.append(("FALLO", f"«{servicio}» marcado Sí sin URL de su página (valor: {url or 'vacío'})"))
+            continue
+        url = RE_URL.search(url_celda)
+        if not url or urllib.parse.urlsplit(url.group(0)).path in ("", "/"):
+            problemas.append(("FALLO", f"«{servicio}» marcado Sí sin URL de su página (valor: {url_celda or 'vacío'})"))
     return problemas
 
 

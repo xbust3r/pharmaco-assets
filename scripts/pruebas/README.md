@@ -15,10 +15,15 @@ python3 scripts/verificar-investigacion.py --raiz scripts/pruebas
 | `fichas/correcta.md` | Ficha completa, capturas propias, enlaces vivos | OK en V1, V2, V3, V5, V6 y V8 |
 | `fichas/falla-v1.md` | País vacío, fecha `26/09/2026`, tamaño `45 personas` sin fuente | FALLO V1 (3 líneas) |
 | `fichas/falla-v2.md` | Captura `home` inexistente, `servicios` de 0 bytes, `caso` con texto plano | FALLO V2 (3 líneas) |
+| `fichas/falla-v2b.md` | `home` truncado a 16 bytes (sin IEND), `servicios` con CRC roto, `caso` válido | FALLO V2 (2 líneas) |
 | `fichas/falla-v3.md` | Solo cita `home` y `servicios`, falta `caso` | FALLO V3 |
 | `fichas/falla-v4.md` | `caso` es byte a byte igual que `home` | FALLO V4 (en ambos archivos) |
 | `fichas/falla-v5.md` | Dos filas «Sí»: una con la portada como URL, otra sin URL | FALLO V5 (2 líneas) |
 | `fichas/aviso-v5.md` | Fila «Sí» que declara `portada única` | AVISO V5 |
+| `fichas/falla-v5-negrita.md` | «**Sí**» en negrita sin URL | FALLO V5 |
+| `fichas/falla-v5-sin-tabla.md` | Falta la sección «Frente al catálogo de Pharmaco» | FALLO V5 |
+| `fichas/falla-v5-filas.md` | Tabla con 10 filas en vez de 11 | FALLO V5 |
+| `fichas/correcta-variantes.md` | «**Sí**», «si» y «Sí.» con URL válida | OK en V5 |
 | `fichas/falla-v6.md` | Contiene `TODO` y `(o «no verificado»)` sin comillas invertidas | FALLO V6 (2 líneas) |
 | `fichas/correcta-cita.md` | `Lorem` y `TODO` entre comillas invertidas, como cita deliberada | OK en V6 |
 | `fichas/falla-v8.md` | Una URL da 404 y otra no resuelve el DNS | FALLO V8 (2 líneas) |
