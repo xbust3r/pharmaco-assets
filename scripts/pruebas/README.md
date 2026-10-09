@@ -19,9 +19,11 @@ python3 scripts/verificar-investigacion.py --raiz scripts/pruebas
 | `fichas/falla-v4.md` | `caso` es byte a byte igual que `home` | FALLO V4 (en ambos archivos) |
 | `fichas/falla-v5.md` | Dos filas «Sí»: una con la portada como URL, otra sin URL | FALLO V5 (2 líneas) |
 | `fichas/aviso-v5.md` | Fila «Sí» que declara `portada única` | AVISO V5 |
-| `fichas/falla-v6.md` | Contiene `TODO` y `(o «no verificado»)` | FALLO V6 (2 líneas) |
+| `fichas/falla-v6.md` | Contiene `TODO` y `(o «no verificado»)` sin comillas invertidas | FALLO V6 (2 líneas) |
+| `fichas/correcta-cita.md` | `Lorem` y `TODO` entre comillas invertidas, como cita deliberada | OK en V6 |
 | `fichas/falla-v8.md` | Una URL da 404 y otra no resuelve el DNS | FALLO V8 (2 líneas) |
-| — | Solo hay 9 fichas y 8 comparables | FALLO V7 (composición) |
+| `fichas/aviso-v8.md` | Una URL da 400 (`httpbin.org/status/400`, endpoint de pruebas) | AVISO V8 |
+| — | 11 fichas en total y 1 referente o especialista | FALLO V7 (composición) |
 
 Con `--sin-red` la V8 aparece como `OMITIDA` y no cuenta como FALLO: por eso el gate se pega **con red**.
 

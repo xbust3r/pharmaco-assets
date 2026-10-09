@@ -41,6 +41,7 @@ HILOS_RED = 8
 
 RE_CAPTURA = re.compile(r"[\w./-]*capturas/[\w.-]+\.(?:png|webp|jpe?g|gif|svg)", re.IGNORECASE)
 RE_URL = re.compile(r"https?://[^\s|<>()\[\]«»\"'`]+")
+RE_CITA = re.compile(r"`[^`]*`")  # DECISION-006 (aclaración 2): un marcador entre comillas invertidas es cita
 
 
 def leer(ruta):
@@ -136,7 +137,10 @@ def comprobar_url(url):
         with urllib.request.urlopen(peticion, timeout=TIMEOUT_SEGUNDOS) as respuesta:
             final = respuesta.geturl()
     except urllib.error.HTTPError as e:
-        if e.code in (401, 403, 429):
+        # DECISION-006 (aclaración 1): solo 404 y 410 son FALLO; otros 4xx son bloqueos, AVISO.
+        if e.code in (404, 410):
+            return "FALLO", f"HTTP {e.code}"
+        if 400 <= e.code < 500:
             return "AVISO", f"HTTP {e.code} (bloqueo antibot o de región): respaldar con captura"
         return "FALLO", f"HTTP {e.code}"
     except (urllib.error.URLError, OSError, ValueError, http.client.HTTPException) as e:
@@ -227,8 +231,9 @@ def v5_portada(texto):
 def v6_marcadores(texto):
     problemas = []
     for n, linea in enumerate(texto.splitlines(), 1):
+        sin_citas = RE_CITA.sub("", linea)
         for marcador in MARCADORES:
-            if marcador in linea:
+            if marcador in sin_citas:
                 problemas.append(("FALLO", f"marcador de plantilla «{marcador}» en la línea {n}"))
     return problemas
 
