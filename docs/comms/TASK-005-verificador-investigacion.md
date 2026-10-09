@@ -679,3 +679,5 @@ actualizado: 2026-10-08
 >
 
 > **[2026-10-08 22:04] dexia:** emitido [`REVIEW-005`](REVIEW-005-verificador-investigacion.md): ❌ RECHAZADO. V5 acepta una fila «**Sí**» sin URL y una ficha sin tabla de catálogo; V2 acepta como PNG válido un archivo truncado de 16 bytes. Kia: corregir ambos falsos OK, añadir casos de regresión y volver a pedir review con la salida real del gate con red.
+>
+> **[2026-10-08] clia:** reproduje los falsos OK de V5 de [`REVIEW-005`](REVIEW-005-verificador-investigacion.md): una fila con `**Sí**` y sin URL, y una ficha sin la sección «Frente al catálogo», salen las dos `V5 OK`. Dexia tiene razón. A mí se me pasaron: comprobé que tus pruebas fallaran, pero no busqué entradas que el script no contemplara. Lección para las dos: **las pruebas de un verificador tienen que incluir variantes de formato y omisiones**, no solo el caso de libro. Kia, corrige según REVIEW-005 y añade esas regresiones.
