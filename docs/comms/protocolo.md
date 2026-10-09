@@ -15,10 +15,10 @@ El equipo vive en **tres plataformas que no se hablan entre sí**:
 | --- | --- | --- |
 | CTO | **Clia** | Claude Code |
 | Lead Dev / Reviews | **Dexia** | ChatGPT (Codex) |
-| DEV principal | **Ania** | Antigravity (Google) |
+| DEV principal | **Kia** | Subagente de Claude Code (Haiku 5.5) |
 | Jefe | **Miguel** | Todas |
 
-> Los agentes se nombran **Clia**, **Dexia** y **Ania**; ésos son sus identificadores en `de:`, `para:`, `cc:` y en las entradas del hilo. «Claude», «Codex» y «Antigravity» son **las plataformas**, y se siguen nombrando como tales cuando se habla de la herramienta.
+> Los agentes se nombran **Clia**, **Dexia** y **Kia**; ésos son sus identificadores en `de:`, `para:`, `cc:` y en las entradas del hilo. «Claude», «Codex» y «Antigravity» son **las plataformas**, y se siguen nombrando como tales cuando se habla de la herramienta.
 
 El único terreno común es **el repositorio Git**. Por tanto: **los archivos MD son los mensajes y Git es el bus**. Este protocolo define cómo se escriben para que los roles se respeten y nada se pierda.
 
@@ -66,7 +66,7 @@ tipo: TASK
 id: TASK-001
 titulo: (título)
 de: clia
-para: ania
+para: kia
 cc: [dexia]
 prioridad: P0            # P0 | P1 | P2
 estado: ABIERTA
@@ -92,14 +92,14 @@ actualizado: 2026-09-26
 
 ## 💬 Hilo
 > **[2026-09-26 15:00] clia:** creo la task.
-> **[2026-09-26 16:10] ania:** la tomo. Duda: …
+> **[2026-09-26 16:10] kia:** la tomo. Duda: …
 ```
 
 Reglas del hilo:
 
 - Formato: `> **[fecha hora] agente:** texto` — **append-only**, siempre al final.
 - El cambio de `estado` lo hace quien tiene permiso, editando el frontmatter **y** dejando entrada en el hilo.
-- Un commit por intervención: `comms(TASK-001): ania toma la task`.
+- Un commit por intervención: `comms(TASK-001): kia toma la task`.
 
 ---
 
@@ -120,7 +120,7 @@ Al cerrar (✅ o ❌): mover la fila del [`tablero.md`](tablero.md) a «Cerrados
 
 ## 🔐 Matriz de permisos
 
-| Acción | Miguel | Clia (CTO) | Dexia (Lead / Reviews) | Ania (DEV) |
+| Acción | Miguel | Clia (CTO) | Dexia (Lead / Reviews) | Kia (DEV) |
 | --- | :---: | :---: | :---: | :---: |
 | Crear TASK | ✅ | ✅ | ❌ (la pide en el hilo) | ❌ (la pide en el hilo) |
 | Asignar prioridades | ✅ | ✅ | proponer | proponer |
@@ -166,15 +166,15 @@ La criticidad **no se hereda del proyecto de origen**. Se mide por **cuánto se 
 ```text
 1. Clia (CTO) crea TASK-XXX — alcance, criterios, criticidad       [ABIERTA]
 2. Si hay diseño que decidir: RFC en el hilo → el CTO aprueba
-3. Ania la toma y trabaja en feat/TASK-XXX-slug                    [EN_PROGRESO]
+3. Kia la toma y trabaja en feat/TASK-XXX-slug                    [EN_PROGRESO]
 4. Pide review en el hilo → Dexia emite REVIEW-YYY                 [EN_REVISION]
-   └─ ✅ / ⚠️ / ❌ con hallazgos; Ania corrige e itera
+   └─ ✅ / ⚠️ / ❌ con hallazgos; Kia corrige e itera
 5. Si es 🔴 → Clia (CTO) firma el sign-off en REVIEW-YYY
-6. Ania mergea → el CTO verifica criterios y cierra                 [CERRADA ✅]
+6. Kia mergea → el CTO verifica criterios y cierra                 [CERRADA ✅]
 7. Cada agente actualiza su status/{agente}-status.md
 ```
 
-**Dexia no ejecuta código.** Cuando necesite evidencia, la pide en el hilo y la corre Ania —o el CTO— y se pega la salida.
+**Dexia no ejecuta código.** Cuando necesite evidencia, la pide en el hilo y la corre Kia —o el CTO— y se pega la salida.
 
 Ejemplo completo de un ciclo (rechazo → corrección → firma → merge): [`../metodo/ejemplos/REVIEW-001-ciclo-completo-de-review.md`](../metodo/ejemplos/REVIEW-001-ciclo-completo-de-review.md).
 
@@ -208,8 +208,8 @@ AGENTS.md                      ← la ley del código + el puntero al protocolo
 CLAUDE.md                      ← importa AGENTS.md para Claude Code
 docs/
 ├── equipo.md                  ← quién es quién y la cadena de mando
-├── agentes/{clia,dexia,ania}.md
-├── status/{clia,dexia,ania}-status.md
+├── agentes/{clia,dexia,kia}.md     (ania.md: retirada)
+├── status/{clia,dexia,kia}-status.md
 ├── metodo/                    ← copia de referencia del método + ejemplos
 └── comms/
     ├── protocolo.md           ← este protocolo
@@ -224,4 +224,5 @@ docs/
 
 | Versión | Fecha | Autor | Acción |
 | --- | --- | --- | --- |
+| v1.1 | 2026-10-08 | Clia (CTO) | Kia reemplaza a Ania (`DECISION-007`) |
 | v1.0 | 2026-09-26 | Clia (CTO) | Adopción del método en Pharmaco Assets. Criticidad y verificación provisionales hasta `RFC-001` |

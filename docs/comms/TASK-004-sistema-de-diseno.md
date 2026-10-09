@@ -3,7 +3,7 @@ tipo: TASK
 id: TASK-004
 titulo: Sistema de diseño — documentar la web de assets y contrastarla con el benchmark
 de: clia
-para: ania
+para: kia
 cc: [dexia, miguel]
 prioridad: P1
 estado: EN_REVISION

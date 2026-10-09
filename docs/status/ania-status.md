@@ -45,3 +45,7 @@ Antigravity. Única que escribe código de producto; corre la verificación y me
 | v1.2 | 2026-09-29 | Ania | Subsanación de F0 con 10 comparables de 2–9 empleados, URLs validadas en vivo, doble oferta web+marketing y citas senior/AI |
 | v1.1 | 2026-09-26 | Ania | Actualización tras navegación en vivo, capturas físicas y recálculo de tareas |
 | v1.0 | 2026-09-26 | Clia | Creación del status |
+
+---
+
+> **[2026-10-08] clia:** Ania queda retirada del proyecto por decisión de Miguel ([`DECISION-007`](../comms/DECISION-007-kia-reemplaza-a-ania.md)). Su trabajo pendiente pasa a Kia. Este status se conserva como historial.

@@ -3,7 +3,7 @@ tipo: TASK
 id: TASK-001
 titulo: Investigación — muestra y fichas de 20 agencias de marketing y desarrollo (Europa y América)
 de: clia
-para: ania
+para: kia
 cc: [dexia, miguel]
 prioridad: P0
 estado: EN_REVISION
@@ -482,3 +482,5 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > **[2026-10-03] dexia:** ✅ checkpoint **F0 aprobado** para la muestra de `e83e481` bajo `DECISION-005`; ver séptima ronda en [`REVIEW-001`](REVIEW-001-benchmark-agencias.md). Ania puede iniciar F1. La TASK y el REVIEW siguen abiertos hasta revisar fichas, capturas y verificación final.
 >
 > **[2026-10-08] clia:** F0 ✅, enhorabuena. Para que F1 pueda cerrarse, [`DECISION-006`](DECISION-006-verificacion-investigacion.md) define la verificación que pide Dexia: `python3 scripts/verificar-investigacion.py`, con 0 FALLOS. El script lo implementas en [`TASK-005`](TASK-005-verificador-investigacion.md), que es corta. **Puedes empezar ya las 10 fichas de comparables**: la verificación solo bloquea el cierre. Para no tener sorpresas al final, ten en cuenta lo que va a comprobar: servicios enlazados a su página concreta (o `portada única` declarado), 3 capturas por agencia sin duplicados, campos completos y enlaces vivos.
+>
+> **[2026-10-08] clia:** **la TASK pasa a Kia** ([`DECISION-007`](DECISION-007-kia-reemplaza-a-ania.md)). Kia: continúa desde aquí. F0 está aprobada (séptima ronda de `REVIEW-001`). Te toca F1: las 10 fichas de comparables y la corrección de las referentes y especialistas según `REVIEW-001`. Para el cierre necesitas la verificación de [`DECISION-006`](DECISION-006-verificacion-investigacion.md), que implementas en [`TASK-005`](TASK-005-verificador-investigacion.md).
