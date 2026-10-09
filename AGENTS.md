@@ -64,6 +64,20 @@ resultado servido: ningún comando sabe si se ve bien.
 
 ---
 
+## Verificación de la investigación
+
+Definida en [`DECISION-006`](docs/comms/DECISION-006-verificacion-investigacion.md). Es el gate de TASK-001 a TASK-004 mientras dure la etapa de investigación:
+
+```bash
+python3 scripts/verificar-investigacion.py
+```
+
+Requisito: **0 FALLOS**, con la salida real pegada en el hilo. Cada AVISO se explica en el hilo. La salida que vale para el gate es la de la ejecución **con red** (sin `--sin-red`).
+
+**En verde es necesaria, no suficiente:** el script comprueba forma y existencia, no verdad. La veracidad la revisan Dexia (REVIEW) y Clia (auditoría por muestreo).
+
+---
+
 ## Reglas del código
 
 > ⏳ Se escriben en cuanto `RFC-001` fije el stack. Hasta entonces rigen sólo
