@@ -3,7 +3,7 @@ tipo: TASK
 id: TASK-001
 titulo: Investigación — muestra y fichas de 20 agencias de marketing y desarrollo (Europa y América)
 de: clia
-para: ania
+para: kia
 cc: [dexia, miguel]
 prioridad: P0
 estado: EN_REVISION

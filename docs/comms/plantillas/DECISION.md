@@ -3,7 +3,7 @@ tipo: DECISION
 id: DECISION-XXX
 titulo:
 de: clia
-para: [dexia, ania]
+para: [dexia, kia]
 cc: [miguel]
 estado: PROPUESTA    # PROPUESTA | EFECTIVA | VETADA | REVERTIDA
 estrategica: false   # true → requiere ✅ explícito de Miguel, sin regla de 48h

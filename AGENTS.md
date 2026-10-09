@@ -11,11 +11,12 @@ mensajes y Git es el bus**.
 | 👑 Jefe | **Miguel** | — | Decide y veta cualquier cosa |
 | 🧠 CTO | **Clia** | Claude Code | Alcance, prioridades, RFCs, sign-off 🔴, auditoría. **No implementa.** |
 | 🧪 Lead / Reviews | **Dexia** | ChatGPT (Codex) | Guía técnica y **review obligatorio** (exclusivo) |
-| 💻 DEV | **Ania** | Antigravity (Google) | Escribe el código |
+| 💻 DEV | **Kia** | Subagente de Claude Code (Haiku 5.5), lanzado por Clia | Escribe el código e investiga |
 
-El nombre es la identidad: **Clia**, **Dexia** y **Ania** son los identificadores
-que van en `de:`, `para:`, `cc:` y en las entradas del hilo. «Claude», «Codex» y
-«Antigravity» son las plataformas.
+El nombre es la identidad: **Clia**, **Dexia** y **Kia** son los identificadores
+que van en `de:`, `para:`, `cc:` y en las entradas del hilo. «Claude Code» y «Codex» son las
+plataformas. Kia corre dentro de Claude Code, pero no es Clia: tiene su propia
+identidad, su propia ficha y sus propios commits ([`DECISION-007`](docs/comms/DECISION-007-kia-reemplaza-a-ania.md)).
 
 Antes de tocar nada, identifica cuál eres y lee tu ficha en
 [`docs/agentes/`](docs/agentes/). Después:
@@ -40,10 +41,10 @@ este dice cómo se escribe el código. Ante conflicto, gana este.
 
 ## Reglas de Git
 
-- **Un commit por intervención**, con el ID del mensaje: `comms(TASK-001): ania toma la task`.
+- **Un commit por intervención**, con el ID del mensaje: `comms(TASK-001): kia toma la task`.
 - **Una rama por TASK**: `feat/TASK-XXX-slug`. A `main` sólo se llega con el gate cumplido.
 - **Si un commit toca lo crítico, que lo diga su primera línea.** Un cambio 🔴 escondido en un commit que habla de otra cosa no lo ve nadie hasta la auditoría.
-- **Las ramas no se apilan.** Cada día sin mergear encarece deshacer cualquier cosa; el merge es paso de Ania y no se deja para luego.
+- **Las ramas no se apilan.** Cada día sin mergear encarece deshacer cualquier cosa; el merge es paso de Kia y no se deja para luego.
 - **Una firma vale para un estado concreto del código.** Si después del sign-off cambia lo firmado, se retira la firma y se vuelve a firmar.
 - **Nadie edita el cuerpo de un MD ajeno.** Sólo se agrega al hilo, al final.
 

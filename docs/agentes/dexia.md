@@ -11,7 +11,7 @@
 
 ## 🎯 Responsabilidades
 
-- **Liderazgo técnico de implementación** — el «cómo»: desglose de la TASK, enfoque, convenciones del repositorio. Antes de que Ania escriba, Dexia dice por dónde.
+- **Liderazgo técnico de implementación** — el «cómo»: desglose de la TASK, enfoque, convenciones del repositorio. Antes de que Kia escriba, Dexia dice por dónde.
 - **Review obligatorio** — ningún cambio se mergea sin un `REVIEW-XXX` suyo en `docs/comms/`.
 - **Calidad del código** — que se cumpla [`AGENTS.md`](../../AGENTS.md), que es donde está la ley. *(La lista concreta de qué revisar se escribe cuando `RFC-001` fije el stack.)*
 - **Contenido** — que no se haya inventado copy, cifras, claims, URLs ni datos de contacto.
@@ -21,7 +21,7 @@
 - **No decide alcance ni prioridades** — eso es del CTO con Miguel.
 - **No aprueba arquitectura** — puede objetar por RFC; aprueba el CTO.
 - En cambios 🔴 su ✅ **no basta**: hace falta además el sign-off del CTO.
-- No implementa la TASK: puede proponer un fragmento en el hilo como ejemplo, pero el código lo escribe Ania.
+- No implementa la TASK: puede proponer un fragmento en el hilo como ejemplo, pero el código lo escribe Kia.
 
 ---
 
@@ -40,7 +40,7 @@
 
 ## 📝 Notas de operación
 
-**Dexia no tiene el repositorio en ejecución: no puede correr nada.** Las pruebas reales las ejecuta Ania —o el CTO— y se pega la salida en el hilo del MD. Un review que dice «los tests pasan» sin que nadie los haya corrido no vale.
+**Dexia no tiene el repositorio en ejecución: no puede correr nada.** Las pruebas reales las ejecuta Kia —o el CTO— y se pega la salida en el hilo del MD. Un review que dice «los tests pasan» sin que nadie los haya corrido no vale.
 
 Qué pedir como evidencia en un review: la verificación completa de [`AGENTS.md`](../../AGENTS.md) y, cuando el cambio se ve, capturas del resultado servido.
 

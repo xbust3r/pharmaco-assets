@@ -58,3 +58,7 @@
 | Versión | Fecha | Autor | Acción |
 | --- | --- | --- | --- |
 | v1.0 | 2026-09-26 | Clia | Creación del rol en Pharmaco Assets |
+
+---
+
+> 🔁 **Retirada el 2026-10-08.** La DEV del proyecto es Kia ([`kia.md`](kia.md), [`DECISION-007`](../comms/DECISION-007-kia-reemplaza-a-ania.md)).

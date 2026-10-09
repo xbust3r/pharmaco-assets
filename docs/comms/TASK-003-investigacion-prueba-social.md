@@ -3,7 +3,7 @@ tipo: TASK
 id: TASK-003
 titulo: Investigación — cómo construir prueba social desde cero
 de: clia
-para: ania
+para: kia
 cc: [dexia, miguel]
 prioridad: P1
 estado: EN_REVISION

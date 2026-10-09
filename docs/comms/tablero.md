@@ -9,17 +9,18 @@
 
 | ID | Tipo | Título | De | Para | Prioridad | Estado | Actualizado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | ania | P0 | EN_REVISION — REVIEW-001 ❌, segunda ronda | 2026-09-26 |
-| [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | ania | P0 | EN_REVISION — REVIEW-002 ❌, segunda ronda | 2026-09-26 |
-| [TASK-003](TASK-003-investigacion-prueba-social.md) | TASK | Prueba social desde cero | clia | ania | P1 | EN_REVISION — REVIEW-003 ❌, segunda ronda | 2026-09-26 |
-| [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | ania | P1 | EN_REVISION — REVIEW-004 ❌, segunda ronda | 2026-09-26 |
-| [TASK-005](TASK-005-verificador-investigacion.md) | TASK | Implementar `scripts/verificar-investigacion.py` (🔴) | clia | ania | P0 | ABIERTA | 2026-10-08 |
+| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | kia | P0 | EN_REVISION — REVIEW-001 ❌, segunda ronda | 2026-09-26 |
+| [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | kia | P0 | EN_REVISION — REVIEW-002 ❌, segunda ronda | 2026-09-26 |
+| [TASK-003](TASK-003-investigacion-prueba-social.md) | TASK | Prueba social desde cero | clia | kia | P1 | EN_REVISION — REVIEW-003 ❌, segunda ronda | 2026-09-26 |
+| [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | kia | P1 | EN_REVISION — REVIEW-004 ❌, segunda ronda | 2026-09-26 |
+| [TASK-005](TASK-005-verificador-investigacion.md) | TASK | Implementar `scripts/verificar-investigacion.py` (🔴) | clia | kia | P0 | ABIERTA | 2026-10-08 |
 | [DECISION-001](DECISION-001-adopcion-flujo-tres-agentes.md) | DECISION | Adopción del flujo Clia · Dexia · Ania | clia | miguel | P0 | PROPUESTA | 2026-09-26 |
-| [DECISION-002](DECISION-002-catalogo-base-servicios.md) | DECISION | Catálogo base de 11 servicios | clia | ania, dexia | P0 | EFECTIVA | 2026-09-26 |
-| [DECISION-003](DECISION-003-comparables-agencias-pequenas.md) | DECISION | Comparables: estudios de 2 a 15 personas | clia | ania, dexia | P0 | EFECTIVA | 2026-09-26 |
-| [DECISION-004](DECISION-004-modelo-operativo-senior-ia.md) | DECISION | Modelo operativo: senior + agentes de IA, capacidad limitada | clia | ania, dexia | P0 | EFECTIVA | 2026-09-26 |
-| [DECISION-005](DECISION-005-muestra-flexible-perfil-orientativo.md) | DECISION | Muestra flexible: el perfil orienta, la veracidad manda | clia | ania, dexia | P0 | EFECTIVA | 2026-10-03 |
-| [DECISION-006](DECISION-006-verificacion-investigacion.md) | DECISION | Verificación completa de la investigación | clia | ania, dexia | P0 | EFECTIVA | 2026-10-08 |
+| [DECISION-002](DECISION-002-catalogo-base-servicios.md) | DECISION | Catálogo base de 11 servicios | clia | kia, dexia | P0 | EFECTIVA | 2026-09-26 |
+| [DECISION-003](DECISION-003-comparables-agencias-pequenas.md) | DECISION | Comparables: estudios de 2 a 15 personas | clia | kia, dexia | P0 | EFECTIVA | 2026-09-26 |
+| [DECISION-004](DECISION-004-modelo-operativo-senior-ia.md) | DECISION | Modelo operativo: senior + agentes de IA, capacidad limitada | clia | kia, dexia | P0 | EFECTIVA | 2026-09-26 |
+| [DECISION-005](DECISION-005-muestra-flexible-perfil-orientativo.md) | DECISION | Muestra flexible: el perfil orienta, la veracidad manda | clia | kia, dexia | P0 | EFECTIVA | 2026-10-03 |
+| [DECISION-006](DECISION-006-verificacion-investigacion.md) | DECISION | Verificación completa de la investigación | clia | kia, dexia | P0 | EFECTIVA | 2026-10-08 |
+| [DECISION-007](DECISION-007-kia-reemplaza-a-ania.md) | DECISION | Kia (subagente Haiku 5.5) reemplaza a Ania | clia | dexia, kia | P0 | EFECTIVA | 2026-10-08 |
 | [RFC-001](RFC-001-alcance-del-proyecto.md) | RFC | Alcance, stack, criticidad y verificación | clia | miguel | P0 | EN_DEBATE | 2026-09-26 |
 
 ---

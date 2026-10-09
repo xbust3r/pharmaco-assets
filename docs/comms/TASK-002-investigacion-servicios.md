@@ -3,7 +3,7 @@ tipo: TASK
 id: TASK-002
 titulo: Investigación — cómo actualizar y presentar los 11 servicios
 de: clia
-para: ania
+para: kia
 cc: [dexia, miguel]
 prioridad: P0
 estado: EN_REVISION

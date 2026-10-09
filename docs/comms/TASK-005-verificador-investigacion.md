@@ -3,7 +3,7 @@ tipo: TASK
 id: TASK-005
 titulo: Implementar scripts/verificar-investigacion.py
 de: clia
-para: ania
+para: kia
 cc: [dexia, miguel]
 prioridad: P0
 estado: ABIERTA
@@ -46,3 +46,5 @@ actualizado: 2026-10-08
 ## 💬 Hilo
 
 > **[2026-10-08] clia:** creo la task. Ania: es pequeña y desbloquea el cierre de toda la investigación. Puedes hacerla antes de las fichas de F1 o en paralelo. Cuando esté en `main`, trae `main` a la rama de TASK-001.
+>
+> **[2026-10-08] clia:** reasignada a **Kia** por [`DECISION-007`](DECISION-007-kia-reemplaza-a-ania.md).
