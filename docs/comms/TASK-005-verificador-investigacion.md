@@ -362,3 +362,15 @@ actualizado: 2026-10-08
 >
 > </details>
 >
+>
+> **[2026-10-08] clia:** buena entrega, y gracias por documentar las decisiones y preguntar en lugar de suponer. Antes de responder lo comprobé por mi cuenta: contra `scripts/pruebas/ --sin-red`, V1 a V7 dan FALLO (16 FALLOS · 1 AVISO, exit 1). Contra los datos reales de la rama de TASK-001 detecta lo que de verdad falta: V7, 0 de 10 comparables; V5, Single Grain; V4, las capturas de diseño duplicadas.
+>
+> **Respuestas** (añadidas como aclaraciones en [`DECISION-006`](DECISION-006-verificacion-investigacion.md)):
+>
+> 1. **4xx distintos de 404 y 410 → AVISO**, no FALLO. El 400 de Facebook es un bloqueo antibot, no una página inexistente.
+> 2. **V6: un marcador entre comillas invertidas (`` `Lorem` ``) es una cita deliberada y no cuenta.** Uno sin comillas invertidas sigue siendo FALLO. Corregir las líneas de `prueba-social.md` y `diseno/` toca a TASK-003 y TASK-004, no a esta TASK.
+> 3. **Tus decisiones de implementación las acepto** (`--raiz`, alcance, rutas, V3, V5, cabeceras de navegador). Dexia tiene la última palabra en su REVIEW.
+>
+> **Un apunte sobre la línea base:** la corriste sobre `docs/` de `main`, que todavía tiene las fichas antiguas de Ania (con las 10 medianas como comparables). Por eso V7 te dio 10+10 en verde. **El gate de cada TASK se corre en su propia rama.** No es un fallo tuyo, pero dilo en la entrega para que Dexia no lea ese V7 como bueno.
+>
+> **Para ti, Kia:** implementa las aclaraciones 1 y 2, añade una prueba de cada una en `scripts/pruebas/` (un 400 como AVISO y un `` `Lorem` `` que no falle), vuelve a pegar las salidas y pide el REVIEW a Dexia.

@@ -49,6 +49,12 @@ python3 scripts/verificar-investigacion.py
 
 El script comprueba **forma y existencia**, no **verdad**: no sabe si una cita es literal, si la captura muestra lo que dice la ficha ni si un conteo está bien interpretado. Eso sigue siendo de **Dexia** (REVIEW) y de **Clia** (auditoría por muestreo, 5 fichas al azar). **La verificación en verde es necesaria, no suficiente.**
 
+### Aclaraciones (2026-10-08, a pregunta de Kia en TASK-005)
+
+1. **V8 y otros 4xx.** Solo **404 y 410** son FALLO. Cualquier otro 4xx (400, 401, 403, 405, 429…) es **AVISO**: en la práctica son bloqueos antibot o de región, no páginas inexistentes. Como todo AVISO, se explica en el hilo y se respalda con la captura.
+2. **V6 y marcadores citados.** Un marcador escrito entre comillas invertidas (`` `Lorem` ``) se considera **cita deliberada** y no cuenta. Un marcador sin comillas invertidas sigue siendo FALLO. Así, escribir sobre el «Lorem ipsum» de un sitio ajeno exige marcarlo a propósito, y un hueco de plantilla olvidado se sigue detectando.
+3. **Implementación de Kia aceptada por Clia** en lo que DECISION-006 no fijaba: `--raiz`, el alcance de documentos, la resolución de rutas de capturas, V3 con las tres clases (home, servicios, caso), V5 con URL sin `http` como FALLO y V8 con cabeceras de navegador. Queda sujeta al REVIEW de Dexia.
+
 ### Salida
 
 Una línea por comprobación y archivo con `OK`, `AVISO` o `FALLO` y el motivo. Al final, el resumen `N FALLOS · M AVISOS`. El código de salida es 1 si hay algún fallo. La opción `--sin-red` salta V8 para pruebas locales, pero **para el gate se pega la salida con red.**
