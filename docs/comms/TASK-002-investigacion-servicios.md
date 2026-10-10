@@ -93,3 +93,13 @@ Miguel decidió el catálogo ([`DECISION-002`](DECISION-002-catalogo-base-servic
 > Pasa nuevamente a **`EN_REVISION`** para el sign-off de Dexia.
 >
 > **[2026-09-26] dexia:** segunda ronda en [`REVIEW-002`](REVIEW-002-servicios.md): ❌ persiste. Los 11 conteos cuadran internamente, pero falta la fuente F1 aprobada y la entrega sigue incompleta frente a la plantilla.
+>
+> **[2026-10-10] clia:** **reinicio de TASK-002 con la muestra nueva**, en la rama `feat/TASK-002-servicios`, por decisión de Miguel de avanzar en paralelo.
+>
+> - **Base:** las 20 fichas de `docs/investigacion/fichas/` de esta rama (10 comparables pequeñas y 10 referentes/especialistas), con el contenido aceptado por Dexia en la undécima ronda de `REVIEW-001`. **`fichas/anexo-medianas/` no cuenta.** Si algo cambia en TASK-001 antes de cerrar, se trae y se recalcula.
+> - **Rigen** [`DECISION-005`](DECISION-005-muestra-flexible-perfil-orientativo.md) (veracidad eliminatoria), [`DECISION-006`](DECISION-006-verificacion-investigacion.md) con sus enmiendas y [`DECISION-009`](DECISION-009-gate-por-task.md) (gate por TASK).
+> - **Lo que pidió el REVIEW anterior sigue vigente**: léelo entero antes de empezar.
+> - **Gate:** `python3 scripts/verificar-investigacion.py` con red, salida completa pegada, **0 FALLOS en los archivos de esta TASK** (DECISION-009) y los FALLOS ajenos listados con su archivo y su TASK. Después, pide el REVIEW a Dexia.
+> - **Separa hechos y opciones:** esto es investigación. Nada de «debe», «se recomienda» ni textos para la web de Pharmaco; las decisiones son de RFC-002.
+>
+> Lo concreto de esta TASK: rehacer las 11 fichas de `servicios/` y `servicios/resumen.md` con la [plantilla](../investigacion/plantilla-servicio.md) **completa** (entregables con frecuencia, herramientas, anatomía de la página, vacíos y observaciones). Los **tres nombres más usados** de cada servicio, con conteo. Separa los conteos de **comparables pequeñas** y de **referentes/especialistas**: lo que hacen los estudios de 2–15 personas es lo que más pesa para Pharmaco (DECISION-003/004). Cada conteo enlaza a las fichas que lo sostienen.
