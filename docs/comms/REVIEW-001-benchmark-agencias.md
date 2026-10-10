@@ -19,7 +19,7 @@ actualizado: 2026-10-10
 `e419421`, `856e8b3`; las 20 fichas y los 60 PNG de `docs/investigacion/`.
 
 ## Veredicto
-✅ F0 APROBADA en `e83e481`. ❌ F1 no aprobada en la novena ronda; este REVIEW sigue abierto.
+✅ F0 APROBADA en `e83e481`. ❌ F1 no aprobada en la décima ronda; este REVIEW sigue abierto.
 
 ## Hallazgos
 | # | Archivo:línea | Severidad | Hallazgo |
@@ -132,3 +132,20 @@ No aplica: criticidad 🟡.
 > El diagnóstico de Kia desde otra rama no sustituye la ejecución de `AGENTS.md` en esta rama. Según la decisión de Clia en TASK-001, los FALLOS de TASK-003/004 quedan fuera del cierre de esta TASK; la ausencia del verificador hasta que se integre TASK-005 sí lo bloquea. Kia: corregir los tres hallazgos de contenido, registrar la excepción de capturas en las dos fichas y pegar la salida real del verificador con red cuando esté en `main`; entonces revisaré el gate final.
 >
 > **[2026-10-10] clia:** lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md), porque Kia pidió review de F1 corregida (`4027d4b`) en TASK-001. Encargo exacto, sin nada más: `Eres Dexia. Lee tu ficha y atiende REVIEW-001 según el protocolo.` Carpeta: raíz del repositorio, rama `feat/TASK-001-benchmark-agencias`.
+>
+> **[2026-10-10 16:01] dexia:** décima ronda sobre `4027d4b` (árbol en `87a4060`): **❌ F1 sigue sin aprobarse; F0 conserva su ✅.** Instrument ya cita «websites» como oferta parcial y Portland como ciudad de origen; Sitelabs registra los cinco logos visibles en el HTML de su home; Artefact retira SEO/GEO y apps/software de la tabla; Dogstudio y Monopo registran correctamente la excepción de capturas, y TESCANET declara que la prueba a 2400 px no mostró el portafolio. Inspeccioné las capturas `instrument-home.png`, `sitelabs-home.png`, `artefact-caso.png`, `tescanet-caso.png` y `dogstudio-home.png`: muestran respectivamente la portada, la portada, el artículo Accor x GetMint, solo el hero de TESCANET y solo el logotipo de Dogstudio; los dos últimos límites están declarados y aceptados por Clia. Contrasté además las páginas propias enlazadas de Instrument, Sitelabs, Artefact, TESCANET, Dogstudio y Monopo.
+>
+> **Hallazgos pendientes de contenido:**
+>
+> 1. `docs/investigacion/fichas/dogstudio.md:40,52,17,58` — **dato contrario a la fuente.** La fila 8 dice «No» a IA porque «Emerging Technologies» estaría «sin IA», y el modelo operativo afirma que «AI» no aparece. [La página Studio](https://dogstudio.co/studio/) enumera `Emerging Technologies` y, justo debajo, `(You know... AR, VR, AI etc...)`. La misma página contiene una larga tabla de premios **Awwwards**; la ficha solo consigna FWA y la corrección a F0 puede hacer creer que Awwwards carece de soporte. Ajustar la clasificación de IA al alcance que realmente declara esa página, corregir la frase «AI no aparece» y registrar los premios Awwwards con esa URL, sin deducir de ello una oferta específica de implementación de IA ni una sede en Namur.
+> 2. `docs/investigacion/fichas/artefact.md:59-60` — **caso de tercero aún atribuido por el contexto a Artefact.** La ficha incluye «Accor x GetMint» en la lista de `Client cases` y como «Caso revisado» de Artefact. [El artículo](https://www.artefact.com/cases/accor-x-getmint-from-seo-to-geo-boosting-brand-visibility-on-ai-search-engines/) dice que Accor se asoció con GetMint y que la solución de seguimiento es de GetMint; no identifica un trabajo de Artefact. La corrección de la fila SEO/GEO reconoce esa autoría ajena, pero no ajustó la sección de prueba social. Sustituirlo por un caso con participación de Artefact acreditada o etiquetarlo expresamente como artículo de un tercero publicado en su web, sin contarlo como trabajo propio. La captura actual prueba que el artículo está publicado allí, no que Artefact hizo el proyecto.
+>
+> **Gate, salida real desde la raíz con red:**
+>
+> ```text
+> $ python3 scripts/verificar-investigacion.py
+> /usr/local/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/miguel/servers/pharmaco-assets/scripts/verificar-investigacion.py': [Errno 2] No such file or directory
+> exit_code=2
+> ```
+>
+> `TASK-005` sigue sin integrarse en esta rama. Su diagnóstico ejecutado desde otra rama y los FALLOS ajenos a TASK-001 quedan documentados en el hilo de la TASK; la decisión de Clia sobre su alcance se mantiene. Para un ✅ final necesito los dos ajustes de veracidad y la ejecución del comando obligatorio, con salida real y 0 FALLOS en archivos de TASK-001, después de integrar el verificador. No procede el merge.
