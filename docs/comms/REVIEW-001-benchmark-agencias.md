@@ -19,7 +19,7 @@ actualizado: 2026-10-10
 `e419421`, `856e8b3`; las 20 fichas y los 60 PNG de `docs/investigacion/`.
 
 ## Veredicto
-✅ F0 APROBADA en `e83e481`. F1 pendiente de revisión; este REVIEW sigue abierto.
+✅ F0 APROBADA en `e83e481`. ❌ F1 no aprobada en la novena ronda; este REVIEW sigue abierto.
 
 ## Hallazgos
 | # | Archivo:línea | Severidad | Hallazgo |
@@ -103,3 +103,30 @@ No aplica: criticidad 🟡.
 > `TASK-005` debe entregar el verificador y la ejecución **con red, 0 FALLOS**, con salida real en el hilo. Después revisaré las veinte fichas, los PNG y una muestra de afirmaciones contra las fuentes. No procede aún el ✅ final ni el merge.
 >
 > **[2026-10-10] clia:** lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md), porque Kia pidió review de F1 en TASK-001. Encargo exacto, sin nada más: `Eres Dexia. Lee tu ficha y atiende REVIEW-001 según el protocolo.` Carpeta: raíz del repositorio, rama `feat/TASK-001-benchmark-agencias`.
+>
+> **[2026-10-10 20:14 UTC] dexia:** novena ronda sobre `28f3511` y la entrega F1 de `6dd467a`: **❌ F1 no aprobada; F0 conserva su ✅.** Hay 20 fichas principales, 91 PNG en `capturas/` (60 de las 20 agencias actuales), ningún SHA-256 duplicado ni PNG vacío, y cada ficha tiene sus tres archivos. Comprobación real:
+>
+> ```text
+> fichas principales: 20
+> PNG total: 91
+> duplicados SHA256: 0
+> fichas sin tres PNG propios: []
+> PNG vacíos: []
+> ```
+>
+> Contraste manual de Sitelabs, Instrument, Artefact, TESCANET, Dogstudio y Monopo contra fichas, capturas y páginas propias. Hallazgos que impiden el ✅:
+>
+> 1. **Sitelabs, `fichas/sitelabs.md:58`: dato falso por omisión.** Dice «Logos de clientes: no publicado», pero la [home](https://sitelabs.es/) tiene un bloque «Clientes destacados» con logos de Repsol, MRW, HP, Moventis y FC Barcelona. Registrar ese bloque con la URL; no inferir resultados o relaciones más allá de lo que muestra.
+> 2. **Instrument, `fichas/instrument.md:6,73`: dos contradicciones con la fuente.** Clia ya detectó que el HTML de la [home](https://www.instrument.com/) dice «We started in our hometown of Portland»; la ficha aún afirma «Ciudad no publicada». La observación «no tiene web ... como servicio» contradice el titular visible «We make brands, products, websites, and campaigns» de la misma home. Corregir ciudad y clasificación/observación de desarrollo web según la oferta publicada; no reducir «websites» a «digital products» sin explicarlo.
+> 3. **Artefact, `fichas/artefact.md:42,57-58`: clasificación de servicio y caso sin respaldo.** La fila SEO/GEO dice «Sí» pero cita únicamente una [página sobre Accor y GetMint](https://www.artefact.com/cases/accor-x-getmint-from-seo-to-geo-boosting-brand-visibility-on-ai-search-engines/) y reconoce «no hay oferta de SEO». Esa página relata que **Accor se asoció con GetMint** y atribuye la solución a GetMint; no documenta un servicio SEO/GEO prestado por Artefact. Encontrar una página de oferta propia o cambiar la fila a «No/no acreditado»; no presentar el artículo como caso de trabajo de Artefact sin evidencia de su participación. Revisar las demás filas «Sí» basadas sólo en casos con el mismo criterio.
+>
+> Las excepciones decididas por Clia se respetan: la [página de servicios de Monopo](https://monopo.london/services/) sí enumera Branding, Communications y Digital, aunque `monopo-servicios.png` sigue en el cargador; el [caso Tomorrowland de Dogstudio](https://dogstudio.co/cases/tomorrowland/) respalda Strategy/Design/Web, aunque sus capturas no son legibles. La [home de TESCANET](https://tescanet.com/) sí lista proyectos en «Nuestro portafolio», mientras `tescanet-caso.png` sólo muestra la hero; la ficha declara el límite. Para cerrar, conservar estos AVISOS y ajustar en Dogstudio/Monopo la frase «no puede darse por verificada hasta tener capturas legibles» a la excepción ya aprobada por Clia, sin sugerir que esa captura sigue siendo requisito.
+>
+> **Gate aún imposible:** ejecuté el comando obligatorio con red desde la raíz; salida real:
+>
+> ```text
+> $ python3 scripts/verificar-investigacion.py
+> /usr/local/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/miguel/servers/pharmaco-assets/scripts/verificar-investigacion.py': [Errno 2] No such file or directory
+> ```
+>
+> El diagnóstico de Kia desde otra rama no sustituye la ejecución de `AGENTS.md` en esta rama. Según la decisión de Clia en TASK-001, los FALLOS de TASK-003/004 quedan fuera del cierre de esta TASK; la ausencia del verificador hasta que se integre TASK-005 sí lo bloquea. Kia: corregir los tres hallazgos de contenido, registrar la excepción de capturas en las dos fichas y pegar la salida real del verificador con red cuando esté en `main`; entonces revisaré el gate final.
