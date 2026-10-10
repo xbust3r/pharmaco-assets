@@ -1,6 +1,6 @@
 # Dogstudio (DOGSTUDIO / DEPT.)
 
-> ⛔ **BLOQUEO DE CAPTURAS (Kia, 2026-10-10):** las capturas de `servicios` y `caso` no muestran contenido legible. La página se anima con WebGL y en headless queda casi vacía (`capturas/dogstudio-servicios.png`, `capturas/dogstudio-caso.png`). La captura de portada (`capturas/dogstudio-home.png`) solo muestra el logotipo y un fondo negro. Esta ficha no puede darse por verificada hasta que se tome una captura legible, a mano o con otro método. Los datos de abajo son texto verificado en el HTML y en WebFetch, no un sustituto de la captura.
+> ⚠️ **AVISO DE CAPTURAS (Kia, 2026-10-10; excepción aprobada por Clia):** las capturas de `servicios` y `caso` no muestran contenido legible. La página se anima con WebGL y en headless queda casi vacía (`capturas/dogstudio-servicios.png`, `capturas/dogstudio-caso.png`). La captura de portada (`capturas/dogstudio-home.png`) solo muestra el logotipo y un fondo negro. Se acepta como AVISO. Los datos de abajo son texto tomado del HTML y de WebFetch en la entrega de F1 del 2026-10-10, con su URL; no se han vuelto a comprobar en esta corrección.
 
 | Campo | Valor | Fuente |
 | --- | --- | --- |
@@ -10,13 +10,13 @@
 | Tamaño del equipo | no publicado | https://dogstudio.co/studio/ |
 | Año de fundación | No publicado en las páginas revisadas | https://dogstudio.co/studio/ |
 | Fecha de consulta | 2026-10-10 | — |
-| Capturas | `capturas/dogstudio-home.png`, `capturas/dogstudio-servicios.png`, `capturas/dogstudio-caso.png` (ver bloqueo arriba) | — |
+| Capturas | `capturas/dogstudio-home.png`, `capturas/dogstudio-servicios.png`, `capturas/dogstudio-caso.png` (ver aviso arriba) | — |
 
 **Pertenencia (no requerida para referentes):** el logotipo de la cabecera dice «DOGSTUDIO / DEPT.» (captura `capturas/dogstudio-home.png`, obtenida con una copia local del DOM con el cargador oculto; ver aviso abajo). Los enlaces de privacidad y cookies apuntan a deptagency.com (https://dogstudio.co/). Por tanto, no es independiente de DEPT. El texto de la web no nombra a DEPT; el logotipo y los enlaces sí.
 
 **Correcciones a F0:** la F0 aprobada decía «Dogstudio (Bélgica - Namur)» y «multi-premiada Awwwards». Ni la ciudad Namur ni «Awwwards» aparecen en la home revisada. Los premios que sí aparecen son FWA («Site of The Day», «Site of The Month») en la página de caso Tomorrowland.
 
-**Aviso de captura (copia local):** para obtener `capturas/dogstudio-home.png`, `capturas/dogstudio-servicios.png` y `capturas/dogstudio-caso.png` se guardó el DOM con `--dump-dom` y se ocultó el overlay de carga (`.site-loader`) con CSS; el contenido sigue siendo el de dogstudio.co. Aun así, las capturas de servicios y caso no son legibles (ver bloqueo).
+**Aviso de captura (copia local):** para obtener `capturas/dogstudio-home.png`, `capturas/dogstudio-servicios.png` y `capturas/dogstudio-caso.png` se guardó el DOM con `--dump-dom` y se ocultó el overlay de carga (`.site-loader`) con CSS; el contenido sigue siendo el de dogstudio.co. Aun así, las capturas de servicios y caso no son legibles (ver aviso arriba).
 
 ## Propuesta de valor
 «We Make Good Shit» (titular de https://dogstudio.co/). Descripción de la empresa: «multidisciplinary creative studio at the intersection of art, design and technology» (https://dogstudio.co/studio/).
@@ -67,5 +67,5 @@ No aplica: es referente.
 
 ## Observaciones de Kia
 (opinión propia, separada de los hechos)
-- No puedo presentar esta ficha como verificada: su problema es técnico, no de datos. Se necesita captura legible o decisión sobre si mantener Dogstudio en la muestra.
+- El problema de captura es técnico, no de datos. Dogstudio se mantiene en la muestra (decisión de Clia, 2026-10-10) y la ficha se entrega con AVISO de captura.
 - La web de Dogstudio es casi toda animación: si la investigación exige ver el diseño, habría que capturar con otra herramienta.

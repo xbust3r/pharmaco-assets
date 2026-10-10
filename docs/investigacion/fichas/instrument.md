@@ -3,7 +3,7 @@
 | Campo | Valor | Fuente |
 | --- | --- | --- |
 | URL | https://www.instrument.com/ | https://www.instrument.com/ (captura `capturas/instrument-home.png`) |
-| País / ciudades | Estados Unidos. Ciudad no publicada en las páginas revisadas (home, servicios y un caso). La F0 decía «Portland»: no se ha encontrado en esta sesión | https://www.instrument.com/ |
+| País / ciudades | Estados Unidos, Portland (ciudad de origen). La home dice «We started in our hometown of Portland» y, en la misma página, «Portland was first. New York, you're up next.» | https://www.instrument.com/ |
 | Bloque · perfil | América · referente | — |
 | Tamaño del equipo | no publicado | https://www.instrument.com/ |
 | Año de fundación | No publicado. La web dice «Since our inception» sin fecha | https://www.instrument.com/ |
@@ -30,7 +30,7 @@
 | --- | --- | --- | --- | --- |
 | 1 | Branding | Sí | Brand | https://www.instrument.com/services/brand |
 | 2 | Social Media | No | — (no aparece «social media») | — |
-| 3 | Desarrollo Web | Sí | (parcial: productos digitales) Product («digital products») | https://www.instrument.com/services/product |
+| 3 | Desarrollo Web | Sí | (parcial) «websites» (titular de la home: «We make brands, products, websites, and campaigns.»); «digital products» (Product) | portada única (https://www.instrument.com/) |
 | 4 | Campañas publicitarias | Sí | Marketing; «campaigns» (titular de servicios) | https://www.instrument.com/services/marketing |
 | 5 | Performance | No | — (no aparece la palabra «performance») | — |
 | 6 | Desarrollo de apps y software | Sí | (parcial: productos digitales) Product («digital products») | https://www.instrument.com/services/product |
@@ -70,6 +70,6 @@ No aplica: es referente.
 
 ## Observaciones de Kia
 (opinión propia, separada de los hechos)
-- Su catálogo es de marca y producto digital; no tiene web ni IA como servicio. Es referencia de tendencia para la fila 1 y para la forma de presentar casos con pocas palabras.
+- Su home declara entre sus verbos «websites» («We make brands, products, websites, and campaigns.»), por eso la fila 3 se marca parcial. No aparece IA como servicio. Es referencia de tendencia para la fila 1 y para la forma de presentar casos con pocas palabras.
 - El caso ServiceNow tiene un texto de contexto claro y ninguna cifra; útil como ejemplo de estructura para TASK-003.
 - La lista de premios es amplia y la mayor parte de los premios aparecen como insignias, no como texto citable.

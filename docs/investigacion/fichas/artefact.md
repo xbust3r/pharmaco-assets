@@ -36,14 +36,16 @@
 | 3 | Desarrollo Web | No | — | — |
 | 4 | Campañas publicitarias | Sí | (parcial) Media Services & Certifications | https://www.artefact.com/offers/marketing-data-driven/media-services-and-certifications/ |
 | 5 | Performance | Sí | (parcial) Marketing ROI (MMM, Testing & Attribution) | https://www.artefact.com/offers/marketing-data-driven/measurements-mroi-insights/ |
-| 6 | Desarrollo de apps y software | Sí | (parcial) AI & Gen AI Factory (construcción de soluciones de IA a medida) | https://www.artefact.com/offers/ai-acceleration/ai-genai-factory/ |
+| 6 | Desarrollo de apps y software | No | — (la oferta AI & Gen AI Factory describe soluciones de IA, no aplicaciones ni software a medida) | — |
 | 7 | Fotografía y video | No | — | — |
 | 8 | Inteligencia artificial | Sí | Data & AI Strategy; AI & Gen AI Factory | https://www.artefact.com/offers/transformation-data-ai-strategy/data-ai-strategy/ |
-| 9 | SEO y GEO | Sí | (parcial: como caso) «Accor x GetMint – From SEO to GEO: Boosting Brand Visibility on AI Search Engines» (no hay oferta de SEO) | https://www.artefact.com/cases/accor-x-getmint-from-seo-to-geo-boosting-brand-visibility-on-ai-search-engines/ |
+| 9 | SEO y GEO | No | — (no acreditado: ninguna oferta del menú «Offers» contiene «SEO» ni «GEO»; el único texto con esos términos es el caso Accor x GetMint, de un tercero) | — |
 | 10 | CRO | No | — (no aparece la palabra «CRO» en las ofertas revisadas) | — |
 | 11 | Datos y automatización | Sí | Data Governance & Management; Data Platform | https://www.artefact.com/offers/data-foundations-bi/data-governance-management/ |
 
 **Servicios suyos que no están en la tabla:** Data-centric IT; Customer Data Platforms; GenAI Academy; Marketing Analytics (https://www.artefact.com/).
+
+**Verificación de las filas 6 y 9 (2026-10-10):** en https://www.artefact.com/offers/ ninguna oferta contiene «SEO» ni «GEO». En https://www.artefact.com/offers/ai-acceleration/ai-genai-factory/ se lee «developing, deploying, and scaling AI solutions across the entire enterprise», sin mención a aplicaciones ni a software a medida. Por eso las filas 6 y 9 pasan a «No».
 
 ## Cómo cubren el catálogo con un equipo pequeño
 No aplica: es especialista, no comparable.
@@ -74,6 +76,6 @@ No aplica: es especialista, no comparable.
 
 ## Observaciones de Kia
 (opinión propia, separada de los hechos)
-- Es una consultora de datos e IA de gran tamaño (2.500 personas según su web). Como referencia de tendencia encaja con los servicios 8, 9 y 11; no como modelo de escala.
+- Es una consultora de datos e IA de gran tamaño (2.500 personas según su web). Como referencia de tendencia encaja con los servicios 8 y 11; no como modelo de escala.
 - El criterio de especialista «después de 2021» (plan §4) no se puede comprobar con su web: se deja para decidir.
 - Su web es casi toda de casos y ofertas de IA; la prueba social de casos es abundante, aunque sin métricas en las páginas revisadas.

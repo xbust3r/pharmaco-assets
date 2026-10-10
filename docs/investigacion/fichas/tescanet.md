@@ -16,7 +16,7 @@
 
 **Avisos de captura:**
 - `capturas/tescanet-home.png` y `capturas/tescanet-servicios.png` se hicieron con ventana de 1100 px.
-- AVISO de caso: el portafolio de la home es un carrusel que no se renderiza en la captura headless. `capturas/tescanet-caso.png` es la home a 2600 px y muestra solo el hero; no muestra ningún caso. Los casos se citan con el texto de la página (sección «Portafolio»), no con la captura.
+- AVISO de caso (excepción aprobada por Clia, 2026-10-10): no hay página de caso con detalle; el portafolio de la home lista cuatro proyectos, sin enlace en la extracción de WebFetch. El portafolio es un carrusel que no se renderiza en la captura headless. `capturas/tescanet-caso.png` es la home a 2600 px y muestra solo el hero. Se probó también a 1280×2400 px: sigue sin mostrar el portafolio (hero y tres tarjetas), y no se sustituye la captura. Los casos se citan con el texto de la sección «Portafolio».
 
 ## Propuesta de valor
 «Diseño de páginas web de calidad y profesionales» (https://tescanet.com/). Subtítulo: «Llevamos tu negocio a internet.» (https://tescanet.com/).
@@ -76,5 +76,5 @@
 ## Observaciones de Kia
 (opinión propia, separada de los hechos)
 - Es la comparable de la muestra con la cobertura más amplia de servicios de los 11 de Pharmaco: cubre web, social, SEO/SEM y audiovisual, aunque sin IA ni CRO.
-- La prueba de casos existe en texto, pero la captura no la muestra porque el carrusel no renderiza: si Dexia pide una captura legible del portafolio, habrá que buscar otra forma de capturarla.
+- La prueba de casos existe en texto (portafolio de cuatro proyectos sin enlace), pero la captura no la muestra porque el carrusel no renderiza ni a 2600 px ni a 2400 px. Queda como AVISO según la excepción de Clia.
 - La web usa un lenguaje muy general («de calidad», «perfecta para ti»): el claim no dice qué hacen distinto.

@@ -15,7 +15,7 @@
 **Avisos de captura:**
 - AVISO de idioma: el HTML y WebFetch devuelven el sitio en italiano, pero en las capturas (`capturas/stratagemma-studio-home.png`, `capturas/stratagemma-studio-caso.png`) el texto sale en español. Los nombres de servicio de esta ficha se toman del texto italiano/inglés original.
 - AVISO de banner: el banner de «Valoramos tu privacidad» (sin aceptar) tapa la parte inferior izquierda de las capturas.
-- AVISO de caso: el sitio no publica casos. `capturas/stratagemma-studio-caso.png` es la página de servicio «Visual Production System», no un caso.
+- AVISO de caso (excepción aprobada por Clia, 2026-10-10): el sitio no publica casos. `capturas/stratagemma-studio-caso.png` es la página de servicio «Visual Production System», no un caso.
 
 ## Propuesta de valor
 «Trasformiamo aziende valide in brand vincenti sul mercato.» (https://www.stratagemma.studio/). Traducción: «Transformamos empresas válidas en marcas ganadoras en el mercado.»

@@ -14,7 +14,7 @@
 
 **Correcciones a F0 (URL):** la F0 aprobada enlazaba los servicios a `https://studiodigital.co/#servicios`. La página de servicios real es https://studiodigital.co/planes-y-servicios/. La F0 también lo citaba como `#servicios` en Paid Media y CRO; aquí se enlazan a sus páginas reales o se declara portada única.
 
-**Aviso de caso:** la web no tiene casos ni clientes con nombre. `capturas/studiodigital-caso.png` es la página «Nosotros», no un caso.
+**Aviso de caso (excepción aprobada por Clia, 2026-10-10):** la web no tiene casos ni clientes con nombre. `capturas/studiodigital-caso.png` es la página «Nosotros», no un caso.
 
 ## Propuesta de valor
 «INGENIERÍA DIGITAL DE ALTO IMPACTO» (titular de la home, captura `capturas/studiodigital-home.png`). Subtítulo en pantalla: «Infraestructura Web a la Medida & Canales de Facturación Escalables» (https://studiodigital.co/).

@@ -55,7 +55,7 @@
 ## Prueba social (alimenta TASK-003)
 - Casos: el índice /ejemplos-diseno-web-portfolio/ enlaza a 8 casos individuales (por ejemplo https://sitelabs.es/ejemplos-diseno-web-portfolio/top-scriber/). La home dice «170+ PROYECTOS» (captura `capturas/sitelabs-home.png`).
 - Caso revisado: «Top Scriber», un bot de Telegram con su web de presentación. «Nuestro trabajo» lista «Desarrollo del bot de Telegram con transcripción mediante Gemini», «Infraestructura en Google Cloud», «Web responsive orientada al SEO». No hay métricas con cifras ni testimonio (https://sitelabs.es/ejemplos-diseno-web-portfolio/top-scriber/). Captura con aviso de banner: `capturas/sitelabs-caso.png`.
-- Logos de clientes: no publicado en las páginas revisadas.
+- Logos de clientes: bloque «Clientes destacados» en la home, con logos de Repsol, MRW, HP, Moventis y FC Barcelona (https://sitelabs.es/; nombres tomados de los textos alternativos de los logos).
 - Testimonios: en el HTML de la home aparece un testimonio con nombre: Gemma Abrié, «Música». Frase completa: «Como músico, necesito mostrar mis proyectos de forma funcional y atractiva, bien indexada en Google y conectada a Spotify y a redes sociales, a la vez que potenciar mi imagen de marca, y con Sitelabs lo estoy logrando.» (https://sitelabs.es/)
 - Premios, rankings, reseñas: «Google Partner» (https://sitelabs.es/). Perfil en Clutch: https://clutch.co/profile/sitelabs (sin reseñas revisadas).
 - Certificaciones o partnerships: «Google Partner» (https://sitelabs.es/).

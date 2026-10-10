@@ -12,7 +12,7 @@
 
 **Independencia:** no se observa grupo matriz en la web ni en el perfil Clutch revisados. La web no dice si es independiente. Revisado: https://pallax-media.de/, https://pallax-media.de/ueber-uns/, https://clutch.co/profile/pallax-media.
 
-**Aviso de caso:** no hay páginas de caso de cliente. `capturas/pallax-media-caso.png` es la página «Über uns», que no es un caso; se usa porque el requisito de captura pide una página de este tipo.
+**Aviso de caso (excepción aprobada por Clia, 2026-10-10):** no hay páginas de caso de cliente. `capturas/pallax-media-caso.png` es la página «Über uns», que no es un caso; se usa porque el requisito de captura pide una página de este tipo.
 
 ## Propuesta de valor
 «Webseiten & Tools die deine Kunden begeistern.» (titular de https://pallax-media.de/, captura `capturas/pallax-media-home.png`). Traducción: «Sitios web y herramientas que tus clientes van a disfrutar.»

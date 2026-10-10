@@ -1,16 +1,16 @@
 # Monopo
 
-> ⛔ **BLOQUEO DE CAPTURAS (Kia, 2026-10-10):** las tres capturas (`capturas/monopo-home.png`, `capturas/monopo-servicios.png`, `capturas/monopo-caso.png`) muestran el cargador o la pantalla negra de la marca, no el contenido de la web. El contenido está en el DOM, pero las animaciones de entrada no se completan en Chrome headless. Esta ficha no puede darse por verificada hasta tener capturas legibles. Lo que se afirma abajo es texto verificado en el HTML crudo y en WebFetch, no un sustituto de la captura.
+> ⚠️ **AVISO DE CAPTURAS (Kia, 2026-10-10; excepción aprobada por Clia):** las tres capturas (`capturas/monopo-home.png`, `capturas/monopo-servicios.png`, `capturas/monopo-caso.png`) muestran el cargador o la pantalla negra de la marca, no el contenido de la web. El contenido está en el DOM, pero las animaciones de entrada no se completan en Chrome headless. Se acepta como AVISO. Lo que se afirma abajo es texto tomado del HTML y de WebFetch en la entrega de F1 del 2026-10-10, con su URL; no se ha vuelto a comprobar en esta corrección.
 
 | Campo | Valor | Fuente |
 | --- | --- | --- |
-| URL | https://monopo.london/ | https://monopo.london/ (captura bloqueada: `capturas/monopo-home.png`) |
+| URL | https://monopo.london/ | https://monopo.london/ (captura sin contenido legible: `capturas/monopo-home.png`) |
 | País / ciudades | Reino Unido, Londres («Based in London, born in Tokyo.»). La web enlaza a Tokio (monopo.co.jp) y a Nueva York (monopo.nyc) por dominio; la web no nombra esas ciudades en las páginas revisadas | https://monopo.london/ |
 | Bloque · perfil | Europa · referente | — |
 | Tamaño del equipo | no publicado | https://monopo.london/team |
 | Año de fundación | No publicado. Solo aparece «© MONOPO LONDON LTD 2024», que es el año de copyright | https://monopo.london/ |
 | Fecha de consulta | 2026-10-10 | — |
-| Capturas | `capturas/monopo-home.png`, `capturas/monopo-servicios.png`, `capturas/monopo-caso.png` (bloqueadas, ver arriba) | — |
+| Capturas | `capturas/monopo-home.png`, `capturas/monopo-servicios.png`, `capturas/monopo-caso.png` (sin contenido legible, ver aviso arriba) | — |
 
 **Correcciones a F0:** la F0 aprobada atribuía a Monopo «Awwwards», «UK/Japón/Francia» y «Londres / Francia». La web revisada no menciona Awwwards ni premios, ni París.
 
@@ -60,11 +60,11 @@ No aplica: es referente.
 
 ## Estructura de la web y diseño (alimenta TASK-004)
 - Menú: Services, Work, Team, Press, Contact (https://monopo.london/).
-- Movimiento e interacción: la portada usa una animación de marca («monopo | london») y transiciones con bloque rojo (captura bloqueada).
+- Movimiento e interacción: la portada usa una animación de marca («monopo | london») y transiciones con bloque rojo (captura sin contenido legible).
 - Idiomas: inglés.
-- Resto de la estructura: no revisado en detalle por el bloqueo de capturas.
+- Resto de la estructura: no revisado en detalle, porque las capturas no muestran el contenido.
 
 ## Observaciones de Kia
 (opinión propia, separada de los hechos)
-- Sin capturas legibles, la ficha no se puede usar como prueba visual para TASK-004. Hace falta una captura con otro método (por ejemplo, Chrome con CDP y espera de la animación) o una captura manual.
+- Sin captura legible, esta ficha no aporta prueba visual para TASK-004 y no se usa como tal. La excepción de Clia la acepta con AVISO. Una captura con otro método o manual, si Miguel la aporta, no es requisito de TASK-001.
 - La web tiene enlaces a monopo.co.jp y monopo.nyc; no se ha verificado qué son esas oficinas más allá del dominio.
