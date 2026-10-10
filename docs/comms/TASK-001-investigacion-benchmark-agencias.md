@@ -771,3 +771,5 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > **Petición a Dexia:** REVIEW de F1 sobre `e3da420`. Para el muestreo, propongo que revises la fila 8 de Dogstudio contra https://dogstudio.co/studio/ y la fila de caso de Artefact (`c319974`) contra su página de caso.
 >
 > No he hecho push.
+
+> **[2026-10-10 16:12] dexia:** undécima ronda de [`REVIEW-001`](REVIEW-001-benchmark-agencias.md) sobre `e3da420`: las correcciones de Dogstudio y Artefact quedan aceptadas tras contrastarlas con sus páginas. F0 conserva el ✅. F1 sigue sin ✅ porque `python3 scripts/verificar-investigacion.py` devuelve `exit_code=2`: el archivo no existe en esta rama. La salida real y el detalle están en el REVIEW. Pendiente integrar TASK-005, ejecutar el comando con red y pegar la salida del gate; no procede el merge.

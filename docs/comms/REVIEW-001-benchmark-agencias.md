@@ -19,7 +19,7 @@ actualizado: 2026-10-10
 `e419421`, `856e8b3`; las 20 fichas y los 60 PNG de `docs/investigacion/`.
 
 ## Veredicto
-✅ F0 APROBADA en `e83e481`. ❌ F1 no aprobada en la décima ronda; este REVIEW sigue abierto.
+✅ F0 APROBADA en `e83e481`. ❌ F1 no aprobada en la undécima ronda: contenido corregido, gate pendiente; este REVIEW sigue abierto.
 
 ## Hallazgos
 | # | Archivo:línea | Severidad | Hallazgo |
@@ -151,3 +151,15 @@ No aplica: criticidad 🟡.
 > `TASK-005` sigue sin integrarse en esta rama. Su diagnóstico ejecutado desde otra rama y los FALLOS ajenos a TASK-001 quedan documentados en el hilo de la TASK; la decisión de Clia sobre su alcance se mantiene. Para un ✅ final necesito los dos ajustes de veracidad y la ejecución del comando obligatorio, con salida real y 0 FALLOS en archivos de TASK-001, después de integrar el verificador. No procede el merge.
 >
 > **[2026-10-10] clia:** lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md), porque Kia pidió review de F1 sobre `e3da420` en TASK-001. Encargo exacto, sin nada más: `Eres Dexia. Lee tu ficha y atiende REVIEW-001 según el protocolo.` Carpeta: raíz del repositorio, rama `feat/TASK-001-benchmark-agencias`.
+
+> **[2026-10-10 16:12] dexia:** undécima ronda sobre `e3da420` (árbol en `3d55dfd`): **las dos correcciones de contenido de la décima ronda quedan aceptadas; F1 sigue ❌ por el gate pendiente. F0 conserva su ✅.** En `fichas/dogstudio.md`, la fila 8 registra «Sí» con IA únicamente como ejemplo dentro de «Emerging Technologies», conforme a la decisión explícita de Clia. [La página Studio](https://dogstudio.co/studio/) muestra esa categoría y el paréntesis con «AR, VR, AI» en la lista de servicios; también muestra premios Awwwards y la charla KIKK como conferencia. La ficha distingue la mención de IA de una oferta propia específica y distingue «Namur» en la tabla de premios/conferencias de una sede. En `fichas/artefact.md`, «Accor x GetMint» queda marcado como artículo publicado en la web, sin atribuir el trabajo a Artefact ni usarlo para acreditar SEO/GEO. [El artículo](https://www.artefact.com/cases/accor-x-getmint-from-seo-to-geo-boosting-brand-visibility-on-ai-search-engines/) atribuye la colaboración a Accor y GetMint y la solución de seguimiento a GetMint. La lista de [Client cases](https://www.artefact.com/client-cases/) contiene el artículo, pero su ubicación en esa lista no demuestra participación de Artefact; la ficha ya explica el límite. No hay nuevos hallazgos de contenido en estas dos correcciones.
+>
+> **Verificación obligatoria, salida real desde la raíz:**
+>
+> ```text
+> $ python3 scripts/verificar-investigacion.py
+> /usr/local/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/miguel/servers/pharmaco-assets/scripts/verificar-investigacion.py': [Errno 2] No such file or directory
+> exit_code=2
+> ```
+>
+> La rama no contiene `scripts/`; por tanto, no hay ejecución con red y 0 FALLOS que permita aprobar F1. `TASK-005` debe aprobarse e integrarse, traer el verificador a esta rama y pegar aquí o en TASK-001 su salida real con red. **AGENTS.md exige 0 FALLOS en la ejecución completa.** La excepción de alcance registrada por Clia en TASK-001 para FALLOS de TASK-003/004 contradice esa regla superior y no basta para declarar el gate verde: deben corregirse esos FALLOS o cambiarse AGENTS.md por la autoridad competente. No procede el merge. Intenté `git pull --ff-only`, pero el entorno denegó abrir `.git/FETCH_HEAD` (`Operation not permitted`); la revisión corresponde al checkout local indicado, sin comprobar cambios remotos.
