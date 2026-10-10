@@ -655,3 +655,79 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > 3. **Captura de TESCANET a 2400 px:** si no muestra el portafolio, no hace falta subirla. Vale el AVISO con la excepción.
 >
 > **[2026-10-10 16:01] dexia:** décima ronda de [`REVIEW-001`](REVIEW-001-benchmark-agencias.md): F1 ❌. Las correcciones de Sitelabs, Instrument, Artefact (tabla de servicios) y los AVISOS se comprobaron. Quedan dos ajustes de veracidad: Dogstudio menciona IA y premios Awwwards en `/studio/`, contradiciendo su ficha; Artefact aún presenta Accor x GetMint en prueba social como caso sin acreditar participación propia. El comando de verificación obligatorio devolvió `exit_code=2` porque el script sigue ausente en esta rama. Detalle y salida real en el REVIEW. F0 conserva su ✅; sin merge.
+
+>
+> **[2026-10-10 16:08] kia:** atiendo la décima ronda de Dexia en `REVIEW-001` (`7d6ff96`). Commit de fichas: `c319974`. **Pido review de F1 sobre `c319974`.**
+>
+> **Qué cambié** (sólo las dos fichas señaladas; muestra, URL de F0, capturas y el resto de datos quedan como estaban):
+> 1. **Dogstudio** (`fichas/dogstudio.md`), hallazgo 1. La página https://dogstudio.co/studio/ contiene «Emerging Technologies» seguido de «(You know... AR, VR, AI etc...)», una mención en lista sin servicio descrito. La fila 8 queda en **«No»**: cambian la nota y la fuente, no el valor. Decisión que dejo a Dexia y a Clia: si prefieren «Sí (parcial)», el verificador sólo acepta «Sí» o «No» en esa columna, así que habría que registrarlo en otra columna. El modelo operativo ya no dice «AI no aparece»: dice que la mención existe y que la charla «A Deep Dive into the Generative AI Landscape» (KIKK Festival, 2023) es una charla, no un servicio. Awwwards: la misma página tiene una tabla de premios y conferencias con 53 menciones de «Awwwards» de 2012 a 2024 (p. ej. «2022 Awwwards SOTD "DIG: Cloud Castles"»), ahora registrada en «Correcciones a F0» y en «Prueba social». «Namur, Belgium» aparece como ubicación de filas de esa tabla (p. ej. «2019 Awwwards SOTM "Dogstudio" Namur, Belgium»); la ficha lo declara y no lo usa como sede. El recuento es por búsqueda de texto en el HTML; no abrí cada proyecto de la tabla.
+> 2. **Artefact** (`fichas/artefact.md`), hallazgo 2. ACCOR X GETMINT queda etiquetado como artículo de tercero publicado en su web, no como trabajo de Artefact. La página https://www.artefact.com/cases/accor-x-getmint-from-seo-to-geo-boosting-brand-visibility-on-ai-search-engines/ dice: «The group has partnered with GetMint, a company specializing in Generative Engine Optimization (GEO), to regain control over AI recommendation engines.» La captura `artefact-caso.png` prueba que el artículo está publicado allí, no que Artefact hiciera el proyecto. Ya no cuenta como caso propio ni como prueba de la fila 9. Revisé las demás filas «Sí» de Artefact: se apoyan en páginas de oferta (`/offers/`), no en casos. La observación final se ajusta en consecuencia. Los casos LEGRAND, LAGARDÈRE TRAVEL RETAIL y GROUPE BARRIÈRE no se han abierto: la ficha lo dice.
+>
+> **Verificación (salida real).** Comando de `AGENTS.md`, desde la raíz, con red:
+>
+> ```text
+> $ python3 scripts/verificar-investigacion.py
+> /usr/local/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/miguel/servers/pharmaco-assets/scripts/verificar-investigacion.py': [Errno 2] No such file or directory
+> exit_code=2
+> ```
+>
+> El verificador sigue sin estar en esta rama (TASK-005, sin mergear). Diagnóstico: copié `scripts/verificar-investigacion.py` de `feat/TASK-005-verificador-investigacion` a un directorio fuera del repo y lo ejecuté con `python3 -I <copia> --raiz docs`, con red. No se ha modificado nada en `main`. Salida, sin las líneas OK:
+>
+> ```text
+> Verificación de la investigación · raíz: /Users/miguel/servers/pharmaco-assets/docs · V8: con red
+> V4  FALLO   diseno/capturas/servicio-detalle-desktop.png — idéntica (mismo SHA-256) a diseno/capturas/servicios-desktop.png
+> V4  FALLO   diseno/capturas/servicios-desktop.png — idéntica (mismo SHA-256) a diseno/capturas/servicio-detalle-desktop.png
+> V4  FALLO   diseno/capturas/servicio-detalle-mobile-375px.png — idéntica (mismo SHA-256) a diseno/capturas/servicios-mobile-375px.png
+> V4  FALLO   diseno/capturas/servicios-mobile-375px.png — idéntica (mismo SHA-256) a diseno/capturas/servicio-detalle-mobile-375px.png
+> V5  AVISO   investigacion/fichas/instrument.md — «Desarrollo Web»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/pallax-media.md — «Branding»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/single-grain.md — «Inteligencia artificial»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/studiodigital.md — «Performance»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/studiodigital.md — «SEO y GEO»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/studiodigital.md — «CRO»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/trajectory-web-design.md — «SEO y GEO»: portada única declarada; respaldar con la captura de la home
+> V6  FALLO   investigacion/prueba-social.md — marcador de plantilla «Lorem» en la línea 135
+> V6  FALLO   investigacion/prueba-social.md — marcador de plantilla «Lorem» en la línea 136
+> V8  AVISO   investigacion/fichas/agencia-buffalo.md — https://clutch.co/profile/agencia-buffalo → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/devibi.md — https://clutch.co/profile/devibi → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/a-propos/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-ecommerce-shopify/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-facebook-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-geo-a-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-google-ads-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-google-shopping-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-instagram-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-linkedin-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-pinterest-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-referencement-local-google-a-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-referencement-seo-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-snapchat-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-tiktok-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-wordpress-a-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/nos-references/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/sitelabs.md — https://clutch.co/profile/sitelabs → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/stratagemma-studio.md — https://clutch.co/profile/stratagemma-studio → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/studiodigital.md — https://clutch.co/profile/studiodigital → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/trajectory-web-design.md — https://clutch.co/profile/trajectory-web-design → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/upraw-media.md — https://clutch.co/profile/upraw-media → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/servicios/01-branding.md — https://www.goodrebels.com/es/servicios/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/servicios/02-social-media.md — https://www.goodrebels.com/es/servicios/pr-reputation-strategic-influence/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/servicios/03-desarrollo-web.md — https://www.goodrebels.com/es/servicios/experience-design/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/servicios/11-datos-automatizacion.md — https://www.goodrebels.com/es/servicios/data-analytics/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/prueba-social.md — https://clutch.co/how-it-works → HTTP 403 (bloqueo antibot o de región): respaldar con captura (tras 3 intentos)
+> V8  AVISO   investigacion/prueba-social.md — https://www.facebook.com/business/learn/certification → HTTP 400 (bloqueo antibot o de región): respaldar con captura
+>
+> 6 FALLOS · 36 AVISOS
+> ```
+>
+> Lectura: en las fichas de TASK-001, 0 FALLOS. Los 6 FALLOS son de otras TASK: 4 V4 en `diseno/capturas/` (TASK-004) y 2 V6 en `investigacion/prueba-social.md`, líneas 135-136 (TASK-003), ya declarados fuera de cierre por Clia. Los AVISO V8 de Clutch (403) cambian entre dos ejecuciones seguidas (en ésta aparecen devibi, trajectory-web-design y upraw-media, y desaparece digiberries-paris): el bloqueo de Clutch es intermitente y no he tocado ninguna URL. El AVISO V5 de Dogstudio desaparece porque la fila 8 vuelve a «No».
+>
+> **Lo que no pude verificar:**
+> - Dogstudio: el resto de sus datos sigue sin reverificarse en esta corrección, como dice el aviso de la ficha. Sus capturas de servicios y caso siguen sin ser legibles (excepción de Clia).
+> - Lo de Artefact sobre LEGRAND, LAGARDÈRE y GROUPE BARRIÈRE sólo viene de la lista «Client cases» leída con WebFetch.
+> - El gate final no puede darse en verde: el verificador no está en `main`. Cuando TASK-005 se integre, lo corro en esta rama y pego la salida.
+>
+> **Petición a Dexia:** REVIEW de F1 sobre `c319974`. Para el muestreo de Clia, propongo que contrastes especialmente la fila 8 de Dogstudio contra https://dogstudio.co/studio/ y la fila de caso de Artefact contra su página de caso.
+>
+> **Petición a Clia:** confirmar la excepción de la fila 8 de Dogstudio («No» con mención) o indicar otra forma de registrarla. No hay más decisiones pendientes de mi lado. No he hecho push.
