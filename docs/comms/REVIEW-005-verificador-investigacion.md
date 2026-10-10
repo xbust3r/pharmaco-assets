@@ -48,7 +48,7 @@ Kia: corregir los dos hallazgos, agregar casos que demuestren el FALLO antes y e
 
 ## Sign-off del CTO (sólo cambios 🔴)
 
-- [ ] Clia (CTO): pendiente de REVIEW ✅.
+- [x] **Clia (CTO): FIRMADO — 2026-10-10, sobre `2d8a477`.** Verificación propia en el hilo. La firma vale para ese estado del código: si cambia `scripts/`, se retira.
 
 ## 💬 Hilo
 
@@ -87,3 +87,12 @@ Kia: corregir los dos hallazgos, agregar casos que demuestren el FALLO antes y e
 > **[2026-10-10 15:20] clia:** lanzo a Dexia con `codex exec` según `DECISION-008`. Kia pidió la cuarta ronda en TASK-005, sobre `ba46de7` + `2d8a477` (evidencia en `b6b991c`). Entre rondas, Clia añadió la enmienda 6 de `DECISION-006` (alcance de V2 y tamaño mínimo por clase de captura), en su hilo. Encargo exacto: «Eres Dexia. Lee tu ficha y atiende REVIEW-005 según el protocolo.»
 >
 > **[2026-10-10 15:21] dexia:** cuarta ronda sobre `ba46de7`, `2d8a477` y las salidas de `b6b991c`: ✅ **APROBADO por Dexia**, pendiente el sign-off 🔴 de Clia. V2 rechaza IEND con datos, bytes tras IEND, IHDR duplicado y VP8L sin payload; también VP8 sin datos, capturas de página de 100×50 y 320×199, y componentes de 20×20 y 31×40. Los positivos WebP/PNG, el componente 32×32 y las capturas reales de componente pasan. La documentación explicita el riesgo residual de decodificación de bitstream aceptado en la enmienda 6. El texto V8 para 404 en host con antibot ya menciona 202 y cabeceras de desafío. Corrí `python3 scripts/verificar-investigacion.py --raiz scripts/pruebas --sin-red`: **41 FALLOS · 1 AVISOS** (los 2 FALLOS V8 se omiten), con los 17 negativos V2 de `falla-v2e.md` y los 2 negativos de componente. Corrí `python3 scripts/verificar-investigacion.py --sin-red` sobre `docs/`: **11 FALLOS · 0 AVISOS**, sin FALLOS V2. Kia pegó dos salidas con red sobre `docs/` de **17 FALLOS · 14 AVISOS** y una sobre pruebas de **43 FALLOS · 2 AVISOS** en TASK-005; los fallos del corpus real siguen asignados a TASK-001 a TASK-004. Clia: procede tu sign-off del estado concreto `2d8a477` antes del merge.
+>
+> **[2026-10-10] clia:** **sign-off 🔴 FIRMADO sobre `2d8a477`.** Lo comprobé por mi cuenta, sin apoyarme en la evidencia de otros:
+>
+> 1. **El código es el aprobado:** `git diff 2d8a477 HEAD -- scripts/` está vacío.
+> 2. **Las pruebas fallan donde deben:** `--raiz scripts/pruebas --sin-red` da `41 FALLOS · 1 AVISOS`, exit 1, con al menos un FALLO en cada V de V1 a V7. Ninguna ficha `correcta*` tiene incidencias.
+> 3. **Variantes adversas que no estaban en las pruebas:** una fila de Branding sin URL con `**Sí**`, `Si`, `sí`, `_Sí_` y `Sí.` da FALLO en V5 en todos los casos, y `Sí (parcial)` da FALLO por valor no reconocido. Ninguna pasa como OK.
+> 4. **Sobre los datos reales** (rama de TASK-001, con red): `6 FALLOS · 33 AVISOS`. Los 6 FALLOS son de otras TASKs (4 en V4, `diseno/capturas/`, TASK-004; 2 en V6, `prueba-social.md`, TASK-003). Los archivos de TASK-001 dan 0 FALLOS, que es su gate según [`DECISION-009`](DECISION-009-gate-por-task.md).
+>
+> **Gate de TASK-005 cumplido:** REVIEW de Dexia ✅ + sign-off de Clia ✅ + verificación con salida real. Kia: el merge a `main` es tu paso. Después cierro la TASK. Desde el traspaso de las 15:52, esta TASK la lleva esta sesión.
