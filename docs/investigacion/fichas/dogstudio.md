@@ -14,7 +14,7 @@
 
 **Pertenencia (no requerida para referentes):** el logotipo de la cabecera dice «DOGSTUDIO / DEPT.» (captura `capturas/dogstudio-home.png`, obtenida con una copia local del DOM con el cargador oculto; ver aviso abajo). Los enlaces de privacidad y cookies apuntan a deptagency.com (https://dogstudio.co/). Por tanto, no es independiente de DEPT. El texto de la web no nombra a DEPT; el logotipo y los enlaces sí.
 
-**Correcciones a F0:** la F0 aprobada decía «Dogstudio (Bélgica - Namur)» y «multi-premiada Awwwards». Ni la ciudad Namur ni «Awwwards» aparecen en la home revisada. Los premios que sí aparecen son FWA («Site of The Day», «Site of The Month») en la página de caso Tomorrowland.
+**Correcciones a F0:** la F0 aprobada decía «Dogstudio (Bélgica - Namur)» y «multi-premiada Awwwards». En la home revisada no aparecen ni «Namur» ni «Awwwards». Sí aparecen en la página https://dogstudio.co/studio/: una tabla de premios y conferencias con 53 menciones de «Awwwards», de 2012 a 2024 (por ejemplo, la fila «2022 Awwwards SOTD "DIG: Cloud Castles"»), y «Namur, Belgium» como ubicación de algunas filas de esa tabla (por ejemplo, «2019 Awwwards SOTM "Dogstudio" Namur, Belgium»). Esa ubicación es la de un premio o una conferencia, no una sede de la agencia: la home declara «offices based in Belgium and Chicago», sin ciudad belga. Los premios FWA («Site of The Day», «Site of The Month») aparecen en la página de caso Tomorrowland.
 
 **Aviso de captura (copia local):** para obtener `capturas/dogstudio-home.png`, `capturas/dogstudio-servicios.png` y `capturas/dogstudio-caso.png` se guardó el DOM con `--dump-dom` y se ocultó el overlay de carga (`.site-loader`) con CSS; el contenido sigue siendo el de dogstudio.co. Aun así, las capturas de servicios y caso no son legibles (ver aviso arriba).
 
@@ -37,7 +37,7 @@
 | 5 | Performance | No | — | — |
 | 6 | Desarrollo de apps y software | Sí | (parcial) Digital Products | https://dogstudio.co/studio/ |
 | 7 | Fotografía y video | No | — (no aparecen «photography» ni «production» como servicio) | — |
-| 8 | Inteligencia artificial | No | — («Emerging Technologies» sin IA) | — |
+| 8 | Inteligencia artificial | No | — Solo mención, sin oferta descrita: «Emerging Technologies» seguido de «(You know... AR, VR, AI etc...)» en https://dogstudio.co/studio/ | — |
 | 9 | SEO y GEO | No | — | — |
 | 10 | CRO | No | — | — |
 | 11 | Datos y automatización | No | — | — |
@@ -49,13 +49,14 @@ No aplica: es referente.
 
 **Modelo operativo (DECISION-004; cuota orientativa):**
 - ¿Se presenta como equipo senior o «sin juniors»? No. «senior» y «junior» no aparecen.
-- ¿Declara el uso de IA? No. «AI» no aparece.
+- ¿Declara el uso de IA? Solo como mención: «(You know... AR, VR, AI etc...)», bajo «Emerging Technologies» (https://dogstudio.co/studio/). No describe ningún servicio ni forma de entrega con IA, por eso la fila 8 queda en «No». En la tabla de premios y conferencias de la misma página aparece también la charla «A Deep Dive into the Generative AI Landscape» (KIKK Festival, 2023): es una charla, no un servicio.
 - ¿Declara capacidad limitada? No publicado.
 
 ## Prueba social (alimenta TASK-003)
 - Casos: lista en https://dogstudio.co/cases/ con siete casos, entre ellos Tomorrowland («2020 - Ongoing», https://dogstudio.co/cases/tomorrowland/), Navy Pier, MSI Chicago, Kennedy Center y Royal Opera of Wallonia.
 - Caso revisado: «Tomorrowland – Around the World». Métricas literales: «+1M» («Viewers around the world, from Japan to Mexico.»), «4» («Different video recording studios built around the world»), «+60» («Of EDM's most prominent artists performing their newest tracks.»), «9» («The exact time we spend building a fully custom island»). Testimonio: Philippe Ben Mohamed: «We've managed to translate the unique emotions of the festival into a digital experience.» (La cita literal se ha comprobado sin el cargo; el cargo que aparece es «Lead Digital & Development - Tomorrowland».)
 - Premios: «FWA «Site of The Day»» y «FWA «Site of The Month»» en la página del caso (https://dogstudio.co/cases/tomorrowland/).
+- Premios Awwwards: tabla de premios y conferencias en https://dogstudio.co/studio/, con 53 menciones de «Awwwards» de 2012 a 2024 (39 filas «SOTD»; ejemplo: «2022 Awwwards SOTD "DIG: Cloud Castles"»). Recuento por búsqueda de texto en el HTML de la página; no se ha abierto cada proyecto de la tabla.
 - Logos de clientes: no publicado en las páginas revisadas.
 - Certificaciones: no publicado.
 

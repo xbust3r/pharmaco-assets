@@ -56,8 +56,8 @@ No aplica: es especialista, no comparable.
 - ¿Declara capacidad limitada? No publicado.
 
 ## Prueba social (alimenta TASK-003)
-- Casos: sección «Client cases» con casos nombrados: ACCOR X GETMINT, BPIFRANCE, CARREFOUR, NEXANS, FDJ UNITED, VINCI AIRPORTS, BURGER KING, LEGRAND, LAGARDÈRE TRAVEL RETAIL, GROUPE BARRIÈRE (https://www.artefact.com/client-cases/).
-- Caso revisado: «Accor x GetMint - From SEO to GEO: Boosting Brand Visibility on AI Search Engines» (https://www.artefact.com/cases/accor-x-getmint-from-seo-to-geo-boosting-brand-visibility-on-ai-search-engines/; captura `capturas/artefact-caso.png`). No se han extraído métricas de este caso.
+- Casos: sección «Client cases» con casos nombrados: ACCOR X GETMINT, BPIFRANCE, CARREFOUR, NEXANS, FDJ UNITED, VINCI AIRPORTS, BURGER KING, LEGRAND, LAGARDÈRE TRAVEL RETAIL, GROUPE BARRIÈRE (https://www.artefact.com/client-cases/). ACCOR X GETMINT es un artículo de tercero publicado en su web: no cuenta como trabajo de Artefact (ver «Caso revisado»). En la página «Client cases», el texto no indica quién realizó los casos de LEGRAND, LAGARDÈRE TRAVEL RETAIL y GROUPE BARRIÈRE; no se han abierto esas páginas de caso.
+- Caso revisado (artículo de tercero, no trabajo de Artefact): «Accor x GetMint - From SEO to GEO: Boosting Brand Visibility on AI Search Engines» (https://www.artefact.com/cases/accor-x-getmint-from-seo-to-geo-boosting-brand-visibility-on-ai-search-engines/; captura `capturas/artefact-caso.png`). La página dice: «The group has partnered with GetMint, a company specializing in Generative Engine Optimization (GEO), to regain control over AI recommendation engines.» Lo que prueba la captura es que el artículo está publicado en su web, no que Artefact hiciera el proyecto. Por eso no se cuenta como caso propio ni como prueba de la fila 9 (SEO y GEO). No se han extraído métricas de este caso.
 - Logos de clientes: sí. La web tiene una galería de logos con enlaces a casos (https://www.artefact.com/client-cases/), entre ellos Accor, Sanofi, Unilever, Heineken y Vinci Airports (https://www.artefact.com/client-cases/).
 - Testimonios: «Our clients talk about business ben…» (sección de la home; texto cortado en la extracción). Nombre y cargo no revisados.
 - Premios, rankings, reseñas: no publicado en las páginas revisadas.
@@ -78,4 +78,4 @@ No aplica: es especialista, no comparable.
 (opinión propia, separada de los hechos)
 - Es una consultora de datos e IA de gran tamaño (2.500 personas según su web). Como referencia de tendencia encaja con los servicios 8 y 11; no como modelo de escala.
 - El criterio de especialista «después de 2021» (plan §4) no se puede comprobar con su web: se deja para decidir.
-- Su web es casi toda de casos y ofertas de IA; la prueba social de casos es abundante, aunque sin métricas en las páginas revisadas.
+- Su web es casi toda de ofertas de IA y datos. La lista de «Client cases» es larga, pero el único caso revisado es un artículo de tercero y no tiene métricas: la prueba social propia queda sin caso revisado.
