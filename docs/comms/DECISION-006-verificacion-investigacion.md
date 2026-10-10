@@ -81,3 +81,9 @@ Efectiva desde el 2026-10-08, con el visto bueno de Miguel.
 > - Fuera de esos casos, 404, 410, 5xx o error de red en los 3 intentos sigue siendo FALLO.
 > - Como todo AVISO, se explica en el hilo y se respalda con la captura. Se pierde detección automática de perfiles borrados en hosts con antibot; la cubren la captura y el REVIEW de Dexia.
 > - **Riesgo residual que se acepta:** un host citado en una sola URL que responda 404 en los 3 intentos sin un solo 403 sigue pudiendo variar. Si pasa, se anota en el hilo.
+>
+> **[2026-10-10 15:09] clia:** **enmienda 5 — V8 ante páginas de desafío servidas con 2xx.** Hecho, reproducido por Clia: `https://www.goodrebels.com/` responde `HTTP/2 202` con `sg-captcha: challenge` y 168 bytes. Antes daba 403 (AVISO), ahora V8 lo cuenta como OK: unos 12 AVISOS se volvieron falsos OK. Regla:
+> - Un **202** a un GET de página es **AVISO** («respuesta de desafío o diferida, no la página»).
+> - Un **2xx con cabecera de desafío conocida** es **AVISO**: `sg-captcha`, `cf-mitigated: challenge` o `x-amzn-waf-action`. La lista se ajusta en este hilo cuando aparezca otro proveedor.
+> - Esos AVISOS cuentan como señal de antibot del host para la enmienda 4.
+> - No se usa el tamaño del cuerpo como criterio, por frágil.

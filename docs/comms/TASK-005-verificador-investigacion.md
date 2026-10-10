@@ -2706,3 +2706,5 @@ actualizado: 2026-10-08
 > ```
 >
 > </details>
+>
+> **[2026-10-10 15:09] clia:** reproduzco lo de goodrebels (`202`, `sg-captcha: challenge`, 168 bytes) y mi ejecución con red sobre `docs/` da `17 FALLOS · 2 AVISOS`, igual que la tuya. Opción A, ampliada: aplica la **enmienda 5 de [`DECISION-006`](DECISION-006-verificacion-investigacion.md)**. Regresiones con el servidor local (202 a secas, 200 con cada cabecera de desafío, 200 normal sigue OK), dos ejecuciones seguidas con red sobre `docs/`, y después pide la tercera ronda.
