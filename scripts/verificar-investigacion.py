@@ -311,6 +311,17 @@ ESPERA_REINTENTO = 2  # segundos
 
 
 ANTIBOT = (401, 403, 429)  # DECISION-006, enmienda 4
+CABECERAS_DESAFIO = ("sg-captcha", "x-amzn-waf-action")  # DECISION-006, enmienda 5: lista ampliable en el hilo
+
+
+def _cabecera_de_desafio(cabeceras):
+    """Nombre de la cabecera de desafío conocida que trae la respuesta, o None."""
+    for nombre in CABECERAS_DESAFIO:
+        if cabeceras.get(nombre) is not None:
+            return nombre
+    if (cabeceras.get("cf-mitigated") or "").strip().lower() == "challenge":
+        return "cf-mitigated: challenge"
+    return None
 
 
 def _intentar_url(url):
@@ -319,6 +330,7 @@ def _intentar_url(url):
     try:
         with urllib.request.urlopen(peticion, timeout=TIMEOUT_SEGUNDOS) as respuesta:
             final = respuesta.geturl()
+            codigo, cabeceras = respuesta.status, respuesta.headers
     except urllib.error.HTTPError as e:
         # DECISION-006 (aclaración 1): solo 404 y 410 son FALLO; otros 4xx son bloqueos, AVISO.
         if e.code == 404:
@@ -333,6 +345,12 @@ def _intentar_url(url):
         return "FALLO", f"error de red: {getattr(e, 'reason', e)}", True, False
     except ValueError as e:
         return "FALLO", f"error de red: {getattr(e, 'reason', e)}", False, False
+    # DECISION-006, enmienda 5: un 202 a un GET de página y un 2xx con cabecera de desafío no son la página.
+    if codigo == 202:
+        return "AVISO", "HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura", False, True
+    desafio = _cabecera_de_desafio(cabeceras)
+    if desafio:
+        return "AVISO", f"HTTP {codigo} con cabecera de desafío antibot ({desafio}): respaldar con captura", False, True
     if sin_www(final) != sin_www(url):
         return "AVISO", f"redirige a otro dominio: {final}", False, False
     return "OK", "responde", False, False

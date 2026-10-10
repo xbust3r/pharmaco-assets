@@ -34,6 +34,7 @@ python3 scripts/verificar-investigacion.py --raiz scripts/pruebas   # otra raíz
 
 - **V5** con `portada única` en la fila: el servicio se describe solo en la portada.
 - **V8** con cualquier 4xx distinto de 404 y 410 (400, 401, 403, 429…): bloqueo antibot o de región, se respalda con captura.
+- **V8** con un 202 a un GET de página, o con un 2xx que trae una cabecera de desafío (`sg-captcha`, `cf-mitigated: challenge`, `x-amzn-waf-action`): respuesta de desafío, no la página (DECISION-006, enmienda 5). Esos AVISOS también marcan el host como antibot para la enmienda 4.
 - **V8** con 401, 403 o 429 en algún intento, aunque otro intento dé 404. Y un 404 final en un host donde otra URL de la misma ejecución dio 401, 403 o 429 (DECISION-006, enmienda 4): 404 no concluyente.
 - **V8** con redirección a otro dominio.
 
