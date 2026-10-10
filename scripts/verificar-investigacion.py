@@ -310,8 +310,11 @@ REINTENTOS = 2
 ESPERA_REINTENTO = 2  # segundos
 
 
+ANTIBOT = (401, 403, 429)  # DECISION-006, enmienda 4
+
+
 def _intentar_url(url):
-    """Un intento. Devuelve (estado, motivo, reintentable)."""
+    """Un intento. Devuelve (estado, motivo, reintentable, antibot)."""
     peticion = urllib.request.Request(url, headers=CABECERAS_NAVEGADOR)
     try:
         with urllib.request.urlopen(peticion, timeout=TIMEOUT_SEGUNDOS) as respuesta:
@@ -319,33 +322,58 @@ def _intentar_url(url):
     except urllib.error.HTTPError as e:
         # DECISION-006 (aclaración 1): solo 404 y 410 son FALLO; otros 4xx son bloqueos, AVISO.
         if e.code == 404:
-            return "FALLO", "HTTP 404", True
+            return "FALLO", "HTTP 404", True, False
         if e.code == 410:
-            return "FALLO", "HTTP 410", False
+            return "FALLO", "HTTP 410", False, False
         if 400 <= e.code < 500:
-            return "AVISO", f"HTTP {e.code} (bloqueo antibot o de región): respaldar con captura", False
-        return "FALLO", f"HTTP {e.code}", 500 <= e.code < 600
+            return ("AVISO", f"HTTP {e.code} (bloqueo antibot o de región): respaldar con captura", False,
+                    e.code in ANTIBOT)
+        return "FALLO", f"HTTP {e.code}", 500 <= e.code < 600, False
     except (urllib.error.URLError, OSError, http.client.HTTPException) as e:
-        return "FALLO", f"error de red: {getattr(e, 'reason', e)}", True
+        return "FALLO", f"error de red: {getattr(e, 'reason', e)}", True, False
     except ValueError as e:
-        return "FALLO", f"error de red: {getattr(e, 'reason', e)}", False
+        return "FALLO", f"error de red: {getattr(e, 'reason', e)}", False, False
     if sin_www(final) != sin_www(url):
-        return "AVISO", f"redirige a otro dominio: {final}", False
-    return "OK", "responde", False
+        return "AVISO", f"redirige a otro dominio: {final}", False, False
+    return "OK", "responde", False, False
 
 
 def comprobar_url(url):
-    estado, motivo, reintentable = _intentar_url(url)
+    """Hasta 3 intentos según TASK-005. Devuelve (estado, motivo, antibot): antibot si algún intento dio 401, 403 o 429."""
+    estado, motivo, reintentable, antibot = _intentar_url(url)
     intentos = 1
     while reintentable and intentos <= REINTENTOS:
         time.sleep(ESPERA_REINTENTO)
-        estado, motivo, reintentable = _intentar_url(url)
+        estado, motivo, reintentable, visto = _intentar_url(url)
+        antibot = antibot or visto
         intentos += 1
     if estado == "OK":
-        return estado, motivo
+        return estado, motivo, antibot
     if intentos > 1:
         motivo += f" (tras {intentos} intentos)"
-    return estado, motivo
+    return estado, motivo, antibot
+
+
+def host_de(url):
+    return urllib.parse.urlsplit(url).hostname or ""
+
+
+def clasificar_urls(resultados):
+    """resultados: {url: (estado, motivo, antibot)}. Aplica la enmienda 4 de DECISION-006 y devuelve {url: (estado, motivo)}.
+
+    - Un intento con 401, 403 o 429 ya da AVISO en esa URL (ver comprobar_url).
+    - Un 404 final en un host donde otra URL de la misma ejecución dio 401, 403 o 429 pasa a AVISO.
+    - El resto no cambia: 404, 410, 5xx o error de red en los 3 intentos siguen siendo FALLO.
+    """
+    hosts_antibot = {host_de(u) for u, (_, _, antibot) in resultados.items() if antibot}
+    salida = {}
+    for url, (estado, motivo, _) in resultados.items():
+        if estado == "FALLO" and motivo.startswith("HTTP 404") and host_de(url) in hosts_antibot:
+            motivo = ("HTTP 404 en host con antibot (otra URL del host dio 401, 403 o 429 en esta ejecución): "
+                      "404 no concluyente, respaldar con captura") + motivo[len("HTTP 404"):]
+            estado = "AVISO"
+        salida[url] = (estado, motivo)
+    return salida
 
 
 # --- Comprobaciones: cada una devuelve [(estado, motivo)] ---------------------
@@ -531,7 +559,7 @@ def main():
         urls_por_doc = {ruta: sorted({u.rstrip(".,;:") for u in RE_URL.findall(textos[ruta])}) for ruta in documentos}
         todas = sorted({u for urls in urls_por_doc.values() for u in urls})
         with concurrent.futures.ThreadPoolExecutor(max_workers=HILOS_RED) as pool:
-            estado_url = dict(zip(todas, pool.map(comprobar_url, todas)))
+            estado_url = clasificar_urls(dict(zip(todas, pool.map(comprobar_url, todas))))
         for ruta in documentos:
             problemas = [(estado_url[u][0], f"{u} → {estado_url[u][1]}")
                          for u in urls_por_doc[ruta] if estado_url[u][0] != "OK"]
