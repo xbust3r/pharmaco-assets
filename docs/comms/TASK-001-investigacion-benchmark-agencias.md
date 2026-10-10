@@ -733,3 +733,41 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > **Petición a Clia:** confirmar la excepción de la fila 8 de Dogstudio («No» con mención) o indicar otra forma de registrarla. No hay más decisiones pendientes de mi lado. No he hecho push.
 >
 > **[2026-10-10] clia:** sobre la fila 8 (IA) de Dogstudio, **no confirmo «No»**. Lo comprobé con WebFetch: en `https://dogstudio.co/studio/` la frase «(You know... AR, VR, AI etc...)» aparece **dentro de su lista de servicios**, como ejemplo de la categoría «Emerging Technologies». Es el mismo caso que cuando un servicio va dentro de un pilar (Monopo, «02 Communications (Social media)»). **Decisión:** «Sí», con el nombre literal `Emerging Technologies (You know... AR, VR, AI etc...)` y la URL de `/studio/`. En la columna de nombre añade «(IA solo como ejemplo dentro de la categoría)» para que no se lea como una oferta de IA propia. Lo de Artefact y los premios está bien. Después, pide el review a Dexia.
+
+> **[2026-10-10 16:10] kia:** atiendo la decisión de Clia sobre la fila 8 de Dogstudio (`66df91d`). Commit de la ficha: `e3da420`. **Pido review de F1 sobre `e3da420`.**
+>
+> **Qué cambié** (sólo `fichas/dogstudio.md`; muestra, URL de F0, capturas y el resto de datos quedan como estaban):
+> 1. **Fila 8 (Inteligencia artificial):** «Sí». Nombre literal: `Emerging Technologies (You know... AR, VR, AI etc...)`, con «(IA solo como ejemplo dentro de la categoría)» en la columna de nombre. URL: https://dogstudio.co/studio/. Comprobado de nuevo con WebFetch («Emerging Technologies» y, en la línea siguiente, «(You know... AR, VR, AI etc...)») y con el HTML crudo de la página (`curl`): `Emerging Technologies<br><small>(You know... AR, VR, AI etc...)</small>`.
+> 2. **Párrafo «Modelo operativo»:** ya no dice que la fila 8 queda en «No». Dice que la IA aparece sólo como ejemplo dentro de la categoría, que la fila es «Sí» por decisión de Clia y que la página no describe ninguna oferta propia de IA.
+>
+> **Verificación (salida real).** Comando de `AGENTS.md`, desde la raíz del repositorio, con red:
+>
+> ```text
+> $ python3 scripts/verificar-investigacion.py
+> /usr/local/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/miguel/servers/pharmaco-assets/scripts/verificar-investigacion.py': [Errno 2] No such file or directory
+> exit_code=2
+> ```
+>
+> El verificador sigue sin estar en esta rama (TASK-005, sin mergear). Diagnóstico, no gate: copié `scripts/verificar-investigacion.py` de `feat/TASK-005-verificador-investigacion` a una carpeta fuera del repo y lo ejecuté con `python3 -I <copia> --raiz docs`, con red. Líneas de FALLO y resumen (las OK se omiten; no hay cambios en `main`):
+>
+> ```text
+> V4  FALLO   diseno/capturas/servicio-detalle-desktop.png — idéntica (mismo SHA-256) a diseno/capturas/servicios-desktop.png
+> V4  FALLO   diseno/capturas/servicios-desktop.png — idéntica (mismo SHA-256) a diseno/capturas/servicio-detalle-desktop.png
+> V4  FALLO   diseno/capturas/servicio-detalle-mobile-375px.png — idéntica (mismo SHA-256) a diseno/capturas/servicios-mobile-375px.png
+> V4  FALLO   diseno/capturas/servicios-mobile-375px.png — idéntica (mismo SHA-256) a diseno/capturas/servicio-detalle-mobile-375px.png
+> V6  FALLO   investigacion/prueba-social.md — marcador de plantilla «Lorem» en la línea 135
+> V6  FALLO   investigacion/prueba-social.md — marcador de plantilla «Lorem» en la línea 136
+> V7  OK      investigacion/fichas — 20 fichas: 10 comparables, 10 referentes/especialistas
+> 6 FALLOS · 34 AVISOS
+> ```
+>
+> Los 6 FALLOS son de otras TASK: 4 V4 en `diseno/capturas/` (TASK-004) y 2 V6 en `investigacion/prueba-social.md`, líneas 135-136 (TASK-003), ya declarados fuera de cierre por Clia. En los archivos de TASK-001 hay 0 FALLOS. V5 de Dogstudio ya no aparece. Los 34 AVISOS son los de V5 (filas «portada única» declaradas en las fichas) y V8 (403 de Clutch, que varía entre ejecuciones, y 202 de Digiberries y Goodrebels), todos ya explicados.
+>
+> **Lo que no pude verificar:**
+> - Dogstudio: el resto de sus datos sigue sin reverificarse en esta corrección, como dice el aviso de la ficha. Sus capturas de servicios y caso siguen sin ser legibles (excepción de Clia).
+> - La fila 8 de Dogstudio se sostiene en la URL y en el texto, no en una captura: no hay captura de `/studio/`. Añadir una cuarta PNG a su carpeta rompería el conjunto de tres por agencia; no lo hice.
+> - El gate final no puede darse en verde: el verificador no está en `main`. Cuando TASK-005 se integre, lo corro en esta rama y pego la salida.
+>
+> **Petición a Dexia:** REVIEW de F1 sobre `e3da420`. Para el muestreo, propongo que revises la fila 8 de Dogstudio contra https://dogstudio.co/studio/ y la fila de caso de Artefact (`c319974`) contra su página de caso.
+>
+> No he hecho push.

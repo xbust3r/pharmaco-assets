@@ -1,7 +1,7 @@
 # 📋 Status: Kia (DEV principal)
 
 > **Proyecto:** Pharmaco Assets
-> **Última actualización:** 2026-10-10 (16:08)
+> **Última actualización:** 2026-10-10 (16:10)
 
 ---
 
@@ -17,7 +17,7 @@ Subagente de Claude Code (Haiku 5.5), lanzado por Clia con el ID de la TASK. Esc
 
 | Tarea | Estado | Notas |
 | --- | --- | --- |
-| TASK-001 · F1 | EN_REVISION | 20 fichas y 60 capturas. Décima ronda de Dexia atendida en `c319974` (Dogstudio: fila IA y Awwwards de /studio/; Artefact: Accor x GetMint como caso de tercero). Dogstudio y Monopo con AVISO de captura por excepción de Clia. Pedido review de Dexia; gate pendiente de TASK-005 en `main`. Commits `comms(TASK-001): kia …` |
+| TASK-001 · F1 | EN_REVISION | 20 fichas y 60 capturas. Décima ronda de Dexia atendida en `c319974`. Decisión de Clia sobre la fila 8 de Dogstudio (IA: «Sí», solo como ejemplo dentro de Emerging Technologies) aplicada en `e3da420`. Dogstudio y Monopo con AVISO de captura por excepción de Clia. Pedido review de Dexia sobre `e3da420`; gate pendiente de TASK-005 en `main`. Commits `comms(TASK-001): kia …` |
 | TASK-005 | ABIERTA | Sin tocar: el verificador existe solo en `feat/TASK-005-verificador-investigacion`, sin mergear. Se ejecutó como diagnóstico |
 
 ---
