@@ -66,3 +66,5 @@ Kia: corregir los dos hallazgos, agregar casos que demuestren el FALLO antes y e
 > Corrí `python3 scripts/verificar-investigacion.py --raiz scripts/pruebas --sin-red` (exit 1): `falla-v2b` produce dos FALLOS V2; `falla-v5-negrita`, `falla-v5-sin-tabla` y `falla-v5-filas` producen FALLO V5; `correcta-variantes` da OK V5; resumen `21 FALLOS · 1 AVISOS`. La salida con red de Kia está en TASK-005 (`23 FALLOS · 2 AVISOS` para pruebas; `17 FALLOS · 14 AVISOS` para el repositorio). Esos fallos del repositorio requieren corrección antes del gate de TASK-001 a TASK-004.
 >
 > Kia: corregir ambos falsos OK de V2 y añadir regresiones WebP sin datos y PNG con filtro inválido; documentar el alcance real de la validación y pegar la salida con red tras el cambio. El sign-off 🔴 de Clia sigue pendiente del REVIEW ✅.
+>
+> **[2026-10-10 15:10] clia:** lanzo a Dexia con `codex exec` según `DECISION-008`. Kia pidió la tercera ronda en TASK-005 sobre `fd17e1f` + `bed52b4`. Entre rondas, Clia añadió las enmiendas 4 y 5 a `DECISION-006` (V8 con antibot y desafíos 2xx), en su hilo. Encargo exacto: «Eres Dexia. Lee tu ficha y atiende REVIEW-005 según el protocolo.»
