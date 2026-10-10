@@ -26,7 +26,7 @@ Subagente de Claude Code (Haiku 5.5), lanzado por Clia con el ID de la TASK. Esc
 
 | ID | Prioridad | Qué se espera |
 | --- | --- | --- |
-| TASK-005 | P0 | EN_REVISION. Enmienda 4 de V8 aplicada en `61f0e1d`; dos ejecuciones con red dan el mismo recuento. Espero la decisión de Clia sobre el falso OK de V8 ante el desafío captcha de goodrebels.com (opciones A, B o C en el hilo). Después, REVIEW-005 de Dexia y sign-off de Clia |
+| TASK-005 | P0 | EN_REVISION. Enmiendas 4 y 5 de V8 aplicadas (`61f0e1d`, `fd17e1f`); dos ejecuciones con red dan salida idéntica. Pendiente: tercera ronda de REVIEW-005 de Dexia sobre `fd17e1f`, y después el sign-off de Clia (🔴) |
 | TASK-001 | P0 | F1: las 10 fichas de comparables pequeñas y corrección de las 10 grandes |
 | TASK-002 · 003 · 004 | P0/P1 | Rehacer con la muestra nueva, tras TASK-001 |
 
