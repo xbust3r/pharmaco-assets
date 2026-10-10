@@ -114,8 +114,34 @@ def buscar_captura(cita, carpeta_doc, bases):
     return None
 
 
+CANALES_PNG = {0: 1, 2: 3, 3: 1, 4: 2, 6: 4}
+PROFUNDIDADES_PNG = {0: (1, 2, 4, 8, 16), 2: (8, 16), 3: (1, 2, 4, 8), 4: (8, 16), 6: (8, 16)}
+# Adam7: (x0, y0, dx, dy) de cada pasada de un PNG entrelazado (especificación PNG, capítulo 8).
+ADAM7 = [(0, 0, 8, 8), (4, 0, 8, 8), (0, 4, 4, 8), (2, 0, 4, 4), (0, 2, 2, 4), (1, 0, 2, 2), (0, 1, 1, 2)]
+ERROR_TAMANO_PNG = "PNG: el tamaño de los datos de imagen no corresponde a las dimensiones"
+
+
+def validar_datos_png(bruto, ancho, alto, profundidad, color, entrelazado):
+    """Cada pasada tiene exactamente sus filas, cada fila empieza por un byte de filtro de 0 a 4 y no sobra nada."""
+    pasadas = ADAM7 if entrelazado else [(0, 0, 1, 1)]
+    pos = 0
+    for x0, y0, dx, dy in pasadas:
+        pw = max(0, (ancho - x0 + dx - 1) // dx)
+        ph = max(0, (alto - y0 + dy - 1) // dy)
+        if pw == 0 or ph == 0:
+            continue
+        tam_fila = 1 + (pw * CANALES_PNG[color] * profundidad + 7) // 8
+        bloque = bruto[pos:pos + ph * tam_fila]
+        if len(bloque) != ph * tam_fila:
+            return ERROR_TAMANO_PNG
+        if max(bloque[::tam_fila]) > 4:
+            return "PNG: byte de filtro no válido en una fila (debe ser 0 a 4)"
+        pos += ph * tam_fila
+    return None if pos == len(bruto) else ERROR_TAMANO_PNG
+
+
 def validar_png(datos):
-    """Estructura completa: fragmentos con CRC, IHDR primero, IDAT con tamaño de imagen correcto, IEND."""
+    """Estructura: fragmentos con CRC, IHDR primero, IEND, cabecera válida, IDAT con los datos que pide IHDR."""
     pos, tipos, idat, ihdr = 8, [], b"", None
     while True:
         if pos + 8 > len(datos):
@@ -142,39 +168,113 @@ def validar_png(datos):
             break
     if b"IDAT" not in tipos:
         return "PNG sin datos de imagen"
-    ancho, alto, profundidad, color, _, _, entrelazado = ihdr
+    ancho, alto, profundidad, color, compresion, filtro, entrelazado = ihdr
     if ancho == 0 or alto == 0:
         return "PNG sin dimensiones"
+    if color not in PROFUNDIDADES_PNG or profundidad not in PROFUNDIDADES_PNG[color]:
+        return "PNG: tipo de color o profundidad no válidos"
+    if compresion != 0 or filtro != 0 or entrelazado not in (0, 1):
+        return "PNG: método de compresión, de filtro o de entrelazado no válido"
     try:
         bruto = zlib.decompress(idat)
     except zlib.error:
         return "PNG: datos de imagen corruptos"
-    if entrelazado == 0:
-        canales = {0: 1, 2: 3, 3: 1, 4: 2, 6: 4}.get(color)
-        if canales is None:
-            return "PNG: tipo de color no válido"
-        bytes_fila = (ancho * canales * profundidad + 7) // 8
-        if len(bruto) != alto * (1 + bytes_fila):
-            return "PNG: el tamaño de los datos de imagen no corresponde a las dimensiones"
+    return validar_datos_png(bruto, ancho, alto, profundidad, color, entrelazado)
+
+
+def recorrer_fragmentos(buf):
+    """Fragmentos RIFF de buf como [(tipo, cuerpo)], y un error si alguno está truncado."""
+    fragmentos, pos = [], 0
+    while pos < len(buf):
+        if pos + 8 > len(buf):
+            return fragmentos, "WebP truncado"
+        tipo = buf[pos:pos + 4]
+        longitud = struct.unpack("<I", buf[pos + 4:pos + 8])[0]
+        fin = pos + 8 + longitud
+        if fin > len(buf):
+            return fragmentos, "WebP truncado (fragmento incompleto)"
+        fragmentos.append((tipo, buf[pos + 8:fin]))
+        pos = fin + (longitud & 1)
+    if pos > len(buf):
+        return fragmentos, "WebP truncado (falta el relleno del último fragmento)"
+    return fragmentos, None
+
+
+def validar_vp8(cuerpo):
+    """Fotograma clave VP8 (RFC 6386, sección 9.1): etiqueta, código de inicio, dimensiones y primera partición completa."""
+    if len(cuerpo) < 10:
+        return "WebP: fragmento VP8 demasiado corto"
+    etiqueta = cuerpo[0] | cuerpo[1] << 8 | cuerpo[2] << 16
+    if etiqueta & 1:
+        return "WebP: fragmento VP8 que no es un fotograma clave"
+    if cuerpo[3:6] != b"\x9d\x01\x2a":
+        return "WebP: fragmento VP8 sin código de inicio"
+    ancho = struct.unpack("<H", cuerpo[6:8])[0] & 0x3FFF
+    alto = struct.unpack("<H", cuerpo[8:10])[0] & 0x3FFF
+    if ancho == 0 or alto == 0:
+        return "WebP: fragmento VP8 sin dimensiones"
+    if 10 + (etiqueta >> 5) > len(cuerpo):
+        return "WebP: fragmento VP8 con la primera partición incompleta"
     return None
 
 
+def validar_vp8l(cuerpo):
+    """Cabecera VP8L: signatura 0x2f, dimensiones (siempre válidas en 14 bits) y versión 0."""
+    if len(cuerpo) < 5:
+        return "WebP: fragmento VP8L demasiado corto"
+    if cuerpo[0] != 0x2F:
+        return "WebP: fragmento VP8L sin signatura"
+    if struct.unpack("<I", cuerpo[1:5])[0] >> 29:
+        return "WebP: fragmento VP8L con versión no válida"
+    return None
+
+
+def validar_imagenes_webp(fragmentos):
+    """Valida los fragmentos VP8 y VP8L. Devuelve (error, hay_imagen)."""
+    hay = False
+    for tipo, cuerpo in fragmentos:
+        if tipo == b"VP8 ":
+            error = validar_vp8(cuerpo)
+        elif tipo == b"VP8L":
+            error = validar_vp8l(cuerpo)
+        else:
+            continue
+        if error:
+            return error, True
+        hay = True
+    return None, hay
+
+
 def validar_webp(datos):
-    """RIFF con tamaño que cuadra con el archivo, fragmentos completos y uno de imagen VP8/VP8L/VP8X."""
+    """RIFF con tamaño exacto, fragmentos completos y al menos una imagen VP8 o VP8L válida.
+
+    Alcance: no decodifica píxeles. VP8X y ALPH solos no cuentan como imagen. Un fotograma ANMF
+    (animación) cuenta si contiene una imagen VP8 o VP8L válida.
+    """
     if struct.unpack("<I", datos[4:8])[0] + 8 != len(datos):
         return "WebP: el tamaño RIFF no coincide con el archivo"
-    pos, imagen = 12, False
-    while pos < len(datos):
-        if pos + 8 > len(datos):
-            return "WebP truncado"
-        tipo = datos[pos:pos + 4]
-        longitud = struct.unpack("<I", datos[pos + 4:pos + 8])[0]
-        fin = pos + 8 + longitud + (longitud & 1)
-        if fin > len(datos):
-            return "WebP truncado (fragmento incompleto)"
-        imagen = imagen or tipo in (b"VP8 ", b"VP8L", b"VP8X")
-        pos = fin
-    if not imagen:
+    fragmentos, error = recorrer_fragmentos(datos[12:])
+    if error:
+        return error
+    hay_imagen = False
+    for tipo, cuerpo in fragmentos:
+        if tipo == b"ANMF":
+            if len(cuerpo) < 16:
+                return "WebP: fotograma ANMF demasiado corto"
+            subfragmentos, error = recorrer_fragmentos(cuerpo[16:])
+            if error:
+                return error
+            error, hay = validar_imagenes_webp(subfragmentos)
+            if error:
+                return error
+            if not hay:
+                return "WebP: fotograma ANMF sin imagen"
+        else:
+            error, hay = validar_imagenes_webp([(tipo, cuerpo)])
+            if error:
+                return error
+        hay_imagen = hay_imagen or hay
+    if not hay_imagen:
         return "WebP sin datos de imagen"
     return None
 

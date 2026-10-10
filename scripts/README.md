@@ -22,7 +22,7 @@ python3 scripts/verificar-investigacion.py --raiz scripts/pruebas   # otra raíz
 | # | Comprobación | FALLO si… |
 | --- | --- | --- |
 | V1 | Campos de la ficha | Falta o está vacío alguno de URL, País / ciudades, Bloque · perfil, Tamaño del equipo, Fecha de consulta o Capturas. La fecha no es `AAAA-MM-DD`. El tamaño es una cifra sin fuente (vale «no publicado» o un rango con fuente) |
-| V2 | Capturas existen y son válidas | Una captura citada no existe, pesa 0 bytes, no es PNG/WebP o está rota: PNG con fragmentos incompletos, CRC incorrecto, sin IEND o con datos de imagen de tamaño incorrecto; WebP con tamaño RIFF incorrecto o sin datos de imagen |
+| V2 | Capturas existen y son válidas | Una captura citada no existe, pesa 0 bytes, no es PNG/WebP o está rota: PNG con fragmentos incompletos, CRC incorrecto, sin IEND, cabecera no válida (color, profundidad, compresión o entrelazado), datos de imagen de tamaño incorrecto para sus dimensiones o un byte de filtro fuera de 0 a 4; WebP con tamaño RIFF incorrecto, fragmentos truncados o sin imagen válida (VP8 o VP8L, también dentro de un fotograma ANMF) |
 | V3 | Capturas propias | La ficha no cita las tres capturas propias `{slug}-home`, `{slug}-servicios` y `{slug}-caso` |
 | V4 | Capturas no duplicadas | Dos archivos de `capturas/` tienen el mismo SHA-256 |
 | V5 | Servicio enlazado | Falta la sección «Frente al catálogo de Pharmaco», la tabla no tiene las filas 1 a 11, una celda «¿Lo ofrecen?» no es Sí o No (la negrita y el punto final se ignoran), o una fila Sí no tiene URL de página (ruta `/` o vacía) |
@@ -41,6 +41,22 @@ DECISION-006 (aclaraciones de Clia) fija estas dos reglas: solo 404 y 410 son FA
 ### Qué NO comprueba
 
 El script comprueba **forma y existencia**, no **verdad**. No sabe si una cita es literal, si la captura muestra lo que dice la ficha ni si un conteo está bien interpretado. Eso sigue siendo de **Dexia** (REVIEW) y de **Clia** (auditoría por muestreo). **En verde es necesario, no suficiente.**
+
+### Alcance de V2 (capturas)
+
+V2 valida la **estructura** de PNG y WebP según su especificación, con biblioteca estándar:
+
+- **PNG:** CRC de cada fragmento, IHDR primero, IEND, color y profundidad válidos para ese color, compresión y filtro en 0, entrelazado 0 o 1, datos de imagen del tamaño exacto que piden las dimensiones (también en Adam7) y byte de filtro de 0 a 4 en cada fila.
+- **WebP:** tamaño RIFF exacto, fragmentos completos y al menos una imagen VP8 (fotograma clave, código de inicio, dimensiones y primera partición completa) o VP8L (signatura y versión 0). Un fotograma ANMF cuenta si contiene una imagen válida.
+
+Lo que **no** hace:
+
+- **No decodifica píxeles** ni comprueba el contenido de la imagen.
+- **No valida metadatos** (tEXt, iCCP, EXIF, XMP) ni el fragmento ALPH; solo recorre su tamaño.
+- **VP8X y ALPH solos no cuentan como imagen.**
+- **No es un decodificador.** Puede diferir de uno concreto: `ffmpeg` decodifica sin error un PNG con filtro 5, que V2 marca como FALLO por la especificación.
+
+Pruebas de la validación: [`pruebas/README.md`](pruebas/README.md).
 
 ### Decisiones de implementación
 

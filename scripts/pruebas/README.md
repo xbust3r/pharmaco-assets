@@ -1,6 +1,6 @@
 # Pruebas del verificador
 
-Fichas y capturas **ficticias** para comprobar que `verificar-investigacion.py` detecta cada fallo. No describen a ninguna agencia real: los textos son de prueba, las capturas son PNG sintéticos de 4×4 píxeles y los enlaces apuntan a `example.com` y a IANA (siempre vivos), o a dominios que no existen (`.invalid`, que siempre falla el DNS).
+Fichas y capturas **ficticias** para comprobar que `verificar-investigacion.py` detecta cada fallo. No describen a ninguna agencia real: los textos son de prueba, las capturas son PNG y WebP sintéticos (ver al final) y los enlaces apuntan a `example.com` y a IANA (siempre vivos), o a dominios que no existen (`.invalid`, que siempre falla el DNS).
 
 Un verificador que nunca se ha visto fallar no está probado. Por eso cada caso falla por **una sola causa**, salvo la ficha correcta.
 
@@ -28,8 +28,26 @@ python3 scripts/verificar-investigacion.py --raiz scripts/pruebas
 | `fichas/correcta-cita.md` | `Lorem` y `TODO` entre comillas invertidas, como cita deliberada | OK en V6 |
 | `fichas/falla-v8.md` | Una URL da 404 y otra no resuelve el DNS | FALLO V8 (2 líneas) |
 | `fichas/aviso-v8.md` | Una URL da 400 (`httpbin.org/status/400`, endpoint de pruebas) | AVISO V8 |
-| — | 11 fichas en total y 1 referente o especialista | FALLO V7 (composición) |
+| `fichas/falla-v2c.md` | `home` es un WebP de 20 bytes con un `VP8 ` de longitud 0 (caso de REVIEW-005, segunda ronda) | FALLO V2 (1 línea) |
+| `fichas/falla-v2d.md` | `servicios` es un PNG de 1×1 con byte de filtro 5 (caso de REVIEW-005, segunda ronda) | FALLO V2 (1 línea) |
+| `fichas/falla-v2e.md` | Matriz: 10 capturas adicionales con un único defecto cada una (cabeceras WebP y PNG, lista en la ficha) | FALLO V2 (10 líneas) |
+| `fichas/correcta-formatos.md` | WebP con pérdida, sin pérdida y animado (ANMF) válidos, y un PNG entrelazado válido | OK en V2 |
+| — | 20 fichas, pero 19 comparables y 1 referente o especialista | FALLO V7 (composición, 2 líneas) |
 
 Con `--sin-red` la V8 aparece como `OMITIDA` y no cuenta como FALLO: por eso el gate se pega **con red**.
 
-Las capturas de `capturas/` se han generado con un script de biblioteca estándar; son bytes válidos de PNG, de color fijo por nombre.
+Las capturas de `capturas/` no son fotos de ninguna web.
+
+- **Positivos PNG:** 4×4 píxeles RGB de 8 bits, color fijo por nombre, para que cada una sea distinta (V4).
+- **Positivos WebP:** `cwebp` 1.6.0 (con pérdida `-q 80` y sin pérdida) e `img2webp` (animado, dos fotogramas), a partir de PNG de 4×4.
+- **Negativos:** bytes válidos con un único cambio:
+  - `falla-v2c-home.webp`: RIFF de 20 bytes con `VP8 ` de longitud 0.
+  - `falla-v2d-servicios.png`: PNG de 1×1 RGB con filtro 5.
+  - `falla-v2e-vp8-no-clave.webp`: bit 0 de la etiqueta VP8 a 1. `falla-v2e-vp8-codigo.webp`: byte 3 del VP8 a 0. `falla-v2e-vp8-particion.webp`: tamaño de la primera partición al máximo.
+  - `falla-v2e-vp8l-firma.webp`: primer byte del VP8L a 0. `falla-v2e-vp8l-version.webp`: versión del VP8L a 1.
+  - `falla-v2e-vp8x-sin-imagen.webp`: solo un fragmento VP8X. `falla-v2e-anmf-sin-imagen.webp`: VP8X y un ANMF de 16 bytes sin subfragmentos.
+  - `falla-v2e-png-profundidad.png`: profundidad 3 con RGB. `falla-v2e-png-compresion.png`: método de compresión 1. `falla-v2e-png-entrelazado.png`: PNG entrelazado de 1×1 con 3 bytes de datos en lugar de 4.
+
+Comprobación fuera del verificador: `dwebp` acepta los WebP positivos y rechaza los negativos. `webpmux -info` acepta el animado y rechaza los dos negativos sin imagen (`ffmpeg` no decodifica el animado, limitación de su decodificador nativo). `ffmpeg` rechaza los PNG negativos de profundidad, compresión y entrelazado, pero **acepta** el de filtro 5: ese caso se decide por la especificación.
+
+El generador no está en el repositorio. Los bytes de cada captura son los descritos arriba.
