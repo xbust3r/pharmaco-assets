@@ -572,3 +572,76 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > 5. **El gate y los FALLOS de otras TASKs:** para cerrar TASK-001 cuentan los FALLOS en **sus** archivos (fichas, las capturas que citan y V7). Los FALLOS de `prueba-social.md` (TASK-003) y `diseno/` (TASK-004) se declaran fuera de alcance en el hilo y no bloquean esta TASK. Sí bloquea que el verificador no esté en `main`: el cierre espera a TASK-005.
 >
 > Kia: corrige Instrument y lo de TESCANET; lo demás queda resuelto.
+
+> **[2026-10-10 15:59] kia:** atiendo la auditoría de Clia (`d4b96d0`) y la novena ronda de Dexia en `REVIEW-001` (`ba5c94d`). Commit de fichas: `4027d4b`. **Pido review de F1.** El gate no puede darse en verde todavía: el verificador no está en `main`.
+>
+> **Qué cambié** (sólo fichas; muestra, URL de F0 y capturas quedan como estaban):
+> 1. **Instrument** (`fichas/instrument.md`), pedido de Clia y de la novena ronda. Ciudad: Portland, con «We started in our hometown of Portland» y «Portland was first. New York, you're up next.», ambas en el HTML de https://www.instrument.com/. Desarrollo Web: «Sí» (parcial), con «websites» del titular «We make brands, products, websites, and campaigns.». La fila lleva `portada única` porque no hay página propia (AVISO V5). Observación corregida.
+> 2. **TESCANET** (`fichas/tescanet.md`), pedido de Clia. Probé `--window-size=1280,2400`, como indicó. Sigue sin mostrar el portafolio: sale el hero y tres tarjetas. No reemplacé `capturas/tescanet-caso.png`. Queda como AVISO con la excepción de Clia. El portafolio son cuatro proyectos sin enlace (WebFetch de https://tescanet.com/).
+> 3. **Sitelabs** (`fichas/sitelabs.md:58`), de la novena ronda. Bloque «Clientes destacados» con Repsol, MRW, HP, Moventis y FC Barcelona (WebFetch de https://sitelabs.es/, y textos alternativos de los logos en el HTML).
+> 4. **Artefact** (`fichas/artefact.md`), de la novena ronda. La fila 9 «SEO y GEO» pasa a «No»: ninguna oferta de https://www.artefact.com/offers/ contiene «SEO» ni «GEO». El único texto con esos términos es el caso Accor x GetMint, de un tercero. La fila 6 «Desarrollo de apps y software» pasa también a «No»: la oferta AI & Gen AI Factory (https://www.artefact.com/offers/ai-acceleration/ai-genai-factory/) describe «developing, deploying, and scaling AI solutions across the entire enterprise», sin apps ni software a medida. La observación cita ahora los servicios 8 y 11.
+> 5. **Dogstudio y Monopo.** El bloqueo pasa a «AVISO DE CAPTURAS» con la excepción de Clia, como pidió Dexia. Sus datos vienen de la entrega F1; **no los reverifiqué en esta corrección**, y la ficha lo dice.
+> 6. **Pallax, Stratagemma y StudioDigital.** Su aviso de caso dice ahora «excepción aprobada por Clia, 2026-10-10». Sus datos no cambian.
+>
+> Nota: Clia escribió «lo demás queda resuelto», pero la novena ronda de Dexia pedía también Sitelabs y Artefact. Los corregí. Si Clia lo daba por cerrado, se revierte sin coste.
+>
+> **Verificación (salida real).** Comando de `AGENTS.md`, con red, desde la raíz del repositorio:
+>
+> ```text
+> $ python3 scripts/verificar-investigacion.py
+> /usr/local/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/miguel/servers/pharmaco-assets/scripts/verificar-investigacion.py': [Errno 2] No such file or directory
+> exit_code=2
+> ```
+>
+> El script sólo existe en `feat/TASK-005-verificador-investigacion`, sin mergear. Como diagnóstico, ejecuté ese script sobre el árbol de esta rama (`python3 -I verificar-investigacion.py --raiz docs`, con red). Salida con las líneas OK omitidas:
+>
+> ```text
+> V4  FALLO   diseno/capturas/servicio-detalle-desktop.png — idéntica (mismo SHA-256) a diseno/capturas/servicios-desktop.png
+> V4  FALLO   diseno/capturas/servicios-desktop.png — idéntica (mismo SHA-256) a diseno/capturas/servicio-detalle-desktop.png
+> V4  FALLO   diseno/capturas/servicio-detalle-mobile-375px.png — idéntica (mismo SHA-256) a diseno/capturas/servicios-mobile-375px.png
+> V4  FALLO   diseno/capturas/servicios-mobile-375px.png — idéntica (mismo SHA-256) a diseno/capturas/servicio-detalle-mobile-375px.png
+> V5  AVISO   investigacion/fichas/instrument.md — «Desarrollo Web»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/pallax-media.md — «Branding»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/single-grain.md — «Inteligencia artificial»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/studiodigital.md — «Performance»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/studiodigital.md — «SEO y GEO»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/studiodigital.md — «CRO»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/trajectory-web-design.md — «SEO y GEO»: portada única declarada; respaldar con la captura de la home
+> V6  FALLO   investigacion/prueba-social.md — marcador de plantilla «Lorem» en la línea 135
+> V6  FALLO   investigacion/prueba-social.md — marcador de plantilla «Lorem» en la línea 136
+> V8  AVISO   investigacion/fichas/agencia-buffalo.md — https://clutch.co/profile/agencia-buffalo → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/devibi.md — https://clutch.co/profile/devibi → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/a-propos/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-ecommerce-shopify/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-facebook-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-geo-a-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-google-ads-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-google-shopping-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-instagram-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-linkedin-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-pinterest-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-referencement-local-google-a-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-referencement-seo-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-snapchat-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-tiktok-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-wordpress-a-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/nos-references/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/sitelabs.md — https://clutch.co/profile/sitelabs → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/studiodigital.md — https://clutch.co/profile/studiodigital → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/tescanet.md — https://clutch.co/profile/tescanet → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/servicios/01-branding.md — https://www.goodrebels.com/es/servicios/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/servicios/02-social-media.md — https://www.goodrebels.com/es/servicios/pr-reputation-strategic-influence/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/servicios/03-desarrollo-web.md — https://www.goodrebels.com/es/servicios/experience-design/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/servicios/11-datos-automatizacion.md — https://www.goodrebels.com/es/servicios/data-analytics/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/prueba-social.md — https://clutch.co/how-it-works → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/prueba-social.md — https://www.facebook.com/business/learn/certification → HTTP 400 (bloqueo antibot o de región): respaldar con captura
+>
+> 6 FALLOS · 34 AVISOS
+> ```
+>
+> Lectura: en las fichas y capturas de TASK-001, 0 FALLOS. Los 6 FALLOS son de otras TASK: 4 V4 en `diseno/capturas/` (TASK-004) y 2 V6 en `investigacion/prueba-social.md`, líneas 135-136 (TASK-003). Clia los declaró fuera de cierre. AVISOS: V5 Instrument (portada única, explicada arriba). V8 403 de Clutch (antibot) en los perfiles de Clutch de varias fichas: los perfiles se leyeron con WebFetch en la entrega F1; no hay captura de ellos. V8 202 de Digiberries: respuesta de desafío diferida. No reabrí esas URL en esta ronda; Digiberries tiene capturas de home, servicios y caso de la entrega F1. Los demás AVISOS V8 son de `servicios/` y `prueba-social.md`, fuera de TASK-001.
+>
+> **Petición a Dexia:** REVIEW de F1 sobre `4027d4b`. Propongo muestreo de cinco fichas contra captura y web: Instrument, Sitelabs, Artefact, TESCANET y Dogstudio. El veredicto final del gate queda para cuando el verificador esté en `main`.
+>
+> **Petición a Clia:** TASK-005 (🔴, el verificador) está en el tablero a mi nombre, pero no es mi encargo de hoy y no la he tocado. Confirma si me lanzas para ella o si la integras tú. No he hecho merge ni push.
