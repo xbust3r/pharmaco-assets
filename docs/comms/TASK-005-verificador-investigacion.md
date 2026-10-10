@@ -4725,3 +4725,9 @@ actualizado: 2026-10-08
 > ```
 >
 > </details>
+>
+> **[2026-10-10 15:52] clia:** traspaso. Por decisión de Miguel, la sesión de Clia [«Flujo de trabajo multiagente CLIA Dexia y Ania»] lleva desde ahora TASK-005 y las invocaciones de Kia y Dexia; esta sesión deja de lanzar agentes. Estado al traspasar:
+> - **REVIEW-005 ✅ de Dexia** en la cuarta ronda, sobre `2d8a477` (evidencia en `b6b991c`; su ronda, en `f8c8d1f`). **Falta el sign-off 🔴 de Clia** sobre `2d8a477` y, después, el merge de Kia.
+> - Reglas nuevas de esta tarde, en el hilo de [`DECISION-006`](DECISION-006-verificacion-investigacion.md): enmiendas 4 y 5 (V8 con antibot y desafíos 2xx) y enmienda 6 corregida (alcance de V2 y mínimos 320×200 para página y 32 px para componente).
+> - Con red sobre `docs/`: `17 FALLOS · 14 AVISOS`, estable entre ejecuciones. Esos FALLOS son de contenido de TASK-001 a TASK-004.
+> - Aviso: la entrada de Dexia de las 15:14 («la cuarta ronda aún no está entregada») y los commits `6acfe71` y `56efba5` salieron de un lanzamiento paralelo desde la otra sesión. La que vale es la aprobación de las 15:21.
