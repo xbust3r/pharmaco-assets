@@ -49,6 +49,12 @@ python3 scripts/verificar-investigacion.py
 
 El script comprueba **forma y existencia**, no **verdad**: no sabe si una cita es literal, si la captura muestra lo que dice la ficha ni si un conteo está bien interpretado. Eso sigue siendo de **Dexia** (REVIEW) y de **Clia** (auditoría por muestreo, 5 fichas al azar). **La verificación en verde es necesaria, no suficiente.**
 
+### Aclaraciones (2026-10-08, a pregunta de Kia en TASK-005)
+
+1. **V8 y otros 4xx.** Solo **404 y 410** son FALLO. Cualquier otro 4xx (400, 401, 403, 405, 429…) es **AVISO**: en la práctica son bloqueos antibot o de región, no páginas inexistentes. Como todo AVISO, se explica en el hilo y se respalda con la captura.
+2. **V6 y marcadores citados.** Un marcador escrito entre comillas invertidas (`` `Lorem` ``) se considera **cita deliberada** y no cuenta. Un marcador sin comillas invertidas sigue siendo FALLO. Así, escribir sobre el «Lorem ipsum» de un sitio ajeno exige marcarlo a propósito, y un hueco de plantilla olvidado se sigue detectando.
+3. **Implementación de Kia aceptada por Clia** en lo que DECISION-006 no fijaba: `--raiz`, el alcance de documentos, la resolución de rutas de capturas, V3 con las tres clases (home, servicios, caso), V5 con URL sin `http` como FALLO y V8 con cabeceras de navegador. Queda sujeta al REVIEW de Dexia.
+
 ### Salida
 
 Una línea por comprobación y archivo con `OK`, `AVISO` o `FALLO` y el motivo. Al final, el resumen `N FALLOS · M AVISOS`. El código de salida es 1 si hay algún fallo. La opción `--sin-red` salta V8 para pruebas locales, pero **para el gate se pega la salida con red.**
@@ -68,3 +74,26 @@ Efectiva desde el 2026-10-08, con el visto bueno de Miguel.
 > **[2026-10-08] miguel:** (transcrito por Clia) sí, define la verificación.
 >
 > **[2026-10-08] clia:** emitida. Diseñé las comprobaciones a partir de los fallos reales de REVIEW-001 (capturas duplicadas, servicios enlazados a la portada, campos vacíos, cifras de tamaño sin fuente), para que el script atrape de forma mecánica lo que hasta ahora Dexia tenía que cazar a mano.
+>
+> **[2026-10-10 15:05] clia:** **enmienda 4 — V8 ante hosts con antibot intermitente.** Hecho en TASK-005: `clutch.co/how-it-works` responde 403 o 404 sin patrón (6 de 8 y 2 de 8), y el reintento no lo estabiliza. Las fichas de TASK-001 citan muchos perfiles de Clutch, así que cambiar una URL no basta. Regla:
+> - Si **algún intento** sobre una URL devuelve 401, 403 o 429, el resultado de esa URL es **AVISO**, aunque otros intentos den 404.
+> - Si en la misma ejecución **otra URL del mismo host** devolvió 401, 403 o 429, un 404 en ese host es **AVISO** («host con antibot; 404 no concluyente»).
+> - Fuera de esos casos, 404, 410, 5xx o error de red en los 3 intentos sigue siendo FALLO.
+> - Como todo AVISO, se explica en el hilo y se respalda con la captura. Se pierde detección automática de perfiles borrados en hosts con antibot; la cubren la captura y el REVIEW de Dexia.
+> - **Riesgo residual que se acepta:** un host citado en una sola URL que responda 404 en los 3 intentos sin un solo 403 sigue pudiendo variar. Si pasa, se anota en el hilo.
+>
+> **[2026-10-10 15:09] clia:** **enmienda 5 — V8 ante páginas de desafío servidas con 2xx.** Hecho, reproducido por Clia: `https://www.goodrebels.com/` responde `HTTP/2 202` con `sg-captcha: challenge` y 168 bytes. Antes daba 403 (AVISO), ahora V8 lo cuenta como OK: unos 12 AVISOS se volvieron falsos OK. Regla:
+> - Un **202** a un GET de página es **AVISO** («respuesta de desafío o diferida, no la página»).
+> - Un **2xx con cabecera de desafío conocida** es **AVISO**: `sg-captcha`, `cf-mitigated: challenge` o `x-amzn-waf-action`. La lista se ajusta en este hilo cuando aparezca otro proveedor.
+> - Esos AVISOS cuentan como señal de antibot del host para la enmienda 4.
+> - No se usa el tamaño del cuerpo como criterio, por frágil.
+>
+> **[2026-10-10 15:12] clia:** **enmienda 6 — alcance de V2.** Tres rondas de REVIEW-005 encontraron falsos OK de V2 con archivos fabricados a mano (VP8 vacío, filtro PNG 5, IEND con datos, bytes tras IEND, IHDR duplicado, VP8L sin datos). Todos son reales, pero un validador completo de PNG y WebP no es el objetivo. Las capturas salen de Chrome headless, y V2 existe para cazar archivos **truncados, vacíos, de marcador o que no son una captura**. Regla:
+> 1. **Estructura del contenedor, cerrada:** firma; IHDR único y primero; CRC de cada fragmento; IEND de longitud 0 y **último byte del archivo**; para WebP, longitud RIFF exacta; VP8, VP8L o ANMF con datos de imagen más allá de su cabecera.
+> 2. **Datos de imagen presentes:** el PNG descomprime a la longitud esperada con filtros 0 a 4 (ya implementado). El WebP lleva un bitstream no vacío.
+> 3. **Tamaño mínimo de captura, nuevo:** **ancho ≥ 320 px y alto ≥ 200 px.** Una captura de página más pequeña no es una captura: es FALLO.
+> 4. **Fuera de alcance, riesgo residual aceptado:** la decodificación completa del bitstream (datos comprimidos corruptos con estructura válida). Eso se cubre mirando las capturas en el REVIEW. Dexia puede abrir un RFC si considera que el riesgo no es aceptable.
+>
+> **[2026-10-10 15:18] clia:** **corrección de la enmienda 6, punto 3** (error mío: lo escribí para toda captura y pensaba en las de página). Kia encontró que 16 de las 103 capturas de `docs/` son recortes legítimos de componentes de TASK-004 (`docs/diseno/capturas/comp-*`): un botón de 178×48, la barra de clientes de 1220×46, la más baja de 40 px. El mínimo queda así:
+> - **Capturas de página** (las de las fichas: home, servicios y caso): **ancho ≥ 320 px y alto ≥ 200 px**.
+> - **Capturas de componente** (`docs/diseno/capturas/`): **cada lado ≥ 32 px**. Basta para descartar los marcadores de 1×1 sin rechazar recortes reales.
