@@ -24,6 +24,12 @@ Ficha de prueba ficticia. Matriz de REVIEW-005 (segunda ronda): cada captura adi
 - PNG con profundidad 3 en RGB: `capturas/falla-v2e-png-profundidad.png`
 - PNG con método de compresión 1: `capturas/falla-v2e-png-compresion.png`
 - PNG entrelazado con datos de imagen de tamaño incorrecto: `capturas/falla-v2e-png-entrelazado.png`
+- PNG con IEND de un byte de datos (CRC correcto): `capturas/falla-v2e-png-iend-un-byte.png`
+- PNG con bytes después de IEND: `capturas/falla-v2e-png-tras-iend.png`
+- PNG con IHDR duplicado: `capturas/falla-v2e-png-ihdr-doble.png`
+- WebP con VP8L que solo tiene su cabecera de 5 bytes: `capturas/falla-v2e-vp8l-vacio.webp`
+- WebP con VP8 que solo tiene su cabecera de 10 bytes y partición de tamaño 0: `capturas/falla-v2e-vp8-vacio.webp`
+- Captura de 100×50 px, por debajo del mínimo de 320×200 (enmienda 6): `capturas/falla-v2e-tamano.png`
 
 ## Frente al catálogo de Pharmaco (alimenta TASK-002)
 | # | Servicio Pharmaco | ¿Lo ofrecen? | Nombre literal que usan | URL de su página |

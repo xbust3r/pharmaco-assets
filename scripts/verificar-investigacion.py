@@ -41,6 +41,7 @@ COMPARABLES_ESPERADOS = 10
 REFERENTES_ESPECIALISTAS_ESPERADOS = 10
 TIMEOUT_SEGUNDOS = 20
 HILOS_RED = 8
+MIN_ANCHO, MIN_ALTO = 320, 200  # DECISION-006, enmienda 6: una captura más pequeña no es una captura
 
 RE_CAPTURA = re.compile(r"[\w./-]*capturas/[\w.-]+\.(?:png|webp|jpe?g|gif|svg)", re.IGNORECASE)
 RE_URL = re.compile(r"https?://[^\s|<>()\[\]«»\"'`]+")
@@ -158,9 +159,17 @@ def validar_png(datos):
         if not tipos and tipo != b"IHDR":
             return "PNG: el primer fragmento no es IHDR"
         if tipo == b"IHDR":
+            if b"IHDR" in tipos:
+                return "PNG: IHDR duplicado"
             if longitud != 13:
                 return "PNG: IHDR de longitud incorrecta"
             ihdr = struct.unpack(">IIBBBBB", cuerpo)
+        if tipo == b"IEND":
+            # DECISION-006, enmienda 6: IEND de longitud 0 y último byte del archivo.
+            if longitud != 0:
+                return "PNG: IEND con datos (debe tener longitud 0)"
+            if fin != len(datos):
+                return "PNG: bytes después de IEND"
         if tipo == b"IDAT":
             idat += cuerpo
         tipos.append(tipo)
@@ -214,6 +223,9 @@ def validar_vp8(cuerpo):
     alto = struct.unpack("<H", cuerpo[8:10])[0] & 0x3FFF
     if ancho == 0 or alto == 0:
         return "WebP: fragmento VP8 sin dimensiones"
+    # DECISION-006, enmienda 6: datos de imagen más allá de la cabecera.
+    if (etiqueta >> 5) == 0 or len(cuerpo) <= 10:
+        return "WebP: fragmento VP8 sin datos de imagen más allá de su cabecera"
     if 10 + (etiqueta >> 5) > len(cuerpo):
         return "WebP: fragmento VP8 con la primera partición incompleta"
     return None
@@ -227,6 +239,9 @@ def validar_vp8l(cuerpo):
         return "WebP: fragmento VP8L sin signatura"
     if struct.unpack("<I", cuerpo[1:5])[0] >> 29:
         return "WebP: fragmento VP8L con versión no válida"
+    # DECISION-006, enmienda 6: la cabecera de 5 bytes no basta; debe haber datos de imagen.
+    if len(cuerpo) <= 5:
+        return "WebP: fragmento VP8L sin datos de imagen más allá de su cabecera"
     return None
 
 
@@ -380,15 +395,16 @@ def clasificar_urls(resultados):
     """resultados: {url: (estado, motivo, antibot)}. Aplica la enmienda 4 de DECISION-006 y devuelve {url: (estado, motivo)}.
 
     - Un intento con 401, 403 o 429 ya da AVISO en esa URL (ver comprobar_url).
-    - Un 404 final en un host donde otra URL de la misma ejecución dio 401, 403 o 429 pasa a AVISO.
+    - Un 404 final en un host donde otra URL de la misma ejecución dio señal antibot (401, 403, 429, 202 o
+      cabecera de desafío, enmiendas 4 y 5) pasa a AVISO.
     - El resto no cambia: 404, 410, 5xx o error de red en los 3 intentos siguen siendo FALLO.
     """
     hosts_antibot = {host_de(u) for u, (_, _, antibot) in resultados.items() if antibot}
     salida = {}
     for url, (estado, motivo, _) in resultados.items():
         if estado == "FALLO" and motivo.startswith("HTTP 404") and host_de(url) in hosts_antibot:
-            motivo = ("HTTP 404 en host con antibot (otra URL del host dio 401, 403 o 429 en esta ejecución): "
-                      "404 no concluyente, respaldar con captura") + motivo[len("HTTP 404"):]
+            motivo = ("HTTP 404 en host con antibot (otra URL del host dio 401, 403, 429, 202 o cabecera de desafío "
+                      "en esta ejecución): 404 no concluyente, respaldar con captura") + motivo[len("HTTP 404"):]
             estado = "AVISO"
         salida[url] = (estado, motivo)
     return salida
@@ -416,6 +432,34 @@ def v1_campos(texto):
     return [("FALLO", p) for p in problemas]
 
 
+def medir_webp(datos):
+    """Lienzo (VP8X) o, si no lo hay, dimensiones del primer VP8/VP8L o del primer ANMF."""
+    fragmentos, _ = recorrer_fragmentos(datos[12:])
+    lienzo = primera = animado = None
+    for tipo, cuerpo in fragmentos:
+        if tipo == b"VP8X" and lienzo is None:
+            lienzo = (1 + int.from_bytes(cuerpo[4:7], "little"), 1 + int.from_bytes(cuerpo[7:10], "little"))
+        elif tipo == b"VP8 " and primera is None:
+            primera = (struct.unpack("<H", cuerpo[6:8])[0] & 0x3FFF, struct.unpack("<H", cuerpo[8:10])[0] & 0x3FFF)
+        elif tipo == b"VP8L" and primera is None:
+            bits = struct.unpack("<I", cuerpo[1:5])[0]
+            primera = ((bits & 0x3FFF) + 1, ((bits >> 14) & 0x3FFF) + 1)
+        elif tipo == b"ANMF" and animado is None:
+            animado = (int.from_bytes(cuerpo[6:9], "little") + 1, int.from_bytes(cuerpo[9:12], "little") + 1)
+    return lienzo or primera or animado
+
+
+def medir_captura(ruta):
+    """Ancho y alto de una captura PNG o WebP ya validada, o None."""
+    with open(ruta, "rb") as f:
+        datos = f.read()
+    if datos[:8] == b"\x89PNG\r\n\x1a\n":
+        return struct.unpack(">II", datos[16:24])
+    if datos[:4] == b"RIFF" and datos[8:12] == b"WEBP":
+        return medir_webp(datos)
+    return None
+
+
 def v2_capturas(texto, ruta_doc, bases):
     problemas = []
     for cita in capturas_citadas(texto):
@@ -426,6 +470,11 @@ def v2_capturas(texto, ruta_doc, bases):
         error = error_formato(ruta)
         if error:
             problemas.append(("FALLO", f"captura {cita}: {error}"))
+            continue
+        medida = medir_captura(ruta)
+        if medida and (medida[0] < MIN_ANCHO or medida[1] < MIN_ALTO):
+            problemas.append(("FALLO", f"captura {cita}: {medida[0]}×{medida[1]} px; el mínimo es "
+                                       f"{MIN_ANCHO}×{MIN_ALTO} (no es una captura de página)"))
     return problemas
 
 
