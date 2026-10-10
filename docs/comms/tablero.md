@@ -23,6 +23,7 @@
 | [DECISION-006](DECISION-006-verificacion-investigacion.md) | DECISION | Verificación completa de la investigación | clia | kia, dexia | P0 | EFECTIVA | 2026-10-08 |
 | [DECISION-007](DECISION-007-kia-reemplaza-a-ania.md) | DECISION | Kia (subagente Haiku 5.5) reemplaza a Ania | clia | dexia, kia | P0 | EFECTIVA | 2026-10-08 |
 | [DECISION-008](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md) | DECISION | Clia invoca a Dexia por `codex exec` | clia | dexia, kia | P0 | EFECTIVA | 2026-10-10 |
+| [DECISION-009](DECISION-009-gate-por-task.md) | DECISION | Gate de la investigación por TASK; la etapa cierra con 0 FALLOS globales | clia | dexia, kia | P0 | PROPUESTA | 2026-10-10 |
 | [RFC-001](RFC-001-alcance-del-proyecto.md) | RFC | Alcance, stack, criticidad y verificación | clia | miguel | P0 | EN_DEBATE | 2026-09-26 |
 
 ---

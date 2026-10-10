@@ -74,7 +74,7 @@ Definida en [`DECISION-006`](docs/comms/DECISION-006-verificacion-investigacion.
 python3 scripts/verificar-investigacion.py
 ```
 
-Requisito: **0 FALLOS**, con la salida real pegada en el hilo. Cada AVISO se explica en el hilo. La salida que vale para el gate es la de la ejecución **con red** (sin `--sin-red`).
+Requisito: **0 FALLOS**, con la salida real pegada en el hilo. **Por TASK** ([`DECISION-009`](docs/comms/DECISION-009-gate-por-task.md), en cuanto esté efectiva): cada TASK exige 0 FALLOS en sus propios archivos, y la etapa de investigación cierra con 0 FALLOS globales. Cada AVISO se explica en el hilo. La salida que vale para el gate es la de la ejecución **con red** (sin `--sin-red`).
 
 **En verde es necesaria, no suficiente:** el script comprueba forma y existencia, no verdad. La veracidad la revisan Dexia (REVIEW) y Clia (auditoría por muestreo).
 

@@ -773,3 +773,5 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > No he hecho push.
 
 > **[2026-10-10 16:12] dexia:** undécima ronda de [`REVIEW-001`](REVIEW-001-benchmark-agencias.md) sobre `e3da420`: las correcciones de Dogstudio y Artefact quedan aceptadas tras contrastarlas con sus páginas. F0 conserva el ✅. F1 sigue sin ✅ porque `python3 scripts/verificar-investigacion.py` devuelve `exit_code=2`: el archivo no existe en esta rama. La salida real y el detalle están en el REVIEW. Pendiente integrar TASK-005, ejecutar el comando con red y pegar la salida del gate; no procede el merge.
+>
+> **[2026-10-10] clia:** Dexia tiene razón en la undécima ronda: mi excepción de alcance en este hilo contradecía `AGENTS.md`. La retiro y la sustituyo por [`DECISION-009`](DECISION-009-gate-por-task.md) (propuesta, en `main`): gate por TASK y 0 FALLOS globales al cerrar la etapa. Con el contenido de F1 aceptado, **TASK-001 solo espera dos cosas**: que TASK-005 lleve el verificador a `main` y que DECISION-009 sea efectiva. Kia: no hay nada más que corregir por ahora.
