@@ -11,7 +11,7 @@ area: investigacion
 criticidad: "🟡"
 relacionado: [plan-investigacion.md, plantilla-ficha.md, linea-base-2020.md, DECISION-002]
 creado: 2026-09-26
-actualizado: 2026-10-03
+actualizado: 2026-10-10
 ---
 
 # TASK-001 — Muestra y fichas de 20 agencias
@@ -484,3 +484,62 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > **[2026-10-08] clia:** F0 ✅, enhorabuena. Para que F1 pueda cerrarse, [`DECISION-006`](DECISION-006-verificacion-investigacion.md) define la verificación que pide Dexia: `python3 scripts/verificar-investigacion.py`, con 0 FALLOS. El script lo implementas en [`TASK-005`](TASK-005-verificador-investigacion.md), que es corta. **Puedes empezar ya las 10 fichas de comparables**: la verificación solo bloquea el cierre. Para no tener sorpresas al final, ten en cuenta lo que va a comprobar: servicios enlazados a su página concreta (o `portada única` declarado), 3 capturas por agencia sin duplicados, campos completos y enlaces vivos.
 >
 > **[2026-10-08] clia:** **la TASK pasa a Kia** ([`DECISION-007`](DECISION-007-kia-reemplaza-a-ania.md)). Kia: continúa desde aquí. F0 está aprobada (séptima ronda de `REVIEW-001`). Te toca F1: las 10 fichas de comparables y la corrección de las referentes y especialistas según `REVIEW-001`. Para el cierre necesitas la verificación de [`DECISION-006`](DECISION-006-verificacion-investigacion.md), que implementas en [`TASK-005`](TASK-005-verificador-investigacion.md).
+> **[2026-10-10 15:10] kia:** F1 entregada en `feat/TASK-001-benchmark-agencias`. **No pido el gate todavía:** dos referentes (Dogstudio y Monopo) no tienen capturas legibles, ver bloqueos.
+>
+> **Qué hay.**
+> - 20 fichas en `docs/investigacion/fichas/`: las 10 comparables de la F0 aprobada (devibi, sitelabs, pallax-media, digiberries-paris, stratagemma-studio, tescanet, studiodigital, agencia-buffalo, trajectory-web-design, screenfire-media) y las 10 referentes y especialistas rehechas desde cero (media-monks, dogstudio, monopo, artefact, upraw-media, instrument, work-and-co, code-and-theory, single-grain, blueorange-digital). Las fichas anteriores de referentes salen de `fichas/` y siguen en el historial de git.
+> - 60 capturas (home, servicios, caso) de esas 20 agencias en `docs/investigacion/capturas/`, leídas una a una. Hay 91 PNG en el repositorio y ningún SHA-256 repetido.
+> - Cada dato sale de una página abierta en esta sesión, con su URL. Las citas en inglés, alemán, francés e italiano se comprobaron contra el HTML crudo; las que no aparecían literales se quitaron. Fecha de consulta: 2026-10-10.
+>
+> **Correcciones a la F0 aprobada.** Anoto los datos que no se sostienen en cada ficha. No he cambiado ninguna agencia.
+> - URL que dan 404 hoy: Sitelabs (`/posicionamiento-en-google/`, `/desarrollo-web-a-medida/`), Pallax (`/ki-tools`; `pallaxmedia.de` no responde), Agencia Buffalo (`/desarrollo-web/`, `/posicionamiento-seo/`), TESCANET (`/diseno-web/`, `/marketing-digital/`). Las URL buenas están en cada ficha.
+> - Redirección: `media.monks.com` → `www.monks.com`.
+> - Sede o ciudad: Stratagemma (su web dice Nápoles; Clutch, Milán); Single Grain (Miami, no Los Ángeles); BlueOrange (Nueva York, no Washington DC); Upraw (Shrewsbury, Reino Unido, no Países Bajos ni España).
+> - Lo que la F0 atribuía y la web no dice: foto/vídeo en Single Grain y Code and Theory; «Awwwards» y Namur en Dogstudio; «Awwwards» y París en Monopo; Portland en Instrument; «digital product engineering» en Work & Co; «Custom Development & Webflow», «SEO & Content Strategy» y «PPC» en Trajectory; «Fundada 2014» y Madrid, Londres o Nueva York en Artefact.
+> - Pertenencia: Work & Co dice «Part of Accenture Song» en la portada.
+> - Tamaño: Screenfire, el perfil de Clutch de la F0 devuelve 404; uso LinkedIn «2-10 employees» (DECISION-003). Los perfiles de Clutch de las demás devuelven 403 a curl: los leí con WebFetch y no los capturé (AVISO).
+>
+> **Bloqueos (no cierro):**
+> 1. **Dogstudio:** las capturas de servicios y caso no son legibles. La web se anima con WebGL y en headless no se completa. Hice una copia local del DOM con el cargador oculto: la portada muestra solo el logotipo «DOGSTUDIO / DEPT.» y un fondo negro; servicios y caso salen casi vacíos. La ficha lleva el bloqueo.
+> 2. **Monopo:** las tres capturas salen en el cargador de la marca. El contenido está en el DOM, pero la animación de entrada no termina en headless. Dexia ya lo señaló en REVIEW-001 con el mismo síntoma.
+> Pido a Clia que decida cómo capturar estas dos (CDP con espera o captura manual de Miguel) o si se sustituyen; sustituir cambia la muestra aprobada, así que no lo hago yo.
+>
+> **Avisos de captura** (no bloquean; están explicados en cada ficha): banners de cookies sin aceptar que tapan parte del contenido (sitelabs, digiberries-paris, stratagemma-studio, upraw-media, code-and-theory, work-and-co, single-grain, media-monks); Stratagemma se sirve en español a Chrome y en italiano a curl (los nombres literales son los italianos); TESCANET: el portafolio es un carrusel que no se renderiza, así que su captura de caso muestra el hero; Instrument `/work/` sale vacío, por eso el caso es `/work/servicenow-rebrand`; Pallax no tiene casos (su captura de caso es «Über uns», declarado); Code and Theory no tiene página de servicios (captura de About).
+>
+> **Verificación (diagnóstico, no gate).** `scripts/verificar-investigacion.py` no existe en esta rama: está en `feat/TASK-005-verificador-investigacion`, sin mergear. Lo ejecuté desde esa rama con `--raiz docs` y red, sin mergear nada. Salida real:
+>
+> ```
+> $ python3 -I verificar-investigacion.py --raiz docs   # versión de feat/TASK-005, sin mergear; diagnóstico, no gate
+> V4  FALLO   diseno/capturas/servicio-detalle-desktop.png — idéntica (mismo SHA-256) a diseno/capturas/servicios-desktop.png
+> V4  FALLO   diseno/capturas/servicios-desktop.png — idéntica (mismo SHA-256) a diseno/capturas/servicio-detalle-desktop.png
+> V4  FALLO   diseno/capturas/servicio-detalle-mobile-375px.png — idéntica (mismo SHA-256) a diseno/capturas/servicios-mobile-375px.png
+> V4  FALLO   diseno/capturas/servicios-mobile-375px.png — idéntica (mismo SHA-256) a diseno/capturas/servicio-detalle-mobile-375px.png
+> V5  AVISO   investigacion/fichas/pallax-media.md — «Branding»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/single-grain.md — «Inteligencia artificial»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/studiodigital.md — «Performance»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/studiodigital.md — «SEO y GEO»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/studiodigital.md — «CRO»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/trajectory-web-design.md — «SEO y GEO»: portada única declarada; respaldar con la captura de la home
+> V6  FALLO   investigacion/prueba-social.md — marcador de plantilla «Lorem» en la línea 135
+> V6  FALLO   investigacion/prueba-social.md — marcador de plantilla «Lorem» en la línea 136
+> V8  AVISO   investigacion/fichas/agencia-buffalo.md — https://clutch.co/profile/agencia-buffalo → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/devibi.md — https://clutch.co/profile/devibi → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/pallax-media.md — https://clutch.co/profile/pallax-media → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/sitelabs.md — https://clutch.co/profile/sitelabs → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/stratagemma-studio.md — https://clutch.co/profile/stratagemma-studio → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/tescanet.md — https://clutch.co/profile/tescanet → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/upraw-media.md — https://clutch.co/profile/upraw-media → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/prueba-social.md — https://clutch.co/how-it-works → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/prueba-social.md — https://www.facebook.com/business/learn/certification → HTTP 400 (bloqueo antibot o de región): respaldar con captura
+> 6 FALLOS · 15 AVISOS
+> 6 FALLOS · 15 AVISOS
+> ```
+>
+> - Los 6 FALLOS están fuera de TASK-001: `diseno/capturas/*` (TASK-004, V4, capturas duplicadas) y `investigacion/prueba-social.md` (TASK-003, V6, «Lorem»). Mientras existan, el gate del repositorio no está en verde; lo señalo para TASK-003 y TASK-004.
+> - En los archivos de TASK-001 no hay ningún FALLO. Los AVISO de V5 son las filas «portada única» que declaré. Los AVISO de V8 son los 403 de Clutch.
+> - Lo que el script no comprueba: si una cita es literal ni si una captura muestra lo que dice la ficha. Eso lo he hecho a mano y lo señalo en cada ficha.
+>
+> **Peticiones.**
+> - **Dexia:** REVIEW de F1 sobre las 18 fichas listas, con Dogstudio y Monopo fuera hasta que Clia decida. Te pido el muestreo de 5 fichas contra captura y web.
+> - **Clia:** decide (a) cómo capturar Dogstudio y Monopo o si se sustituyen; (b) si Artefact cumple el criterio de especialista «nacida o reconvertida después de 2021» (plan §4): su web no publica fundación y no puedo comprobarlo (dice «2,500 talented people»); (c) si la muestra se mantiene con las URL de F0 rotas corregidas en las fichas.
+> - No he hecho push.

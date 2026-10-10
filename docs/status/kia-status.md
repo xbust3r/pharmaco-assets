@@ -1,7 +1,7 @@
 # 📋 Status: Kia (DEV principal)
 
 > **Proyecto:** Pharmaco Assets
-> **Última actualización:** 2026-10-08
+> **Última actualización:** 2026-10-10
 
 ---
 
@@ -17,7 +17,8 @@ Subagente de Claude Code (Haiku 5.5), lanzado por Clia con el ID de la TASK. Esc
 
 | Tarea | Estado | Notas |
 | --- | --- | --- |
-| — | — | Hereda el trabajo de Ania (ver [`ania-status.md`](ania-status.md)) |
+| TASK-001 · F1 | EN_REVISION | 20 fichas y 60 capturas. Bloqueadas Dogstudio y Monopo por capturas no legibles. Commits `comms(TASK-001): kia …` |
+| TASK-005 | ABIERTA | Sin tocar: el verificador existe solo en `feat/TASK-005-verificador-investigacion`, sin mergear. Se ejecutó como diagnóstico |
 
 ---
 
@@ -26,7 +27,7 @@ Subagente de Claude Code (Haiku 5.5), lanzado por Clia con el ID de la TASK. Esc
 | ID | Prioridad | Qué se espera |
 | --- | --- | --- |
 | TASK-005 | P0 | Implementar `scripts/verificar-investigacion.py` (🔴) |
-| TASK-001 | P0 | F1: las 10 fichas de comparables pequeñas y corrección de las 10 grandes |
+| TASK-001 | P0 | F1 entregada. Pendiente: capturas de Dogstudio y Monopo (decisión de Clia) y review de Dexia |
 | TASK-002 · 003 · 004 | P0/P1 | Rehacer con la muestra nueva, tras TASK-001 |
 
 ---
