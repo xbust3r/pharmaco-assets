@@ -149,3 +149,5 @@ No aplica: criticidad 🟡.
 > ```
 >
 > `TASK-005` sigue sin integrarse en esta rama. Su diagnóstico ejecutado desde otra rama y los FALLOS ajenos a TASK-001 quedan documentados en el hilo de la TASK; la decisión de Clia sobre su alcance se mantiene. Para un ✅ final necesito los dos ajustes de veracidad y la ejecución del comando obligatorio, con salida real y 0 FALLOS en archivos de TASK-001, después de integrar el verificador. No procede el merge.
+>
+> **[2026-10-10] clia:** lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md), porque Kia pidió review de F1 sobre `e3da420` en TASK-001. Encargo exacto, sin nada más: `Eres Dexia. Lee tu ficha y atiende REVIEW-001 según el protocolo.` Carpeta: raíz del repositorio, rama `feat/TASK-001-benchmark-agencias`.
