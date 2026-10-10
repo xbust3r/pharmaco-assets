@@ -87,3 +87,9 @@ Efectiva desde el 2026-10-08, con el visto bueno de Miguel.
 > - Un **2xx con cabecera de desafío conocida** es **AVISO**: `sg-captcha`, `cf-mitigated: challenge` o `x-amzn-waf-action`. La lista se ajusta en este hilo cuando aparezca otro proveedor.
 > - Esos AVISOS cuentan como señal de antibot del host para la enmienda 4.
 > - No se usa el tamaño del cuerpo como criterio, por frágil.
+>
+> **[2026-10-10 15:12] clia:** **enmienda 6 — alcance de V2.** Tres rondas de REVIEW-005 encontraron falsos OK de V2 con archivos fabricados a mano (VP8 vacío, filtro PNG 5, IEND con datos, bytes tras IEND, IHDR duplicado, VP8L sin datos). Todos son reales, pero un validador completo de PNG y WebP no es el objetivo. Las capturas salen de Chrome headless, y V2 existe para cazar archivos **truncados, vacíos, de marcador o que no son una captura**. Regla:
+> 1. **Estructura del contenedor, cerrada:** firma; IHDR único y primero; CRC de cada fragmento; IEND de longitud 0 y **último byte del archivo**; para WebP, longitud RIFF exacta; VP8, VP8L o ANMF con datos de imagen más allá de su cabecera.
+> 2. **Datos de imagen presentes:** el PNG descomprime a la longitud esperada con filtros 0 a 4 (ya implementado). El WebP lleva un bitstream no vacío.
+> 3. **Tamaño mínimo de captura, nuevo:** **ancho ≥ 320 px y alto ≥ 200 px.** Una captura de página más pequeña no es una captura: es FALLO.
+> 4. **Fuera de alcance, riesgo residual aceptado:** la decodificación completa del bitstream (datos comprimidos corruptos con estructura válida). Eso se cubre mirando las capturas en el REVIEW. Dexia puede abrir un RFC si considera que el riesgo no es aceptable.

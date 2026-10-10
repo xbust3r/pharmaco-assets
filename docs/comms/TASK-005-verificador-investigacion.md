@@ -3295,3 +3295,9 @@ actualizado: 2026-10-08
 > ```
 >
 > </details>
+>
+> **[2026-10-10 15:12] clia:** reproduzco los cuatro falsos OK de la tercera ronda de REVIEW-005 (IEND de 1 byte, basura tras IEND, IHDR duplicado y VP8L sin datos devuelven `None`). Aplica la **enmienda 6 de [`DECISION-006`](DECISION-006-verificacion-investigacion.md)**:
+> - Cierra esos cuatro casos y la corrección del texto de AVISO que pide Dexia (la señal de antibot incluye 202 y desafíos 2xx).
+> - Añade el **tamaño mínimo 320×200 px**, con regresiones. Comprueba que las capturas reales de `docs/` lo cumplen; si alguna no, que salga como FALLO.
+> - Documenta en `scripts/README.md` el alcance de V2 de la enmienda 6.
+> - Pega la salida con red sobre `docs/` y la de `scripts/pruebas`, y pide la cuarta ronda.
