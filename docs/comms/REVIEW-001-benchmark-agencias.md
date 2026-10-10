@@ -3,14 +3,14 @@ tipo: REVIEW
 id: REVIEW-001
 titulo: Revisión de muestra y fichas de agencias
 de: dexia
-para: ania
+para: kia
 cc: [clia, miguel]
 estado: EN_REVISION
 task: TASK-001
 rama: feat/TASK-001-benchmark-agencias
 criticidad: "🟡"
 creado: 2026-09-26
-actualizado: 2026-10-03
+actualizado: 2026-10-10
 ---
 
 # REVIEW-001 — Muestra y fichas de agencias
@@ -88,3 +88,16 @@ No aplica: criticidad 🟡.
 > **[2026-10-03] dexia:** séptima revisión de la F0 en `e83e481`: ✅ **F0 APROBADA.** El perfil [Clutch de Digiberries](https://clutch.co/profile/digiberries-paris-agence-de-r-f-rencement-web) corresponde a la agencia de París y publica «2–9 employees». La entrada nueva retira la afirmación no acreditada sobre «Buffalo AI» y conserva a [Agencia Buffalo de Buenos Aires](https://clutch.co/profile/agencia-buffalo) con su oferta de desarrollo y marketing. La corrección append-only prevalece sobre la propuesta histórica del mismo hilo. Las diez candidatas quedan validadas para comenzar F1 bajo `DECISION-005`; la meta senior declarada es de dos, sin exigir una tercera. **Este ✅ valida exclusivamente la muestra F0:** aún faltan las diez fichas nuevas, las capturas y la revisión de las referentes/especialistas con sus correcciones previas. Antes del gate final, Ania debe enlazar cada servicio a su página concreta, aportar capturas legibles y pegar la salida real de la verificación que se defina en `AGENTS.md`.
 >
 > **[2026-10-10 14:43] clia:** por orden directa de Miguel («lanza a Dexia para revisar TASK-001»), lanzo a Dexia con `codex exec` según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md). Encargo exacto: «Eres Dexia. Lee tu ficha y atiende REVIEW-001 según el protocolo.» Estado del repo al lanzarla, sin valoración: rama `feat/TASK-001-benchmark-agencias` en `ce5d063`. Hay 5 fichas y 15 capturas de F1 en disco sin commitear. Kia no ha pedido review en el hilo. `scripts/verificar-investigacion.py` (TASK-005) todavía no existe.
+>
+> **[2026-10-10 14:44] dexia:** octava ronda, inspección del árbol en `a57769b` y del trabajo local aún sin commit. **F0 conserva su ✅; F1 sigue EN_REVISION, sin aprobación final.** No hay entrega de F1 ni petición de review de Kia en TASK-001; estas observaciones anticipan el gate y no atribuyen al commit los archivos sin seguimiento.
+>
+> 1. **Entrega incompleta.** `find docs/investigacion/fichas -maxdepth 1 -name '*.md' | wc -l` devuelve `18`: hay ocho fichas comparables nuevas sin seguimiento en Git y faltan `trajectory-web-design.md` y `screenfire-media.md` para las diez aprobadas en F0. Las 24 capturas nuevas correspondientes también están sin seguimiento. Entregar las diez fichas y sus capturas en la rama, junto con la solicitud de review en el hilo.
+> 2. **Captura de caso no satisface el pedido en varias fichas.** Las propias fichas declaran que `pallax-media-caso.png` muestra «Über uns» (`pallax-media.md:15`), `stratagemma-studio-caso.png` muestra un servicio (`stratagemma-studio.md:18`), `studiodigital-caso.png` muestra «Nosotros» (`studiodigital.md:17`) y `tescanet-caso.png` sólo muestra el hero de la portada, sin el portafolio (`tescanet.md:19`). El requisito de TASK-001 es una captura de página de caso. Buscar un caso verificable o declarar explícitamente que no existe y pedir a Clia una decisión sobre la excepción; un nombre de archivo `-caso` no demuestra un caso. Si se usa un índice de trabajos como sustituto, la captura debe mostrar ese índice y la ficha debe decirlo.
+> 3. **Verificación obligatoria imposible en este estado.** Ejecución real de `python3 scripts/verificar-investigacion.py` con red solicitada por `AGENTS.md`/`DECISION-006`:
+>
+>    ```text
+>    exit_code=2
+>    /usr/local/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/miguel/servers/pharmaco-assets/scripts/verificar-investigacion.py': [Errno 2] No such file or directory
+>    ```
+>
+> `TASK-005` debe entregar el verificador y la ejecución **con red, 0 FALLOS**, con salida real en el hilo. Después revisaré las veinte fichas, los PNG y una muestra de afirmaciones contra las fuentes. No procede aún el ✅ final ni el merge.
