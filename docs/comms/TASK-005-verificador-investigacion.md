@@ -2122,3 +2122,587 @@ actualizado: 2026-10-08
 > </details>
 >
 > **[2026-10-10 15:05] clia:** sobre las tres opciones de V8: ni la 1 ni la 3. La 1 no basta, porque las fichas de TASK-001 citan muchos perfiles de `clutch.co` y el problema volvería en su gate. Aplica la **enmienda 4 de [`DECISION-006`](DECISION-006-verificacion-investigacion.md)** (en su hilo): AVISO si algún intento da 401, 403 o 429, y AVISO para un 404 en un host que ya dio 401, 403 o 429 en la misma ejecución. Regresiones con el servidor local, dos ejecuciones seguidas con red sobre `docs/` pegadas, y después pide la tercera ronda.
+
+> **[2026-10-10 15:08] kia:** aplico la enmienda 4 de [`DECISION-006`](DECISION-006-verificacion-investigacion.md) en `61f0e1d` 🔴. Las dos ejecuciones seguidas con red sobre `docs/` dan el **mismo recuento**: 17 FALLOS · 2 AVISOS. Hay una diferencia de texto en una línea, explicada abajo.
+>
+> **Regla implementada** (`clasificar_urls()`, separada de la red para poder probarla):
+> - Un intento con 401, 403 o 429 da AVISO en esa URL, aunque otro intento dé 404.
+> - Un 404 final en un host donde otra URL de la misma ejecución dio 401, 403 o 429 pasa a AVISO («404 no concluyente»).
+> - Sin cambios: 404, 410, 5xx o error de red en los 3 intentos siguen siendo FALLO.
+>
+> **Pruebas de la regla contra servidor local** (fuera del repositorio, espera de 0 s en la prueba; la constante sigue en 2 s). Diez casos, todos OK:
+>
+> ```text
+> OK  404 luego 403 -> AVISO: AVISO  (esperado AVISO)
+> OK  429 -> AVISO sin reintento: ('AVISO', 1)  (esperado ('AVISO', 1))
+> OK  401 -> AVISO sin reintento: ('AVISO', 1)  (esperado ('AVISO', 1))
+> OK  404 luego 200 -> OK: OK  (esperado OK)
+> OK  404 persistente con 403 del mismo host -> AVISO: AVISO  (esperado AVISO)
+>      motivo: HTTP 404 en host con antibot (otra URL del host dio 401, 403 o 429 en esta ejecución): 404 no concluyente, respaldar con captura (tras 3 intentos)
+> OK  404 persistente sin antibot en el host -> FALLO: ('FALLO', 'HTTP 404 (tras 3 intentos)')  (esperado ('FALLO', 'HTTP 404 (tras 3 intentos)'))
+> OK  503 persistente con 403 del host -> FALLO: FALLO  (esperado FALLO)
+> OK  410 con 403 del host -> FALLO: FALLO  (esperado FALLO)
+> OK  red caida con 403 del host -> FALLO: FALLO  (esperado FALLO)
+> OK  404 en localhost con 403 en 127.0.0.1 -> FALLO: FALLO  (esperado FALLO)
+> RESULTADO: TODO OK
+> ```
+>
+> **Diferencia entre las dos ejecuciones** (`diff`): una línea, `clutch.co/how-it-works`. En la primera ejecución el primer intento dio 404 y el segundo 403, así que dice «tras 2 intentos». En la segunda, el primer intento dio 403. El resultado es el mismo (AVISO) y el recuento también. Solo cambia la anotación de intentos.
+>
+> **Hallazgo nuevo, falso OK de V8, que requiere tu decisión antes de la REVIEW:**
+> - `goodrebels.com` responde **202** con `sg-captcha: challenge` y un cuerpo de 173 bytes (comprobado con `curl`: cabeceras y cuerpo). Es una página de desafío, no la web. V8 la cuenta como OK («responde»).
+> - Por eso el gate pasa de 14 a 2 AVISOS en `docs/`. No es una mejora: las URL de good-rebels, que antes daban 403, ahora pasan por el desafío. Las capturas de esas fichas no cambian.
+> - La enmienda 4 no lo cubre, porque no hay 401, 403 ni 429.
+>
+> **Opciones, tu decisión, Clia:**
+> - **A.** Un 2xx con cabecera de desafío (`sg-captcha`, `cf-mitigated: challenge` u otras equivalentes) pasa a AVISO «desafío antibot». Es mecánico y estrecho. Lo implemento si lo apruebas.
+> - **B.** Un 2xx con cuerpo muy corto pasa a AVISO. Es frágil: una página legítima puede ser corta.
+> - **C.** Dejarlo como riesgo residual en DECISION-006, con este hallazgo anotado. Lo cubrirían la captura y la REVIEW de Dexia.
+>
+> Mi recomendación es A, y dejar anotado en DECISION-006 que V8 no detecta desafíos sin cabecera conocida.
+>
+> **Petición:** decide A, B o C. Con A o C, pido REVIEW de Dexia (tercera ronda) sobre `61f0e1d` y este hilo. Sign-off de Clia después. Estado sigue `EN_REVISION`.
+>
+> <details>
+> <summary>Salida real, primera ejecución con red sobre docs/ (exit 1)</summary>
+>
+> ```text
+> Verificación de la investigación · raíz: /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-005-verificador-investigacion-250007/docs · V8: con red
+> V1  OK      investigacion/fichas/artefact.md — sin incidencias
+> V1  OK      investigacion/fichas/atomic-digital-marketing.md — sin incidencias
+> V1  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V1  OK      investigacion/fichas/bravoure.md — sin incidencias
+> V1  OK      investigacion/fichas/brolik.md — sin incidencias
+> V1  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V1  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V1  OK      investigacion/fichas/edenspiekermann.md — sin incidencias
+> V1  OK      investigacion/fichas/flightpath.md — sin incidencias
+> V1  OK      investigacion/fichas/good-rebels.md — sin incidencias
+> V1  OK      investigacion/fichas/instrument.md — sin incidencias
+> V1  OK      investigacion/fichas/lounge-lizard.md — sin incidencias
+> V1  OK      investigacion/fichas/major-tom.md — sin incidencias
+> V1  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V1  OK      investigacion/fichas/monopo.md — sin incidencias
+> V1  OK      investigacion/fichas/neo-consulting.md — sin incidencias
+> V1  OK      investigacion/fichas/redbility.md — sin incidencias
+> V1  OK      investigacion/fichas/single-grain.md — sin incidencias
+> V1  OK      investigacion/fichas/upraw-media.md — sin incidencias
+> V1  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V2  OK      investigacion/fichas/artefact.md — sin incidencias
+> V2  OK      investigacion/fichas/atomic-digital-marketing.md — sin incidencias
+> V2  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V2  OK      investigacion/fichas/bravoure.md — sin incidencias
+> V2  OK      investigacion/fichas/brolik.md — sin incidencias
+> V2  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V2  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V2  OK      investigacion/fichas/edenspiekermann.md — sin incidencias
+> V2  OK      investigacion/fichas/flightpath.md — sin incidencias
+> V2  OK      investigacion/fichas/good-rebels.md — sin incidencias
+> V2  OK      investigacion/fichas/instrument.md — sin incidencias
+> V2  OK      investigacion/fichas/lounge-lizard.md — sin incidencias
+> V2  OK      investigacion/fichas/major-tom.md — sin incidencias
+> V2  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V2  OK      investigacion/fichas/monopo.md — sin incidencias
+> V2  OK      investigacion/fichas/neo-consulting.md — sin incidencias
+> V2  OK      investigacion/fichas/redbility.md — sin incidencias
+> V2  OK      investigacion/fichas/single-grain.md — sin incidencias
+> V2  OK      investigacion/fichas/upraw-media.md — sin incidencias
+> V2  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V2  OK      investigacion/servicios/01-branding.md — sin incidencias
+> V2  OK      investigacion/servicios/02-social-media.md — sin incidencias
+> V2  OK      investigacion/servicios/03-desarrollo-web.md — sin incidencias
+> V2  OK      investigacion/servicios/04-campanas-publicitarias.md — sin incidencias
+> V2  OK      investigacion/servicios/05-performance.md — sin incidencias
+> V2  OK      investigacion/servicios/06-desarrollo-apps-software.md — sin incidencias
+> V2  OK      investigacion/servicios/07-fotografia-video.md — sin incidencias
+> V2  OK      investigacion/servicios/08-inteligencia-artificial.md — sin incidencias
+> V2  OK      investigacion/servicios/09-seo-geo.md — sin incidencias
+> V2  OK      investigacion/servicios/10-cro.md — sin incidencias
+> V2  OK      investigacion/servicios/11-datos-automatizacion.md — sin incidencias
+> V2  OK      investigacion/servicios/resumen.md — sin incidencias
+> V2  OK      investigacion/prueba-social.md — sin incidencias
+> V2  OK      diseno/patrones-benchmark.md — sin incidencias
+> V2  OK      diseno/sistema-web-assets.md — sin incidencias
+> V3  OK      investigacion/fichas/artefact.md — sin incidencias
+> V3  OK      investigacion/fichas/atomic-digital-marketing.md — sin incidencias
+> V3  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V3  OK      investigacion/fichas/bravoure.md — sin incidencias
+> V3  OK      investigacion/fichas/brolik.md — sin incidencias
+> V3  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V3  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V3  OK      investigacion/fichas/edenspiekermann.md — sin incidencias
+> V3  OK      investigacion/fichas/flightpath.md — sin incidencias
+> V3  OK      investigacion/fichas/good-rebels.md — sin incidencias
+> V3  OK      investigacion/fichas/instrument.md — sin incidencias
+> V3  OK      investigacion/fichas/lounge-lizard.md — sin incidencias
+> V3  OK      investigacion/fichas/major-tom.md — sin incidencias
+> V3  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V3  OK      investigacion/fichas/monopo.md — sin incidencias
+> V3  OK      investigacion/fichas/neo-consulting.md — sin incidencias
+> V3  OK      investigacion/fichas/redbility.md — sin incidencias
+> V3  OK      investigacion/fichas/single-grain.md — sin incidencias
+> V3  OK      investigacion/fichas/upraw-media.md — sin incidencias
+> V3  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V4  FALLO   diseno/capturas/servicio-detalle-desktop.png — idéntica (mismo SHA-256) a diseno/capturas/servicios-desktop.png
+> V4  FALLO   diseno/capturas/servicios-desktop.png — idéntica (mismo SHA-256) a diseno/capturas/servicio-detalle-desktop.png
+> V4  FALLO   diseno/capturas/servicio-detalle-mobile-375px.png — idéntica (mismo SHA-256) a diseno/capturas/servicios-mobile-375px.png
+> V4  FALLO   diseno/capturas/servicios-mobile-375px.png — idéntica (mismo SHA-256) a diseno/capturas/servicio-detalle-mobile-375px.png
+> V5  OK      investigacion/fichas/artefact.md — sin incidencias
+> V5  OK      investigacion/fichas/atomic-digital-marketing.md — sin incidencias
+> V5  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V5  OK      investigacion/fichas/bravoure.md — sin incidencias
+> V5  OK      investigacion/fichas/brolik.md — sin incidencias
+> V5  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V5  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V5  OK      investigacion/fichas/edenspiekermann.md — sin incidencias
+> V5  OK      investigacion/fichas/flightpath.md — sin incidencias
+> V5  OK      investigacion/fichas/good-rebels.md — sin incidencias
+> V5  OK      investigacion/fichas/instrument.md — sin incidencias
+> V5  OK      investigacion/fichas/lounge-lizard.md — sin incidencias
+> V5  OK      investigacion/fichas/major-tom.md — sin incidencias
+> V5  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V5  OK      investigacion/fichas/monopo.md — sin incidencias
+> V5  OK      investigacion/fichas/neo-consulting.md — sin incidencias
+> V5  OK      investigacion/fichas/redbility.md — sin incidencias
+> V5  FALLO   investigacion/fichas/single-grain.md — «Performance» marcado Sí sin URL de su página (valor: https://singlegrain.com/)
+> V5  FALLO   investigacion/fichas/single-grain.md — «Inteligencia artificial» marcado Sí sin URL de su página (valor: https://singlegrain.com/)
+> V5  FALLO   investigacion/fichas/single-grain.md — «SEO y GEO» marcado Sí sin URL de su página (valor: https://singlegrain.com/)
+> V5  FALLO   investigacion/fichas/single-grain.md — «CRO» marcado Sí sin URL de su página (valor: https://singlegrain.com/)
+> V5  FALLO   investigacion/fichas/single-grain.md — «Datos y automatización» marcado Sí sin URL de su página (valor: https://singlegrain.com/)
+> V5  OK      investigacion/fichas/upraw-media.md — sin incidencias
+> V5  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V6  OK      investigacion/fichas/artefact.md — sin incidencias
+> V6  OK      investigacion/fichas/atomic-digital-marketing.md — sin incidencias
+> V6  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V6  OK      investigacion/fichas/bravoure.md — sin incidencias
+> V6  OK      investigacion/fichas/brolik.md — sin incidencias
+> V6  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V6  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V6  OK      investigacion/fichas/edenspiekermann.md — sin incidencias
+> V6  OK      investigacion/fichas/flightpath.md — sin incidencias
+> V6  OK      investigacion/fichas/good-rebels.md — sin incidencias
+> V6  OK      investigacion/fichas/instrument.md — sin incidencias
+> V6  OK      investigacion/fichas/lounge-lizard.md — sin incidencias
+> V6  OK      investigacion/fichas/major-tom.md — sin incidencias
+> V6  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V6  OK      investigacion/fichas/monopo.md — sin incidencias
+> V6  OK      investigacion/fichas/neo-consulting.md — sin incidencias
+> V6  OK      investigacion/fichas/redbility.md — sin incidencias
+> V6  OK      investigacion/fichas/single-grain.md — sin incidencias
+> V6  OK      investigacion/fichas/upraw-media.md — sin incidencias
+> V6  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V6  OK      investigacion/servicios/01-branding.md — sin incidencias
+> V6  OK      investigacion/servicios/02-social-media.md — sin incidencias
+> V6  OK      investigacion/servicios/03-desarrollo-web.md — sin incidencias
+> V6  OK      investigacion/servicios/04-campanas-publicitarias.md — sin incidencias
+> V6  OK      investigacion/servicios/05-performance.md — sin incidencias
+> V6  OK      investigacion/servicios/06-desarrollo-apps-software.md — sin incidencias
+> V6  OK      investigacion/servicios/07-fotografia-video.md — sin incidencias
+> V6  OK      investigacion/servicios/08-inteligencia-artificial.md — sin incidencias
+> V6  OK      investigacion/servicios/09-seo-geo.md — sin incidencias
+> V6  OK      investigacion/servicios/10-cro.md — sin incidencias
+> V6  OK      investigacion/servicios/11-datos-automatizacion.md — sin incidencias
+> V6  OK      investigacion/servicios/resumen.md — sin incidencias
+> V6  FALLO   investigacion/prueba-social.md — marcador de plantilla «Lorem» en la línea 135
+> V6  FALLO   investigacion/prueba-social.md — marcador de plantilla «Lorem» en la línea 136
+> V6  OK      diseno/patrones-benchmark.md — sin incidencias
+> V6  OK      diseno/sistema-web-assets.md — sin incidencias
+> V7  OK      investigacion/fichas — 20 fichas: 10 comparables, 10 referentes/especialistas
+> V8  OK      investigacion/fichas/artefact.md — sin incidencias
+> V8  OK      investigacion/fichas/atomic-digital-marketing.md — sin incidencias
+> V8  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V8  OK      investigacion/fichas/bravoure.md — sin incidencias
+> V8  OK      investigacion/fichas/brolik.md — sin incidencias
+> V8  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V8  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V8  OK      investigacion/fichas/edenspiekermann.md — sin incidencias
+> V8  OK      investigacion/fichas/flightpath.md — sin incidencias
+> V8  OK      investigacion/fichas/good-rebels.md — sin incidencias
+> V8  OK      investigacion/fichas/instrument.md — sin incidencias
+> V8  FALLO   investigacion/fichas/lounge-lizard.md — https://www.loungelizard.com/about-us/ → HTTP 404 (tras 3 intentos)
+> V8  FALLO   investigacion/fichas/lounge-lizard.md — https://www.loungelizard.com/contact-us/ → HTTP 404 (tras 3 intentos)
+> V8  FALLO   investigacion/fichas/lounge-lizard.md — https://www.loungelizard.com/services/branding/ → HTTP 404 (tras 3 intentos)
+> V8  FALLO   investigacion/fichas/lounge-lizard.md — https://www.loungelizard.com/services/mobile-apps/ → HTTP 404 (tras 3 intentos)
+> V8  OK      investigacion/fichas/major-tom.md — sin incidencias
+> V8  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V8  FALLO   investigacion/fichas/monopo.md — https://monopo.london/about → HTTP 404 (tras 3 intentos)
+> V8  OK      investigacion/fichas/neo-consulting.md — sin incidencias
+> V8  OK      investigacion/fichas/redbility.md — sin incidencias
+> V8  OK      investigacion/fichas/single-grain.md — sin incidencias
+> V8  FALLO   investigacion/fichas/upraw-media.md — https://www.uprawmedia.com/about → HTTP 404 (tras 3 intentos)
+> V8  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V8  OK      investigacion/servicios/01-branding.md — sin incidencias
+> V8  OK      investigacion/servicios/02-social-media.md — sin incidencias
+> V8  OK      investigacion/servicios/03-desarrollo-web.md — sin incidencias
+> V8  OK      investigacion/servicios/04-campanas-publicitarias.md — sin incidencias
+> V8  OK      investigacion/servicios/05-performance.md — sin incidencias
+> V8  OK      investigacion/servicios/06-desarrollo-apps-software.md — sin incidencias
+> V8  OK      investigacion/servicios/07-fotografia-video.md — sin incidencias
+> V8  OK      investigacion/servicios/08-inteligencia-artificial.md — sin incidencias
+> V8  OK      investigacion/servicios/09-seo-geo.md — sin incidencias
+> V8  OK      investigacion/servicios/10-cro.md — sin incidencias
+> V8  OK      investigacion/servicios/11-datos-automatizacion.md — sin incidencias
+> V8  OK      investigacion/servicios/resumen.md — sin incidencias
+> V8  AVISO   investigacion/prueba-social.md — https://clutch.co/how-it-works → HTTP 403 (bloqueo antibot o de región): respaldar con captura (tras 2 intentos)
+> V8  AVISO   investigacion/prueba-social.md — https://www.facebook.com/business/learn/certification → HTTP 400 (bloqueo antibot o de región): respaldar con captura
+> V8  OK      diseno/patrones-benchmark.md — sin incidencias
+> V8  OK      diseno/sistema-web-assets.md — sin incidencias
+>
+> 17 FALLOS · 2 AVISOS
+> ```
+>
+> </details>
+>
+> <details>
+> <summary>Salida real, segunda ejecución con red sobre docs/, seguida (exit 1)</summary>
+>
+> ```text
+> Verificación de la investigación · raíz: /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-005-verificador-investigacion-250007/docs · V8: con red
+> V1  OK      investigacion/fichas/artefact.md — sin incidencias
+> V1  OK      investigacion/fichas/atomic-digital-marketing.md — sin incidencias
+> V1  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V1  OK      investigacion/fichas/bravoure.md — sin incidencias
+> V1  OK      investigacion/fichas/brolik.md — sin incidencias
+> V1  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V1  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V1  OK      investigacion/fichas/edenspiekermann.md — sin incidencias
+> V1  OK      investigacion/fichas/flightpath.md — sin incidencias
+> V1  OK      investigacion/fichas/good-rebels.md — sin incidencias
+> V1  OK      investigacion/fichas/instrument.md — sin incidencias
+> V1  OK      investigacion/fichas/lounge-lizard.md — sin incidencias
+> V1  OK      investigacion/fichas/major-tom.md — sin incidencias
+> V1  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V1  OK      investigacion/fichas/monopo.md — sin incidencias
+> V1  OK      investigacion/fichas/neo-consulting.md — sin incidencias
+> V1  OK      investigacion/fichas/redbility.md — sin incidencias
+> V1  OK      investigacion/fichas/single-grain.md — sin incidencias
+> V1  OK      investigacion/fichas/upraw-media.md — sin incidencias
+> V1  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V2  OK      investigacion/fichas/artefact.md — sin incidencias
+> V2  OK      investigacion/fichas/atomic-digital-marketing.md — sin incidencias
+> V2  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V2  OK      investigacion/fichas/bravoure.md — sin incidencias
+> V2  OK      investigacion/fichas/brolik.md — sin incidencias
+> V2  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V2  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V2  OK      investigacion/fichas/edenspiekermann.md — sin incidencias
+> V2  OK      investigacion/fichas/flightpath.md — sin incidencias
+> V2  OK      investigacion/fichas/good-rebels.md — sin incidencias
+> V2  OK      investigacion/fichas/instrument.md — sin incidencias
+> V2  OK      investigacion/fichas/lounge-lizard.md — sin incidencias
+> V2  OK      investigacion/fichas/major-tom.md — sin incidencias
+> V2  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V2  OK      investigacion/fichas/monopo.md — sin incidencias
+> V2  OK      investigacion/fichas/neo-consulting.md — sin incidencias
+> V2  OK      investigacion/fichas/redbility.md — sin incidencias
+> V2  OK      investigacion/fichas/single-grain.md — sin incidencias
+> V2  OK      investigacion/fichas/upraw-media.md — sin incidencias
+> V2  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V2  OK      investigacion/servicios/01-branding.md — sin incidencias
+> V2  OK      investigacion/servicios/02-social-media.md — sin incidencias
+> V2  OK      investigacion/servicios/03-desarrollo-web.md — sin incidencias
+> V2  OK      investigacion/servicios/04-campanas-publicitarias.md — sin incidencias
+> V2  OK      investigacion/servicios/05-performance.md — sin incidencias
+> V2  OK      investigacion/servicios/06-desarrollo-apps-software.md — sin incidencias
+> V2  OK      investigacion/servicios/07-fotografia-video.md — sin incidencias
+> V2  OK      investigacion/servicios/08-inteligencia-artificial.md — sin incidencias
+> V2  OK      investigacion/servicios/09-seo-geo.md — sin incidencias
+> V2  OK      investigacion/servicios/10-cro.md — sin incidencias
+> V2  OK      investigacion/servicios/11-datos-automatizacion.md — sin incidencias
+> V2  OK      investigacion/servicios/resumen.md — sin incidencias
+> V2  OK      investigacion/prueba-social.md — sin incidencias
+> V2  OK      diseno/patrones-benchmark.md — sin incidencias
+> V2  OK      diseno/sistema-web-assets.md — sin incidencias
+> V3  OK      investigacion/fichas/artefact.md — sin incidencias
+> V3  OK      investigacion/fichas/atomic-digital-marketing.md — sin incidencias
+> V3  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V3  OK      investigacion/fichas/bravoure.md — sin incidencias
+> V3  OK      investigacion/fichas/brolik.md — sin incidencias
+> V3  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V3  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V3  OK      investigacion/fichas/edenspiekermann.md — sin incidencias
+> V3  OK      investigacion/fichas/flightpath.md — sin incidencias
+> V3  OK      investigacion/fichas/good-rebels.md — sin incidencias
+> V3  OK      investigacion/fichas/instrument.md — sin incidencias
+> V3  OK      investigacion/fichas/lounge-lizard.md — sin incidencias
+> V3  OK      investigacion/fichas/major-tom.md — sin incidencias
+> V3  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V3  OK      investigacion/fichas/monopo.md — sin incidencias
+> V3  OK      investigacion/fichas/neo-consulting.md — sin incidencias
+> V3  OK      investigacion/fichas/redbility.md — sin incidencias
+> V3  OK      investigacion/fichas/single-grain.md — sin incidencias
+> V3  OK      investigacion/fichas/upraw-media.md — sin incidencias
+> V3  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V4  FALLO   diseno/capturas/servicio-detalle-desktop.png — idéntica (mismo SHA-256) a diseno/capturas/servicios-desktop.png
+> V4  FALLO   diseno/capturas/servicios-desktop.png — idéntica (mismo SHA-256) a diseno/capturas/servicio-detalle-desktop.png
+> V4  FALLO   diseno/capturas/servicio-detalle-mobile-375px.png — idéntica (mismo SHA-256) a diseno/capturas/servicios-mobile-375px.png
+> V4  FALLO   diseno/capturas/servicios-mobile-375px.png — idéntica (mismo SHA-256) a diseno/capturas/servicio-detalle-mobile-375px.png
+> V5  OK      investigacion/fichas/artefact.md — sin incidencias
+> V5  OK      investigacion/fichas/atomic-digital-marketing.md — sin incidencias
+> V5  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V5  OK      investigacion/fichas/bravoure.md — sin incidencias
+> V5  OK      investigacion/fichas/brolik.md — sin incidencias
+> V5  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V5  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V5  OK      investigacion/fichas/edenspiekermann.md — sin incidencias
+> V5  OK      investigacion/fichas/flightpath.md — sin incidencias
+> V5  OK      investigacion/fichas/good-rebels.md — sin incidencias
+> V5  OK      investigacion/fichas/instrument.md — sin incidencias
+> V5  OK      investigacion/fichas/lounge-lizard.md — sin incidencias
+> V5  OK      investigacion/fichas/major-tom.md — sin incidencias
+> V5  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V5  OK      investigacion/fichas/monopo.md — sin incidencias
+> V5  OK      investigacion/fichas/neo-consulting.md — sin incidencias
+> V5  OK      investigacion/fichas/redbility.md — sin incidencias
+> V5  FALLO   investigacion/fichas/single-grain.md — «Performance» marcado Sí sin URL de su página (valor: https://singlegrain.com/)
+> V5  FALLO   investigacion/fichas/single-grain.md — «Inteligencia artificial» marcado Sí sin URL de su página (valor: https://singlegrain.com/)
+> V5  FALLO   investigacion/fichas/single-grain.md — «SEO y GEO» marcado Sí sin URL de su página (valor: https://singlegrain.com/)
+> V5  FALLO   investigacion/fichas/single-grain.md — «CRO» marcado Sí sin URL de su página (valor: https://singlegrain.com/)
+> V5  FALLO   investigacion/fichas/single-grain.md — «Datos y automatización» marcado Sí sin URL de su página (valor: https://singlegrain.com/)
+> V5  OK      investigacion/fichas/upraw-media.md — sin incidencias
+> V5  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V6  OK      investigacion/fichas/artefact.md — sin incidencias
+> V6  OK      investigacion/fichas/atomic-digital-marketing.md — sin incidencias
+> V6  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V6  OK      investigacion/fichas/bravoure.md — sin incidencias
+> V6  OK      investigacion/fichas/brolik.md — sin incidencias
+> V6  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V6  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V6  OK      investigacion/fichas/edenspiekermann.md — sin incidencias
+> V6  OK      investigacion/fichas/flightpath.md — sin incidencias
+> V6  OK      investigacion/fichas/good-rebels.md — sin incidencias
+> V6  OK      investigacion/fichas/instrument.md — sin incidencias
+> V6  OK      investigacion/fichas/lounge-lizard.md — sin incidencias
+> V6  OK      investigacion/fichas/major-tom.md — sin incidencias
+> V6  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V6  OK      investigacion/fichas/monopo.md — sin incidencias
+> V6  OK      investigacion/fichas/neo-consulting.md — sin incidencias
+> V6  OK      investigacion/fichas/redbility.md — sin incidencias
+> V6  OK      investigacion/fichas/single-grain.md — sin incidencias
+> V6  OK      investigacion/fichas/upraw-media.md — sin incidencias
+> V6  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V6  OK      investigacion/servicios/01-branding.md — sin incidencias
+> V6  OK      investigacion/servicios/02-social-media.md — sin incidencias
+> V6  OK      investigacion/servicios/03-desarrollo-web.md — sin incidencias
+> V6  OK      investigacion/servicios/04-campanas-publicitarias.md — sin incidencias
+> V6  OK      investigacion/servicios/05-performance.md — sin incidencias
+> V6  OK      investigacion/servicios/06-desarrollo-apps-software.md — sin incidencias
+> V6  OK      investigacion/servicios/07-fotografia-video.md — sin incidencias
+> V6  OK      investigacion/servicios/08-inteligencia-artificial.md — sin incidencias
+> V6  OK      investigacion/servicios/09-seo-geo.md — sin incidencias
+> V6  OK      investigacion/servicios/10-cro.md — sin incidencias
+> V6  OK      investigacion/servicios/11-datos-automatizacion.md — sin incidencias
+> V6  OK      investigacion/servicios/resumen.md — sin incidencias
+> V6  FALLO   investigacion/prueba-social.md — marcador de plantilla «Lorem» en la línea 135
+> V6  FALLO   investigacion/prueba-social.md — marcador de plantilla «Lorem» en la línea 136
+> V6  OK      diseno/patrones-benchmark.md — sin incidencias
+> V6  OK      diseno/sistema-web-assets.md — sin incidencias
+> V7  OK      investigacion/fichas — 20 fichas: 10 comparables, 10 referentes/especialistas
+> V8  OK      investigacion/fichas/artefact.md — sin incidencias
+> V8  OK      investigacion/fichas/atomic-digital-marketing.md — sin incidencias
+> V8  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V8  OK      investigacion/fichas/bravoure.md — sin incidencias
+> V8  OK      investigacion/fichas/brolik.md — sin incidencias
+> V8  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V8  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V8  OK      investigacion/fichas/edenspiekermann.md — sin incidencias
+> V8  OK      investigacion/fichas/flightpath.md — sin incidencias
+> V8  OK      investigacion/fichas/good-rebels.md — sin incidencias
+> V8  OK      investigacion/fichas/instrument.md — sin incidencias
+> V8  FALLO   investigacion/fichas/lounge-lizard.md — https://www.loungelizard.com/about-us/ → HTTP 404 (tras 3 intentos)
+> V8  FALLO   investigacion/fichas/lounge-lizard.md — https://www.loungelizard.com/contact-us/ → HTTP 404 (tras 3 intentos)
+> V8  FALLO   investigacion/fichas/lounge-lizard.md — https://www.loungelizard.com/services/branding/ → HTTP 404 (tras 3 intentos)
+> V8  FALLO   investigacion/fichas/lounge-lizard.md — https://www.loungelizard.com/services/mobile-apps/ → HTTP 404 (tras 3 intentos)
+> V8  OK      investigacion/fichas/major-tom.md — sin incidencias
+> V8  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V8  FALLO   investigacion/fichas/monopo.md — https://monopo.london/about → HTTP 404 (tras 3 intentos)
+> V8  OK      investigacion/fichas/neo-consulting.md — sin incidencias
+> V8  OK      investigacion/fichas/redbility.md — sin incidencias
+> V8  OK      investigacion/fichas/single-grain.md — sin incidencias
+> V8  FALLO   investigacion/fichas/upraw-media.md — https://www.uprawmedia.com/about → HTTP 404 (tras 3 intentos)
+> V8  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V8  OK      investigacion/servicios/01-branding.md — sin incidencias
+> V8  OK      investigacion/servicios/02-social-media.md — sin incidencias
+> V8  OK      investigacion/servicios/03-desarrollo-web.md — sin incidencias
+> V8  OK      investigacion/servicios/04-campanas-publicitarias.md — sin incidencias
+> V8  OK      investigacion/servicios/05-performance.md — sin incidencias
+> V8  OK      investigacion/servicios/06-desarrollo-apps-software.md — sin incidencias
+> V8  OK      investigacion/servicios/07-fotografia-video.md — sin incidencias
+> V8  OK      investigacion/servicios/08-inteligencia-artificial.md — sin incidencias
+> V8  OK      investigacion/servicios/09-seo-geo.md — sin incidencias
+> V8  OK      investigacion/servicios/10-cro.md — sin incidencias
+> V8  OK      investigacion/servicios/11-datos-automatizacion.md — sin incidencias
+> V8  OK      investigacion/servicios/resumen.md — sin incidencias
+> V8  AVISO   investigacion/prueba-social.md — https://clutch.co/how-it-works → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/prueba-social.md — https://www.facebook.com/business/learn/certification → HTTP 400 (bloqueo antibot o de región): respaldar con captura
+> V8  OK      diseno/patrones-benchmark.md — sin incidencias
+> V8  OK      diseno/sistema-web-assets.md — sin incidencias
+>
+> 17 FALLOS · 2 AVISOS
+> ```
+>
+> </details>
+>
+> <details>
+> <summary>Diferencia entre ambas ejecuciones (`diff`)</summary>
+>
+> ```text
+> 177c177
+> < V8  AVISO   investigacion/prueba-social.md — https://clutch.co/how-it-works → HTTP 403 (bloqueo antibot o de región): respaldar con captura (tras 2 intentos)
+> ---
+> > V8  AVISO   investigacion/prueba-social.md — https://clutch.co/how-it-works → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> ```
+>
+> </details>
+>
+> <details>
+> <summary>Salida real contra scripts/pruebas/, con red (exit 1)</summary>
+>
+> ```text
+> Verificación de la investigación · raíz: /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-005-verificador-investigacion-250007/scripts/pruebas · V8: con red
+> V1  OK      investigacion/fichas/aviso-v5.md — sin incidencias
+> V1  OK      investigacion/fichas/aviso-v8.md — sin incidencias
+> V1  OK      investigacion/fichas/correcta-cita.md — sin incidencias
+> V1  OK      investigacion/fichas/correcta-formatos.md — sin incidencias
+> V1  OK      investigacion/fichas/correcta-variantes.md — sin incidencias
+> V1  OK      investigacion/fichas/correcta.md — sin incidencias
+> V1  FALLO   investigacion/fichas/falla-v1.md — País / ciudades: falta o está vacío
+> V1  FALLO   investigacion/fichas/falla-v1.md — Fecha de consulta no es AAAA-MM-DD (26/09/2026)
+> V1  FALLO   investigacion/fichas/falla-v1.md — Tamaño del equipo: cifra sin fuente (45 personas)
+> V1  OK      investigacion/fichas/falla-v2.md — sin incidencias
+> V1  OK      investigacion/fichas/falla-v2b.md — sin incidencias
+> V1  OK      investigacion/fichas/falla-v2c.md — sin incidencias
+> V1  OK      investigacion/fichas/falla-v2d.md — sin incidencias
+> V1  OK      investigacion/fichas/falla-v2e.md — sin incidencias
+> V1  OK      investigacion/fichas/falla-v3.md — sin incidencias
+> V1  OK      investigacion/fichas/falla-v4.md — sin incidencias
+> V1  OK      investigacion/fichas/falla-v5-filas.md — sin incidencias
+> V1  OK      investigacion/fichas/falla-v5-negrita.md — sin incidencias
+> V1  OK      investigacion/fichas/falla-v5-sin-tabla.md — sin incidencias
+> V1  OK      investigacion/fichas/falla-v5.md — sin incidencias
+> V1  OK      investigacion/fichas/falla-v6.md — sin incidencias
+> V1  OK      investigacion/fichas/falla-v8.md — sin incidencias
+> V2  OK      investigacion/fichas/aviso-v5.md — sin incidencias
+> V2  OK      investigacion/fichas/aviso-v8.md — sin incidencias
+> V2  OK      investigacion/fichas/correcta-cita.md — sin incidencias
+> V2  OK      investigacion/fichas/correcta-formatos.md — sin incidencias
+> V2  OK      investigacion/fichas/correcta-variantes.md — sin incidencias
+> V2  OK      investigacion/fichas/correcta.md — sin incidencias
+> V2  OK      investigacion/fichas/falla-v1.md — sin incidencias
+> V2  FALLO   investigacion/fichas/falla-v2.md — captura capturas/falla-v2-caso.png: no es PNG ni WebP válido
+> V2  FALLO   investigacion/fichas/falla-v2.md — captura citada no existe: capturas/falla-v2-home.png
+> V2  FALLO   investigacion/fichas/falla-v2.md — captura capturas/falla-v2-servicios.png: pesa 0 bytes
+> V2  FALLO   investigacion/fichas/falla-v2b.md — captura capturas/falla-v2b-home.png: PNG truncado (fragmento incompleto)
+> V2  FALLO   investigacion/fichas/falla-v2b.md — captura capturas/falla-v2b-servicios.png: PNG: CRC incorrecto en IDAT
+> V2  FALLO   investigacion/fichas/falla-v2c.md — captura capturas/falla-v2c-home.webp: WebP: fragmento VP8 demasiado corto
+> V2  FALLO   investigacion/fichas/falla-v2d.md — captura capturas/falla-v2d-servicios.png: PNG: byte de filtro no válido en una fila (debe ser 0 a 4)
+> V2  FALLO   investigacion/fichas/falla-v2e.md — captura capturas/falla-v2e-anmf-sin-imagen.webp: WebP: fotograma ANMF sin imagen
+> V2  FALLO   investigacion/fichas/falla-v2e.md — captura capturas/falla-v2e-png-compresion.png: PNG: método de compresión, de filtro o de entrelazado no válido
+> V2  FALLO   investigacion/fichas/falla-v2e.md — captura capturas/falla-v2e-png-entrelazado.png: PNG: el tamaño de los datos de imagen no corresponde a las dimensiones
+> V2  FALLO   investigacion/fichas/falla-v2e.md — captura capturas/falla-v2e-png-profundidad.png: PNG: tipo de color o profundidad no válidos
+> V2  FALLO   investigacion/fichas/falla-v2e.md — captura capturas/falla-v2e-vp8-codigo.webp: WebP: fragmento VP8 sin código de inicio
+> V2  FALLO   investigacion/fichas/falla-v2e.md — captura capturas/falla-v2e-vp8-no-clave.webp: WebP: fragmento VP8 que no es un fotograma clave
+> V2  FALLO   investigacion/fichas/falla-v2e.md — captura capturas/falla-v2e-vp8-particion.webp: WebP: fragmento VP8 con la primera partición incompleta
+> V2  FALLO   investigacion/fichas/falla-v2e.md — captura capturas/falla-v2e-vp8l-firma.webp: WebP: fragmento VP8L sin signatura
+> V2  FALLO   investigacion/fichas/falla-v2e.md — captura capturas/falla-v2e-vp8l-version.webp: WebP: fragmento VP8L con versión no válida
+> V2  FALLO   investigacion/fichas/falla-v2e.md — captura capturas/falla-v2e-vp8x-sin-imagen.webp: WebP sin datos de imagen
+> V2  OK      investigacion/fichas/falla-v3.md — sin incidencias
+> V2  OK      investigacion/fichas/falla-v4.md — sin incidencias
+> V2  OK      investigacion/fichas/falla-v5-filas.md — sin incidencias
+> V2  OK      investigacion/fichas/falla-v5-negrita.md — sin incidencias
+> V2  OK      investigacion/fichas/falla-v5-sin-tabla.md — sin incidencias
+> V2  OK      investigacion/fichas/falla-v5.md — sin incidencias
+> V2  OK      investigacion/fichas/falla-v6.md — sin incidencias
+> V2  OK      investigacion/fichas/falla-v8.md — sin incidencias
+> V3  OK      investigacion/fichas/aviso-v5.md — sin incidencias
+> V3  OK      investigacion/fichas/aviso-v8.md — sin incidencias
+> V3  OK      investigacion/fichas/correcta-cita.md — sin incidencias
+> V3  OK      investigacion/fichas/correcta-formatos.md — sin incidencias
+> V3  OK      investigacion/fichas/correcta-variantes.md — sin incidencias
+> V3  OK      investigacion/fichas/correcta.md — sin incidencias
+> V3  OK      investigacion/fichas/falla-v1.md — sin incidencias
+> V3  OK      investigacion/fichas/falla-v2.md — sin incidencias
+> V3  OK      investigacion/fichas/falla-v2b.md — sin incidencias
+> V3  OK      investigacion/fichas/falla-v2c.md — sin incidencias
+> V3  OK      investigacion/fichas/falla-v2d.md — sin incidencias
+> V3  OK      investigacion/fichas/falla-v2e.md — sin incidencias
+> V3  FALLO   investigacion/fichas/falla-v3.md — faltan capturas propias (caso); se exigen home, servicios y caso
+> V3  OK      investigacion/fichas/falla-v4.md — sin incidencias
+> V3  OK      investigacion/fichas/falla-v5-filas.md — sin incidencias
+> V3  OK      investigacion/fichas/falla-v5-negrita.md — sin incidencias
+> V3  OK      investigacion/fichas/falla-v5-sin-tabla.md — sin incidencias
+> V3  OK      investigacion/fichas/falla-v5.md — sin incidencias
+> V3  OK      investigacion/fichas/falla-v6.md — sin incidencias
+> V3  OK      investigacion/fichas/falla-v8.md — sin incidencias
+> V4  FALLO   investigacion/capturas/falla-v4-caso.png — idéntica (mismo SHA-256) a investigacion/capturas/falla-v4-home.png
+> V4  FALLO   investigacion/capturas/falla-v4-home.png — idéntica (mismo SHA-256) a investigacion/capturas/falla-v4-caso.png
+> V5  AVISO   investigacion/fichas/aviso-v5.md — «Branding»: portada única declarada; respaldar con la captura de la home
+> V5  OK      investigacion/fichas/aviso-v8.md — sin incidencias
+> V5  OK      investigacion/fichas/correcta-cita.md — sin incidencias
+> V5  OK      investigacion/fichas/correcta-formatos.md — sin incidencias
+> V5  OK      investigacion/fichas/correcta-variantes.md — sin incidencias
+> V5  OK      investigacion/fichas/correcta.md — sin incidencias
+> V5  OK      investigacion/fichas/falla-v1.md — sin incidencias
+> V5  OK      investigacion/fichas/falla-v2.md — sin incidencias
+> V5  OK      investigacion/fichas/falla-v2b.md — sin incidencias
+> V5  OK      investigacion/fichas/falla-v2c.md — sin incidencias
+> V5  OK      investigacion/fichas/falla-v2d.md — sin incidencias
+> V5  OK      investigacion/fichas/falla-v2e.md — sin incidencias
+> V5  OK      investigacion/fichas/falla-v3.md — sin incidencias
+> V5  OK      investigacion/fichas/falla-v4.md — sin incidencias
+> V5  FALLO   investigacion/fichas/falla-v5-filas.md — la tabla de servicios debe tener las filas 1 a 11 (hay 10)
+> V5  FALLO   investigacion/fichas/falla-v5-negrita.md — «Branding» marcado Sí sin URL de su página (valor: vacío)
+> V5  FALLO   investigacion/fichas/falla-v5-sin-tabla.md — falta la sección «Frente al catálogo de Pharmaco»
+> V5  FALLO   investigacion/fichas/falla-v5.md — «Branding» marcado Sí sin URL de su página (valor: https://www.iana.org/)
+> V5  FALLO   investigacion/fichas/falla-v5.md — «Social Media» marcado Sí sin URL de su página (valor: vacío)
+> V5  OK      investigacion/fichas/falla-v6.md — sin incidencias
+> V5  OK      investigacion/fichas/falla-v8.md — sin incidencias
+> V6  OK      investigacion/fichas/aviso-v5.md — sin incidencias
+> V6  OK      investigacion/fichas/aviso-v8.md — sin incidencias
+> V6  OK      investigacion/fichas/correcta-cita.md — sin incidencias
+> V6  OK      investigacion/fichas/correcta-formatos.md — sin incidencias
+> V6  OK      investigacion/fichas/correcta-variantes.md — sin incidencias
+> V6  OK      investigacion/fichas/correcta.md — sin incidencias
+> V6  OK      investigacion/fichas/falla-v1.md — sin incidencias
+> V6  OK      investigacion/fichas/falla-v2.md — sin incidencias
+> V6  OK      investigacion/fichas/falla-v2b.md — sin incidencias
+> V6  OK      investigacion/fichas/falla-v2c.md — sin incidencias
+> V6  OK      investigacion/fichas/falla-v2d.md — sin incidencias
+> V6  OK      investigacion/fichas/falla-v2e.md — sin incidencias
+> V6  OK      investigacion/fichas/falla-v3.md — sin incidencias
+> V6  OK      investigacion/fichas/falla-v4.md — sin incidencias
+> V6  OK      investigacion/fichas/falla-v5-filas.md — sin incidencias
+> V6  OK      investigacion/fichas/falla-v5-negrita.md — sin incidencias
+> V6  OK      investigacion/fichas/falla-v5-sin-tabla.md — sin incidencias
+> V6  OK      investigacion/fichas/falla-v5.md — sin incidencias
+> V6  FALLO   investigacion/fichas/falla-v6.md — marcador de plantilla «TODO» en la línea 14
+> V6  FALLO   investigacion/fichas/falla-v6.md — marcador de plantilla «(o «no verificado»)» en la línea 14
+> V6  OK      investigacion/fichas/falla-v8.md — sin incidencias
+> V7  FALLO   investigacion/fichas — 19 comparables; se esperan 10
+> V7  FALLO   investigacion/fichas — 1 referentes/especialistas; se esperan 10
+> V8  OK      investigacion/fichas/aviso-v5.md — sin incidencias
+> V8  AVISO   investigacion/fichas/aviso-v8.md — https://httpbin.org/status/400 → HTTP 400 (bloqueo antibot o de región): respaldar con captura
+> V8  OK      investigacion/fichas/correcta-cita.md — sin incidencias
+> V8  OK      investigacion/fichas/correcta-formatos.md — sin incidencias
+> V8  OK      investigacion/fichas/correcta-variantes.md — sin incidencias
+> V8  OK      investigacion/fichas/correcta.md — sin incidencias
+> V8  OK      investigacion/fichas/falla-v1.md — sin incidencias
+> V8  OK      investigacion/fichas/falla-v2.md — sin incidencias
+> V8  OK      investigacion/fichas/falla-v2b.md — sin incidencias
+> V8  OK      investigacion/fichas/falla-v2c.md — sin incidencias
+> V8  OK      investigacion/fichas/falla-v2d.md — sin incidencias
+> V8  OK      investigacion/fichas/falla-v2e.md — sin incidencias
+> V8  OK      investigacion/fichas/falla-v3.md — sin incidencias
+> V8  OK      investigacion/fichas/falla-v4.md — sin incidencias
+> V8  OK      investigacion/fichas/falla-v5-filas.md — sin incidencias
+> V8  OK      investigacion/fichas/falla-v5-negrita.md — sin incidencias
+> V8  OK      investigacion/fichas/falla-v5-sin-tabla.md — sin incidencias
+> V8  OK      investigacion/fichas/falla-v5.md — sin incidencias
+> V8  OK      investigacion/fichas/falla-v6.md — sin incidencias
+> V8  FALLO   investigacion/fichas/falla-v8.md — https://enlace-inexistente.invalid/servicio → error de red: [Errno 8] nodename nor servname provided, or not known (tras 3 intentos)
+> V8  FALLO   investigacion/fichas/falla-v8.md — https://example.com/pagina-que-no-existe → HTTP 404 (tras 3 intentos)
+>
+> 34 FALLOS · 2 AVISOS
+> ```
+>
+> </details>
