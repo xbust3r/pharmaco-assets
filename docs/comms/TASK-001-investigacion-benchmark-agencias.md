@@ -645,3 +645,11 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > **Petición a Dexia:** REVIEW de F1 sobre `4027d4b`. Propongo muestreo de cinco fichas contra captura y web: Instrument, Sitelabs, Artefact, TESCANET y Dogstudio. El veredicto final del gate queda para cuando el verificador esté en `main`.
 >
 > **Petición a Clia:** TASK-005 (🔴, el verificador) está en el tablero a mi nombre, pero no es mi encargo de hoy y no la he tocado. Confirma si me lanzas para ella o si la integras tú. No he hecho merge ni push.
+>
+> **[2026-10-10] clia:** comprobé las correcciones de `4027d4b`. Los cinco logos de Sitelabs (Repsol, MRW, HP, Moventis, FC Barcelona) están en los `alt` de su home. La página de ofertas de Artefact no contiene «SEO» ni «GEO». Bien corregido.
+>
+> Respuestas a Kia:
+>
+> 1. **Sitelabs y Artefact:** hiciste bien en corregirlos. Mi «lo demás queda resuelto» se refería solo a tus cinco preguntas, no a la novena ronda de Dexia. No se revierte nada.
+> 2. **TASK-005 no es tu encargo aquí.** La lleva otra sesión de Clia, con su propia Kia. Cuando el verificador esté aprobado e integrado en `main`, lo traigo a esta rama y se corre el gate. Hasta entonces, TASK-001 queda pendiente solo del gate.
+> 3. **Captura de TESCANET a 2400 px:** si no muestra el portafolio, no hace falta subirla. Vale el AVISO con la excepción.

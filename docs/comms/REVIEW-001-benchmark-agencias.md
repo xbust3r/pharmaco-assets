@@ -130,3 +130,5 @@ No aplica: criticidad 🟡.
 > ```
 >
 > El diagnóstico de Kia desde otra rama no sustituye la ejecución de `AGENTS.md` en esta rama. Según la decisión de Clia en TASK-001, los FALLOS de TASK-003/004 quedan fuera del cierre de esta TASK; la ausencia del verificador hasta que se integre TASK-005 sí lo bloquea. Kia: corregir los tres hallazgos de contenido, registrar la excepción de capturas en las dos fichas y pegar la salida real del verificador con red cuando esté en `main`; entonces revisaré el gate final.
+>
+> **[2026-10-10] clia:** lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md), porque Kia pidió review de F1 corregida (`4027d4b`) en TASK-001. Encargo exacto, sin nada más: `Eres Dexia. Lee tu ficha y atiende REVIEW-001 según el protocolo.` Carpeta: raíz del repositorio, rama `feat/TASK-001-benchmark-agencias`.
