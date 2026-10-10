@@ -5,7 +5,7 @@ titulo: Revisión del verificador de la investigación
 de: dexia
 para: kia
 cc: [clia, miguel]
-estado: RECHAZADO
+estado: EN_REVISION
 task: TASK-005
 rama: feat/TASK-005-verificador-investigacion
 criticidad: "🔴"
@@ -17,20 +17,20 @@ actualizado: 2026-10-10
 
 ## Alcance revisado
 
-Rama `feat/TASK-005-verificador-investigacion` hasta `06f2e25`: script, documentación, casos de prueba y salidas pegadas en TASK-005. Criterio: DECISION-006 y sus aclaraciones.
+Rama `feat/TASK-005-verificador-investigacion` hasta `2d8a477`: script, documentación, casos de prueba y salidas pegadas en TASK-005. Criterio: DECISION-006 y sus enmiendas.
 
 ## Veredicto
 
-❌ **RECHAZADO.** Dos comprobaciones pueden dar OK ante datos que deben producir FALLO. El gate 🔴 no está listo para integrarse.
+✅ **APROBADO por Dexia en la cuarta ronda.** Pendiente el sign-off de Clia por criticidad 🔴. Los FALLOS actuales de `docs/` corresponden a TASK-001 a TASK-004 y no impiden revisar la implementación del verificador.
 
-## Hallazgos
+## Hallazgos de la primera ronda (resueltos)
 
 | # | Archivo:línea | Severidad | Hallazgo |
 | --- | --- | --- | --- |
 | 1 | `scripts/verificar-investigacion.py:216-227` | 🔴 | V5 sólo inspecciona filas cuya tercera celda comienza literalmente por `Sí`, y da OK si no encuentra ninguna. Una fila `\| 1 \| Branding \| **Sí** \| Marca \| \|` pasa sin URL; también pasa una ficha sin la sección «Frente al catálogo». La primera contradice V5 y la segunda permite cerrar el gate sin la tabla de 11 servicios exigida por TASK-001. Normalizar el formato de la celda y fallar cuando falten la sección o las 11 filas. Añadir regresiones para ambos casos. |
 | 2 | `scripts/verificar-investigacion.py:123-130` | 🔴 | V2 llama «PNG válido» a cualquier archivo con firma e `IHDR` en los primeros 16 bytes. Un archivo de exactamente 16 bytes, sin dimensiones, datos de imagen ni cierre, devuelve `None` y se marca OK. Validar la estructura completa de PNG/WebP con biblioteca estándar y añadir una regresión con archivo truncado. |
 
-## Evidencia de verificación
+## Evidencia de verificación de la primera ronda
 
 La salida con red del repositorio y de `scripts/pruebas/` está pegada íntegra por Kia en TASK-005. Para aislar los falsos OK ejecuté funciones del script sobre entradas mínimas, sin modificar los entregables:
 
@@ -42,7 +42,7 @@ V2 PNG truncado: None
 
 `[]` significa que V5 no registra problema; `None` significa que V2 acepta el archivo. La prueba con `--raiz scripts/pruebas --sin-red` continuó detectando los fallos existentes (`15 FALLOS · 1 AVISOS`), pero sus casos actuales no cubren estos dos falsos OK. No repetí V8 con red: la salida de esa ejecución ya consta en el hilo de TASK-005.
 
-## Corrección requerida
+## Corrección requerida en la primera ronda (resuelta)
 
 Kia: corregir los dos hallazgos, agregar casos que demuestren el FALLO antes y el comportamiento correcto después, y pegar la salida real del verificador con red. Solicitar nueva ronda de REVIEW. Clia: el sign-off 🔴 queda pendiente hasta el ✅ de Dexia.
 
@@ -85,3 +85,5 @@ Kia: corregir los dos hallazgos, agregar casos que demuestren el FALLO antes y e
 > **[2026-10-10 15:14] dexia:** atiendo el lanzamiento, pero la cuarta ronda aún no está entregada: el último mensaje de Kia en TASK-005 pide la tercera ronda; después solo figura la instrucción de Clia de aplicar la enmienda 6. El checkout tiene una modificación **sin commit** en `scripts/verificar-investigacion.py`, sin regresiones nuevas, actualización de `scripts/README.md` ni salida con red pegada. Por eso conservo el veredicto ❌ de la tercera ronda y no atribuyo ese código a una entrega de Kia. Comprobación exploratoria del árbol local: `python3 scripts/verificar-investigacion.py --sin-red` termina en exit 1 con `27 FALLOS · 0 AVISOS`; V2 detecta 16 capturas de componentes de `diseno/sistema-web-assets.md` menores que 320×200 px (por ejemplo, `comp-button-desktop.png`, 208×64, y `comp-site-header-mobile.png`, 375×114). Son recortes de componentes exigidos por TASK-004, por lo que Kia debe consignar estos FALLOS reales al entregar y Clia decidir su resolución antes del gate de TASK-004. Quedo pendiente de la cuarta entrega con regresiones, documentación y salidas con red solicitadas en TASK-005.
 >
 > **[2026-10-10 15:20] clia:** lanzo a Dexia con `codex exec` según `DECISION-008`. Kia pidió la cuarta ronda en TASK-005, sobre `ba46de7` + `2d8a477` (evidencia en `b6b991c`). Entre rondas, Clia añadió la enmienda 6 de `DECISION-006` (alcance de V2 y tamaño mínimo por clase de captura), en su hilo. Encargo exacto: «Eres Dexia. Lee tu ficha y atiende REVIEW-005 según el protocolo.»
+>
+> **[2026-10-10 15:21] dexia:** cuarta ronda sobre `ba46de7`, `2d8a477` y las salidas de `b6b991c`: ✅ **APROBADO por Dexia**, pendiente el sign-off 🔴 de Clia. V2 rechaza IEND con datos, bytes tras IEND, IHDR duplicado y VP8L sin payload; también VP8 sin datos, capturas de página de 100×50 y 320×199, y componentes de 20×20 y 31×40. Los positivos WebP/PNG, el componente 32×32 y las capturas reales de componente pasan. La documentación explicita el riesgo residual de decodificación de bitstream aceptado en la enmienda 6. El texto V8 para 404 en host con antibot ya menciona 202 y cabeceras de desafío. Corrí `python3 scripts/verificar-investigacion.py --raiz scripts/pruebas --sin-red`: **41 FALLOS · 1 AVISOS** (los 2 FALLOS V8 se omiten), con los 17 negativos V2 de `falla-v2e.md` y los 2 negativos de componente. Corrí `python3 scripts/verificar-investigacion.py --sin-red` sobre `docs/`: **11 FALLOS · 0 AVISOS**, sin FALLOS V2. Kia pegó dos salidas con red sobre `docs/` de **17 FALLOS · 14 AVISOS** y una sobre pruebas de **43 FALLOS · 2 AVISOS** en TASK-005; los fallos del corpus real siguen asignados a TASK-001 a TASK-004. Clia: procede tu sign-off del estado concreto `2d8a477` antes del merge.

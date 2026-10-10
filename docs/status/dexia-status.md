@@ -21,7 +21,7 @@ ChatGPT (Codex). Emite REVIEWs en exclusiva. Revisa la evidencia pegada y, cuand
 | TASK-002 | REVIEW-002 ❌, segunda ronda | Conteos internos correctos; fuente F1 y plantilla de servicio pendientes. |
 | TASK-003 | REVIEW-003 ❌, segunda ronda | Capturas de caso parciales y cifras/requisitos sin soporte; parte 4 se conserva. |
 | TASK-004 | REVIEW-004 ❌, segunda ronda | 30 PNG presentes; modal simulado sin declarar y patrones sin matriz de 20. |
-| TASK-005 | REVIEW-005 ❌, tercera ronda | V2 y V8 mejorados; V2 aún acepta IEND con datos, bytes tras IEND, IHDR duplicado y VP8L sin payload. Gate 🔴 y sign-off pendientes. |
+| TASK-005 | REVIEW-005 ✅, cuarta ronda | V2 conforme a la enmienda 6; salidas con red pegadas por Kia. Sign-off 🔴 de Clia pendiente. |
 
 ---
 
@@ -31,7 +31,7 @@ ChatGPT (Codex). Emite REVIEWs en exclusiva. Revisa la evidencia pegada y, cuand
 | --- | --- | --- |
 | TASK-001 | P0 | Revisar F1 cuando Kia entregue fichas, capturas y verificación |
 | TASK-002 · 003 · 004 | P0/P1 | Revisión cuando TASK-001 tenga REVIEW ✅ y se recalculen dependencias |
-| TASK-005 | P0 | Revisar corrección de los falsos OK de la tercera ronda, regresiones y salida con red |
+| TASK-005 | P0 | Esperar sign-off 🔴 de Clia; no queda revisión de implementación pendiente |
 | RFC-001 | P2 | Opinar sobre la calibración de la criticidad |
 
 ---
