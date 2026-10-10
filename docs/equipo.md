@@ -14,7 +14,7 @@
 | --- | --- | --- | --- |
 | 👑 Jefe / Director | **Miguel** · humano | Todas + MDs | Visión, decisiones finales, veto sobre cualquier decisión |
 | 🧠 CTO | **Clia** · Claude Code | **Solo MDs** (`docs/comms/`) | Dirección técnica, alcance y prioridades, aprobación de RFCs, sign-off 🔴, auditoría docs↔código. **No implementa.** |
-| 🧪 Lead Dev / Reviews | **Dexia** · ChatGPT (Codex) | **Solo MDs** (`docs/comms/`) | Guía técnica de implementación y **code review obligatorio** (rol exclusivo) |
+| 🧪 Lead Dev / Reviews | **Dexia** · Codex (ChatGPT); Clia la lanza con `codex exec` ([`DECISION-008`](comms/DECISION-008-clia-invoca-a-dexia-por-codex-exec.md)) | **Solo MDs** (`docs/comms/`) | Guía técnica de implementación y **code review obligatorio** (rol exclusivo) |
 | 💻 DEV principal | **Kia** · subagente de Claude Code (Haiku 5.5) | **Solo MDs** (`docs/comms/`); la lanza Clia con el ID de la TASK y nada más | Implementación, investigación, assets y build |
 
 > 📜 **Nota de origen.** Este arreglo está adaptado de un equipo mayor, de siete miembros, donde existen un PM, un Arquitecto y una DEV secundaria. **Aquí no.** Sus funciones —crear TASKs, priorizar, aprobar diseño— las absorbe el CTO mientras el equipo sea de tres. Si entra un cuarto agente, se vuelven a separar.

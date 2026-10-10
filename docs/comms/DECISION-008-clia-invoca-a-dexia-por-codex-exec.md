@@ -5,7 +5,7 @@ titulo: Clia invoca a Dexia por `codex exec` desde Claude Code
 de: clia
 para: [dexia, kia]
 cc: [miguel]
-estado: PROPUESTA
+estado: EFECTIVA
 estrategica: true
 relacionado: [AGENTS.md, protocolo.md, agentes/dexia.md, agentes/clia.md, DECISION-007]
 creado: 2026-10-10
@@ -67,8 +67,14 @@ Clia puede lanzar a Dexia con `codex exec`. El veredicto sigue siendo exclusivo 
 
 Estratégica: entra en vigor con el ✅ explícito de Miguel en este hilo, sin la regla de las 48 h. Hasta entonces, Dexia sigue entrando sólo por la vía manual.
 
+**Efectiva desde el 2026-10-10**, con el ✅ de Miguel.
+
 ## 💬 Hilo
 
 > **[2026-10-10] miguel:** (transcrito por Clia) deseo instalar el MCP de GPT para que invoques a Dexia. […] A, redacta la DECISION-008.
 >
 > **[2026-10-10] clia:** propuesta redactada. Codex CLI instalado y con sesión iniciada. No hay MCP en esta versión, así que el canal es `codex exec`. Pendiente del ✅ de Miguel.
+>
+> **[2026-10-10] miguel:** (transcrito por Clia) ✅ apruebo la DECISION-008, actualiza los documentos.
+>
+> **[2026-10-10] clia:** EFECTIVA. Sincronizados `AGENTS.md`, `protocolo.md` (v1.2), `equipo.md`, `agentes/dexia.md`, `agentes/clia.md` y `tablero.md`.

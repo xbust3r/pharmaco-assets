@@ -9,16 +9,18 @@
 
 ## 🎯 Problema que resuelve
 
-El equipo vive en **tres plataformas que no se hablan entre sí**:
+El equipo vive en **plataformas distintas**:
 
 | Agente | Nombre | Plataforma |
 | --- | --- | --- |
 | CTO | **Clia** | Claude Code |
-| Lead Dev / Reviews | **Dexia** | ChatGPT (Codex) |
+| Lead Dev / Reviews | **Dexia** | Codex (ChatGPT) — manual o lanzada por Clia con `codex exec` |
 | DEV principal | **Kia** | Subagente de Claude Code (Haiku 5.5) |
 | Jefe | **Miguel** | Todas |
 
 > Los agentes se nombran **Clia**, **Dexia** y **Kia**; ésos son sus identificadores en `de:`, `para:`, `cc:` y en las entradas del hilo. «Claude», «Codex» y «Antigravity» son **las plataformas**, y se siguen nombrando como tales cuando se habla de la herramienta.
+
+> **Excepción ([`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md)):** Clia puede lanzar a Dexia con `codex exec`. El encargo es fijo («Eres Dexia. Lee tu ficha y atiende REVIEW-XXX según el protocolo.»), queda escrito en el hilo antes de lanzarla, y lo que Dexia conteste por consola no cuenta: vale sólo lo que escriba en el MD.
 
 El único terreno común es **el repositorio Git**. Por tanto: **los archivos MD son los mensajes y Git es el bus**. Este protocolo define cómo se escriben para que los roles se respeten y nada se pierda.
 
@@ -168,13 +170,14 @@ La criticidad **no se hereda del proyecto de origen**. Se mide por **cuánto se 
 2. Si hay diseño que decidir: RFC en el hilo → el CTO aprueba
 3. Kia la toma y trabaja en feat/TASK-XXX-slug                    [EN_PROGRESO]
 4. Pide review en el hilo → Dexia emite REVIEW-YYY                 [EN_REVISION]
+   └─ Clia la lanza en esa sesión (DECISION-008), o Miguel a mano
    └─ ✅ / ⚠️ / ❌ con hallazgos; Kia corrige e itera
 5. Si es 🔴 → Clia (CTO) firma el sign-off en REVIEW-YYY
 6. Kia mergea → el CTO verifica criterios y cierra                 [CERRADA ✅]
 7. Cada agente actualiza su status/{agente}-status.md
 ```
 
-**Dexia no ejecuta código.** Cuando necesite evidencia, la pide en el hilo y la corre Kia —o el CTO— y se pega la salida.
+**Dexia no escribe código de producto, pero puede ejecutar comprobaciones** cuando la lanza Clia con `codex exec` (`DECISION-008`): la verificación de `AGENTS.md`, `git`, lectura de archivos y consulta de fuentes. La salida que pegue vale como evidencia. Cuando entra por la vía manual y no puede ejecutar, pide la evidencia en el hilo y la corre Kia —o el CTO—.
 
 Ejemplo completo de un ciclo (rechazo → corrección → firma → merge): [`../metodo/ejemplos/REVIEW-001-ciclo-completo-de-review.md`](../metodo/ejemplos/REVIEW-001-ciclo-completo-de-review.md).
 
@@ -224,5 +227,6 @@ docs/
 
 | Versión | Fecha | Autor | Acción |
 | --- | --- | --- | --- |
+| v1.2 | 2026-10-10 | Clia (CTO) | Clia puede lanzar a Dexia con `codex exec` (`DECISION-008`) |
 | v1.1 | 2026-10-08 | Clia (CTO) | Kia reemplaza a Ania (`DECISION-007`) |
 | v1.0 | 2026-09-26 | Clia (CTO) | Adopción del método en Pharmaco Assets. Criticidad y verificación provisionales hasta `RFC-001` |
