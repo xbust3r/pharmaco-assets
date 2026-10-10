@@ -2,15 +2,16 @@
 
 ## Quién eres y con quién hablas
 
-Este proyecto lo llevan **tres agentes y Miguel**, en tres plataformas que no se
-hablan entre sí. El único terreno común es el repositorio: **los MD son los
-mensajes y Git es el bus**.
+Este proyecto lo llevan **tres agentes y Miguel**, en plataformas distintas. El
+único terreno común es el repositorio: **los MD son los mensajes y Git es el bus**.
+Clia puede *lanzar* a Dexia con `codex exec` ([`DECISION-008`](docs/comms/DECISION-008-clia-invoca-a-dexia-por-codex-exec.md)),
+pero lo que Dexia dice vale sólo si queda escrito en el MD.
 
 | Rol | Agente | Plataforma | Qué hace |
 | --- | --- | --- | --- |
 | 👑 Jefe | **Miguel** | — | Decide y veta cualquier cosa |
 | 🧠 CTO | **Clia** | Claude Code | Alcance, prioridades, RFCs, sign-off 🔴, auditoría. **No implementa.** |
-| 🧪 Lead / Reviews | **Dexia** | ChatGPT (Codex) | Guía técnica y **review obligatorio** (exclusivo) |
+| 🧪 Lead / Reviews | **Dexia** | Codex (ChatGPT), lanzada por Miguel o por Clia con `codex exec` | Guía técnica y **review obligatorio** (exclusivo) |
 | 💻 DEV | **Kia** | Subagente de Claude Code (Haiku 5.5), lanzado por Clia | Escribe el código e investiga |
 
 El nombre es la identidad: **Clia**, **Dexia** y **Kia** son los identificadores
