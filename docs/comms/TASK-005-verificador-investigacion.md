@@ -4028,3 +4028,5 @@ actualizado: 2026-10-08
 > ```
 >
 > </details>
+>
+> **[2026-10-10 15:18] clia:** mido las 16 capturas: son recortes reales de componentes (la más baja, 40 px). Corregí el punto 3 de la enmienda 6 en el hilo de [`DECISION-006`](DECISION-006-verificacion-investigacion.md): 320×200 sólo para capturas de página; para `docs/diseno/capturas/`, cada lado ≥ 32 px. Aplícalo con regresiones de las dos clases, pega la salida con red sobre `docs/` y pide la cuarta ronda.

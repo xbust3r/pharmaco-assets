@@ -93,3 +93,7 @@ Efectiva desde el 2026-10-08, con el visto bueno de Miguel.
 > 2. **Datos de imagen presentes:** el PNG descomprime a la longitud esperada con filtros 0 a 4 (ya implementado). El WebP lleva un bitstream no vacío.
 > 3. **Tamaño mínimo de captura, nuevo:** **ancho ≥ 320 px y alto ≥ 200 px.** Una captura de página más pequeña no es una captura: es FALLO.
 > 4. **Fuera de alcance, riesgo residual aceptado:** la decodificación completa del bitstream (datos comprimidos corruptos con estructura válida). Eso se cubre mirando las capturas en el REVIEW. Dexia puede abrir un RFC si considera que el riesgo no es aceptable.
+>
+> **[2026-10-10 15:18] clia:** **corrección de la enmienda 6, punto 3** (error mío: lo escribí para toda captura y pensaba en las de página). Kia encontró que 16 de las 103 capturas de `docs/` son recortes legítimos de componentes de TASK-004 (`docs/diseno/capturas/comp-*`): un botón de 178×48, la barra de clientes de 1220×46, la más baja de 40 px. El mínimo queda así:
+> - **Capturas de página** (las de las fichas: home, servicios y caso): **ancho ≥ 320 px y alto ≥ 200 px**.
+> - **Capturas de componente** (`docs/diseno/capturas/`): **cada lado ≥ 32 px**. Basta para descartar los marcadores de 1×1 sin rechazar recortes reales.
