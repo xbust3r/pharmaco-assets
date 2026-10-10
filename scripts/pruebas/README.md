@@ -30,7 +30,8 @@ python3 scripts/verificar-investigacion.py --raiz scripts/pruebas
 | `fichas/aviso-v8.md` | Una URL da 400 (`httpbin.org/status/400`, endpoint de pruebas) | AVISO V8 |
 | `fichas/falla-v2c.md` | `home` es un WebP de 20 bytes con un `VP8 ` de longitud 0 (caso de REVIEW-005, segunda ronda) | FALLO V2 (1 línea) |
 | `fichas/falla-v2d.md` | `servicios` es un PNG de 320×200 con byte de filtro 5 en la primera fila (caso de REVIEW-005, segunda ronda) | FALLO V2 (1 línea) |
-| `fichas/falla-v2e.md` | Matriz: 16 capturas adicionales con un único defecto cada una (cabeceras WebP y PNG, IEND, IHDR, datos vacíos y tamaño mínimo; lista en la ficha) | FALLO V2 (16 líneas) |
+| `fichas/falla-v2e.md` | Matriz: 17 capturas adicionales con un único defecto cada una (cabeceras WebP y PNG, IEND, IHDR, datos vacíos y tamaño mínimo de página, incluido 320×199; lista en la ficha) | FALLO V2 (17 líneas) |
+| `diseno/patrones-prueba.md` | Capturas de componente en `diseno/capturas/`: 40×40 y 32×32 (límite) OK; 20×20 y 31×40 (un lado por debajo) FALLO V2 | OK en 2 capturas, FALLO V2 en 2 |
 | `fichas/correcta-formatos.md` | WebP con pérdida, sin pérdida y animado (ANMF) válidos, y un PNG entrelazado válido | OK en V2 |
 | — | 20 fichas, pero 19 comparables y 1 referente o especialista | FALLO V7 (composición, 2 líneas) |
 
@@ -51,4 +52,4 @@ Las capturas de `capturas/` no son fotos de ninguna web.
 
 Comprobación fuera del verificador: `dwebp` acepta los WebP positivos y rechaza los negativos. `webpmux -info` acepta el animado y rechaza los dos negativos sin imagen (`ffmpeg` no decodifica el animado, limitación de su decodificador nativo). `ffmpeg` rechaza los PNG negativos de profundidad, compresión y entrelazado, pero **acepta** el de filtro 5: ese caso se decide por la especificación.
 
-Las capturas de 320×200 px y los defectos son los descritos arriba. Son bytes sintéticos; el generador no está en el repositorio. Las dos de origen estructural (`falla-v2-caso.png` con texto plano, `falla-v2-servicios.png` de 0 bytes) y `falla-v2b-home.png` (16 bytes truncados) se conservan tal cual.
+Las capturas de página son de 320×200 px y las de componente (`diseno/capturas/`) de 40×40 px o menos, según el caso (enmienda 6 corregida). Los defectos son los descritos arriba. Son bytes sintéticos; el generador no está en el repositorio. Las dos de origen estructural (`falla-v2-caso.png` con texto plano, `falla-v2-servicios.png` de 0 bytes) y `falla-v2b-home.png` (16 bytes truncados) se conservan tal cual.

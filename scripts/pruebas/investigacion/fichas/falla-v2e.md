@@ -30,6 +30,7 @@ Ficha de prueba ficticia. Matriz de REVIEW-005 (segunda ronda): cada captura adi
 - WebP con VP8L que solo tiene su cabecera de 5 bytes: `capturas/falla-v2e-vp8l-vacio.webp`
 - WebP con VP8 que solo tiene su cabecera de 10 bytes y partición de tamaño 0: `capturas/falla-v2e-vp8-vacio.webp`
 - Captura de 100×50 px, por debajo del mínimo de 320×200 (enmienda 6): `capturas/falla-v2e-tamano.png`
+- Captura de página de 320×199 px, justo por debajo del alto mínimo: `capturas/falla-v2e-pagina-alto.png`
 
 ## Frente al catálogo de Pharmaco (alimenta TASK-002)
 | # | Servicio Pharmaco | ¿Lo ofrecen? | Nombre literal que usan | URL de su página |

@@ -41,7 +41,8 @@ COMPARABLES_ESPERADOS = 10
 REFERENTES_ESPECIALISTAS_ESPERADOS = 10
 TIMEOUT_SEGUNDOS = 20
 HILOS_RED = 8
-MIN_ANCHO, MIN_ALTO = 320, 200  # DECISION-006, enmienda 6: una captura más pequeña no es una captura
+MIN_ANCHO, MIN_ALTO = 320, 200  # DECISION-006, enmienda 6 (corregida): captura de página, ancho y alto
+MIN_COMPONENTE = 32  # DECISION-006, enmienda 6 (corregida): captura de componente (docs/diseno/capturas/), cada lado
 
 RE_CAPTURA = re.compile(r"[\w./-]*capturas/[\w.-]+\.(?:png|webp|jpe?g|gif|svg)", re.IGNORECASE)
 RE_URL = re.compile(r"https?://[^\s|<>()\[\]«»\"'`]+")
@@ -472,9 +473,16 @@ def v2_capturas(texto, ruta_doc, bases):
             problemas.append(("FALLO", f"captura {cita}: {error}"))
             continue
         medida = medir_captura(ruta)
-        if medida and (medida[0] < MIN_ANCHO or medida[1] < MIN_ALTO):
-            problemas.append(("FALLO", f"captura {cita}: {medida[0]}×{medida[1]} px; el mínimo es "
-                                       f"{MIN_ANCHO}×{MIN_ALTO} (no es una captura de página)"))
+        if medida is None:
+            continue
+        # La clase la da la carpeta: docs/diseno/capturas/ son componentes; el resto, capturas de página.
+        if os.path.basename(os.path.dirname(os.path.dirname(os.path.abspath(ruta)))) == "diseno":
+            if min(medida) < MIN_COMPONENTE:
+                problemas.append(("FALLO", f"captura de componente {cita}: {medida[0]}×{medida[1]} px; cada lado "
+                                           f"debe medir al menos {MIN_COMPONENTE} px"))
+        elif medida[0] < MIN_ANCHO or medida[1] < MIN_ALTO:
+            problemas.append(("FALLO", f"captura {cita}: {medida[0]}×{medida[1]} px; el mínimo de captura de página "
+                                       f"es {MIN_ANCHO}×{MIN_ALTO} (no es una captura de página)"))
     return problemas
 
 

@@ -22,7 +22,7 @@ python3 scripts/verificar-investigacion.py --raiz scripts/pruebas   # otra raíz
 | # | Comprobación | FALLO si… |
 | --- | --- | --- |
 | V1 | Campos de la ficha | Falta o está vacío alguno de URL, País / ciudades, Bloque · perfil, Tamaño del equipo, Fecha de consulta o Capturas. La fecha no es `AAAA-MM-DD`. El tamaño es una cifra sin fuente (vale «no publicado» o un rango con fuente) |
-| V2 | Capturas existen, son válidas y miden al menos 320×200 px | Una captura citada no existe, pesa 0 bytes, no es PNG/WebP, está rota (estructura del contenedor, ver «Alcance de V2») o mide menos de 320×200 px. Una captura de página más pequeña no es una captura (DECISION-006, enmienda 6) |
+| V2 | Capturas existen, son válidas y miden el mínimo de su clase (320×200 px de página; 32 px por lado de componente) | Una captura citada no existe, pesa 0 bytes, no es PNG/WebP, está rota (estructura del contenedor, ver «Alcance de V2») o mide menos de 320×200 px. Una captura de página por debajo de 320×200, o de componente con un lado por debajo de 32 px, no es una captura (DECISION-006, enmienda 6 corregida) |
 | V3 | Capturas propias | La ficha no cita las tres capturas propias `{slug}-home`, `{slug}-servicios` y `{slug}-caso` |
 | V4 | Capturas no duplicadas | Dos archivos de `capturas/` tienen el mismo SHA-256 |
 | V5 | Servicio enlazado | Falta la sección «Frente al catálogo de Pharmaco», la tabla no tiene las filas 1 a 11, una celda «¿Lo ofrecen?» no es Sí o No (la negrita y el punto final se ignoran), o una fila Sí no tiene URL de página (ruta `/` o vacía) |
@@ -53,7 +53,7 @@ Comprueba:
 - **Contenedor PNG:** firma; IHDR único y primero; CRC de cada fragmento; IEND de longitud 0 y último byte del archivo.
 - **Contenedor WebP:** tamaño RIFF exacto y fragmentos completos.
 - **Datos de imagen presentes:** el PNG descomprime al tamaño que pide IHDR, con byte de filtro de 0 a 4 en cada fila (también en Adam7), y profundidad y tipo de color válidos. El WebP tiene un VP8 o VP8L con datos más allá de su cabecera. VP8X y ALPH solos no cuentan como imagen. Un fotograma ANMF cuenta si contiene una imagen así.
-- **Tamaño mínimo:** 320×200 px en ancho y alto, para toda captura citada. En WebP se mide el lienzo (VP8X) o, si no hay, la imagen.
+- **Tamaño mínimo, según la clase de captura:** las de página (cualquier captura fuera de `docs/diseno/capturas/`) miden al menos 320×200 px, en ancho y alto. Las de componente (`docs/diseno/capturas/`) tienen que medir al menos 32 px en cada lado. En WebP se mide el lienzo (VP8X) o, si no hay, la imagen.
 
 No comprueba (riesgo residual aceptado):
 
