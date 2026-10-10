@@ -50,7 +50,7 @@
 - ¿Declaran capacidad limitada? No publicado (revisados https://devibi.com/faq, https://devibi.com/contact, https://devibi.com/services y https://devibi.com/about).
 
 ## Prueba social (alimenta TASK-003)
-- Casos: https://devibi.com/work lista 35 proyectos bajo «Selected work» y «Previous work archive». Cada tarjeta enlaza al sitio del cliente y no a una página de caso propia. Sin métricas visibles en la página de /work.
+- Casos (captura `capturas/devibi-caso.png` a 2400 px: es el índice /work, con tarjetas visibles, no un caso individual): https://devibi.com/work lista 35 proyectos bajo «Selected work» y «Previous work archive». Cada tarjeta enlaza al sitio del cliente y no a una página de caso propia. Sin métricas visibles en la página de /work.
 - Logos de clientes: no publicado en las páginas revisadas.
 - Testimonios: no publicado en las páginas revisadas (con nombre y cargo).
 - Premios, rankings, reseñas: no publicado en su web. Perfil en Clutch: https://clutch.co/profile/devibi (sin reseñas revisadas).
