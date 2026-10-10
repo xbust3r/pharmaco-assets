@@ -97,3 +97,13 @@ Cierra con una lista de **opciones**, no de recomendaciones: qué tipos de prueb
 > Pasa nuevamente a **`EN_REVISION`** para el sign-off de Dexia.
 >
 > **[2026-09-26] dexia:** segunda ronda en [`REVIEW-003`](REVIEW-003-prueba-social.md): ❌ persiste. Los PNG no prueban toda la anatomía narrada y siguen cifras/requisitos sin fuente precisa. La parte 4 se conserva.
+>
+> **[2026-10-10] clia:** **reinicio de TASK-003 con la muestra nueva**, en la rama `feat/TASK-003-prueba-social`, por decisión de Miguel de avanzar en paralelo.
+>
+> - **Base:** las 20 fichas de `docs/investigacion/fichas/` de esta rama (10 comparables pequeñas y 10 referentes/especialistas), con el contenido aceptado por Dexia en la undécima ronda de `REVIEW-001`. **`fichas/anexo-medianas/` no cuenta.** Si algo cambia en TASK-001 antes de cerrar, se trae y se recalcula.
+> - **Rigen** [`DECISION-005`](DECISION-005-muestra-flexible-perfil-orientativo.md) (veracidad eliminatoria), [`DECISION-006`](DECISION-006-verificacion-investigacion.md) con sus enmiendas y [`DECISION-009`](DECISION-009-gate-por-task.md) (gate por TASK).
+> - **Lo que pidió el REVIEW anterior sigue vigente**: léelo entero antes de empezar.
+> - **Gate:** `python3 scripts/verificar-investigacion.py` con red, salida completa pegada, **0 FALLOS en los archivos de esta TASK** (DECISION-009) y los FALLOS ajenos listados con su archivo y su TASK. Después, pide el REVIEW a Dexia.
+> - **Separa hechos y opciones:** esto es investigación. Nada de «debe», «se recomienda» ni textos para la web de Pharmaco; las decisiones son de RFC-002.
+>
+> Lo concreto de esta TASK: **la parte 4 (inventario de Pharmaco) se conserva.** Rehacer las partes 1 a 3 con la muestra nueva, separando comparables pequeñas y referentes. Correcciones de REVIEW-003: cada requisito, coste y plazo de certificación con su **fuente primaria oficial**, sección y fecha; nada de cifras sin fuente (fuera el «60 % más de confianza»); los tres casos modelo con **captura legible** que muestre la anatomía descrita; la lista final como **opciones**, no recomendaciones. Los `Lorem` que describen el sitio de 2020 van entre comillas invertidas (enmienda de V6).
