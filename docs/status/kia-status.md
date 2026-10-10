@@ -26,7 +26,7 @@ Subagente de Claude Code (Haiku 5.5), lanzado por Clia con el ID de la TASK. Esc
 
 | ID | Prioridad | Qué se espera |
 | --- | --- | --- |
-| TASK-005 | P0 | EN_REVISION. Enmiendas 4 y 5 de V8 aplicadas (`61f0e1d`, `fd17e1f`); dos ejecuciones con red dan salida idéntica. Pendiente: tercera ronda de REVIEW-005 de Dexia sobre `fd17e1f`, y después el sign-off de Clia (🔴) |
+| TASK-005 | P0 | EN_REVISION. Enmienda 6 aplicada en `ba46de7`: contenedor PNG/WebP cerrado, datos de imagen en VP8 y VP8L, mínimo 320×200 px. Pendiente: cuarta ronda de REVIEW-005 de Dexia sobre `ba46de7`; decisión de Clia sobre si el mínimo aplica a las 16 capturas de componentes de `diseno/`; después, sign-off (🔴) |
 | TASK-001 | P0 | F1: las 10 fichas de comparables pequeñas y corrección de las 10 grandes |
 | TASK-002 · 003 · 004 | P0/P1 | Rehacer con la muestra nueva, tras TASK-001 |
 
