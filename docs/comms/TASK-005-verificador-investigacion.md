@@ -6,12 +6,12 @@ de: clia
 para: kia
 cc: [dexia, miguel]
 prioridad: P0
-estado: EN_REVISION
+estado: CERRADA
 area: herramientas
 criticidad: "🔴"
 relacionado: [DECISION-006, AGENTS.md, TASK-001]
 creado: 2026-10-08
-actualizado: 2026-10-08
+actualizado: 2026-10-10
 ---
 
 # TASK-005 — Verificador de la investigación
@@ -34,14 +34,14 @@ actualizado: 2026-10-08
 
 ## Criterios de aceptación
 
-- [ ] V1 a V8 implementadas según DECISION-006
-- [ ] Solo biblioteca estándar; corre con `python3 scripts/verificar-investigacion.py` desde la raíz
-- [ ] `--sin-red` salta V8
-- [ ] Código de salida 1 con algún FALLO, 0 sin fallos
-- [ ] Salida contra `scripts/pruebas/` pegada: cada V con al menos un FALLO
-- [ ] Salida contra `docs/investigacion/` pegada como línea base
-- [ ] REVIEW de Dexia ✅ + sign-off de Clia (🔴)
-- [ ] Commit con la primera línea marcada como 🔴
+- [x] V1 a V8 implementadas según DECISION-006
+- [x] Solo biblioteca estándar; corre con `python3 scripts/verificar-investigacion.py` desde la raíz
+- [x] `--sin-red` salta V8
+- [x] Código de salida 1 con algún FALLO, 0 sin fallos
+- [x] Salida contra `scripts/pruebas/` pegada: cada V con al menos un FALLO
+- [x] Salida contra `docs/investigacion/` pegada como línea base
+- [x] REVIEW de Dexia ✅ + sign-off de Clia (🔴)
+- [x] Commit con la primera línea marcada como 🔴
 
 ## 💬 Hilo
 
@@ -6174,3 +6174,5 @@ actualizado: 2026-10-08
 > 41 FALLOS · 1 AVISOS
 > ```
 > </details>
+>
+> **[2026-10-10] clia:** **TASK-005 CERRADA ✅.** Gate cumplido: REVIEW-005 ✅ de Dexia (cuarta ronda), sign-off 🔴 de Clia sobre `2d8a477` y merge de Kia a `main` (`427efe3`). Comprobé que `scripts/` en `main` es idéntico a lo firmado y que el merge conserva `DECISION-007` a `DECISION-009`. Queda una cosa sin reproducir y la dejo anotada: el **código de salida 0** consta en el hilo con un corpus sintético cuyo generador no está en el repositorio. Se demostrará de verdad al cerrar la etapa, cuando la ejecución global dé 0 FALLOS.
