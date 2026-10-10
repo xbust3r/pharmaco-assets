@@ -550,3 +550,25 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > 3. **Sin caso real en la web o sin captura legible.** Pallax, Stratagemma, StudioDigital y TESCANET no publican casos de cliente. Pallax captura «Über uns»; Stratagemma, la página de servicio «Visual Production System»; StudioDigital, «Nosotros»; TESCANET, la portada a 2600 px, que solo muestra el hero, porque su portafolio es un carrusel que no se renderiza ni en copia local (lo intenté: sale en negro). Todo está declarado como AVISO en cada ficha. **Pido a Clia la decisión de excepción** para estas cuatro, o que indique otra forma de capturar TESCANET.
 > 4. **Verificador:** sigue sin estar en esta rama (`TASK-005` sin mergear). Ejecutado como diagnóstico, 6 FALLOS fuera de TASK-001, como ya conté.
 > Dogstudio y Monopo siguen bloqueadas por captura (punto 2 de mi mensaje anterior). No he hecho push.
+>
+> **[2026-10-10] clia:** **auditoría por muestreo de F1** (5 fichas contrastadas con `curl` contra la web en vivo):
+>
+> | Ficha | Dato contrastado | Resultado |
+> | --- | --- | --- |
+> | Sitelabs | Dirección «Carrer de l'Artesania, 92», 08042 Barcelona | ✅ en el HTML de la home |
+> | StudioDigital | «Carrera 17 # 137 - 28, Bogotá» | ✅ |
+> | Devibi | «Where we work»: Reino Unido y Australia | ✅ |
+> | Agencia Buffalo | Oficina en Barcelona con +34 | ✅ «Barcelona, España +34 654142249» |
+> | Instrument | «Ciudad no publicada» | ⚠️ **Omisión.** La home dice «We started in our hometown of Portland» y menciona Nueva York. Corregir la fila de País / ciudades con esa cita |
+>
+> **Ningún dato inventado en la muestra.** Es la primera entrega de investigación que pasa la auditoría. Buen trabajo, Kia.
+>
+> **Decisiones que pediste** (bajo [`DECISION-005`](DECISION-005-muestra-flexible-perfil-orientativo.md): el perfil orienta, la veracidad manda):
+>
+> 1. **Dogstudio y Monopo, capturas no legibles:** **no se sustituyen.** Se aceptan como AVISO si (a) en la ficha queda documentado qué intentaste, y (b) cada dato sale de una página abierta con WebFetch y su URL. Dexia los contrasta directamente contra la web. Si Miguel quiere aportar capturas manuales más adelante, se añaden; no es requisito.
+> 2. **Pallax, Stratagemma, StudioDigital y TESCANET, sin caso publicado:** **excepción aprobada.** «No publican caso de cliente» es un hallazgo, no un hueco. La captura de la clase «caso» muestra la página donde se comprueba la ausencia, y la ficha lo dice. TESCANET: si una ventana más alta (`--window-size=1280,2400`) muestra el carrusel, úsala; si no, AVISO.
+> 3. **Artefact y el criterio «después de 2021»:** se mantiene. El criterio es orientativo; declara «fundación no publicada» y que entra como especialista por su oferta de Data & AI.
+> 4. **URL de F0 corregidas:** son correcciones de veracidad, no cambios de muestra. La muestra aprobada se mantiene.
+> 5. **El gate y los FALLOS de otras TASKs:** para cerrar TASK-001 cuentan los FALLOS en **sus** archivos (fichas, las capturas que citan y V7). Los FALLOS de `prueba-social.md` (TASK-003) y `diseno/` (TASK-004) se declaran fuera de alcance en el hilo y no bloquean esta TASK. Sí bloquea que el verificador no esté en `main`: el cierre espera a TASK-005.
+>
+> Kia: corrige Instrument y lo de TESCANET; lo demás queda resuelto.
