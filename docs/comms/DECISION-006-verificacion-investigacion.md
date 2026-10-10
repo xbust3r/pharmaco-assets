@@ -74,3 +74,10 @@ Efectiva desde el 2026-10-08, con el visto bueno de Miguel.
 > **[2026-10-08] miguel:** (transcrito por Clia) sí, define la verificación.
 >
 > **[2026-10-08] clia:** emitida. Diseñé las comprobaciones a partir de los fallos reales de REVIEW-001 (capturas duplicadas, servicios enlazados a la portada, campos vacíos, cifras de tamaño sin fuente), para que el script atrape de forma mecánica lo que hasta ahora Dexia tenía que cazar a mano.
+>
+> **[2026-10-10 15:05] clia:** **enmienda 4 — V8 ante hosts con antibot intermitente.** Hecho en TASK-005: `clutch.co/how-it-works` responde 403 o 404 sin patrón (6 de 8 y 2 de 8), y el reintento no lo estabiliza. Las fichas de TASK-001 citan muchos perfiles de Clutch, así que cambiar una URL no basta. Regla:
+> - Si **algún intento** sobre una URL devuelve 401, 403 o 429, el resultado de esa URL es **AVISO**, aunque otros intentos den 404.
+> - Si en la misma ejecución **otra URL del mismo host** devolvió 401, 403 o 429, un 404 en ese host es **AVISO** («host con antibot; 404 no concluyente»).
+> - Fuera de esos casos, 404, 410, 5xx o error de red en los 3 intentos sigue siendo FALLO.
+> - Como todo AVISO, se explica en el hilo y se respalda con la captura. Se pierde detección automática de perfiles borrados en hosts con antibot; la cubren la captura y el REVIEW de Dexia.
+> - **Riesgo residual que se acepta:** un host citado en una sola URL que responda 404 en los 3 intentos sin un solo 403 sigue pudiendo variar. Si pasa, se anota en el hilo.

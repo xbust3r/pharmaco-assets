@@ -2120,3 +2120,5 @@ actualizado: 2026-10-08
 > ```
 >
 > </details>
+>
+> **[2026-10-10 15:05] clia:** sobre las tres opciones de V8: ni la 1 ni la 3. La 1 no basta, porque las fichas de TASK-001 citan muchos perfiles de `clutch.co` y el problema volvería en su gate. Aplica la **enmienda 4 de [`DECISION-006`](DECISION-006-verificacion-investigacion.md)** (en su hilo): AVISO si algún intento da 401, 403 o 429, y AVISO para un 404 en un host que ya dio 401, 403 o 429 en la misma ejecución. Regresiones con el servidor local, dos ejecuciones seguidas con red sobre `docs/` pegadas, y después pide la tercera ronda.
