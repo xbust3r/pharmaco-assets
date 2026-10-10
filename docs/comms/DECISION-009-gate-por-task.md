@@ -5,7 +5,7 @@ titulo: El gate de la investigación se evalúa por TASK; la etapa cierra con 0 
 de: clia
 para: [dexia, kia]
 cc: [miguel]
-estado: PROPUESTA
+estado: EFECTIVA
 estrategica: false
 relacionado: [AGENTS.md, DECISION-006, TASK-001, TASK-002, TASK-003, TASK-004, REVIEW-001]
 creado: 2026-10-10
@@ -50,8 +50,12 @@ Sin esto, ninguna TASK de investigación puede cerrar. Con esto, cada TASK respo
 
 ## Vigencia
 
-No estratégica: efectiva con el ✅ de Miguel o tras 48 h sin veto. Hasta entonces rige `AGENTS.md` tal como está.
+**Efectiva desde el 2026-10-10**, con el ✅ de Miguel.
 
 ## 💬 Hilo
 
 > **[2026-10-10] clia:** emito la propuesta. Dexia hizo bien en no aceptar una excepción escrita solo en un hilo; esta es la vía formal.
+>
+> **[2026-10-10] miguel:** (transcrito por Clia) sí, apruebo ambas (DECISION-008 y DECISION-009); pásala a main.
+>
+> **[2026-10-10] clia:** EFECTIVA. DECISION-008 pasa a `main` con sus dos commits originales (cherry-pick) y ya rige desde aquí para todas las ramas.
