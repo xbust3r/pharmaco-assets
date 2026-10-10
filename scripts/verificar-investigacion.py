@@ -1,0 +1,653 @@
+#!/usr/bin/env python3
+"""Verificación de la investigación (DECISION-006).
+
+Comprueba forma y existencia, no veracidad: la veracidad la revisan Dexia
+(REVIEW) y Clia (auditoría por muestreo). Ver scripts/README.md.
+
+    python3 scripts/verificar-investigacion.py               # gate: con red
+    python3 scripts/verificar-investigacion.py --sin-red     # salta V8
+    python3 scripts/verificar-investigacion.py --raiz scripts/pruebas
+
+Solo biblioteca estándar. Código de salida: 1 si hay algún FALLO, 0 si no.
+"""
+
+import argparse
+import concurrent.futures
+import datetime
+import glob
+import hashlib
+import http.client
+import os
+import re
+import struct
+import sys
+import time
+import unicodedata
+import urllib.error
+import urllib.parse
+import urllib.request
+import zlib
+from collections import Counter
+
+RAIZ_REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+CAMPOS_OBLIGATORIOS = ["URL", "País / ciudades", "Bloque · perfil", "Tamaño del equipo", "Fecha de consulta", "Capturas"]
+CAMPOS_FICHA = CAMPOS_OBLIGATORIOS + ["Año de fundación"]
+TIPOS_CAPTURA_PROPIA = ["home", "servicios", "caso"]
+MARCADORES = ["{", "AAAA-MM-DD", "Lorem", "TODO", "(o «no verificado»)"]
+PERFILES_VALIDOS = ["comparable", "referente", "especialista"]
+FICHAS_ESPERADAS = 20
+COMPARABLES_ESPERADOS = 10
+REFERENTES_ESPECIALISTAS_ESPERADOS = 10
+TIMEOUT_SEGUNDOS = 20
+HILOS_RED = 8
+MIN_ANCHO, MIN_ALTO = 320, 200  # DECISION-006, enmienda 6 (corregida): captura de página, ancho y alto
+MIN_COMPONENTE = 32  # DECISION-006, enmienda 6 (corregida): captura de componente (docs/diseno/capturas/), cada lado
+
+RE_CAPTURA = re.compile(r"[\w./-]*capturas/[\w.-]+\.(?:png|webp|jpe?g|gif|svg)", re.IGNORECASE)
+RE_URL = re.compile(r"https?://[^\s|<>()\[\]«»\"'`]+")
+FRENTE = "## Frente al catálogo de Pharmaco"
+SERVICIOS_CATALOGO = 11
+RE_MARCA = re.compile(r"[*_`~]")  # negrita, cursiva y código alrededor de «Sí» o «No»
+RE_CITA = re.compile(r"`[^`]*`")  # DECISION-006 (aclaración 2): un marcador entre comillas invertidas es cita
+
+
+def leer(ruta):
+    with open(ruta, encoding="utf-8") as f:
+        return f.read()
+
+
+def sin_acentos(texto):
+    descompuesto = unicodedata.normalize("NFD", texto)
+    return "".join(c for c in descompuesto if unicodedata.category(c) != "Mn").lower()
+
+
+def vacio(valor):
+    return valor.strip() in ("", "—", "-")
+
+
+def filas_tabla(texto):
+    """Celdas de cada fila de tabla markdown; ignora separadores."""
+    filas = []
+    for linea in texto.splitlines():
+        s = linea.strip()
+        if s.startswith("|") and not set(s) <= set("|-: "):
+            filas.append([c.strip() for c in s.strip("|").split("|")])
+    return filas
+
+
+def seccion(texto, titulo):
+    lineas, dentro = [], False
+    for linea in texto.splitlines():
+        if linea.startswith("## "):
+            dentro = linea.startswith(titulo)
+        elif dentro:
+            lineas.append(linea)
+    return "\n".join(lineas)
+
+
+def campos_ficha(texto):
+    """Primera aparición de cada campo de la tabla de cabecera: {campo: (valor, fuente)}."""
+    campos = {}
+    for celdas in filas_tabla(texto):
+        if len(celdas) >= 3 and celdas[0] in CAMPOS_FICHA and celdas[0] not in campos:
+            campos[celdas[0]] = (celdas[1], celdas[2])
+    return campos
+
+
+def fecha_valida(texto):
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", texto):
+        return False
+    try:
+        datetime.date.fromisoformat(texto)
+    except ValueError:
+        return False
+    return True
+
+
+def capturas_citadas(texto):
+    return sorted(set(RE_CAPTURA.findall(texto)))
+
+
+def buscar_captura(cita, carpeta_doc, bases):
+    for base in [carpeta_doc] + bases:
+        ruta = os.path.normpath(os.path.join(base, cita))
+        if os.path.isfile(ruta):
+            return ruta
+    return None
+
+
+CANALES_PNG = {0: 1, 2: 3, 3: 1, 4: 2, 6: 4}
+PROFUNDIDADES_PNG = {0: (1, 2, 4, 8, 16), 2: (8, 16), 3: (1, 2, 4, 8), 4: (8, 16), 6: (8, 16)}
+# Adam7: (x0, y0, dx, dy) de cada pasada de un PNG entrelazado (especificación PNG, capítulo 8).
+ADAM7 = [(0, 0, 8, 8), (4, 0, 8, 8), (0, 4, 4, 8), (2, 0, 4, 4), (0, 2, 2, 4), (1, 0, 2, 2), (0, 1, 1, 2)]
+ERROR_TAMANO_PNG = "PNG: el tamaño de los datos de imagen no corresponde a las dimensiones"
+
+
+def validar_datos_png(bruto, ancho, alto, profundidad, color, entrelazado):
+    """Cada pasada tiene exactamente sus filas, cada fila empieza por un byte de filtro de 0 a 4 y no sobra nada."""
+    pasadas = ADAM7 if entrelazado else [(0, 0, 1, 1)]
+    pos = 0
+    for x0, y0, dx, dy in pasadas:
+        pw = max(0, (ancho - x0 + dx - 1) // dx)
+        ph = max(0, (alto - y0 + dy - 1) // dy)
+        if pw == 0 or ph == 0:
+            continue
+        tam_fila = 1 + (pw * CANALES_PNG[color] * profundidad + 7) // 8
+        bloque = bruto[pos:pos + ph * tam_fila]
+        if len(bloque) != ph * tam_fila:
+            return ERROR_TAMANO_PNG
+        if max(bloque[::tam_fila]) > 4:
+            return "PNG: byte de filtro no válido en una fila (debe ser 0 a 4)"
+        pos += ph * tam_fila
+    return None if pos == len(bruto) else ERROR_TAMANO_PNG
+
+
+def validar_png(datos):
+    """Estructura: fragmentos con CRC, IHDR primero, IEND, cabecera válida, IDAT con los datos que pide IHDR."""
+    pos, tipos, idat, ihdr = 8, [], b"", None
+    while True:
+        if pos + 8 > len(datos):
+            return "PNG truncado (sin IEND)"
+        longitud, tipo = struct.unpack(">I4s", datos[pos:pos + 8])
+        fin = pos + 12 + longitud
+        if fin > len(datos):
+            return "PNG truncado (fragmento incompleto)"
+        cuerpo = datos[pos + 8:pos + 8 + longitud]
+        crc = struct.unpack(">I", datos[pos + 8 + longitud:fin])[0]
+        if zlib.crc32(tipo + cuerpo) & 0xFFFFFFFF != crc:
+            return f"PNG: CRC incorrecto en {tipo.decode('ascii', 'replace')}"
+        if not tipos and tipo != b"IHDR":
+            return "PNG: el primer fragmento no es IHDR"
+        if tipo == b"IHDR":
+            if b"IHDR" in tipos:
+                return "PNG: IHDR duplicado"
+            if longitud != 13:
+                return "PNG: IHDR de longitud incorrecta"
+            ihdr = struct.unpack(">IIBBBBB", cuerpo)
+        if tipo == b"IEND":
+            # DECISION-006, enmienda 6: IEND de longitud 0 y último byte del archivo.
+            if longitud != 0:
+                return "PNG: IEND con datos (debe tener longitud 0)"
+            if fin != len(datos):
+                return "PNG: bytes después de IEND"
+        if tipo == b"IDAT":
+            idat += cuerpo
+        tipos.append(tipo)
+        pos = fin
+        if tipo == b"IEND":
+            break
+    if b"IDAT" not in tipos:
+        return "PNG sin datos de imagen"
+    ancho, alto, profundidad, color, compresion, filtro, entrelazado = ihdr
+    if ancho == 0 or alto == 0:
+        return "PNG sin dimensiones"
+    if color not in PROFUNDIDADES_PNG or profundidad not in PROFUNDIDADES_PNG[color]:
+        return "PNG: tipo de color o profundidad no válidos"
+    if compresion != 0 or filtro != 0 or entrelazado not in (0, 1):
+        return "PNG: método de compresión, de filtro o de entrelazado no válido"
+    try:
+        bruto = zlib.decompress(idat)
+    except zlib.error:
+        return "PNG: datos de imagen corruptos"
+    return validar_datos_png(bruto, ancho, alto, profundidad, color, entrelazado)
+
+
+def recorrer_fragmentos(buf):
+    """Fragmentos RIFF de buf como [(tipo, cuerpo)], y un error si alguno está truncado."""
+    fragmentos, pos = [], 0
+    while pos < len(buf):
+        if pos + 8 > len(buf):
+            return fragmentos, "WebP truncado"
+        tipo = buf[pos:pos + 4]
+        longitud = struct.unpack("<I", buf[pos + 4:pos + 8])[0]
+        fin = pos + 8 + longitud
+        if fin > len(buf):
+            return fragmentos, "WebP truncado (fragmento incompleto)"
+        fragmentos.append((tipo, buf[pos + 8:fin]))
+        pos = fin + (longitud & 1)
+    if pos > len(buf):
+        return fragmentos, "WebP truncado (falta el relleno del último fragmento)"
+    return fragmentos, None
+
+
+def validar_vp8(cuerpo):
+    """Fotograma clave VP8 (RFC 6386, sección 9.1): etiqueta, código de inicio, dimensiones y primera partición completa."""
+    if len(cuerpo) < 10:
+        return "WebP: fragmento VP8 demasiado corto"
+    etiqueta = cuerpo[0] | cuerpo[1] << 8 | cuerpo[2] << 16
+    if etiqueta & 1:
+        return "WebP: fragmento VP8 que no es un fotograma clave"
+    if cuerpo[3:6] != b"\x9d\x01\x2a":
+        return "WebP: fragmento VP8 sin código de inicio"
+    ancho = struct.unpack("<H", cuerpo[6:8])[0] & 0x3FFF
+    alto = struct.unpack("<H", cuerpo[8:10])[0] & 0x3FFF
+    if ancho == 0 or alto == 0:
+        return "WebP: fragmento VP8 sin dimensiones"
+    # DECISION-006, enmienda 6: datos de imagen más allá de la cabecera.
+    if (etiqueta >> 5) == 0 or len(cuerpo) <= 10:
+        return "WebP: fragmento VP8 sin datos de imagen más allá de su cabecera"
+    if 10 + (etiqueta >> 5) > len(cuerpo):
+        return "WebP: fragmento VP8 con la primera partición incompleta"
+    return None
+
+
+def validar_vp8l(cuerpo):
+    """Cabecera VP8L: signatura 0x2f, dimensiones (siempre válidas en 14 bits) y versión 0."""
+    if len(cuerpo) < 5:
+        return "WebP: fragmento VP8L demasiado corto"
+    if cuerpo[0] != 0x2F:
+        return "WebP: fragmento VP8L sin signatura"
+    if struct.unpack("<I", cuerpo[1:5])[0] >> 29:
+        return "WebP: fragmento VP8L con versión no válida"
+    # DECISION-006, enmienda 6: la cabecera de 5 bytes no basta; debe haber datos de imagen.
+    if len(cuerpo) <= 5:
+        return "WebP: fragmento VP8L sin datos de imagen más allá de su cabecera"
+    return None
+
+
+def validar_imagenes_webp(fragmentos):
+    """Valida los fragmentos VP8 y VP8L. Devuelve (error, hay_imagen)."""
+    hay = False
+    for tipo, cuerpo in fragmentos:
+        if tipo == b"VP8 ":
+            error = validar_vp8(cuerpo)
+        elif tipo == b"VP8L":
+            error = validar_vp8l(cuerpo)
+        else:
+            continue
+        if error:
+            return error, True
+        hay = True
+    return None, hay
+
+
+def validar_webp(datos):
+    """RIFF con tamaño exacto, fragmentos completos y al menos una imagen VP8 o VP8L válida.
+
+    Alcance: no decodifica píxeles. VP8X y ALPH solos no cuentan como imagen. Un fotograma ANMF
+    (animación) cuenta si contiene una imagen VP8 o VP8L válida.
+    """
+    if struct.unpack("<I", datos[4:8])[0] + 8 != len(datos):
+        return "WebP: el tamaño RIFF no coincide con el archivo"
+    fragmentos, error = recorrer_fragmentos(datos[12:])
+    if error:
+        return error
+    hay_imagen = False
+    for tipo, cuerpo in fragmentos:
+        if tipo == b"ANMF":
+            if len(cuerpo) < 16:
+                return "WebP: fotograma ANMF demasiado corto"
+            subfragmentos, error = recorrer_fragmentos(cuerpo[16:])
+            if error:
+                return error
+            error, hay = validar_imagenes_webp(subfragmentos)
+            if error:
+                return error
+            if not hay:
+                return "WebP: fotograma ANMF sin imagen"
+        else:
+            error, hay = validar_imagenes_webp([(tipo, cuerpo)])
+            if error:
+                return error
+        hay_imagen = hay_imagen or hay
+    if not hay_imagen:
+        return "WebP sin datos de imagen"
+    return None
+
+
+def error_formato(ruta):
+    if os.path.getsize(ruta) == 0:
+        return "pesa 0 bytes"
+    with open(ruta, "rb") as f:
+        datos = f.read()
+    if datos[:8] == b"\x89PNG\r\n\x1a\n":
+        return validar_png(datos)
+    if datos[:4] == b"RIFF" and datos[8:12] == b"WEBP":
+        return validar_webp(datos)
+    return "no es PNG ni WebP válido"
+
+
+def sin_www(url):
+    return (urllib.parse.urlsplit(url).hostname or "").removeprefix("www.")
+
+
+CABECERAS_NAVEGADOR = {
+    # Con un User-Agent de bot, algunos sitios devuelven 404 donde un navegador ve 403 (antibot).
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "es,en;q=0.8",
+}
+
+
+# TASK-005 (Clia, 2026-10-10): ante error de red, 404 o 5xx se reintenta; sólo es FALLO si fallan los 3 intentos.
+# 403 y 429 (antibot) son AVISO y no se reintentan.
+REINTENTOS = 2
+ESPERA_REINTENTO = 2  # segundos
+
+
+ANTIBOT = (401, 403, 429)  # DECISION-006, enmienda 4
+CABECERAS_DESAFIO = ("sg-captcha", "x-amzn-waf-action")  # DECISION-006, enmienda 5: lista ampliable en el hilo
+
+
+def _cabecera_de_desafio(cabeceras):
+    """Nombre de la cabecera de desafío conocida que trae la respuesta, o None."""
+    for nombre in CABECERAS_DESAFIO:
+        if cabeceras.get(nombre) is not None:
+            return nombre
+    if (cabeceras.get("cf-mitigated") or "").strip().lower() == "challenge":
+        return "cf-mitigated: challenge"
+    return None
+
+
+def _intentar_url(url):
+    """Un intento. Devuelve (estado, motivo, reintentable, antibot)."""
+    peticion = urllib.request.Request(url, headers=CABECERAS_NAVEGADOR)
+    try:
+        with urllib.request.urlopen(peticion, timeout=TIMEOUT_SEGUNDOS) as respuesta:
+            final = respuesta.geturl()
+            codigo, cabeceras = respuesta.status, respuesta.headers
+    except urllib.error.HTTPError as e:
+        # DECISION-006 (aclaración 1): solo 404 y 410 son FALLO; otros 4xx son bloqueos, AVISO.
+        if e.code == 404:
+            return "FALLO", "HTTP 404", True, False
+        if e.code == 410:
+            return "FALLO", "HTTP 410", False, False
+        if 400 <= e.code < 500:
+            return ("AVISO", f"HTTP {e.code} (bloqueo antibot o de región): respaldar con captura", False,
+                    e.code in ANTIBOT)
+        return "FALLO", f"HTTP {e.code}", 500 <= e.code < 600, False
+    except (urllib.error.URLError, OSError, http.client.HTTPException) as e:
+        return "FALLO", f"error de red: {getattr(e, 'reason', e)}", True, False
+    except ValueError as e:
+        return "FALLO", f"error de red: {getattr(e, 'reason', e)}", False, False
+    # DECISION-006, enmienda 5: un 202 a un GET de página y un 2xx con cabecera de desafío no son la página.
+    if codigo == 202:
+        return "AVISO", "HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura", False, True
+    desafio = _cabecera_de_desafio(cabeceras)
+    if desafio:
+        return "AVISO", f"HTTP {codigo} con cabecera de desafío antibot ({desafio}): respaldar con captura", False, True
+    if sin_www(final) != sin_www(url):
+        return "AVISO", f"redirige a otro dominio: {final}", False, False
+    return "OK", "responde", False, False
+
+
+def comprobar_url(url):
+    """Hasta 3 intentos según TASK-005. Devuelve (estado, motivo, antibot): antibot si algún intento dio 401, 403 o 429."""
+    estado, motivo, reintentable, antibot = _intentar_url(url)
+    intentos = 1
+    while reintentable and intentos <= REINTENTOS:
+        time.sleep(ESPERA_REINTENTO)
+        estado, motivo, reintentable, visto = _intentar_url(url)
+        antibot = antibot or visto
+        intentos += 1
+    if estado == "OK":
+        return estado, motivo, antibot
+    if intentos > 1:
+        motivo += f" (tras {intentos} intentos)"
+    return estado, motivo, antibot
+
+
+def host_de(url):
+    return urllib.parse.urlsplit(url).hostname or ""
+
+
+def clasificar_urls(resultados):
+    """resultados: {url: (estado, motivo, antibot)}. Aplica la enmienda 4 de DECISION-006 y devuelve {url: (estado, motivo)}.
+
+    - Un intento con 401, 403 o 429 ya da AVISO en esa URL (ver comprobar_url).
+    - Un 404 final en un host donde otra URL de la misma ejecución dio señal antibot (401, 403, 429, 202 o
+      cabecera de desafío, enmiendas 4 y 5) pasa a AVISO.
+    - El resto no cambia: 404, 410, 5xx o error de red en los 3 intentos siguen siendo FALLO.
+    """
+    hosts_antibot = {host_de(u) for u, (_, _, antibot) in resultados.items() if antibot}
+    salida = {}
+    for url, (estado, motivo, _) in resultados.items():
+        if estado == "FALLO" and motivo.startswith("HTTP 404") and host_de(url) in hosts_antibot:
+            motivo = ("HTTP 404 en host con antibot (otra URL del host dio 401, 403, 429, 202 o cabecera de desafío "
+                      "en esta ejecución): 404 no concluyente, respaldar con captura") + motivo[len("HTTP 404"):]
+            estado = "AVISO"
+        salida[url] = (estado, motivo)
+    return salida
+
+
+# --- Comprobaciones: cada una devuelve [(estado, motivo)] ---------------------
+
+def v1_campos(texto):
+    campos = campos_ficha(texto)
+    problemas = []
+    for campo in CAMPOS_OBLIGATORIOS:
+        if campo not in campos or vacio(campos[campo][0]):
+            problemas.append(f"{campo}: falta o está vacío")
+    if "Fecha de consulta" in campos:
+        fecha = campos["Fecha de consulta"][0].strip()
+        if not fecha_valida(fecha):
+            problemas.append(f"Fecha de consulta no es AAAA-MM-DD ({fecha})")
+    if "Tamaño del equipo" in campos:
+        tamano, fuente = (c.strip() for c in campos["Tamaño del equipo"])
+        if tamano and sin_acentos(tamano).strip(" «»\"") != "no publicado":
+            if not re.search(r"\d", tamano):
+                problemas.append(f"Tamaño del equipo: ni «no publicado» ni un rango con fuente ({tamano})")
+            elif vacio(fuente):
+                problemas.append(f"Tamaño del equipo: cifra sin fuente ({tamano})")
+    return [("FALLO", p) for p in problemas]
+
+
+def medir_webp(datos):
+    """Lienzo (VP8X) o, si no lo hay, dimensiones del primer VP8/VP8L o del primer ANMF."""
+    fragmentos, _ = recorrer_fragmentos(datos[12:])
+    lienzo = primera = animado = None
+    for tipo, cuerpo in fragmentos:
+        if tipo == b"VP8X" and lienzo is None:
+            lienzo = (1 + int.from_bytes(cuerpo[4:7], "little"), 1 + int.from_bytes(cuerpo[7:10], "little"))
+        elif tipo == b"VP8 " and primera is None:
+            primera = (struct.unpack("<H", cuerpo[6:8])[0] & 0x3FFF, struct.unpack("<H", cuerpo[8:10])[0] & 0x3FFF)
+        elif tipo == b"VP8L" and primera is None:
+            bits = struct.unpack("<I", cuerpo[1:5])[0]
+            primera = ((bits & 0x3FFF) + 1, ((bits >> 14) & 0x3FFF) + 1)
+        elif tipo == b"ANMF" and animado is None:
+            animado = (int.from_bytes(cuerpo[6:9], "little") + 1, int.from_bytes(cuerpo[9:12], "little") + 1)
+    return lienzo or primera or animado
+
+
+def medir_captura(ruta):
+    """Ancho y alto de una captura PNG o WebP ya validada, o None."""
+    with open(ruta, "rb") as f:
+        datos = f.read()
+    if datos[:8] == b"\x89PNG\r\n\x1a\n":
+        return struct.unpack(">II", datos[16:24])
+    if datos[:4] == b"RIFF" and datos[8:12] == b"WEBP":
+        return medir_webp(datos)
+    return None
+
+
+def v2_capturas(texto, ruta_doc, bases):
+    problemas = []
+    for cita in capturas_citadas(texto):
+        ruta = buscar_captura(cita, os.path.dirname(ruta_doc), bases)
+        if ruta is None:
+            problemas.append(("FALLO", f"captura citada no existe: {cita}"))
+            continue
+        error = error_formato(ruta)
+        if error:
+            problemas.append(("FALLO", f"captura {cita}: {error}"))
+            continue
+        medida = medir_captura(ruta)
+        if medida is None:
+            continue
+        # La clase la da la carpeta: docs/diseno/capturas/ son componentes; el resto, capturas de página.
+        if os.path.basename(os.path.dirname(os.path.dirname(os.path.abspath(ruta)))) == "diseno":
+            if min(medida) < MIN_COMPONENTE:
+                problemas.append(("FALLO", f"captura de componente {cita}: {medida[0]}×{medida[1]} px; cada lado "
+                                           f"debe medir al menos {MIN_COMPONENTE} px"))
+        elif medida[0] < MIN_ANCHO or medida[1] < MIN_ALTO:
+            problemas.append(("FALLO", f"captura {cita}: {medida[0]}×{medida[1]} px; el mínimo de captura de página "
+                                       f"es {MIN_ANCHO}×{MIN_ALTO} (no es una captura de página)"))
+    return problemas
+
+
+def v3_capturas_propias(texto, ruta_ficha):
+    slug = os.path.splitext(os.path.basename(ruta_ficha))[0]
+    nombres = [os.path.basename(c) for c in capturas_citadas(texto)]
+    faltan = [t for t in TIPOS_CAPTURA_PROPIA if not any(n.startswith(f"{slug}-{t}.") for n in nombres)]
+    if faltan:
+        return [("FALLO", f"faltan capturas propias ({', '.join(faltan)}); se exigen home, servicios y caso")]
+    return []
+
+
+def v4_duplicadas(carpetas):
+    """Devuelve (nº de archivos, [(ruta, otras con el mismo SHA-256)])."""
+    por_hash, total = {}, 0
+    for carpeta in carpetas:
+        for ruta in sorted(glob.glob(os.path.join(carpeta, "*"))):
+            if not os.path.isfile(ruta) or os.path.basename(ruta).startswith("."):
+                continue
+            total += 1
+            with open(ruta, "rb") as f:
+                digest = hashlib.sha256(f.read()).hexdigest()
+            por_hash.setdefault(digest, []).append(ruta)
+    duplicadas = []
+    for grupo in por_hash.values():
+        if len(grupo) > 1:
+            for ruta in grupo:
+                duplicadas.append((ruta, [o for o in grupo if o != ruta]))
+    return total, duplicadas
+
+
+def v5_portada(texto):
+    if not any(linea.startswith(FRENTE) for linea in texto.splitlines()):
+        return [("FALLO", f"falta la sección «{FRENTE[3:]}»")]
+    problemas = []
+    filas = [c for c in filas_tabla(seccion(texto, FRENTE)) if c and c[0].isdigit()]
+    if sorted(int(c[0]) for c in filas) != list(range(1, SERVICIOS_CATALOGO + 1)):
+        problemas.append(("FALLO", f"la tabla de servicios debe tener las filas 1 a {SERVICIOS_CATALOGO} "
+                                   f"(hay {len(filas)})"))
+    for celdas in filas:
+        if len(celdas) < 5:
+            problemas.append(("FALLO", f"fila {celdas[0]} incompleta"))
+            continue
+        servicio, url_celda = celdas[1], celdas[4]
+        oferta = sin_acentos(RE_MARCA.sub("", celdas[2])).strip().rstrip(".")
+        if oferta not in ("si", "no"):
+            problemas.append(("FALLO", f"«{servicio}»: valor no reconocido en «¿Lo ofrecen?» ({celdas[2]})"))
+            continue
+        if oferta == "no":
+            continue
+        if "portada unica" in sin_acentos(" ".join(celdas)):
+            problemas.append(("AVISO", f"«{servicio}»: portada única declarada; respaldar con la captura de la home"))
+            continue
+        url = RE_URL.search(url_celda)
+        if not url or urllib.parse.urlsplit(url.group(0)).path in ("", "/"):
+            problemas.append(("FALLO", f"«{servicio}» marcado Sí sin URL de su página (valor: {url_celda or 'vacío'})"))
+    return problemas
+
+
+def v6_marcadores(texto):
+    problemas = []
+    for n, linea in enumerate(texto.splitlines(), 1):
+        sin_citas = RE_CITA.sub("", linea)
+        for marcador in MARCADORES:
+            if marcador in sin_citas:
+                problemas.append(("FALLO", f"marcador de plantilla «{marcador}» en la línea {n}"))
+    return problemas
+
+
+# --- Orquestación -------------------------------------------------------------
+
+def main():
+    parser = argparse.ArgumentParser(description="Verifica la investigación (DECISION-006).")
+    parser.add_argument("--raiz", default=os.path.join(RAIZ_REPO, "docs"),
+                        help="carpeta que contiene investigacion/ y diseno/ (por defecto, docs/)")
+    parser.add_argument("--sin-red", action="store_true",
+                        help="salta V8 (enlaces vivos); para el gate se pega la salida con red")
+    args = parser.parse_args()
+
+    raiz = os.path.abspath(args.raiz)
+    inv = os.path.join(raiz, "investigacion")
+    dis = os.path.join(raiz, "diseno")
+    bases = [inv, dis]
+    carpetas_capturas = [os.path.join(b, "capturas") for b in bases if os.path.isdir(os.path.join(b, "capturas"))]
+
+    # Solo fichas de primer nivel: el glob no recursivo deja fuera anexo-medianas/.
+    fichas = sorted(glob.glob(os.path.join(inv, "fichas", "*.md")))
+    documentos = fichas + sorted(glob.glob(os.path.join(inv, "servicios", "*.md")))
+    if os.path.isfile(os.path.join(inv, "prueba-social.md")):
+        documentos.append(os.path.join(inv, "prueba-social.md"))
+    documentos += sorted(glob.glob(os.path.join(dis, "*.md")))
+    textos = {ruta: leer(ruta) for ruta in documentos}
+
+    def rel(ruta):
+        return os.path.relpath(ruta, raiz)
+
+    resultados = []  # (verificación, estado, archivo, motivo)
+
+    def anotar(v, archivo, problemas):
+        if not problemas:
+            resultados.append((v, "OK", archivo, "sin incidencias"))
+        for estado, motivo in problemas:
+            resultados.append((v, estado, archivo, motivo))
+
+    for ruta in fichas:
+        anotar("V1", rel(ruta), v1_campos(textos[ruta]))
+    for ruta in documentos:
+        anotar("V2", rel(ruta), v2_capturas(textos[ruta], ruta, bases))
+    for ruta in fichas:
+        anotar("V3", rel(ruta), v3_capturas_propias(textos[ruta], ruta))
+
+    total, duplicadas = v4_duplicadas(carpetas_capturas)
+    for ruta, otras in duplicadas:
+        resultados.append(("V4", "FALLO", rel(ruta), "idéntica (mismo SHA-256) a " + ", ".join(rel(o) for o in otras)))
+    if not duplicadas:
+        resultados.append(("V4", "OK", f"capturas ({total} archivos)", "ninguna duplicada"))
+
+    for ruta in fichas:
+        anotar("V5", rel(ruta), v5_portada(textos[ruta]))
+    for ruta in documentos:
+        anotar("V6", rel(ruta), v6_marcadores(textos[ruta]))
+
+    perfiles = Counter()
+    for ruta in fichas:
+        valor = campos_ficha(textos[ruta]).get("Bloque · perfil", ("", ""))[0].strip()
+        perfil = valor.split("·")[-1].strip().lower() if "·" in valor else ""
+        perfiles[perfil] += 1
+        if perfil not in PERFILES_VALIDOS:
+            resultados.append(("V7", "FALLO", rel(ruta), f"perfil no reconocido ({valor or 'vacío'})"))
+    comparables = perfiles["comparable"]
+    referentes = perfiles["referente"] + perfiles["especialista"]
+    errores_composicion = []
+    if len(fichas) != FICHAS_ESPERADAS:
+        errores_composicion.append(f"hay {len(fichas)} fichas principales; se esperan {FICHAS_ESPERADAS}")
+    if comparables != COMPARABLES_ESPERADOS:
+        errores_composicion.append(f"{comparables} comparables; se esperan {COMPARABLES_ESPERADOS}")
+    if referentes != REFERENTES_ESPECIALISTAS_ESPERADOS:
+        errores_composicion.append(f"{referentes} referentes/especialistas; se esperan {REFERENTES_ESPECIALISTAS_ESPERADOS}")
+    archivo_composicion = rel(inv) + "/fichas"
+    for error in errores_composicion:
+        resultados.append(("V7", "FALLO", archivo_composicion, error))
+    if not errores_composicion:
+        resultados.append(("V7", "OK", archivo_composicion,
+                           f"{len(fichas)} fichas: {comparables} comparables, {referentes} referentes/especialistas"))
+
+    if args.sin_red:
+        resultados.append(("V8", "OMITIDA", "todos los documentos", "--sin-red: no se comprueba ningún enlace"))
+    else:
+        urls_por_doc = {ruta: sorted({u.rstrip(".,;:") for u in RE_URL.findall(textos[ruta])}) for ruta in documentos}
+        todas = sorted({u for urls in urls_por_doc.values() for u in urls})
+        with concurrent.futures.ThreadPoolExecutor(max_workers=HILOS_RED) as pool:
+            estado_url = clasificar_urls(dict(zip(todas, pool.map(comprobar_url, todas))))
+        for ruta in documentos:
+            problemas = [(estado_url[u][0], f"{u} → {estado_url[u][1]}")
+                         for u in urls_por_doc[ruta] if estado_url[u][0] != "OK"]
+            anotar("V8", rel(ruta), problemas)
+
+    print(f"Verificación de la investigación · raíz: {raiz} · V8: {'omitida (--sin-red)' if args.sin_red else 'con red'}")
+    for v, estado, archivo, motivo in resultados:
+        print(f"{v}  {estado:<7} {archivo} — {motivo}")
+    fallos = sum(1 for r in resultados if r[1] == "FALLO")
+    avisos = sum(1 for r in resultados if r[1] == "AVISO")
+    print(f"\n{fallos} FALLOS · {avisos} AVISOS")
+    return 1 if fallos else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

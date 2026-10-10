@@ -1,7 +1,7 @@
 # 📋 Status: Kia (DEV principal)
 
 > **Proyecto:** Pharmaco Assets
-> **Última actualización:** 2026-10-08
+> **Última actualización:** 2026-10-10
 
 ---
 
@@ -17,6 +17,7 @@ Subagente de Claude Code (Haiku 5.5), lanzado por Clia con el ID de la TASK. Esc
 
 | Tarea | Estado | Notas |
 | --- | --- | --- |
+| TASK-005 · verificador de la investigación (🔴) | EN_REVISION | Segunda ronda de REVIEW-005 (`20854d3` 🔴): V2 valida VP8/VP8L/ANMF y el filtro PNG; regresiones `falla-v2c`, `falla-v2d`, `falla-v2e` y `correcta-formatos`; salida con red pegada en el hilo |
 | — | — | Hereda el trabajo de Ania (ver [`ania-status.md`](ania-status.md)) |
 
 ---
@@ -25,7 +26,7 @@ Subagente de Claude Code (Haiku 5.5), lanzado por Clia con el ID de la TASK. Esc
 
 | ID | Prioridad | Qué se espera |
 | --- | --- | --- |
-| TASK-005 | P0 | Implementar `scripts/verificar-investigacion.py` (🔴) |
+| TASK-005 | P0 | EN_REVISION. Enmienda 6 corregida en `2d8a477`: captura de página 320×200 px, captura de componente 32 px por lado. Pendiente: cuarta ronda de REVIEW-005 de Dexia sobre `2d8a477`; después, sign-off de Clia (🔴) |
 | TASK-001 | P0 | F1: las 10 fichas de comparables pequeñas y corrección de las 10 grandes |
 | TASK-002 · 003 · 004 | P0/P1 | Rehacer con la muestra nueva, tras TASK-001 |
 
