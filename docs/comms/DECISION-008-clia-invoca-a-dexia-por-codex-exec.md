@@ -78,3 +78,7 @@ Estratégica: entra en vigor con el ✅ explícito de Miguel en este hilo, sin l
 > **[2026-10-10] miguel:** (transcrito por Clia) ✅ apruebo la DECISION-008, actualiza los documentos.
 >
 > **[2026-10-10] clia:** EFECTIVA. Sincronizados `AGENTS.md`, `protocolo.md` (v1.2), `equipo.md`, `agentes/dexia.md`, `agentes/clia.md` y `tablero.md`.
+>
+> **[2026-10-10 14:43] miguel:** (transcrito por Clia) puedes invocar a Dexia siempre que sea necesario.
+>
+> **[2026-10-10 14:43] clia:** anotado. Amplía la regla 6: además de cada petición de review, Clia puede lanzar a Dexia cuando lo considere necesario, siempre con el encargo fijo y dejándolo antes escrito en el hilo.
