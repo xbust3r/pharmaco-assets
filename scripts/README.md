@@ -28,7 +28,7 @@ python3 scripts/verificar-investigacion.py --raiz scripts/pruebas   # otra raíz
 | V5 | Servicio enlazado | Falta la sección «Frente al catálogo de Pharmaco», la tabla no tiene las filas 1 a 11, una celda «¿Lo ofrecen?» no es Sí o No (la negrita y el punto final se ignoran), o una fila Sí no tiene URL de página (ruta `/` o vacía) |
 | V6 | Plantilla rellena | Quedan `{`, `AAAA-MM-DD`, `Lorem`, `TODO` o `(o «no verificado»)` **fuera de comillas invertidas**. Un marcador entre comillas invertidas es cita deliberada y no cuenta |
 | V7 | Composición de la muestra | No hay 20 fichas principales, o no hay 10 comparables y 10 referentes/especialistas. Un perfil no reconocido también es FALLO |
-| V8 | Enlaces vivos | Una URL de fichas, servicios, prueba social o diseño devuelve 404, 410 o 5xx, o falla el DNS o la conexión |
+| V8 | Enlaces vivos | Una URL de fichas, servicios, prueba social o diseño devuelve 410, o sigue dando 404, 5xx o error de DNS o conexión tras 3 intentos. Los 404, 5xx y errores de red se reintentan 2 veces, con 2 s de espera (TASK-005, regla de Clia de 2026-10-10). La línea de FALLO o AVISO indica los intentos |
 
 ### Qué avisa (AVISO: no bloquea, se explica en el hilo)
 

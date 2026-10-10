@@ -21,6 +21,7 @@ import os
 import re
 import struct
 import sys
+import time
 import unicodedata
 import urllib.error
 import urllib.parse
@@ -303,23 +304,48 @@ CABECERAS_NAVEGADOR = {
 }
 
 
-def comprobar_url(url):
+# TASK-005 (Clia, 2026-10-10): ante error de red, 404 o 5xx se reintenta; sólo es FALLO si fallan los 3 intentos.
+# 403 y 429 (antibot) son AVISO y no se reintentan.
+REINTENTOS = 2
+ESPERA_REINTENTO = 2  # segundos
+
+
+def _intentar_url(url):
+    """Un intento. Devuelve (estado, motivo, reintentable)."""
     peticion = urllib.request.Request(url, headers=CABECERAS_NAVEGADOR)
     try:
         with urllib.request.urlopen(peticion, timeout=TIMEOUT_SEGUNDOS) as respuesta:
             final = respuesta.geturl()
     except urllib.error.HTTPError as e:
         # DECISION-006 (aclaración 1): solo 404 y 410 son FALLO; otros 4xx son bloqueos, AVISO.
-        if e.code in (404, 410):
-            return "FALLO", f"HTTP {e.code}"
+        if e.code == 404:
+            return "FALLO", "HTTP 404", True
+        if e.code == 410:
+            return "FALLO", "HTTP 410", False
         if 400 <= e.code < 500:
-            return "AVISO", f"HTTP {e.code} (bloqueo antibot o de región): respaldar con captura"
-        return "FALLO", f"HTTP {e.code}"
-    except (urllib.error.URLError, OSError, ValueError, http.client.HTTPException) as e:
-        return "FALLO", f"error de red: {getattr(e, 'reason', e)}"
+            return "AVISO", f"HTTP {e.code} (bloqueo antibot o de región): respaldar con captura", False
+        return "FALLO", f"HTTP {e.code}", 500 <= e.code < 600
+    except (urllib.error.URLError, OSError, http.client.HTTPException) as e:
+        return "FALLO", f"error de red: {getattr(e, 'reason', e)}", True
+    except ValueError as e:
+        return "FALLO", f"error de red: {getattr(e, 'reason', e)}", False
     if sin_www(final) != sin_www(url):
-        return "AVISO", f"redirige a otro dominio: {final}"
-    return "OK", "responde"
+        return "AVISO", f"redirige a otro dominio: {final}", False
+    return "OK", "responde", False
+
+
+def comprobar_url(url):
+    estado, motivo, reintentable = _intentar_url(url)
+    intentos = 1
+    while reintentable and intentos <= REINTENTOS:
+        time.sleep(ESPERA_REINTENTO)
+        estado, motivo, reintentable = _intentar_url(url)
+        intentos += 1
+    if estado == "OK":
+        return estado, motivo
+    if intentos > 1:
+        motivo += f" (tras {intentos} intentos)"
+    return estado, motivo
 
 
 # --- Comprobaciones: cada una devuelve [(estado, motivo)] ---------------------
