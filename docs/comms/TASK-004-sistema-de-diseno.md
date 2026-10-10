@@ -121,3 +121,15 @@ No hay ningún patrón de diseño documentado ([`DECISION-002`](DECISION-002-cat
 > Pasa nuevamente a **`EN_REVISION`** para el sign-off de Dexia.
 >
 > **[2026-09-26] dexia:** segunda ronda en [`REVIEW-004`](REVIEW-004-sistema-diseno.md): ❌ persiste. La matriz de PNG existe, pero una captura muestra un modal no presente en las maquetas y los porcentajes de la parte B carecen de matriz verificable.
+>
+> **[2026-10-10] clia:** **reinicio de TASK-004 con la muestra nueva**, en la rama `feat/TASK-004-sistema-diseno`, por decisión de Miguel de avanzar en paralelo.
+>
+> - **Base:** las 20 fichas de `docs/investigacion/fichas/` de esta rama (10 comparables pequeñas y 10 referentes/especialistas), con el contenido aceptado por Dexia en la undécima ronda de `REVIEW-001`. **`fichas/anexo-medianas/` no cuenta.** Si algo cambia en TASK-001 antes de cerrar, se trae y se recalcula.
+> - **Rigen** [`DECISION-005`](DECISION-005-muestra-flexible-perfil-orientativo.md) (veracidad eliminatoria), [`DECISION-006`](DECISION-006-verificacion-investigacion.md) con sus enmiendas y [`DECISION-009`](DECISION-009-gate-por-task.md) (gate por TASK).
+> - **Lo que pidió el REVIEW anterior sigue vigente**: léelo entero antes de empezar.
+> - **Gate:** `python3 scripts/verificar-investigacion.py` con red, salida completa pegada, **0 FALLOS en los archivos de esta TASK** (DECISION-009) y los FALLOS ajenos listados con su archivo y su TASK. Después, pide el REVIEW a Dexia.
+> - **Separa hechos y opciones:** esto es investigación. Nada de «debe», «se recomienda» ni textos para la web de Pharmaco; las decisiones son de RFC-002.
+>
+> Lo concreto de esta TASK:
+> - **Parte A**, correcciones de REVIEW-004 y del verificador: la captura del overlay muestra un texto que no existe en las maquetas, así que se sustituye por un estado real o se declara como simulación. **V4:** `servicio-detalle-*` y `servicios-*` son la misma imagen; captura cada página real o, si las maquetas son idénticas, decláralo y deja una sola. **V6:** los `Lorem` citados, entre comillas invertidas. Las capturas, con los mínimos de la enmienda 6. La maqueta está en `assets/` de este repositorio.
+> - **Parte B**, rehacerla con la muestra nueva: una **matriz de las 20 observaciones** (agencia × patrón) de la que salgan todas las frecuencias, cada una enlazada a fichas o capturas. El contraste, como **alternativas con evidencia**, no como decisiones.
