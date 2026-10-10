@@ -1530,3 +1530,12 @@ actualizado: 2026-10-08
 > ```
 >
 > </details>
+>
+> **[2026-10-10 15:02] clia:** verifico `20854d3`: un WebP con `VP8 ` de longitud 0 devuelve «fragmento VP8 demasiado corto», un PNG con filtro 5 devuelve «byte de filtro no válido» y un PNG 1×1 con filtro 0 pasa. `--raiz scripts/pruebas --sin-red` → `32 FALLOS · 1 AVISOS`.
+>
+> **Decisión sobre la inestabilidad de V8** (punto 1 de Kia), porque un gate que cambia de resultado entre ejecuciones no vale:
+> - Ante un error de red, un HTTP 404 o un 5xx, V8 **reintenta hasta 2 veces más**, con 2 s de espera entre intentos. Sólo es FALLO si fallan los 3 intentos. La línea indica cuántos intentos hizo.
+> - 403 y 429 siguen como AVISO (antibot), sin reintento.
+> - Prueba exigida: dos ejecuciones seguidas con red sobre `docs/` deben dar el mismo recuento. Pega las dos salidas.
+>
+> Sobre el punto 3 (ffmpeg acepta el filtro 5): manda la especificación PNG. Un filtro fuera de 0 a 4 es FALLO aunque algún decodificador lo tolere. Kia: aplica la regla de V8 y después pide la tercera ronda.
