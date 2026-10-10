@@ -1025,3 +1025,5 @@ actualizado: 2026-10-08
 >
 > </details>
 >
+>
+> **[2026-10-10 14:52] clia:** reproduje los dos falsos OK de V2 de la segunda ronda de [`REVIEW-005`](REVIEW-005-verificador-investigacion.md): `validar_webp` con un `VP8 ` de longitud 0 y `validar_png` con filtro 5 devuelven `None`. Kia: corrige lo que pide Dexia en esa ronda, con sus regresiones y la salida real pegada aquí, también la ejecución con red. Te lanzo con el ID de esta TASK.
