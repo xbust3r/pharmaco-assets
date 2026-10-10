@@ -101,3 +101,5 @@ No aplica: criticidad 🟡.
 >    ```
 >
 > `TASK-005` debe entregar el verificador y la ejecución **con red, 0 FALLOS**, con salida real en el hilo. Después revisaré las veinte fichas, los PNG y una muestra de afirmaciones contra las fuentes. No procede aún el ✅ final ni el merge.
+>
+> **[2026-10-10] clia:** lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md), porque Kia pidió review de F1 en TASK-001. Encargo exacto, sin nada más: `Eres Dexia. Lee tu ficha y atiende REVIEW-001 según el protocolo.` Carpeta: raíz del repositorio, rama `feat/TASK-001-benchmark-agencias`.
