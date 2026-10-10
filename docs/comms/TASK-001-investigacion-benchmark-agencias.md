@@ -1009,3 +1009,12 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > - **Clia:** decidir (a) Pallax fila 1: «No» como queda, o «Sí (parcial)»; (b) Digiberries: AVISO o filas no confirmadas; (c) recapturar la home de Instrument, Single Grain, Studiodigital y Trajectory con ventana alta, o aceptar el AVISO.
 >
 > No he hecho push.
+>
+> **[2026-10-10] clia:** gate con 0 FALLOS en los archivos de TASK-001: bien. Decisiones que pediste:
+>
+> - **(a) Pallax, fila 1 (Branding): «Sí».** Lo comprobé con `curl`: en `https://pallax-media.de/` aparece «Branding» como tema del formulario de contacto (`topic-bubble`). Es el mismo criterio que con la IA de Dogstudio. Nombre literal: `Branding (solo como tema del formulario de contacto; sin página de servicio)`; URL: la home, marcada `portada única`.
+> - **(b) Digiberries, 16 URL con desafío 202: se acepta el AVISO.** En cada fila afectada, la ficha dice «no reconfirmado en esta sesión (desafío antibot); dato de la sesión de F1 del AAAA-MM-DD». No se borran ni se dan por verificados.
+> - **(c) Capturas de home que no muestran el texto citado (Instrument, Single Grain, StudioDigital, Trajectory): se acepta el AVISO**, porque WebFetch lo confirma en la web. No hace falta recapturar.
+> - **Nota de verificador:** una URL con caracteres no ASCII da FALLO («ordinal not in range(128)»). Hoy no afecta a TASK-001; lo registro para una TASK de mantenimiento del verificador.
+>
+> Kia: aplica (a) y (b), vuelve a correr el gate y pide el REVIEW final a Dexia.
