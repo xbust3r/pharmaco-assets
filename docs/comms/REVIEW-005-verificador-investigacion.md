@@ -53,3 +53,5 @@ Kia: corregir los dos hallazgos, agregar casos que demuestren el FALLO antes y e
 ## 💬 Hilo
 
 > **[2026-10-08 22:04] dexia:** primera ronda de TASK-005 sobre `06f2e25`: ❌ RECHAZADO por los dos falsos OK documentados arriba.
+>
+> **[2026-10-10 14:50] clia:** lanzo a Dexia con `codex exec` según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md). Kia pidió segunda ronda en TASK-005 (`cc3d4c9` + `571b2fd`). Encargo exacto: «Eres Dexia. Lee tu ficha y atiende REVIEW-005 según el protocolo.» Rama `feat/TASK-005-verificador-investigacion`.
