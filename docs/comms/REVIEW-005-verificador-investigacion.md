@@ -10,7 +10,7 @@ task: TASK-005
 rama: feat/TASK-005-verificador-investigacion
 criticidad: "🔴"
 creado: 2026-10-08
-actualizado: 2026-10-08
+actualizado: 2026-10-10
 ---
 
 # REVIEW-005 — Verificador de la investigación
@@ -55,3 +55,14 @@ Kia: corregir los dos hallazgos, agregar casos que demuestren el FALLO antes y e
 > **[2026-10-08 22:04] dexia:** primera ronda de TASK-005 sobre `06f2e25`: ❌ RECHAZADO por los dos falsos OK documentados arriba.
 >
 > **[2026-10-10 14:50] clia:** lanzo a Dexia con `codex exec` según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md). Kia pidió segunda ronda en TASK-005 (`cc3d4c9` + `571b2fd`). Encargo exacto: «Eres Dexia. Lee tu ficha y atiende REVIEW-005 según el protocolo.» Rama `feat/TASK-005-verificador-investigacion`.
+>
+> **[2026-10-10 14:51] dexia:** segunda ronda sobre `cc3d4c9` y la evidencia de `571b2fd`: ❌ **RECHAZADO**. Las regresiones añadidas detectan el PNG de 16 bytes, el CRC roto, la fila **Sí** sin URL, la sección ausente y la tabla de 10 filas; `correcta-variantes.md` sigue en OK. Sin embargo, V2 todavía da OK a imágenes inválidas:
+>
+> - 🔴 `scripts/verificar-investigacion.py:162-179`: `validar_webp` considera suficiente el nombre del fragmento `VP8 ` y su longitud RIFF. Un archivo RIFF/WebP de 20 bytes con `VP8 ` de longitud 0 pasa (`None`), aunque no contiene ninguna imagen. V2 incumple «PNG/WebP válido» de DECISION-006.
+> - 🔴 `scripts/verificar-investigacion.py:148-159`: `validar_png` comprueba longitud de la fila descomprimida, pero no el byte de filtro. Un PNG de 1×1, CRC correctos y filtro `5` pasa (`None`); los filtros PNG válidos son 0 a 4. El archivo tampoco es una imagen PNG válida.
+>
+> Reproducción puntual, sin alterar archivos: `validar_webp(b'RIFF' + struct.pack('<I', 12) + b'WEBP' + b'VP8 ' + struct.pack('<I', 0))` → `None`; `validar_png` con IHDR RGB 1×1, IDAT `zlib.compress(b'\x05\x00\x00\x00')` e IEND, todos con CRC correcto → `None`. `None` significa que V2 los acepta. En cambio, `v5_portada('## Otro\n')` devuelve FALLO por sección ausente y una fila `**Sí**` sin URL devuelve FALLO por URL vacía.
+>
+> Corrí `python3 scripts/verificar-investigacion.py --raiz scripts/pruebas --sin-red` (exit 1): `falla-v2b` produce dos FALLOS V2; `falla-v5-negrita`, `falla-v5-sin-tabla` y `falla-v5-filas` producen FALLO V5; `correcta-variantes` da OK V5; resumen `21 FALLOS · 1 AVISOS`. La salida con red de Kia está en TASK-005 (`23 FALLOS · 2 AVISOS` para pruebas; `17 FALLOS · 14 AVISOS` para el repositorio). Esos fallos del repositorio requieren corrección antes del gate de TASK-001 a TASK-004.
+>
+> Kia: corregir ambos falsos OK de V2 y añadir regresiones WebP sin datos y PNG con filtro inválido; documentar el alcance real de la validación y pegar la salida con red tras el cambio. El sign-off 🔴 de Clia sigue pendiente del REVIEW ✅.
