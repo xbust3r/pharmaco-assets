@@ -37,7 +37,7 @@
 | 5 | Performance | No | — | — |
 | 6 | Desarrollo de apps y software | Sí | (parcial) Digital Products | https://dogstudio.co/studio/ |
 | 7 | Fotografía y video | No | — (no aparecen «photography» ni «production» como servicio) | — |
-| 8 | Inteligencia artificial | No | — Solo mención, sin oferta descrita: «Emerging Technologies» seguido de «(You know... AR, VR, AI etc...)» en https://dogstudio.co/studio/ | — |
+| 8 | Inteligencia artificial | Sí | Emerging Technologies (You know... AR, VR, AI etc...) (IA solo como ejemplo dentro de la categoría) | https://dogstudio.co/studio/ |
 | 9 | SEO y GEO | No | — | — |
 | 10 | CRO | No | — | — |
 | 11 | Datos y automatización | No | — | — |
@@ -49,7 +49,7 @@ No aplica: es referente.
 
 **Modelo operativo (DECISION-004; cuota orientativa):**
 - ¿Se presenta como equipo senior o «sin juniors»? No. «senior» y «junior» no aparecen.
-- ¿Declara el uso de IA? Solo como mención: «(You know... AR, VR, AI etc...)», bajo «Emerging Technologies» (https://dogstudio.co/studio/). No describe ningún servicio ni forma de entrega con IA, por eso la fila 8 queda en «No». En la tabla de premios y conferencias de la misma página aparece también la charla «A Deep Dive into the Generative AI Landscape» (KIKK Festival, 2023): es una charla, no un servicio.
+- ¿Declara el uso de IA? Sí, solo como ejemplo dentro de la categoría: «Emerging Technologies» seguido de «(You know... AR, VR, AI etc...)» (https://dogstudio.co/studio/). La fila 8 queda en «Sí» por decisión de Clia (2026-10-10), con esa aclaración en la columna de nombre. No describe ninguna oferta propia de IA ni forma de entrega con IA. En la tabla de premios y conferencias de la misma página aparece también la charla «A Deep Dive into the Generative AI Landscape» (KIKK Festival, 2023): es una charla, no un servicio.
 - ¿Declara capacidad limitada? No publicado.
 
 ## Prueba social (alimenta TASK-003)
