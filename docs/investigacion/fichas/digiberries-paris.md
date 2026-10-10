@@ -16,6 +16,8 @@
 
 **Aviso de caso:** su página «Nos références» es un listado de logotipos y tarjetas sin páginas de caso propias. La captura muestra ese listado.
 
+**Aviso de páginas de servicio sin verificar (2026-10-10):** las subpáginas de servicio enlazadas en las filas de esta ficha, además de `/a-propos/` y `/nos-references/` (todas bajo el dominio de la home) devolvieron respuesta de desafío en todos los intentos de esta sesión: HTTP 202 con el verificador, «Robot Challenge Screen» con Chrome headless (`--dump-dom`) y contenido vacío con WebFetch (también la home). Las capturas de home, servicios y caso sí muestran contenido real. Las filas de servicio apoyadas en esas subpáginas **no quedan confirmadas en esta sesión**; vienen de la entrega F1 previa y no se han reverificado.
+
 ## Propuesta de valor
 «Digiberries accompagne les entreprises de toutes tailles dans leur stratégie de visibilité sur le web» (https://www.digiberries.fr/, captura `capturas/digiberries-paris-home.png`). Traducción: «Digiberries acompaña a las empresas de todos los tamaños en su estrategia de visibilidad en la web.»
 
