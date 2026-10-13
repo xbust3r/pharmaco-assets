@@ -64,7 +64,7 @@ El mapa de colores completo que sale del CSS tiene 67 valores distintos. Los de 
 ### 1.2 Tipografía
 
 - **Familia:** `html` declara `Poppins,Arial,Helvetica,sans-serif`. Otras reglas usan `sans-serif`, `monospace` (en `pre`, `code`, `kbd`) y `Helvetica` (en `.c-views__text`).
-- **Archivos declarados** (`@font-face`, en `fonts/`): Poppins 400 (`Poppins-Regular`), 500 (`Poppins-Medium`) y 600 (`Poppins-SemiBold`), en WOFF2 y WOFF, con `font-display: swap`. **No hay `@font-face` para 700**, aunque `.s-cms-content h2`, `h3` y `strong` piden `font-weight: 700`. Qué pinta el navegador en ese caso no se ha medido.
+- **Archivos declarados** (`@font-face`, en `fonts/`): Poppins 400 (`Poppins-Regular`), 500 (`Poppins-Medium`) y 600 (`Poppins-SemiBold`), en WOFF2 y WOFF, con `font-display: swap`. **No hay `@font-face` para 700** (ni hay archivo de Bold o ExtraBold en `fonts/`; solo están los tres pesos citados), aunque `.s-cms-content h2`, `h3` y `strong` piden `font-weight: 700`. Qué pinta el navegador en ese caso no se ha medido.
 - **Pesos usados:** 600 (11 reglas), 500 (9), 400 (4), 700 (4), 300 (1, en `.c-views__text`).
 
 Escala por selector (`base` es sin media query; los puntos de corte son los de la sección 1.5):

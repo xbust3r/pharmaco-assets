@@ -102,17 +102,17 @@ Las frecuencias salen de la matriz de arriba (20 observaciones por patrón):
 
 Cada línea lista la agencia y la línea de la ficha. Las agencias marcadas NC no aparecen.
 
-- **A1** Sí: agencia-buffalo (L65), artefact (L72), blueorange-digital (L67), code-and-theory (L68), devibi (L64), digiberries-paris (L68), instrument (L66), pallax-media (L70), single-grain (L65), sitelabs (L68), studiodigital (L71), tescanet (L71), trajectory-web-design (L70), upraw-media (L67). No: —.
-- **A2** Sí: agencia-buffalo (L65), code-and-theory (L64), devibi (L61), dogstudio (L64), instrument (L62), media-monks (L65), monopo (L62), sitelabs (L65), tescanet (L68), trajectory-web-design (L66). No: blueorange-digital (L63), pallax-media (L67), screenfire-media (L65), single-grain (L61), stratagemma-studio (L66), studiodigital (L68), upraw-media (L63).
-- **A3** Sí: agencia-buffalo (L65), artefact (L68), blueorange-digital (L63), code-and-theory (L64), devibi (L61), instrument (L62), monopo (L62), screenfire-media (L65), single-grain (L61), tescanet (L68), trajectory-web-design (L66), upraw-media (L63), work-and-co (L66). No: digiberries-paris (L68), dogstudio (L64), media-monks (L65), pallax-media (L67), sitelabs (L65), stratagemma-studio (L66), studiodigital (L68).
-- **A4** Sí: agencia-buffalo (L65), artefact (L68), media-monks (L70), studiodigital (L68). No: —.
+- **A1** Sí: agencia-buffalo (L65), artefact (L72), blueorange-digital (L67), code-and-theory (L68), devibi (L64), digiberries-paris (L70), instrument (L66), pallax-media (L70), single-grain (L65), sitelabs (L68), studiodigital (L73), tescanet (L71), trajectory-web-design (L70), upraw-media (L67). No: —.
+- **A2** Sí: agencia-buffalo (L65), code-and-theory (L64), devibi (L61), dogstudio (L64), instrument (L62), media-monks (L65), monopo (L62), sitelabs (L65), tescanet (L68), trajectory-web-design (L66). No: blueorange-digital (L63), pallax-media (L67), screenfire-media (L65), single-grain (L61), stratagemma-studio (L66), studiodigital (L70), upraw-media (L63).
+- **A3** Sí: agencia-buffalo (L65), artefact (L68), blueorange-digital (L63), code-and-theory (L64), devibi (L61), instrument (L62), monopo (L62), screenfire-media (L65), single-grain (L61), tescanet (L68), trajectory-web-design (L66), upraw-media (L63), work-and-co (L66). No: digiberries-paris (L70), dogstudio (L64), media-monks (L65), pallax-media (L67), sitelabs (L65), stratagemma-studio (L66), studiodigital (L70).
+- **A4** Sí: agencia-buffalo (L65), artefact (L68), media-monks (L70), studiodigital (L70). No: —.
 - **V1** Sí: artefact (L74), blueorange-digital (L69), code-and-theory (L70), instrument (L68), media-monks (L68), single-grain (L67), tescanet (L73), work-and-co (L72). No: —.
-- **V2** Sí: agencia-buffalo (L70), code-and-theory (L70), digiberries-paris (L73), sitelabs (L70), stratagemma-studio (L71), work-and-co (L72). No: —.
-- **V3** Sí: blueorange-digital (L69), code-and-theory (L70), dogstudio (L65), single-grain (L67), stratagemma-studio (L71), studiodigital (L73), upraw-media (L69). No: agencia-buffalo (L70), devibi (L66), digiberries-paris (L73), instrument (L68), pallax-media (L72), sitelabs (L70), work-and-co (L72).
+- **V2** Sí: agencia-buffalo (L70), code-and-theory (L70), digiberries-paris (L75), sitelabs (L70), stratagemma-studio (L71), work-and-co (L72). No: —.
+- **V3** Sí: blueorange-digital (L69), code-and-theory (L70), dogstudio (L65), single-grain (L67), stratagemma-studio (L71), studiodigital (L75), upraw-media (L69). No: agencia-buffalo (L70), devibi (L66), digiberries-paris (L75), instrument (L68), pallax-media (L72), sitelabs (L70), work-and-co (L72).
 - **V4** Sí: artefact (L75), blueorange-digital (L64), devibi (L62), dogstudio (L66), instrument (L69), monopo (L63), single-grain (L68), tescanet (L74), upraw-media (L64). No: —.
-- **V5** Sí: artefact (L69), digiberries-paris (L69), instrument (L63), screenfire-media (L66), single-grain (L62), trajectory-web-design (L67), upraw-media (L64). No: —.
-- **V6** Sí: artefact (L69), blueorange-digital (L64), single-grain (L62), sitelabs (L66), studiodigital (L69). No: —.
-- **V7** Sí: artefact (L69), code-and-theory (L65), digiberries-paris (L69), pallax-media (L68), upraw-media (L64), work-and-co (L67). No: —.
+- **V5** Sí: artefact (L69), digiberries-paris (L71), instrument (L63), screenfire-media (L66), single-grain (L62), trajectory-web-design (L67), upraw-media (L64). No: —.
+- **V6** Sí: artefact (L69), blueorange-digital (L64), single-grain (L62), sitelabs (L66), studiodigital (L71). No: —.
+- **V7** Sí: artefact (L69), code-and-theory (L65), digiberries-paris (L71), pallax-media (L68), upraw-media (L64), work-and-co (L67). No: —.
 
 ### 2.3 Capturas de ejemplo
 
