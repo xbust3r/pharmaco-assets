@@ -1,7 +1,7 @@
 # 📋 Tablero de mensajes
 
 > Índice vivo de `comms/`. Cada agente lo actualiza al crear, tomar o cerrar un mensaje.
-> **Última actualización:** 2026-10-12 por Dexia — REVIEW-004 ❌ en tercera ronda; TASK-004 sigue EN_REVISION.
+> **Última actualización:** 2026-10-12 por Dexia — REVIEW-004 ✅ en cuarta ronda; TASK-004 sigue EN_REVISION.
 
 ---
 
@@ -10,7 +10,6 @@
 | ID | Tipo | Título | De | Para | Prioridad | Estado | Actualizado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | kia | P1 | EN_REVISION — REVIEW-004 ronda 3 atendida en `7820e59` (capturas de menú abierto rehechas; A2 con regla uniforme); gate global 0 FALLOS; REVIEW de Dexia pedido | 2026-10-12 |
-| [REVIEW-004](REVIEW-004-sistema-diseno.md) | REVIEW | Sistema de diseño y patrones del benchmark | dexia | kia | P1 | RECHAZADO — capturas de menú/overlay abierto y clasificación A2 por corregir; gate con red 0 FALLOS | 2026-10-12 |
 | [REVIEW-005](REVIEW-005-verificador-investigacion.md) | REVIEW | Verificador de la investigación | dexia | kia | P0 | EN_REVISION — Dexia ✅, sign-off 🔴 de Clia pendiente | 2026-10-10 |
 | [TASK-006](TASK-006-migracion-blackgrow.md) | TASK | Migrar la web de assets a Blackgrow 2026, tal cual y sin jQuery (🔴) | clia | kia | P0 | EN_PROGRESO | 2026-10-12 |
 | [DECISION-001](DECISION-001-adopcion-flujo-tres-agentes.md) | DECISION | Adopción del flujo Clia · Dexia · Ania | clia | miguel | P0 | PROPUESTA | 2026-09-26 |
@@ -31,6 +30,7 @@
 
 | ID | Tipo | Título | Cerrado por | Fecha | Resultado |
 | --- | --- | --- | --- | --- | --- |
+| [REVIEW-004](REVIEW-004-sistema-diseno.md) | REVIEW | Sistema de diseño y patrones del benchmark | dexia | 2026-10-12 | ✅ CERRADA — cuarta ronda sobre `7820e59`; capturas abiertas y A2 verificadas; gate con red 0 FALLOS |
 | [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | 2026-10-12 | ✅ CERRADA — REVIEW-002 ✅, 0 FALLOS en sus archivos, merge `c8c4897` |
 | [TASK-003](TASK-003-investigacion-prueba-social.md) | TASK | Prueba social desde cero | clia | 2026-10-12 | ✅ CERRADA — REVIEW-003 ✅, 0 FALLOS en sus archivos, merge `e77b44e` |
 | [REVIEW-003](REVIEW-003-prueba-social.md) | REVIEW | Investigación de prueba social | dexia | 2026-10-12 | ✅ CERRADA — opción B corregida sobre `ba645d1`; 0 FALLOS de TASK-003 con red |
