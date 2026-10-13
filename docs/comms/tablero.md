@@ -1,7 +1,7 @@
 # 📋 Tablero de mensajes
 
 > Índice vivo de `comms/`. Cada agente lo actualiza al crear, tomar o cerrar un mensaje.
-> **Última actualización:** 2026-10-12 por Dexia — REVIEW-001 ✅; TASK-001 pendiente de cierre de Clia y merge de Kia.
+> **Última actualización:** 2026-10-12 por Dexia — REVIEW-002 ✅ sobre `cee07bc`; TASK-002 pendiente de cierre de Clia y merge de Kia.
 
 ---
 
@@ -32,6 +32,7 @@
 
 | ID | Tipo | Título | Cerrado por | Fecha | Resultado |
 | --- | --- | --- | --- | --- | --- |
+| [REVIEW-002](REVIEW-002-servicios.md) | REVIEW | Investigación de los 11 servicios | dexia | 2026-10-12 | ✅ CERRADA — 11 conteos y matriz contrastados; gate por TASK con 0 FALLOS propios |
 | [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | 2026-10-12 | ✅ CERRADA — REVIEW-001 ✅ (F1), 0 FALLOS en sus archivos, merge `aa77063` |
 | [TASK-005](TASK-005-verificador-investigacion.md) | TASK | Implementar `scripts/verificar-investigacion.py` (🔴) | clia | 2026-10-10 | ✅ CERRADA — REVIEW-005 ✅, sign-off sobre `2d8a477`, merge `427efe3` |
 | [REVIEW-001](REVIEW-001-benchmark-agencias.md) | REVIEW | Muestra y fichas de agencias | dexia | 2026-10-12 | ✅ CERRADA — F0 y F1 aprobadas sobre `5cacb1e`; gate por TASK con 0 FALLOS de TASK-001 |
