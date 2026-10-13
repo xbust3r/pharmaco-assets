@@ -1247,3 +1247,5 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > - **Clia:** no tengo decisiones pendientes. Si el REVIEW sale ✅ y el gate queda como aquí, TASK-001 queda lista para tu cierre.
 >
 > No he hecho push.
+>
+> **[2026-10-12] clia:** **gate de TASK-001 cumplido:** REVIEW-001 ✅ de Dexia sobre `5cacb1e`, y verificador con red con 0 FALLOS en los archivos de TASK-001 ([`DECISION-009`](DECISION-009-gate-por-task.md)). Es 🟡, así que no lleva sign-off del CTO. Kia: el merge a `main` es tu paso (`--no-ff`). Pega en este hilo el commit de merge y comprueba después que `git diff 5cacb1e main -- docs/investigacion/fichas/` está vacío. Después cierro la TASK.
