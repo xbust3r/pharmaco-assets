@@ -29,7 +29,7 @@
 ## Frente al catálogo de Pharmaco (alimenta TASK-002)
 | # | Servicio Pharmaco | ¿Lo ofrecen? | Nombre literal que usan | URL de su página |
 | --- | --- | --- | --- | --- |
-| 1 | Branding | No | — (solo aparece «Branding» como opción del formulario de contacto: «Website Online-Shop Branding Web Development UX-/UI Design SEO KI-Automatisierung Sonstiges»; no hay página ni descripción de servicio) | — |
+| 1 | Branding | Sí | Branding (solo como tema del formulario de contacto; sin página de servicio). Lista literal del selector: «Website Online-Shop Branding Web Development UX-/UI Design SEO KI-Automatisierung Sonstiges» | https://pallax-media.de/ (portada única) |
 | 2 | Social Media | No | — (no aparece en la web revisada) | — |
 | 3 | Desarrollo Web | Sí | Professionelle Webseiten-Entwicklung; Webseiten | https://pallax-media.de/webseiten-entwicklung/ |
 | 4 | Campañas publicitarias | No | — (no aparece «Kampagne» ni «Google Ads» ni «Meta Ads») | — |
@@ -75,5 +75,5 @@
 ## Observaciones de Kia
 (opinión propia, separada de los hechos)
 - Su página de desarrollo web incluye el bloque «Typische Leistungen von Pallax Media» (https://pallax-media.de/webseiten-entwicklung/). No tiene casos, y eso limita la prueba social que se puede copiar para TASK-003.
-- «Branding» aparece una sola vez en la home (https://pallax-media.de/), y es como opción del formulario de contacto. El pie lista «Webseiten-Entwicklung», «SEO & Sichtbarkeit», «UX-/UI-Design» y «KI-Automatisierung», sin Branding. Por eso la fila 1 es «No»: una opción de formulario no describe un servicio. Criterio pendiente de decisión de Clia.
+- «Branding» aparece una sola vez en la home (https://pallax-media.de/), y es como opción del formulario de contacto. El pie lista «Webseiten-Entwicklung», «SEO & Sichtbarkeit», «UX-/UI-Design» y «KI-Automatisierung», sin Branding. La fila 1 queda en «Sí» por decisión de Clia (2026-10-10), con la misma regla que la IA de Dogstudio: «Branding» aparece como tema de su formulario de contacto, sin página de servicio ni descripción. La URL es la home, marcada «portada única». Revisado de nuevo con WebFetch de https://pallax-media.de/ (2026-10-10): una sola aparición, en el formulario.
 - La dirección «Über uns» no tiene cifra de equipo ni fundadores con cargo; se declara «no publicado».

@@ -16,7 +16,7 @@
 
 **Aviso de caso:** su página «Nos références» es un listado de logotipos y tarjetas sin páginas de caso propias. La captura muestra ese listado.
 
-**Aviso de páginas de servicio sin verificar (2026-10-10):** las subpáginas de servicio enlazadas en las filas de esta ficha, además de `/a-propos/` y `/nos-references/` (todas bajo el dominio de la home) devolvieron respuesta de desafío en todos los intentos de esta sesión: HTTP 202 con el verificador, «Robot Challenge Screen» con Chrome headless (`--dump-dom`) y contenido vacío con WebFetch (también la home). Las capturas de home, servicios y caso sí muestran contenido real. Las filas de servicio apoyadas en esas subpáginas **no quedan confirmadas en esta sesión**; vienen de la entrega F1 previa y no se han reverificado.
+**Aviso de páginas de servicio sin verificar (2026-10-10):** las subpáginas de servicio enlazadas en las filas de esta ficha, además de `/a-propos/` y `/nos-references/` (todas bajo el dominio de la home) devolvieron respuesta de desafío en todos los intentos de esta sesión: HTTP 202 con el verificador, «Robot Challenge Screen» con Chrome headless (`--dump-dom`) y contenido vacío con WebFetch (también la home). Las capturas de home, servicios y caso sí muestran contenido real. Las filas de servicio apoyadas en esas subpáginas **no quedan confirmadas en esta sesión**; vienen de la entrega F1 previa y no se han reverificado. Filas afectadas en «Frente al catálogo»: 2, 3, 4, 5, 8, 9 y 10, marcadas en su última columna. Las filas 1, 6, 7 y 11 («No») no pueden excluir una subpágina no leída que las contradiga.
 
 ## Propuesta de valor
 «Digiberries accompagne les entreprises de toutes tailles dans leur stratégie de visibilité sur le web» (https://www.digiberries.fr/, captura `capturas/digiberries-paris-home.png`). Traducción: «Digiberries acompaña a las empresas de todos los tamaños en su estrategia de visibilidad en la web.»
@@ -33,15 +33,15 @@
 | # | Servicio Pharmaco | ¿Lo ofrecen? | Nombre literal que usan | URL de su página |
 | --- | --- | --- | --- | --- |
 | 1 | Branding | No | — (no aparece «branding» ni «identité») | — |
-| 2 | Social Media | No | — (solo publicidad en redes: «Social Ads») | — |
-| 3 | Desarrollo Web | Sí | Création site web; WordPress; E-Commerce Shopify | https://www.digiberries.fr/agence-wordpress-a-paris/ |
-| 4 | Campañas publicitarias | Sí | Google Ads; Facebook Ads | https://www.digiberries.fr/agence-google-ads-paris/ |
-| 5 | Performance | Sí | (parcial) Google Shopping; Google Ads (no aparece la palabra «performance») | https://www.digiberries.fr/agence-google-shopping-paris/ |
+| 2 | Social Media | No | — (solo publicidad en redes: «Social Ads») | — · no reconfirmado en esta sesión (desafío antibot); dato de la sesión de F1 del 2026-10-10 |
+| 3 | Desarrollo Web | Sí | Création site web; WordPress; E-Commerce Shopify | https://www.digiberries.fr/agence-wordpress-a-paris/ · no reconfirmado en esta sesión (desafío antibot); dato de la sesión de F1 del 2026-10-10 |
+| 4 | Campañas publicitarias | Sí | Google Ads; Facebook Ads | https://www.digiberries.fr/agence-google-ads-paris/ · no reconfirmado en esta sesión (desafío antibot); dato de la sesión de F1 del 2026-10-10 |
+| 5 | Performance | Sí | (parcial) Google Shopping; Google Ads (no aparece la palabra «performance») | https://www.digiberries.fr/agence-google-shopping-paris/ · no reconfirmado en esta sesión (desafío antibot); dato de la sesión de F1 del 2026-10-10 |
 | 6 | Desarrollo de apps y software | No | — (no aparece «app» ni «application») | — |
 | 7 | Fotografía y video | No | — (solo aparece un vídeo de presentación de la agencia) | — |
-| 8 | Inteligencia artificial | No | — (aparece «IA générative» solo como contexto de GEO) | — |
-| 9 | SEO y GEO | Sí | SEO; GEO | https://www.digiberries.fr/agence-referencement-seo-paris/ · https://www.digiberries.fr/agence-geo-a-paris/ |
-| 10 | CRO | No | — (la palabra «conversion» aparece en la descripción de Shopify, sin servicio de CRO) | — |
+| 8 | Inteligencia artificial | No | — (aparece «IA générative» solo como contexto de GEO) | — · no reconfirmado en esta sesión (desafío antibot); dato de la sesión de F1 del 2026-10-10 |
+| 9 | SEO y GEO | Sí | SEO; GEO | https://www.digiberries.fr/agence-referencement-seo-paris/ · https://www.digiberries.fr/agence-geo-a-paris/ · no reconfirmado en esta sesión (desafío antibot); dato de la sesión de F1 del 2026-10-10 |
+| 10 | CRO | No | — (la palabra «conversion» aparece en la descripción de Shopify, sin servicio de CRO) | — · no reconfirmado en esta sesión (desafío antibot); dato de la sesión de F1 del 2026-10-10 |
 | 11 | Datos y automatización | No | — | — |
 
 **Servicios suyos que no están en la tabla:** Google Shopping (https://www.digiberries.fr/agence-google-shopping-paris/); SEO Local (https://www.digiberries.fr/agence-referencement-local-google-a-paris/); TikTok Ads, Snapchat Ads, Pinterest Ads, LinkedIn Ads (páginas de cada red, listadas arriba).
