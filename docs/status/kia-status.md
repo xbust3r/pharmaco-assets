@@ -1,7 +1,7 @@
 # 📋 Status: Kia (DEV principal)
 
 > **Proyecto:** Pharmaco Assets
-> **Última actualización:** 2026-10-13 06:19
+> **Última actualización:** 2026-10-13 06:29
 
 ---
 
@@ -18,7 +18,7 @@ Subagente de Claude Code (Haiku 5.5), lanzado por Clia con el ID de la TASK. Esc
 | Tarea | Estado | Notas |
 | --- | --- | --- |
 | TASK-003 · prueba social | MERGEADA | Merge `e77b44e` en `main` tras REVIEW-003 ✅ (ronda 4, `ba645d1`). Gate sobre `main`: 0 FALLOS en TASK-003. Pendiente: cierre de Clia | Reescrita con la muestra de `feat/TASK-003-prueba-social` (20 fichas). Parte 1 contada sobre las fichas; 3 casos modelo (2 completos, 1 parcial con AVISO); 8 fuentes oficiales capturadas; inventario de `assets/` con rutas. REVIEW-003 ronda 3 ⚠️ atendida (opción B) en `399867f`. Gate: TASK-003 en 0 FALLOS. `main` traído a la rama; conteos recalculados sin cambios. Pendiente: confirmación de Dexia. No merge a `main` |
-| TASK-007 · mantenimiento del verificador: timeouts, IDNA y pruebas de red (🔴) | EN_REVISION | Código en `78bbfb0`. V8 con 30 s por intento, `--timeout-total` (600 s), paralelo con 2 conexiones por dominio, URL IDNA y codificadas. 16 tests en `scripts/pruebas/test_verificador_red.py`. Salidas pegadas en el hilo. Pendiente: REVIEW de Dexia y sign-off 🔴 de Clia |
+| TASK-007 · mantenimiento del verificador: timeouts, IDNA y pruebas de red (🔴) | EN_REVISION | REVIEW-007 ❌ atendida en `44302ee`: URL mal formada no aborta la V8; plazo real por intento, con redirecciones. Antes, código en `78bbfb0`. V8 con 30 s por intento, `--timeout-total` (600 s), paralelo con 2 conexiones por dominio, URL IDNA y codificadas. 16 tests en `scripts/pruebas/test_verificador_red.py`. Salidas pegadas en el hilo. Pendiente: REVIEW de Dexia y sign-off 🔴 de Clia |
 | TASK-006 · migración a Blackgrow 2026 sin jQuery (🔴) | EN_REVISION | Rama `feat/TASK-006-migracion-blackgrow`, worktree `.claude/worktrees/task-006-migracion`. Fases 0 a 8 hechas. Fase 0 `6f5843e`; fase 1 `946de89`; fase 2 `aa3aad6` (REVIEW-006 ✅ y sign-off 🔴); fase 3 `85febf2`; fases 4 y 5 `144bf87` (10 páginas, 53 mixins); fase 6 🔴 `4ca7e11` (JS nativo, sin jQuery, Modaal, AOS ni tiny-slider); validador 🔴 `70118ce`; informe `e3588ef`. Pendiente documentado: slider de clientes, servicios y servicio-detalle a 375 px, 654 clases arbitrarias, 31 MB de imágenes. REVIEW final y sign-off 🔴 pedidos |
 | TASK-001 · merge a `main` | EN_REVISION | REVIEW-001 ✅ de Dexia sobre `5cacb1e`. Merge `--no-ff` en `main`: `aa77063`, sin conflictos. `git diff 5cacb1e main` sobre fichas y capturas vacío. Verificador sobre `main`: 0 FALLOS en TASK-001 (6 fuera de alcance: TASK-003 y TASK-004). Salida pegada en el hilo. No hice push. Anterior, F1: `5cacb1e`: decisiones de Clia del 2026-10-10 aplicadas: Pallax fila 1 (Branding) a «Sí» como tema del formulario, con portada única; Digiberries, AVISO de las 16 URL con desafío en las filas 2, 3, 4, 5, 8, 9 y 10. Gate con red: 0 FALLOS en archivos de TASK-001 (6 FALLOS fuera de alcance: TASK-003 y TASK-004), salida pegada en el hilo. Pedido REVIEW final a Dexia. Antes, `95b12c9`: correcciones de Pallax (fila 1 «No»), Single Grain (cita completa) y Trajectory (GEO), y aviso de subpáginas de Digiberries no verificadas. Verificador integrado: 0 FALLOS en TASK-001, salida pegada en el hilo. Pedido REVIEW final a Dexia; decisiones de Clia pendientes. Anteriores: décima ronda de Dexia atendida en `c319974`. Decisión de Clia sobre la fila 8 de Dogstudio (IA: «Sí», solo como ejemplo dentro de Emerging Technologies) aplicada en `e3da420`. Dogstudio y Monopo con AVISO de captura por excepción de Clia. Pedido review de Dexia sobre `e3da420`; gate pendiente de TASK-005 en `main`. Commits `comms(TASK-001): kia …` |
 | TASK-004 · sistema de diseño (reinicio con la muestra nueva) | EN_REVISION | Parte A y B en `b95938e`, `main` traída; matriz de B revisada contra las fichas finales de `main`. Gate de `diseno/` en 0 FALLOS. Pendiente: REVIEW de Dexia |
@@ -30,7 +30,7 @@ Subagente de Claude Code (Haiku 5.5), lanzado por Clia con el ID de la TASK. Esc
 
 | ID | Prioridad | Qué se espera |
 | --- | --- | --- |
-| TASK-007 | P1 | REVIEW de Dexia sobre `78bbfb0` y sign-off 🔴 de Clia |
+| TASK-007 | P1 | Nueva ronda de REVIEW de Dexia sobre `44302ee` y sign-off 🔴 de Clia |
 | TASK-005 | P0 | Merge hecho en `main` (`427efe3`). Pendiente de Clia: cerrar la TASK con su verificación de criterios. Sin más trabajo mío |
 | TASK-001 | P0 | Merge hecho en `main` (`aa77063`). Pendiente de Clia: cerrar la TASK. Sin más trabajo mío |
 | TASK-003 | P1 | Mergeada en `main` (`e77b44e`). Pendiente de Clia: cierre |
@@ -46,3 +46,4 @@ Subagente de Claude Code (Haiku 5.5), lanzado por Clia con el ID de la TASK. Esc
 | v1.0 | 2026-10-08 | Clia | Creación del status |
 | v1.1 | 2026-10-12 | Kia | TASK-006 tomada (fase 0 en curso) |
 | v1.2 | 2026-10-13 | Kia | TASK-007 en EN_REVISION (`78bbfb0`) |
+| v1.3 | 2026-10-13 | Kia | TASK-007: REVIEW-007 atendida (`44302ee`) |
