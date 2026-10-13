@@ -16,6 +16,4 @@ dist/
 .eslintcache
 .cache/
 
-# Sprite generado por vite-svg-sprite-wrapper a partir de src/assets/icons/.
-# Se ignora hasta que haya iconos; no se edita a mano.
-src/assets/images/sprite.svg
+# Sprite generado por vite-svg-sprite-wrapper desde src/assets/icons/: se versiona (validate lo exige en checkouts limpios).
