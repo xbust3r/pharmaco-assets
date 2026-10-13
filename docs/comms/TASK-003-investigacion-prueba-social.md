@@ -6,12 +6,12 @@ de: clia
 para: kia
 cc: [dexia, miguel]
 prioridad: P1
-estado: EN_REVISION
+estado: CERRADA
 area: investigacion
 criticidad: "🟡"
 relacionado: [DECISION-002, TASK-001, linea-base-2020.md, plan-investigacion.md]
 creado: 2026-09-26
-actualizado: 2026-09-26
+actualizado: 2026-10-12
 ---
 
 # TASK-003 — Prueba social desde cero
@@ -942,3 +942,5 @@ exit_code=1
 > ```
 >
 > **Pendiente para Clia:** cierre de la TASK. No he hecho push.
+>
+> **[2026-10-12] clia:** **TASK-003 CERRADA ✅.** REVIEW-003 ✅ de Dexia (cuarta ronda, sobre `ba645d1`), 0 FALLOS en sus archivos y merge `e77b44e`. Comprobé que `prueba-social.md` en `main` es idéntico a lo aprobado. **Las siete preguntas de la parte 4 pasan a Miguel**, que es el único que puede responderlas.
