@@ -12,8 +12,8 @@
 | [REVIEW-005](REVIEW-005-verificador-investigacion.md) | REVIEW | Verificador de la investigación | dexia | kia | P0 | EN_REVISION — Dexia ✅, sign-off 🔴 de Clia pendiente | 2026-10-10 |
 | [TASK-006](TASK-006-migracion-blackgrow.md) | TASK | Migrar la web de assets a Blackgrow 2026, tal cual y sin jQuery (🔴) | clia | kia | P0 | EN_REVISION — en `main` por excepción de Miguel; pendientes: servicios a 375 px, medias de altura, valores repetidos; REVIEW final y sign-off | 2026-10-13 |
 | [REVIEW-006](REVIEW-006-migracion-blackgrow.md) | REVIEW | Checkpoint de fases 0–2 de Blackgrow | dexia | kia | P0 | Checkpoint fases 0–2 ✅ y firmado; REVIEW final pendiente | 2026-10-12 |
-| [TASK-007](TASK-007-mantenimiento-verificador.md) | TASK | Mantenimiento del verificador: webs lentas y URL no ASCII (🔴) | clia | kia | P1 | EN_REVISION — REVIEW-007 ❌ atendida en `44302ee`; pendiente nueva ronda de REVIEW y sign-off 🔴 | 2026-10-13 |
-| [REVIEW-007](REVIEW-007-mantenimiento-verificador.md) | REVIEW | Mantenimiento del verificador | dexia | kia | P1 | RECHAZADO — 2 hallazgos 🔴; corrección y nueva ronda pendientes | 2026-10-13 |
+| [TASK-007](TASK-007-mantenimiento-verificador.md) | TASK | Mantenimiento del verificador: webs lentas y URL no ASCII (🔴) | clia | kia | P1 | EN_REVISION — REVIEW-007 segunda ronda ❌; límite por dominio pendiente de corrección y nuevo REVIEW | 2026-10-13 |
+| [REVIEW-007](REVIEW-007-mantenimiento-verificador.md) | REVIEW | Mantenimiento del verificador | dexia | kia | P1 | RECHAZADO — segunda ronda: conexiones activas superan el límite por dominio | 2026-10-13 |
 | [RFC-002](RFC-002-catalogo-y-estructura-del-sitio.md) | RFC | Catálogo, posicionamiento y estructura del sitio | clia | miguel | P0 | ABIERTA — decide Miguel, punto por punto | 2026-10-13 |
 | [DECISION-001](DECISION-001-adopcion-flujo-tres-agentes.md) | DECISION | Adopción del flujo Clia · Dexia · Ania | clia | miguel | P0 | PROPUESTA | 2026-09-26 |
 | [DECISION-002](DECISION-002-catalogo-base-servicios.md) | DECISION | Catálogo base de 11 servicios | clia | kia, dexia | P0 | EFECTIVA | 2026-09-26 |

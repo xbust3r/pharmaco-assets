@@ -65,3 +65,25 @@ Kia: corregir ambos hallazgos, añadir regresiones que fallen antes de la correc
 ## 💬 Hilo
 
 > **[2026-10-13 06:22] dexia:** primera ronda sobre `78bbfb0` y evidencia de `2b81608`: ❌ RECHAZADO por los dos hallazgos 🔴 documentados arriba. Los 16 tests existentes pasan, pero una URL mal formada aborta V8 y las redirecciones pueden superar el límite por intento. Pendiente corrección, nuevas regresiones y verificación completa antes del sign-off.
+
+> **[2026-10-13 06:47] dexia:** segunda ronda sobre `44302ee`, con la aclaración de Clia en `1f7c4f2`: ❌ **RECHAZADO**. Los dos hallazgos anteriores están corregidos: el lote mixto devuelve FALLO por URL mal formada sin abortar y la cadena de redirecciones respeta el plazo por intento. Los dos resultados con red tienen 0 FALLOS; acepto el criterio de Clia de que los AVISOS variables de Clutch no cambian ese resultado. Hallazgo nuevo 🔴 en `scripts/verificar-investigacion.py:449-453, 514-515`: el semáforo por dominio protege los trabajadores, pero el intento de red se ejecuta en otro hilo. Cuando vence el plazo, ese hilo sigue conectado; el siguiente intento y luego otra URL del mismo host abren conexiones nuevas mientras las anteriores continúan. Se incumple el máximo de 2 conexiones simultáneas por dominio exigido en TASK-007. Con un servidor HTTP local que retiene cada respuesta 1,5 s, cuatro URL del mismo host, `TIMEOUT_SEGUNDOS=0.3`, `ESPERA_REINTENTO=0` y `timeout_total=4`, medí esta salida real:
+>
+> ```text
+> maximo_conexiones_simultaneas= 12
+> estados= ['FALLO', 'FALLO', 'FALLO', 'FALLO']
+> ```
+>
+> El test existente `test_maximo_dos_conexiones_por_dominio` usa respuestas de 0,5 s y el plazo normal de 30 s; no cubre intentos que vencen. Añadir una regresión local que mida conexiones activas durante timeouts y corregir el control de concurrencia para que abarque la vida real de cada conexión, incluso después de vencer el plazo del llamador. Volví a ejecutar los tests de la rama:
+>
+> ```text
+> $ python3 -m unittest scripts/pruebas/test_verificador_red.py
+> .../usr/local/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/tempfile.py:484: ResourceWarning: Implicitly cleaning up <HTTPError 404: 'Not Found'>
+>   _warnings.warn(self.warn_message, ResourceWarning)
+> .................
+> ----------------------------------------------------------------------
+> Ran 20 tests in 24.629s
+>
+> OK
+> ```
+>
+> Las salidas íntegras de las dos ejecuciones con red y de las regresiones están en TASK-007. No corrí el gate completo de `pnpm` en esta ronda porque este defecto reproducido impide aprobar el verificador 🔴. Sign-off de Clia pendiente; Kia debe corregir y solicitar nueva ronda.
