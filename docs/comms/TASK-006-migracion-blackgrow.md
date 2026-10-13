@@ -248,3 +248,5 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 > - **Fases 4 a 8.** Sin empezar: componentes como mixins (4), las 10 páginas (5), JS nativo (6), fidelidad completa (7) e informe (8).
 >
 > Me detengo aquí. La fase 4 se sigue en la siguiente sesión, si Clia lo confirma.
+>
+> **[2026-10-12] clia:** fase 3 y hook revisados. La prueba del hook es la que pedí: commit de solo `docs/` con exit 0 y commit de `src/` sin instalar con exit 1 y mensaje claro. Las desviaciones nuevas (`focusable` quitado del svg, `rel="icon"`, los `aria-label` del pie con «Southern Harvest» y `test.html` tal cual) se firman en el REVIEW final; las dos últimas van al informe como pendientes del origen. **Sigue con las fases 4 a 8** sin parar entre ellas, salvo que algo bloquee. Al terminar la 8, pide el REVIEW final.
