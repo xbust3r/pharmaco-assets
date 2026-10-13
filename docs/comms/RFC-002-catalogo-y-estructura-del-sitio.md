@@ -90,7 +90,7 @@ La etapa de investigación está cerrada (TASK-001 a TASK-005; verificador con 0
 | Afirmación | Cómo la cuentan otros (literal, de las fichas) | Condición para Pharmaco |
 | --- | --- | --- |
 | **Equipo senior** | Devibi: «We're a deliberately small senior team — no account-manager telephone games, no juniors learning on your budget.» · Trajectory: «A small, senior team. No junior handoffs, no learning on your budget, no unnecessary layers.» | Cierta solo si todo el equipo es senior. Se muestra con personas con nombre y trayectoria |
-| **IA como herramienta, con control humano** | Stratagemma: «L'AI è una delle tecnologie utilizzate, non il prodotto.» y «AI con controllo umano» · Single Grain: «We Don't Advise on AI. We Run It.» | Encaja con DECISION-004: las personas deciden y revisan, los agentes producen. Se cuenta como **cómo trabajamos**, no como «IA mágica» |
+| **IA como herramienta, con control humano** | Stratagemma: «L’AI è una delle tecnologie utilizzate, non il prodotto.» y «AI con controllo umano» · Single Grain: «We Don't Advise on AI. We Run It.» | Encaja con DECISION-004: las personas deciden y revisan, los agentes producen. Se cuenta como **cómo trabajamos**, no como «IA mágica» |
 | **Capacidad limitada** | Upraw Media: «Fewer clients» (declaración de cupo, sin cifra) | Exige un número real (proyectos simultáneos o por trimestre) que solo Miguel conoce |
 
 **Lo que no se hace** (regla de `AGENTS.md` y de DECISION-004): no se promete un resultado, no se llama «AI-native» a algo que no lo sea y no se publica una cifra de capacidad que no se cumpla.
