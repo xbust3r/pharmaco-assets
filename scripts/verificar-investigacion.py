@@ -392,32 +392,64 @@ def _es_tiempo_agotado(error):
     return isinstance(error, TimeoutError) or isinstance(getattr(error, "reason", None), TimeoutError)
 
 
-def _intentar_url(pedida, url):
-    """Un intento sobre la URL ya codificada `pedida`; `url` es la original, para comparar dominios.
+MAX_REDIRECCIONES = 10
+CODIGOS_REDIRECCION = (301, 302, 303, 307, 308)
+MARGEN_PLAZO = 0.5  # s de cortesía tras el plazo del intento, por si el hilo tarda en acabar (p. ej., DNS)
 
-    Devuelve (estado, motivo, reintentable, antibot, agotado). `agotado` marca el tiempo de espera.
+
+class _SinRedirecciones(urllib.request.HTTPRedirectHandler):
+    """Las redirecciones las sigue `_intentar_url` a mano, dentro del plazo del intento (REVIEW-007)."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+
+_ABRIDOR = urllib.request.build_opener(_SinRedirecciones)
+
+
+def _intentar_url(pedida, url, limite):
+    """Un intento hasta `limite` (instante de time.monotonic()), redirecciones incluidas.
+
+    Cada salto usa como timeout de socket el tiempo que queda del intento, así que ninguna conexión sobrevive al
+    plazo. Devuelve (estado, motivo, reintentable, antibot, agotado).
     """
-    peticion = urllib.request.Request(pedida, headers=CABECERAS_NAVEGADOR)
-    try:
-        with urllib.request.urlopen(peticion, timeout=TIMEOUT_SEGUNDOS) as respuesta:
-            final = respuesta.geturl()
-            codigo, cabeceras = respuesta.status, respuesta.headers
-    except urllib.error.HTTPError as e:
-        # DECISION-006 (aclaración 1): solo 404 y 410 son FALLO; otros 4xx son bloqueos, AVISO.
-        if e.code == 404:
-            return "FALLO", "HTTP 404", True, False, False
-        if e.code == 410:
-            return "FALLO", "HTTP 410", False, False, False
-        if 400 <= e.code < 500:
-            return ("AVISO", f"HTTP {e.code} (bloqueo antibot o de región): respaldar con captura", False,
-                    e.code in ANTIBOT, False)
-        return "FALLO", f"HTTP {e.code}", 500 <= e.code < 600, False, False
-    except (urllib.error.URLError, OSError, http.client.HTTPException) as e:
-        if _es_tiempo_agotado(e):
+    actual = pedida
+    for _ in range(MAX_REDIRECCIONES + 1):
+        restante = limite - time.monotonic()
+        if restante <= 0:
             return "FALLO", "tiempo de espera agotado", True, False, True
-        return "FALLO", f"error de red: {getattr(e, 'reason', e)}", True, False, False
-    except ValueError as e:
-        return "FALLO", f"error de red: {getattr(e, 'reason', e)}", False, False, False
+        peticion = urllib.request.Request(actual, headers=CABECERAS_NAVEGADOR)
+        try:
+            with _ABRIDOR.open(peticion, timeout=restante) as respuesta:
+                final = respuesta.geturl()
+                codigo, cabeceras = respuesta.status, respuesta.headers
+            break
+        except urllib.error.HTTPError as e:
+            destino = e.headers.get("Location") if e.code in CODIGOS_REDIRECCION else None
+            if destino:
+                e.close()
+                try:
+                    actual = url_de_peticion(urllib.parse.urljoin(actual, destino))
+                except ValueError as err:
+                    return "FALLO", f"redirección a una URL mal formada: {err}", False, False, False
+                continue
+            # DECISION-006 (aclaración 1): solo 404 y 410 son FALLO; otros 4xx son bloqueos, AVISO.
+            if e.code == 404:
+                return "FALLO", "HTTP 404", True, False, False
+            if e.code == 410:
+                return "FALLO", "HTTP 410", False, False, False
+            if 400 <= e.code < 500:
+                return ("AVISO", f"HTTP {e.code} (bloqueo antibot o de región): respaldar con captura", False,
+                        e.code in ANTIBOT, False)
+            return "FALLO", f"HTTP {e.code}", 500 <= e.code < 600, False, False
+        except (urllib.error.URLError, OSError, http.client.HTTPException) as e:
+            if _es_tiempo_agotado(e):
+                return "FALLO", "tiempo de espera agotado", True, False, True
+            return "FALLO", f"error de red: {getattr(e, 'reason', e)}", True, False, False
+        except ValueError as e:
+            return "FALLO", f"error de red: {getattr(e, 'reason', e)}", False, False, False
+    else:
+        return "FALLO", f"demasiadas redirecciones (más de {MAX_REDIRECCIONES})", False, False, False
     # DECISION-006, enmienda 5: un 202 a un GET de página y un 2xx con cabecera de desafío no son la página.
     if codigo == 202:
         return ("AVISO", "HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura", False, True,
@@ -431,24 +463,30 @@ def _intentar_url(pedida, url):
     return "OK", "responde", False, False, False
 
 
-def _intentar_url_con_plazo(pedida, url):
-    """Un intento con plazo real de TIMEOUT_SEGUNDOS para todo el intento, redirecciones incluidas (REVIEW-007).
+def _intentar_url_con_plazo(pedida, url, semaforo):
+    """Un intento con plazo real de TIMEOUT_SEGUNDOS, desde que se llama (REVIEW-007).
 
-    El `timeout` de urlopen limita cada operación de socket, no el intento completo. Por eso el intento corre en un
-    hilo daemon y el plazo lo pone el hilo principal. Si vence, el intento es un tiempo agotado; el hilo sigue
-    hasta su siguiente operación de socket, sin bloquear la ejecución.
+    El llamador ya ha tomado `semaforo`; lo libera el hilo del intento al terminar, no el llamador al vencer el
+    plazo. Así una conexión que sigue viva cuenta hasta que acaba, y no aparece otra por encima del límite del host.
     """
+    limite = time.monotonic() + TIMEOUT_SEGUNDOS
     salida = []
 
     def objetivo():
         try:
-            salida.append((True, _intentar_url(pedida, url)))
-        except Exception as e:  # se relanza en el hilo principal
+            salida.append((True, _intentar_url(pedida, url, limite)))
+        except Exception as e:  # se relanza en el hilo que llama
             salida.append((False, e))
+        finally:
+            semaforo.release()
 
     hilo = threading.Thread(target=objetivo, daemon=True)
-    hilo.start()
-    hilo.join(TIMEOUT_SEGUNDOS)
+    try:
+        hilo.start()
+    except BaseException:
+        semaforo.release()
+        raise
+    hilo.join(max(0.0, limite - time.monotonic()) + MARGEN_PLAZO)
     if not salida:
         return "FALLO", "tiempo de espera agotado", True, False, True
     correcto, valor = salida[0]
@@ -461,22 +499,26 @@ def _segundos(valor):
     return f"{valor:.1f}".replace(".", ",") + " s"
 
 
-def comprobar_url(url):
+def comprobar_url(url, semaforo=None):
     """Hasta 3 intentos (TASK-005; TASK-007: 30 s por intento y 2 reintentos espaciados 2 s).
 
-    Devuelve (estado, motivo, antibot): antibot si algún intento dio 401, 403 o 429.
+    Cada intento toma `semaforo` (el límite de conexiones del host) antes de empezar. Devuelve
+    (estado, motivo, antibot): antibot si algún intento dio 401, 403 o 429.
     Una URL que no se puede codificar es FALLO sin reintentos, con el motivo.
     """
     try:
         pedida = url_de_peticion(url)
     except ValueError as e:
         return "FALLO", f"URL mal formada: {e}", False
+    if semaforo is None:
+        semaforo = threading.BoundedSemaphore(CONEXIONES_POR_DOMINIO)
     tiempos, antibot = [], False
     for intento in range(1, REINTENTOS + 2):
         if intento > 1:
             time.sleep(ESPERA_REINTENTO)
+        semaforo.acquire()
         inicio = time.monotonic()
-        estado, motivo, reintentable, visto, agotado = _intentar_url_con_plazo(pedida, url)
+        estado, motivo, reintentable, visto, agotado = _intentar_url_con_plazo(pedida, url, semaforo)
         tiempos.append(time.monotonic() - inicio)
         antibot = antibot or visto
         if estado == "OK" or not reintentable:
@@ -495,9 +537,10 @@ def comprobar_url(url):
 def comprobar_todas(urls, timeout_total):
     """Comprueba las URL en paralelo (TASK-007) y devuelve {url: (estado, motivo, antibot)}.
 
-    HILOS_RED hilos como mucho y CONEXIONES_POR_DOMINIO peticiones simultáneas por host. El tiempo máximo de toda
-    la ejecución es `timeout_total` segundos: una URL sin comprobar cuando se agota es FALLO, porque sin
-    comprobar no puede dar OK. Los hilos son daemon, así que el proceso termina aunque quede alguno colgado.
+    HILOS_RED hilos como mucho y CONEXIONES_POR_DOMINIO conexiones simultáneas por host, contadas hasta que cada
+    conexión acaba de verdad. El tiempo máximo de toda la ejecución es `timeout_total` segundos: una URL sin
+    comprobar cuando se agota es FALLO, porque sin comprobar no puede dar OK. Los hilos son daemon, así que el
+    proceso termina aunque quede alguno colgado.
     """
     pendientes = queue.Queue()
     for url in urls:
@@ -511,8 +554,7 @@ def comprobar_todas(urls, timeout_total):
                 url = pendientes.get_nowait()
             except queue.Empty:
                 return
-            with semaforos[host_de(url)]:
-                resultado = comprobar_url(url)
+            resultado = comprobar_url(url, semaforos[host_de(url)])
             with cerrojo:
                 resultados[url] = resultado
 

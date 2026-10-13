@@ -11,6 +11,8 @@ IDN se comprueban con `url_de_peticion` y con un dominio `.invalid` (falla el DN
 import argparse
 import ast
 import http.server
+import select
+import socket
 import importlib.util
 import os
 import subprocess
@@ -45,8 +47,34 @@ class Manejador(http.server.BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(cuerpo)
 
+    def _retener(self, segundos):
+        """Espera hasta `segundos` salvo que el cliente cierre la conexión. True si sigue conectado."""
+        fin = time.monotonic() + segundos
+        while time.monotonic() < fin:
+            listos, _, _ = select.select([self.connection], [], [], 0.02)
+            if listos and self.connection.recv(1, socket.MSG_PEEK) == b"":
+                return False
+        return True
+
     def do_GET(self):
+        try:
+            self._atender()
+        except OSError:
+            pass  # el cliente ya cerró (plazo vencido): no es un fallo del servidor
+
+    def _atender(self):
         self.server.rutas_pedidas.append(self.path)
+        if urllib.parse.urlsplit(self.path).path == "/retiene":  # 1,5 s, o hasta que el cliente cierre
+            with self.server.cerrojo:
+                self.server.en_vuelo += 1
+                self.server.maximo = max(self.server.maximo, self.server.en_vuelo)
+            try:
+                if self._retener(1.5):
+                    return self._responder(200)
+                return None
+            finally:
+                with self.server.cerrojo:
+                    self.server.en_vuelo -= 1
         ruta = urllib.parse.urlsplit(self.path).path
         if ruta == "/rapida":
             return self._responder(200)
@@ -159,6 +187,18 @@ class PruebasDeRed(unittest.TestCase):
 
     def pedidas(self, ruta):
         return sum(1 for p in self.servidor.rutas_pedidas if urllib.parse.urlsplit(p).path == ruta)
+
+    def test_maximo_dos_conexiones_vivas_aunque_venza_el_plazo(self):
+        # REVIEW-007 (segunda ronda): cada intento vence a los 0,3 s. La conexión sigue viva mientras el hilo del
+        # intento no acaba, y el límite debe contarla. El servidor cuenta las peticiones que aún esperan al cliente.
+        self.servidor.maximo = 0
+        self.servidor.en_vuelo = 0
+        urls = [self.base + f"/retiene?n={i}" for i in range(4)]
+        with mock.patch.multiple(v, TIMEOUT_SEGUNDOS=0.3, ESPERA_REINTENTO=0):
+            resultado = v.comprobar_todas(urls, timeout_total=30)
+        self.assertTrue(all(estado == "FALLO" for estado, _, _ in resultado.values()), resultado)
+        self.assertLessEqual(self.servidor.maximo, 2)
+        self.assertGreaterEqual(self.servidor.maximo, 1)
 
     def test_maximo_dos_conexiones_por_dominio(self):
         # Seis URL del mismo host: con 8 hilos, el límite por dominio es lo que impide más de 2 a la vez.
