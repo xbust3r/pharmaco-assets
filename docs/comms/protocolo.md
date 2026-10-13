@@ -149,7 +149,7 @@ La criticidad **no se hereda del proyecto de origen**. Se mide por **cuánto se 
 
 | Nivel | Qué entra | Por qué |
 | --- | --- | --- |
-| 🔴 | Configuración global (tokens de diseño, layout base, config de build), los verificadores del propio gate, contratos con terceros (formularios, tracking, endpoints), contenido regulado (claims sanitarios, textos legales) | Se propaga a todo a la vez, desactiva la red de seguridad o falla en silencio |
+| 🔴 | `src/styles` (`@theme`), `src/layouts/`, `src/components/config.pug`, config de build (`vite.config.*`, `postcss.config.*`, `package.json`), `plugins/` y `scripts/` (verificadores del gate), el JS que sustituye a jQuery, `assets/` (el origen, que no se toca), contratos con terceros (formularios, tracking, endpoints), contenido regulado (claims sanitarios, textos legales) | Se propaga a todo a la vez, desactiva la red de seguridad o falla en silencio |
 | 🟡 | Componentes y módulos compartidos, assets y su pipeline | Afectan a varias piezas, pero el fallo se ve |
 | 🟢 | Una pieza suelta, documentación, contenido de relleno | El radio de daño es el propio archivo |
 

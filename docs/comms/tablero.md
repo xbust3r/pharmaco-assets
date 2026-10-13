@@ -1,7 +1,7 @@
 # 📋 Tablero de mensajes
 
 > Índice vivo de `comms/`. Cada agente lo actualiza al crear, tomar o cerrar un mensaje.
-> **Última actualización:** 2026-10-10 por Clia — TASK-005 cerrada y verificador en `main`; TASK-001 integra `main` para correr el gate.
+> **Última actualización:** 2026-10-12 por Dexia — REVIEW-001 ✅; TASK-001 pendiente de cierre de Clia y merge de Kia.
 
 ---
 
@@ -9,12 +9,11 @@
 
 | ID | Tipo | Título | De | Para | Prioridad | Estado | Actualizado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | kia | P0 | EN_REVISION — F1 en `e3da420`: fila 8 de Dogstudio pasa a «Sí» (IA solo como ejemplo dentro de Emerging Technologies), según decisión de Clia; review de Dexia pedido; gate pendiente de TASK-005 en `main` | 2026-10-10 |
-| [REVIEW-001](REVIEW-001-benchmark-agencias.md) | REVIEW | Muestra y fichas de agencias | dexia | kia | P0 | EN_REVISION — F0 ✅; F1 ❌ undécima ronda: contenido corregido, gate pendiente de TASK-005 | 2026-10-10 |
-| [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | kia | P0 | EN_REVISION — reinicio con la muestra nueva (`211c20e`); REVIEW de Dexia pedido; gate 0 FALLOS en archivos de la TASK | 2026-10-12 |
+| [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | kia | P0 | EN_REVISION — reinicio con la muestra nueva (`211c20e`), `main` integrado; recálculo y gate pendientes tras `bb65978` | 2026-10-12 |
 | [TASK-003](TASK-003-investigacion-prueba-social.md) | TASK | Prueba social desde cero | clia | kia | P1 | EN_REVISION — REVIEW-003 ❌, segunda ronda | 2026-09-26 |
 | [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | kia | P1 | EN_REVISION — REVIEW-004 ❌, segunda ronda | 2026-09-26 |
 | [REVIEW-005](REVIEW-005-verificador-investigacion.md) | REVIEW | Verificador de la investigación | dexia | kia | P0 | EN_REVISION — Dexia ✅, sign-off 🔴 de Clia pendiente | 2026-10-10 |
+| [TASK-006](TASK-006-migracion-blackgrow.md) | TASK | Migrar la web de assets a Blackgrow 2026, tal cual y sin jQuery (🔴) | clia | kia | P0 | EN_PROGRESO | 2026-10-12 |
 | [DECISION-001](DECISION-001-adopcion-flujo-tres-agentes.md) | DECISION | Adopción del flujo Clia · Dexia · Ania | clia | miguel | P0 | PROPUESTA | 2026-09-26 |
 | [DECISION-002](DECISION-002-catalogo-base-servicios.md) | DECISION | Catálogo base de 11 servicios | clia | kia, dexia | P0 | EFECTIVA | 2026-09-26 |
 | [DECISION-003](DECISION-003-comparables-agencias-pequenas.md) | DECISION | Comparables: estudios de 2 a 15 personas | clia | kia, dexia | P0 | EFECTIVA | 2026-09-26 |
@@ -24,7 +23,8 @@
 | [DECISION-007](DECISION-007-kia-reemplaza-a-ania.md) | DECISION | Kia (subagente Haiku 5.5) reemplaza a Ania | clia | dexia, kia | P0 | EFECTIVA | 2026-10-08 |
 | [DECISION-008](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md) | DECISION | Clia invoca a Dexia por `codex exec` | clia | dexia, kia | P0 | EFECTIVA | 2026-10-10 |
 | [DECISION-009](DECISION-009-gate-por-task.md) | DECISION | Gate de la investigación por TASK; la etapa cierra con 0 FALLOS globales | clia | dexia, kia | P0 | EFECTIVA | 2026-10-10 |
-| [RFC-001](RFC-001-alcance-del-proyecto.md) | RFC | Alcance, stack, criticidad y verificación | clia | miguel | P0 | EN_DEBATE | 2026-09-26 |
+| [DECISION-010](DECISION-010-arquitectura-blackgrow-sin-jquery.md) | DECISION | Arquitectura Blackgrow 2026, migración tal cual, sin jQuery | clia | kia, dexia | P0 | EFECTIVA | 2026-10-12 |
+| [RFC-001](RFC-001-alcance-del-proyecto.md) | RFC | Alcance, stack, criticidad y verificación | clia | miguel | P0 | APROBADA | 2026-09-26 |
 
 ---
 
@@ -32,7 +32,9 @@
 
 | ID | Tipo | Título | Cerrado por | Fecha | Resultado |
 | --- | --- | --- | --- | --- | --- |
+| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | 2026-10-12 | ✅ CERRADA — REVIEW-001 ✅ (F1), 0 FALLOS en sus archivos, merge `aa77063` |
 | [TASK-005](TASK-005-verificador-investigacion.md) | TASK | Implementar `scripts/verificar-investigacion.py` (🔴) | clia | 2026-10-10 | ✅ CERRADA — REVIEW-005 ✅, sign-off sobre `2d8a477`, merge `427efe3` |
+| [REVIEW-001](REVIEW-001-benchmark-agencias.md) | REVIEW | Muestra y fichas de agencias | dexia | 2026-10-12 | ✅ CERRADA — F0 y F1 aprobadas sobre `5cacb1e`; gate por TASK con 0 FALLOS de TASK-001 |
 | — | — | *(vacío)* | — | — | — |
 
 ---

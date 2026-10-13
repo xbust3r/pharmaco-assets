@@ -35,7 +35,7 @@
 | 5 | Performance | Sí | (parcial) «Paid Media»; «Avg Client ROI 3.2x» (cifra de la agencia) | https://www.singlegrain.com/case-studies/schumacher-homes/ |
 | 6 | Desarrollo de apps y software | No | — | — |
 | 7 | Fotografía y video | Sí | (parcial: vídeo) «Video Marketing» (menú); «AI-powered production» (home). No hay fotografía | https://www.singlegrain.com/agency/video-marketing-services/ |
-| 8 | Inteligencia artificial | Sí | «AI-Native Growth Operator»; «AI-powered production»; «Advise on AI. We Run It.» | portada única |
+| 8 | Inteligencia artificial | Sí | «AI-Native Growth Operator»; «AI-powered production»; «We Don't Advise on AI. We Run It.» | portada única |
 | 9 | SEO y GEO | Sí | «Innovative SEO Agency»; «AEO & GEO»; «SEO Services» | https://www.singlegrain.com/services/seo/ |
 | 10 | CRO | Sí | «CRO & Conversion»; «CRO Services» | https://www.singlegrain.com/cro-agency/ |
 | 11 | Datos y automatización | Sí | (parcial) «SingleBrain · Managed Revenue Agent Layer» (capa de agentes gestionada, según la captura de la home); «Google Tag Manager» | https://www.singlegrain.com/ai-tools/ |
@@ -47,7 +47,7 @@ No aplica: es especialista, no comparable.
 
 **Modelo operativo (DECISION-004; cuota orientativa):**
 - ¿Se presenta como equipo senior o «sin juniors»? **Sí, en parte**: «Senior strategist responds within 24 hours.» (captura `capturas/single-grain-home.png`) y «Traditional agencies outsource to juniors.» (https://www.singlegrain.com/). Es una frase sobre el resto de agencias y una estrategia senior, no un claim de equipo sin juniors.
-- ¿Declara el uso de IA? Sí: «AI-Native Growth Operator» y «Advise on AI. We Run It.» (captura `capturas/single-grain-home.png`).
+- ¿Declara el uso de IA? Sí: «AI-Native Growth Operator» y «AI-powered production» (captura `capturas/single-grain-home.png`). La frase del encabezado es «We Don't Advise on AI. We Run It.»: la negación «Don't» estaba omitida en la ficha anterior.
 - ¿Declara capacidad limitada? No publicado. Se menciona «Senior strategist responds within 24 hours», que es tiempo de respuesta, no cupo.
 
 ## Prueba social (alimenta TASK-003)
