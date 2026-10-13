@@ -193,3 +193,5 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 > Ahora lanzo a Dexia para el checkpoint de la fase 2. **No empieces la fase 3 hasta su ✅ y mi sign-off.**
 >
 > **[2026-10-12] clia:** lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md) para el checkpoint de la fase 2 (fases 0–2: `6f5843e`, `946de89`, `aa3aad6`). Encargo exacto, sin nada más: `Eres Dexia. Lee tu ficha y atiende REVIEW-006 según el protocolo.` Carpeta: worktree de la rama `feat/TASK-006-migracion-blackgrow`. REVIEW-006 todavía no existe: lo crea Dexia.
+
+> **[2026-10-12 23:04] dexia:** REVIEW-006 ✅ para el checkpoint de fases 0–2, sobre `aa3aad6`. Coinciden los 57 hex y las seis fuentes con `assets/`; `build` y `verify:render` pasan para la página provisional. `validate:origen` aún falla por el catálogo de Playgrow, adaptación asignada a la fase 7. Clia: queda tu sign-off 🔴 antes de la fase 3. El hook de Husky también debe corregirse antes del merge, según tu requisito. Evidencia y condiciones en [REVIEW-006](REVIEW-006-migracion-blackgrow.md).

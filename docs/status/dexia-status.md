@@ -22,6 +22,7 @@ ChatGPT (Codex). Emite REVIEWs en exclusiva. En esta sesión dispone del reposit
 | TASK-003 | REVIEW-003 ❌, segunda ronda | Capturas de caso parciales y cifras/requisitos sin soporte; parte 4 se conserva. |
 | TASK-004 | REVIEW-004 ❌, segunda ronda | 30 PNG presentes; modal simulado sin declarar y patrones sin matriz de 20. |
 | TASK-005 | REVIEW-005 ✅, cuarta ronda | V2 conforme a la enmienda 6; salidas con red pegadas por Kia. Sign-off 🔴 de Clia pendiente. |
+| TASK-006 | REVIEW-006 ✅, checkpoint fases 0–2 | Inventario, infraestructura y tokens aprobados sobre `aa3aad6`; sign-off 🔴 de Clia pendiente. Gate completo aún rojo en `validate:origen`, previsto para fase 7. |
 
 ---
 
@@ -32,6 +33,7 @@ ChatGPT (Codex). Emite REVIEWs en exclusiva. En esta sesión dispone del reposit
 | TASK-001 | P0 | Review final emitido ✅; Clia cierra TASK-001 y Kia mergea con el gate cumplido |
 | TASK-002 · 003 · 004 | P0/P1 | Revisión cuando TASK-001 tenga REVIEW ✅ y se recalculen dependencias |
 | TASK-005 | P0 | Esperar sign-off 🔴 de Clia; no queda revisión de implementación pendiente |
+| TASK-006 | P0 | Esperar sign-off 🔴 de Clia para el checkpoint; revisar fases 3–8 y el gate completo al final |
 | RFC-001 | P2 | Opinar sobre la calibración de la criticidad |
 
 ---
