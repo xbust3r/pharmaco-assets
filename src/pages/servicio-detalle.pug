@@ -1,0 +1,259 @@
+extends ../layouts/main-template
+
+block title
+    title Hacemos que las cosas pasen | Pharmaco
+block description
+    meta(name='description', content="Pharmaco | Laboratorio digital de Marketing &amp; Software")
+block content
+    include ../components/repetidos
+    | #{' '}
+    //- origen: c-hero
+    +repHero("Hacemos que las cosas pasen.", "Ofrecemos servicios que van desde la creación de marcas hasta el desarrollo...", "contactanos.html", "/src/assets/images/sprite.svg#icon-arrow-right", "/src/assets/images/components/hero/hero-servicios-lg.webp, /src/assets/images/components/hero/hero-servicios-lg@2x.webp 2x", "/src/assets/images/components/hero/hero-servicios-sm.webp, /src/assets/images/components/hero/hero-servicios-sm@2x.webp 2x", "/src/assets/images/components/hero/hero-servicios-lg.webp", "", "fade-in")
+    | #{' '}
+    //- origen: c-page-breadcrumb
+    +repPageBreadcrumb("Your location in the site", "./", "Home", "/src/assets/images/sprite.svg#icon-chevron-right", "#", "Portafolio", "/src/assets/images/sprite.svg#icon-chevron-right", "#", "Social Media")
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:62px] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-top:152px] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper")
+            | #{' '}
+            //- origen: c-content-block
+            div(class="[display:initial] [flex-direction:initial] [align-items:initial] [justify-content:initial] desktop:flex desktop:[flex-direction:row] desktop:[align-items:center] desktop:[justify-content:space-between]")
+                | #{' '}
+                //- origen: c-content-block__main-content
+                +repContentBlockMainContent("Auto Adaptive layouts", ".", "No puedes no estar en las redes sociales. Estas son excelentes herramientas para atraer, convertir y retener a tus clientes, y por sobre todo estar presentes en su vida diaria.", "Sin embargo, la gestión de las Redes Sociales de tu empresa no la puede hacer cualquiera. Se necesita alguien que comprenda sus características y cómo sacarles el máximo partido.")
+                | #{' '}
+                //- origen: c-content-block__aside-content
+                div(class="[margin-top:38px] [margin-right:0] [margin-bottom:0] [margin-left:0] [width:248px] block tablet:[width:350px] desktop:[margin-top:0] desktop:[width:400px]", data-reveal="fade-right")
+                    | #{' '}
+                    //- origen: c-content-block__subtitle
+                    h4(class="text-24 weight-semibold [padding-left:42px] relative before:content-[''] before:absolute before:[top:50%] before:[left:0] before:[transform:translateY(-50%)] before:[width:22px] before:[height:22px] before:[background-image:url(/src/assets/images/components/services/icon-formula.svg)] before:[background-size:cover] before:[background-repeat:no-repeat] desktop:text-28 desktop:[padding-left:52px] desktop:before:[width:32px] desktop:before:[height:32px]") Nuestra Fórmula
+                    | #{' '}
+                    //- origen: c-section__content
+                    +repSectionContent("Plan de acción", "Estrategia de marketing", "Metas definidas", "Creación de contenido relevantes", "Percepción positiva de tu marca", "Aumenta el engagement con tu marca", "Diseño impactante", "Interacción eficaz con tu audiencia", "Administración de anuncios", "Análisis de métricas")
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+            //- origen: c-note
+            div(class="[margin-top:59px] [max-width:1090px]")
+                | #{' '}
+                //- origen: c-note__title
+                div(class="text-35 weight-semibold tablet:text-37 desktop:text-39 wide:text-40") Conclusión
+                | #{' '}
+                //- origen: c-note__text
+                div(class="[margin-top:17px]")
+                    | #{' '}
+                    p(class="[margin-top:0] [margin-right:0] [margin-bottom:0] [margin-left:0]") Ahora que sabes cuáles son las métricas más importantes según el medio que utilices, es hora de empezar a medir tus resultados.
+                    | #{' '}
+                    p(class="[margin-top:0] [margin-right:0] [margin-bottom:0] [margin-left:0]") Recuerda que una estrategia sin análisis es como navegar sin brújula, no puedes saber a dónde vas y qué camino tomar.
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper")
+            | #{' '}
+            //- origen: c-media-block-reasons
+            div(class="flex [justify-content:space-between] [flex-wrap:wrap]")
+                | #{' '}
+                //- origen: c-media-block-reasons__content
+                div
+                    | #{' '}
+                    //- origen: c-section__subtitle
+                    h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 text-purple tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Nuestros instrumentos
+                    | #{' '}
+                    //- origen: s-cms-content
+                    div(class="[margin-top:17px] text-16 [line-height:1.56] [margin-bottom:0] text-gray-muted")
+                        | #{' '}
+                        ul(class="[padding-left:20px]!")
+                            | #{' '}
+                            li(class="text-gray-muted text-16 desktop:text-14") Diseño y creación de marca.
+                            | #{' '}
+                            li(class="text-gray-muted text-16 desktop:text-14") Desarrollo de conceptos creativos para campañas Digitales.
+                            | #{' '}
+                            li(class="text-gray-muted text-16 desktop:text-14") Creación de estrategias y definición de tácticas de Marketing
+                            | #{' '}
+                            li(class="text-gray-muted text-16 desktop:text-14") Integral y Digital.
+                            | #{' '}
+                            li(class="text-gray-muted text-16 desktop:text-14") Implementación y gestión de estrategias de Marketing Integral y Digital.
+                            | #{' '}
+                            li(class="text-gray-muted text-16 desktop:text-14") Asesoría en la inversión en medios masivos y digitales.
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+                //- origen: c-media-block-reasons__media
+                picture(class="[margin-top:38px] [margin-right:auto] [margin-bottom:0] [margin-left:auto] [width:300px] block rounded-10 [overflow:hidden] [height:initial] desktop:[margin-top:0] desktop:[margin-right:0] desktop:[margin-left:0] desktop:[width:380px] desktop:[height:258px] wide:[width:457px]", data-reveal="fade-left")
+                    | #{' '}
+                    //- origen: c-media-block-reasons__img
+                    img(class="block [width:100%] [height:100%] [object-fit:cover]", alt="#", src="/src/assets/images/components/services/media-block-reasons.webp", loading="lazy")
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-purple [padding-top:62px] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-top:152px] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1120px]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            +repSectionSubtitle2()
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro()
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-team-members
+                div(class="[padding-top:44px] [border-top:2px_solid_#fff] desktop:[padding-top:38px]")
+                    | #{' '}
+                    //- origen: c-team-members__list
+                    div(class="[margin-top:-30px] flex [flex-wrap:wrap] [margin-left:initial] [width:initial] tablet:[margin-left:-100px] tablet:[width:calc(100%_+_100px)] desktop:[margin-top:-40px]")
+                        | #{' '}
+                        //- origen: c-team-members__item
+                        +repTeamMembersItem("fade-left", "50", "/src/assets/images/components/about-us/member-1.webp", "alt", "Mario Arce", "Director")
+                        | #{' '}
+                        //- origen: c-team-members__item
+                        +repTeamMembersItem("fade-left", "100", "/src/assets/images/components/about-us/member-1.webp", "alt", "Pamela Vaca", "Diseñadora gráfica Jr.")
+                        | #{' '}
+                        //- origen: c-team-members__item
+                        +repTeamMembersItem("fade-left", "150", "/src/assets/images/components/about-us/member-1.webp", "alt", "Rosa Castro", "Medios digitales")
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:62px] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-top:152px] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper")
+            | #{' '}
+            //- origen: c-media-block-services
+            div(class="[display:initial] [flex-direction:initial] [align-items:initial] [justify-content:initial] desktop:flex desktop:[flex-direction:row-reverse] desktop:[align-items:center] desktop:[justify-content:space-between]")
+                | #{' '}
+                //- origen: c-media-block-services__content
+                div(class="[width:initial] [margin-right:initial] [margin-left:initial] desktop:[width:918px] desktop:[margin-right:0] desktop:[margin-left:50px] wide:[margin-left:80px]")
+                    | #{' '}
+                    //- origen: c-section__subtitle
+                    h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Branding Estratégico
+                    | #{' '}
+                    //- origen: c-section__content
+                    div(class="[margin-top:15px] desktop:[margin-top:34px]")
+                        | #{' '}
+                        //- origen: s-cms-content
+                        div(class="text-16 [line-height:1.56] [margin-bottom:20px] text-gray-muted desktop:[margin-bottom:30px]")
+                            | #{' '}
+                            p(class="[margin-top:0] [margin-right:0] [margin-bottom:0] [margin-left:0]")
+                                | Diseñamos desde cero la identidad corporativa de tu marca a nivel digital; desde la creación de tu Logotipo, Slogan y Papelería. is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy is simply dummy text of the printing and typesetting industry. Lorem Ipsum has#{' '}
+                            | #{' '}
+                        | #{' '}
+                        //- origen: c-button__wrapper
+                        div(class="flex [align-items:flex-start] [justify-content:flex-start] [flex-wrap:wrap] [margin-top:40px] [margin-right:0] [margin-bottom:0] [margin-left:0] desktop:[margin-top:48px]")
+                            | #{' '}
+                            //- origen: c-button
+                            a(class="inline-flex [align-items:center] [justify-content:center] [text-align:center] [height:48px] rounded-15 [padding-top:0] [padding-right:30px] [padding-bottom:0] [padding-left:30px] text-14 [text-decoration:none] weight-medium [line-height:1.2] [transition:all_.2s_ease,outline_0s] [box-shadow:none] focus:[transition:all_.2s_ease,outline_0s] focus:shadow-soft hover:[transition:all_.2s_ease,outline_0s] hover:shadow-soft bg-blue text-white focus:bg-blue-hover hover:bg-blue-hover disabled:[opacity:.6] disabled:[cursor:not-allowed] wide:[height:64px] wide:rounded-20 wide:text-18", href="nosotros.html")
+                                | Comenzar#{' '}
+                                //- origen: o-icon
+                                +repIcon("/src/assets/images/sprite.svg#icon-arrow-right")
+                                | #{' '}
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+                //- origen: c-media-block-services__media
+                div
+                    | #{' '}
+                    //- origen: c-media-block-services__pic
+                    picture(class="[margin-top:38px] [margin-right:auto] [margin-bottom:0] [margin-left:auto] [width:248px] block rounded-circle [overflow:hidden] [height:initial] tablet:[width:350px] desktop:[margin-top:0] desktop:[margin-right:0] desktop:[margin-left:0] desktop:[width:274px] desktop:[height:274px]", data-reveal="fade-right")
+                        | #{' '}
+                        //- origen: c-media-block-services__img
+                        img(class="[width:100%] [height:auto] block [object-fit:cover]", alt="Not a valid alt", src="/src/assets/images/components/about-us/member-1.webp", loading="lazy")
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-media-block-services__media_text
+                    div(class="[text-align:center] weight-semibold text-18 tablet:text-20")
+                        | #{' '}
+                        p María García Peña
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Dejanos tu comentario
+            | #{' '}
+            //- origen: c-section__intro
+            div(class="[text-align:left] text-16 [line-height:1.4] [margin-top:20px] desktop:text-18")
+                | #{' '}
+                p(class="[margin-top:0] [margin-right:0] [margin-bottom:0] [margin-left:0]") Tu dirección de correo electrónico no será publicada. Los campos obligatorios están marcados con*
+                | #{' '}
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-contact-form
+                form(class="js-form [max-width:830px] [display:initial] [align-items:initial] [justify-content:initial] [flex-wrap:initial] [margin-left:initial] desktop:flex desktop:[align-items:flex-start] desktop:[justify-content:flex-start] desktop:[flex-wrap:wrap] desktop:[margin-left:-40px]", action="#")
+                    | #{' '}
+                    //- origen: c-contact-form__item
+                    div(class="[margin-bottom:22px] [width:100%] [margin-left:initial] desktop:[width:calc(50%_-_40px)] desktop:[margin-left:40px]")
+                        | #{' '}
+                        //- origen: c-contact-form__label
+                        label Nombres
+                        | #{' '}
+                        //- origen: c-contact-form__input
+                        input(class="js-only-letters bg-gray-input [border:none] [padding-top:10px] [padding-right:28px] [padding-bottom:10px] [padding-left:28px] rounded-8 [font-family:Poppins] weight-regular text-16 text-ink block [width:100%] [height:48px]", type="text", name="nombreApellido", required)
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-contact-form__item
+                    div(class="[margin-bottom:22px] [width:100%] [margin-left:initial] desktop:[width:calc(50%_-_40px)] desktop:[margin-left:40px]")
+                        | #{' '}
+                        //- origen: c-contact-form__label
+                        label Email
+                        | #{' '}
+                        //- origen: c-contact-form__input
+                        input(class="js-only-email bg-gray-input [border:none] [padding-top:10px] [padding-right:28px] [padding-bottom:10px] [padding-left:28px] rounded-8 [font-family:Poppins] weight-regular text-16 text-ink block [width:100%] [height:48px]", type="email", name="correo", required)
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-contact-form__item
+                    div(class="[margin-bottom:22px] [width:100%] [margin-left:initial] desktop:[margin-left:40px]")
+                        | #{' '}
+                        //- origen: c-contact-form__legend
+                        div(class="weight-semibold text-16 [line-height:1.37] text-purple block [width:100%] [appearance:none] [margin-bottom:10px] desktop:[margin-bottom:20px]") Deja un comentario
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-contact-form__item
+                    div(class="[margin-bottom:22px] [width:100%] [margin-left:initial] desktop:[margin-left:40px]")
+                        | #{' '}
+                        //- origen: c-contact-form__textarea
+                        textarea(class="bg-gray-input [border:none] [padding-top:15px] [padding-right:28px] [padding-bottom:15px] [padding-left:28px] rounded-8 [font-family:Poppins] weight-regular text-16 text-ink block [width:100%] [height:150px]", name="mensaje", placeholder="Mensaje", required)
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-contact-form__controls
+                    div(class="[margin-left:initial] desktop:[margin-left:40px]")
+                        | #{' '}
+                        //- origen: c-button
+                        button(class="inline-flex [align-items:center] [justify-content:center] [text-align:center] [height:48px] rounded-15 [padding-top:0] [padding-right:30px] [padding-bottom:0] [padding-left:30px] text-14 [text-decoration:none] weight-medium [line-height:1.2] [transition:all_.2s_ease,outline_0s] [box-shadow:none] focus:[transition:all_.2s_ease,outline_0s] focus:shadow-soft hover:[transition:all_.2s_ease,outline_0s] hover:shadow-soft bg-blue text-white focus:bg-blue-hover hover:bg-blue-hover disabled:[opacity:.6] disabled:[cursor:not-allowed] wide:[height:64px] wide:rounded-20 wide:text-18", type="submit")
+                            | Publicar Comentario#{' '}
+                            //- origen: o-icon
+                            span(class="icon [margin-left:10px] text-16 desktop:text-20", data-hero="dark-purple")
+                                +repBloque2("/src/assets/images/sprite.svg#icon-arrow-right")
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}

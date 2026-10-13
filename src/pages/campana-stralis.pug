@@ -1,0 +1,274 @@
+extends ../layouts/main-template
+
+block title
+    title Conoce nuestras soluciones | Pharmaco
+block description
+    meta(name='description', content="Pharmaco | Laboratorio digital de Marketing &amp; Software")
+block content
+    include ../components/repetidos
+    | #{' '}
+    //- origen: c-hero
+    div(class="[padding-top:116px] [height:675px] relative bg-orange tablet:[height:745px] desktop:[padding-top:230px] desktop:[height:815px] wide:[height:890px]", data-hero="orange")
+        | #{' '}
+        //- origen: c-hero__content
+        div(class="relative [z-index:1] [max-width:1440px] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto]")
+            | #{' '}
+            div(class="wrapper")
+                | #{' '}
+                //- origen: c-hero__subtitle
+                h1(class="[margin-top:10px] weight-semibold [line-height:1.048] text-35 text-white [width:90%] [max-width:600px] [margin-right:initial] [margin-bottom:initial] [margin-left:initial] tablet:text-49 desktop:[margin-top:15px] desktop:[line-height:1] desktop:text-63 desktop:[margin-right:0] desktop:[margin-bottom:0] desktop:[margin-left:auto] wide:text-77")
+                    | Campaña#{' '}
+                    br
+                    | #{' '}Stralis#{' '}
+                | #{' '}
+                //- origen: c-hero__text
+                +repHeroText2("Brand: Iveco")
+                | #{' '}
+            | #{' '}
+        | #{' '}
+        //- origen: c-hero__pic
+        +repHeroPic("/src/assets/images/components/hero/hero-diseño-de-personajes-lg.webp, /src/assets/images/components/hero/hero-diseño-de-personajes-lg@2x.webp 2x", "/src/assets/images/components/hero/hero-diseño-de-personajes-sm.webp, /src/assets/images/components/hero/hero-diseño-de-personajes-sm@2x.webp 2x", "/src/assets/images/components/hero/hero-diseño-de-personajes-lg.webp", "", "fade-in")
+        | #{' '}
+    | #{' '}
+    //- origen: c-page-breadcrumb
+    +repPageBreadcrumb("Your location in the site", "./", "Home", "/src/assets/images/sprite.svg#icon-chevron-right", "#", "Portafolio", "/src/assets/images/sprite.svg#icon-chevron-right", "#", "Iveco")
+    | #{' '}
+    //- origen: c-section
+    +repSection("Brand: Iveco", "Lorem Ipsum is simply", "it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using", "Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editorsnow use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). Now use Lorem Ipsum as their default model text", "PageMaker")
+    | #{' '}
+    //- origen: c-section
+    +repSection2("/src/assets/images/components/portafolio/campaña-stralis/simple-banner-lg.webp, /src/assets/images/components/portafolio/campaña-stralis/simple-banner-lg@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-stralis/simple-banner-sm.webp , /src/assets/images/components/portafolio/campaña-stralis/simple-banner-sm@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-stralis/simple-banner-lg.webp", "#")
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Facebook Ads
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro2("Formato Canvas")
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-format-canvas
+                div(class="flex [justify-content:space-between] [flex-wrap:wrap] [width:100%] [max-width:320px] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] desktop:[max-width:initial] desktop:[margin-top:initial] desktop:[margin-right:initial] desktop:[margin-bottom:initial] desktop:[margin-left:initial]")
+                    | #{' '}
+                    //- origen: c-format-canvas__item
+                    div(class="[margin-bottom:64px] [height:370px] shadow-canvas [width:initial] desktop:[margin-bottom:0] desktop:[height:650px] desktop:[width:55%] wide:[height:846px] wide:[width:51.5%]")
+                        | #{' '}
+                        //- origen: c-format-canvas__pic
+                        picture(class="block [width:100%] [height:100%]")
+                            | #{' '}
+                            source(media="(min-width: 43.75rem)", srcset="/src/assets/images/components/portafolio/campaña-stralis/canvas1-lg.webp", type="image/webp")
+                            | #{' '}
+                            source(srcset="/src/assets/images/components/portafolio/campaña-stralis/canvas1-sm.webp", type="image/webp")
+                            | #{' '}
+                            //- origen: c-format-canvas__image
+                            img(class="[width:100%] [height:100%] block [object-fit:cover]", src="/src/assets/images/components/portafolio/campaña-stralis/canvas1-lg.webp", alt="#")
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-format-canvas__item
+                    div(class="[margin-bottom:64px] [height:auto] [box-shadow:none] [width:100%] flex [flex-wrap:wrap] [justify-content:space-between] desktop:[margin-bottom:0] desktop:[height:650px] desktop:[width:40%] wide:[height:846px] wide:[width:36%]")
+                        | #{' '}
+                        //- origen: c-format-canvas__pic
+                        +repFormatCanvasPic("/src/assets/images/components/portafolio/campaña-stralis/canvas2-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/canvas2-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/canvas2-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-format-canvas__pic
+                        +repFormatCanvasPic("/src/assets/images/components/portafolio/campaña-stralis/canvas3-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/canvas3-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/canvas3-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-format-canvas__pic
+                        +repFormatCanvasPic("/src/assets/images/components/portafolio/campaña-stralis/canvas4-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/canvas4-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/canvas4-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-format-canvas__pic
+                        +repFormatCanvasPic("/src/assets/images/components/portafolio/campaña-stralis/canvas5-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/canvas5-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/canvas5-lg.webp", "#")
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    +repSection3("Instagram Ads", "Formato Carrusel", "/src/assets/images/components/portafolio/campaña-stralis/campaña-stralis-instagram-lg.webp, /src/assets/images/components/portafolio/campaña-stralis/campaña-stralis-instagram-lg@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-stralis/campaña-stralis-instagram-sm.webp , /src/assets/images/components/portafolio/campaña-stralis/campaña-stralis-instagram-sm@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-stralis/campaña-stralis-instagram-lg.webp", "#")
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Facebook Ads
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro2("Formato Carrusel")
+            | #{' '}
+            //- origen: c-section__content
+            +repSectionContent3("/src/assets/images/components/portafolio/campaña-stralis/banner-facebook-lg.webp, /src/assets/images/components/portafolio/campaña-stralis/banner-facebook-lg@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-stralis/banner-facebook-sm.webp , /src/assets/images/components/portafolio/campaña-stralis/banner-facebook-sm@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-stralis/banner-facebook-lg.webp", "#")
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px] [padding-left:0] [padding-right:0]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Historias destacadas
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro2("Instagram & Facebook")
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-featured-stories
+                div(class="flex [flex-wrap:wrap] [justify-content:center]")
+                    | #{' '}
+                    //- origen: c-featured-stories__item
+                    +repFeaturedStoriesItem2("/src/assets/images/components/portafolio/campaña-stralis/stories1-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/stories1-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/stories1-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-featured-stories__item
+                    +repFeaturedStoriesItem2("/src/assets/images/components/portafolio/campaña-stralis/stories2-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/stories2-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/stories2-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-featured-stories__item
+                    +repFeaturedStoriesItem2("/src/assets/images/components/portafolio/campaña-stralis/stories3-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/stories3-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/stories3-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-featured-stories__item
+                    +repFeaturedStoriesItem2("/src/assets/images/components/portafolio/campaña-stralis/stories4-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/stories4-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/stories4-lg.webp", "#")
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Videos
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro2("Instagram & Facebook")
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-videos
+                div
+                    | #{' '}
+                    //- origen: c-videos-banner
+                    div
+                        | #{' '}
+                        //- origen: c-videos-banner__item
+                        div(class="[height:auto] block [width:100%] [overflow:hidden] tablet:[height:500px] desktop:[height:712px]")
+                            | #{' '}
+                            //- origen: c-videos-banner__img-link
+                            a(class="video-modal-js relative block [transition:all_.2s_ease,outline_0s] [overflow:hidden] hover:[transform:scale(1.05)] hover:[transition:all_.2s_ease,outline_0s] before:content-[''] before:absolute before:[background-image:url(../../images/components/icon-videos.svg)] before:[background-repeat:no-repeat] before:[background-size:contain] before:[background-position:center] before:[width:16%] before:[top:0] before:[bottom:0] before:[left:0] before:[right:0] before:[margin-top:0] before:[margin-right:auto] before:[margin-bottom:0] before:[margin-left:auto] before:flex before:[justify-content:center] before:[align-items:center] before:[z-index:100]", href="https://www.youtube.com/embed/pa-A2g0wxPs")
+                                | #{' '}
+                                //- origen: c-videos-banner__pic
+                                picture(class="[width:100%] block [height:100%]")
+                                    | #{' '}
+                                    source(media="(min-width: 43.75rem)", srcset="/src/assets/images/components/portafolio/campaña-stralis/video1-lg.webp", type="image/webp")
+                                    | #{' '}
+                                    source(srcset="/src/assets/images/components/portafolio/campaña-stralis/video1-sm.webp", type="image/webp")
+                                    | #{' '}
+                                    //- origen: c-videos-banner__image
+                                    img(class="[width:100%] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] [object-fit:cover] [height:190px] tablet:[height:500px] desktop:[height:712px]", src="/src/assets/images/components/portafolio/campaña-stralis/video1-lg.webp", alt="#")
+                                    | #{' '}
+                                | #{' '}
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px] [padding-left:0] [padding-right:0]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Social Media
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro2("Instagram & Facebook")
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-gallery
+                div
+                    | #{' '}
+                    //- origen: c-gallery-grid
+                    div(class="flex [flex-wrap:wrap] [justify-content:space-between] [max-width:360px] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] tablet:[max-width:initial]")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem("/src/assets/images/components/portafolio/campaña-stralis/gallery1-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery1-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery1-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem("/src/assets/images/components/portafolio/campaña-stralis/gallery2-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery2-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery2-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem("/src/assets/images/components/portafolio/campaña-stralis/gallery3-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery3-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery3-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem("/src/assets/images/components/portafolio/campaña-stralis/gallery4-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery4-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery4-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem2("/src/assets/images/components/portafolio/campaña-stralis/gallery5-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery5-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery5-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        div(class="[margin-bottom:10px] [width:calc(50%_-_5px)] [max-height:initial] desktop:[margin-bottom:12px] desktop:[width:calc(33.33%_-_10px)] desktop:[max-height:479px]")
+                            | #{' '}
+                            //- origen: c-gallery-grid__pic
+                            +repGalleryGridPic("/src/assets/images/components/portafolio/campaña-stralis/gallery6-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery6-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery6-lg.webp", "#")
+                            | #{' '}
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem4("/src/assets/images/components/portafolio/campaña-stralis/gallery7-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery7-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery7-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem4("/src/assets/images/components/portafolio/campaña-stralis/gallery8-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery8-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery8-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem4("/src/assets/images/components/portafolio/campaña-stralis/gallery9-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery9-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery9-lg.webp", "#")
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+                //- origen: c-videos
+                div(class="[margin-top:37px] desktop:[margin-top:200px]")
+                    | #{' '}
+                    //- origen: c-videos-grid
+                    div(class="flex [justify-content:center] [flex-wrap:wrap] [overflow:hidden] desktop:[justify-content:space-between]")
+                        | #{' '}
+                        //- origen: c-videos-grid__item
+                        div(class="[margin-bottom:18px] [max-width:500px] [width:100%] [overflow:hidden] [height:initial] desktop:[max-width:initial] desktop:[height:842px]")
+                            | #{' '}
+                            //- origen: c-videos-grid__img-link
+                            +repVideosGridImgLink("https://www.youtube.com/embed/pa-A2g0wxPs", "/src/assets/images/components/portafolio/campaña-stralis/video-grid-big-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/video-grid-big-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/video-grid-big-lg.webp", "#")
+                            | #{' '}
+                        | #{' '}
+                        //- origen: c-videos-grid__item
+                        div(class="[margin-bottom:18px] [max-width:500px] [width:100%] [overflow:hidden] [height:initial] [min-height:initial] tablet:[width:calc(50%_-_10px)] desktop:[max-width:initial] desktop:[height:100%] desktop:[min-height:411px]")
+                            | #{' '}
+                            //- origen: c-videos-grid__img-link
+                            +repVideosGridImgLink("https://www.youtube.com/embed/pa-A2g0wxPs", "/src/assets/images/components/portafolio/campaña-stralis/video-grid-big-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/video-grid-big-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/video-grid-big-lg.webp", "#")
+                            | #{' '}
+                        | #{' '}
+                        //- origen: c-videos-grid__item
+                        div(class="[margin-bottom:18px] [max-width:500px] [width:100%] [overflow:hidden] [margin-left:initial] [height:initial] [min-height:initial] tablet:[width:calc(50%_-_10px)] tablet:[margin-left:10px] desktop:[max-width:initial] desktop:[margin-left:0] desktop:[height:100%] desktop:[min-height:411px]")
+                            | #{' '}
+                            //- origen: c-videos-grid__img-link
+                            +repVideosGridImgLink("https://www.youtube.com/embed/pa-A2g0wxPs", "/src/assets/images/components/portafolio/campaña-stralis/video-grid-big-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/video-grid-big-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/video-grid-big-lg.webp", "#")
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}

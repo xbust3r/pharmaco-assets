@@ -1,0 +1,231 @@
+extends ../layouts/main-template
+
+block title
+    title Contáctanos desde el medio que prefieras | Pharmaco
+block description
+    meta(name='description', content="Pharmaco | Laboratorio digital de Marketing &amp; Software")
+block content
+    include ../components/repetidos
+    | #{' '}
+    //- origen: c-hero
+    div(class="[padding-top:116px] [height:675px] relative bg-deep-purple tablet:[height:745px] desktop:[padding-top:230px] desktop:[height:815px] wide:[height:890px]", data-hero="purple")
+        | #{' '}
+        //- origen: c-hero__content
+        div(class="relative [z-index:1] [max-width:1440px] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto]")
+            | #{' '}
+            div(class="wrapper")
+                | #{' '}
+                //- origen: c-hero__subtitle
+                h1(class="[margin-top:10px] weight-semibold [line-height:1.048] text-35 text-white [width:90%] [max-width:600px] tablet:text-49 desktop:[margin-top:15px] desktop:[line-height:1] desktop:text-63 wide:text-77") Contáctanos por el medio que prefieras
+                | #{' '}
+                //- origen: c-hero__text
+                +repHeroText("Envíanos un mensaje y nos pondremos en contacto contigo de inmediato. 👋")
+                | #{' '}
+                //- origen: c-contact-options
+                div(class="flex [align-items:center] [justify-content:flex-start] [margin-top:20px]")
+                    | #{' '}
+                    //- origen: c-contact-options__option
+                    +repContactOptionsOption("mailto:test@test.com", "/src/assets/images/components/contact/icon-mail.svg", "", "Email")
+                    | #{' '}
+                    //- origen: c-contact-options__option
+                    a(class="flex [align-items:center] [justify-content:center] [flex-direction:column] [width:72px] [height:48px] bg-blue rounded-9 [margin-right:18px] [text-decoration:none] text-white [box-shadow:none] [transition:all_.2s_ease,outline_0s] focus:bg-purple-hover focus:[transition:all_.2s_ease,outline_0s] focus:shadow-soft hover:bg-purple-hover hover:[transition:all_.2s_ease,outline_0s] hover:shadow-soft desktop:[width:108px] desktop:[height:72px] desktop:rounded-14", href="https://wa.me/999999999/?text=Pharmaco+%7C+Laboratorio+digital+de+Marketing+%26+Software", target="_blank")
+                        | #{' '}
+                        //- origen: c-contact-options__icon
+                        img(class="[width:25px] block [height:auto] desktop:[width:37px]", src="/src/assets/images/components/contact/icon-whatsapp.svg", alt="", aria-hidden="true")
+                        | #{' '}
+                        //- origen: c-contact-options__text
+                        span(class="inline-block [text-align:center] weight-semibold text-10 [margin-top:2px] desktop:text-14") Whatsapp
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-contact-options__option
+                    +repContactOptionsOption("tel:999999999", "/src/assets/images/components/contact/icon-phone.svg", "", "Llamar")
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+        //- origen: c-hero__pic
+        +repHeroPic("/src/assets/images/components/hero/hero-contact-lg.webp, /src/assets/images/components/hero/hero-contact-lg@2x.webp 2x", "/src/assets/images/components/hero/hero-contact-sm.webp, /src/assets/images/components/hero/hero-contact-sm@2x.webp 2x", "/src/assets/images/components/hero/hero-contact-lg.webp", "", "fade-in")
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:62px] [padding-right:0] [padding-bottom:62px] [padding-left:0] [background-image:url(/src/assets/images/components/contact/form-bg-sm.webp)] [background-repeat:no-repeat] [background-position:calc(100%_-_5px)_260px] desktop:[padding-top:152px] desktop:[padding-bottom:152px] desktop:[background-image:url(/src/assets/images/components/contact/form-bg-lg.webp)]")
+        | #{' '}
+        div(class="wrapper")
+            | #{' '}
+            //- origen: c-section__title
+            h2(class="weight-semibold [line-height:1.6] text-16 text-blue tablet:text-17 desktop:text-18 wide:text-20") Contáctanos
+            | #{' '}
+            //- origen: c-section__subtitle
+            h3(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40")
+                | Queremos conocer a tu empresa#{' '}
+                br
+                | #{' '}y saber cómo podemos ayudarte#{' '}
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-contact-form
+                form(class="js-form [max-width:830px] [display:initial] [align-items:initial] [justify-content:initial] [flex-wrap:initial] [margin-left:initial] desktop:flex desktop:[align-items:flex-start] desktop:[justify-content:flex-start] desktop:[flex-wrap:wrap] desktop:[margin-left:-40px]", action="#")
+                    | #{' '}
+                    //- origen: c-contact-form-radios
+                    div(class="flex [flex-wrap:wrap] [margin-top:-14px] [margin-bottom:50px] [width:100%] [margin-left:initial] desktop:[margin-left:20px]")
+                        | #{' '}
+                        //- origen: c-contact-form-radios__item
+                        div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(33.33%_-_20px)] desktop:[margin-left:20px]")
+                            | #{' '}
+                            //- origen: c-contact-form-radios__input
+                            input(class="js-contact-form-radio-person [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="personaNatural", type="radio", name="tipo", value="Persona Natural", checked)
+                            | #{' '}
+                            //- origen: c-contact-form-radios__label
+                            label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:23px] before:rounded-circle before:absolute before:[top:2px] before:[left:0] before:[height:23px] before:bg-white before:[border:1px_solid_#a7a7a7] checked:bg-purple focus:shadow-focus after:content-[''] after:block after:[width:13px] after:rounded-circle after:absolute after:[top:7px] after:[left:5px] after:[height:13px] selection:bg-transparent", for="personaNatural") Soy persona natural
+                            | #{' '}
+                        | #{' '}
+                        //- origen: c-contact-form-radios__item
+                        div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(33.33%_-_20px)] desktop:[margin-left:20px]")
+                            | #{' '}
+                            //- origen: c-contact-form-radios__input
+                            input(class="js-contact-form-radio-business [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="empresa", type="radio", name="tipo", value="Empresa")
+                            | #{' '}
+                            //- origen: c-contact-form-radios__label
+                            label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:23px] before:rounded-circle before:absolute before:[top:2px] before:[left:0] before:[height:23px] before:bg-white before:[border:1px_solid_#a7a7a7] checked:bg-purple focus:shadow-focus after:content-[''] after:block after:[width:13px] after:rounded-circle after:absolute after:[top:7px] after:[left:5px] after:[height:13px] selection:bg-transparent", for="empresa") Soy una empresa
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-contact-form__item
+                    div(class="[margin-bottom:22px] [width:100%] [margin-left:initial] desktop:[margin-left:40px]")
+                        | #{' '}
+                        //- origen: c-contact-form__input
+                        input(class="js-only-letters bg-gray-input [border:none] [padding-top:10px] [padding-right:28px] [padding-bottom:10px] [padding-left:28px] rounded-8 [font-family:Poppins] weight-regular text-16 text-ink block [width:100%] [height:48px]", type="text", name="nombreApellido", placeholder="Nombre y apellidos", required)
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-contact-form__item
+                    div(class="[margin-bottom:22px] [width:100%] [margin-left:initial] desktop:[width:calc(50%_-_40px)] desktop:[margin-left:40px]")
+                        | #{' '}
+                        //- origen: c-contact-form__input
+                        input(class="js-only-phone bg-gray-input [border:none] [padding-top:10px] [padding-right:28px] [padding-bottom:10px] [padding-left:28px] rounded-8 [font-family:Poppins] weight-regular text-16 text-ink block [width:100%] [height:48px]", type="tel", name="telefono", placeholder="Teléfono", required)
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-contact-form__item
+                    div(class="[margin-bottom:22px] [width:100%] [margin-left:initial] desktop:[width:calc(50%_-_40px)] desktop:[margin-left:40px]")
+                        | #{' '}
+                        //- origen: c-contact-form__input
+                        input(class="js-only-email bg-gray-input [border:none] [padding-top:10px] [padding-right:28px] [padding-bottom:10px] [padding-left:28px] rounded-8 [font-family:Poppins] weight-regular text-16 text-ink block [width:100%] [height:48px]", type="email", name="correo", placeholder="Correo", required)
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-contact-form__item
+                    div(class="js-business-item [margin-bottom:22px] [width:100%] hidden [margin-left:initial] desktop:[width:calc(50%_-_40px)] desktop:[margin-left:40px]")
+                        | #{' '}
+                        //- origen: c-contact-form__input
+                        input(class="js-contact-form-business-name bg-gray-input [border:none] [padding-top:10px] [padding-right:28px] [padding-bottom:10px] [padding-left:28px] rounded-8 [font-family:Poppins] weight-regular text-16 text-ink block [width:100%] [height:48px]", type="text", name="nombreEmpresa", placeholder="Nombre de la empresa", required, disabled)
+                        | #{' '}
+                    | #{' '}
+                    fieldset(class="[padding-top:0] [padding-right:0] [padding-bottom:0] [padding-left:0] [margin-top:33px] [margin-right:0] [margin-bottom:30px] [margin-left:0] block [appearance:none] [border:none] [width:100%] desktop:[margin-bottom:45px] desktop:[margin-left:40px]")
+                        legend(class="weight-semibold text-16 [line-height:1.37] text-purple block [width:100%] [appearance:none] [margin-bottom:10px] desktop:[margin-bottom:20px]") Servicios en el que estás interesado
+                        //- origen: c-contact-form-checkboxes
+                        div(class="flex [flex-wrap:wrap] [margin-top:-14px] [margin-left:initial] desktop:[margin-left:-20px]")
+                            | #{' '}
+                            //- origen: c-contact-form-checkboxes__item
+                            div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__input
+                                input(class="js-contact-form-checboxes [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="branding", type="checkbox", name="servicios", value="Branding", required)
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__label
+                                label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:17px] before:absolute before:[top:5px] before:[left:0] before:[height:17px] before:bg-white before:[border:1px_solid_#cfcfcf] checked:bg-purple checked:[background-image:url(/src/assets/images/components/contact/icon-checkbox.svg)] checked:[background-position:center_center] checked:[background-repeat:no-repeat] focus:shadow-focus selection:bg-transparent", for="branding") Branding
+                                | #{' '}
+                            | #{' '}
+                            //- origen: c-contact-form-checkboxes__item
+                            div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__input
+                                input(class="js-contact-form-checboxes [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="socialMedia", type="checkbox", name="servicios", value="Social media")
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__label
+                                label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:17px] before:absolute before:[top:5px] before:[left:0] before:[height:17px] before:bg-white before:[border:1px_solid_#cfcfcf] checked:bg-purple checked:[background-image:url(/src/assets/images/components/contact/icon-checkbox.svg)] checked:[background-position:center_center] checked:[background-repeat:no-repeat] focus:shadow-focus selection:bg-transparent", for="socialMedia") Social media
+                                | #{' '}
+                            | #{' '}
+                            //- origen: c-contact-form-checkboxes__item
+                            div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__input
+                                input(class="js-contact-form-checboxes [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="desarrolloDeApps", type="checkbox", name="servicios", value="Desarrollo de apps")
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__label
+                                label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:17px] before:absolute before:[top:5px] before:[left:0] before:[height:17px] before:bg-white before:[border:1px_solid_#cfcfcf] checked:bg-purple checked:[background-image:url(/src/assets/images/components/contact/icon-checkbox.svg)] checked:[background-position:center_center] checked:[background-repeat:no-repeat] focus:shadow-focus selection:bg-transparent", for="desarrolloDeApps") Desarrollo de apps
+                                | #{' '}
+                            | #{' '}
+                            //- origen: c-contact-form-checkboxes__item
+                            div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__input
+                                input(class="js-contact-form-checboxes [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="otroServicio", type="checkbox", name="servicios", value="Otro servicio")
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__label
+                                label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:17px] before:absolute before:[top:5px] before:[left:0] before:[height:17px] before:bg-white before:[border:1px_solid_#cfcfcf] checked:bg-purple checked:[background-image:url(/src/assets/images/components/contact/icon-checkbox.svg)] checked:[background-position:center_center] checked:[background-repeat:no-repeat] focus:shadow-focus selection:bg-transparent", for="otroServicio") Otro servicio
+                                | #{' '}
+                            | #{' '}
+                            //- origen: c-contact-form-checkboxes__item
+                            div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__input
+                                input(class="js-contact-form-checboxes [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="campanasPublicitarias", type="checkbox", name="servicios", value="Campañas publicitarias")
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__label
+                                label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:17px] before:absolute before:[top:5px] before:[left:0] before:[height:17px] before:bg-white before:[border:1px_solid_#cfcfcf] checked:bg-purple checked:[background-image:url(/src/assets/images/components/contact/icon-checkbox.svg)] checked:[background-position:center_center] checked:[background-repeat:no-repeat] focus:shadow-focus selection:bg-transparent", for="campanasPublicitarias") Campañas publicitarias
+                                | #{' '}
+                            | #{' '}
+                            //- origen: c-contact-form-checkboxes__item
+                            div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__input
+                                input(class="js-contact-form-checboxes [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="campañasPublicitarias", type="checkbox", name="servicios", value="Campañas publicitarias")
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__label
+                                label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:17px] before:absolute before:[top:5px] before:[left:0] before:[height:17px] before:bg-white before:[border:1px_solid_#cfcfcf] checked:bg-purple checked:[background-image:url(/src/assets/images/components/contact/icon-checkbox.svg)] checked:[background-position:center_center] checked:[background-repeat:no-repeat] focus:shadow-focus selection:bg-transparent", for="campañasPublicitarias") Campañas publicitarias
+                                | #{' '}
+                            | #{' '}
+                            //- origen: c-contact-form-checkboxes__item
+                            div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__input
+                                input(class="js-contact-form-checboxes [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="produccionDeVideos", type="checkbox", name="servicios", value="Producción de videos")
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__label
+                                label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:17px] before:absolute before:[top:5px] before:[left:0] before:[height:17px] before:bg-white before:[border:1px_solid_#cfcfcf] checked:bg-purple checked:[background-image:url(/src/assets/images/components/contact/icon-checkbox.svg)] checked:[background-position:center_center] checked:[background-repeat:no-repeat] focus:shadow-focus selection:bg-transparent", for="produccionDeVideos") Producción de videos
+                                | #{' '}
+                            | #{' '}
+                            //- origen: c-contact-form-checkboxes__item
+                            div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__input
+                                input(class="js-contact-form-checboxes js-contact-form-checkbox-message [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="deseoContarUnPocoSobreMiIdea", type="checkbox", name="servicios", value="Deseo contar un poco sobre mi idea")
+                                | #{' '}
+                                //- origen: c-contact-form-checkboxes__label
+                                label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:17px] before:absolute before:[top:5px] before:[left:0] before:[height:17px] before:bg-white before:[border:1px_solid_#cfcfcf] checked:bg-purple checked:[background-image:url(/src/assets/images/components/contact/icon-checkbox.svg)] checked:[background-position:center_center] checked:[background-repeat:no-repeat] focus:shadow-focus selection:bg-transparent", for="deseoContarUnPocoSobreMiIdea") Deseo contar un poco sobre mi idea
+                                | #{' '}
+                            | #{' '}
+                            div(class="js-contact-form-checboxes-error [margin-top:10px] [margin-left:initial] desktop:[margin-left:20px]")
+                            | #{' '}
+                    | #{' '}
+                    //- origen: c-contact-form__item
+                    div(class="js-textarea-item [margin-bottom:22px] [width:100%] hidden [margin-left:initial] desktop:[margin-left:40px]")
+                        | #{' '}
+                        //- origen: c-contact-form__textarea
+                        textarea(class="js-contact-form-textarea-message bg-gray-input [border:none] [padding-top:15px] [padding-right:28px] [padding-bottom:15px] [padding-left:28px] rounded-8 [font-family:Poppins] weight-regular text-16 text-ink block [width:100%] [height:150px]", name="mensaje", placeholder="Mensaje", required, disabled)
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-contact-form__controls
+                    div(class="[margin-left:initial] desktop:[margin-left:40px]")
+                        | #{' '}
+                        //- origen: c-button
+                        button(class="inline-flex [align-items:center] [justify-content:center] [text-align:center] [height:48px] rounded-15 [padding-top:0] [padding-right:30px] [padding-bottom:0] [padding-left:30px] text-14 [text-decoration:none] weight-medium [line-height:1.2] [transition:all_.2s_ease,outline_0s] [box-shadow:none] focus:[transition:all_.2s_ease,outline_0s] focus:shadow-soft hover:[transition:all_.2s_ease,outline_0s] hover:shadow-soft bg-blue text-white focus:bg-blue-hover hover:bg-blue-hover disabled:[opacity:.6] disabled:[cursor:not-allowed] wide:[height:64px] wide:rounded-20 wide:text-18", type="submit")
+                            | Enviar#{' '}
+                            //- origen: o-icon
+                            +repIcon("/src/assets/images/sprite.svg#icon-arrow-right")
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
