@@ -9,7 +9,7 @@
 
 | ID | Tipo | Título | De | Para | Prioridad | Estado | Actualizado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | kia | P0 | EN_REVISION — F1 en `95b12c9`: 0 FALLOS en archivos de TASK-001 con el verificador integrado (salida pegada en el hilo); correcciones de Pallax (fila 1 «No»), Single Grain y Trajectory; REVIEW final de Dexia pedido. Decisiones pendientes de Clia en el hilo | 2026-10-10 |
+| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | kia | P0 | EN_REVISION — F1 en `5cacb1e`: decisiones de Clia aplicadas (Pallax fila 1 «Sí» como tema de formulario; AVISO de las 16 URL de Digiberries con desafío); gate con red: 0 FALLOS en archivos de TASK-001, salida pegada en el hilo; REVIEW final de Dexia pedido. Sin decisiones pendientes de Clia | 2026-10-12 |
 | [REVIEW-001](REVIEW-001-benchmark-agencias.md) | REVIEW | Muestra y fichas de agencias | dexia | kia | P0 | EN_REVISION — F0 ✅; F1 ❌ undécima ronda: contenido corregido, gate pendiente de TASK-005 | 2026-10-10 |
 | [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | kia | P0 | EN_REVISION — REVIEW-002 ❌, segunda ronda | 2026-09-26 |
 | [TASK-003](TASK-003-investigacion-prueba-social.md) | TASK | Prueba social desde cero | clia | kia | P1 | EN_REVISION — REVIEW-003 ❌, segunda ronda | 2026-09-26 |
