@@ -53,13 +53,16 @@ este dice cómo se escribe el código. Ante conflicto, gana este.
 
 ## Verificación completa
 
-> ⏳ **Pendiente de [`RFC-001`](docs/comms/RFC-001-alcance-del-proyecto.md).**
-> Aquí va la línea de comandos real del proyecto (lint, validación de assets,
-> build, verificación del resultado). **El gate sin comandos reales es decorativo.**
+Arquitectura: **Blackgrow 2026** (Vite + Vituum + Pug + Tailwind v4), sin jQuery
+y con JavaScript nativo ([`DECISION-010`](docs/comms/DECISION-010-arquitectura-blackgrow-sin-jquery.md)).
+Rige en cuanto existe el proyecto, desde la fase 1 de `TASK-006`:
 
 ```bash
-# (por definir en RFC-001)
+pnpm optimize && pnpm lint && pnpm validate && pnpm build && pnpm verify:render && pnpm validate:origen
+pnpm preview   # y mirar el resultado a 375 px y en escritorio
 ```
+
+`validate:origen` compara contra `assets/`, que es el origen y **no se modifica**.
 
 Se pega la **salida real** en el hilo del MD, no un «pasó todo». Y se mira el
 resultado servido: ningún comando sabe si se ve bien.

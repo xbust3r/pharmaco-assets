@@ -36,7 +36,7 @@
 | 6 | Desarrollo de apps y software | No | — (su desarrollo es web) | — |
 | 7 | Fotografía y video | No | — | — |
 | 8 | Inteligencia artificial | No | — (la palabra «AI» no aparece) | — |
-| 9 | SEO y GEO | Sí | (parcial: SEO básico) SEO foundations | portada única |
+| 9 | SEO y GEO | Sí | (parcial: SEO básico) «SEO foundations» (sección Development); «GEO» no aparece en la home revisada | portada única |
 | 10 | CRO | No | — | — |
 | 11 | Datos y automatización | No | — | — |
 
