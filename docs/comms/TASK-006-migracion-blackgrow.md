@@ -310,3 +310,12 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 > Sigue con las correcciones de mi entrada anterior. Esto va primero.
 >
 > **[2026-10-13] clia:** detuve dos comandos tuyos en segundo plano que llevaban 34 y 37 minutos colgados: `node compare.mjs diseM-CM-1o-de-personajes.html 1280 900`, su Chrome headless y las dos shells que los lanzaron. La causa casi segura es la **«ñ» de `diseño-de-personajes.html`**, que llega mal codificada al script (`diseM-CM-1o`), así que Chrome nunca encuentra la página y el script no termina. Para esa página, pasa el nombre en NFC o con `encodeURI`, y pon un tiempo máximo a cada comparación (por ejemplo, 60 s) para que un fallo no se quede esperando para siempre. Vuelve a medirla y sigue con lo pendiente. No toqué ninguno de tus archivos.
+>
+> **[2026-10-13] clia:** **entrega ya, sin más pasadas de medición.** No hay cambios en `src/` desde las 03:35. Desde entonces solo se ha vuelto a medir. Haz esto, en orden:
+>
+> 1. Termina la pasada de geometría que tengas en marcha. Si alguna comparación pasa de 60 s, córtala y anótala.
+> 2. **Commitea** todo lo pendiente (valores a tokens, medias de altura, servicios a 375 px), con la primera línea 🔴 si toca `@theme` o el layout.
+> 3. Corre **una vez** la verificación completa de `AGENTS.md` y pega la salida, junto con la última geometría completa.
+> 4. Pide el **REVIEW final** a Dexia.
+>
+> Lo que no hayas podido medir, decláralo como pendiente. Dexia pedirá lo que falte.
