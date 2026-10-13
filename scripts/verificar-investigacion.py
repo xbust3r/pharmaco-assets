@@ -431,6 +431,32 @@ def _intentar_url(pedida, url):
     return "OK", "responde", False, False, False
 
 
+def _intentar_url_con_plazo(pedida, url):
+    """Un intento con plazo real de TIMEOUT_SEGUNDOS para todo el intento, redirecciones incluidas (REVIEW-007).
+
+    El `timeout` de urlopen limita cada operación de socket, no el intento completo. Por eso el intento corre en un
+    hilo daemon y el plazo lo pone el hilo principal. Si vence, el intento es un tiempo agotado; el hilo sigue
+    hasta su siguiente operación de socket, sin bloquear la ejecución.
+    """
+    salida = []
+
+    def objetivo():
+        try:
+            salida.append((True, _intentar_url(pedida, url)))
+        except Exception as e:  # se relanza en el hilo principal
+            salida.append((False, e))
+
+    hilo = threading.Thread(target=objetivo, daemon=True)
+    hilo.start()
+    hilo.join(TIMEOUT_SEGUNDOS)
+    if not salida:
+        return "FALLO", "tiempo de espera agotado", True, False, True
+    correcto, valor = salida[0]
+    if not correcto:
+        raise valor
+    return valor
+
+
 def _segundos(valor):
     return f"{valor:.1f}".replace(".", ",") + " s"
 
@@ -450,7 +476,7 @@ def comprobar_url(url):
         if intento > 1:
             time.sleep(ESPERA_REINTENTO)
         inicio = time.monotonic()
-        estado, motivo, reintentable, visto, agotado = _intentar_url(pedida, url)
+        estado, motivo, reintentable, visto, agotado = _intentar_url_con_plazo(pedida, url)
         tiempos.append(time.monotonic() - inicio)
         antibot = antibot or visto
         if estado == "OK" or not reintentable:
@@ -506,7 +532,11 @@ def comprobar_todas(urls, timeout_total):
 
 
 def host_de(url):
-    return urllib.parse.urlsplit(url).hostname or ""
+    """Dominio de la URL, o "" si no se puede analizar: una URL mal formada no debe abortar la V8 (REVIEW-007)."""
+    try:
+        return urllib.parse.urlsplit(url).hostname or ""
+    except ValueError:
+        return ""
 
 
 def clasificar_urls(resultados):

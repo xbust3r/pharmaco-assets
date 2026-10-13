@@ -61,6 +61,16 @@ class Manejador(http.server.BaseHTTPRequestHandler):
             with self.server.cerrojo:
                 self.server.en_vuelo -= 1
             return self._responder(200)
+        if ruta.startswith("/cadena/"):  # cada respuesta tarda 0,7 s; /cadena/0 y /cadena/1 redirigen, /cadena/2 da 200
+            n = int(ruta.rsplit("/", 1)[1])
+            time.sleep(0.7)
+            if n < 2:
+                self.send_response(302)
+                self.send_header("Location", f"/cadena/{n + 1}")
+                self.send_header("Content-Length", "0")
+                self.end_headers()
+                return
+            return self._responder(200)
         if ruta == "/colgada":  # no responde nunca: no envía nada hasta que termina el test
             self.server.fin.wait()
             return
@@ -89,6 +99,10 @@ class PruebasSinRed(unittest.TestCase):
                 self.assertEqual(estado, "FALLO")
                 self.assertTrue(motivo.startswith("URL mal formada"), motivo)
                 self.assertFalse(antibot)
+
+    def test_host_de_no_aborta_con_url_mal_formada(self):
+        self.assertEqual(v.host_de("https://[malo/ruta"), "")
+        self.assertEqual(v.host_de("https://ejemplo.com/ruta"), "ejemplo.com")
 
     def test_redireccion_comparada_en_idna(self):
         self.assertEqual(v.sin_www("https://árkos.com/"), v.sin_www("https://xn--rkos-4na.com/"))
@@ -154,6 +168,30 @@ class PruebasDeRed(unittest.TestCase):
         resultado = v.comprobar_todas(urls, timeout_total=30)
         self.assertTrue(all(estado == "OK" for estado, _, _ in resultado.values()), resultado)
         self.assertEqual(self.servidor.maximo, 2)  # valor fijo: no depende de la constante del script
+
+    def test_lote_mixto_con_url_mal_formada_no_aborta_la_v8(self):
+        # REVIEW-007: una URL con «[» sin cerrar no debe abortar el lote; las demás se comprueban igual.
+        malformada, buena = "https://[malo/ruta", self.base + "/rapida"
+        resultado = v.comprobar_todas([malformada, buena], timeout_total=30)
+        self.assertEqual(resultado[malformada][0], "FALLO")
+        self.assertTrue(resultado[malformada][1].startswith("URL mal formada"), resultado[malformada][1])
+        self.assertEqual(resultado[buena][0], "OK", resultado[buena])
+
+    def test_cadena_de_redirecciones_respeta_el_plazo_por_intento(self):
+        # REVIEW-007: 0,7 s por respuesta y dos redirecciones suman 2,1 s; con 1 s por intento debe ser FALLO.
+        inicio = time.monotonic()
+        with mock.patch.multiple(v, TIMEOUT_SEGUNDOS=1, ESPERA_REINTENTO=0.1):
+            estado, motivo, _ = v.comprobar_url(self.base + "/cadena/0")
+        medido = time.monotonic() - inicio
+        self.assertEqual(estado, "FALLO", motivo)
+        self.assertIn("tiempo de espera agotado en 3 intentos", motivo)
+        self.assertLess(medido, 5)
+
+    def test_cadena_de_redirecciones_con_plazo_suficiente_da_ok(self):
+        # Control: la misma cadena con 3 s por intento sí responde OK.
+        with mock.patch.multiple(v, TIMEOUT_SEGUNDOS=3):
+            estado, motivo, _ = v.comprobar_url(self.base + "/cadena/0")
+        self.assertEqual(estado, "OK", motivo)
 
     def test_ruta_que_tarda_8_s_da_ok(self):
         inicio = time.monotonic()
