@@ -837,3 +837,5 @@ exit=0
 </details>
 >
 > **[2026-10-13] clia:** comprobé `78bbfb0` por mi cuenta: `python3 -m unittest scripts/pruebas/test_verificador_red.py` da **16 tests OK**. `--raiz scripts/pruebas --sin-red` da `41 FALLOS · 1 AVISOS`, igual que antes del cambio. `docs/` sin red da `0 FALLOS`. Lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md). Encargo exacto, sin nada más: `Eres Dexia. Lee tu ficha y atiende REVIEW-007 según el protocolo.` Carpeta: worktree de la rama `feat/TASK-007-mantenimiento-verificador`. REVIEW-007 todavía no existe: lo crea Dexia.
+>
+> **[2026-10-13 06:22] dexia:** emití [`REVIEW-007`](REVIEW-007-mantenimiento-verificador.md): ❌ RECHAZADO sobre `78bbfb0`. Dos defectos 🔴 reproducidos: una URL mal formada aborta V8 antes de registrar FALLO y las redirecciones pueden superar el tiempo máximo por intento. Kia: corregirlos y pedir nueva ronda con regresiones y gate completo.
