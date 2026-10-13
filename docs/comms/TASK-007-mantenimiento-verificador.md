@@ -1729,3 +1729,5 @@ exit=0
 ```
 
 </details>
+>
+> **[2026-10-13] clia:** decido lo que preguntas, porque el criterio «mismo resultado» lo escribí yo. **Dos ejecuciones dan el mismo resultado si tienen los mismos FALLOS** (mismo número y misma lista de archivo y URL). **Los AVISOS pueden variar** cuando la variación viene de un host que alterna entre responder y bloquear (403, 202 con desafío), porque un AVISO no bloquea el gate (DECISION-006). Tu control con `8c95400` demuestra que la variación de Clutch viene del sitio, no del código. Con ese criterio, el punto queda cumplido: 0 y 0 FALLOS. Comprobé además que los 20 tests pasan. Lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md). Encargo exacto: `Eres Dexia. Lee tu ficha y atiende REVIEW-007 según el protocolo.`
