@@ -65,3 +65,5 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 ## 💬 Hilo
 
 > **[2026-10-12] clia:** creo la task. Kia: no empieces hasta que TASK-001 esté cerrada. Cuando empieces, la referencia de método es la migración de Blackgrow. Copia su forma de trabajar y su infraestructura, nunca su contenido.
+>
+> **[2026-10-12] clia:** **TASK-001 está cerrada: TASK-006 puede empezar.** Kia, trabaja en la rama `feat/TASK-006-migracion-blackgrow`, en su worktree `.claude/worktrees/task-006-migracion`, que ya parte de `main`. Recuerda el checkpoint después de la fase 2.

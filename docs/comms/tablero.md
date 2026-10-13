@@ -9,12 +9,11 @@
 
 | ID | Tipo | Título | De | Para | Prioridad | Estado | Actualizado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | kia | P0 | EN_REVISION — REVIEW-001 ✅ sobre `5cacb1e`; mergeada a `main` en `aa77063` (`--no-ff`); verificador en `main` con 0 FALLOS en archivos de TASK-001, salida pegada en el hilo. Pendiente de cierre de Clia | 2026-10-12 |
 | [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | kia | P0 | EN_REVISION — REVIEW-002 ❌, segunda ronda | 2026-09-26 |
 | [TASK-003](TASK-003-investigacion-prueba-social.md) | TASK | Prueba social desde cero | clia | kia | P1 | EN_REVISION — REVIEW-003 ❌, segunda ronda | 2026-09-26 |
 | [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | kia | P1 | EN_REVISION — REVIEW-004 ❌, segunda ronda | 2026-09-26 |
 | [REVIEW-005](REVIEW-005-verificador-investigacion.md) | REVIEW | Verificador de la investigación | dexia | kia | P0 | EN_REVISION — Dexia ✅, sign-off 🔴 de Clia pendiente | 2026-10-10 |
-| [TASK-006](TASK-006-migracion-blackgrow.md) | TASK | Migrar la web de assets a Blackgrow 2026, tal cual y sin jQuery (🔴) | clia | kia | P0 | ABIERTA — empieza al cerrar TASK-001 | 2026-10-12 |
+| [TASK-006](TASK-006-migracion-blackgrow.md) | TASK | Migrar la web de assets a Blackgrow 2026, tal cual y sin jQuery (🔴) | clia | kia | P0 | EN_PROGRESO | 2026-10-12 |
 | [DECISION-001](DECISION-001-adopcion-flujo-tres-agentes.md) | DECISION | Adopción del flujo Clia · Dexia · Ania | clia | miguel | P0 | PROPUESTA | 2026-09-26 |
 | [DECISION-002](DECISION-002-catalogo-base-servicios.md) | DECISION | Catálogo base de 11 servicios | clia | kia, dexia | P0 | EFECTIVA | 2026-09-26 |
 | [DECISION-003](DECISION-003-comparables-agencias-pequenas.md) | DECISION | Comparables: estudios de 2 a 15 personas | clia | kia, dexia | P0 | EFECTIVA | 2026-09-26 |
@@ -33,6 +32,7 @@
 
 | ID | Tipo | Título | Cerrado por | Fecha | Resultado |
 | --- | --- | --- | --- | --- | --- |
+| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | 2026-10-12 | ✅ CERRADA — REVIEW-001 ✅ (F1), 0 FALLOS en sus archivos, merge `aa77063` |
 | [TASK-005](TASK-005-verificador-investigacion.md) | TASK | Implementar `scripts/verificar-investigacion.py` (🔴) | clia | 2026-10-10 | ✅ CERRADA — REVIEW-005 ✅, sign-off sobre `2d8a477`, merge `427efe3` |
 | [REVIEW-001](REVIEW-001-benchmark-agencias.md) | REVIEW | Muestra y fichas de agencias | dexia | 2026-10-12 | ✅ CERRADA — F0 y F1 aprobadas sobre `5cacb1e`; gate por TASK con 0 FALLOS de TASK-001 |
 | — | — | *(vacío)* | — | — | — |

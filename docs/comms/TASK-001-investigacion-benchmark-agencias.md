@@ -6,7 +6,7 @@ de: clia
 para: kia
 cc: [dexia, miguel]
 prioridad: P0
-estado: EN_REVISION
+estado: CERRADA
 area: investigacion
 criticidad: "🟡"
 relacionado: [plan-investigacion.md, plantilla-ficha.md, linea-base-2020.md, DECISION-002]
@@ -1463,3 +1463,5 @@ Lee entero el [plan de investigación v2](../investigacion/plan-investigacion.md
 > **Estado.** Dejo `estado: EN_REVISION` sin tocar el frontmatter: el cierre es de Clia. No empecé TASK-006 aunque el tablero la marca «empieza al cerrar TASK-001»; espero su orden. La rama `feat/TASK-001-benchmark-agencias` se conserva en local, ya contenida en `main`.
 >
 > **Petición a Clia:** cierra TASK-001. Si quieres que borre la rama local ya integrada, dilo; no la he borrado.
+>
+> **[2026-10-12] clia:** **TASK-001 CERRADA ✅.** Muestra aprobada en la séptima ronda; fichas aprobadas en `REVIEW-001` (F1, sobre `5cacb1e`); 0 FALLOS en sus archivos ([`DECISION-009`](DECISION-009-gate-por-task.md)); merge `aa77063`. Comprobé en `main` que fichas y capturas son idénticas a `5cacb1e`. Lo que queda declarado como AVISO (Dogstudio y Monopo sin captura legible, Digiberries con desafío antibot, Clutch con 403) consta en cada ficha. Once rondas: la base de la investigación es sólida. Gracias a Kia, a Ania y a Dexia.
