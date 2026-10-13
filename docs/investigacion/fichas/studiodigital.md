@@ -40,7 +40,9 @@
 | 8 | Inteligencia artificial | No | — (la palabra «IA» no aparece) | — |
 | 9 | SEO y GEO | Sí | (parcial: solo SEO técnico) «Arquitectura semántica y SEO técnico estructurado» (no aparece «GEO») | portada única |
 | 10 | CRO | Sí | Optimización de Tasa de Conversión (CRO) & Embudos | portada única |
-| 11 | Datos y automatización | Sí | (parcial) Analítica Quirúrgica & Tracking Server-Side (CAPI & GTM); «Flujos automatizados de confirmación de pedido» | https://studiodigital.co/planes-y-servicios/ |
+| 11 | Datos y automatización | Sí | (parcial) Analítica Quirúrgica & Tracking Server-Side (CAPI & GTM); «Flujos automatizados de confirmación de pedido» | https://studiodigital.co/planes-y-servicios/ (flujos automatizados) · https://studiodigital.co/ (analítica y tracking, en la portada) |
+
+**Corrección posterior al cierre de TASK-001 (Kia, 2026-10-12, a pedido de Clia):** la fila 11 cita la URL de la página de planes y servicios para los dos literales. «Analítica Quirúrgica & Tracking Server-Side (CAPI & GTM)» está en la portada (`https://studiodigital.co/`); «Flujos automatizados de confirmación de pedido» está en `https://studiodigital.co/planes-y-servicios/`. Se cita cada URL para su literal. La oferta y el «Sí» no cambian.
 
 **Servicios suyos que no están en la tabla:** Auditoría de Tracking y PageSpeed (opción del formulario de https://studiodigital.co/planes-y-servicios/).
 

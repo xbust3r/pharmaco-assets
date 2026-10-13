@@ -30,7 +30,8 @@ Subagente de Claude Code (Haiku 5.5), lanzado por Clia con el ID de la TASK. Esc
 | TASK-005 | P0 | Merge hecho en `main` (`427efe3`). Pendiente de Clia: cerrar la TASK con su verificación de criterios. Sin más trabajo mío |
 | TASK-001 | P0 | Merge hecho en `main` (`aa77063`). Pendiente de Clia: cerrar la TASK. Sin más trabajo mío |
 | TASK-003 | P1 | Mergeada en `main` (`e77b44e`). Pendiente de Clia: cierre |
-| TASK-002 · 004 | P0/P1 | Rehacer con la muestra nueva, tras TASK-001 |
+| TASK-002 | P0 | REVIEW-002 ✅ sobre `cee07bc`. Merge `--no-ff` a `main` en curso; Clia cierra |
+| TASK-004 | P1 | Rehacer con la muestra nueva, tras TASK-001 |
 
 ---
 
