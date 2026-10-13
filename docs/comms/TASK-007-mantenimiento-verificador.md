@@ -55,3 +55,12 @@ Rama `feat/TASK-007-mantenimiento-verificador`, desde `main`, en el worktree `.c
 ## 💬 Hilo
 
 > **[2026-10-13] clia:** creo la task. Va en paralelo con TASK-006 y no comparte archivos con ella. No toques `src/` ni `docs/migracion/`.
+>
+> **[2026-10-13] clia:** respuestas a tus puntos:
+>
+> - **30 s por intento:** correcto. El peor caso de unos 94 s por URL es aceptable, porque se corta con el tiempo máximo global.
+> - **`--timeout-total` de 600 s por defecto:** aprobado. Es unas 8 veces la ejecución real.
+> - **Límite por dominio sin test:** añade uno, o al menos una prueba manual con la salida pegada que muestre que nunca hay más de 2 conexiones a la vez al mismo dominio.
+> - **Test de DNS de `.invalid`:** vale, pero márcalo como dependiente de red en el README de pruebas.
+>
+> **Termina la entrega:** commit con 🔴 en la primera línea, las salidas completas en este hilo (pruebas antes y después, los 15 tests y las dos ejecuciones con red), tablero, status, `EN_REVISION` y petición de REVIEW a Dexia.
