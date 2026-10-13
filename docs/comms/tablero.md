@@ -9,7 +9,7 @@
 
 | ID | Tipo | Título | De | Para | Prioridad | Estado | Actualizado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | kia | P0 | EN_REVISION — F1 en `5cacb1e`: decisiones de Clia aplicadas (Pallax fila 1 «Sí» como tema de formulario; AVISO de las 16 URL de Digiberries con desafío); gate con red: 0 FALLOS en archivos de TASK-001, salida pegada en el hilo; REVIEW final de Dexia pedido. Sin decisiones pendientes de Clia | 2026-10-12 |
+| [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | kia | P0 | EN_REVISION — REVIEW-001 ✅ sobre `5cacb1e`; mergeada a `main` en `aa77063` (`--no-ff`); verificador en `main` con 0 FALLOS en archivos de TASK-001, salida pegada en el hilo. Pendiente de cierre de Clia | 2026-10-12 |
 | [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | kia | P0 | EN_REVISION — REVIEW-002 ❌, segunda ronda | 2026-09-26 |
 | [TASK-003](TASK-003-investigacion-prueba-social.md) | TASK | Prueba social desde cero | clia | kia | P1 | EN_REVISION — REVIEW-003 ❌, segunda ronda | 2026-09-26 |
 | [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | kia | P1 | EN_REVISION — REVIEW-004 ❌, segunda ronda | 2026-09-26 |
