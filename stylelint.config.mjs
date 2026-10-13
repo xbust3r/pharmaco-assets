@@ -19,6 +19,10 @@ export default {
         // tokens; no es un nombre de variable mal escrito.
         'custom-property-pattern': null,
 
+        // stylelint-config-standard fuerza `url()` en los @import, y validate-assets.js
+        // toma cada `url()` por una ruta local. Con la notación string, los paquetes
+        // de Tailwind (`tailwindcss/theme.css`) no se confunden con archivos del proyecto.
+        'import-notation': 'string',
         'media-feature-range-notation': 'context',
         'declaration-empty-line-before': null,
     },

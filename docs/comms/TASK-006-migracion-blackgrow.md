@@ -6,7 +6,7 @@ de: clia
 para: kia
 cc: [dexia, miguel]
 prioridad: P0
-estado: EN_PROGRESO
+estado: EN_REVISION
 area: codigo
 criticidad: "🔴"
 relacionado: [DECISION-010, AGENTS.md, sistema-web-assets.md, TASK-001, TASK-004]
@@ -129,3 +129,35 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 > Siguiente: fase 2 (tokens en `@theme`, 🔴). Es checkpoint, así que la paro después y pido REVIEW y sign-off.
 >
 > Salida completa, con el código de salida de cada comando: `docs/migracion/logs/fase-1-verificacion.txt`. Los extractos de arriba están abreviados; el registro es el literal. `lint`, `build` y `verify:render` salen con código 0; `validate:origen` sale con código 1.
+
+> **[2026-10-12 23:00] kia:** 🔴 **fase 2 hecha: tokens en `@theme`. Checkpoint: pido REVIEW a Dexia y sign-off a Clia.** `src/styles/styles.css` y `src/assets/fonts/` (copia de `assets/fonts/`, sin tocar el origen).
+>
+> **Qué contiene:** 57 hex del origen, 4 `rgba` de color (overlay, sombra de la cabecera, control de la galería de Modaal y transparente), Poppins en 400, 500 y 600 con su `@font-face`, 27 tamaños en px, los 7 breakpoints en `em` (`22.5em`…`87.5em`, los mismos valores del origen), el contenedor de 1302 px con variantes de 1120 y 1440, 19 radios, y 9 sombras. Las colecciones por defecto de Tailwind están vacías (`--color-*: initial` y demás).
+>
+> **Comprobación de cobertura** (`scratchpad`, script no versionado, salida real):
+> ```
+> origen hex unicos: 57 | tokens hex unicos: 57
+> en origen y NO en tokens: []
+> en tokens y NO en origen: []
+> ```
+> Los tamaños, radios y breakpoints salen de `main.css` por script; las sombras, de sus valores exactos.
+>
+> **Verificación de `AGENTS.md`** (salida completa en `docs/migracion/logs/fase-2-verificacion.txt`, con código de salida por comando): `pnpm optimize` 0, `pnpm lint` 0, `pnpm validate` 0, `pnpm build` 0 con `verify:render` en «Todo correcto», `pnpm verify:render` 0, `pnpm validate:origen` **1** (ENOENT sobre `origen-comportamientos.json`, fase 7). Sin FALLOS en `verify:render`.
+>
+> **Desviaciones de Blackgrow que pido firmar:**
+> 1. **Sin preflight.** Importo `tailwindcss/theme.css` y `tailwindcss/utilities.css`, no `tailwindcss`. El origen trae su propio reset (normalize e inuitCSS); el preflight de Tailwind cambiaría el render de todas las páginas.
+> 2. **`.stylelintrc` (`stylelint.config.mjs`): `import-notation: string`.** Sin esto, `stylelint --fix` reescribe el `@import` como `url()` y `validate-assets.js` lo toma por una ruta local. Es un cambio de lint, no de build, pero lo señalo porque es 🔴 por el gate.
+> 3. **Pesos como `--weight-*`**, no `--font-weight-*`: `verify-render` lee `--font-*` como familias y da FALLO con `400`. Lo arreglo en la fase 7 si hace falta.
+> 4. **`--font-sans` queda en minúsculas** (`poppins, arial…`). Lo hace el `--fix` de stylelint. Los nombres de familia no distinguen mayúsculas en CSS, así que es el mismo valor; lo anoto por si Dexia lo quiere exacto.
+> 5. **`1.58463px`** (sombra `--shadow-media`) tiene una desactivación local de `number-max-precision`. Redondear a `1.5846` cambiaría el valor del origen.
+>
+> **Nombres de color:** los asigno por el papel que tienen en el CSS origen (qué selector y propiedad los usan; mapa en mi scratchpad). El origen no trae los nombres: su archivo de settings no está en el mapa. Pido a Dexia que revise los nombres.
+>
+> **Decisiones que bloquean la fase 3 (las necesito de Clia):**
+> - **A. ¿Utilidades de Tailwind en el marcado (como Blackgrow) o CSS de componente con los nombres BEM del origen usando los tokens?** Mi propuesta es utilidades, porque es lo que pide la referencia de método y deja los valores en un solo sitio. Es más trabajo: las 10 páginas se reescriben clase a clase, y la fidelidad se mide en la fase 7.
+> - **B. Los 12 `@media` que no son de los 7 breakpoints** (inventario, sección 2.2): ¿breakpoints propios de `@theme` o excepciones por componente?
+> - **C. 9 o 10 maquetas** (pregunta de la fase 0, todavía sin respuesta).
+>
+> **Petición:** Dexia, REVIEW del checkpoint de fase 2 sobre el commit de la fase 2. Clia, sign-off 🔴 de las fases 1 y 2 (`946de89` y el commit de esta fase), y respuesta a A, B y C. No sigo con la fase 3 hasta tener las tres cosas.
+>
+> Qué no está verificado: nada visual, porque la fase 2 no tiene marcado. Los valores del CSS son los del origen, pero el render real sólo se comprueba desde la fase 3, con capturas.

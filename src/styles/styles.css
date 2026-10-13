@@ -1,1 +1,206 @@
-/* Fase 1 de TASK-006: sin tokens todavía. Los valores de assets/ llegan en la fase 2, en @theme. */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/*
+ * Fase 2 de TASK-006. Tokens con los valores exactos de assets/css/main.css.
+ * No hay preflight: el origen trae su propio reset (normalize e inuitCSS), y
+ * importar el de Tailwind cambiaría el render antes de tocar un solo componente.
+ */
+
+@font-face {
+    font-family: Poppins;
+    src: url("../assets/fonts/Poppins-Regular.woff2") format("woff2"), url("../assets/fonts/Poppins-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url("../assets/fonts/Poppins-Medium.woff2") format("woff2"), url("../assets/fonts/Poppins-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url("../assets/fonts/Poppins-SemiBold.woff2") format("woff2"), url("../assets/fonts/Poppins-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    /* Se borran los valores por defecto de Tailwind: lo que no esté aquí no existe. */
+    --color-*: initial;
+    --font-*: initial;
+    --text-*: initial;
+    --breakpoint-*: initial;
+    --radius-*: initial;
+    --shadow-*: initial;
+    --container-*: initial;
+
+    /* Color (main.css, 57 hex y 4 rgba) */
+    --color-white: #fff;
+    --color-black: #000;
+    --color-ink: #111029;
+    --color-purple: #5956e9;
+    --color-purple-hover: #433fe6;
+    --color-purple-soft: rgb(89 86 233 / 20%);
+    --color-purple-original: #7c56e9;
+    --color-deep-purple: #3a30a0;
+    --color-deep-purple-hover: #392f9c;
+    --color-dark-purple: #4d30a0;
+    --color-dark-purple-hover: #442a8c;
+    --color-blue: #4c40f7;
+    --color-blue-hover: #473bf7;
+    --color-blue-strong: #2d29e3;
+    --color-medium-blue: #2565b8;
+    --color-orange: #fa832b;
+    --color-strong-blue: #0030ff;
+    --color-dark-blue: #00113b;
+    --color-sky-blue: #b8defa;
+    --color-sky-blue-hover: #b3dcfa;
+    --color-yellow: #ffd027;
+    --color-red: #be0000;
+    --color-rust: #b93d0c;
+    --color-highlight: #ff0;
+    --color-gray-dark: #2f2f2f;
+    --color-gray-body: #6b6b6b;
+    --color-gray-text: #6e7177;
+    --color-gray-subtitle: #787878;
+    --color-gray-soft: #999fae;
+    --color-gray-muted: #a7a7a7;
+    --color-gray-icon: #9da4ac;
+    --color-gray-border: #cfcfcf;
+    --color-gray-button: #d6dade;
+    --color-gray-input: #f4f4f4;
+    --color-gray-tag-bg: #eaeaeb;
+    --color-gray-tag-text: #929292;
+    --color-gray-modal: #afb7bc;
+    --color-gray-666: #666;
+    --color-gray-555: #555;
+    --color-section-gray: #f0f5f8;
+    --color-section-contact: #edf0f3;
+    --color-overlay: rgb(0 0 0 / 40%);
+    --color-modal-control: rgb(0 0 0 / 70%);
+    --color-transparent: rgb(0 0 0 / 0%);
+    --color-paleturquoise: #afe7e9;
+    --color-paleturquoise-text: #73dcde;
+    --color-turquoise-service: #7ad5f2;
+    --color-service-ads: #6490ff;
+    --color-service-software: #8082c0;
+    --color-service-pink: #ff99fb;
+    --color-service-photos: #b896ff;
+    --color-service-marketing: #888;
+    --color-service-branding: #7d7afa;
+    --color-service-photo: #b27afa;
+    --color-service-mktdg: #bb85e5;
+    --color-teaser-yellow: #ffeddc;
+    --color-teaser-purple: #bddeff;
+    --color-teaser-blue: #bdf8ff;
+    --color-teaser-pink: #f3d1ff;
+    --color-teaser-violet: #d9c7ff;
+    --color-teaser-red: #ffe2e2;
+
+    /* Tipografía. Poppins es la única familia del origen. */
+    --font-sans: poppins, arial, helvetica, sans-serif;
+    --font-mono: monospace, monospace;
+
+    /* Pesos como propiedades (no como utilidades): verify-render lee --font-* como familias. */
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --text-9: 9px;
+    --text-10: 10px;
+    --text-12: 12px;
+    --text-14: 14px;
+    --text-16: 16px;
+    --text-17: 17px;
+    --text-18: 18px;
+    --text-19: 19px;
+    --text-20: 20px;
+    --text-21: 21px;
+    --text-22: 22px;
+    --text-24: 24px;
+    --text-27: 27px;
+    --text-28: 28px;
+    --text-30: 30px;
+    --text-32: 32px;
+    --text-35: 35px;
+    --text-37: 37px;
+    --text-39: 39px;
+    --text-40: 40px;
+    --text-42: 42px;
+    --text-44: 44px;
+    --text-49: 49px;
+    --text-63: 63px;
+    --text-64: 64px;
+    --text-77: 77px;
+    --text-84: 84px;
+
+    /* Breakpoints: los 7 de sass-mq, en em con base 16 px, como en el origen. */
+    --breakpoint-mobile-small: 22.5em;
+    --breakpoint-mobile-mid: 26.5625em;
+    --breakpoint-mobile-wide: 31.25em;
+    --breakpoint-tablet: 43.75em;
+    --breakpoint-desktop: 61.25em;
+    --breakpoint-wide: 75em;
+    --breakpoint-ultrawide: 87.5em;
+
+    /* Contenedor (.o-wrapper): máximo 1302 px, variantes small y large. */
+    --container-wrapper: 1302px;
+    --container-wrapper-small: 1120px;
+    --container-wrapper-large: 1440px;
+    --wrapper-padding: 30px;
+
+    /* Radios (border-radius de main.css). */
+    --radius-3: 3px;
+    --radius-4: 4px;
+    --radius-5: 5px;
+    --radius-6: 6px;
+    --radius-8: 8px;
+    --radius-9: 9px;
+    --radius-10: 10px;
+    --radius-12: 12px;
+    --radius-14: 14px;
+    --radius-15: 15px;
+    --radius-16: 16px;
+    --radius-18: 18px;
+    --radius-20: 20px;
+    --radius-28: 28px;
+    --radius-40: 40px;
+    --radius-circle: 50%;
+    --radius-round: 100%;
+
+    /* Sombras. El nombre dice el uso; ver inventario, sección 5.5. */
+
+    /* .c-button:focus/hover, .c-project-teaser, .c-contact-options__option:focus/hover */
+    --shadow-soft: 4px 5px 13px rgb(0 0 0 / 8%);
+
+    /* .o-wrapper-body */
+    --shadow-wrapper-body: 0 4px 8px rgb(0 0 0 / 8%);
+
+    /* .c-carrousel-format.facebook, .c-featured-ads__pic */
+    /* stylelint-disable-next-line number-max-precision -- valor exacto de main.css (1.58463px); redondear cambiaría el origen */
+    --shadow-media: 1.58463px 1.58463px 6.33854px rgb(0 0 0 / 15%);
+
+    /* .c-format-canvas__item */
+    --shadow-canvas: 6px 10px 24px rgb(0 0 0 / 10%);
+
+    /* .c-contact-form label.js-form-error */
+    --shadow-error: 0 3px 6px 0 rgb(0 0 0 / 16%);
+
+    /* .c-contact-form-radios__input:focus, .c-contact-form-checkboxes__input:focus */
+    --shadow-focus: 0 0 0 2px var(--color-yellow);
+
+    /* .c-section--contact */
+    --shadow-section-contact: 0 -48px 0 0 var(--color-dark-blue) inset;
+
+    /* .modaal-container (Modaal, se sustituye en fase 6) */
+    --shadow-modal: 0 4px 15px rgb(0 0 0 / 20%);
+
+    /* .modaal-video-container (Modaal) */
+    --shadow-modal-video: 0 0 10px rgb(0 0 0 / 30%);
+}

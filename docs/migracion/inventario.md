@@ -135,6 +135,8 @@ Valores del CSS compilado (`css/main.css`). **Los nombres de token no se pueden 
 
 ### 5.1 Colores
 
+Los 57 hex se tokenizan en `src/styles/styles.css` (fase 2). Comprobación: los 57 hex del CSS origen son los 57 de `@theme`, sin sobrantes ni faltantes.
+
 **57 colores hexadecimales distintos** en `main.css`, más 10 `rgba()`. Número de apariciones entre paréntesis.
 
 | Color | Apariciones | | Color | Apariciones |
@@ -161,7 +163,7 @@ Rgba: `rgba(0,0,0,.08)` ×4, `rgba(0,0,0,0)` ×2, `rgba(0,0,0,.15)` ×2, `rgba(0
 
 - **Familia:** `Poppins` en `@font-face` (3 pesos, `.woff2` y `.woff`). Pilas de respaldo: `Poppins,Arial,Helvetica,sans-serif` (1 vez), `Helvetica` (1), `monospace,monospace` (2), `sans-serif` (1), `inherit` (2).
 - **Pesos pedidos por el CSS:** 600 (12 veces), 500 (10), 400 (5), 700 (4), 300 (1), `bolder` (1), `inherit` (1). **Sólo hay archivos de 400, 500 y 600.** Lo que pidan 300 y 700 lo decidirá el navegador entre los archivos existentes; no está verificado en navegador.
-- **Tamaños en píxeles** que aparecen en el CSS (apariciones entre paréntesis): 16 (30), 18 (11), 14 (10), 20 (10), 22 (7), 24 (7), 35 (4), 30 (4), 12 (3), 17 (2), 19 (2), 28 (2), 37 (2), 39 (2), 40 (2), 10 (2), 9, 21, 27, 44, 49, 63, 64. Además hay `em`, `%` y `0`. Varios tamaños de titular cambian entre breakpoints, por eso la escala completa se extrae en fase 2.
+- **Tamaños en píxeles** (27 valores distintos): 9, 10, 12, 14, 16, 17, 18, 19, 20, 21, 22, 24, 27, 28, 30, 32, 35, 37, 39, 40, 42, 44, 49, 63, 64, 77 y 84. Los más usados: 16 px (30 apariciones), 18 px (11), 14 px (10) y 20 px (10). Además hay `em`, `%` y `0`. Varios tamaños de titular cambian entre breakpoints. Los 27 son tokens en `src/styles/styles.css` (`--text-*`), desde la fase 2.
 - **Espaciados e interlineados:** no se han listado todos en esta fase. La extracción completa es parte de la fase 2.
 
 ### 5.3 Breakpoints
@@ -197,7 +199,9 @@ Del SCSS (`objects/_objects.wrapper.scss`), compilado a `main.css`:
 
 ### 5.5 Radios, sombras y otros
 
-- **Radios:** 50% (9), 15px (3), 8px (3), 100% (2), 20px (2), 16px (2), 14px (2), 18px (2), 4px (2), 6px (2), 0 (2), 3px (1).
+Los colores de Modaal (plugin de modales) están en `main.css` y se tokenizan igual que el resto. Dejan de tener uso cuando Modaal se sustituye, en la fase 6.
+
+- **Radios** (19 valores distintos en `border-radius`: 15 en px, `50%`, `100%`, `0` y `0 !important`): 3, 4, 5, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20, 28 y 40 px; 50% (9 apariciones) y 100%. Los de px son tokens `--radius-*` en `styles.css`, y `50%` y `100%` son `--radius-circle` y `--radius-round`.
 - **Sombras:** `4px 5px 13px rgba(0,0,0,.08)` (3), `0 0 0 2px #ffd027` (2, foco), `1.58463px 1.58463px 6.33854px rgba(0,0,0,.15)` (2), `0 4px 15px rgba(0,0,0,.2)`, `0 0 10px rgba(0,0,0,.3)`, `0 4px 8px rgba(0,0,0,.08)`, `0 3px 6px 0 rgba(0,0,0,.16)`, `6px 10px 24px rgba(0,0,0,.1)` (1 cada una). Además `none` (6 entre `none` y `none!important`).
 - **Animación:** `@keyframes instaReveal` y `modaal-loading-spinner`.
 
