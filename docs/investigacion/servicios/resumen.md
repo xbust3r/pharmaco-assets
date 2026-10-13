@@ -17,6 +17,8 @@
 
 ## 1 · Tabla de los 11 servicios
 
+**Branding:** Pallax Media figura como «Sí» en la ficha corregida en `main`, pero su único uso literal es un tema del formulario de contacto, sin página de servicio. Sin Pallax, Branding queda en 10 agencias (comparables 5). El conteo sigue el «Sí» de la ficha.
+
 Plenos = «Sí» sin «(parcial» en la celda del nombre. Incluye tres marcadas como portada única: Pallax Media (Branding), Single Grain (IA) y StudioDigital (CRO). Las marcadas como parcial y portada única son Instrument (Web), StudioDigital (Performance, SEO y Datos) y Trajectory Web Design (SEO).
 
 | # | Servicio | Tipo | Agencias que lo ofrecen (de 20) | Comparables (10) | Referentes y especialistas (10) | Nombres más repetidos (agencias) | Cómo se agrupa en pilares (lo que dice cada ficha) |
@@ -107,7 +109,7 @@ Información para Miguel, **no una propuesta** (`DECISION-002`). Un servicio cue
 - **Año de fundación y tamaño:** no entran en esta TASK; ver las fichas.
 - **Entregables con frecuencia:** las fichas no los recogen en general. Los subservicios de cada ficha de servicio son los que aparecen en los nombres y pilares; no es un inventario completo.
 - **Capturas:** esta TASK no ha hecho capturas nuevas. Las capturas citadas son las de las fichas, algunas no legibles (aviso en cada ficha).
-- **Reapertura por muestra (2026-10-12, WebFetch):** tres URLs. [Devibi](../fichas/devibi.md) (`/services`): las 7 frases que se citan aparecen literales. [StudioDigital](../fichas/studiodigital.md) (`/planes-y-servicios/`): 3 de 5 frases aparecen; «Analítica Quirúrgica» y «Tracking Server-Side» no aparecen en la forma de la ficha, y la página dice «tracking quirúrgico». La fila 11 de StudioDigital se redacta como paráfrasis y se señala. [Work & Co](../fichas/work-and-co.md) (`/company/`): no concluyente, la página devuelve sólo un fragmento (64 caracteres en la segunda lectura); sus literales salen de la ficha aceptada.
+- **Reapertura por muestra (2026-10-12, WebFetch):** tres URLs. [Devibi](../fichas/devibi.md) (`/services`): las 7 frases que cito aparecen literales. [StudioDigital](../fichas/studiodigital.md): tras la corrección de Clia, la analítica «Analítica Quirúrgica & Tracking Server-Side (CAPI & GTM)» está en la portada y «Flujos automatizados de confirmación de pedido» en `/planes-y-servicios/`. La fila 11 de la ficha cita ambas URLs y el servicio 11 usa los literales sin paráfrasis. [Work & Co](../fichas/work-and-co.md) (`/company/`): no concluyente, la página devolvió sólo 64 caracteres en la segunda lectura. Sus literales salen de la ficha aceptada y siguen sin verificar hoy.
 - **Resto de afirmaciones:** salen de las 20 fichas aceptadas (`ee4a659`), y cada una cita su URL. Esta TASK no ha reabierto el resto de URLs. La existencia de los enlaces la comprueba V8 del verificador.
 
 ---

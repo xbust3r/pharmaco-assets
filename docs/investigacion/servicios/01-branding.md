@@ -13,7 +13,7 @@
 | --- | --- | --- | --- | --- |
 | [Agencia Buffalo](../fichas/agencia-buffalo.md) | Comparable | Diseño de marca y branding | es | https://agenciabuffalo.com/servicios/diseno-de-marca-y-branding/ |
 | [Devibi](../fichas/devibi.md) | Comparable | Brand Identity & Motion Design | en | https://devibi.com/services/brand-motion |
-| [Pallax Media](../fichas/pallax-media.md) | Comparable | «Branding» (lista del pie de la portada; **portada única**) | de | https://pallax-media.de/ |
+| [Pallax Media](../fichas/pallax-media.md) | Comparable | Branding (la ficha lo marca Sí; el único uso literal es un tema del formulario de contacto, sin página de servicio; lista del selector: «Website Online-Shop Branding Web Development UX-/UI Design SEO KI-Automatisierung Sonstiges»; **portada única**) | de | https://pallax-media.de/ (portada única) |
 | [Screenfire Media](../fichas/screenfire-media.md) | Comparable | (parcial) Brand Story Development | en | https://screenfiremedia.com/services/brand-story-development/ |
 | [StudioDigital](../fichas/studiodigital.md) | Comparable | (parcial) «identidades visuales memorables» (descripción de la empresa, no nombre de servicio) | es | https://studiodigital.co/nosotros/ |
 | [TESCANET](../fichas/tescanet.md) | Comparable | (parcial) «Diseño de logo, gráfico y edición de video» | es | https://tescanet.com/produccionaudiovisual.php |
@@ -25,7 +25,7 @@
 
 **Conteo por tipo de agencia** (las listas enlazan a las fichas):
 
-- **Comparables, 6 de 10.** Sí sin parcial: [Agencia Buffalo](../fichas/agencia-buffalo.md), [Devibi](../fichas/devibi.md), [Pallax Media](../fichas/pallax-media.md) (portada única). Parciales: [Screenfire Media](../fichas/screenfire-media.md), [StudioDigital](../fichas/studiodigital.md), [TESCANET](../fichas/tescanet.md). No lo ofrecen: [Digiberries Paris](../fichas/digiberries-paris.md), [Sitelabs](../fichas/sitelabs.md), [Stratagemma Studio](../fichas/stratagemma-studio.md), [Trajectory Web Design](../fichas/trajectory-web-design.md).
+- **Comparables, 6 de 10.** Sí sin parcial: [Agencia Buffalo](../fichas/agencia-buffalo.md), [Devibi](../fichas/devibi.md), [Pallax Media](../fichas/pallax-media.md) (portada única; su único uso literal es un tema de formulario, ver la tabla: si no se cuenta, Branding baja a 10 y comparables a 5). Parciales: [Screenfire Media](../fichas/screenfire-media.md), [StudioDigital](../fichas/studiodigital.md), [TESCANET](../fichas/tescanet.md). No lo ofrecen: [Digiberries Paris](../fichas/digiberries-paris.md), [Sitelabs](../fichas/sitelabs.md), [Stratagemma Studio](../fichas/stratagemma-studio.md), [Trajectory Web Design](../fichas/trajectory-web-design.md).
 - **Referentes y especialistas, 5 de 10.** Sí: [Dogstudio](../fichas/dogstudio.md), [Instrument](../fichas/instrument.md), [Media.Monks](../fichas/media-monks.md), [Monopo](../fichas/monopo.md), [Work & Co](../fichas/work-and-co.md). No lo ofrecen: [Artefact](../fichas/artefact.md), [BlueOrange Digital](../fichas/blueorange-digital.md), [Code and Theory](../fichas/code-and-theory.md), [Single Grain](../fichas/single-grain.md), [Upraw Media](../fichas/upraw-media.md).
 
 **Nombres más repetidos** (palabra literal presente en el nombre; cada agencia cuenta una vez por palabra; las palabras se cuentan tal cual aparecen, sin traducir):

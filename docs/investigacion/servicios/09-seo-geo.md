@@ -20,7 +20,7 @@
 | [Stratagemma Studio](../fichas/stratagemma-studio.md) | Comparable | (parcial) Search & AI Visibility Management («Presenza strutturata e governata su motori di ricerca, LLM e ambienti conversational.») | it | https://www.stratagemma.studio/servizi/search-ai-visibility-management |
 | [StudioDigital](../fichas/studiodigital.md) | Comparable | (parcial: solo SEO técnico) «Arquitectura semántica y SEO técnico estructurado» | es | portada única (https://studiodigital.co/) |
 | [TESCANET](../fichas/tescanet.md) | Comparable | (parcial: solo SEO) «Posicionamiento SEO y SEM profesional» | es | https://tescanet.com/posicionamientoseo.php |
-| [Trajectory Web Design](../fichas/trajectory-web-design.md) | Comparable | (parcial: SEO básico) SEO foundations | en | portada única (https://www.trajectorywebdesign.com/) |
+| [Trajectory Web Design](../fichas/trajectory-web-design.md) | Comparable | (parcial: SEO básico) «SEO foundations» (sección Development); «GEO» no aparece en la home revisada | en | portada única (https://www.trajectorywebdesign.com/) |
 | [Single Grain](../fichas/single-grain.md) | Especialista | «Innovative SEO Agency»; «AEO & GEO»; «SEO Services» | en | https://www.singlegrain.com/services/seo/ |
 | [Code and Theory](../fichas/code-and-theory.md) | Referente | (parcial: AEO) «Pioneering AI and AEO-powered commerce» (la ficha indica que no aparece «SEO» ni «GEO») | en | https://www.codeandtheory.com/work/jbl |
 | [Work & Co](../fichas/work-and-co.md) | Referente | (parcial: GEO) GEO & AI strategy (la ficha indica que no aparece «SEO» en la lista) | en | https://work.co/company/ |

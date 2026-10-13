@@ -17,7 +17,7 @@
 | [Sitelabs](../fichas/sitelabs.md) | Comparable | (parcial) Web scraping con IA; Mantenimiento WordPress SEO + IA | es | https://sitelabs.es/servicio-web-scraping/ |
 | [Artefact](../fichas/artefact.md) | Especialista | Data & AI Strategy; AI & Gen AI Factory | en | https://www.artefact.com/offers/transformation-data-ai-strategy/data-ai-strategy/ |
 | [BlueOrange Digital](../fichas/blueorange-digital.md) | Especialista | AI & Data Strategy; Agentic AI & Intelligent Automation | en | https://blueorange.digital/services/ |
-| [Single Grain](../fichas/single-grain.md) | Especialista | «AI-Native Growth Operator»; «AI-powered production»; «Advise on AI. We Run It.» (**portada única**) | en | https://www.singlegrain.com/ |
+| [Single Grain](../fichas/single-grain.md) | Especialista | «AI-Native Growth Operator»; «AI-powered production»; «We Don't Advise on AI. We Run It.» (**portada única**) | en | https://www.singlegrain.com/ |
 | [Code and Theory](../fichas/code-and-theory.md) | Referente | «Leading an AI overhaul for a cultural icon» | en | https://www.codeandtheory.com/work/time |
 | [Media.Monks](../fichas/media-monks.md) | Referente | Artificial Intelligence; AI Transformation | en | https://www.monks.com/artificial-intelligence |
 | [Work & Co](../fichas/work-and-co.md) | Referente | GenAI strategy & implementation; GenAI & multimodal UX; Agentic AI workflows | en | https://work.co/company/ |

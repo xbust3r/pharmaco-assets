@@ -15,7 +15,7 @@
 | [Pallax Media](../fichas/pallax-media.md) | Comparable | «Automatisiere wiederkehrende Prozesse und spare wertvolle Zeit durch intelligente KI-Lösungen» | de | https://pallax-media.de/ki-automatisierung/ |
 | [Sitelabs](../fichas/sitelabs.md) | Comparable | (parcial) Web scraping con IA (la ficha indica que «datos» y «automatización» no aparecen como servicio) | es | https://sitelabs.es/servicio-web-scraping/ |
 | [Stratagemma Studio](../fichas/stratagemma-studio.md) | Comparable | (parcial: datos) Ecommerce Operation Management, pilar «Data & Decision Framework» | it | https://www.stratagemma.studio/servizi/ecommerce-operation-management/ |
-| [StudioDigital](../fichas/studiodigital.md) | Comparable | (parcial) Analítica y tracking server-side (CAPI y GTM), según la ficha; la reapertura de esta URL el 2026-10-12 dice «tracking quirúrgico» y no reproduce la frase de la ficha. Además, «Flujos automatizados de confirmación de pedido» | es | https://studiodigital.co/planes-y-servicios/ |
+| [StudioDigital](../fichas/studiodigital.md) | Comparable | (parcial) «Analítica Quirúrgica & Tracking Server-Side (CAPI & GTM)» (portada); «Flujos automatizados de confirmación de pedido» (página de planes y servicios) | es | https://studiodigital.co/planes-y-servicios/ · https://studiodigital.co/ |
 | [Artefact](../fichas/artefact.md) | Especialista | Data Governance & Management; Data Platform | en | https://www.artefact.com/offers/data-foundations-bi/data-governance-management/ |
 | [BlueOrange Digital](../fichas/blueorange-digital.md) | Especialista | Modern Data Infrastructure; Advanced Analytics & Machine Learning; Decision Intelligence & Data Products | en | https://blueorange.digital/services/ |
 | [Single Grain](../fichas/single-grain.md) | Especialista | (parcial) «SingleBrain · Managed Revenue Agent Layer» (portada); «Google Tag Manager» | en | https://www.singlegrain.com/ai-tools/ |
@@ -44,10 +44,10 @@ Subservicios o entregables que se repiten:
 
 | Subservicio / entregable | Nº de agencias | Ejemplos (fichas) |
 | --- | --- | --- |
-| Analítica de datos o de marketing | 4 | [BlueOrange Digital](../fichas/blueorange-digital.md) («Advanced Analytics & Machine Learning»), [Media.Monks](../fichas/media-monks.md) («Data Analytics»), [StudioDigital](../fichas/studiodigital.md) (analítica, según la ficha; ver nota arriba), [Upraw Media](../fichas/upraw-media.md) («Analytics») |
+| Analítica de datos o de marketing | 4 | [BlueOrange Digital](../fichas/blueorange-digital.md) («Advanced Analytics & Machine Learning»), [Media.Monks](../fichas/media-monks.md) («Data Analytics»), [StudioDigital](../fichas/studiodigital.md) («Analítica Quirúrgica», portada), [Upraw Media](../fichas/upraw-media.md) («Analytics») |
 | Ingeniería o infraestructura de datos (plataforma, integración, observabilidad) | 3 | [Artefact](../fichas/artefact.md) («Data Platform»), [BlueOrange Digital](../fichas/blueorange-digital.md) («Modern Data Infrastructure»), [Work & Co](../fichas/work-and-co.md) («Data engineering & observability») |
 | Automatización de procesos (incluida con IA) | 3 | [Devibi](../fichas/devibi.md) («AI automation, chatbots and copilots»), [Pallax Media](../fichas/pallax-media.md) («Automatisiere wiederkehrende Prozesse»), [StudioDigital](../fichas/studiodigital.md) («Flujos automatizados de confirmación de pedido») |
-| Medición, etiquetas o tracking (tag management, server-side) | 3 | [StudioDigital](../fichas/studiodigital.md) (tracking server-side, según la ficha), [Single Grain](../fichas/single-grain.md) («Google Tag Manager»), [Work & Co](../fichas/work-and-co.md) («Measurement planning & tag management», en su pilar Marketing) |
+| Medición, etiquetas o tracking (tag management, server-side) | 3 | [StudioDigital](../fichas/studiodigital.md) («Tracking Server-Side (CAPI & GTM)», portada), [Single Grain](../fichas/single-grain.md) («Google Tag Manager»), [Work & Co](../fichas/work-and-co.md) («Measurement planning & tag management», en su pilar Marketing) |
 
 Por debajo del umbral: gobernanza de datos ([Artefact](../fichas/artefact.md)), CRM a medida y chatbots ([Devibi](../fichas/devibi.md)).
 
@@ -61,8 +61,8 @@ No existía en 2020. La línea base no tiene servicio de datos ni de automatizac
 
 ## Herramientas y plataformas que mencionan
 
-- **Google Tag Manager (GTM):** [Single Grain](../fichas/single-grain.md) («Google Tag Manager» en su menú). [StudioDigital](../fichas/studiodigital.md) lo cita según la ficha; la reapertura de su URL no lo confirma.
-- **Meta CAPI y tracking server-side:** [StudioDigital](../fichas/studiodigital.md), según la ficha (no reproducido en la reapertura del 2026-10-12).
+- **Google Tag Manager (GTM):** [Single Grain](../fichas/single-grain.md) («Google Tag Manager» en su menú) y [StudioDigital](../fichas/studiodigital.md) («CAPI & GTM», en la portada).
+- **Meta CAPI:** [StudioDigital](../fichas/studiodigital.md), en el literal «Analítica Quirúrgica & Tracking Server-Side (CAPI & GTM)» (portada).
 - **Databricks y Claude:** [BlueOrange Digital](../fichas/blueorange-digital.md), en su portada («Databricks and Claude certified») y en su página de partners que cita la ficha.
 - **AWS, Azure, OpenAI y Anthropic:** [BlueOrange Digital](../fichas/blueorange-digital.md), en la franja «Built and certified on» y en su página de partners.
 - **Google Cloud:** [Sitelabs](../fichas/sitelabs.md), en un caso (infraestructura).
