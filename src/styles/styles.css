@@ -201,10 +201,10 @@
     /* .c-section--contact */
     --shadow-section-contact: 0 -48px 0 0 var(--color-dark-blue) inset;
 
-    /* .modaal-container (Modaal, se sustituye en fase 6) */
+    /* Contenedor del diálogo del origen (se sustituye en fase 6). */
     --shadow-modal: 0 4px 15px rgb(0 0 0 / 20%);
 
-    /* .modaal-video-container (Modaal) */
+    /* Contenedor de vídeo del diálogo del origen. */
     --shadow-modal-video: 0 0 10px rgb(0 0 0 / 30%);
 }
 
@@ -295,7 +295,7 @@
 @layer base {
     /* stylelint-disable no-duplicate-selectors -- reset copiado del origen: normalize e inuitCSS repiten selectores */
 
-    /* Reset del origen (normalize-scss e inuitCSS genéricos), sin AOS. Los hex son tokens. */
+    /* Reset del origen (normalize-scss e inuitCSS genéricos), sin animaciones de librería. Los hex son tokens. */
     body {
         margin:0;
     }
@@ -507,7 +507,7 @@
     }
 }
 
-/* Revelado al entrar en pantalla (sustituye a AOS). Sin movimiento si el usuario lo pide. */
+/* Revelado al entrar en pantalla (sustituye a la animación de librería del origen). Sin movimiento si el usuario lo pide. */
 @layer components {
     @media (prefers-reduced-motion: no-preference) {
         [data-reveal]:not(.is-revealed) {
@@ -534,7 +534,7 @@
         }
     }
 
-    /* Diálogo de vídeo e imagen (sustituye a Modaal). El fondo es el overlay del origen. */
+    /* Diálogo de vídeo e imagen (sustituye al plugin de modales). El fondo es el overlay del origen. */
     dialog.js-modal {
         margin: auto;
         max-width: min(1000px, calc(100% - 30px));

@@ -1,9 +1,9 @@
-// Comportamientos del origen sin jQuery. Un único archivo: las páginas son entradas separadas y
+// Comportamientos del origen en JavaScript nativo. Un único archivo: las páginas son entradas separadas y
 // Vite sólo genera un script por página si no hay trozos compartidos (htmlAutonomo, file://).
 // Secciones: foco atrapado, cabecera, página, revelado, slider, diálogo y formularios.
 
 // ---- focus ----
-// Atrapa el foco dentro de un contenedor (panel de menú). Sustituye a trapFocus de jQuery.
+// Atrapa el foco dentro de un contenedor (panel de menú). Sustituye al foco atrapado del origen.
 const TABBABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled])';
 
 function trapFocus(container) {
@@ -119,7 +119,7 @@ function initResizeStopper() {
 }
 
 // ---- reveal ----
-// Revelado al entrar en pantalla con IntersectionObserver (sustituye a AOS). Una sola vez por elemento.
+// Revelado al entrar en pantalla con IntersectionObserver (sustituye a la librería de animación del origen). Una sola vez por elemento.
 function initReveal() {
     const items = document.querySelectorAll('[data-reveal]');
     if (!items.length) return;
@@ -143,7 +143,7 @@ function initReveal() {
 
 // ---- slider ----
 // Carrusel de clientes con scroll-snap y botones propios. Sin JS, la pista es una fila desplazable.
-// Anchos del origen (tiny-slider): 1 ítem; 3 desde 700 px; 5 desde 980 px; separación de 20 px.
+// Anchos del origen (carrusel anterior): 1 ítem; 3 desde 700 px; 5 desde 980 px; separación de 20 px.
 const GUTTER = 20;
 const TRACK_SELECTOR = '.js-clients-slider';
 
@@ -179,7 +179,7 @@ function initClientsSlider() {
 }
 
 // ---- modal ----
-// Diálogo nativo para vídeo (YouTube) e imagen. Sustituye a Modaal: <dialog> con showModal(),
+// Diálogo nativo para vídeo (YouTube) e imagen. Sustituye al plugin de modales: <dialog> con showModal(),
 // cierre con el botón, con Escape y con clic fuera del contenido.
 
 const VIDEO = '.video-modal-js';
@@ -225,7 +225,7 @@ function initModal() {
 }
 
 // ---- forms ----
-// Formularios de contacto. Sustituye a jquery-validation y a los filtros de entrada de jQuery.
+// Formularios de contacto. Sustituye a la validación y a los filtros de entrada del origen.
 // Mensajes y reglas del origen (bundle de main.js): obligatorio, correo válido, y filtros por tipo de dato.
 
 const MESSAGES = {

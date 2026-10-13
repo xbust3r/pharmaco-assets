@@ -1,164 +1,105 @@
 /**
- * Validador «playgrow origen».
+ * Validador de fidelidad contra el origen (`assets/`).
  *
- * El clon local del que se migró el marcado era estático: no traía ni uno de
- * los comportamientos del tema. La fuente de la verdad de lo que este sitio
- * tiene que *hacer* es el sitio vivo, catalogado en
- * `docs/migracion/origen-comportamientos.json`.
+ * Compara cada maqueta de `assets/` con su página migrada en `dist/` y responde
+ * a tres preguntas, sin navegador y sin dependencias:
  *
- * Este comando no visita el sitio: un build no debe depender de que un servidor
- * de terceros esté en pie, y el catálogo ya está escrito. Lo que hace es cruzar
- * ese catálogo contra `src/` y responder dos preguntas distintas:
+ *   1. ¿Está la página? Cada `assets/<x>.html` tiene su `dist/<x>.html`.
+ *   2. ¿Está el texto? El texto visible de `main` coincide, carácter a carácter
+ *      tras quitar espacios: los textos se copian tal cual, con sus erratas.
+ *   3. ¿Están los hooks? Cada `js-*` del origen existe en la página migrada.
  *
- *   1. ¿Qué falta?  — informe de cobertura, no falla.
- *   2. ¿Lo que dice estar hecho, sigue estándolo? — eso sí falla.
+ * La geometría (cajas y alturas) no se comprueba aquí: exige un navegador. Se
+ * mide con docs/migracion/herramientas/geometria.mjs y su salida va al hilo.
  *
- * Lo segundo es lo que justifica que sea un validador y no un documento: un
- * `hook` que alguien renombra en el Pug, o un módulo que se cae de `main.js`,
- * dejan el comportamiento muerto sin que ninguna otra comprobación se entere.
- *
- *     node plugins/validate-origen.js            informe completo
- *     node plugins/validate-origen.js --pendientes   sólo lo que falta
+ * Sale con 1 si hay alguna diferencia. Requiere `pnpm build` antes.
  */
-
-import { readFileSync, existsSync } from 'node:fs';
-import { resolve } from 'node:path';
-import { glob } from 'glob';
+import fs from 'node:fs';
+import path from 'node:path';
 import pc from 'picocolors';
 
-const raiz = process.cwd();
-const soloPendientes = process.argv.includes('--pendientes');
+const raiz = path.resolve(import.meta.dirname, '..');
+const origen = path.join(raiz, 'assets');
+const dist = path.join(raiz, 'dist');
 
-const manifiesto = JSON.parse(
-    readFileSync(resolve(raiz, 'docs/migracion/origen-comportamientos.json'), 'utf8'),
-);
+const ENTIDADES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ' };
 
-// Marcado, scripts y estilos, leídos una vez.
-const marcado = (await glob('src/**/*.pug', { cwd: raiz, absolute: true }))
-    .map((f) => readFileSync(f, 'utf8'))
-    .join('\n');
-
-const entrada = existsSync(resolve(raiz, 'src/scripts/main.js'))
-    ? readFileSync(resolve(raiz, 'src/scripts/main.js'), 'utf8')
-    : '';
-
-const scripts = (await glob('src/scripts/**/*.js', { cwd: raiz, absolute: true }))
-    .map((f) => readFileSync(f, 'utf8'))
-    .join('\n');
-
-const estilos = (await glob('src/styles/**/*.css', { cwd: raiz, absolute: true }))
-    .map((f) => readFileSync(f, 'utf8'))
-    .join('\n');
-
-const IMPLEMENTADOS = new Set(['hecho', 'mejorado']);
-
-const revisar = (c) => {
-    const { hook, archivo } = c.destino || {};
-    const fallos = [];
-
-    // Un comportamiento sin hook ni archivo es maquetado o CSS: no hay nada
-    // mecánico que comprobar, y decir lo contrario sería ruido.
-    if (!hook && !archivo) return { fallos, comprobable: false };
-
-    if (hook) {
-        if (!marcado.includes(hook)) {
-            fallos.push(`el hook \`${hook}\` no aparece en ningún .pug`);
-        } else if (IMPLEMENTADOS.has(c.estado) && !scripts.includes(hook) && !estilos.includes(hook)) {
-            fallos.push(`el hook \`${hook}\` no tiene consumidor ni en src/scripts/ ni en src/styles/`);
-        }
-    }
-
-    if (archivo) {
-        if (!existsSync(resolve(raiz, archivo))) {
-            fallos.push(`falta el módulo \`${archivo}\``);
-        } else {
-            // Importado desde main.js, con o sin extensión.
-            const nombre = archivo.split('/').pop().replace(/\.js$/, '');
-            if (!new RegExp(`['"\\./]${nombre}(\\.js)?['"]`).test(entrada)) {
-                fallos.push(`\`${archivo}\` existe pero no se importa desde main.js`);
+// Texto visible de un fragmento HTML: sin etiquetas, sin scripts, con entidades decodificadas.
+function textoVisible(html) {
+    return html
+        .replace(/<!--[\s\S]*?-->/g, '')
+        .replace(/<(script|style)[\s\S]*?<\/\1>/gi, '')
+        .replace(/<[^>]+>/g, '')
+        .replace(/&(#x?[0-9a-f]+|[a-z]+);/gi, (m, n) => {
+            if (n[0] === '#') {
+                const code = n[1] === 'x' || n[1] === 'X' ? parseInt(n.slice(2), 16) : parseInt(n.slice(1), 10);
+                return String.fromCodePoint(code);
             }
-        }
+            return ENTIDADES[n.toLowerCase()] ?? m;
+        })
+        .replace(/\s+/g, '');
+}
+
+// Contenido de <main>...</main>.
+function main(html) {
+    const m = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
+    return m ? m[1] : '';
+}
+
+// Contenido de una etiqueta (header o footer), o cadena vacía.
+function bloque(html, etiqueta) {
+    const m = html.match(new RegExp(`<${etiqueta}[^>]*>([\\s\\S]*?)<\\/${etiqueta}>`, 'i'));
+    return m ? m[1] : '';
+}
+
+// Hooks js-* de un documento (clases que empiezan por js-).
+function hooks(html) {
+    const set = new Set();
+    for (const m of html.matchAll(/class="([^"]*)"/g)) {
+        for (const c of m[1].split(/\s+/)) if (c.startsWith('js-')) set.add(c);
+    }
+    return set;
+}
+
+const paginas = fs.readdirSync(origen).filter((f) => f.endsWith('.html')).sort();
+let fallos = 0;
+const informe = [];
+
+for (const archivo of paginas) {
+    const nombre = archivo;
+    const rutaDist = path.join(dist, nombre);
+    if (!fs.existsSync(rutaDist)) {
+        fallos++;
+        informe.push(pc.red(`FALLO ${nombre}: no existe en dist/`));
+        continue;
+    }
+    const htmlOrigen = fs.readFileSync(path.join(origen, nombre), 'utf8');
+    const htmlDist = fs.readFileSync(rutaDist, 'utf8');
+
+    const tO = textoVisible(main(htmlOrigen)) + '|' + textoVisible(bloque(htmlOrigen, 'header')) + '|' + textoVisible(bloque(htmlOrigen, 'footer'));
+    const tD = textoVisible(main(htmlDist)) + '|' + textoVisible(bloque(htmlDist, 'header')) + '|' + textoVisible(bloque(htmlDist, 'footer'));
+    if (tO !== tD) {
+        fallos++;
+        let i = 0;
+        while (i < Math.min(tO.length, tD.length) && tO[i] === tD[i]) i++;
+        informe.push(pc.red(`FALLO ${nombre}: el texto de main no coincide (primera diferencia en el carácter ${i} del texto main|cabecera|pie)`));
+        informe.push(`      origen: …${tO.slice(Math.max(0, i - 40), i + 40)}`);
+        informe.push(`      migrada: …${tD.slice(Math.max(0, i - 40), i + 40)}`);
     }
 
-    return { fallos, comprobable: true };
-};
-
-const grupos = new Map();
-const regresiones = [];
-
-for (const c of manifiesto.comportamientos) {
-    if (!grupos.has(c.grupo)) grupos.set(c.grupo, []);
-
-    const { fallos, comprobable } = revisar(c);
-    const roto = IMPLEMENTADOS.has(c.estado) && comprobable && fallos.length > 0;
-
-    if (roto) regresiones.push({ c, fallos });
-
-    grupos.get(c.grupo).push({ c, fallos, comprobable, roto });
-}
-
-// ── informe ────────────────────────────────────────────────────────────────
-const SIMBOLO = {
-    hecho: pc.green('✔'),
-    mejorado: pc.green('★'),
-    pendiente: pc.yellow('○'),
-    'requiere-backend': pc.blue('◑'),
-    'otra-fase': pc.blue('◑'),
-    descartado: pc.dim('–'),
-};
-
-console.log(pc.cyan(pc.bold('Validador · playgrow origen')));
-console.log(pc.dim(manifiesto.origen + '  ·  catálogo revisado ' + manifiesto.revisado));
-console.log(pc.gray('------------------------------------------------'));
-
-for (const [grupo, filas] of grupos) {
-    const visibles = soloPendientes ? filas.filter((f) => f.c.estado === 'pendiente') : filas;
-
-    if (!visibles.length) continue;
-
-    console.log('\n' + pc.bold(grupo.toUpperCase()));
-
-    for (const { c, fallos, roto } of visibles) {
-        const marca = roto ? pc.red('✘') : SIMBOLO[c.estado] || '?';
-        console.log(`  ${marca} ${c.nombre} ${pc.dim('· ' + c.id)}`);
-
-        if (roto) {
-            for (const f of fallos) console.log(`      ${pc.red('regresión:')} ${f}`);
-        } else if (c.estado === 'pendiente' && c.destino?.hook) {
-            console.log(`      ${pc.dim('esperado: ' + c.destino.hook)}`);
-        }
-
-        if (c.nota && (c.estado === 'pendiente' || roto)) {
-            console.log(`      ${pc.dim(c.nota)}`);
-        }
+    const hO = hooks(htmlOrigen);
+    const hD = hooks(htmlDist);
+    const faltan = [...hO].filter((h) => !hD.has(h));
+    if (faltan.length) {
+        fallos++;
+        informe.push(pc.red(`FALLO ${nombre}: faltan hooks js-* → ${faltan.join(', ')}`));
     }
+    if (!faltan.length && tO === tD) informe.push(pc.green(`OK    ${nombre}: texto y ${hO.size} hooks js-* coinciden`));
 }
 
-// ── resumen ────────────────────────────────────────────────────────────────
-const cuenta = (e) => manifiesto.comportamientos.filter((c) => c.estado === e).length;
-const total = manifiesto.comportamientos.length;
-const listos = cuenta('hecho') + cuenta('mejorado');
-
-console.log('\n' + pc.gray('------------------------------------------------'));
-const fuera = cuenta('otra-fase') + cuenta('requiere-backend') + cuenta('descartado');
-
-console.log(
-    `${pc.green(listos + ' listos')}  ·  ${pc.yellow(cuenta('pendiente') + ' pendientes')}  ·  `
-    + `${pc.blue(cuenta('otra-fase') + cuenta('requiere-backend') + ' en otra fase')}  ·  `
-    + `${pc.dim(cuenta('descartado') + ' descartados')}  ·  ${total} en total`,
-);
-
-// El porcentaje se mide contra lo que este proyecto sí quiere hacer: contar
-// contra el total castigaría por decisiones deliberadas —no queremos sliders—
-// y daría una cifra que no significa nada.
-const enAlcance = total - fuera;
-const porcentaje = Math.round((listos / enAlcance) * 100);
-console.log(pc.dim(`Cobertura dentro del alcance actual: ${porcentaje}% (${listos}/${enAlcance})`));
-
-if (regresiones.length) {
-    console.log('\n' + pc.red(pc.bold(`${regresiones.length} regresión(es): algo declarado como hecho ya no lo está.`)));
-    console.log(pc.dim('Corregirlo, o actualizar su `estado` en el manifiesto si el cambio fue intencionado.'));
-    process.exit(1);
-}
-
-console.log(pc.green('\nNada declarado como hecho está roto.'));
+console.log(pc.cyan(pc.bold('Validador · fidelidad contra assets/ (texto y hooks)')));
+console.log('-'.repeat(48));
+informe.forEach((l) => console.log(l));
+console.log('-'.repeat(48));
+console.log(`${paginas.length} páginas revisadas · ${fallos} FALLO`);
+process.exit(fallos ? 1 : 0);
