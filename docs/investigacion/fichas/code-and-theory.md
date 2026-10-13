@@ -2,58 +2,76 @@
 
 | Campo | Valor | Fuente |
 | --- | --- | --- |
-| URL | https://www.codeandtheory.com/ | https://www.codeandtheory.com/ |
-| País / ciudades | EE. UU. (Nueva York - sede principal en One World Trade Center, San Francisco), India (Bengaluru), Filipinas (Manila) | https://www.codeandtheory.com/about-us |
+| URL | https://www.codeandtheory.com/ | https://www.codeandtheory.com/ (captura `capturas/code-and-theory-home.png`) |
+| País / ciudades | Estados Unidos, Nueva York. Dirección publicada: «One World Trade Center, 69th Floor, New York, NY 10007» | https://www.codeandtheory.com/ |
 | Bloque · perfil | América · referente | — |
-| Tamaño del equipo | 2.000 personas (en la red Code and Theory Network) / 13.000+ en Stagwell | https://www.codeandtheory.com/about-us |
-| Año de fundación | 2001 | https://www.codeandtheory.com/about-us |
-| Fecha de consulta | 2026-09-26 | — |
+| Tamaño del equipo | no publicado | https://www.codeandtheory.com/ |
+| Año de fundación | No publicado en las páginas revisadas. La página About cuenta el origen: «In a Lower East Side apartment in the early days of the internet (2001)» | https://www.codeandtheory.com/about-us |
+| Fecha de consulta | 2026-10-10 | — |
 | Capturas | `capturas/code-and-theory-home.png`, `capturas/code-and-theory-servicios.png`, `capturas/code-and-theory-caso.png` | — |
 
+**Pertenencia:** la web menciona a Stagwell en textos de prensa y en la descripción de su matriz. Confirmar la frase exacta de propiedad requiere revisar la página de About completa. No es un requisito de referente.
+
+**Correcciones a F0:** la F0 aprobada decía «50% creative 50% engineering», y la web lo dice: «Code and Theory is the only agency with 50% creatives and 50% engineers.» (https://www.codeandtheory.com/). La F0 marcaba «foto/video ✅» para esta agencia. En la web revisada no aparecen «photography», «video» ni «production» (ver fila 7).
+
+**Avisos de captura:** el banner de cookies («This website uses cookies…») aparece en las tres capturas. En `capturas/code-and-theory-servicios.png` tapa parte del texto de About. Ninguna cookie se ha aceptado.
+
+**Aviso de «servicios»:** la agencia no tiene página de servicios. La captura `capturas/code-and-theory-servicios.png` es la página About, que es la que describe el modelo.
+
 ## Propuesta de valor
-«The Digital Transformation Agency Where the C-Suite Comes Together to Create Change. 50% engineers, 50% creatives — a balance that no other agency can claim.» Red de transformación digital insignia del grupo Stagwell, fundada en 2001 en el Lower East Side de Nueva York.
+«Where the C-Suite Comes Together to Create Change» (titular de https://www.codeandtheory.com/, precedido por «The Digital Transformation Agency», captura `capturas/code-and-theory-home.png`).
 
 ## Cómo organizan sus servicios
 | Pilar / categoría (literal) | Servicios que incluye (literal) | Traducción | URL |
 | --- | --- | --- | --- |
-| Integrated Capabilities | Brand, Product, Technology, Marketing | Marca, producto, tecnología y marketing integrados | https://www.codeandtheory.com/about-us |
-| Brand & Experience | Brand Strategy, Creative Direction, CX Design, Storytelling | Estrategia de marca, dirección creativa, CX y narrativa | https://www.codeandtheory.com/about-us |
-| Technology & Platforms | Enterprise Architecture, Front-end & Back-end Engineering, AI Systems | Arquitectura empresarial, ingeniería full-stack y sistemas de IA | https://www.codeandtheory.com/about-us |
-| Marketing & Growth | Omnichannel Campaigns, Media Strategy, Content Systems | Campañas omnicanal, estrategia de medios y contenidos | https://www.codeandtheory.com/about-us |
+| Model (página principal) | Forward-Deployed Expertise (FD/x); Scaled; Modernized Services; Proprietary Software & Technology | Experiencia desplegada en cliente; escala; servicios modernizados; software y tecnología propios | https://www.codeandtheory.com/ (sin URL propia por bloque) |
+| Our Work (casos) | «Leading an AI overhaul for a cultural icon»; «Pioneering AI and AEO-powered commerce»; «Building the most robust NHL team app today»; «Driving developer adoption with the “Yours to Build” campaign» | Liderar una transformación de IA; comercio con IA y AEO; app de equipo NHL; adopción de desarrolladores con campaña | https://www.codeandtheory.com/work |
 
 ## Frente al catálogo de Pharmaco (alimenta TASK-002)
 | # | Servicio Pharmaco | ¿Lo ofrecen? | Nombre literal que usan | URL de su página |
 | --- | --- | --- | --- | --- |
-| 1 | Branding | Sí | Brand Strategy & Experience | https://www.codeandtheory.com/about-us |
-| 2 | Social Media | Sí | Marketing & Social Content Systems | https://www.codeandtheory.com/about-us |
-| 3 | Desarrollo Web | Sí | Technology & Web Platforms | https://www.codeandtheory.com/about-us |
-| 4 | Campañas publicitarias | Sí | Integrated Creative Campaigns | https://www.codeandtheory.com/work/microsoft-yours-to-build |
-| 5 | Performance | Sí | Growth & Performance Marketing | https://www.codeandtheory.com/about-us |
-| 6 | Desarrollo de apps y software | Sí | Digital Product & Platform Engineering | https://www.codeandtheory.com/about-us |
-| 7 | Fotografía y video | Sí | Creative Storytelling & Content Production | https://www.codeandtheory.com/about-us |
-| 8 | Inteligencia artificial | Sí | AI Systems & Adaptive Platforms | https://www.codeandtheory.com/about-us |
-| 9 | SEO y GEO | Sí | Search & Discoverability Systems | https://www.codeandtheory.com/about-us |
-| 10 | CRO | Sí | Customer Experience & Conversion Optimization | https://www.codeandtheory.com/about-us |
-| 11 | Datos y automatización | Sí | Data Architecture & Marketing Automation | https://www.codeandtheory.com/about-us |
+| 1 | Branding | No | «brand transformation» aparece en una descripción de prensa, no como servicio | — |
+| 2 | Social Media | No | — | — |
+| 3 | Desarrollo Web | Sí | (parcial: casos de app y comercio) «Building the most robust NHL team app today»; «Pioneering AI and AEO-powered commerce» | https://www.codeandtheory.com/work/philadelphia-flyers |
+| 4 | Campañas publicitarias | Sí | (parcial) «Driving developer adoption with the “Yours to Build” campaign» | https://www.codeandtheory.com/work/microsoft-yours-to-build |
+| 5 | Performance | No | — | — |
+| 6 | Desarrollo de apps y software | Sí | «Building the most robust NHL team app today»; «Proprietary Software & Technology» | https://www.codeandtheory.com/work/philadelphia-flyers |
+| 7 | Fotografía y video | No | — (no aparecen «photography», «video» ni «production») | — |
+| 8 | Inteligencia artificial | Sí | «Leading an AI overhaul for a cultural icon» | https://www.codeandtheory.com/work/time |
+| 9 | SEO y GEO | Sí | (parcial: AEO) «Pioneering AI and AEO-powered commerce» (AEO = optimización para motores de respuesta; no aparece «SEO» ni «GEO») | https://www.codeandtheory.com/work/jbl |
+| 10 | CRO | No | — | — |
+| 11 | Datos y automatización | No | — | — |
 
-**Servicios suyos que no están en la tabla:** C-Suite Digital Transformation Advisory, Adobe Enterprise Solutions.
+**Servicios suyos que no están en la tabla:** Forward-Deployed Expertise (FD/x); Scaled; Modernized Services (todos en https://www.codeandtheory.com/).
+
+## Cómo cubren el catálogo con un equipo pequeño
+No aplica: es referente.
+
+**Modelo operativo (DECISION-004; cuota orientativa):**
+- ¿Se presenta como equipo senior o «sin juniors»? No. «senior» y «junior» no aparecen.
+- ¿Declara el uso de IA? Sí: «Pioneering AI and AEO-powered commerce» y «Leading an AI overhaul…» son casos de IA (https://www.codeandtheory.com/work). La home también muestra «The One Show names Code and Theory 2026 AI Pioneer» (enlace de prensa).
+- ¿Declara capacidad limitada? No publicado.
 
 ## Prueba social (alimenta TASK-003)
-- Casos: Proyectos globales de transformación digital y campañas masivas (Microsoft «Yours to Build», NFL, NBC News Big Board, Philadelphia Flyers, Stanley Black & Decker, Amazon Ads, Time Magazine).
-- Logos de clientes: Microsoft, Amazon, Google, NFL, NBC, JPMorgan Chase, Bloomberg, CNN, Vogue.
-- Testimonios: Documentados en premios del sector y entrevistas con ejecutivos de nivel C.
-- Premios, rankings, reseñas: Fast Company Most Innovative Companies (dos años consecutivos), Fast Company Innovation by Design (cuatro años consecutivos), múltiples Webby y Cannes Lions.
-- Certificaciones o partnerships: Stagwell Network flagship agency, Adobe Specialized Partner.
-- Otros: Sede emblemática en One World Trade Center, Nueva York.
+- Casos: lista en https://www.codeandtheory.com/work: TIME, Microsoft («Yours to Build»), Stanley Black & Decker, JBL, Amazon Ads, NFL, NBC («Big Board»), Philadelphia Flyers.
+- Caso revisado: «Building the most robust NHL team app today» (https://www.codeandtheory.com/work/philadelphia-flyers; captura `capturas/code-and-theory-caso.png`). No se han leído cifras en la parte visible.
+- Premios: «Code and Theory honored by Fast Company’s Innovation by Design for four consecutive years» y «The One Show names Code and Theory 2026 AI Pioneer» (https://www.codeandtheory.com/). Son premios citados en la web; no se han comprobado en las fuentes de los premios.
+- Logos de clientes: no publicado como bloque en las páginas revisadas.
+- Testimonios: no publicado en las páginas revisadas.
+- Certificaciones o partnerships: no publicado.
 
 ## Estructura de la web y diseño (alimenta TASK-004)
-- Menú principal: Work, About Us, News, Careers, Contact.
-- Secciones de la home, en orden: Hero con tipografía editorial masiva («The Digital Transformation Agency»), vitrina de casos insignia a pantalla completa, manifiesto del modelo «50% engineers, 50% creatives», noticias y premios de Fast Company, footer institucional de Stagwell.
-- Anatomía de una página de servicio: En `/about-us` detallan la historia desde 2001, las «Integrated Capabilities» y la escala de la red en EE. UU., India y Filipinas.
-- CTA principal y dónde aparece: «Contact» en barra superior y formulario de consulta comercial al pie.
-- Idiomas: Inglés.
-- Patrones visuales: Estilo tipográfico sobrio, fondos en escala de grises, negro profundo y blanco, tipografía serif combinada con sans-serif técnica.
-- Movimiento e interacción: Scroll horizontal dinámico, transiciones cinematográficas y carga asíncrona Next.js.
+- Menú principal: Our Work, About, Latest News, Careers, Contact (captura `capturas/code-and-theory-home.png`).
+- Secciones de la home, en orden: titular «The Digital Transformation Agency», bloque con cita de TIME y artículos de prensa (captura `capturas/code-and-theory-home.png`). El resto no se ha revisado.
+- Anatomía de una página de caso: titular grande sobre fondo negro y mockups de la app en el cuerpo (captura `capturas/code-and-theory-caso.png`).
+- Anatomía de About: frase de apertura grande sobre una fotografía en blanco y negro de One World Trade Center (captura `capturas/code-and-theory-servicios.png`).
+- CTA principal: «Contact» en el encabezado; no hay CTA de contacto visible en la home.
+- Idiomas: inglés.
+- Patrones visuales: fondo negro, tipografía serif en los titulares y sans en el cuerpo, mockups de móvil (capturas).
+- Movimiento e interacción: no revisado en detalle.
 
-## Observaciones de Ania
-Code and Theory es el modelo teórico fundacional más afín al ADN de Pharmaco: su definición de «50% ingeniería, 50% creatividad» formula exactamente la síntesis entre un estudio de diseño/marketing y un laboratorio de desarrollo tecnológico sin decantarse exclusivamente por uno de los dos.
+## Observaciones de Kia
+(opinión propia, separada de los hechos)
+- Su catálogo se explica con casos (IA, app, comercio). Es referente de tendencia para IA y para producto digital, no para la escala de Pharmaco.
+- La frase «50% creatives and 50% engineers» es su rasgo de posicionamiento más claro y se cita literal.
+- El banner de cookies tapa parte de la página About: habrá que volver a capturarla si Dexia lo pide.

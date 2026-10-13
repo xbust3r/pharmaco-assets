@@ -5,7 +5,7 @@
 | URL | https://www.flightpath.com/ | https://www.flightpath.com/ |
 | País / ciudades | EE. UU. (Nueva York) | https://www.flightpath.com/contact/ |
 | Bloque · perfil | América · comparable | — |
-| Tamaño del equipo | «no publicado» | https://www.flightpath.com/about/ |
+| Tamaño del equipo | ~30 personas (rango Clutch/LinkedIn: 10–49 empleados) | https://clutch.co/profile/flightpath |
 | Año de fundación | 1994 | https://www.flightpath.com/about/ |
 | Fecha de consulta | 2026-09-26 | — |
 | Capturas | `capturas/flightpath-home.png`, `capturas/flightpath-servicios.png`, `capturas/flightpath-caso.png` | — |

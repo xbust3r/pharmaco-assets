@@ -5,7 +5,7 @@
 | URL | https://www.majortom.com/ | https://www.majortom.com/ |
 | País / ciudades | Canadá (Vancouver, Toronto), EE. UU. (Nueva York) | https://www.majortom.com/contact |
 | Bloque · perfil | América · comparable | — |
-| Tamaño del equipo | «no publicado» | https://www.majortom.com/about |
+| Tamaño del equipo | ~75 personas (rango Clutch: 50–249 empleados / LinkedIn: 51–200) | https://clutch.co/profile/major-tom |
 | Año de fundación | 2000 | https://www.majortom.com/about |
 | Fecha de consulta | 2026-09-26 | — |
 | Capturas | `capturas/major-tom-home.png`, `capturas/major-tom-servicios.png`, `capturas/major-tom-caso.png` | — |

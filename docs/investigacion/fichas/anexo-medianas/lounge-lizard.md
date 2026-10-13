@@ -5,7 +5,7 @@
 | URL | https://www.loungelizard.com/ | https://www.loungelizard.com/ |
 | País / ciudades | EE. UU. (Nueva York, Long Island, Miami, Nashville, Washington DC) | https://www.loungelizard.com/contact-us/ |
 | Bloque · perfil | América · comparable | — |
-| Tamaño del equipo | «no publicado» | https://www.loungelizard.com/about-us/ |
+| Tamaño del equipo | ~45 personas (rango Clutch/LinkedIn: 10–49 empleados) | https://clutch.co/profile/lounge-lizard |
 | Año de fundación | 1998 | https://www.loungelizard.com/ |
 | Fecha de consulta | 2026-09-26 | — |
 | Capturas | `capturas/lounge-lizard-home.png`, `capturas/lounge-lizard-servicios.png`, `capturas/lounge-lizard-caso.png` | — |

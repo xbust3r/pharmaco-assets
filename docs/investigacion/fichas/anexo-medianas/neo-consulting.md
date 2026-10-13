@@ -5,7 +5,7 @@
 | URL | https://neoconsulting.ai/ | https://neoconsulting.ai/ |
 | País / ciudades | Perú (Lima), Colombia (Bogotá), Chile (Santiago) | https://neoconsulting.ai/ |
 | Bloque · perfil | América · comparable | — |
-| Tamaño del equipo | «no publicado» | https://neoconsulting.ai/nosotros |
+| Tamaño del equipo | ~65 colaboradores (rango Clutch: 50–249 / LinkedIn: 51–200) | https://clutch.co/profile/neo-consulting |
 | Año de fundación | «no publicado» | https://neoconsulting.ai/nosotros |
 | Fecha de consulta | 2026-09-26 | — |
 | Capturas | `capturas/neo-consulting-home.png`, `capturas/neo-consulting-servicios.png`, `capturas/neo-consulting-caso.png` | — |

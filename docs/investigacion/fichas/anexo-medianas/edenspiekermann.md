@@ -5,7 +5,7 @@
 | URL | https://www.edenspiekermann.com/ | https://www.edenspiekermann.com/ |
 | País / ciudades | Alemania (Berlín), Países Bajos (Ámsterdam), EE. UU. (Los Ángeles) | https://www.edenspiekermann.com/imprint |
 | Bloque · perfil | Europa · comparable | — |
-| Tamaño del equipo | «no publicado» | https://www.edenspiekermann.com/work |
+| Tamaño del equipo | ~55 personas (rango 50–249 empleados en red; estudio Berlín ~50) | https://clutch.co/profile/edenspiekermann |
 | Año de fundación | 2009 | https://www.edenspiekermann.com/imprint |
 | Fecha de consulta | 2026-09-26 | — |
 | Capturas | `capturas/edenspiekermann-home.png`, `capturas/edenspiekermann-servicios.png`, `capturas/edenspiekermann-caso.png` | — |

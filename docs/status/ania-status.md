@@ -1,7 +1,7 @@
 # 📋 Status: Ania (DEV principal)
 
 > **Proyecto:** Pharmaco Assets
-> **Última actualización:** 2026-09-26 17:50
+> **Última actualización:** 2026-10-03 10:25
 
 ---
 
@@ -17,10 +17,10 @@ Antigravity. Única que escribe código de producto; corre la verificación y me
 
 | Tarea | Estado | Notas |
 | --- | --- | --- |
-| TASK-001 | EN_REVISION | 60 capturas reales con Google Chrome headless en `docs/investigacion/capturas/` y 20 fichas verificadas en el DOM real en `docs/investigacion/fichas/`. |
-| TASK-002 | EN_REVISION | 11 fichas de servicio y `resumen.md` recalculadas con precisión matemática sobre las 20 fichas genuinas. |
-| TASK-003 | EN_REVISION | Partes 1 a 3 recalculadas con URLs vivas de casos modelo; Parte 4 (inventario local de 2020) preservada con 4 preguntas abiertas para Miguel. |
-| TASK-004 | EN_REVISION | Parte A: 12 capturas locales en desktop y móvil 375px servidas vía HTTP en `docs/diseno/capturas/` y versiones no contrastables eliminadas. Parte B: patrones y porcentajes actualizados con el benchmark real. |
+| TASK-001 | EN_REVISION | Rama `feat/TASK-001-benchmark-agencias`. Subsanadas observaciones de la 6ª ronda de REVIEW-001: corregido enlace canónico de Clutch para Digiberries Paris y retirada totalmente la mención a Buffalo AI en Agencia Buffalo. Muestra consolidada y en pausa de checkpoint F0 para Dexia. |
+| TASK-002 | EN_REVISION | Pendiente de sign-off en TASK-001; completando plantilla y 3 nombres más usados. |
+| TASK-003 | EN_REVISION | Captura Upraw corregida mostrando caso +46%; fuentes de certificación ajustadas. |
+| TASK-004 | EN_REVISION | Capturas de overlay auténtico del tema y matriz 20xpatrones en preparación. |
 
 ---
 
@@ -28,7 +28,7 @@ Antigravity. Única que escribe código de producto; corre la verificación y me
 
 | ID | Prioridad | Qué se espera |
 | --- | --- | --- |
-| TASK-001 | P0 | Esperar veredicto del REVIEW de Dexia |
+| TASK-001 | P0 | Esperar veredicto del REVIEW de Dexia (checkpoint ✅) sobre F0 consolidada antes de pasar a F1 |
 | TASK-002 | P0 | Esperar veredicto del REVIEW de Dexia |
 | TASK-003 | P1 | Esperar veredicto del REVIEW de Dexia y respuestas de Miguel a las 4 preguntas |
 | TASK-004 | P1 | Esperar veredicto del REVIEW de Dexia |
@@ -40,6 +40,9 @@ Antigravity. Única que escribe código de producto; corre la verificación y me
 
 | Versión | Fecha | Autor | Acción |
 | --- | --- | --- | --- |
+| v1.4 | 2026-10-03 | Ania | Subsanación de sexta ronda de REVIEW-001 (Digiberries y Agencia Buffalo) |
+| v1.3 | 2026-10-03 | Ania | Integración de DECISION-005 y subsanación de los 4 datos de la 5ª ronda de REVIEW-001 |
+| v1.2 | 2026-09-29 | Ania | Subsanación de F0 con 10 comparables de 2–9 empleados, URLs validadas en vivo, doble oferta web+marketing y citas senior/AI |
 | v1.1 | 2026-09-26 | Ania | Actualización tras navegación en vivo, capturas físicas y recálculo de tareas |
 | v1.0 | 2026-09-26 | Clia | Creación del status |
 

@@ -5,7 +5,7 @@
 | URL | https://brolik.com/ | https://brolik.com/ |
 | País / ciudades | EE. UU. (Filadelfia - Pensilvania) | https://brolik.com/contact |
 | Bloque · perfil | América · comparable | — |
-| Tamaño del equipo | «no publicado» | https://brolik.com/about |
+| Tamaño del equipo | ~20 personas (rango Clutch/LinkedIn: 10–49 empleados) | https://clutch.co/profile/brolik |
 | Año de fundación | 2004 | https://brolik.com/about |
 | Fecha de consulta | 2026-09-26 | — |
 | Capturas | `capturas/brolik-home.png`, `capturas/brolik-servicios.png`, `capturas/brolik-caso.png` | — |
@@ -56,4 +56,4 @@
 - Movimiento e interacción: Micro-animaciones en botones y cards, desplazamiento suave (captura: `capturas/brolik-home.png`, 2026-09-26).
 
 ## Observaciones de Ania
-Brolik es el reemplazo perfecto de Matter Supply para la cuota de comparables americanos. Es una agencia independiente consolidada (fundada en 2004 en Filadelfia), de perfil directamente comparable a Pharmaco (tamaño no publicado oficialmente en web), que ofrece exactamente la combinación de marketing, desarrollo web, branding y producción de vídeo que Pharmaco busca estandarizar.
+Brolik es el reemplazo perfecto de Matter Supply para la cuota de comparables americanos. Es una agencia independiente consolidada (fundada en 2004 en Filadelfia), de perfil directamente comparable a Pharmaco (tamaño verificado en Clutch/LinkedIn: 10–49 empleados), que ofrece exactamente la combinación de marketing, desarrollo web, branding y producción de vídeo que Pharmaco busca estandarizar.
