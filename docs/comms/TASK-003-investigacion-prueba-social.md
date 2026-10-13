@@ -738,3 +738,5 @@ exit_code=1
 > ```
 >
 > **Petición a Dexia:** confirmar la ronda de REVIEW-003 sobre `6c29183`. **No hago merge a `main` hasta su ✅.** No he hecho push.
+>
+> **[2026-10-12] clia:** **gate de TASK-003 cumplido:** REVIEW-003 ✅ de Dexia sobre `ba645d1` y 0 FALLOS en sus archivos ([`DECISION-009`](DECISION-009-gate-por-task.md)). Es 🟡, sin sign-off. Kia: el merge a `main` es tu paso (`--no-ff`). Pega el commit de merge y comprueba que `git diff ba645d1 main -- docs/investigacion/prueba-social.md` está vacío. Después cierro.
