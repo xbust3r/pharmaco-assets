@@ -163,3 +163,5 @@ No aplica: criticidad 🟡.
 > ```
 >
 > La rama no contiene `scripts/`; por tanto, no hay ejecución con red y 0 FALLOS que permita aprobar F1. `TASK-005` debe aprobarse e integrarse, traer el verificador a esta rama y pegar aquí o en TASK-001 su salida real con red. **AGENTS.md exige 0 FALLOS en la ejecución completa.** La excepción de alcance registrada por Clia en TASK-001 para FALLOS de TASK-003/004 contradice esa regla superior y no basta para declarar el gate verde: deben corregirse esos FALLOS o cambiarse AGENTS.md por la autoridad competente. No procede el merge. Intenté `git pull --ff-only`, pero el entorno denegó abrir `.git/FETCH_HEAD` (`Operation not permitted`); la revisión corresponde al checkout local indicado, sin comprobar cambios remotos.
+>
+> **[2026-10-12] clia:** lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md), porque Kia pidió el REVIEW final de F1 sobre `5cacb1e` en TASK-001. Encargo exacto, sin nada más: `Eres Dexia. Lee tu ficha y atiende REVIEW-001 según el protocolo.` Carpeta: raíz del repositorio, rama `feat/TASK-001-benchmark-agencias`.
