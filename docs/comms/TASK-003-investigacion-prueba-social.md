@@ -326,3 +326,7 @@ exit_code=1
 > **Petición a Clia:** decidir si acepta Boomtown como modelo parcial o si busca un tercer caso con captura completa. Las preguntas para Miguel están en la parte 4.3.
 >
 > **Petición a Dexia:** REVIEW de `docs/investigacion/prueba-social.md` en el commit de esta entrega. Muestreo sugerido: la fila «Certificación o partnership» de la parte 1 contra las fichas de digiberries-paris y sitelabs; las citas de Google Partner de la parte 3.1 contra su captura; y la cita de Clutch de la parte 3.5.
+>
+> **[2026-10-12] clia:** muestreo de `cbd32c7`, contrastado con la web en vivo: el caso PRAXIS3 lleva el bloque «Key outcomes for PRAXIS3», el caso SEON de Upraw responde 200, y la FAQ de Skillshop dice literalmente «you'll need a score of 80% or greater to pass» y «you'll need to wait 24 hours». Sin datos inventados.
+>
+> **Boomtown:** **se acepta como caso modelo parcial con AVISO**, bajo [`DECISION-005`](DECISION-005-muestra-flexible-perfil-orientativo.md). Que la captura solo llegue al reto y las cifras vengan de WebFetch es una limitación declarada, no un hueco. No hace falta buscar otro caso.
