@@ -74,3 +74,24 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 > 1. **9 o 10 maquetas.** La TASK y DECISION-010 dicen 9, pero `assets/` contiene 10 `.html`: campana-cyberwow, campana-iveco, campana-stralis, contactanos, diseño-de-personajes, index, nosotros, portafolio, servicio-detalle y servicios. Hasta que digas lo contrario migro las 10, porque la fase 5 pide «fieles a `assets/*.html`». ¿Hay alguna que no entra?
 > 2. **`imask` en el `package.json` de Blackgrow.** Es una dependencia de JS de su contenido, no infraestructura. DECISION-010 no admite dependencias de JS nuevas sin RFC, así que propongo no copiarla y regenerar el lockfile sin ella. Lo haré salvo que digas otra cosa.
 > 3. **pnpm.** El `packageManager` de Blackgrow fija `pnpm@12.3.4`, que no estaba instalado en esta máquina. Lo instalo con `npm i -g pnpm@12.3.4` para correr `pnpm install` y `pnpm build`.
+
+> **[2026-10-12 22:51] kia:** **fase 0 cerrada.** Inventario en `docs/migracion/inventario.md`. Las 10 maquetas, sus componentes, tokens (57 colores hex, tipografía, 7 breakpoints más 12 `@media` propios), el JS de aplicación (sin jQuery) y las referencias de assets, con sus conteos. Sale de `assets/` y del CSS/JS compilados; el mapa de fuentes no trae todo el JS, así que lo de `site-header`, `clients`, `forms` y `modals` se lee del bundle.
+>
+> **Discrepancias con el encargo y con `sistema-web-assets.md` (sección 2 y 9 del inventario):**
+> 1. **10 maquetas, no 9.** Pregunta ya abierta.
+> 2. **12 `@media` fuera de los 7 breakpoints** (600, 700, 900, 980 y 1140 px; alturas de 820 a 1100 px; un `min-width:1400px` que duplica `ultrawide`). Decidir si son breakpoints del sistema o excepciones.
+> 3. **Poppins sólo en 400, 500 y 600.** No hay Bold ni ExtraBold, aunque `sistema-web-assets.md` los nombra. El CSS pide también 300 y 700.
+> 4. **`.o-wrapper` = 1302 px**, no 1200 px.
+> 5. **2 referencias de imagen rotas** en el origen: `video1-l.webp` (cyberwow) y `publicacion-revista-revista1-lg.webp` (iveco). Se migran rotas y van al informe.
+> 6. **Enlaces a páginas que no existen:** `test.html` (50), `blog.html` (20), `buscar.html` (10) y `portafolio-detalle.html` (16). Se migran tal cual.
+> 7. **Botón de contacto de la cabecera.** El JS lo pasa a `c-button--sky-blue` salvo en héroes `blue`, `dark-purple` o `purple`. Parece invertido. ¿Intencionado? Lo reproduzco tal cual hasta que digas.
+> 8. **`components.js` no lo carga ninguna maqueta.** Código muerto; no se migra.
+>
+> **Verificación.** En fase 0 no hay proyecto aún, así que no aplica `pnpm` ni `verificar-investigacion.py` (`AGENTS.md` lo reserva a TASK-001…004). Lo que sí se comprueba: `assets/` intacto:
+> ```
+> $ git diff main -- assets/ | wc -l
+> 0
+> ```
+> Pendiente: lo de `tiny-slider` con `controlsContainer` y todo lo visual, que es de fases 6 y 7.
+>
+> Siguiente: fase 1 (🔴, infraestructura de Blackgrow). Espero las respuestas de Clia a 1, 2 y 3 antes de tocar `package.json` y el lockfile; si no llegan, sigo con lo que no depende de ellas.
