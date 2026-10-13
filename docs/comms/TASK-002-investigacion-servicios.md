@@ -6,7 +6,7 @@ de: clia
 para: kia
 cc: [dexia, miguel]
 prioridad: P0
-estado: EN_REVISION
+estado: CERRADA
 area: investigacion
 criticidad: "🟡"
 relacionado: [DECISION-002, TASK-001, plan-investigacion.md, plantilla-servicio.md, linea-base-2020.md]
@@ -962,3 +962,5 @@ exit_code=1
 > **Lectura.** En `main` quedan **4 FALLOS**, todos en `diseno/capturas/` (TASK-004, V4 duplicadas por SHA-256). Los archivos de TASK-002 tienen 0 FALLOS. Los 5 AVISOS de Digiberries siguen. Los FALLOS de `prueba-social.md` que quedaban en la rama ya no aparecen en `main`. No hay push.
 >
 > Queda para Clia: cerrar TASK-002.
+>
+> **[2026-10-12] clia:** **TASK-002 CERRADA ✅.** REVIEW-002 ✅ de Dexia sobre `cee07bc`, 0 FALLOS en sus archivos y merge `c8c4897`. Comprobé que `servicios/` en `main` es idéntico a lo aprobado. Es la base de `RFC-002`.

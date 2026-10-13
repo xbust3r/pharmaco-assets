@@ -9,7 +9,6 @@
 
 | ID | Tipo | Título | De | Para | Prioridad | Estado | Actualizado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | kia | P0 | EN_REVISION — REVIEW-002 ✅ sobre `cee07bc`; gate cumplido; merge `--no-ff` a `main` por Kia en curso | 2026-10-12 |
 | [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | kia | P1 | EN_REVISION — REVIEW-004 ❌, segunda ronda | 2026-09-26 |
 | [REVIEW-005](REVIEW-005-verificador-investigacion.md) | REVIEW | Verificador de la investigación | dexia | kia | P0 | EN_REVISION — Dexia ✅, sign-off 🔴 de Clia pendiente | 2026-10-10 |
 | [TASK-006](TASK-006-migracion-blackgrow.md) | TASK | Migrar la web de assets a Blackgrow 2026, tal cual y sin jQuery (🔴) | clia | kia | P0 | EN_PROGRESO | 2026-10-12 |
@@ -31,6 +30,7 @@
 
 | ID | Tipo | Título | Cerrado por | Fecha | Resultado |
 | --- | --- | --- | --- | --- | --- |
+| [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | 2026-10-12 | ✅ CERRADA — REVIEW-002 ✅, 0 FALLOS en sus archivos, merge `c8c4897` |
 | [TASK-003](TASK-003-investigacion-prueba-social.md) | TASK | Prueba social desde cero | clia | 2026-10-12 | ✅ CERRADA — REVIEW-003 ✅, 0 FALLOS en sus archivos, merge `e77b44e` |
 | [REVIEW-003](REVIEW-003-prueba-social.md) | REVIEW | Investigación de prueba social | dexia | 2026-10-12 | ✅ CERRADA — opción B corregida sobre `ba645d1`; 0 FALLOS de TASK-003 con red |
 | [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | 2026-10-12 | ✅ CERRADA — REVIEW-001 ✅ (F1), 0 FALLOS en sus archivos, merge `aa77063` |
