@@ -6,7 +6,7 @@ de: clia
 para: kia
 cc: [dexia, miguel]
 prioridad: P0
-estado: EN_REVISION
+estado: EN_PROGRESO
 area: codigo
 criticidad: "🔴"
 relacionado: [DECISION-010, AGENTS.md, sistema-web-assets.md, TASK-001, TASK-004]
@@ -207,3 +207,44 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 > - **`validate:origen` (REVIEW-006 #1):** sigue pendiente de la fase 7, como dice la TASK. No lo cuento como verde.
 >
 > Empiezo la fase 3 (layout, header y footer en utilidades de Tailwind y mixins Pug, 🔴).
+
+> **[2026-10-12 23:16] kia:** 🔴 **fase 3 hecha: layout, cabecera y pie** (`85febf2`). Vuelvo a `EN_PROGRESO`: no pido REVIEW hasta el final, porque el gate de checkpoint era la fase 2 y el REVIEW final cubre el resto.
+>
+> **Decisiones de Clia, aplicadas:**
+> - **A.** Cabecera y pie en utilidades de Tailwind; lo que se repite está en mixins (`svgIcon`, `button`, `navItem`, `footerLink`, `socialLink`). Sin CSS de componente con nombres BEM.
+> - **B.** Por ahora no hay medias queries propias en uso: la cabecera y el pie sólo usan 700 px (`tablet`), 980 px (`desktop`), 1200 px (`wide`) y 1400 px (`ultrawide`). Los 600, 900 y 1140 px entrarán como tokens cuando una página los use; las alturas (820 a 1100 px), igual, con su nota en el inventario.
+> - **Pesos y `ease`:** `weight-*` y `ease-origin` son utilidades. El `min-width:1400px` duplicado no se migra.
+>
+> **Lo que hay en `styles.css`** (orden de capas declarado): `@layer theme, base, components, utilities`. Sin este orden, el reset de `base` ganaba a `.bg-purple`: el botón de contacto y los iconos de redes salían sin fondo. Corregido y verificado en captura.
+>
+> **Medidas reales, no sólo la captura** (puppeteer-core en el scratchpad, viewport fijado por CDP; **Chrome headless no baja de 500 px de ancho con `--window-size`**, así que mis capturas anteriores de 375 eran de layout de 500 px y las he sustituido). Origen = `assets/index.html` con el `main` vacío, en copia temporal fuera de `assets/`; migrada = `dist/` servido en `localhost:5274`:
+> ```
+> 375 px   origen  y migrada
+> header        x=0 y=0 w=375 h=114
+> search        x=293 y=46 w=22 h=22 display=flex
+> menu          x=323 y=46 w=22 h=22 display=flex
+> logo          x=30 y=52 w=128 h=10
+> footer        x=0 y=0 w=375 h=715
+> legal         x=30 y=523 w=315 h=48
+> toTop         x=30 y=607 w=97 h=44 display=inline-flex
+>
+> 1280 px  origen  y migrada
+> header        x=0 y=0 w=1280 h=182
+> search        x=946 y=91 w=86 h=26
+> logo          x=30 y=95 w=222 h=17
+> footer        x=0 y=0 w=1280 h=647
+> legal         x=30 y=443 w=1020 h=24
+> toTop         x=1153 y=443 w=97 h=44
+> ```
+> Capturas en `docs/migracion/capturas/fase3-*.png` (4 PNG). Las medidas coinciden en todos los puntos.
+>
+> **Verificación de `AGENTS.md`**, salida completa en `docs/migracion/logs/fase-3-verificacion.txt`: `optimize` 0, `lint` 0, `validate` 0, `build` 0, `verify:render` 0 (sin FALLOS), `validate:origen` 1 (ENOENT, fase 7). Los 4 AVISOS de `verify:render` son falsos positivos: el verificador expande los mixins y cuenta sus clases como repetidas en cada elemento. Blackgrow tiene el mismo caso en su informe.
+>
+> **Desviaciones nuevas (anotadas en el commit):** se quita `focusable="false"` del `svg` (atributo de IE; markuplint lo marca) y `rel="shortcut icon"` pasa a `rel="icon"` (mismo efecto en navegador). Los `aria-label` del pie («Go to Southern Harvest's…») y los `href="test.html"` se copian tal cual y se anotan.
+>
+> **Pendiente, no hecho en esta fase:**
+> - **Menú móvil:** el estado `is-active` existe en el marcado, pero no hay JS que lo abra. Lo hace la fase 6. Hasta entonces el menú no se abre en el dist.
+> - **Botón de contacto de la cabecera** (decisión sobre su orden de condición): se reproduce en la fase 6, con el JS.
+> - **Fases 4 a 8.** Sin empezar: componentes como mixins (4), las 10 páginas (5), JS nativo (6), fidelidad completa (7) e informe (8).
+>
+> Me detengo aquí. La fase 4 se sigue en la siguiente sesión, si Clia lo confirma.
