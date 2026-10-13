@@ -1,3 +1,6 @@
+/* Orden de capas: las utilidades ganan siempre al reset (base), como ganaban los componentes al reset en el origen. */
+@layer theme, base, components, utilities;
+
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 
@@ -203,4 +206,291 @@
 
     /* .modaal-video-container (Modaal) */
     --shadow-modal-video: 0 0 10px rgb(0 0 0 / 30%);
+}
+
+/* Fuentes que Tailwind escanea: marcado y JavaScript del proyecto. */
+@source "../**/*.pug";
+@source "../**/*.js";
+
+/* El estado de un componente vive en su clase, como en el origen (`is-active`). */
+@custom-variant is-active (&.is-active);
+
+/* Espaciados de cabecera y pie: los valores verticales del origen. */
+@theme {
+    --spacing-header: 46px;
+    --spacing-header-wide: 72px;
+    --spacing-footer: 64px;
+    --spacing-footer-wide: 160px;
+
+    /* Easing y ancho de tercio, tal como los escribe el origen. */
+    --ease-origin: ease;
+    --width-third: 33.33%;
+}
+
+/* .o-wrapper: contenedor con ancho máximo y márgenes laterales del origen. */
+@utility wrapper {
+    max-width: var(--container-wrapper);
+    margin-inline: auto;
+    padding-inline: var(--wrapper-padding);
+}
+
+/* stylelint-disable nesting-selector-no-missing-scoping-root -- @utility de Tailwind: & es su raíz */
+
+/* Pesos del origen como utilidades (--weight-* en @theme). */
+@utility weight-regular {
+    font-weight: var(--weight-regular);
+}
+
+@utility weight-medium {
+    font-weight: var(--weight-medium);
+}
+
+@utility weight-semibold {
+    font-weight: var(--weight-semibold);
+}
+
+/* .o-icon: caja de icono del sprite, con el tamaño heredado del texto. */
+@utility icon {
+    display: inline-block;
+    line-height: 0.6;
+
+        & > svg {
+        display: inline-block;
+        font-size: inherit;
+        width: 1em;
+        height: 1em;
+        overflow: hidden;
+        stroke-width: 0;
+        stroke: currentcolor;
+        fill: currentcolor;
+    }
+}
+
+/* .c-button-line: subrayado que crece al pasar el ratón o al enfocar. */
+@utility link-underline {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    background-image: linear-gradient(transparent calc(100% - 2px), var(--color-white) 2px);
+    transition: background-size 0.2s;
+
+        &:hover,
+    &:focus {
+        transition: color 0.3s ease, background-size 0.2s;
+        background-size: 100% 100%;
+    }
+}
+
+/* stylelint-enable nesting-selector-no-missing-scoping-root */
+
+/* Fondo del pie: pequeño por defecto, grande desde desktop. */
+@utility footer-bg {
+    background-image: url('../assets/images/components/site-footer/footer-bg-sm.webp');
+}
+
+@utility footer-bg-lg {
+    background-image: url('../assets/images/components/site-footer/footer-bg-lg.webp');
+}
+
+@layer base {
+    /* stylelint-disable no-duplicate-selectors -- reset copiado del origen: normalize e inuitCSS repiten selectores */
+
+    /* Reset del origen (normalize-scss e inuitCSS genéricos), sin AOS. Los hex son tokens. */
+    body {
+        margin:0;
+    }
+
+    article,
+    aside,
+    footer,
+    header,
+    nav,
+    section {
+        display:block;
+    }
+
+    h1 {
+        font-size:2em;
+        margin:.67em 0;
+    }
+
+    figure {
+        margin:1em 40px;
+    }
+
+    hr {
+        box-sizing:content-box;
+        height:0;
+        overflow:visible;
+    }
+
+    main {
+        display:block;
+    }
+
+    pre {
+        font-family: monospace;
+        font-size:1em;
+    }
+
+    a {
+        background-color:transparent;
+    }
+
+    abbr[title] {
+        border-bottom:none;
+        text-decoration:underline;
+        text-decoration:underline dotted;
+    }
+
+
+    b,
+    strong {
+        font-weight:bolder;
+    }
+
+    mark {
+        background-color:var(--color-highlight);
+        color:var(--color-black);
+    }
+
+    small {
+        font-size:80%;
+    }
+
+    sub,
+    sup {
+        font-size:75%;
+        line-height:0;
+        position:relative;
+        vertical-align:baseline;
+    }
+
+    sub {
+        bottom:-.25em;
+    }
+
+    sup {
+        top:-.5em;
+    }
+
+    audio,
+    video {
+        display:inline-block;
+    }
+
+    audio:not([controls]) {
+        display:none;
+        height:0;
+    }
+
+    img {
+        border-style:none;
+    }
+
+    svg:not(:root) {
+        overflow:hidden;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+        font-family:sans-serif;
+        font-size:100%;
+        line-height:1.15;
+        margin:0;
+    }
+
+    button {
+        overflow:visible;
+    }
+
+    button,
+    select {
+        text-transform:none;
+    }
+
+    input {
+        overflow:visible;
+    }
+
+    ::-webkit-file-upload-button {
+        font:inherit;
+    }
+
+    fieldset {
+        padding:.35em .75em .625em;
+    }
+
+    progress {
+        display:inline-block;
+        vertical-align:baseline;
+    }
+
+    textarea {
+        overflow:auto;
+    }
+
+    html {
+        box-sizing:border-box;
+    }
+
+    *,
+    ::after,
+    ::before {
+        box-sizing:inherit;
+    }
+
+    :focus {
+        outline:0;
+    }
+
+    :active {
+        outline:0;
+    }
+
+    html {
+        color:var(--color-ink);
+        font-family:Poppins,Arial,Helvetica,sans-serif;
+        font-size:16px;
+        line-height:1.5;
+        min-height:100%;
+        overflow-x:hidden;
+        width:100%;
+    }
+
+    body {
+        overflow-x:hidden;
+        width:100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin:0;
+    }
+
+    button {
+        font-family:inherit;
+        border:none;
+        padding:0;
+        line-height:inherit;
+        cursor:pointer;
+    }
+
+    input,
+    select {
+        font-family:inherit;
+    }
+
+
+    select::-ms-expand {
+        display:none;
+    }
+    /* stylelint-enable no-duplicate-selectors */
 }

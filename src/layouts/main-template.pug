@@ -1,0 +1,19 @@
+include ../components/site-header
+include ../components/site-footer
+
+//- Plantilla de página del origen: cabecera, `main#main` y pie. Cada página la extiende
+//- y rellena `title`, `description` y `content`.
+doctype html
+html(lang='es-PE')
+    head
+        include ../components/head-base
+        block title
+            title Pharmaco
+        block description
+            meta(name='description', content='Pharmaco | Laboratorio digital de Marketing & Software')
+    body
+        +siteHeader()
+        main#main(class='relative')
+            block content
+        +siteFooter()
+        script(type='module', src='/src/scripts/main.js')
