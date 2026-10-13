@@ -46,7 +46,7 @@
 ### 3.3 Medias queries y estilos de origen
 
 - **Breakpoints del origen:** los cortes de 700 y 980 px son `tablet` y `desktop`. Los de 360, 425, 500, 1200 y 1400 px son los demás breakpoints del sistema. Las reglas de 600, 900 y 1140 px del origen no producen ninguna variante en el marcado final; sólo queda **una** variante arbitraria, `min-[601px]:`, que es el complemento de un `max-width:600px` del origen. Pendiente de tokenizar.
-- **Medias de altura** (820 a 1100 px): **no se migran**. El compilador las omite, así que no hay variantes ni tokens para ellas. No se ha comprobado si alguna regla afecta a un elemento de estas 10 páginas; queda como pendiente (inventario, sección 5.3).
+- **Medias de altura** (820 a 1100 px): las 6 reglas son del plugin de modales (`.modaal-*`). Ningún selector casa con un elemento de las 10 páginas, comprobado sobre el DOM de cada maqueta; no se migran.
 - **`min-width:1400px` duplicado y `@media screen` sin condición**: no se migran (ruido del origen).
 - **Pesos 300 y 700** de Poppins: el origen los pide y no hay archivos. Se migran igual; el navegador sintetiza el peso.
 
@@ -70,10 +70,9 @@ Un único `main.js`: las 10 páginas son entradas separadas, y con formato `iife
 
 ### 4.1 Pendientes de fidelidad
 
-- **Slider de clientes (`index`, `nosotros`).** La geometría no coincide con tiny-slider: el origen cambia el DOM al iniciar (clones y envoltorios). A 1280 px la altura coincide, pero hay 38 y 19 cajas desalineadas. Pendiente de ajuste fino.
-- **`servicios` a 375 px**: la migración mide 289 px menos (8253 frente a 8542). A 1280 px coincide. Diferencias de 1 px en el bloque de contenido que se acumulan; el origen es el de referencia, y la causa no está identificada.
-- **`servicio-detalle` a 375 px**: 13 px menos y 78 cajas desalineadas.
-- **Tokens para valores arbitrarios repetidos.** `verify:render` avisa de 20 valores repetidos en las 10 páginas (por ejemplo, el ancho del logo de cabecera). Son valores del origen; ponerles nombre queda para una segunda pasada.
+- **Slider de clientes (`index`, `nosotros`).** Las alturas coinciden a 1280 y 375 px. Las 38 y 19 cajas desalineadas son del DOM: tiny-slider clona diapositivas y `scroll-snap` no, así que los índices se desplazan. Lo que se ve coincide (mismos logos visibles y tamaños; capturas en `docs/migracion/capturas/fase7-slider-*`).
+- **`servicios` y `servicio-detalle`**: alturas y cajas iguales a 1280 y 375 px (0 desalineados). La causa de la primera diferencia (290 px) estaba en la cascada del compilador: `display` por defecto y una regla `:not([class])` (ver el commit `d8dbbb3`).
+- **Valores arbitrarios repetidos:** resueltos. Los 22 de cabecera y pie son tokens en `@theme` (`d8dbbb3`); `verify:render` ya no avisa de ninguno.
 - **654 clases de propiedad arbitraria** (`[prop:valor]`), frente a utilidades con nombre. Es la forma menos idiomática del resultado: funciona y es fiel, pero es el primer candidato a limpiar.
 
 ### 4.2 Defectos del origen migrados tal cual
