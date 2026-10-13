@@ -76,7 +76,7 @@ No hay base de 2020 para este servicio: la línea base dice «Repite el texto de
 
 - **Con Desarrollo Web:** 9 de 9 agencias de Apps ofrecen también Desarrollo Web (con parcial incluido).
 - **Con Branding:** 7 de 9. **Con Campañas publicitarias:** 6 de 9. **Con SEO y GEO:** 6 de 9.
-- **Con Inteligencia artificial:** 5 de 9. **Con Datos y automatización:** 5 de 9.
+- **Con Inteligencia artificial:** 6 de 9 (incluye [Dogstudio](../fichas/dogstudio.md), con IA sólo como ejemplo: anotado). **Con Datos y automatización:** 5 de 9.
 - **Con Performance:** 3 de 9. **Con CRO:** 3 de 9.
 - **Con Social Media:** 2 de 9. **Con Fotografía y video:** 1 de 9.
 

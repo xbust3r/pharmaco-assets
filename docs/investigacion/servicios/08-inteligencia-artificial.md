@@ -2,7 +2,7 @@
 
 > **Tipo:** Nuevo (`DECISION-002`)
 > **Descripción de 2020** (de la [línea base](../../linea-base-2020.md)): no existía.
-> **Agencias de la muestra que lo ofrecen:** 10 de 20 (comparables 4 de 10; referentes y especialistas 6 de 10). Una más, [Dogstudio](../fichas/dogstudio.md), figura en la ficha sólo como mención y no cuenta.
+> **Agencias de la muestra que lo ofrecen:** 11 de 20 (comparables 4 de 10; referentes y especialistas 7 de 10). Una de ellas, [Dogstudio](../fichas/dogstudio.md), lo ofrece sólo como ejemplo dentro de una categoría: se cuenta como Sí y se anota (regla de conteo de Clia, TASK-002, 2026-10-12). Sin esa nota, serían 10.
 > **Base:** fila 8 de la tabla «Frente al catálogo de Pharmaco» de cada una de las [20 fichas](../fichas/).
 
 ---
@@ -21,18 +21,18 @@
 | [Code and Theory](../fichas/code-and-theory.md) | Referente | «Leading an AI overhaul for a cultural icon» | en | https://www.codeandtheory.com/work/time |
 | [Media.Monks](../fichas/media-monks.md) | Referente | Artificial Intelligence; AI Transformation | en | https://www.monks.com/artificial-intelligence |
 | [Work & Co](../fichas/work-and-co.md) | Referente | GenAI strategy & implementation; GenAI & multimodal UX; Agentic AI workflows | en | https://work.co/company/ |
-| [Dogstudio](../fichas/dogstudio.md) | Referente (**mención**, no cuenta) | Emerging Technologies («You know... AR, VR, AI etc...»), sólo como ejemplo de la categoría | en | https://dogstudio.co/studio/ |
+| [Dogstudio](../fichas/dogstudio.md) | Referente (Sí, con nota: sólo como ejemplo) | Emerging Technologies («You know... AR, VR, AI etc...»), sólo como ejemplo de la categoría | en | https://dogstudio.co/studio/ |
 
-Dogstudio figura en la matriz como «Sí» por decisión de Clia (TASK-001, 2026-10-10), con la aclaración de que la IA aparece sólo como ejemplo. Aquí se separa como mención. El total de la matriz de la tabla de la fila 8 (11) incluye esa mención; el total de oferta propia es 10.
+Dogstudio figura como «Sí» en su ficha, por decisión de Clia (TASK-001, 2026-10-10), con la aclaración de que la IA aparece sólo como ejemplo. Según la regla de conteo fijada por Clia (TASK-002, 2026-10-12), se cuenta como Sí y se anota: el total es 11. Sin esa nota, el total sería 10.
 
 **Conteo por tipo de agencia:**
 
 - **Comparables, 4 de 10.** Sí sin parcial (3): [Devibi](../fichas/devibi.md), [Pallax Media](../fichas/pallax-media.md), [Stratagemma Studio](../fichas/stratagemma-studio.md). Parcial (1): [Sitelabs](../fichas/sitelabs.md). No lo ofrecen: [Agencia Buffalo](../fichas/agencia-buffalo.md), [Digiberries Paris](../fichas/digiberries-paris.md), [Screenfire Media](../fichas/screenfire-media.md), [Trajectory Web Design](../fichas/trajectory-web-design.md), [StudioDigital](../fichas/studiodigital.md), [TESCANET](../fichas/tescanet.md).
-- **Referentes y especialistas, 6 de 10.** Sí sin parcial (6): [Artefact](../fichas/artefact.md), [BlueOrange Digital](../fichas/blueorange-digital.md), [Single Grain](../fichas/single-grain.md) (portada única), [Code and Theory](../fichas/code-and-theory.md), [Media.Monks](../fichas/media-monks.md), [Work & Co](../fichas/work-and-co.md). Mención (no cuenta): [Dogstudio](../fichas/dogstudio.md). No lo ofrecen: [Instrument](../fichas/instrument.md), [Monopo](../fichas/monopo.md), [Upraw Media](../fichas/upraw-media.md).
+- **Referentes y especialistas, 7 de 10.** Sí sin parcial (6): [Artefact](../fichas/artefact.md), [BlueOrange Digital](../fichas/blueorange-digital.md), [Single Grain](../fichas/single-grain.md) (portada única), [Code and Theory](../fichas/code-and-theory.md), [Media.Monks](../fichas/media-monks.md), [Work & Co](../fichas/work-and-co.md). Con nota (1): [Dogstudio](../fichas/dogstudio.md), IA sólo como ejemplo. No lo ofrecen: [Instrument](../fichas/instrument.md), [Monopo](../fichas/monopo.md), [Upraw Media](../fichas/upraw-media.md).
 
-**Nombres más repetidos** (palabra literal presente en el nombre; cada agencia cuenta una vez por palabra; Dogstudio no cuenta):
+**Nombres más repetidos** (palabra literal presente en el nombre; cada agencia cuenta una vez por palabra; Dogstudio cuenta, con nota):
 
-1. **«AI», «IA» o «KI»** (10): las 10 agencias que ofrecen el servicio, incluida Sitelabs («Web scraping con IA»).
+1. **«AI», «IA» o «KI»** (11): las 11 agencias que ofrecen el servicio, incluidas Sitelabs («Web scraping con IA») y Dogstudio (IA como ejemplo, con nota).
 2. **«agent» o «agentic»** (3): BlueOrange Digital («Agentic AI»), Pallax Media («KI-Agenten»), Work & Co («Agentic AI workflows»).
 3. **«automation», «automatización» o «automation»** (3): Devibi («AI Integration & Automation»), Pallax Media («KI-Automatisierung»), BlueOrange Digital («Intelligent Automation»).
 
@@ -81,11 +81,11 @@ No existía en 2020. La línea base no tiene servicio de IA.
 
 ## Relación con otros servicios
 
-- **Con Datos y automatización:** 9 de 10 agencias que ofrecen IA también ofrecen Datos y automatización (con parcial incluido). La única que no lo ofrece es [Code and Theory](../fichas/code-and-theory.md).
-- **Con SEO y GEO:** 7 de 10.
-- **Con Desarrollo Web:** 7 de 10. **Con Campañas:** 6 de 10.
-- **Con Branding:** 4 de 10. **Con CRO:** 4 de 10. **Con Performance:** 4 de 10.
-- **Con Apps y software:** 5 de 10. **Con Social Media:** 3 de 10. **Con Fotografía y video:** 3 de 10.
+- **Con Datos y automatización:** 9 de 11 agencias que ofrecen IA también ofrecen Datos y automatización (con parcial incluido). Las dos que no lo ofrecen son [Code and Theory](../fichas/code-and-theory.md) y [Dogstudio](../fichas/dogstudio.md).
+- **Con SEO y GEO:** 7 de 11.
+- **Con Desarrollo Web:** 8 de 11. **Con Campañas:** 6 de 11.
+- **Con Branding:** 5 de 11. **Con CRO:** 4 de 11. **Con Performance:** 4 de 11.
+- **Con Apps y software:** 6 de 11. **Con Social Media:** 3 de 11. **Con Fotografía y video:** 3 de 11.
 
 Cifras de la matriz de coincidencias de las 20 fichas (ver [`resumen.md`](resumen.md)).
 

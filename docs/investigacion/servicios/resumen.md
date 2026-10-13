@@ -9,9 +9,9 @@
 ## Método
 
 - **«Sí» / «No»:** la columna «¿Lo ofrecen?» de la fila de cada servicio en cada ficha. Un «Sí» con «(parcial» en la celda del nombre cuenta como **parcial**. Un «Sí» con «portada única» en la URL cuenta como Sí (el verificador lo marca como AVISO) y se señala en la tabla.
-- **Mención:** [Dogstudio](../fichas/dogstudio.md) figura como «Sí» en la fila 8, por decisión de Clia (TASK-001, 2026-10-10), con la IA sólo como ejemplo. Aquí se cuenta aparte como mención: **no cuenta en el total de IA**. El detalle está en la [ficha 08](08-inteligencia-artificial.md).
+- **Regla de conteo (Clia, TASK-002, 2026-10-12):** se cuenta lo que la ficha marca «Sí». Los matices («solo como ejemplo», «solo en el formulario», «parcial») se anotan junto al conteo, no se restan. Caso visible: [Dogstudio](../fichas/dogstudio.md) figura como «Sí» en la fila 8 con la IA sólo como ejemplo; cuenta en IA (11) y se anota. Sin esa nota, IA sería 10. El detalle está en la [ficha 08](08-inteligencia-artificial.md).
 - **Nombres más repetidos:** palabra literal presente en la celda de nombre de las agencias que ofrecen el servicio (incluye parciales), contada una vez por agencia. Las palabras que la ficha cita en negativo («no aparece SEO») no cuentan.
-- **Matriz de coincidencias:** cuántas agencias ofrecen los dos servicios a la vez (con parcial incluido; Dogstudio excluido de IA).
+- **Matriz de coincidencias:** cuántas agencias ofrecen los dos servicios a la vez (con parcial incluido; Dogstudio cuenta en IA, con nota).
 
 ---
 
@@ -30,7 +30,7 @@ Plenos = «Sí» sin «(parcial» en la celda del nombre. Incluye tres marcadas 
 | 5 | [Performance](05-performance.md) | 2020 | **7** | 3 (3 parciales) | 4 (1 pleno, 3 parciales) | «paid media» (3), «ROI/ROAS» (3), «shopping» (1) | Stratagemma: pilar Performance & Advertising Control dentro de Ecommerce Operation Management. La palabra «performance» no aparece como nombre de servicio. |
 | 6 | [Desarrollo de apps y software](06-desarrollo-apps-software.md) | 2020 | **9** | 4 (3 plenos, 1 parcial) | 5 (2 plenos, 3 parciales) | «platform/product/software/sistemas» (7), «app» (4), «desarrollo/development» (3) | Monks: Solutions (Platforms); Work & Co: Technology (Platform engineering). |
 | 7 | [Fotografía y video](07-fotografia-video.md) | Nuevo | **6** | 3 (1 pleno, 2 parciales) | 3 (parciales) | «video» (4), «producción/production» (4), «foto/photo» (2) | Monopo: Communications (Photography & Film); Stratagemma: Visual Production System. Lo venden suelto tres (Screenfire, Single Grain, TESCANET). |
-| 8 | [Inteligencia artificial](08-inteligencia-artificial.md) | Nuevo | **10** (+1 mención) | 4 (3 plenos, 1 parcial) | 6 (plenos) + 1 mención | «AI/IA/KI» (10), «agent/agentic» (3), «automation» (3) | Monks: Technology Services (AI Transformation); Artefact: AI Acceleration; BlueOrange: Core capabilities. |
+| 8 | [Inteligencia artificial](08-inteligencia-artificial.md) | Nuevo | **11** | 4 (3 plenos, 1 parcial) | 7 (6 plenos; Dogstudio, con nota) | «AI/IA/KI» (11), «agent/agentic» (3), «automation» (3) | Monks: Technology Services (AI Transformation); Artefact: AI Acceleration; BlueOrange: Core capabilities. |
 | 9 | [SEO y GEO](09-seo-geo.md) | Nuevo | **13** | 10 (3 plenos, 7 parciales) | 3 (1 pleno, 2 parciales) | «SEO» (8), «GEO/AEO/AIO» (6), «search/posicionamiento» (4) | Digiberries: pilar SEO (SEO; SEO Local; GEO); Pallax: SEO/GEO en un mismo nombre; Single Grain: SEO Services y AEO & GEO en el menú. |
 | 10 | [CRO](10-cro.md) | Nuevo | **6** | 3 (2 plenos, 1 parcial) | 3 (2 plenos, 1 parcial) | «conversion» (6), «optimización/optimisation/optimization» (3), «CRO» (2) | Work & Co: pilar Marketing; Devibi: lista única. |
 | 11 | [Datos y automatización](11-datos-automatizacion.md) | Nuevo | **11** | 5 (2 plenos, 3 parciales) | 6 (4 plenos, 2 parciales) | «datos/data» (6), «analítica/analytics» (4), «automatización/automation» (3) | Artefact: Data Foundations & BI y Marketing Data & Digital; Monks: Solutions (Data); BlueOrange: Core capabilities. |
@@ -39,18 +39,18 @@ Plenos = «Sí» sin «(parcial» en la celda del nombre. Incluye tres marcadas 
 
 ## 2 · Matriz de coincidencias
 
-Cada celda cuenta las agencias que ofrecen **los dos** servicios (parcial incluido). La diagonal es el total de cada servicio. Dogstudio no cuenta en IA (mención).
+Cada celda cuenta las agencias que ofrecen **los dos** servicios (parcial incluido). La diagonal es el total de cada servicio. Dogstudio cuenta en IA como Sí, con nota (IA sólo como ejemplo).
 
 | | 1 Branding | 2 Social | 3 Web | 4 Campañas | 5 Performance | 6 Apps | 7 Foto/video | 8 IA | 9 SEO/GEO | 10 CRO | 11 Datos |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **1 Branding** | 11 | 4 | 11 | 7 | 2 | 7 | 4 | 4 | 7 | 4 | 5 |
+| **1 Branding** | 11 | 4 | 11 | 7 | 2 | 7 | 4 | 5 | 7 | 4 | 5 |
 | **2 Social** | 4 | 6 | 5 | 6 | 2 | 2 | 5 | 3 | 4 | 1 | 3 |
-| **3 Web** | 11 | 5 | 17 | 12 | 5 | 9 | 5 | 7 | 12 | 5 | 8 |
+| **3 Web** | 11 | 5 | 17 | 12 | 5 | 9 | 5 | 8 | 12 | 5 | 8 |
 | **4 Campañas** | 7 | 6 | 12 | 14 | 7 | 6 | 6 | 6 | 9 | 3 | 7 |
 | **5 Performance** | 2 | 2 | 5 | 7 | 7 | 3 | 2 | 4 | 4 | 3 | 6 |
-| **6 Apps** | 7 | 2 | 9 | 6 | 3 | 9 | 1 | 5 | 6 | 3 | 5 |
+| **6 Apps** | 7 | 2 | 9 | 6 | 3 | 9 | 1 | 6 | 6 | 3 | 5 |
 | **7 Foto/video** | 4 | 5 | 5 | 6 | 2 | 1 | 6 | 3 | 4 | 1 | 3 |
-| **8 IA** | 4 | 3 | 7 | 6 | 4 | 5 | 3 | 10 | 7 | 4 | 9 |
+| **8 IA** | 5 | 3 | 8 | 6 | 4 | 6 | 3 | 11 | 7 | 4 | 9 |
 | **9 SEO/GEO** | 7 | 4 | 12 | 9 | 4 | 6 | 4 | 7 | 13 | 5 | 7 |
 | **10 CRO** | 4 | 1 | 5 | 3 | 3 | 3 | 1 | 4 | 5 | 6 | 6 |
 | **11 Datos** | 5 | 3 | 8 | 7 | 6 | 5 | 3 | 9 | 7 | 6 | 11 |
@@ -60,7 +60,7 @@ Cada celda cuenta las agencias que ofrecen **los dos** servicios (parcial inclui
 - **SEO y GEO con Desarrollo Web:** 12 de 13. **SEO y GEO con Campañas:** 9 de 13.
 - **SEO y GEO y CRO:** 5 de 13. Por tanto, CRO aparece junto a SEO en 5 agencias y sin SEO en 1 (Upraw Media).
 - **SEO y GEO en un mismo nombre:** 2 agencias (Digiberries Paris, Pallax Media). En Single Grain van en dos nombres dentro del menú. Work & Co y Code and Theory nombran GEO o AEO sin SEO.
-- **IA con Datos:** 9 de 10 agencias de IA ofrecen también datos (la que no es Code and Theory). **Datos con IA:** 9 de 11 (las dos que no tienen IA son StudioDigital y Upraw Media).
+- **IA con Datos:** 9 de 11 agencias de IA ofrecen también datos; las dos que no lo ofrecen son Code and Theory y Dogstudio. **Datos con IA:** 9 de 11 (las dos que no tienen IA son StudioDigital y Upraw Media).
 - **Datos con automatización en el mismo nombre:** 2 agencias (Devibi, StudioDigital), en la fila 11.
 - **CRO con Datos:** 6 de 6. **CRO con IA:** 4 de 6.
 
@@ -79,12 +79,12 @@ La TASK pide separar los dos grupos porque los comparables son el modelo de esca
 | 5 Performance | 3 | 4 |
 | 6 Apps y software | 4 | 5 |
 | 7 Foto y video | 3 | 3 |
-| 8 IA | 4 | 6 (+1 mención) |
+| 8 IA | 4 | 7 (Dogstudio, con nota) |
 | 9 SEO y GEO | **10** | 3 |
 | 10 CRO | 3 | 3 |
 | 11 Datos y automatización | 5 | 6 |
 
-En las comparables, 2 servicios están en las 10 (Web y SEO/GEO). En referentes y especialistas, no hay ningún servicio que llegue a 10. La suma de la columna de comparables es 58 y la de referentes 52; las dos sumas dan 110, el total de la columna «Agencias que lo ofrecen» de la tabla 1 (con IA sin mención).
+En las comparables, 2 servicios están en las 10 (Web y SEO/GEO). En referentes y especialistas, no hay ningún servicio que llegue a 10. La suma de la columna de comparables es 58 y la de referentes 53; las dos sumas dan 111, el total de la columna «Agencias que lo ofrecen» de la tabla 1 (IA incluye a Dogstudio, con nota).
 
 ---
 
@@ -119,7 +119,7 @@ Información para Miguel, **no una propuesta** (`DECISION-002`). Un servicio cue
 Lo que muestran los datos, sin proponer agrupación:
 
 - **SEO y GEO:** en la muestra aparece como un servicio junto a web y campañas, pero casi nunca con nombre único. Dos agencias lo nombran junto; el resto lo nombra por separado o sólo como SEO.
-- **IA:** con datos (9 de 10) y con SEO (7 de 10). Es el servicio más unido a datos.
+- **IA:** con datos (9 de 11) y con SEO (7 de 11). Es el servicio más unido a datos.
 - **Datos y automatización:** los dos nombres van juntos en 2 agencias y separados en otras; analítica y tracking aparecen más que automatización como palabra.
 - **CRO:** siempre con datos (6 de 6). Es el servicio con menos agencias (6).
 

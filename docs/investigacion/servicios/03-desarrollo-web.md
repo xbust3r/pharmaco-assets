@@ -107,7 +107,7 @@ Las siete agencias de esta lista tienen captura citada en su ficha. El resto de 
 - **Con Branding:** 11 de 17. En sentido contrario, las 11 de Branding ofrecen Desarrollo Web.
 - **Con Datos y automatización:** 8 de 17.
 - **Con Desarrollo de apps y software:** 9 de 17.
-- **Con Inteligencia artificial:** 7 de 17.
+- **Con Inteligencia artificial:** 8 de 17 (incluye [Dogstudio](../fichas/dogstudio.md), con IA sólo como ejemplo: anotado).
 - **Con Social Media:** 5 de 17. **Con CRO:** 5 de 17.
 
 Todas las cifras salen de la matriz de coincidencias de las 20 fichas (ver [`resumen.md`](resumen.md)).

@@ -90,7 +90,7 @@ No hay en la muestra una página de branding con bloques de proceso, portafolio 
 - **Con Desarrollo Web:** las 11 agencias que ofrecen Branding también ofrecen Desarrollo Web (con parcial incluido). En sentido contrario, 11 de las 17 que ofrecen Desarrollo Web ofrecen también Branding.
 - **Con Campañas publicitarias:** 7 de las 11 agencias de Branding ofrecen también Campañas (por ejemplo [Instrument](../fichas/instrument.md), [Monopo](../fichas/monopo.md) como parcial).
 - **Con Social Media:** 4 de las 11 agencias de Branding ofrecen también Social Media ([Agencia Buffalo](../fichas/agencia-buffalo.md), [Media.Monks](../fichas/media-monks.md), [Monopo](../fichas/monopo.md), [TESCANET](../fichas/tescanet.md)).
-- **Con Inteligencia artificial:** 4 de las 11 agencias de Branding ofrecen también IA ([Devibi](../fichas/devibi.md), [Pallax Media](../fichas/pallax-media.md), [Media.Monks](../fichas/media-monks.md), [Work & Co](../fichas/work-and-co.md)). [Dogstudio](../fichas/dogstudio.md) figura en la matriz de IA sólo como mención y no cuenta aquí.
+- **Con Inteligencia artificial:** 5 de las 11 agencias de Branding ofrecen también IA ([Devibi](../fichas/devibi.md), [Pallax Media](../fichas/pallax-media.md), [Media.Monks](../fichas/media-monks.md), [Work & Co](../fichas/work-and-co.md) y [Dogstudio](../fichas/dogstudio.md), con IA sólo como ejemplo: anotado).
 
 Las cifras de este apartado salen de la matriz de coincidencias de las 20 fichas (ver [`resumen.md`](resumen.md)).
 
