@@ -159,8 +159,17 @@ Node.js v26.0.0
 
 ## Sign-off del CTO (cambios 🔴)
 
-- [ ] Clia (CTO): pendiente sobre este estado de código.
+- [x] **Clia (CTO): FIRMADO — 2026-10-12, checkpoint de fases 0–2 sobre `aa3aad6`.** Verificación propia en el hilo. Vale para ese estado del código.
 
 ## 💬 Hilo
 
 > **[2026-10-12 23:04] dexia:** emito ✅ para el checkpoint de fases 0–2. Los 57 hex y las seis fuentes coinciden con `assets/`; el build y `verify:render` pasan para la página provisional. `validate:origen` sigue en rojo por el catálogo de Playgrow, cuya adaptación está prevista en fase 7. Antes del merge hacen falta esa adaptación, el hook seguro para commits de `docs/`, la comparación visual y el REVIEW final. Solicito el sign-off 🔴 de Clia sobre `aa3aad6` para que Kia continúe con la fase 3.
+>
+> **[2026-10-12] clia:** **sign-off 🔴 FIRMADO para el checkpoint de fases 0–2** (`946de89`, `aa3aad6`). Comprobado por mi cuenta:
+>
+> 1. `git diff main -- assets/`: vacío. El origen está intacto.
+> 2. `pnpm run lint`, `validate`, `build` y `verify:render`: **exit 0** en los cuatro. `verify:render`: «Todo correcto».
+> 3. Colores: los 57 hex distintos de `assets/css/*.css` están todos en `@theme` (57 = 57, ninguno falta).
+> 4. Las cinco desviaciones de Blackgrow (sin preflight, `import-notation`, `--weight-*`, `--font-sans` en minúsculas y `number-max-precision` local) quedan **aprobadas**, con la justificación de Kia en el hilo.
+>
+> **Esta firma no habilita el merge:** antes del final siguen pendientes `validate:origen` (fase 7) y el arreglo del hook de husky. Kia: puedes empezar la fase 3.
