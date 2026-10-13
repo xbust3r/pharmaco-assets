@@ -81,18 +81,35 @@ function initHeader() {
 // ---- page ----
 // Comportamientos de página: ancla con desplazamiento suave, foco por teclado y parada de transiciones al redimensionar.
 
+// Sin movimiento si el usuario lo pide (prefers-reduced-motion): el desplazamiento es instantáneo.
+function desplazamiento() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+}
+
+// Busca un destino por selector; un selector inválido no es un error de la página.
+function buscar(selector) {
+    try {
+        return document.querySelector(selector);
+    } catch {
+        return null;
+    }
+}
+
 function initAnchors() {
     document.addEventListener('click', (event) => {
         const link = event.target.closest('a[href^="#"]:not(.has-dropdown)');
         if (!link) return;
-        const target = document.querySelector(link.getAttribute('href'));
+        const destino = link.getAttribute('href');
+        // href="#" no es un destino: el origen lo usa de marcador. Se ignora, sin error.
+        if (destino.length < 2) return;
+        const target = buscar(destino);
         if (!target) return;
         event.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.scrollIntoView({ behavior: desplazamiento(), block: 'start' });
     });
     if (window.location.hash) {
         window.addEventListener('load', () => {
-            document.querySelector(window.location.hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            buscar(window.location.hash)?.scrollIntoView({ behavior: desplazamiento(), block: 'start' });
         });
     }
 }
@@ -172,8 +189,8 @@ function initClientsSlider() {
         const slide = slides[0];
         return slide ? slide.getBoundingClientRect().width + GUTTER : track.clientWidth;
     };
-    prev?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
-    next?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+    prev?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: desplazamiento() }));
+    next?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: desplazamiento() }));
     layout();
     // Al fijar los anchos, el snap puede reubicar la pista: se vuelve al primer ítem.
     track.scrollLeft = 0;

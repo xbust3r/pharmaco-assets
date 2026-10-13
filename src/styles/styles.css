@@ -212,6 +212,10 @@
 @source "../**/*.pug";
 @source "../**/*.js";
 
+/* Tailwind busca en todo el repositorio: el CSS de origen y los documentos citan clases; no son marcado del producto. */
+@source not "../../assets";
+@source not "../../docs";
+
 /* El estado de un componente vive en su clase, como en el origen (`is-active`). */
 @custom-variant is-active (&.is-active);
 

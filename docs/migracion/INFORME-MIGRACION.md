@@ -41,6 +41,7 @@
 
 - **`width`/`height` del `img`** se convierten en `aspect-[W/H]`. El origen los usa como proporción cuando el CSS deja el alto en automático, y algunos no coinciden con el archivo real. Quitarlos sin más dejaba el alto a 0 (detectado y corregido con la comprobación de geometría).
 - **`height="auto"`** (valor inválido) se quita; el CSS fija el alto.
+- **Icono de vídeo** (`campana-stralis`, `campana-cyberwow`): el CSS del origen lo referencia como `../../images/components/icon-videos.svg`, relativo a `css/main.css`; desde la raíz del sitio apunta fuera de `assets/`. La migración usa `images/components/icon-videos.svg` dentro de `assets/`, donde está el archivo. El build lo resuelve (sin avisos) y se sirve como `image/svg+xml`. Tailwind no escanea `assets/` ni `docs/`, para que las citas de esas rutas no generen utilidades.
 - **Dos imágenes rotas en el origen** (ver §4.2). Se migran sin archivo: en `campana-cyberwow` y `campana-iveco` el `img` de respaldo de un `picture` apunta al primer `source`, que es el que el navegador ya usaba. El `src` roto queda en un comentario `//-` de la página, para que el dato no se pierda.
 
 ### 3.3 Medias queries y estilos de origen
@@ -52,7 +53,7 @@
 
 ### 3.4 JavaScript (fase 6)
 
-Sustituciones, sin dependencias nuevas, con `prefers-reduced-motion` respetado:
+Sustituciones, sin dependencias nuevas. Con `prefers-reduced-motion: reduce`, el desplazamiento de anclas y del slider es instantáneo (comprobado en el build servido):
 
 | Hoy (origen) | Migrado |
 | --- | --- |
@@ -91,7 +92,7 @@ Un único `main.js`: las 10 páginas son entradas separadas, y con formato `iife
 
 ### 4.3 Peso
 
-- **Imágenes:** 218 archivos, 31 MB, copiados a `src/assets/images/` para que el build los sirva. Es mucho para un repositorio. Pregunta para Clia: ¿se versionan así, se usa LFS, o se sirven desde `assets/` como estáticos?
+- **Imágenes:** 218 archivos, 31 MB, copiados a `src/assets/images/` para que el build los sirva. Se versionan en Git normal, sin LFS, sólo los formatos que referencia el marcado (decisión de Clia).
 
 ## 5. Verificación
 
@@ -100,10 +101,12 @@ Salida completa, con código de salida por comando, en `docs/migracion/logs/`.
 | Comprobación | Resultado | Registro |
 | --- | --- | --- |
 | `pnpm optimize`, `lint`, `validate`, `build` | código 0 | `fase-7-verificacion.txt` |
-| `pnpm verify:render` | código 0, 0 FALLOS, 116 AVISOS (ver §4.1) | `fase-7-verificacion.txt` |
+| `pnpm verify:render` | código 0, 0 FALLOS, 0 valores arbitrarios repetidos, 134 AVISOS de clases repetidas (ver §4.1) | `fase-7-verificacion.txt` |
 | `pnpm validate:origen` (texto y hooks frente a `assets/`) | código 0, 0 FALLOS en las 10 páginas | `fase-7-verificacion.txt` |
-| Geometría frente al origen, 1280 y 375 px | 8 de 10 páginas con la misma altura; desalineados en las 4 restantes (§4.1) | `fase-7-geometria.txt` |
-| Capturas origen y migrada, 375 y 1280 px (viewport) | 40 PNG | `docs/migracion/capturas/fase7-*.png` |
+| Geometría frente al origen, 1280 y 375 px | las 10 páginas con la misma altura en las dos anchuras; 0 cajas desalineadas en 8 páginas; 38 (`index`) y 19 (`nosotros`) del slider, por DOM clonado (§4.1) | `fase-7-geometria.txt` |
+| Capturas origen y migrada, 375 y 1280 px (viewport), más slider | 40 PNG de páginas y 8 de slider | `docs/migracion/capturas/fase7-*.png` |
+| Movimiento reducido (emulado): anclas y botones del slider | instantáneo con `prefers-reduced-motion: reduce`; animado sin la preferencia | verificación manual en el build servido |
+| Enlace `href="#"` | sin error de página | verificación manual |
 | Errores de consola en el navegador | ninguno en `index`, `contactanos`, `servicio-detalle` y `campana-stralis` | verificación manual |
 | Ausencia de jQuery, Modaal, AOS y tiny-slider en fuentes | 0 referencias (grep) | verificación manual |
 | `git diff main -- assets/` | vacío | verificación manual |
