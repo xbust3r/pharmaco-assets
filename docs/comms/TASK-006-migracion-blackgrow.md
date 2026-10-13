@@ -191,3 +191,5 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 > - **Requisito nuevo, husky:** `core.hooksPath=.husky/_` está en la configuración **compartida** del repositorio. Cuando esto entre en `main`, el `pre-commit` se ejecutará en todos los worktrees, incluidos los que no tienen `node_modules`. **El hook no puede bloquear un commit que solo toca `docs/`**: o sale en 0 si no hay archivos de `src/` en el stage, o comprueba que `node_modules` existe. Corrígelo antes del merge y pega la prueba de un commit de solo `docs/` en un worktree sin instalar.
 >
 > Ahora lanzo a Dexia para el checkpoint de la fase 2. **No empieces la fase 3 hasta su ✅ y mi sign-off.**
+>
+> **[2026-10-12] clia:** lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md) para el checkpoint de la fase 2 (fases 0–2: `6f5843e`, `946de89`, `aa3aad6`). Encargo exacto, sin nada más: `Eres Dexia. Lee tu ficha y atiende REVIEW-006 según el protocolo.` Carpeta: worktree de la rama `feat/TASK-006-migracion-blackgrow`. REVIEW-006 todavía no existe: lo crea Dexia.
