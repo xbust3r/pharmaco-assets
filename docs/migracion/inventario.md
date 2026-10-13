@@ -27,9 +27,9 @@ Las comprobaciones de referencias (487 rutas locales) se hicieron con scripts so
 
 Estas son las diferencias entre el encargo (TASK-006, DECISION-010) y el origen, o entre `sistema-web-assets.md` y el origen. Se han llevado al hilo de la TASK.
 
-1. **Son 10 maquetas, no 9.** TASK-006 y DECISION-010 dicen «9». `assets/` tiene 10 `.html`. Se inventarían las 10. Pregunta abierta en el hilo; hasta respuesta, se migran las 10 (la fase 5 pide «fieles a `assets/*.html`»).
-2. **Hay medias queries fuera de los 7 breakpoints.** DECISION-010 y la TASK piden «los 7 breakpoints de origen». El CSS compilado tiene 19 `@media`: 7 `min-width` de sass-mq, y 12 más (sección 5.3): 6 `max-width` (600, 700, 900, 980, 1140 px), 4 `max-height` (820, 900, 1000 y 1100 px), un `min-width:1400px` que duplica `ultrawide` y un `@media screen` sin condición. Los 7 valores sí existen. Hay que decidir si los otros 12 se mantienen como breakpoints propios de `@theme` o se resuelven como excepciones.
-3. **Sólo hay 3 pesos de Poppins, no 5.** `assets/fonts/` contiene Regular, Medium y SemiBold, cada uno en `.woff2` y `.woff`. El CSS pide también 300, 700 y «bolder» (sección 5.2). `sistema-web-assets.md` nombra Bold y ExtraBold: **no existen**.
+1. **Son 10 maquetas, no 9.** TASK-006 y DECISION-010 dicen «9». `assets/` tiene 10 `.html`. Se inventarían las 10. **Resuelto por Clia (TASK-006): se migran las 10.**
+2. **Hay medias queries fuera de los 7 breakpoints.** DECISION-010 y la TASK piden «los 7 breakpoints de origen». El CSS compilado tiene 19 `@media`: 7 `min-width` de sass-mq, y 12 más (sección 5.3): 6 `max-width` (600, 700, 900, 980, 1140 px), 4 `max-height` (820, 900, 1000 y 1100 px), un `min-width:1400px` que duplica `ultrawide` y un `@media screen` sin condición. Los 7 valores sí existen. **Resuelto por Clia (TASK-006):** los de ancho pasan a breakpoint con nombre en `@theme` si no coinciden con uno de los 7: 700 px (= `tablet`) y 980 px (= `desktop`) ya existen; 600, 900 y 1140 px entran como tokens nuevos si se usan. Los de altura (820 a 1100 px) se migran como variantes a medida y se documentan una a una. El `min-width:1400px` duplicado y el `@media screen` sin condición no se migran y se anotan.
+3. **Sólo hay 3 pesos de Poppins, no 5.** `assets/fonts/` contiene Regular, Medium y SemiBold, cada uno en `.woff2` y `.woff`. El CSS pide también 300, 700 y «bolder» (sección 5.2). **Resuelto por Clia:** se migran igual; el navegador sintetiza el peso, y se anota. `sistema-web-assets.md` nombra Bold y ExtraBold: **no existen**.
 4. **El ancho del contenedor es 1302 px, no 1200 px.** `.o-wrapper` tiene `max-width: 1302px` y `padding: 30px` (CSS compilado y `objects/_objects.wrapper.scss`). `sistema-web-assets.md` dice 1200 px.
 5. **Dos referencias de imagen rotas en el origen.** Se migran rotas y se listan en el informe (sección 7.3).
 6. **Enlaces internos a páginas que no existen.** `test.html`, `blog.html`, `buscar.html` y `portafolio-detalle.html` (sección 8). Se migran tal cual.
@@ -318,9 +318,9 @@ Lo que el documento de TASK-004 dice y que al leer `assets/` no se sostiene. No 
 
 ## 10. Pendientes para fases siguientes
 
-- **Decisión de Clia:** 9 o 10 maquetas (sección 2.1).
-- **Decisión de Clia:** los 12 `@media` propios: ¿se mantienen como breakpoints del sistema o como excepciones por componente? (sección 2.2)
-- **Decisión de Clia:** el orden de la condición del botón de contacto (sección 2.7).
+- **Resuelto por Clia:** 10 maquetas (sección 2.1).
+- **Resuelto por Clia:** los 12 `@media` propios (sección 2.2), según la regla de la sección 2.2.
+- **Pendiente, anotado por Clia:** el orden de la condición del botón de contacto (sección 2.7). Se reproduce tal cual hasta que haya decisión. Igual con los enlaces a páginas inexistentes (sección 8) y las dos imágenes rotas (sección 7.3).
 - **Fase 2:** nombres de los tokens de color y tamaño; escala de espaciados e interlineados completa.
 - **Fase 6:** comportamiento de tiny-slider con `controlsContainer` en el navegador.
 - **Fase 7:** capturas de cada página a 375 px y en escritorio, origen contra migración.
