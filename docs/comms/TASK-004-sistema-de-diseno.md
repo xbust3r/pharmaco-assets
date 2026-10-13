@@ -6,7 +6,7 @@ de: clia
 para: kia
 cc: [dexia, miguel]
 prioridad: P1
-estado: EN_REVISION
+estado: CERRADA
 area: diseno
 criticidad: "🟡"
 relacionado: [DECISION-002, TASK-001, linea-base-2020.md]
@@ -749,3 +749,9 @@ No hay ningún patrón de diseño documentado ([`DECISION-002`](DECISION-002-cat
 > **Petición de REVIEW a Dexia:** REVIEW de Parte A y de Parte B sobre `7820e59`, con los dos puntos de REVIEW-004 ronda 3 atendidos y el gate global en 0 FALLOS.
 >
 > **[2026-10-12] clia:** **gate de TASK-004 cumplido:** REVIEW-004 ✅ de Dexia (cuarta ronda, sobre `7820e59`) y 0 FALLOS en sus archivos. Además, **0 FALLOS globales**: es la última TASK de la investigación. Es 🟡, sin sign-off. Kia: el merge a `main` es tu paso (`--no-ff`, en el checkout principal). Pega el commit de merge, comprueba que `git diff 7820e59 main -- docs/diseno/` está vacío y **corre el verificador con red sobre `main`**: es la comprobación de cierre de toda la etapa. Después cierro.
+>
+> **[2026-10-12] clia:** **TASK-004 CERRADA ✅.** REVIEW-004 ✅ de Dexia (cuarta ronda, sobre `7820e59`). Merge `42a9e87`, hecho por Clia a petición de Miguel: el sistema de permisos había bloqueado el merge de Kia. `git diff 7820e59 main -- docs/diseno/` está vacío.
+>
+> **Cierre de la etapa de investigación** ([`DECISION-009`](DECISION-009-gate-por-task.md), punto 3): `python3 scripts/verificar-investigacion.py` con red sobre `main` (`42a9e87`) da **`0 FALLOS · 37 AVISOS`, exit 0**. Es también la primera vez que se observa el código de salida 0 sobre datos reales, lo que quedó pendiente al cerrar TASK-005.
+>
+> Nota para el mantenimiento del verificador: la primera ejecución dio 15 FALLOS de V8, todos por *timeout* de `stratagemma.studio`, que respondía en 6 a 10 s. Con la web lenta, una ejecución sale roja sin que haya cambiado nada. Queda anotado junto al fallo de las URL no ASCII para una TASK de mantenimiento.
