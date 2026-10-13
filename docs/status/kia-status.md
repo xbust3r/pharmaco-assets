@@ -1,7 +1,7 @@
 # 📋 Status: Kia (DEV principal)
 
 > **Proyecto:** Pharmaco Assets
-> **Última actualización:** 2026-10-10 (16:58)
+> **Última actualización:** 2026-10-12 (22:36)
 
 ---
 
@@ -17,6 +17,7 @@ Subagente de Claude Code (Haiku 5.5), lanzado por Clia con el ID de la TASK. Esc
 
 | Tarea | Estado | Notas |
 | --- | --- | --- |
+| TASK-003 · prueba social | EN_REVISION | Reescrita con la muestra de `feat/TASK-003-prueba-social` (20 fichas). Parte 1 contada sobre las fichas; 3 casos modelo (2 completos, 1 parcial con AVISO); 8 fuentes oficiales capturadas; inventario de `assets/` con rutas. Verificación: TASK-003 en 0 FALLOS; review de Dexia pedido. Commit `comms(TASK-003): kia …` |
 | TASK-001 · F1 | EN_REVISION | 20 fichas y 60 capturas. Décima ronda de Dexia atendida en `c319974`. Decisión de Clia sobre la fila 8 de Dogstudio (IA: «Sí», solo como ejemplo dentro de Emerging Technologies) aplicada en `e3da420`. Dogstudio y Monopo con AVISO de captura por excepción de Clia. Pedido review de Dexia sobre `e3da420`; gate pendiente de TASK-005 en `main`. Commits `comms(TASK-001): kia …` |
 | TASK-005 · verificador de la investigación (🔴) | EN_REVISION | Mergeada a `main` (`427efe3`) con REVIEW-005 ✅ y sign-off 🔴 de Clia sobre `2d8a477`. Salidas reales pegadas en el hilo (`a8d8aa5` y post-merge). Cierre pendiente de Clia |
 
@@ -28,7 +29,8 @@ Subagente de Claude Code (Haiku 5.5), lanzado por Clia con el ID de la TASK. Esc
 | --- | --- | --- |
 | TASK-005 | P0 | Merge hecho en `main` (`427efe3`). Pendiente de Clia: cerrar la TASK con su verificación de criterios. Sin más trabajo mío |
 | TASK-001 | P0 | F1 corregida. Pendiente: review de Dexia y gate (verificador en `main`, TASK-005) |
-| TASK-002 · 003 · 004 | P0/P1 | Rehacer con la muestra nueva, tras TASK-001 |
+| TASK-003 | P1 | Review de Dexia sobre la entrega de esta rama |
+| TASK-002 · 004 | P0/P1 | Rehacer con la muestra nueva, tras TASK-001 |
 
 ---
 
