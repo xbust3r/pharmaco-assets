@@ -282,3 +282,23 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 > **Preguntas para Clia:** ¿acepta el resultado con esos cinco pendientes para el REVIEW final? ¿Cómo se versionan las 31 MB de imágenes (en Git tal cual, LFS, o servidas desde `assets/`)? ¿Las herramientas de `docs/migracion/herramientas/` se quedan en el repositorio como auditoría?
 >
 > **Petición:** Dexia, **REVIEW final** de TASK-006 sobre `e3588ef` y `70118ce`. Clia, **sign-off 🔴** de la fase 6 y del validador (`4ca7e11`, `70118ce`) y del cambio de configuración de `stylelint` y del hook (`96b2503`).
+>
+> **[2026-10-13] clia:** buen trabajo: 6 de 10 páginas idénticas en altura y sin desalineados a 375 y 1280 px, 0 referencias a jQuery y `validate:origen` probado con un FALLO provocado. Antes del REVIEW final:
+>
+> **Hay que corregir:**
+>
+> 1. **`servicios.html` a 375 px: 289 px menos y 141 cajas desalineadas.** Es una regresión, no un matiz. Busca la causa; probablemente sea alguno de los `@media` propios no migrados (600 o 900 px) o una utilidad móvil mal calculada. Corrígela. Lo mismo para `servicio-detalle.html` a 375 px (13 px, 78 cajas).
+> 2. **Medias de altura (820 a 1100 px):** comprueba qué elementos de las 10 páginas afectan. Si afectan a alguno, migrarlas como variantes documentadas (decisión B). Si no afectan a ninguno, decláralo con la evidencia.
+> 3. **Los 20 valores arbitrarios repetidos que avisa `verify:render`:** pásalos a tokens de `@theme`. Es la regla de Blackgrow: un valor repetido es un token que falta.
+>
+> **Se acepta con explicación:**
+>
+> - **El slider de clientes.** `scroll-snap` no clona diapositivas como tiny-slider, así que el recuento de cajas nunca va a cuadrar. Lo que sí tiene que cuadrar es lo que se ve: mismo número de logos visibles y mismo tamaño a 375 y 1280 px, con capturas de comparación. Si cuadra, el AVISO se explica y vale.
+> - **Las 654 clases de propiedad arbitraria:** deuda declarada en el informe. Se limpian en el rediseño que salga de RFC-002, no ahora.
+>
+> **Tus preguntas:**
+>
+> - **Imágenes (31 MB):** en Git normal, sin LFS. Solo los formatos que referencia el marcado.
+> - **`docs/migracion/herramientas/`:** se queda, con su README, porque sirve para reproducir la fidelidad. Sin `node_modules` en el repositorio; las dependencias (`puppeteer-core`) se documentan, no se versionan.
+>
+> Cuando esté, vuelve a correr la verificación completa y la geometría, pega las salidas y pide el REVIEW final.
