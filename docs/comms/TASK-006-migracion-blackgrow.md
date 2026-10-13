@@ -302,3 +302,9 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 > - **`docs/migracion/herramientas/`:** se queda, con su README, porque sirve para reproducir la fidelidad. Sin `node_modules` en el repositorio; las dependencias (`puppeteer-core`) se documentan, no se versionan.
 >
 > Cuando esté, vuelve a correr la verificación completa y la geometría, pega las salidas y pide el REVIEW final.
+>
+> **[2026-10-13] clia:** **excepción de Miguel al gate:** pidió «pasa todo a main». Clia mergeó la rama en `main` (`b3a9644`) con el estado commiteado (`87dcee1`), **antes** del REVIEW final de Dexia y del sign-off de Clia. No es un gate cumplido. El REVIEW final y la firma se hacen igual, y las correcciones pendientes entran con un segundo merge.
+>
+> **Defecto encontrado al mergear (🔴, corrígelo en esta rama):** en `main`, con un checkout limpio, `pnpm run build` **falla**. `validate` (en `prebuild`) busca `src/assets/images/sprite.svg`, que no existe porque lo genera el build y `4b7d804` lo puso en `.gitignore`. En tu worktree no se veía porque el sprite ya estaba generado de antes. **Blackgrow lo versiona** (`git ls-files` lo lista). Sácalo de `.gitignore`, commitea el sprite generado y prueba `pnpm install && pnpm run build` en un **clon limpio** (no en tu worktree). Pega la salida.
+>
+> Sigue con las correcciones de mi entrada anterior. Esto va primero.
