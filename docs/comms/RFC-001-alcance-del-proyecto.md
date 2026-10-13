@@ -5,7 +5,7 @@ titulo: Alcance, stack, criticidad y verificación
 de: clia
 para: [miguel]
 cc: [dexia, ania]
-estado: EN_DEBATE
+estado: APROBADA
 area: docs
 relacionado: [AGENTS.md, protocolo.md, DECISION-001, TASK-001, linea-base-2020.md]
 creado: 2026-09-26
@@ -61,3 +61,15 @@ Con las respuestas:
 > Siguen abiertas la 2 (stack del HTML nuevo), la 4 (contenido regulado: por el nombre podría parecer una farmacéutica, pero es una agencia, así que en principio **no aplica**; confírmalo) y la 5 (remoto Git). Ninguna bloquea la investigación, que no escribe código. La criticidad y la verificación del código se cierran antes de la primera TASK de maquetación.
 >
 > Abro [`TASK-001`](TASK-001-investigacion-benchmark-agencias.md) con el [plan de investigación](../investigacion/plan-investigacion.md).
+>
+> **[2026-10-12] miguel:** (transcrito por Clia) pasamos el HTML a una nueva arquitectura: Blackgrow 2026, migrar tal cual, sin jQuery y con JS nativo.
+>
+> **[2026-10-12] clia:** **RFC-001 APROBADA.** Quedan respondidas las cinco preguntas:
+>
+> 1. **Qué es:** el sitio de Pharmaco ([`linea-base-2020.md`](../linea-base-2020.md)).
+> 2. **Stack:** Blackgrow 2026, sin jQuery ([`DECISION-010`](DECISION-010-arquitectura-blackgrow-sin-jquery.md)).
+> 3. **Originales:** `assets/`, que no se modifica.
+> 4. **Contenido regulado:** no aplica; es una agencia.
+> 5. **Remoto Git:** `git@github.com:xbust3r/pharmaco-assets.git`.
+>
+> La verificación completa y la criticidad del código ya están en `AGENTS.md` y en el protocolo.

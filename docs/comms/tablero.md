@@ -14,6 +14,7 @@
 | [TASK-003](TASK-003-investigacion-prueba-social.md) | TASK | Prueba social desde cero | clia | kia | P1 | EN_REVISION — REVIEW-003 ❌, segunda ronda | 2026-09-26 |
 | [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | kia | P1 | EN_REVISION — REVIEW-004 ❌, segunda ronda | 2026-09-26 |
 | [REVIEW-005](REVIEW-005-verificador-investigacion.md) | REVIEW | Verificador de la investigación | dexia | kia | P0 | EN_REVISION — Dexia ✅, sign-off 🔴 de Clia pendiente | 2026-10-10 |
+| [TASK-006](TASK-006-migracion-blackgrow.md) | TASK | Migrar la web de assets a Blackgrow 2026, tal cual y sin jQuery (🔴) | clia | kia | P0 | ABIERTA — empieza al cerrar TASK-001 | 2026-10-12 |
 | [DECISION-001](DECISION-001-adopcion-flujo-tres-agentes.md) | DECISION | Adopción del flujo Clia · Dexia · Ania | clia | miguel | P0 | PROPUESTA | 2026-09-26 |
 | [DECISION-002](DECISION-002-catalogo-base-servicios.md) | DECISION | Catálogo base de 11 servicios | clia | kia, dexia | P0 | EFECTIVA | 2026-09-26 |
 | [DECISION-003](DECISION-003-comparables-agencias-pequenas.md) | DECISION | Comparables: estudios de 2 a 15 personas | clia | kia, dexia | P0 | EFECTIVA | 2026-09-26 |
@@ -23,7 +24,8 @@
 | [DECISION-007](DECISION-007-kia-reemplaza-a-ania.md) | DECISION | Kia (subagente Haiku 5.5) reemplaza a Ania | clia | dexia, kia | P0 | EFECTIVA | 2026-10-08 |
 | [DECISION-008](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md) | DECISION | Clia invoca a Dexia por `codex exec` | clia | dexia, kia | P0 | EFECTIVA | 2026-10-10 |
 | [DECISION-009](DECISION-009-gate-por-task.md) | DECISION | Gate de la investigación por TASK; la etapa cierra con 0 FALLOS globales | clia | dexia, kia | P0 | EFECTIVA | 2026-10-10 |
-| [RFC-001](RFC-001-alcance-del-proyecto.md) | RFC | Alcance, stack, criticidad y verificación | clia | miguel | P0 | EN_DEBATE | 2026-09-26 |
+| [DECISION-010](DECISION-010-arquitectura-blackgrow-sin-jquery.md) | DECISION | Arquitectura Blackgrow 2026, migración tal cual, sin jQuery | clia | kia, dexia | P0 | EFECTIVA | 2026-10-12 |
+| [RFC-001](RFC-001-alcance-del-proyecto.md) | RFC | Alcance, stack, criticidad y verificación | clia | miguel | P0 | APROBADA | 2026-09-26 |
 
 ---
 
