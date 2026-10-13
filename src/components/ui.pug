@@ -13,6 +13,6 @@ mixin svgIcon(name, title, cls, caja)
 mixin button(label, href, variant, large, cls, caja)
     - var fondo = variant === 'purple' ? 'bg-purple text-white hover:bg-purple-hover focus:bg-purple-hover' : ''
     a(
-        class=[caja || 'inline-flex', 'items-center justify-center text-center h-12 rounded-15 px-7.5 text-14 weight-medium leading-[1.2] no-underline shadow-none transition-all duration-200 ease-origin hover:shadow-soft focus:shadow-soft', fondo, large ? 'desktop:h-18 desktop:text-20 wide:h-16 wide:text-18 wide:rounded-20' : '', cls]
+        class=[caja || 'inline-flex', 'items-center justify-center text-center h-12 rounded-15 px-7.5 text-14 weight-medium leading-button no-underline shadow-none transition-all duration-200 ease-origin hover:shadow-soft focus:shadow-soft', fondo, large ? 'desktop:h-18 desktop:text-20 wide:h-16 wide:text-18 wide:rounded-20' : '', cls]
         href=href
         ) #{label}

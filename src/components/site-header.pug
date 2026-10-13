@@ -11,12 +11,12 @@ mixin navItem(href, texto)
 //- El estado abierto es la clase `is-active`, como en el origen (lo pone el JS, fase 6).
 mixin siteHeader()
     header(class='absolute inset-x-0 top-0 z-10 w-full py-header wide:pt-header-wide')
-        a(class='fixed top-0 left-0 inline-block bg-white px-5 py-2.5 text-ink no-underline opacity-0 pointer-events-none focus:pointer-events-auto focus:opacity-100 focus:outline-offset-[-2px] js-site-header-skip', href='#main') Ir a contenido principal
+        a(class='fixed top-0 left-0 inline-block bg-white px-5 py-2.5 text-ink no-underline opacity-0 pointer-events-none focus:pointer-events-auto focus:opacity-100 focus:outline-offset-skip js-site-header-skip', href='#main') Ir a contenido principal
         div(class='wrapper flex items-center justify-between')
             a(class='block', href='./', aria-label='Ir al inicio')
-                img(class='block h-auto w-[128px] tablet:w-[180px] desktop:w-[222px]', src='/src/assets/images/components/site-header/pharmaco-logo.svg', alt='Pharmaco Logo', width='128', height='10')
-            div(class='js-site-header-nav-wrapper fixed top-0 right-0 z-10 flex h-screen w-[90%] max-w-[320px] translate-x-full flex-col overflow-y-auto bg-white p-5 invisible [transition:transform_.3s_ease,visibility_ease_.3s] is-active:translate-x-0 is-active:visible desktop:static desktop:ml-auto desktop:flex desktop:h-auto desktop:w-auto desktop:max-w-none desktop:translate-x-0 desktop:visible desktop:overflow-visible desktop:bg-transparent desktop:p-0 desktop:transition-none desktop:flex-row desktop:items-center')
-                div(class='w-full desktop:mr-[50px] desktop:w-auto wide:mr-[100px] ultrawide:mr-[200px]', role='navigation')
+                img(class='block h-auto w-logo tablet:w-logo-tablet desktop:w-logo-desktop', src='/src/assets/images/components/site-header/pharmaco-logo.svg', alt='Pharmaco Logo', width='128', height='10')
+            div(class='js-site-header-nav-wrapper fixed top-0 right-0 z-10 flex h-screen w-nav-panel max-w-nav-panel translate-x-full flex-col overflow-y-auto bg-white p-5 invisible [transition:transform_.3s_ease,visibility_ease_.3s] is-active:translate-x-0 is-active:visible desktop:static desktop:ml-auto desktop:flex desktop:h-auto desktop:w-auto desktop:max-w-none desktop:translate-x-0 desktop:visible desktop:overflow-visible desktop:bg-transparent desktop:p-0 desktop:transition-none desktop:flex-row desktop:items-center')
+                div(class='w-full desktop:mr-nav-gap desktop:w-auto wide:mr-nav-gap-wide ultrawide:mr-nav-gap-ultrawide', role='navigation')
                     button(class='js-site-header-close-menu-button ml-auto flex items-center justify-center bg-transparent text-14 desktop:hidden', type='button', aria-label='Cerrar navegación', aria-expanded='false')
                         span Cerrar
                         +svgIcon('close', 'Cerrar navegación', 'ml-2.5 bg-purple-soft text-30 text-purple', 'flex')
@@ -29,8 +29,8 @@ mixin siteHeader()
             div(class='flex items-center justify-start')
                 a(class='flex items-center justify-center text-white no-underline js-site-header-menu-button', href='buscar.html', aria-label='Buscar', aria-expanded='false')
                     span(class='hidden text-16 wide:block') Buscar
-                    +svgIcon('search', 'Buscar', 'flex h-5.5 w-5.5 items-center justify-center text-18 wide:ml-[5px] wide:h-[26px] wide:w-[26px] wide:text-20', 'flex')
+                    +svgIcon('search', 'Buscar', 'flex h-5.5 w-5.5 items-center justify-center text-18 wide:ml-search wide:h-icon-lg wide:w-icon-lg wide:text-20', 'flex')
                 button(class='js-site-header-menu-button ml-2 flex h-5.5 w-5.5 items-center justify-center bg-transparent text-18 text-white desktop:hidden', type='button', aria-label='Abrir navegación', aria-expanded='false')
                     +svgIcon('menu', 'Abri navegación', '', 'inline-block')
                 +button('Contáctanos', 'contactanos.html', 'purple', true, 'ml-7.5 wide:ml-10 js-header-contact', 'hidden desktop:inline-flex')
-        div(class='js-overlay fixed top-0 left-0 z-[1] h-screen w-screen bg-overlay opacity-0 invisible [transition:opacity_.3s_ease,visibility_ease_.3s] is-active:visible is-active:opacity-100 desktop:hidden')
+        div(class='js-overlay fixed top-0 left-0 z-overlay h-screen w-screen bg-overlay opacity-0 invisible [transition:opacity_.3s_ease,visibility_ease_.3s] is-active:visible is-active:opacity-100 desktop:hidden')

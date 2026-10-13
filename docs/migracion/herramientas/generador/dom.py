@@ -112,6 +112,9 @@ def parse_selector(sel):
         m = re.compile(r'\[([^\]]+)\]').match(s, pos)
         if m:
             cur['attrs'].append(m.group(1)); pos = m.end(); continue
+        m = re.compile(r':not\(\[([\w-]+)\]\)').match(s, pos)
+        if m:
+            cur.setdefault('notattr', []).append(m.group(1)); pos = m.end(); continue
         m = re.compile(r':not\((\.[\w-]+)\)').match(s, pos)
         if m:
             cur['not'].append(m.group(1)[1:]); pos = m.end(); continue
@@ -138,6 +141,9 @@ def compound_ok(el, c):
             return False
     for cl in c['not']:
         if cl in el.classes:
+            return False
+    for na in c.get('notattr', []):
+        if na in dict(el.attrs):
             return False
     for a in c['attrs']:
         m = re.match(r'^([\w-]+)(?:([~|^$*]?=)(.*))?$', a)

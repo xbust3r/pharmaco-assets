@@ -35,6 +35,7 @@ UNSUPPORTED = collections.Counter()
 HOOKS_EXTRA = {
     'c-clients__slider': 'flex overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] js-clients-track',
     'c-clients__slide': 'js-slider-item snap-start shrink-0',
+    'c-clients__slider-controls': 'desktop:hidden',  # el origen los oculta desde escritorio; los botones siguen en el DOM para el JS
     'c-contact-form__item--business': 'js-business-item',
     'c-contact-form__item--textarea': 'js-textarea-item',
 }
@@ -86,8 +87,7 @@ def element_entries(el):
                 UNSUPPORTED['parse: ' + sel[:60]] += 1
                 continue
             last = chain[-1][1]
-            if len(chain) == 1 and any(c in ALIAS and c in el.classes for c in last['classes']):
-                continue  # la utilidad de alias ya cubre esta regla base
+            # las reglas de alias (o-wrapper, o-icon) se conservan: sus valores son la base de la cascada; coinciden con las utilidades
             res = dom.match(el, chain, len(chain) - 1)
             if res is None:
                 continue
@@ -188,6 +188,16 @@ def prefix_for(p, key):
     return ''.join(t + ':' for t in parts)
 
 HERO_ATTR = {}
+# Valor por defecto del navegador para `display` según la etiqueta (no es `initial`, que sería inline).
+BLOCK_TAGS = {'div','section','article','aside','header','footer','nav','main','p','h1','h2','h3','h4','h5','h6','ul','ol','dl','figure','figcaption','form','fieldset','blockquote','hr','address','dialog','details','summary'}
+NONE_TAGS = {'source','track','script','style','template','link','meta','head','title'}
+def default_display(tag):
+    if tag == 'li': return 'list-item'
+    if tag in NONE_TAGS: return 'none'
+    if tag in BLOCK_TAGS: return 'block'
+    if tag in ('button','input','select','textarea'): return 'inline-block'
+    return 'inline'
+
 def classes_for(el):
     entries = element_entries(el)
     groups = collections.defaultdict(list)
@@ -214,7 +224,8 @@ def classes_for(el):
                 val, imp = None, False
             if val is None:
                 if prev is not None and prev is not object() and prev is not None:
-                    out.append((p, key, util(prop, 'initial', False)))
+                    reset = default_display(el.tag) if prop == 'display' else 'initial'
+                    out.append((p, key, util(prop, reset, False)))
                 prev = None
                 continue
             if val != prev:
@@ -366,9 +377,12 @@ def node_lines_inner(node, depth):
         attrs.insert(0, 'class=' + attr_value(' '.join(cls)))
     if node.tag == 'img':
         d_ = dict(node.attrs)
+        if 'c-clients__client' in node.classes:
+            attrs = [a for a in attrs if not a.startswith('loading=')]  # el slider es horizontal: lazy no carga lo que no se ve
         w_, h_ = d_.get('width'), d_.get('height')
         attrs = [a for a in attrs if not a.startswith(('width=', 'height='))]
-        if w_ and h_ and re.match(r'^\d+$', w_) and re.match(r'^\d+$', h_):
+        es_svg = (d_.get('src') or '').lower().endswith('.svg')
+        if w_ and h_ and re.match(r'^\d+$', w_) and re.match(r'^\d+$', h_) and not es_svg:
             # los atributos width/height del origen sólo fijan la proporción: se convierte en aspect-ratio
             cls.append(f'aspect-[{w_}/{h_}]')
     tag_name = node.tag

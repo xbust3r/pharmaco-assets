@@ -13,12 +13,12 @@ mixin footerLink(href, texto)
 //- Pie del origen (.c-site-footer). Los textos y enlaces se copian tal cual, con sus
 //- aria-label del origen (incluido «Southern Harvest», que es resto de plantilla; ver inventario).
 mixin siteFooter()
-    footer(class='bg-dark-blue bg-no-repeat bg-[center_top] bg-blend-overlay footer-bg py-footer desktop:footer-bg-lg desktop:py-footer-wide')
+    footer(class='bg-dark-blue bg-no-repeat bg-top-center bg-blend-overlay footer-bg py-footer desktop:footer-bg-lg desktop:py-footer-wide')
         div(class='wrapper desktop:flex desktop:flex-wrap desktop:items-start desktop:justify-between')
-            div(class='desktop:max-w-[305px]')
+            div(class='desktop:max-w-footer-info')
                 h2(class='sr-only') Pharmaco
-                img(class='block h-auto w-[231px]', src='/src/assets/images/components/site-header/pharmaco-logo.svg', alt='Pharmaco logo', width='231', height='17', loading='lazy')
-                div(class='mt-5 text-16 weight-medium leading-[1.46] text-white')
+                img(class='block h-auto w-logo-footer', src='/src/assets/images/components/site-header/pharmaco-logo.svg', alt='Pharmaco logo', width='231', height='17', loading='lazy')
+                div(class='mt-5 text-16 weight-medium leading-footer-text text-white')
                     p(class='m-0 mb-5 last:mb-0') Desinf anything from simple clean style to fully featured websites.
                 div(class='mt-8.5 -ml-4.5 flex items-center justify-start')
                     +socialLink('Facebook', 'facebook', "Go to Southern Harvest's Facebook")
@@ -26,7 +26,7 @@ mixin siteFooter()
                     +socialLink('YouTube', 'youtube', "Go to Southern Harvest's YouTube")
                     +socialLink('Web', 'web', "Go to Southern Harvest's Web")
                     +socialLink('LinkedIn', 'linkedin', "Go to Southern Harvest's LinkedIn")
-            div(class='mt-10 desktop:mt-0 desktop:w-[500px] wide:w-[600px]')
+            div(class='mt-10 desktop:mt-0 desktop:w-footer-nav wide:w-footer-nav-wide')
                 h3(class='weight-semibold text-16 text-white') Contenido
                 ul(class='m-0 mt-5.5 list-none p-0 desktop:flex desktop:flex-wrap')
                     +footerLink('nosotros.html', 'Nosotros')
@@ -34,7 +34,7 @@ mixin siteFooter()
                     +footerLink('portafolio.html', 'Portafolio')
                     +footerLink('blog.html', 'Blog')
                     +footerLink('contactanos.html', 'Contacto')
-            p(class='mb-0 mt-15 text-16 weight-medium text-white desktop:mt-[130px] desktop:w-[calc(100%_-_200px)]') Pharmaco 2021 - Todos los derechos reservados
-            a(class='js-site-footer-to-top mt-9 inline-flex items-center justify-center rounded-15 bg-transparent py-2.5 pr-5 pl-0 text-16 weight-medium text-white no-underline transition-all duration-200 ease-origin hover:bg-white hover:text-dark-blue desktop:mt-[130px]', href='#main', aria-label='Volver arriba')
+            p(class='mb-0 mt-15 text-16 weight-medium text-white desktop:mt-footer-top desktop:w-footer-legal') Pharmaco 2021 - Todos los derechos reservados
+            a(class='js-site-footer-to-top mt-9 inline-flex items-center justify-center rounded-15 bg-transparent py-2.5 pr-5 pl-0 text-16 weight-medium text-white no-underline transition-all duration-200 ease-origin hover:bg-white hover:text-dark-blue desktop:mt-footer-top', href='#main', aria-label='Volver arriba')
                 +svgIcon('to-top', 'Volver', 'mr-1.5 text-20', 'inline-block')
                 span Volver

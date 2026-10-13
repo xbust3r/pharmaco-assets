@@ -1,7 +1,8 @@
 import puppeteer from 'puppeteer-core';
 const [file, width, height] = process.argv.slice(2);
-const ORIGIN = `http://127.0.0.1:5292/${file}`;
-const MIG = `http://localhost:5274/${file}`;
+const enc = encodeURI(file.normalize('NFC'));
+const ORIGIN = `http://127.0.0.1:5292/${enc}`;
+const MIG = `http://localhost:5274/${enc}`;
 async function measure(url, w, h, noJs) {
   const browser = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--hide-scrollbars', '--no-sandbox'] });
   const page = await browser.newPage();
@@ -16,7 +17,7 @@ async function measure(url, w, h, noJs) {
     window.scrollTo(0, 0);
   });
   await page.waitForNetworkIdle({ idleTime: 400, timeout: 30000 }).catch(() => {});
-  await new Promise((r) => setTimeout(r, 400));
+  await new Promise((r) => setTimeout(r, 1500));
   const data = await page.evaluate(() => {
     const main = document.querySelector('main');
     const els = Array.from(main.querySelectorAll('*')).filter((e) => !['SCRIPT', 'STYLE', 'LINK', 'META', 'NOSCRIPT', 'TEMPLATE'].includes(e.tagName));
@@ -32,8 +33,9 @@ async function measure(url, w, h, noJs) {
   await browser.close();
   return data;
 }
-const o = await measure(ORIGIN, width, height, true);
-const m = await measure(MIG, width, height, false);
+const withTimeout = (p, ms) => Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error('tiempo máximo excedido')), ms))]);
+const o = await withTimeout(measure(ORIGIN, width, height, true), 120000);
+const m = await withTimeout(measure(MIG, width, height, false), 120000);
 if (process.env.STYLE_IDX) { console.log('ORIGEN ' + JSON.stringify(o.styles)); console.log('MIGRADA ' + JSON.stringify(m.styles)); }
 let diff = 0; const samples = [];
 const n = Math.min(o.boxes.length, m.boxes.length);

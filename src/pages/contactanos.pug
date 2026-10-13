@@ -13,7 +13,7 @@ block content
         //- origen: c-hero__content
         div(class="relative [z-index:1] [max-width:1440px] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto]")
             | #{' '}
-            div(class="wrapper")
+            div(class="wrapper [padding-right:30px] [padding-left:30px] [margin-right:auto] [margin-left:auto] [max-width:1302px]")
                 | #{' '}
                 //- origen: c-hero__subtitle
                 h1(class="[margin-top:10px] weight-semibold [line-height:1.048] text-35 text-white [width:90%] [max-width:600px] tablet:text-49 desktop:[margin-top:15px] desktop:[line-height:1] desktop:text-63 wide:text-77") Contáctanos por el medio que prefieras
@@ -50,7 +50,7 @@ block content
     //- origen: c-section
     div(class="bg-white [padding-top:62px] [padding-right:0] [padding-bottom:62px] [padding-left:0] [background-image:url(/src/assets/images/components/contact/form-bg-sm.webp)] [background-repeat:no-repeat] [background-position:calc(100%_-_5px)_260px] desktop:[padding-top:152px] desktop:[padding-bottom:152px] desktop:[background-image:url(/src/assets/images/components/contact/form-bg-lg.webp)]")
         | #{' '}
-        div(class="wrapper")
+        div(class="wrapper [padding-right:30px] [padding-left:30px] [margin-right:auto] [margin-left:auto] [max-width:1302px]")
             | #{' '}
             //- origen: c-section__title
             h2(class="weight-semibold [line-height:1.6] text-16 text-blue tablet:text-17 desktop:text-18 wide:text-20") Contáctanos
@@ -65,7 +65,7 @@ block content
             div(class="[margin-top:50px]")
                 | #{' '}
                 //- origen: c-contact-form
-                form(class="js-form [max-width:830px] [display:initial] [align-items:initial] [justify-content:initial] [flex-wrap:initial] [margin-left:initial] desktop:flex desktop:[align-items:flex-start] desktop:[justify-content:flex-start] desktop:[flex-wrap:wrap] desktop:[margin-left:-40px]", action="#")
+                form(class="js-form [max-width:830px] block [align-items:initial] [justify-content:initial] [flex-wrap:initial] [margin-left:initial] desktop:flex desktop:[align-items:flex-start] desktop:[justify-content:flex-start] desktop:[flex-wrap:wrap] desktop:[margin-left:-40px]", action="#")
                     | #{' '}
                     //- origen: c-contact-form-radios
                     div(class="flex [flex-wrap:wrap] [margin-top:-14px] [margin-bottom:50px] [width:100%] [margin-left:initial] desktop:[margin-left:20px]")
@@ -87,7 +87,7 @@ block content
                             input(class="js-contact-form-radio-business [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="empresa", type="radio", name="tipo", value="Empresa")
                             | #{' '}
                             //- origen: c-contact-form-radios__label
-                            label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:23px] before:rounded-circle before:absolute before:[top:2px] before:[left:0] before:[height:23px] before:bg-white before:[border:1px_solid_#a7a7a7] checked:bg-purple focus:shadow-focus after:content-[''] after:block after:[width:13px] after:rounded-circle after:absolute after:[top:7px] after:[left:5px] after:[height:13px] selection:bg-transparent", for="empresa") Soy una empresa
+                            label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:23px] before:rounded-circle before:absolute before:[top:2px] before:[left:0] before:[height:23px] before:bg-white before:[border:1px_solid_#a7a7a7] checked:bg-purple focus:shadow-focus after:content-[''] after:block after:[width:13px] after:rounded-circle after:absolute after:[top:7px] after:[left:5px] after:[height:13px] selection:bg-transparent", for="empresa", data-hero="light-purple") Soy una empresa
                             | #{' '}
                         | #{' '}
                     | #{' '}
@@ -135,64 +135,22 @@ block content
                                 | #{' '}
                             | #{' '}
                             //- origen: c-contact-form-checkboxes__item
-                            div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")
-                                | #{' '}
-                                //- origen: c-contact-form-checkboxes__input
-                                input(class="js-contact-form-checboxes [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="socialMedia", type="checkbox", name="servicios", value="Social media")
-                                | #{' '}
-                                //- origen: c-contact-form-checkboxes__label
-                                label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:17px] before:absolute before:[top:5px] before:[left:0] before:[height:17px] before:bg-white before:[border:1px_solid_#cfcfcf] checked:bg-purple checked:[background-image:url(/src/assets/images/components/contact/icon-checkbox.svg)] checked:[background-position:center_center] checked:[background-repeat:no-repeat] focus:shadow-focus selection:bg-transparent", for="socialMedia") Social media
-                                | #{' '}
+                            +repContactFormCheckboxesItem("socialMedia", "Social media", "socialMedia", "Social media")
                             | #{' '}
                             //- origen: c-contact-form-checkboxes__item
-                            div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")
-                                | #{' '}
-                                //- origen: c-contact-form-checkboxes__input
-                                input(class="js-contact-form-checboxes [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="desarrolloDeApps", type="checkbox", name="servicios", value="Desarrollo de apps")
-                                | #{' '}
-                                //- origen: c-contact-form-checkboxes__label
-                                label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:17px] before:absolute before:[top:5px] before:[left:0] before:[height:17px] before:bg-white before:[border:1px_solid_#cfcfcf] checked:bg-purple checked:[background-image:url(/src/assets/images/components/contact/icon-checkbox.svg)] checked:[background-position:center_center] checked:[background-repeat:no-repeat] focus:shadow-focus selection:bg-transparent", for="desarrolloDeApps") Desarrollo de apps
-                                | #{' '}
+                            +repContactFormCheckboxesItem("desarrolloDeApps", "Desarrollo de apps", "desarrolloDeApps", "Desarrollo de apps")
                             | #{' '}
                             //- origen: c-contact-form-checkboxes__item
-                            div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")
-                                | #{' '}
-                                //- origen: c-contact-form-checkboxes__input
-                                input(class="js-contact-form-checboxes [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="otroServicio", type="checkbox", name="servicios", value="Otro servicio")
-                                | #{' '}
-                                //- origen: c-contact-form-checkboxes__label
-                                label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:17px] before:absolute before:[top:5px] before:[left:0] before:[height:17px] before:bg-white before:[border:1px_solid_#cfcfcf] checked:bg-purple checked:[background-image:url(/src/assets/images/components/contact/icon-checkbox.svg)] checked:[background-position:center_center] checked:[background-repeat:no-repeat] focus:shadow-focus selection:bg-transparent", for="otroServicio") Otro servicio
-                                | #{' '}
+                            +repContactFormCheckboxesItem("otroServicio", "Otro servicio", "otroServicio", "Otro servicio")
                             | #{' '}
                             //- origen: c-contact-form-checkboxes__item
-                            div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")
-                                | #{' '}
-                                //- origen: c-contact-form-checkboxes__input
-                                input(class="js-contact-form-checboxes [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="campanasPublicitarias", type="checkbox", name="servicios", value="Campañas publicitarias")
-                                | #{' '}
-                                //- origen: c-contact-form-checkboxes__label
-                                label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:17px] before:absolute before:[top:5px] before:[left:0] before:[height:17px] before:bg-white before:[border:1px_solid_#cfcfcf] checked:bg-purple checked:[background-image:url(/src/assets/images/components/contact/icon-checkbox.svg)] checked:[background-position:center_center] checked:[background-repeat:no-repeat] focus:shadow-focus selection:bg-transparent", for="campanasPublicitarias") Campañas publicitarias
-                                | #{' '}
+                            +repContactFormCheckboxesItem("campanasPublicitarias", "Campañas publicitarias", "campanasPublicitarias", "Campañas publicitarias")
                             | #{' '}
                             //- origen: c-contact-form-checkboxes__item
-                            div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")
-                                | #{' '}
-                                //- origen: c-contact-form-checkboxes__input
-                                input(class="js-contact-form-checboxes [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="campañasPublicitarias", type="checkbox", name="servicios", value="Campañas publicitarias")
-                                | #{' '}
-                                //- origen: c-contact-form-checkboxes__label
-                                label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:17px] before:absolute before:[top:5px] before:[left:0] before:[height:17px] before:bg-white before:[border:1px_solid_#cfcfcf] checked:bg-purple checked:[background-image:url(/src/assets/images/components/contact/icon-checkbox.svg)] checked:[background-position:center_center] checked:[background-repeat:no-repeat] focus:shadow-focus selection:bg-transparent", for="campañasPublicitarias") Campañas publicitarias
-                                | #{' '}
+                            +repContactFormCheckboxesItem("campañasPublicitarias", "Campañas publicitarias", "campañasPublicitarias", "Campañas publicitarias")
                             | #{' '}
                             //- origen: c-contact-form-checkboxes__item
-                            div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")
-                                | #{' '}
-                                //- origen: c-contact-form-checkboxes__input
-                                input(class="js-contact-form-checboxes [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id="produccionDeVideos", type="checkbox", name="servicios", value="Producción de videos")
-                                | #{' '}
-                                //- origen: c-contact-form-checkboxes__label
-                                label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:17px] before:absolute before:[top:5px] before:[left:0] before:[height:17px] before:bg-white before:[border:1px_solid_#cfcfcf] checked:bg-purple checked:[background-image:url(/src/assets/images/components/contact/icon-checkbox.svg)] checked:[background-position:center_center] checked:[background-repeat:no-repeat] focus:shadow-focus selection:bg-transparent", for="produccionDeVideos") Producción de videos
-                                | #{' '}
+                            +repContactFormCheckboxesItem("produccionDeVideos", "Producción de videos", "produccionDeVideos", "Producción de videos")
                             | #{' '}
                             //- origen: c-contact-form-checkboxes__item
                             div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")

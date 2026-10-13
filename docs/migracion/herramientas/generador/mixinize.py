@@ -2,7 +2,7 @@ import re, json, html, sys, collections, os
 REPO = '/Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion'
 PAGES = ['index','nosotros','servicios','servicio-detalle','portafolio','contactanos','campana-cyberwow','campana-iveco','campana-stralis','diseño-de-personajes']
 
-PARAM_ATTRS = {'href','src','srcset','alt','aria-label','title','data-origen-src','data-origen-srcset','data-reveal-delay','data-reveal'}
+PARAM_ATTRS = {'href','src','srcset','alt','aria-label','title','data-origen-src','data-origen-srcset','data-reveal-delay','data-reveal','value','for','id'}
 MAX_PARAMS = 10
 
 class N:

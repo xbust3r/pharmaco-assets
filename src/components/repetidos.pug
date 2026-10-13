@@ -3,7 +3,7 @@
 
 mixin repIcon(p0)
     //- origen: o-icon
-    span(class="icon [margin-left:10px] text-16 desktop:text-20")
+    span(class="icon inline-block [line-height:.6] [margin-left:10px] text-16 desktop:text-20")
         svg(class="inline-block [font-size:inherit] [width:1em] [height:1em] [overflow:hidden] [stroke-width:0] [stroke:currentColor] [fill:currentColor]", aria-hidden='true')
             use(href=p0)
 
@@ -45,7 +45,7 @@ mixin repMediaBlockContent(p0, p1, p2, p3, p4)
                 a(class="inline-flex [align-items:center] [justify-content:center] [text-align:center] [height:48px] rounded-15 [padding-top:0] [padding-right:30px] [padding-bottom:0] [padding-left:30px] text-14 [text-decoration:none] weight-medium [line-height:1.2] [transition:all_.2s_ease,outline_0s] [box-shadow:none] focus:[transition:all_.2s_ease,outline_0s] focus:shadow-soft hover:[transition:all_.2s_ease,outline_0s] hover:shadow-soft bg-blue text-white focus:bg-blue-hover hover:bg-blue-hover disabled:[opacity:.6] disabled:[cursor:not-allowed] wide:[height:64px] wide:rounded-20 wide:text-18", href=p3)
                     | Conoce más de nosotros#{' '}
                     //- origen: o-icon
-                    span(class="icon [margin-left:10px] text-16 desktop:text-20")
+                    span(class="icon inline-block [line-height:.6] [margin-left:10px] text-16 desktop:text-20")
                         svg(class="inline-block [font-size:inherit] [width:1em] [height:1em] [overflow:hidden] [stroke-width:0] [stroke:currentColor] [fill:currentColor]", aria-hidden='true')
                             use(href=p4)
                     | #{' '}
@@ -93,7 +93,7 @@ mixin repListBareItem(p0, p1, p2, p3, p4, p5, p6, p7, p8)
                     span(class="[border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!") !{p7}
                     | #{' '}
                     //- origen: o-icon
-                    span(class="icon text-12 [margin-left:4px] desktop:text-16")
+                    span(class="icon inline-block [line-height:.6] text-12 [margin-left:4px] desktop:text-16")
                         svg(class="inline-block [font-size:inherit] [width:1em] [height:1em] [overflow:hidden] [stroke-width:0] [stroke:currentColor] [fill:currentColor]", aria-hidden='true')
                             use(href=p8)
                     | #{' '}
@@ -129,7 +129,7 @@ mixin repListBareItem2(p0, p1, p2, p3, p4, p5, p6, p7, p8)
                     span(class="[border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!") !{p7}
                     | #{' '}
                     //- origen: o-icon
-                    span(class="icon text-12 [margin-left:4px] desktop:text-16")
+                    span(class="icon inline-block [line-height:.6] text-12 [margin-left:4px] desktop:text-16")
                         svg(class="inline-block [font-size:inherit] [width:1em] [height:1em] [overflow:hidden] [stroke-width:0] [stroke:currentColor] [fill:currentColor]", aria-hidden='true')
                             use(href=p8)
                     | #{' '}
@@ -165,7 +165,7 @@ mixin repListBareItem3(p0, p1, p2, p3, p4, p5, p6, p7, p8)
                     span(class="[border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!") !{p7}
                     | #{' '}
                     //- origen: o-icon
-                    span(class="icon text-12 [margin-left:4px] desktop:text-16")
+                    span(class="icon inline-block [line-height:.6] text-12 [margin-left:4px] desktop:text-16")
                         svg(class="inline-block [font-size:inherit] [width:1em] [height:1em] [overflow:hidden] [stroke-width:0] [stroke:currentColor] [fill:currentColor]", aria-hidden='true')
                             use(href=p8)
                     | #{' '}
@@ -221,41 +221,41 @@ mixin repClientsSlider(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9)
         div(class="js-slider-item snap-start shrink-0")
             | #{' '}
             //- origen: c-clients__client
-            img(class="block [width:100%] [max-width:140px] [height:auto] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] desktop:[max-width:210px]", src=p0, alt=p1, loading="lazy")
+            img(class="block [width:100%] [max-width:140px] [height:auto] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] desktop:[max-width:210px]", src=p0, alt=p1)
             | #{' '}
         | #{' '}
         //- origen: c-clients__slide
         div(class="js-slider-item snap-start shrink-0")
             | #{' '}
             //- origen: c-clients__client
-            img(class="block [width:100%] [max-width:140px] [height:auto] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] desktop:[max-width:210px]", src=p2, alt=p3, loading="lazy")
+            img(class="block [width:100%] [max-width:140px] [height:auto] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] desktop:[max-width:210px]", src=p2, alt=p3)
             | #{' '}
         | #{' '}
         //- origen: c-clients__slide
         div(class="js-slider-item snap-start shrink-0")
             | #{' '}
             //- origen: c-clients__client
-            img(class="block [width:100%] [max-width:140px] [height:auto] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] desktop:[max-width:210px]", src=p4, alt=p5, loading="lazy")
+            img(class="block [width:100%] [max-width:140px] [height:auto] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] desktop:[max-width:210px]", src=p4, alt=p5)
             | #{' '}
         | #{' '}
         //- origen: c-clients__slide
         div(class="js-slider-item snap-start shrink-0")
             | #{' '}
             //- origen: c-clients__client
-            img(class="block [width:100%] [max-width:140px] [height:auto] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] desktop:[max-width:210px]", src=p6, alt=p7, loading="lazy")
+            img(class="block [width:100%] [max-width:140px] [height:auto] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] desktop:[max-width:210px]", src=p6, alt=p7)
             | #{' '}
         | #{' '}
         //- origen: c-clients__slide
         div(class="js-slider-item snap-start shrink-0")
             | #{' '}
             //- origen: c-clients__client
-            img(class="block [width:100%] [max-width:140px] [height:auto] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] desktop:[max-width:210px]", src=p8, alt=p9, loading="lazy")
+            img(class="block [width:100%] [max-width:140px] [height:auto] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] desktop:[max-width:210px]", src=p8, alt=p9)
             | #{' '}
         | #{' '}
 
 mixin repIcon2(p0)
     //- origen: o-icon
-    span(class="icon")
+    span(class="icon inline-block [line-height:.6]")
         svg(class="inline-block [font-size:inherit] [width:1em] [height:1em] [overflow:hidden] [stroke-width:0] [stroke:currentColor] [fill:currentColor]", aria-hidden='true')
             use(href=p0)
 
@@ -308,7 +308,7 @@ mixin repHero(p0, p1, p2, p3, p4, p5, p6, p7, p8)
         //- origen: c-hero__content
         div(class="relative [z-index:1] [max-width:1440px] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto]")
             | #{' '}
-            div(class="wrapper")
+            div(class="wrapper [padding-right:30px] [padding-left:30px] [margin-right:auto] [margin-left:auto] [max-width:1302px]")
                 | #{' '}
                 //- origen: c-hero__subtitle
                 h1(class="[margin-top:10px] weight-semibold [line-height:1.048] text-35 text-white [width:90%] [max-width:600px] tablet:text-49 desktop:[margin-top:15px] desktop:[line-height:1] desktop:text-63 wide:text-77") !{p0}
@@ -326,7 +326,7 @@ mixin repHero(p0, p1, p2, p3, p4, p5, p6, p7, p8)
                     a(class="inline-flex [align-items:center] [justify-content:center] [text-align:center] [height:48px] rounded-15 [padding-top:0] [padding-right:30px] [padding-bottom:0] [padding-left:30px] text-14 [text-decoration:none] weight-medium [line-height:1.2] [transition:all_.2s_ease,outline_0s] [box-shadow:none] focus:[transition:all_.2s_ease,outline_0s] focus:shadow-soft hover:[transition:all_.2s_ease,outline_0s] hover:shadow-soft bg-purple text-white focus:bg-purple-hover hover:bg-purple-hover disabled:[opacity:.6] disabled:[cursor:not-allowed] wide:[height:64px] wide:rounded-20 wide:text-18", href=p2)
                         | Contáctanos#{' '}
                         //- origen: o-icon
-                        span(class="icon [margin-left:10px] text-16 desktop:text-20")
+                        span(class="icon inline-block [line-height:.6] [margin-left:10px] text-16 desktop:text-20")
                             svg(class="inline-block [font-size:inherit] [width:1em] [height:1em] [overflow:hidden] [stroke-width:0] [stroke:currentColor] [fill:currentColor]", aria-hidden='true')
                                 use(href=p3)
                         | #{' '}
@@ -383,7 +383,7 @@ mixin repSectionContent(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9)
         //- origen: s-cms-content
         div(class="text-16 [line-height:1.56] [margin-bottom:0] text-gray-muted")
             | #{' '}
-            ul(class="[padding-left:0]! [list-style:none]")
+            ul(class="[padding-left:0]! [list-style:none] [margin-top:0] [margin-right:0] [margin-bottom:0] [margin-left:0]")
                 | #{' '}
                 li(class="[padding-left:40px] [background-image:url(/src/assets/images/components/services/bullet-list.svg)] [background-repeat:no-repeat] [background-position:left_top] [margin-bottom:6px]!") !{p0}
                 | #{' '}
@@ -434,7 +434,7 @@ mixin repServicesTeaserContent(p0, p1, p2, p3, p4)
             span(class="[border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!") !{p3}
             | #{' '}
             //- origen: o-icon
-            span(class="icon text-12 [margin-left:4px] desktop:text-16")
+            span(class="icon inline-block [line-height:.6] text-12 [margin-left:4px] desktop:text-16")
                 svg(class="inline-block [font-size:inherit] [width:1em] [height:1em] [overflow:hidden] [stroke-width:0] [stroke:currentColor] [fill:currentColor]", aria-hidden='true')
                     use(href=p4)
             | #{' '}
@@ -446,7 +446,7 @@ mixin repBloque(p0)
 
 mixin repMediaBlock(p0, p1, p2, p3, p4, p5, p6, p7)
     //- origen: c-media-block
-    div(class="[margin-top:100px] [display:initial] [flex-direction:initial] [align-items:initial] [justify-content:initial] desktop:flex desktop:[flex-direction:row-reverse] desktop:[align-items:center] desktop:[justify-content:space-between]")
+    div(class="[margin-top:100px] block [flex-direction:initial] [align-items:initial] [justify-content:initial] desktop:flex desktop:[flex-direction:row-reverse] desktop:[align-items:center] desktop:[justify-content:space-between]")
         | #{' '}
         //- origen: c-media-block__content
         div(class="[width:initial] [margin-right:initial] [margin-left:initial] desktop:[width:536px] desktop:[margin-right:0] desktop:[margin-left:50px] wide:[margin-left:80px]")
@@ -495,7 +495,7 @@ mixin repPageBreadcrumb(p0, p1, p2, p3, p4, p5, p6, p7, p8)
     //- origen: c-page-breadcrumb
     div(class="hidden bg-white [padding-top:14px] [padding-right:0] [padding-bottom:14px] [padding-left:0] wide:block", aria-label=p0, role="navigation")
         | #{' '}
-        div(class="wrapper")
+        div(class="wrapper [padding-right:30px] [padding-left:30px] [margin-right:auto] [margin-left:auto] [max-width:1302px]")
             | #{' '}
             //- origen: o-list-bare
             ol(class="[list-style:none] [margin-top:0] [margin-right:0] [margin-bottom:0] [margin-left:0] [padding-top:0] [padding-right:0] [padding-bottom:0] [padding-left:0] flex")
@@ -510,7 +510,7 @@ mixin repPageBreadcrumb(p0, p1, p2, p3, p4, p5, p6, p7, p8)
                     div(class="text-gray-muted [padding-top:0] [padding-right:0] [padding-bottom:0] [padding-left:6px] flex")
                         | #{' '}
                         //- origen: o-icon
-                        span(class="icon text-12")
+                        span(class="icon inline-block [line-height:.6] text-12")
                             svg(class="inline-block [font-size:inherit] [width:1em] [height:1em] [overflow:hidden] [stroke-width:0] [stroke:currentColor] [fill:currentColor]", aria-hidden="true")
                                 use(href=p3)
                         | #{' '}
@@ -526,7 +526,7 @@ mixin repPageBreadcrumb(p0, p1, p2, p3, p4, p5, p6, p7, p8)
                     div(class="text-gray-muted [padding-top:0] [padding-right:0] [padding-bottom:0] [padding-left:6px] flex")
                         | #{' '}
                         //- origen: o-icon
-                        span(class="icon text-12")
+                        span(class="icon inline-block [line-height:.6] text-12")
                             svg(class="inline-block [font-size:inherit] [width:1em] [height:1em] [overflow:hidden] [stroke-width:0] [stroke:currentColor] [fill:currentColor]", aria-hidden="true")
                                 use(href=p6)
                         | #{' '}
@@ -542,10 +542,6 @@ mixin repPageBreadcrumb(p0, p1, p2, p3, p4, p5, p6, p7, p8)
             | #{' '}
         | #{' '}
 
-mixin repBloque2(p0)
-    svg(class="inline-block [font-size:inherit] [width:1em] [height:1em] [overflow:hidden] [stroke-width:0] [stroke:currentColor] [fill:currentColor]", aria-hidden='true')
-        use(href=p0)
-
 mixin repContactOptionsOption(p0, p1, p2, p3)
     //- origen: c-contact-options__option
     a(class="flex [align-items:center] [justify-content:center] [flex-direction:column] [width:72px] [height:48px] bg-blue rounded-9 [margin-right:18px] [text-decoration:none] text-white [box-shadow:none] [transition:all_.2s_ease,outline_0s] focus:bg-purple-hover focus:[transition:all_.2s_ease,outline_0s] focus:shadow-soft hover:bg-purple-hover hover:[transition:all_.2s_ease,outline_0s] hover:shadow-soft desktop:[width:108px] desktop:[height:72px] desktop:rounded-14", href=p0)
@@ -555,6 +551,17 @@ mixin repContactOptionsOption(p0, p1, p2, p3)
         | #{' '}
         //- origen: c-contact-options__text
         span(class="inline-block [text-align:center] weight-semibold text-10 [margin-top:2px] desktop:text-14") !{p3}
+        | #{' '}
+
+mixin repContactFormCheckboxesItem(p0, p1, p2, p3)
+    //- origen: c-contact-form-checkboxes__item
+    div(class="[width:100%] [margin-top:14px] [margin-left:initial] desktop:[width:calc(50%_-_20px)] desktop:[margin-left:20px]")
+        | #{' '}
+        //- origen: c-contact-form-checkboxes__input
+        input(class="js-contact-form-checboxes [border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!", id=p0, type="checkbox", name="servicios", value=p1)
+        | #{' '}
+        //- origen: c-contact-form-checkboxes__label
+        label(class="relative [padding-left:30px] [padding-top:2px] text-16 block before:content-[''] before:block before:[width:17px] before:absolute before:[top:5px] before:[left:0] before:[height:17px] before:bg-white before:[border:1px_solid_#cfcfcf] checked:bg-purple checked:[background-image:url(/src/assets/images/components/contact/icon-checkbox.svg)] checked:[background-position:center_center] checked:[background-repeat:no-repeat] focus:shadow-focus selection:bg-transparent", for=p2) !{p3}
         | #{' '}
 
 mixin repHeroText2(p0)
@@ -568,7 +575,7 @@ mixin repSection(p0, p1, p2, p3, p4)
     //- origen: c-section
     div(class="bg-white [padding-top:62px] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-top:152px] desktop:[padding-bottom:152px]")
         | #{' '}
-        div(class="wrapper")
+        div(class="wrapper [padding-right:30px] [padding-left:30px] [margin-right:auto] [margin-left:auto] [max-width:1302px]")
             | #{' '}
             //- origen: c-section__subtitle
             h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") !{p0}
@@ -603,7 +610,7 @@ mixin repSection2(p0, p1, p2, p3)
     //- origen: c-section
     div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
         | #{' '}
-        div(class="wrapper [max-width:1440px] [padding-left:0] [padding-right:0]")
+        div(class="wrapper [padding-right:0] [padding-left:0] [margin-right:auto] [margin-left:auto] [max-width:1440px]")
             | #{' '}
             //- origen: c-section__content
             div(class="[margin-top:0]")
@@ -681,7 +688,7 @@ mixin repSection3(p0, p1, p2, p3, p4, p5)
     //- origen: c-section
     div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
         | #{' '}
-        div(class="wrapper [max-width:1440px]")
+        div(class="wrapper [padding-right:30px] [padding-left:30px] [margin-right:auto] [margin-left:auto] [max-width:1440px]")
             | #{' '}
             //- origen: c-section__subtitle
             h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") !{p0}

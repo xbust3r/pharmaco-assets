@@ -225,6 +225,28 @@
     /* Easing y ancho de tercio, tal como los escribe el origen. */
     --ease-origin: ease;
     --width-third: 33.33%;
+
+    /* Valores de cabecera y pie que se repiten en las 10 páginas (antes arbitrarios). */
+    --spacing-footer-top: 130px;
+    --spacing-nav-gap: 50px;
+    --spacing-nav-gap-wide: 100px;
+    --spacing-nav-gap-ultrawide: 200px;
+    --spacing-search: 5px;
+    --width-logo: 128px;
+    --width-logo-tablet: 180px;
+    --width-logo-desktop: 222px;
+    --width-logo-footer: 231px;
+    --width-nav-panel: 90%;
+    --width-footer-nav: 500px;
+    --width-footer-nav-wide: 600px;
+    --width-footer-legal: calc(100% - 200px);
+    --width-icon-lg: 26px;
+    --height-icon-lg: 26px;
+    --container-nav-panel: 320px;
+    --container-footer-info: 305px;
+    --leading-button: 1.2;
+    --leading-footer-text: 1.46;
+    --z-index-overlay: 1;
 }
 
 /* .o-wrapper: contenedor con ancho máximo y márgenes laterales del origen. */
@@ -235,6 +257,15 @@
 }
 
 /* stylelint-disable nesting-selector-no-missing-scoping-root -- @utility de Tailwind: & es su raíz */
+
+/* Utilidades de un solo valor del origen (posición del fondo del pie, desplazamiento del foco). */
+@utility bg-top-center {
+    background-position: center top;
+}
+
+@utility outline-offset-skip {
+    outline-offset: -2px;
+}
 
 /* Pesos del origen como utilidades (--weight-* en @theme). */
 @utility weight-regular {

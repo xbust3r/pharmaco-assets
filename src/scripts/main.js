@@ -175,6 +175,8 @@ function initClientsSlider() {
     prev?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
     next?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
     layout();
+    // Al fijar los anchos, el snap puede reubicar la pista: se vuelve al primer ítem.
+    track.scrollLeft = 0;
     window.addEventListener('resize', layout);
 }
 
