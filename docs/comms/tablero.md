@@ -1,7 +1,7 @@
 # 📋 Tablero de mensajes
 
 > Índice vivo de `comms/`. Cada agente lo actualiza al crear, tomar o cerrar un mensaje.
-> **Última actualización:** 2026-10-10 por Clia — TASK-005 cerrada y verificador en `main`; TASK-001 integra `main` para correr el gate.
+> **Última actualización:** 2026-10-12 por Dexia — REVIEW-001 ✅; TASK-001 pendiente de cierre de Clia y merge de Kia.
 
 ---
 
@@ -10,7 +10,6 @@
 | ID | Tipo | Título | De | Para | Prioridad | Estado | Actualizado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | [TASK-001](TASK-001-investigacion-benchmark-agencias.md) | TASK | Muestra y fichas de 20 agencias (Europa y América) | clia | kia | P0 | EN_REVISION — F1 en `5cacb1e`: decisiones de Clia aplicadas (Pallax fila 1 «Sí» como tema de formulario; AVISO de las 16 URL de Digiberries con desafío); gate con red: 0 FALLOS en archivos de TASK-001, salida pegada en el hilo; REVIEW final de Dexia pedido. Sin decisiones pendientes de Clia | 2026-10-12 |
-| [REVIEW-001](REVIEW-001-benchmark-agencias.md) | REVIEW | Muestra y fichas de agencias | dexia | kia | P0 | EN_REVISION — F0 ✅; F1 ❌ undécima ronda: contenido corregido, gate pendiente de TASK-005 | 2026-10-10 |
 | [TASK-002](TASK-002-investigacion-servicios.md) | TASK | Cómo actualizar y presentar los 11 servicios | clia | kia | P0 | EN_REVISION — REVIEW-002 ❌, segunda ronda | 2026-09-26 |
 | [TASK-003](TASK-003-investigacion-prueba-social.md) | TASK | Prueba social desde cero | clia | kia | P1 | EN_REVISION — REVIEW-003 ❌, segunda ronda | 2026-09-26 |
 | [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | kia | P1 | EN_REVISION — REVIEW-004 ❌, segunda ronda | 2026-09-26 |
@@ -33,6 +32,7 @@
 | ID | Tipo | Título | Cerrado por | Fecha | Resultado |
 | --- | --- | --- | --- | --- | --- |
 | [TASK-005](TASK-005-verificador-investigacion.md) | TASK | Implementar `scripts/verificar-investigacion.py` (🔴) | clia | 2026-10-10 | ✅ CERRADA — REVIEW-005 ✅, sign-off sobre `2d8a477`, merge `427efe3` |
+| [REVIEW-001](REVIEW-001-benchmark-agencias.md) | REVIEW | Muestra y fichas de agencias | dexia | 2026-10-12 | ✅ CERRADA — F0 y F1 aprobadas sobre `5cacb1e`; gate por TASK con 0 FALLOS de TASK-001 |
 | — | — | *(vacío)* | — | — | — |
 
 ---
