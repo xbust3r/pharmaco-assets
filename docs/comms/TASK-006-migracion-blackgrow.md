@@ -319,3 +319,45 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 > 4. Pide el **REVIEW final** a Dexia.
 >
 > Lo que no hayas podido medir, decláralo como pendiente. Dexia pedirá lo que falte.
+
+> **[2026-10-13 06:42] kia:** Clia, leídas `2d5f8d0`, `ae72e0e` y `15cdb67`. Hecho en ese orden:
+>
+> 1. **Sprite (🔴 `03f7841`):** `src/assets/images/sprite.svg` sale del `.gitignore` y se versiona (13 símbolos). **Clon limpio** (`git clone` en carpeta nueva, sin `node_modules`), `pnpm install && pnpm run build`:
+>    ```
+>    Done in 2.3s using pnpm v12.3.4 · install-exit=0
+>    ✓ built in 3.44s · build-exit=0
+>    ```
+>    Registro completo: `docs/migracion/logs/fase-7-clon-limpio.txt`.
+> 2. **Comparación colgada (`ae72e0e`):** la causa era la «ñ» en el nombre. Ahora el arnés codifica la página en NFC/`encodeURI` y tiene tiempo máximo de 120 s por lado. `diseño-de-personajes` se midió de nuevo: 0 desalineados a 1280 y 375 px.
+> 3. **Commit de lo pendiente:** `d8dbbb3` (🔴, toca `@theme` y el layout): los 22 valores repetidos de cabecera y pie pasan a tokens; cascada del compilador (`display`, `:not([atributo])`, reglas de alias, `nth-child`); etiquetas del formulario como mixin; slider. Y `acf2ef2`, `b62cb9b`: registros y capturas.
+>
+> **Verificación completa de `AGENTS.md`, una sola pasada** (`docs/migracion/logs/fase-7-verificacion.txt`):
+> ```
+> pnpm optimize            [exit 0]
+> pnpm lint                [exit 0]
+> pnpm validate            [exit 0]
+> pnpm build               [exit 0]   (incluye validate y verify:render en prebuild/postbuild)
+> pnpm verify:render       [exit 0]   0 FALLO · 0 valor repetido · 134 AVISO de clases repetidas
+> pnpm validate:origen     [exit 0]   10 páginas revisadas · 0 FALLO
+> ```
+> Los 134 AVISOS son de clases repetidas. En la pasada anterior comprobé que casi todos los grupos aparecen en el código de los mixins (44 de 45 grupos distintos; el 45º era la etiqueta del formulario, que ya es mixin). No lo he vuelto a comprobar en esta pasada.
+>
+> **Geometría final** (`docs/migracion/logs/fase-7-geometria.txt`, 1,5 s de espera tras el scroll, tiempo máximo de 120 s por lado):
+> ```
+> index.html                1280px  alto 5849/5849   desalineados=38
+> index.html                 375px  alto 6266/6266   desalineados=38
+> nosotros.html             1280px  alto 4190/4190   desalineados=19
+> nosotros.html              375px  alto 3801/3801   desalineados=19
+> servicios.html            1280px  alto 7243/7243   desalineados=0
+> servicios.html             375px  alto 8542/8542   desalineados=0
+> servicio-detalle.html     1280px  alto 5238/5238   desalineados=0
+> servicio-detalle.html      375px  alto 6378/6378   desalineados=0
+> portafolio, contactanos, campana-cyberwow, campana-iveco, campana-stralis, diseño-de-personajes: alto igual a 1280 y 375 px, desalineados=0
+> ```
+> En `index` y `nosotros` las 38 y 19 cajas desalineadas son del slider: tiny-slider clona diapositivas y nosotros no, así que los índices de DOM se desplazan. Las alturas coinciden en las dos anchuras. Capturas del slider a 375 y 1280 px en `docs/migracion/capturas/fase7-slider-*`: mismos logos visibles (1 a 375 px, 5 a 1280 px), mismos tamaños (140×31 y 210×47), mismas flechas a 375 px.
+>
+> **Medias de altura (punto 2 de la entrada anterior):** las 6 reglas de altura del origen son del plugin de modales (`.modaal-*`). Ningún selector casa con un elemento de las 10 páginas (comprobado con el mismo matcher sobre el DOM de cada maqueta). Se declara sin migrar, con esa evidencia.
+>
+> **Pendiente declarado:** 654 clases de propiedad arbitraria (deuda del rediseño de RFC-002, aceptada); el slider no tiene el mismo DOM que tiny-slider; sin comprobar visualmente más allá del viewport inicial, los modales (aspecto aproximado) ni los formularios enviados; solo Chrome.
+>
+> **Petición:** Dexia, **REVIEW final** de TASK-006 sobre `b62cb9b`. Clia, sign-off 🔴 de `d8dbbb3` y de `03f7841`.
