@@ -12,15 +12,17 @@ Solo biblioteca estándar. Código de salida: 1 si hay algún FALLO, 0 si no.
 """
 
 import argparse
-import concurrent.futures
 import datetime
 import glob
 import hashlib
 import http.client
+import math
 import os
+import queue
 import re
 import struct
 import sys
+import threading
 import time
 import unicodedata
 import urllib.error
@@ -39,8 +41,10 @@ PERFILES_VALIDOS = ["comparable", "referente", "especialista"]
 FICHAS_ESPERADAS = 20
 COMPARABLES_ESPERADOS = 10
 REFERENTES_ESPECIALISTAS_ESPERADOS = 10
-TIMEOUT_SEGUNDOS = 20
+TIMEOUT_SEGUNDOS = 30  # TASK-007: tiempo máximo por intento de una URL (con 2 reintentos espaciados)
+TIMEOUT_TOTAL_SEGUNDOS = 600  # TASK-007: tiempo máximo de toda la ejecución de V8 (--timeout-total)
 HILOS_RED = 8
+CONEXIONES_POR_DOMINIO = 2  # TASK-007: peticiones simultáneas como máximo a un mismo host
 MIN_ANCHO, MIN_ALTO = 320, 200  # DECISION-006, enmienda 6 (corregida): captura de página, ancho y alto
 MIN_COMPONENTE = 32  # DECISION-006, enmienda 6 (corregida): captura de componente (docs/diseno/capturas/), cada lado
 
@@ -308,8 +312,51 @@ def error_formato(ruta):
     return "no es PNG ni WebP válido"
 
 
+def host_ascii(host):
+    """Dominio en IDNA (TASK-007) para comparar; si no se puede codificar, el dominio tal cual."""
+    try:
+        return host.encode("idna").decode("ascii")
+    except UnicodeError:
+        return host
+
+
 def sin_www(url):
-    return (urllib.parse.urlsplit(url).hostname or "").removeprefix("www.")
+    return host_ascii(urllib.parse.urlsplit(url).hostname or "").removeprefix("www.")
+
+
+# TASK-007: lo que no es ASCII en la ruta y la consulta se codifica; lo ya codificado («%») se respeta tal cual.
+SEGUROS_RUTA = "/:@!$&'()*+,;=-._~%"
+SEGUROS_CONSULTA = SEGUROS_RUTA + "?"
+SEGUROS_USUARIO = "%:!$&'()*+,;="
+
+
+def _codificar(texto, seguros):
+    if re.search(r"%(?![0-9A-Fa-f]{2})", texto):
+        raise ValueError("«%» que no va seguido de dos dígitos hexadecimales")
+    return urllib.parse.quote(texto, safe=seguros)
+
+
+def url_de_peticion(url):
+    """URL tal como se pide por la red (TASK-007): dominio en IDNA y ruta y consulta codificadas.
+
+    Lanza ValueError si la URL está mal formada; el llamador lo convierte en FALLO que lo dice.
+    """
+    partes = urllib.parse.urlsplit(url)
+    if partes.scheme not in ("http", "https") or not partes.hostname:
+        raise ValueError("no es una URL http o https con dominio")
+    puerto = partes.port  # ValueError si el puerto no es un número válido
+    host = partes.hostname
+    try:
+        host = host.encode("idna").decode("ascii")
+    except UnicodeError as e:
+        raise ValueError(f"dominio no válido en IDNA ({partes.hostname}): {e}") from e
+    if ":" in host:
+        host = f"[{host}]"
+    usuario = _codificar(partes.netloc.rpartition("@")[0], SEGUROS_USUARIO) + "@" if "@" in partes.netloc else ""
+    netloc = usuario + host + (f":{puerto}" if puerto is not None else "")
+    ruta = _codificar(partes.path, SEGUROS_RUTA)
+    consulta = _codificar(partes.query, SEGUROS_CONSULTA)
+    return urllib.parse.urlunsplit((partes.scheme, netloc, ruta, consulta, ""))
 
 
 CABECERAS_NAVEGADOR = {
@@ -340,9 +387,17 @@ def _cabecera_de_desafio(cabeceras):
     return None
 
 
-def _intentar_url(url):
-    """Un intento. Devuelve (estado, motivo, reintentable, antibot)."""
-    peticion = urllib.request.Request(url, headers=CABECERAS_NAVEGADOR)
+def _es_tiempo_agotado(error):
+    """True si el error es un tiempo de espera, sea directo o envuelto en URLError (TASK-007)."""
+    return isinstance(error, TimeoutError) or isinstance(getattr(error, "reason", None), TimeoutError)
+
+
+def _intentar_url(pedida, url):
+    """Un intento sobre la URL ya codificada `pedida`; `url` es la original, para comparar dominios.
+
+    Devuelve (estado, motivo, reintentable, antibot, agotado). `agotado` marca el tiempo de espera.
+    """
+    peticion = urllib.request.Request(pedida, headers=CABECERAS_NAVEGADOR)
     try:
         with urllib.request.urlopen(peticion, timeout=TIMEOUT_SEGUNDOS) as respuesta:
             final = respuesta.geturl()
@@ -350,42 +405,104 @@ def _intentar_url(url):
     except urllib.error.HTTPError as e:
         # DECISION-006 (aclaración 1): solo 404 y 410 son FALLO; otros 4xx son bloqueos, AVISO.
         if e.code == 404:
-            return "FALLO", "HTTP 404", True, False
+            return "FALLO", "HTTP 404", True, False, False
         if e.code == 410:
-            return "FALLO", "HTTP 410", False, False
+            return "FALLO", "HTTP 410", False, False, False
         if 400 <= e.code < 500:
             return ("AVISO", f"HTTP {e.code} (bloqueo antibot o de región): respaldar con captura", False,
-                    e.code in ANTIBOT)
-        return "FALLO", f"HTTP {e.code}", 500 <= e.code < 600, False
+                    e.code in ANTIBOT, False)
+        return "FALLO", f"HTTP {e.code}", 500 <= e.code < 600, False, False
     except (urllib.error.URLError, OSError, http.client.HTTPException) as e:
-        return "FALLO", f"error de red: {getattr(e, 'reason', e)}", True, False
+        if _es_tiempo_agotado(e):
+            return "FALLO", "tiempo de espera agotado", True, False, True
+        return "FALLO", f"error de red: {getattr(e, 'reason', e)}", True, False, False
     except ValueError as e:
-        return "FALLO", f"error de red: {getattr(e, 'reason', e)}", False, False
+        return "FALLO", f"error de red: {getattr(e, 'reason', e)}", False, False, False
     # DECISION-006, enmienda 5: un 202 a un GET de página y un 2xx con cabecera de desafío no son la página.
     if codigo == 202:
-        return "AVISO", "HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura", False, True
+        return ("AVISO", "HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura", False, True,
+                False)
     desafio = _cabecera_de_desafio(cabeceras)
     if desafio:
-        return "AVISO", f"HTTP {codigo} con cabecera de desafío antibot ({desafio}): respaldar con captura", False, True
+        return ("AVISO", f"HTTP {codigo} con cabecera de desafío antibot ({desafio}): respaldar con captura", False,
+                True, False)
     if sin_www(final) != sin_www(url):
-        return "AVISO", f"redirige a otro dominio: {final}", False, False
-    return "OK", "responde", False, False
+        return "AVISO", f"redirige a otro dominio: {final}", False, False, False
+    return "OK", "responde", False, False, False
+
+
+def _segundos(valor):
+    return f"{valor:.1f}".replace(".", ",") + " s"
 
 
 def comprobar_url(url):
-    """Hasta 3 intentos según TASK-005. Devuelve (estado, motivo, antibot): antibot si algún intento dio 401, 403 o 429."""
-    estado, motivo, reintentable, antibot = _intentar_url(url)
-    intentos = 1
-    while reintentable and intentos <= REINTENTOS:
-        time.sleep(ESPERA_REINTENTO)
-        estado, motivo, reintentable, visto = _intentar_url(url)
+    """Hasta 3 intentos (TASK-005; TASK-007: 30 s por intento y 2 reintentos espaciados 2 s).
+
+    Devuelve (estado, motivo, antibot): antibot si algún intento dio 401, 403 o 429.
+    Una URL que no se puede codificar es FALLO sin reintentos, con el motivo.
+    """
+    try:
+        pedida = url_de_peticion(url)
+    except ValueError as e:
+        return "FALLO", f"URL mal formada: {e}", False
+    tiempos, antibot = [], False
+    for intento in range(1, REINTENTOS + 2):
+        if intento > 1:
+            time.sleep(ESPERA_REINTENTO)
+        inicio = time.monotonic()
+        estado, motivo, reintentable, visto, agotado = _intentar_url(pedida, url)
+        tiempos.append(time.monotonic() - inicio)
         antibot = antibot or visto
-        intentos += 1
+        if estado == "OK" or not reintentable:
+            break
     if estado == "OK":
         return estado, motivo, antibot
-    if intentos > 1:
-        motivo += f" (tras {intentos} intentos)"
+    if agotado:
+        medidos = ", ".join(_segundos(t) for t in tiempos)
+        motivo = (f"sin respuesta: tiempo de espera agotado en {len(tiempos)} intentos "
+                  f"(medido por intento: {medidos}; límite de {TIMEOUT_SEGUNDOS} s)")
+    elif len(tiempos) > 1:
+        motivo += f" (tras {len(tiempos)} intentos)"
     return estado, motivo, antibot
+
+
+def comprobar_todas(urls, timeout_total):
+    """Comprueba las URL en paralelo (TASK-007) y devuelve {url: (estado, motivo, antibot)}.
+
+    HILOS_RED hilos como mucho y CONEXIONES_POR_DOMINIO peticiones simultáneas por host. El tiempo máximo de toda
+    la ejecución es `timeout_total` segundos: una URL sin comprobar cuando se agota es FALLO, porque sin
+    comprobar no puede dar OK. Los hilos son daemon, así que el proceso termina aunque quede alguno colgado.
+    """
+    pendientes = queue.Queue()
+    for url in urls:
+        pendientes.put(url)
+    semaforos = {host: threading.BoundedSemaphore(CONEXIONES_POR_DOMINIO) for host in {host_de(u) for u in urls}}
+    resultados, cerrojo = {}, threading.Lock()
+
+    def trabajador():
+        while True:
+            try:
+                url = pendientes.get_nowait()
+            except queue.Empty:
+                return
+            with semaforos[host_de(url)]:
+                resultado = comprobar_url(url)
+            with cerrojo:
+                resultados[url] = resultado
+
+    hilos = [threading.Thread(target=trabajador, daemon=True) for _ in range(min(HILOS_RED, len(urls)))]
+    for hilo in hilos:
+        hilo.start()
+    limite = time.monotonic() + timeout_total
+    for hilo in hilos:
+        hilo.join(max(0.0, limite - time.monotonic()))
+    with cerrojo:
+        comprobadas = dict(resultados)
+    for url in urls:
+        if url not in comprobadas:
+            comprobadas[url] = ("FALLO", f"no comprobada: se agotó el tiempo máximo de la ejecución "
+                                         f"({timeout_total:g} s; --timeout-total)", False)
+    return comprobadas
 
 
 def host_de(url):
@@ -554,12 +671,25 @@ def v6_marcadores(texto):
 
 # --- Orquestación -------------------------------------------------------------
 
+def _segundos_positivos(texto):
+    try:
+        valor = float(texto)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"no es un número de segundos: {texto}")
+    if not (0 < valor < math.inf):
+        raise argparse.ArgumentTypeError(f"debe ser un número de segundos mayor que 0: {texto}")
+    return valor
+
+
 def main():
     parser = argparse.ArgumentParser(description="Verifica la investigación (DECISION-006).")
     parser.add_argument("--raiz", default=os.path.join(RAIZ_REPO, "docs"),
                         help="carpeta que contiene investigacion/ y diseno/ (por defecto, docs/)")
     parser.add_argument("--sin-red", action="store_true",
                         help="salta V8 (enlaces vivos); para el gate se pega la salida con red")
+    parser.add_argument("--timeout-total", type=_segundos_positivos, default=TIMEOUT_TOTAL_SEGUNDOS,
+                        help=f"tiempo máximo de toda la ejecución de V8, en segundos (por defecto "
+                             f"{TIMEOUT_TOTAL_SEGUNDOS}); las URL sin comprobar a tiempo son FALLO")
     args = parser.parse_args()
 
     raiz = os.path.abspath(args.raiz)
@@ -633,14 +763,15 @@ def main():
     else:
         urls_por_doc = {ruta: sorted({u.rstrip(".,;:") for u in RE_URL.findall(textos[ruta])}) for ruta in documentos}
         todas = sorted({u for urls in urls_por_doc.values() for u in urls})
-        with concurrent.futures.ThreadPoolExecutor(max_workers=HILOS_RED) as pool:
-            estado_url = clasificar_urls(dict(zip(todas, pool.map(comprobar_url, todas))))
+        estado_url = clasificar_urls(comprobar_todas(todas, args.timeout_total))
         for ruta in documentos:
             problemas = [(estado_url[u][0], f"{u} → {estado_url[u][1]}")
                          for u in urls_por_doc[ruta] if estado_url[u][0] != "OK"]
             anotar("V8", rel(ruta), problemas)
 
-    print(f"Verificación de la investigación · raíz: {raiz} · V8: {'omitida (--sin-red)' if args.sin_red else 'con red'}")
+    v8 = "omitida (--sin-red)" if args.sin_red else (
+        f"con red ({TIMEOUT_SEGUNDOS} s por intento, tiempo máximo {args.timeout_total:g} s en total)")
+    print(f"Verificación de la investigación · raíz: {raiz} · V8: {v8}")
     for v, estado, archivo, motivo in resultados:
         print(f"{v}  {estado:<7} {archivo} — {motivo}")
     fallos = sum(1 for r in resultados if r[1] == "FALLO")

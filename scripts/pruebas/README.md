@@ -53,3 +53,13 @@ Las capturas de `capturas/` no son fotos de ninguna web.
 Comprobación fuera del verificador: `dwebp` acepta los WebP positivos y rechaza los negativos. `webpmux -info` acepta el animado y rechaza los dos negativos sin imagen (`ffmpeg` no decodifica el animado, limitación de su decodificador nativo). `ffmpeg` rechaza los PNG negativos de profundidad, compresión y entrelazado, pero **acepta** el de filtro 5: ese caso se decide por la especificación.
 
 Las capturas de página son de 320×200 px y las de componente (`diseno/capturas/`) de 40×40 px o menos, según el caso (enmienda 6 corregida). Los defectos son los descritos arriba. Son bytes sintéticos; el generador no está en el repositorio. Las dos de origen estructural (`falla-v2-caso.png` con texto plano, `falla-v2-servicios.png` de 0 bytes) y `falla-v2b-home.png` (16 bytes truncados) se conservan tal cual.
+
+## Regresiones de la red (V8), TASK-007
+
+```bash
+python3 scripts/pruebas/test_verificador_red.py -v
+```
+
+Solo biblioteca estándar, unos 20 s. Levanta un servidor HTTP en `127.0.0.1` con una ruta que tarda 8 s (debe dar OK), otra que no responde nunca (debe dar FALLO dentro del tiempo máximo, con los segundos medidos y los 3 intentos), una ruta con «ñ» que debe llegar codificada una sola vez, y comprobaciones de dominio IDN (en IDNA, y un `.invalid` que falla por DNS y no por codificación). También prueba la validación de `--timeout-total` y que el script no usa nada fuera de la biblioteca estándar. Incluye también que no hay más de 2 peticiones simultáneas al mismo dominio.
+
+**Dependiente de red:** el caso del dominio `.invalid` hace una consulta DNS real. En un entorno sin red, el resultado sigue siendo FALLO por DNS, pero el test no prueba nada más allá de la codificación.

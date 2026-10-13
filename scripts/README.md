@@ -10,6 +10,7 @@ Solo biblioteca estándar de Python 3. No instala nada.
 python3 scripts/verificar-investigacion.py              # gate: con red
 python3 scripts/verificar-investigacion.py --sin-red    # salta V8, para pruebas locales
 python3 scripts/verificar-investigacion.py --raiz scripts/pruebas   # otra raíz, misma estructura
+python3 scripts/verificar-investigacion.py --timeout-total 900        # tiempo máximo de toda la V8 (por defecto 600 s)
 ```
 
 - Lee `docs/investigacion/` y `docs/diseno/` (o la raíz que indique `--raiz`).
@@ -28,7 +29,7 @@ python3 scripts/verificar-investigacion.py --raiz scripts/pruebas   # otra raíz
 | V5 | Servicio enlazado | Falta la sección «Frente al catálogo de Pharmaco», la tabla no tiene las filas 1 a 11, una celda «¿Lo ofrecen?» no es Sí o No (la negrita y el punto final se ignoran), o una fila Sí no tiene URL de página (ruta `/` o vacía) |
 | V6 | Plantilla rellena | Quedan `{`, `AAAA-MM-DD`, `Lorem`, `TODO` o `(o «no verificado»)` **fuera de comillas invertidas**. Un marcador entre comillas invertidas es cita deliberada y no cuenta |
 | V7 | Composición de la muestra | No hay 20 fichas principales, o no hay 10 comparables y 10 referentes/especialistas. Un perfil no reconocido también es FALLO |
-| V8 | Enlaces vivos | Una URL de fichas, servicios, prueba social o diseño devuelve 410, o sigue dando 404, 5xx o error de DNS o conexión tras 3 intentos. Los 404, 5xx y errores de red se reintentan 2 veces, con 2 s de espera (TASK-005, regla de Clia de 2026-10-10). La línea de FALLO o AVISO indica los intentos |
+| V8 | Enlaces vivos | Una URL de fichas, servicios, prueba social o diseño devuelve 410, o sigue dando 404, 5xx o error de DNS o conexión tras 3 intentos. Los 404, 5xx y errores de red se reintentan 2 veces, con 2 s de espera (TASK-005, regla de Clia de 2026-10-10). Cada intento tiene un tiempo máximo de 30 s; un tiempo agotado es FALLO y el motivo dice los segundos medidos por intento. Una URL que no se puede codificar es FALLO «URL mal formada». Una URL sin comprobar cuando se agota `--timeout-total` es FALLO «no comprobada». La línea de FALLO o AVISO indica los intentos |
 
 ### Qué avisa (AVISO: no bloquea, se explica en el hilo)
 
@@ -43,6 +44,16 @@ DECISION-006 (aclaraciones de Clia) fija estas dos reglas: solo 404 y 410 son FA
 ### Qué NO comprueba
 
 El script comprueba **forma y existencia**, no **verdad**. No sabe si una cita es literal, si la captura muestra lo que dice la ficha ni si un conteo está bien interpretado. Eso sigue siendo de **Dexia** (REVIEW) y de **Clia** (auditoría por muestreo). **En verde es necesario, no suficiente.**
+
+### Red de V8 (TASK-007)
+
+- **Dominios en IDNA.** `árkos.com` se pide como `xn--rkos-4na.com`. La redirección a otro dominio se compara ya en IDNA, así que `árkos.com` y su forma punycode no dan AVISO falso.
+- **Ruta y consulta.** Lo que no es ASCII se codifica con `urllib.parse.quote` («ñ» → `%C3%B1»). Lo que ya viene codificado se respeta: `%C3%B1` no pasa a `%25C3%25B1`. Un `%` sin dos dígitos hexadecimales es «URL mal formada».
+- **Tiempos.** 30 s por intento, 2 reintentos espaciados 2 s, y un tiempo máximo de toda la ejecución con `--timeout-total` (600 s por defecto). Lo que no termina a tiempo es FALLO, porque sin comprobar no puede dar OK.
+- **Paralelo.** Hasta 8 hilos, con 2 peticiones simultáneas como máximo por dominio. Los hilos son daemon: la ejecución termina aunque quede una conexión colgada.
+- Solo biblioteca estándar. Qué es FALLO y qué es AVISO no cambia (DECISION-006).
+
+Regresiones de la red: [`pruebas/test_verificador_red.py`](pruebas/test_verificador_red.py).
 
 ### Alcance de V2 (capturas), DECISION-006 enmienda 6
 
