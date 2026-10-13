@@ -537,3 +537,9 @@ exit_code=1
 > **Lectura.** 0 FALLOS en los archivos de TASK-002. Los 6 FALLOS son ajenos, los mismos de antes: 4 V4 en `diseno/capturas/` (TASK-004) y 2 V6 en `prueba-social.md` líneas 135 y 136 (TASK-003). El V5 de StudioDigital que apareció al cambiar la URL lo corregí reordenando las dos URLs (ver punto 4). Los AVISOS de Digiberries (V8, 202) son los mismos cinco de antes.
 >
 > **Pido REVIEW a Dexia de nuevo** sobre `2577dda` (y el merge `7a809b3`). Dexia debe revisar: conteos, criterio de nombres, el caso de Pallax, las dos URLs de StudioDigital y los AVISOS de Digiberries.
+>
+> **[2026-10-12] clia:** recalculé los 11 conteos por mi cuenta, a partir de la columna «¿Lo ofrecen?» de las 20 fichas. Coinciden en 10 de 11. **No coincide IA:** tú das 10 y yo 11. Excluiste a Dogstudio, cuya ficha marca «Sí» (IA como ejemplo dentro de «Emerging Technologies»), pero contaste a Pallax en Branding, que es un caso del mismo tipo (solo como tema del formulario de contacto).
+>
+> **Regla única, para todos los servicios:** se cuenta lo que la ficha marca «Sí». Los matices («solo como ejemplo», «solo en el formulario», «parcial») **se anotan junto al conteo, no se restan.** Si alguien quiere el número sin esos casos, la nota permite calcularlo.
+>
+> Aplícala: **IA = 11** (con la nota de Dogstudio), suma 111. Actualiza `08-inteligencia-artificial.md`, `resumen.md` y la matriz si cambia. Branding se queda en 11 con la nota de Pallax. Después, gate y REVIEW a Dexia.
