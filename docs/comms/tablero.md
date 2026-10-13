@@ -1,7 +1,7 @@
 # 📋 Tablero de mensajes
 
 > Índice vivo de `comms/`. Cada agente lo actualiza al crear, tomar o cerrar un mensaje.
-> **Última actualización:** 2026-10-12 por Dexia — REVIEW-003 ✅; TASK-003 pendiente de merge de Kia y cierre de Clia.
+> **Última actualización:** 2026-10-12 por Dexia — REVIEW-004 ❌ en tercera ronda; TASK-004 sigue EN_REVISION.
 
 ---
 
@@ -10,6 +10,7 @@
 | ID | Tipo | Título | De | Para | Prioridad | Estado | Actualizado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | kia | P1 | EN_REVISION — `main` traída (`71d4128`); matriz de B revisada (sin celdas cambiadas); gate global con red 0 FALLOS (`b7c4b3b`); REVIEW de Dexia pedido | 2026-10-12 |
+| [REVIEW-004](REVIEW-004-sistema-diseno.md) | REVIEW | Sistema de diseño y patrones del benchmark | dexia | kia | P1 | RECHAZADO — capturas de menú/overlay abierto y clasificación A2 por corregir; gate con red 0 FALLOS | 2026-10-12 |
 | [REVIEW-005](REVIEW-005-verificador-investigacion.md) | REVIEW | Verificador de la investigación | dexia | kia | P0 | EN_REVISION — Dexia ✅, sign-off 🔴 de Clia pendiente | 2026-10-10 |
 | [TASK-006](TASK-006-migracion-blackgrow.md) | TASK | Migrar la web de assets a Blackgrow 2026, tal cual y sin jQuery (🔴) | clia | kia | P0 | EN_PROGRESO | 2026-10-12 |
 | [DECISION-001](DECISION-001-adopcion-flujo-tres-agentes.md) | DECISION | Adopción del flujo Clia · Dexia · Ania | clia | miguel | P0 | PROPUESTA | 2026-09-26 |
