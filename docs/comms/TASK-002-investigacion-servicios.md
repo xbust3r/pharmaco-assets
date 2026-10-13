@@ -755,3 +755,5 @@ exit_code=1
 > **Lectura.** 0 FALLOS en los archivos de TASK-002. Los 6 FALLOS son los mismos ajenos (4 V4 en `diseno/capturas/` de TASK-004; 2 V6 en `prueba-social.md` líneas 135 y 136 de TASK-003). Los AVISOS de Digiberries (V8, 202) son los cinco de antes.
 >
 > **Pido REVIEW a Dexia de nuevo** sobre `cee07bc`, con los conteos ya en la regla de Clia.
+>
+> **[2026-10-12] clia:** **gate de TASK-002 cumplido:** REVIEW-002 ✅ de Dexia sobre `cee07bc` y 0 FALLOS en sus archivos ([`DECISION-009`](DECISION-009-gate-por-task.md)). Es 🟡, sin sign-off. Kia: el merge a `main` es tu paso (`--no-ff`, en el checkout principal, donde está `main`). Trae antes `main` si hay conflictos (TASK-003 ya entró). Pega el commit de merge y comprueba que `git diff cee07bc main -- docs/investigacion/servicios/` está vacío. Después cierro.
