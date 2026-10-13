@@ -1,0 +1,502 @@
+# Build en un clon limpio de feat/TASK-006-migracion-blackgrow (sin node_modules), 2026-10-13 05:12
+
+$ pnpm install
+✓ Lockfile passes supply-chain policies (verified 6h ago)
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 302, reused 302, downloaded 0, added 295
+Packages: +548
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 548, reused 548, downloaded 0, added 548, done
+. prepare$ husky
+. prepare: Done
+
+devDependencies:
++ @eslint/js 10.0.1
++ @markuplint/pug-parser 4.18.3
++ @prettier/plugin-pug 3.4.2
++ @stylistic/eslint-plugin 5.10.0
++ @tailwindcss/postcss 4.3.3
++ @tailwindcss/vite 4.3.3
++ @vituum/vite-plugin-pug 2.0.1
++ eslint 10.10.0
++ glob 13.0.6
++ globals 17.12.0
++ husky 9.1.7
++ lint-staged 17.5.0
++ markuplint 4.18.3
++ npm-run-all 4.1.5
++ picocolors 1.1.1
++ postcss 8.5.28
++ prettier 3.9.6
++ pug 3.0.4
++ sharp 0.35.4
++ stylelint 17.15.0
++ stylelint-config-standard 40.0.0
++ tailwindcss 4.3.3
++ vite 8.2.2
++ vite-plugin-image-optimizer 2.0.3
++ vite-svg-sprite-wrapper 1.5.0
++ vituum 2.0.2
+
+Done in 2.5s using pnpm v12.3.4
+install-exit=0
+
+$ pnpm run build
+$ npm-run-all optimize --parallel lint validate
+$ node plugins/convertWebp.js
+Start image optimization
+------------------------------------------------
+✅  Completed in 0.02s
+   • Processed: 0
+   • Skipped:  0
+------------------------------------------------
+$ run-p lint:pug lint:css lint:js
+$ node plugins/validate-assets.js
+🔍 Iniciando validación estricta de assets...
+✔ Todos los assets existen. Procediendo...
+
+$ markuplint "src/**/*.pug"
+$ stylelint "src/**/*.css" --fix --cache --cache-location .stylelintcache
+$ eslint "src/**/*.js" --fix --cache --cache-location .eslintcache
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/pages/servicios.pug
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/pages/servicio-detalle.pug
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/pages/portafolio.pug
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/pages/nosotros.pug
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/pages/index.pug
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/pages/diseño-de-personajes.pug
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/pages/contactanos.pug
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/pages/campana-stralis.pug
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/pages/campana-iveco.pug
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/pages/campana-cyberwow.pug
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/layouts/main-template.pug
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/components/ui.pug
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/components/site-header.pug
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/components/site-footer.pug
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/components/repetidos.pug
+<markuplint> passed /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/clon-limpio/src/components/head-base.pug
+$ vite build
+vite v8.2.2 building client environment for production...
+[vite-plugin-svg-sprite] Sprite generated /src/assets/images/sprite.svg
+transforming...
+
+../../images/components/icon-videos.svg referenced in ../../images/components/icon-videos.svg didn't resolve at build time, it will remain unchanged to be resolved at runtime
+✓ 13 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/assets/images/components/contact/icon-checkbox.svg                                              0.21 kB │ gzip:  0.18 kB
+dist/assets/images/components/services/icon-formula.svg                                              0.24 kB │ gzip:  0.16 kB
+dist/assets/images/favicon/browserconfig.xml                                                         0.26 kB │ gzip:  0.17 kB
+dist/assets/images/favicon/site.webmanifest                                                          0.44 kB
+dist/assets/images/components/contact/icon-mail.svg                                                  0.49 kB │ gzip:  0.31 kB
+dist/assets/images/favicon/safari-pinned-tab.svg                                                     0.50 kB │ gzip:  0.33 kB
+dist/assets/images/components/services/bullet-list.svg                                               0.58 kB │ gzip:  0.35 kB
+dist/assets/images/favicon/favicon-16x16.png                                                         0.64 kB
+dist/assets/images/favicon/favicon-32x32.png                                                         0.84 kB
+dist/assets/images/components/contact/icon-phone.svg                                                 1.39 kB │ gzip:  0.70 kB
+dist/assets/images/components/contact/icon-whatsapp.svg                                              1.44 kB │ gzip:  0.74 kB
+dist/assets/images/components/clients/client-4.svg                                                   1.68 kB │ gzip:  0.81 kB
+dist/assets/images/components/clients/client-2.svg                                                   1.70 kB │ gzip:  0.87 kB
+dist/assets/images/components/clients/client-1.svg                                                   1.99 kB │ gzip:  0.87 kB
+dist/assets/images/favicon/apple-touch-icon.png                                                      2.53 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/gallery-teaser50min2-sm.webp           2.78 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/gallery-teaser50min-sm.webp            3.07 kB
+dist/assets/images/components/site-header/pharmaco-logo.svg                                          3.11 kB │ gzip:  1.46 kB
+dist/assets/images/components/clients/client-3.svg                                                   4.33 kB │ gzip:  2.01 kB
+dist/assets/images/components/portafolio/campaña-stralis/canvas5-sm.webp                             4.35 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/gallery-teaser50-sm.webp               6.38 kB
+dist/assets/images/components/services/service-2.webp                                                6.83 kB
+dist/assets/images/sprite.svg                                                                        7.58 kB │ gzip:  3.00 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/album-2-sm.webp                            7.98 kB
+dist/assets/images/components/portafolio/campaña-stralis/canvas5-lg.webp                             8.00 kB
+dist/assets/images/components/clients/client-5.svg                                                   8.09 kB │ gzip:  3.60 kB
+dist/assets/images/components/contact/form-bg-sm.webp                                                8.32 kB
+dist/assets/images/components/services/service-1.webp                                                8.73 kB
+dist/assets/images/components/site-footer/footer-bg-sm.webp                                          8.82 kB
+dist/assets/images/components/site-footer/footer-bg-lg.webp                                          9.12 kB
+dist/assets/images/components/services/service-3.webp                                                9.15 kB
+dist/assets/images/components/portafolio/campaña-stralis/canvas3-sm.webp                            11.18 kB
+dist/assets/images/components/portafolio/campaña-iveco/revista-7-sm.webp                            11.43 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/album-4-sm.webp                           11.73 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/album-2-lg.webp                           12.36 kB
+dist/assets/images/components/portafolio/campaña-iveco/revista-6-sm.webp                            12.87 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/video-sm.webp                             13.77 kB
+dist/assets/images/components/portafolio/campaña-stralis/canvas2-sm.webp                            14.02 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/gallery-teaser50min2-lg.webp          14.39 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion2-sm.webp                         14.88 kB
+dist/assets/images/favicon/favicon.ico                                                              15.08 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/gallery-teaser50min-lg.webp           15.69 kB
+dist/assets/images/components/portafolio/campaña-iveco/revista-3-sm.webp                            15.81 kB
+dist/assets/images/components/hero/hero-us-sm.webp                                                  15.90 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/gallery8-lg.webp                          16.03 kB
+dist/assets/images/components/portafolio/campaña-stralis/banner-facebook-sm.webp                    16.11 kB
+dist/assets/images/components/portafolio/campaña-iveco/revista-2-sm.webp                            16.12 kB
+dist/assets/images/components/portafolio/campaña-stralis/canvas4-sm.webp                            16.22 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/banner-facebook-sm.webp                   16.37 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/simple-banner-sm.webp                     16.72 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/album-3-sm.webp                           17.06 kB
+dist/assets/images/components/services/media-block-reasons.webp                                     17.73 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/album-big-sm.webp                         18.82 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/stories6-lg.webp                          19.28 kB
+dist/assets/images/components/clients/clients-bg.webp                                               19.73 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/album-6-lg.webp                           20.27 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/stories4-sm.webp                          21.00 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/album-4-lg.webp                           21.12 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/album-8-lg.webp                           21.31 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion-revista2-sm.webp                 21.80 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/stories7-lg.webp                          21.88 kB
+dist/assets/images/components/portafolio/campaña-stralis/simple-banner-sm.webp                      22.26 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/gallery2-lg.webp                          22.27 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/stories5-lg.webp                          22.67 kB
+dist/assets/images/components/portafolio/campaña-stralis/canvas3-lg.webp                            23.15 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/featured-ads2-sm.webp                     23.27 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/banner-instagram-sm.webp                  23.35 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/stories2-sm.webp                          23.70 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/album-7-lg.webp                           24.00 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/stories1-sm.webp                          24.26 kB
+dist/assets/images/components/services/process-2-sm.webp                                            25.27 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion1-sm.webp                         26.02 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/gallery9-lg.webp                          26.29 kB
+dist/assets/images/components/services/process-3-sm.webp                                            26.63 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/stories8-lg.webp                          26.68 kB
+dist/assets/images/components/home/robot-sm.webp                                                    27.54 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/album-5-lg.webp                           27.69 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/stories3-sm.webp                          27.72 kB
+dist/assets/images/components/about-us/member-1.webp                                                27.85 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/stories4-lg.webp                          28.38 kB
+dist/assets/images/components/portafolio/campaña-stralis/canvas1-sm.webp                            28.39 kB
+dist/assets/images/components/services/process-4-sm.webp                                            28.48 kB
+dist/nosotros.html                                                                                  28.63 kB │ gzip:  5.14 kB
+dist/assets/images/components/portafolio/campaña-stralis/canvas2-lg.webp                            28.64 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/gallery3-lg.webp                          29.16 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/gallery4-lg.webp                          29.50 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/gallery1-lg.webp                          30.66 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/gallery-teaser50-lg.webp              30.69 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/album-3-lg.webp                           30.79 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/gallery6-lg.webp                          31.92 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/vista4.webp                           32.83 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/gallery7-lg.webp                          32.92 kB
+dist/diseño-de-personajes.html                                                                      32.99 kB │ gzip:  5.74 kB
+dist/assets/images/components/hero/hero-portafolio-sm.webp                                          33.22 kB
+dist/assets/images/components/hero/hero-home-sm.webp                                                33.22 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/stories2-lg.webp                          33.37 kB
+dist/campana-iveco.html                                                                             34.24 kB │ gzip:  5.24 kB
+dist/assets/images/components/home/robot-contact-sm.webp                                            34.69 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/vista-big-sm.webp                     34.96 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/featured-ads1-sm.webp                     35.18 kB
+dist/portafolio.html                                                                                35.23 kB │ gzip:  4.74 kB
+dist/assets/images/components/portafolio/campaña-stralis/canvas4-lg.webp                            35.23 kB
+dist/contactanos.html                                                                               35.32 kB │ gzip:  5.57 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/stories1-lg.webp                          35.49 kB
+dist/assets/images/components/hero/hero-contact-sm.webp                                             36.05 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/vista2.webp                           37.15 kB
+dist/assets/images/components/hero/hero-servicios-sm.webp                                           37.28 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/vista1.webp                           37.52 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/vista3.webp                           37.83 kB
+dist/assets/images/components/portafolio/campaña-iveco/revista-5-sm.webp                            38.29 kB
+dist/servicio-detalle.html                                                                          38.50 kB │ gzip:  6.70 kB
+dist/assets/images/components/about-us/doctor-sm.webp                                               38.54 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery6-sm.webp                           39.88 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/laptop-sm.webp                            41.01 kB
+dist/assets/images/components/contact/form-bg-lg.webp                                               41.24 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery8-sm.webp                           41.81 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/stories3-lg.webp                          41.82 kB
+dist/assets/images/components/portafolio/campaña-iveco/revista-1-sm.webp                            42.18 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/banner-facebook-sm@2x.webp                43.29 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/gallery-teaser100-lg.webp             43.93 kB
+dist/assets/images/components/services/process-1-sm.webp                                            44.35 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/simple-banner-sm@2x.webp                  44.59 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery9-sm.webp                           45.17 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery7-sm.webp                           46.54 kB
+dist/index.html                                                                                     46.69 kB │ gzip:  6.49 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion2-sm@2x.webp                      47.25 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion-revista1-sm.webp                 47.41 kB
+dist/assets/images/components/portafolio/campaña-stralis/banner-facebook-sm@2x.webp                 50.63 kB
+dist/campana-stralis.html                                                                           50.89 kB │ gzip:  6.49 kB
+dist/assets/fonts/Poppins-Medium.woff2                                                              51.69 kB
+dist/servicios.html                                                                                 52.22 kB │ gzip:  6.87 kB
+dist/assets/fonts/Poppins-SemiBold.woff2                                                            52.40 kB
+dist/assets/fonts/Poppins-Regular.woff2                                                             52.45 kB
+dist/assets/images/components/projects/project-1.webp                                               53.34 kB
+dist/campana-cyberwow.html                                                                          55.48 kB │ gzip:  6.72 kB
+dist/assets/images/components/hero/hero-us-sm@2x.webp                                               55.83 kB
+dist/assets/images/components/hero/hero-diseño-de-personajes-sm.webp                                56.42 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/banner-instagram-sm@2x.webp               58.22 kB
+dist/assets/images/components/portafolio/campaña-stralis/video-grid-big-sm.webp                     61.16 kB
+dist/assets/images/components/services/process-3-lg.webp                                            61.71 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/process3.webp                         64.13 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/process2.webp                         66.71 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery1-sm.webp                           67.48 kB
+dist/assets/images/components/services/process-4-lg.webp                                            67.83 kB
+dist/assets/images/components/portafolio/campaña-stralis/video1-sm.webp                             68.84 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/gallery-teaser100-sm.webp             68.87 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/banner-instagram-lg.webp                  69.15 kB
+dist/assets/images/components/portafolio/campaña-stralis/campaña-stralis-instagram-sm.webp          69.18 kB
+dist/assets/images/components/portafolio/campaña-stralis/simple-banner-sm@2x.webp                   69.33 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery3-sm.webp                           69.55 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/featured-ads2-lg.webp                     70.18 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/process1.webp                         70.21 kB
+dist/assets/images/components/services/process-2-lg.webp                                            70.24 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery4-sm.webp                           71.44 kB
+dist/assets/images/components/portafolio/campaña-stralis/stories3-sm.webp                           72.38 kB
+dist/assets/fonts/Poppins-Medium.woff                                                               72.66 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/video-lg.webp                             73.04 kB
+dist/assets/fonts/Poppins-SemiBold.woff                                                             73.20 kB
+dist/assets/fonts/Poppins-Regular.woff                                                              73.51 kB
+dist/assets/images/components/portafolio/campaña-stralis/stories1-sm.webp                           74.44 kB
+dist/assets/images/components/portafolio/campaña-stralis/stories4-sm.webp                           74.80 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery2-sm.webp                           75.28 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/gallery5-lg.webp                          77.28 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery5-sm.webp                           77.88 kB
+dist/assets/images/components/portafolio/campaña-stralis/stories2-sm.webp                           78.99 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/banner-facebook-lg.webp                   80.97 kB
+dist/assets/images/components/portafolio/campaña-iveco/revista-4-lg.webp                            82.98 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion1-sm@2x.webp                      83.02 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/album-big-lg.webp                         87.59 kB
+dist/assets/images/components/services/process-1-lg.webp                                            92.10 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion-revista2-sm@2x.webp              92.53 kB
+dist/assets/images/components/portafolio/campaña-iveco/revista-3-lg.webp                            92.79 kB
+dist/assets/images/components/home/robot-contact-lg.webp                                            93.10 kB
+dist/assets/images/components/portafolio/campaña-stralis/canvas1-lg.webp                            94.29 kB
+dist/assets/images/components/portafolio/campaña-iveco/revista-2-lg.webp                            96.51 kB
+dist/assets/images/components/home/robot-lg.webp                                                    98.09 kB
+dist/assets/images/components/hero/hero-home-sm@2x.webp                                             98.79 kB
+dist/assets/images/components/hero/hero-us-lg.webp                                                  99.22 kB
+dist/assets/images/components/home/robot-contact-sm@2x.webp                                        102.36 kB
+dist/assets/images/components/hero/hero-portafolio-sm@2x.webp                                      102.56 kB
+dist/assets/images/components/portafolio/campaña-iveco/landing-sm.webp                             103.18 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/vista-big-sm@2x.webp                 106.43 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/featured-ads1-lg.webp                    107.18 kB
+dist/assets/images/components/hero/hero-servicios-sm@2x.webp                                       109.98 kB
+dist/assets/images/components/hero/hero-contact-sm@2x.webp                                         110.51 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/simple-banner-lg.webp                    114.35 kB
+dist/assets/images/components/portafolio/campaña-iveco/revista-7-lg.webp                           119.03 kB
+dist/assets/images/components/portafolio/campaña-iveco/revista-6-lg.webp                           136.32 kB
+dist/assets/images/components/portafolio/campaña-stralis/banner-facebook-lg.webp                   136.97 kB
+dist/assets/images/components/hero/hero-home-lg.webp                                               138.59 kB
+dist/assets/images/components/hero/hero-portafolio-lg.webp                                         143.50 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion-revista1-sm@2x.webp             151.42 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion2-lg.webp                        152.08 kB
+dist/assets/images/components/hero/hero-contact-lg.webp                                            152.73 kB
+dist/assets/images/components/about-us/doctor-lg.webp                                              156.29 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/banner-instagram-lg@2x.webp              180.57 kB
+dist/assets/images/components/hero/hero-diseño-de-personajes-sm@2x.webp                            189.46 kB
+dist/assets/images/components/hero/hero-servicios-lg.webp                                          197.58 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/banner-facebook-lg@2x.webp               198.12 kB
+dist/assets/images/components/hero/hero-diseño-de-personajes-lg.webp                               209.79 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery6-lg.webp                          218.94 kB
+dist/assets/images/components/portafolio/campaña-stralis/simple-banner-lg.webp                     224.23 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion1-lg.webp                        242.62 kB
+dist/assets/images/components/portafolio/campaña-stralis/campaña-stralis-instagram-sm@2x.webp      242.64 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery3-lg.webp                          243.83 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery1-lg.webp                          245.57 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery4-lg.webp                          259.37 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery8-lg.webp                          267.18 kB
+dist/assets/images/components/portafolio/campaña-stralis/stories1-lg.webp                          275.49 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery9-lg.webp                          276.84 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery7-lg.webp                          276.89 kB
+dist/assets/images/components/portafolio/campaña-stralis/stories3-lg.webp                          277.48 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/simple-banner-lg@2x.webp                 280.49 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery2-lg.webp                          282.34 kB
+dist/assets/images/components/portafolio/campaña-stralis/stories4-lg.webp                          289.12 kB
+dist/assets/images/components/portafolio/campaña-stralis/stories2-lg.webp                          292.85 kB
+dist/assets/images/components/home/robot-contact-lg@2x.webp                                        298.76 kB
+dist/assets/images/components/portafolio/campaña-cyberwow/laptop-lg.webp                           308.42 kB
+dist/assets/images/components/hero/hero-us-lg@2x.webp                                              322.38 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/vista-big-lg.webp                    328.11 kB
+dist/assets/images/components/portafolio/campaña-iveco/landing-sm@2x.webp                          345.45 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion-revista2-lg.webp                349.06 kB
+dist/assets/images/components/portafolio/campaña-stralis/banner-facebook-lg@2x.webp                378.99 kB
+dist/assets/images/components/portafolio/campaña-iveco/revista-1-lg.webp                           424.84 kB
+dist/assets/images/components/portafolio/campaña-iveco/revista-5-lg.webp                           437.22 kB
+dist/assets/images/components/hero/hero-home-lg@2x.webp                                            442.69 kB
+dist/assets/images/components/hero/hero-portafolio-lg@2x.webp                                      457.39 kB
+dist/assets/images/components/portafolio/campaña-stralis/gallery5-lg.webp                          457.63 kB
+dist/assets/images/components/portafolio/campaña-stralis/campaña-stralis-instagram-lg.webp         458.61 kB
+dist/assets/images/components/portafolio/campaña-stralis/video-grid-big-lg.webp                    461.18 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion2-lg@2x.webp                     474.33 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion-revista1-lg.webp                522.90 kB
+dist/assets/images/components/hero/hero-contact-lg@2x.webp                                         535.17 kB
+dist/assets/images/components/hero/hero-servicios-lg@2x.webp                                       588.00 kB
+dist/assets/images/components/portafolio/campaña-iveco/landing-lg.webp                             637.59 kB
+dist/assets/images/components/hero/hero-diseño-de-personajes-lg@2x.webp                            658.96 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion1-lg@2x.webp                     659.58 kB
+dist/assets/images/components/portafolio/campaña-stralis/simple-banner-lg@2x.webp                  661.04 kB
+dist/assets/images/components/portafolio/campaña-stralis/video1-lg.webp                            723.26 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion-revista2-lg@2x.webp           1,035.60 kB
+dist/assets/images/components/portafolio/diseño-de-personajes/vista-big-lg@2x.webp               1,067.11 kB
+dist/assets/images/components/portafolio/campaña-stralis/campaña-stralis-instagram-lg@2x.webp    1,585.07 kB
+dist/assets/images/components/portafolio/campaña-iveco/publicacion-revista1-lg@2x.webp           1,647.85 kB
+dist/assets/images/components/portafolio/campaña-iveco/landing-lg@2x.webp                        2,245.76 kB
+dist/assets/styles/styles.css                                                                       54.01 kB │ gzip: 10.80 kB
+dist/assets/scripts/main.js                                                                          7.10 kB │ gzip:  2.51 kB
+
+✓ built in 3.52s
+
+✨ [vite-plugin-image-optimizer] - optimized images successfully: 
+dist/assets/images/favicon/safari-pinned-tab.svg             0%     skipped original: 0.49 kB <= optimized: 0.49 kB
+dist/assets/images/components/services/bullet-list.svg       -4%    0.59 kB ⭢  0.57 kB
+dist/assets/images/components/clients/client-5.svg           -1%    7.93 kB ⭢  7.91 kB
+dist/assets/images/components/clients/client-4.svg           -3%    1.70 kB ⭢  1.65 kB
+dist/assets/images/components/clients/client-2.svg           -2%    1.69 kB ⭢  1.67 kB
+dist/assets/images/components/contact/icon-checkbox.svg      -9%    0.23 kB ⭢  0.21 kB
+dist/assets/images/components/services/icon-formula.svg      -8%    0.26 kB ⭢  0.24 kB
+dist/assets/images/components/clients/client-3.svg           -1%    4.26 kB ⭢  4.23 kB
+dist/assets/images/components/contact/icon-phone.svg         -2%    1.38 kB ⭢  1.36 kB
+dist/assets/images/components/clients/client-1.svg           -2%    1.98 kB ⭢  1.95 kB
+dist/assets/images/components/site-header/pharmaco-logo.svg  -1%    3.06 kB ⭢  3.04 kB
+dist/assets/images/components/contact/icon-whatsapp.svg      -2%    1.43 kB ⭢  1.41 kB
+dist/assets/images/components/contact/icon-mail.svg          -4%    0.50 kB ⭢  0.48 kB
+
+💰 total savings = 0.29kB/25.01kB ≈ 1%
+
+
+[PLUGIN_TIMINGS] Plugin hooks ran for 3.4s of this 3.5s build (97%).
+1 hook is listed without a time. Its calls overlapped, so the time inside one call includes work from other calls. To find its cost, profile the build with `node --cpu-prof`:
+  - vite:build-html transform (10 calls)
+See https://rolldown.rs/reference/InputOptions.checks#plugintimings for more details.
+
+$ node plugins/verify-render.js
+Comprobación de render
+------------------------------------------------
+AVISO servicios.html  `outline-offset-[-2px]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `w-[128px]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `w-[180px]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `w-[222px]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `w-[90%]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `max-w-[320px]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `mr-[50px]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `mr-[100px]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `mr-[200px]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `leading-[1.2]` aparece 20 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `ml-[5px]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `h-[26px]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `w-[26px]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `z-[1]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `bg-[center_top]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `max-w-[305px]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `w-[231px]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `leading-[1.46]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `w-[500px]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `w-[600px]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `mt-[130px]` aparece 20 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  `w-[calc(100%_-_200px)]` aparece 10 veces: un valor repetido es un token que falta en `@theme`
+AVISO servicios.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicios.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicios.html  8 elementos comparten las mismas 8 clases (`[fill:currentColor] [font-size:inherit] [height:1em] [overflow:hidden]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicios.html  3 elementos comparten las mismas 7 clases (`[padding-bottom:62px] [padding-left:0] [padding-right:0] [padding-top:…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicios.html  5 elementos comparten las mismas 9 clases (`[line-height:1.16] [margin-top:10px] desktop:[line-height:1.03] deskto…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicios.html  6 elementos comparten las mismas 7 clases (`[margin-left:0] [margin-top:25px] [width:100%] desktop:[margin-top:40p…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicios.html  6 elementos comparten las mismas 10 clases (`[height:auto] [margin-bottom:24px] [margin-left:auto] [margin-right:au…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicios.html  6 elementos comparten las mismas 15 clases (`[flex-direction:column] [flex-wrap:wrap] [min-height:calc(100%_-_180px…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicios.html  6 elementos comparten las mismas 6 clases (`[line-height:1] [margin-bottom:25px] desktop:[margin-bottom:35px] desk…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicios.html  6 elementos comparten las mismas 8 clases (`[line-height:1.3] [margin-bottom:18px] [margin-top:auto] [width:initia…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicios.html  6 elementos comparten las mismas 13 clases (`[align-items:center] [margin-top:auto] [text-decoration:none] [transit…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicios.html  6 elementos comparten las mismas 16 clases (`[border:0]! [clip-path:inset(50%)]! [clip:rect(0_0_0_0)]! [height:1px]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicios.html  4 elementos comparten las mismas 16 clases (`[padding-bottom:7px] [padding-left:10px] [padding-right:10px] [padding…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicios.html  4 elementos comparten las mismas 11 clases (`[margin-bottom:0] [margin-left:auto] [margin-right:auto] [margin-top:3…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicios.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicios.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicio-detalle.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicio-detalle.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicio-detalle.html  5 elementos comparten las mismas 8 clases (`[fill:currentColor] [font-size:inherit] [height:1em] [overflow:hidden]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicio-detalle.html  3 elementos comparten las mismas 7 clases (`[margin-left:initial] [margin-top:30px] [width:100%] desktop:[margin-t…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicio-detalle.html  3 elementos comparten las mismas 8 clases (`[height:auto] [margin-bottom:0] [margin-left:auto] [margin-right:auto]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicio-detalle.html  3 elementos comparten las mismas 7 clases (`[line-height:1] [margin-top:30px] [text-align:center] desktop:text-42 …`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicio-detalle.html  3 elementos comparten las mismas 7 clases (`[line-height:1] [margin-top:10px] [text-align:center] desktop:text-20 …`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicio-detalle.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO servicio-detalle.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO portafolio.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO portafolio.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO portafolio.html  9 elementos comparten las mismas 7 clases (`[margin-left:0] [margin-top:25px] [width:100%] desktop:[margin-top:40p…`): eso es un componente, va en un mixin de `src/components/`
+AVISO portafolio.html  9 elementos comparten las mismas 9 clases (`[flex-direction:column] [flex-wrap:wrap] [height:100%] [overflow:hidde…`): eso es un componente, va en un mixin de `src/components/`
+AVISO portafolio.html  9 elementos comparten las mismas 7 clases (`[height:100%] [overflow:hidden] [transition:all_.2s_ease,outline_0s] b…`): eso es un componente, va en un mixin de `src/components/`
+AVISO portafolio.html  9 elementos comparten las mismas 11 clases (`[height:auto] [left:50%] [max-width:none] [min-height:100%] [min-width…`): eso es un componente, va en un mixin de `src/components/`
+AVISO portafolio.html  9 elementos comparten las mismas 8 clases (`[padding-bottom:34px] [padding-left:24px] [padding-right:24px] [paddin…`): eso es un componente, va en un mixin de `src/components/`
+AVISO portafolio.html  9 elementos comparten las mismas 7 clases (`[text-decoration:none] [transition:all_.2s_ease,outline_0s] group-focu…`): eso es un componente, va en un mixin de `src/components/`
+AVISO portafolio.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO portafolio.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO nosotros.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO nosotros.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO nosotros.html  4 elementos comparten las mismas 8 clases (`[fill:currentColor] [font-size:inherit] [height:1em] [overflow:hidden]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO nosotros.html  3 elementos comparten las mismas 7 clases (`[margin-left:initial] [margin-top:30px] [width:100%] desktop:[margin-t…`): eso es un componente, va en un mixin de `src/components/`
+AVISO nosotros.html  3 elementos comparten las mismas 8 clases (`[height:auto] [margin-bottom:0] [margin-left:auto] [margin-right:auto]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO nosotros.html  3 elementos comparten las mismas 7 clases (`[line-height:1] [margin-top:30px] [text-align:center] desktop:text-42 …`): eso es un componente, va en un mixin de `src/components/`
+AVISO nosotros.html  3 elementos comparten las mismas 7 clases (`[line-height:1] [margin-top:10px] [text-align:center] desktop:text-20 …`): eso es un componente, va en un mixin de `src/components/`
+AVISO nosotros.html  5 elementos comparten las mismas 9 clases (`[height:auto] [margin-bottom:0] [margin-left:auto] [margin-right:auto]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO nosotros.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO nosotros.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  4 elementos comparten las mismas 29 clases (`[align-items:center] [box-shadow:none] [height:48px] [justify-content:…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  10 elementos comparten las mismas 8 clases (`[fill:currentColor] [font-size:inherit] [height:1em] [overflow:hidden]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  4 elementos comparten las mismas 7 clases (`[line-height:1.6] desktop:text-18 tablet:text-17 text-16 text-blue wei…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  4 elementos comparten las mismas 9 clases (`[line-height:1.16] [margin-top:10px] desktop:[line-height:1.03] deskto…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  6 elementos comparten las mismas 7 clases (`[margin-left:0] [margin-top:25px] [width:100%] desktop:[margin-top:40p…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 10 clases (`[height:auto] [margin-bottom:24px] [margin-left:auto] [margin-right:au…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 15 clases (`[flex-direction:column] [flex-wrap:wrap] [min-height:calc(100%_-_180px…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 6 clases (`[line-height:1] [margin-bottom:25px] desktop:[margin-bottom:35px] desk…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 8 clases (`[line-height:1.3] [margin-bottom:18px] [margin-top:auto] [width:initia…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 13 clases (`[align-items:center] [margin-top:auto] [text-decoration:none] [transit…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 16 clases (`[border:0]! [clip-path:inset(50%)]! [clip:rect(0_0_0_0)]! [height:1px]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 9 clases (`[flex-direction:column] [flex-wrap:wrap] [height:100%] [overflow:hidde…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 7 clases (`[height:100%] [overflow:hidden] [transition:all_.2s_ease,outline_0s] b…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 11 clases (`[height:auto] [left:50%] [max-width:none] [min-height:100%] [min-width…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 8 clases (`[padding-bottom:34px] [padding-left:24px] [padding-right:24px] [paddin…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 7 clases (`[text-decoration:none] [transition:all_.2s_ease,outline_0s] group-focu…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  5 elementos comparten las mismas 9 clases (`[height:auto] [margin-bottom:0] [margin-left:auto] [margin-right:auto]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  3 elementos comparten las mismas 6 clases (`[padding-bottom:62px] [padding-left:0] [padding-right:0] [padding-top:…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  3 elementos comparten las mismas 7 clases (`[height:360px] [max-width:360px] [overflow:hidden] [width:100%] deskto…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  3 elementos comparten las mismas 10 clases (`[height:360px] [object-fit:cover] [overflow:hidden] [transition:all_.2…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  4 elementos comparten las mismas 19 clases (`[height:250px] [margin-bottom:35px] [margin-left:0] [margin-right:0] […`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  4 elementos comparten las mismas 6 clases (`[height:100%] [overflow:hidden] [transition:all_.2s_ease,outline_0s] b…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  3 elementos comparten las mismas 22 clases (`[align-items:center] [box-shadow:none] [flex-direction:column] [height…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  3 elementos comparten las mismas 6 clases (`[margin-top:2px] [text-align:center] desktop:text-14 inline-block text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  10 elementos comparten las mismas 6 clases (`[padding-left:30px] [padding-top:2px] before:content-[ block relative …`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  7 elementos comparten las mismas 17 clases (`[border:0]! [clip-path:inset(50%)]! [clip:rect(0_0_0_0)]! [height:1px]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  7 elementos comparten las mismas 6 clases (`[padding-bottom:62px] [padding-left:0] [padding-right:0] [padding-top:…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  6 elementos comparten las mismas 10 clases (`[line-height:1.16] [margin-top:10px] [text-align:center] desktop:[line…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  6 elementos comparten las mismas 6 clases (`[line-height:1.4] [margin-top:20px] [text-align:center] desktop:text-1…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 10 clases (`[height:270px] [margin-bottom:12px] [width:calc(50%_-_6px)] block desk…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 6 clases (`[height:320px] [overflow:hidden] [width:50%] desktop:[height:639px] de…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 7 clases (`[height:100%] [overflow:hidden] [transition:all_.2s_ease,outline_0s] […`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 6 clases (`[margin-bottom:10px] [max-height:550px] [width:calc(50%_-_5px)] deskto…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  3 elementos comparten las mismas 6 clases (`[margin-bottom:10px] [max-height:initial] [width:calc(50%_-_5px)] desk…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  3 elementos comparten las mismas 14 clases (`[height:100%] [margin-bottom:0] [margin-left:auto] [margin-right:auto]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  3 elementos comparten las mismas 7 clases (`[height:100%] [margin-bottom:0] [margin-left:auto] [margin-right:auto]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  5 elementos comparten las mismas 6 clases (`[padding-bottom:62px] [padding-left:0] [padding-right:0] [padding-top:…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  4 elementos comparten las mismas 10 clases (`[line-height:1.16] [margin-top:10px] [text-align:center] desktop:[line…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  4 elementos comparten las mismas 6 clases (`[line-height:1.4] [margin-top:20px] [text-align:center] desktop:text-1…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  3 elementos comparten las mismas 6 clases (`[height:100%] [max-height:initial] [object-fit:cover] [width:100%] blo…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  10 elementos comparten las mismas 6 clases (`[padding-bottom:62px] [padding-left:0] [padding-right:0] [padding-top:…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  8 elementos comparten las mismas 10 clases (`[line-height:1.16] [margin-top:10px] [text-align:center] desktop:[line…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  6 elementos comparten las mismas 6 clases (`[line-height:1.4] [margin-top:20px] [text-align:center] desktop:text-1…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  3 elementos comparten las mismas 9 clases (`[height:292px] [margin-bottom:initial] [margin-top:9px] [width:292px] …`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  8 elementos comparten las mismas 7 clases (`[height:491px] [overflow:hidden] [width:276px] desktop:[height:639px] …`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  8 elementos comparten las mismas 7 clases (`[height:100%] [overflow:hidden] [transition:all_.2s_ease,outline_0s] […`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  4 elementos comparten las mismas 6 clases (`[margin-bottom:10px] [max-height:550px] [width:calc(50%_-_5px)] deskto…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  3 elementos comparten las mismas 7 clases (`[margin-bottom:10px] [max-height:initial] [width:100%] desktop:[margin…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+------------------------------------------------
+Páginas revisadas: 10  ·  assets medidos: 51
+build-exit=0
