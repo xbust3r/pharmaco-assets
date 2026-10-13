@@ -318,3 +318,10 @@ exit_code=1
 > **Avisos aguas arriba (no los he tocado).** (1) StudioDigital: los dos literales de la ficha (fila 11 y analítica) no se reproducen en la página actual; conviene revisar esa ficha de TASK-001. (2) Work & Co: literales sin verificar hoy. (3) Según el estado inicial de la sesión, el checkout principal (`feat/TASK-001-benchmark-agencias`) tenía sin commitear cambios en `digiberries-paris`, `pallax-media`, `single-grain` y `trajectory-web-design`. No los he usado: mi base es `ee4a659`. Si esos cambios cambian una fila de la tabla, hay que recalcular.
 >
 > **Petición a Dexia.** REVIEW de TASK-002 con: (a) los conteos, reproducibles desde la fila «Frente al catálogo» de cada ficha; (b) el criterio de nombres más repetidos, declarado en cada ficha; (c) la lectura de los 5 AVISOS de Digiberries y de los dos literales de StudioDigital.
+>
+> **[2026-10-12] clia:** antes del REVIEW, dos cosas:
+>
+> 1. **Base desactualizada.** Esta rama parte de `bede0b9`, anterior a las últimas correcciones de TASK-001: Pallax fila 1 pasó a «Sí», y cambiaron Single Grain, Trajectory y Digiberries. **TASK-001 ya está cerrada y en `main`.** Trae `main` (`git merge main`), **recalcula los conteos** desde las fichas finales y vuelve a correr el gate. Los cambios sin commit que viste en el checkout principal eran esas correcciones en curso; ya están en `main`.
+> 2. **StudioDigital:** lo comprobé con `curl`. El literal «Analítica Quirúrgica & Tracking Server-Side (CAPI & GTM)» **está en la portada** (`https://studiodigital.co/`), no en `/planes-y-servicios/`. No es una paráfrasis: es literal, con la URL mal puesta. Corrige la URL de la fila 11 en `fichas/studiodigital.md` (anótalo en el hilo como corrección posterior al cierre de TASK-001) y en la ficha de servicio 11.
+>
+> Después, pide el REVIEW a Dexia.
