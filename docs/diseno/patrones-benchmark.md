@@ -1,108 +1,153 @@
-# 📐 Patrones de diseño del benchmark y contraste con la web de assets (TASK-004 Parte B)
+# Patrones del benchmark (Parte B)
 
-> **Documento:** `docs/diseno/patrones-benchmark.md` · **Tarea:** [TASK-004](../comms/TASK-004-sistema-de-diseno.md) (Parte B)
-> **Autora:** Ania (DEV principal) · **Fecha:** 2026-09-26
-> **Muestra cruzada:** 20 agencias internacionales de [TASK-001](../comms/TASK-001-investigacion-benchmark-agencias.md) contrastadas contra [docs/diseno/sistema-web-assets.md](sistema-web-assets.md).
-> **Estado:** Documentación técnica completa de arquitectura, patrones visuales y contraste analítico.
-
----
-
-## 1. Arquitectura de información en el benchmark
-
-Del análisis sistemático de las 20 agencias de Europa y América se extraen las siguientes estructuras de arquitectura web consolidadas:
-
-### 1.1 Menú principal y navegación
-
-* **Estructura típica (18 de 20 agencias):**
-  * Entre 4 y 6 ítems principales: `Work` (Proyectos / Casos), `Services` (Capacidades / Soluciones), `About` (Nosotros / Agencia), `Insights` (Blog / Ideas / Noticias), `Contact` (Contacto).
-  * En agencias comparables (Good Rebels, Major Tom, Lounge Lizard, Brolik): Menú sticky superior con botón destacado de CTA permanente («Let's talk» o «Get proposal»).
-  * En agencias referentes de diseño (Dogstudio, Monopo, Work & Co): Navegación minimalista con enlaces directos o menú lateral flotante para maximizar el espacio de visualización de interfaces y videos.
-
-### 1.2 Orden canónico de las secciones de la Home
-
-A través de las 20 agencias se detecta un patrón de embudo claro en la página de inicio:
-
-```text
-1. Hero de Impacto
-   ├── Titular con propuesta de valor / posicionamiento de marca (3 a 8 palabras)
-   ├── Subtítulo de 1 a 2 líneas clarificando el beneficio para el cliente
-   └── Fondo interactivo (Showreel en video loop o visual generativo 3D/WebGL)
-2. Cinta de Prueba Social Inmediata (Social Proof Strip)
-   └── Logos en escala de grises de clientes conocidos o cifras clave agregadas («Impact stats»)
-3. Casos de Estudio Destacados (Featured Work)
-   └── 3 a 5 tarjetas de proyectos a gran tamaño (ocupan el 50% al 100% del ancho) con video preview
-4. Bloque de Pilares / Servicios (Capabilities Overview)
-   └── 3 a 4 pilares estratégicos con lista desplegable de subservicios o links a detalle
-5. Manifiesto / Sobre Nosotros (About / Culture Teaser)
-   └── Fotografía del equipo o declaración de valores y metodología de trabajo
-6. Contenido Experto / Insights (Blog, Podcasts, Research)
-   └── 2 o 3 artículos recientes demostrando liderazgo de pensamiento
-7. Sección de Conversión Final (Contact Footer)
-   └── Formulario directo de inicio de proyecto o agenda de videollamada
-```
+> **Documento:** `docs/diseno/patrones-benchmark.md` · **Tarea:** [TASK-004](../comms/TASK-004-sistema-de-diseno.md), Parte B
+> **Autora:** Kia (DEV) · **Fecha:** 2026-10-12 · **Rama:** `feat/TASK-004-sistema-diseno`
+> **Fuente única:** las 20 fichas de [`docs/investigacion/fichas/`](../investigacion/fichas/) (10 comparables y 10 referentes o especialistas), con la sección «Estructura de la web y diseño». El anexo `anexo-medianas/` no cuenta. Las fichas son las aceptadas en la undécima ronda de REVIEW-001 de TASK-001.
+> **Estado:** documento de investigación. Describe patrones y su frecuencia; no elige dirección visual ni propone textos para la web. Eso es de `RFC-002`.
 
 ---
 
-## 2. Patrones visuales observados en el benchmark
+## 0. Qué se cuenta y cómo
 
-### 2.1 Tipografía
-
-* **Predominio Sans-Serif Neogrotesca:** 18 de 20 agencias (90%) utilizan tipografías de palo seco geométricas o grotescas (estilos similares a *Inter, Neue Haas Grotesk, PP Neue Montreal, Circular, Poppins*). Evidencia trazable en fichas: [Bravoure](../investigacion/fichas/bravoure.md), [Brolik](../investigacion/fichas/brolik.md), [Dogstudio](../investigacion/fichas/dogstudio.md), [Edenspiekermann](../investigacion/fichas/edenspiekermann.md), [Instrument](../investigacion/fichas/instrument.md), [Work & Co](../investigacion/fichas/work-and-co.md) (ver capturas: [`capturas/bravoure-home.png`](../investigacion/capturas/bravoure-home.png), [`capturas/brolik-home.png`](../investigacion/capturas/brolik-home.png)).
-* **Jerarquía de contraste extremo:**
-  * Titulares masivos en Hero: entre `64px` y `110px` en escritorio, con `line-height` muy apretado (`1.0` a `1.1`).
-  * Textos de párrafo limpios: `16px` a `18px`, con generoso interlineado (`1.5` a `1.6`) para legibilidad.
-* **Toque editorial en títulos:** Agencias referentes ([Code and Theory](../investigacion/fichas/code-and-theory.md), [Monopo](../investigacion/fichas/monopo.md), [Edenspiekermann](../investigacion/fichas/edenspiekermann.md)) introducen tipografías serif contemporáneas de alto contraste en titulares editoriales (ver captura: [`capturas/monopo-home.png`](../investigacion/capturas/monopo-home.png)).
-
-### 2.2 Color y contraste
-
-* **Distribución de fondos y modo:**
-  * 11 de las 20 agencias (55%) utilizan fondos oscuros profundos (`#000000`, `#0a0a0a`, `#111029`) en su home o en sus casos de estudio ([Dogstudio](../investigacion/fichas/dogstudio.md), [Bravoure](../investigacion/fichas/bravoure.md), [BlueOrange](../investigacion/fichas/blueorange-digital.md), [Instrument](../investigacion/fichas/instrument.md), [Code and Theory](../investigacion/fichas/code-and-theory.md), [Neo Consulting](../investigacion/fichas/neo-consulting.md); capturas: [`capturas/bravoure-home.png`](../investigacion/capturas/bravoure-home.png), [`capturas/dogstudio-home.png`](../investigacion/capturas/dogstudio-home.png)).
-  * 9 agencias (45%) apuestan por un fondo blanco puro (`#ffffff`) o neutro muy claro ([Good Rebels](../investigacion/fichas/good-rebels.md), [Edenspiekermann](../investigacion/fichas/edenspiekermann.md), [Upraw Media](../investigacion/fichas/upraw-media.md), [Brolik](../investigacion/fichas/brolik.md), [Major Tom](../investigacion/fichas/major-tom.md), [Lounge Lizard](../investigacion/fichas/lounge-lizard.md), [Work & Co](../investigacion/fichas/work-and-co.md); capturas: [`capturas/brolik-home.png`](../investigacion/capturas/brolik-home.png), [`capturas/upraw-media-home.png`](../investigacion/capturas/upraw-media-home.png)).
-* **Uso del color de acento:** Las agencias modernas evitan paletas sobrecargadas. Utilizan blanco y negro como base, reservando un **único color de acento vibrante** (ej. amarillo lima, azul eléctrico, morado tecnológico) para botones interactivos, estados hover y badges de estado.
-
-### 2.3 Uso de fotografía y video (Especial relevancia para el Servicio 7)
-
-* **El video como recurso de portada:** 13 de las 20 agencias (65%) tienen **clips de video en loop o animaciones interactivas continuas en la cabecera** ([Monopo](../investigacion/fichas/monopo.md), [Media.Monks](../investigacion/fichas/media-monks.md), [Dogstudio](../investigacion/fichas/dogstudio.md), [Bravoure](../investigacion/fichas/bravoure.md); capturas: [`capturas/monopo-home.png`](../investigacion/capturas/monopo-home.png), [`capturas/media-monks-home.png`](../investigacion/capturas/media-monks-home.png)).
-* **Tratamiento de imágenes reales:** Ninguna agencia del benchmark utiliza fotografía de stock genérica. Se observa:
-  1. Fotografía documental auténtica del equipo en su espacio de trabajo.
-  2. Renders y capturas reales de producto digital e interfaces en dispositivos reales.
-  3. Video comercial en alta definición de las campañas producidas.
-
-### 2.4 Movimiento e interacción
-
-* **Animaciones al scroll (Scroll-driven animations):** 17 de las 20 agencias incorporan transiciones suaves de opacidad y desplazamiento al hacer scroll ([Dogstudio](../investigacion/fichas/dogstudio.md), [Bravoure](../investigacion/fichas/bravoure.md), [Instrument](../investigacion/fichas/instrument.md)).
-* **Microinteracciones en cursores:** Efectos de cursor magnético o badges contextuales sobre videos.
-* **Optimización técnica:** Priorización de animaciones CSS aceleradas por hardware vía `transform` y `opacity`.
+- **No se han vuelto a abrir las webs.** Cada celda sale de una viñeta de una ficha, citada por su número de línea (`L`). Si TASK-001 cambia antes de cerrar, esta matriz se recalcula.
+- **Tres valores por celda:**
+  - **Sí**: la ficha lo atribuye a la portada o a la web.
+  - **No**: la ficha lo contradice (por ejemplo, «fondo blanco»), o, en menús, la ficha enumera el menú y la categoría no aparece en la lista.
+- **Regla uniforme para A2 y A3 (por palabras del menú, sin contar URL):** A2 es Sí solo si el menú nombra casos o trabajos («Work», «Our Work», «Trabajos», «Portafolio», «Our Cases»). A3 es Sí si nombra blog o contenido editorial («Blog», «News», «Press», «Insights», «Resources», «Learn», «Latest», «Podcast»). «Nos références», «Clients», «Select Clients» y «Outcomes» no cuentan como casos: su nombre no dice que sean casos. Se ha comprobado que las 20 fichas cumplen esta regla.
+  - **NC** (no consta): la ficha no lo menciona. **NC no es No.** Que una ficha no revisara una sección no prueba que el patrón falte.
+- **Denominador:** 20 en todas las frecuencias. Los «Sí» son mínimos: en 9 de los 11 patrones hay 6 o más NC.
+- **Dos casos a tener en cuenta:** Dogstudio clasifica su portada como oscura porque la ficha describe una captura con un showreel oscuro, pero esa captura muestra sobre todo un cargador animado. Monopo tiene una portada con «captura sin contenido legible», y su patrón de vídeo o animación viene de la descripción de la ficha, no de la captura.
 
 ---
 
-## 3. Tabla de contraste: Web de assets (Pharmaco 2020-2021) vs. Benchmark 2026
+## 1. Arquitectura
 
-Comparación analítica neutral entre los elementos existentes en las maquetas locales ([`sistema-web-assets.md`](sistema-web-assets.md)) y los patrones observados en el benchmark internacional, para servir de evidencia objetiva a las decisiones de `RFC-002`:
+### 1.1 Menús, páginas y secciones
 
-| Elemento / Dimensión | Web de Assets de Pharmaco (2020-2021) | Benchmark Internacional (2026) | Opciones Observadas para RFC-002 |
-| :--- | :--- | :--- | :--- |
-| **Arquitectura CSS** | BEM modular con `inuitcss`, capas (`generic`, `objects`, `components`, `utilities`). | CSS modular, CSS variables nativas o utilitarios modernos. | **Opción A:** Reutilizar la arquitectura BEM existente.<br>**Opción B:** Migrar a CSS variables nativas o utilidades. |
-| **Tipografía Base** | `Poppins` en 5 pesos (400 a 800) servida localmente en WOFF2. | Familias grotescas geométricas (*Inter*, *Montreal*, *Poppins*) en pesos bold y regular. | **Opción A:** Conservar `Poppins` local.<br>**Opción B:** Explorar fuentes del sistema o variables neogrotescas. |
-| **Escala Tipográfica** | Títulos de sección a 35px/40px. Hero a 77px/84px. | Titulares de impacto de 80px a 110px en escritorio con interlineado compacto. | **Opción A:** Mantener escala 2020.<br>**Opción B:** Aumentar escala del Hero y jerarquía de contraste. |
-| **Paleta de Colores** | Morado primario (`#5956e9`), Azul tech (`#4c40f7`), Fondo oscuro (`#111029`), Acento amarillo (`#ffd027`). | Blanco/negro de base con un único acento vibrante. Fondos oscuros presentes en 55% de la muestra. | **Opción A:** Conservar paleta morado/noche.<br>**Opción B:** Simplificar a base monocromática con un solo acento. |
-| **Hero de Portada** | Estático con ilustración/fotografía lateral y textos fijos (`c-hero--home`). | Video showreel en loop o animaciones interactivas continuas (65% de la muestra). | **Opción A:** Mantener Hero estático.<br>**Opción B:** Incorporar módulo de video en loop vinculado al Servicio 7. |
-| **Estructura de Servicios** | Lista estática de tarjetas con textos genéricos y sin entregables específicos. | Páginas con tabs interactivos, metodología, herramientas y casos vinculados. | **Opción A:** Mantener formato tarjeta.<br>**Opción B:** Adoptar la anatomía canónica observada en TASK-002. |
-| **Prueba Social en Home** | Carrusel con 5 logos en SVG planos con `alt="alt"` y tarjetas de proyectos en `Lorem ipsum`. | Logos en escala de grises al 50%, badges de Clutch/Google, métricas cuantitativas (+X%). | **Opción A:** Conservar slider de logos plano.<br>**Opción B:** Reestructurar módulo de confianza con métricas y acreditaciones. |
-| **Casos de Estudio** | Maquetas completas (CyberWow, Iveco, Stralis), con textos simulados y sin métricas de negocio. | Ficha estructurada en Reto > Solución > Métricas (+X%) > Testimonio. | **Opción A:** Galería visual orientada a diseño.<br>**Opción B:** Caso de estudio estructurado con impacto de negocio. |
-| **Formularios de Contacto** | Formulario completo (`.c-contact-form`) con validaciones y selector de presupuesto. | Formularios breves o enlaces a reserva de reunión directa (Cal.com / Calendly). | **Opción A:** Mantener formulario nativo.<br>**Opción B:** Integrar opción híbrida de reserva de calendario. |
-| **Librerías de Animación** | `AOS` (Animate On Scroll) y `tiny-slider`. | Animaciones CSS nativas o bibliotecas ligeras sin dependencias. | **Opción A:** Reutilizar AOS y tiny-slider.<br>**Opción B:** Reemplazar por animaciones CSS nativas al scroll. |
+| Elemento | Fichas que lo describen | Lectura |
+| --- | --- | --- |
+| Menú principal | 20 de 20 | Todas listan su menú. Es lo más homogéneo de la muestra. |
+| Lista de secciones de la home | 3 sin advertencia (`artefact`, `devibi`, `tescanet`); 16 con advertencia de que no está revisada o no es completa; 1 sin viñeta (`monopo`) | Tres fichas listan las secciones «en orden» sin advertir que la lista sea parcial; las otras 16 advierten que no está revisada o no es completa. **No hay un orden común verificable.** |
+| Anatomía de página de servicio | 17 de 20 | Tres no la describen: `devibi` dice que no está revisada en detalle; `dogstudio` y `monopo` no tienen viñeta. |
+| Anatomía de página de caso | 12 de 20 | Ocho no tienen viñeta de caso. |
+| Casos o trabajos en el menú (A2) | Sí 10 · No 10 · NC 0 | Diez menús nombran casos o trabajos («Work», «Trabajos», «Portafolio», «Our Cases» o equivalente). Los otros diez no los nombran, incluidos los que dicen «Nos références», «Clients» u «Outcomes». |
+| Blog, noticias o contenido editorial en el menú (A3) | Sí 13 · No 7 · NC 0 | Trece incluyen blog, noticias, «Insights», «Resources», «Learn», «Press» o «Latest». |
+| Selector de idioma (A4) | Sí 4 · NC 16 | Solo cuatro fichas describen un selector: `agencia-buffalo`, `artefact`, `media-monks` y `studiodigital`. |
+
+### 1.2 Anatomía repetida
+
+Las fichas describen páginas de servicio y de caso con elementos recurrentes: titular grande, bloque de texto, un CTA y, en casos, una ficha lateral o una cifra. Los conteos de cada elemento no se han hecho porque las viñetas no siguen un formato común. Se usan las frecuencias de la sección 2 cuando una descripción es comparable.
 
 ---
 
-## 4. Alternativas de Decisión para la Redacción de `RFC-002`
+## 2. Matriz de observaciones (20 agencias × 11 patrones)
 
-A partir de la evidencia analizada, se identifican las siguientes alternativas estructurales para consideración de Clia y Miguel en el `RFC-002`:
+Leyenda de los patrones:
 
-1. **Enfoque de Continuidad Técnica (Aprovechamiento de Assets 2020):**
-   * Preservar la arquitectura BEM (`inuitcss`), la tipografía `Poppins` y la paleta `#5956e9` / `#111029`.
-   * Actualizar el contenido de los bloques existentes con los textos reales de los 11 servicios y la prueba social disponible.
-2. **Enfoque de Renovación Estructural (Alineamiento con Benchmark 2026):**
-   * Evolucionar el Hero hacia un formato con soporte de video showreel (alineado con la incorporación del servicio de Fotografía y Video).
-   * Reestructurar las páginas de servicio y de caso según la anatomía modular documentada en TASK-002 y TASK-003.
-   * Modernizar el sistema de animación hacia propiedades nativas CSS con aceleración gráfica.
+- **A1**: Botón de acción (CTA) en el encabezado.
+- **A2**: Casos o trabajos en el menú principal.
+- **A3**: Blog, noticias o contenido editorial en el menú.
+- **A4**: Selector de idioma visible.
+- **V1**: Serif en titulares o en el texto principal.
+- **V2**: Sans en titulares o en el texto principal.
+- **V3**: Fondo oscuro como fondo principal.
+- **V4**: Vídeo o animación en la portada.
+- **V5**: Logotipos o sección de clientes en la portada.
+- **V6**: Cifras o métricas en la portada.
+- **V7**: Testimonios, valoraciones o citas de terceros en la portada.
+
+Cada fila enlaza a la ficha. Las letras `L` de la lista de evidencia indican la línea de la viñeta que sostiene el valor.
+
+| Agencia (ficha) | A1 | A2 | A3 | A4 | V1 | V2 | V3 | V4 | V5 | V6 | V7 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| [agencia-buffalo](../investigacion/fichas/agencia-buffalo.md) | Sí | Sí | Sí | Sí | NC | Sí | No | NC | NC | NC | NC |
+| [artefact](../investigacion/fichas/artefact.md) | Sí | No | Sí | Sí | Sí | NC | NC | Sí | Sí | Sí | Sí |
+| [blueorange-digital](../investigacion/fichas/blueorange-digital.md) | Sí | No | Sí | NC | Sí | NC | Sí | Sí | NC | Sí | NC |
+| [code-and-theory](../investigacion/fichas/code-and-theory.md) | Sí | Sí | Sí | NC | Sí | Sí | Sí | NC | NC | NC | Sí |
+| [devibi](../investigacion/fichas/devibi.md) | Sí | Sí | Sí | NC | NC | NC | No | Sí | NC | NC | NC |
+| [digiberries-paris](../investigacion/fichas/digiberries-paris.md) | Sí | No | No | NC | NC | Sí | No | NC | Sí | NC | Sí |
+| [dogstudio](../investigacion/fichas/dogstudio.md) | NC | Sí | No | NC | NC | NC | Sí | Sí | NC | NC | NC |
+| [instrument](../investigacion/fichas/instrument.md) | Sí | Sí | Sí | NC | Sí | NC | No | Sí | Sí | NC | NC |
+| [media-monks](../investigacion/fichas/media-monks.md) | NC | Sí | No | Sí | Sí | NC | NC | NC | NC | NC | NC |
+| [monopo](../investigacion/fichas/monopo.md) | NC | Sí | Sí | NC | NC | NC | NC | Sí | NC | NC | NC |
+| [pallax-media](../investigacion/fichas/pallax-media.md) | Sí | No | No | NC | NC | NC | No | NC | NC | NC | Sí |
+| [screenfire-media](../investigacion/fichas/screenfire-media.md) | NC | No | Sí | NC | NC | NC | NC | NC | Sí | NC | NC |
+| [single-grain](../investigacion/fichas/single-grain.md) | Sí | No | Sí | NC | Sí | NC | Sí | Sí | Sí | Sí | NC |
+| [sitelabs](../investigacion/fichas/sitelabs.md) | Sí | Sí | No | NC | NC | Sí | No | NC | NC | Sí | NC |
+| [stratagemma-studio](../investigacion/fichas/stratagemma-studio.md) | NC | No | No | NC | NC | Sí | Sí | NC | NC | NC | NC |
+| [studiodigital](../investigacion/fichas/studiodigital.md) | Sí | No | No | Sí | NC | NC | Sí | NC | NC | Sí | NC |
+| [tescanet](../investigacion/fichas/tescanet.md) | Sí | Sí | Sí | NC | Sí | NC | NC | Sí | NC | NC | NC |
+| [trajectory-web-design](../investigacion/fichas/trajectory-web-design.md) | Sí | Sí | Sí | NC | NC | NC | NC | NC | Sí | NC | NC |
+| [upraw-media](../investigacion/fichas/upraw-media.md) | Sí | No | Sí | NC | NC | NC | Sí | Sí | Sí | NC | Sí |
+| [work-and-co](../investigacion/fichas/work-and-co.md) | NC | No | Sí | NC | Sí | Sí | No | NC | NC | NC | Sí |
+
+### 2.1 Frecuencias
+
+Las frecuencias salen de la matriz de arriba (20 observaciones por patrón):
+
+| Patrón | Sí | No | NC | Total |
+| --- | --- | --- | --- | --- |
+| **A1** Botón de acción (CTA) en el encabezado | 14 | 0 | 6 | 20 |
+| **A2** Casos o trabajos en el menú principal | 10 | 10 | 0 | 20 |
+| **A3** Blog, noticias o contenido editorial en el menú | 13 | 7 | 0 | 20 |
+| **A4** Selector de idioma visible | 4 | 0 | 16 | 20 |
+| **V1** Serif en titulares o en el texto principal | 8 | 0 | 12 | 20 |
+| **V2** Sans en titulares o en el texto principal | 6 | 0 | 14 | 20 |
+| **V3** Fondo oscuro como fondo principal | 7 | 7 | 6 | 20 |
+| **V4** Vídeo o animación en la portada | 9 | 0 | 11 | 20 |
+| **V5** Logotipos o sección de clientes en la portada | 7 | 0 | 13 | 20 |
+| **V6** Cifras o métricas en la portada | 5 | 0 | 15 | 20 |
+| **V7** Testimonios, valoraciones o citas de terceros en la portada | 6 | 0 | 14 | 20 |
+
+### 2.2 Evidencia por patrón (líneas de cada ficha)
+
+Cada línea lista la agencia y la línea de la ficha. Las agencias marcadas NC no aparecen.
+
+- **A1** Sí: agencia-buffalo (L65), artefact (L72), blueorange-digital (L67), code-and-theory (L68), devibi (L64), digiberries-paris (L70), instrument (L66), pallax-media (L70), single-grain (L65), sitelabs (L68), studiodigital (L73), tescanet (L71), trajectory-web-design (L70), upraw-media (L67). No: —.
+- **A2** Sí: agencia-buffalo (L65), code-and-theory (L64), devibi (L61), dogstudio (L64), instrument (L62), media-monks (L65), monopo (L62), sitelabs (L65), tescanet (L68), trajectory-web-design (L66). No: artefact (L68), blueorange-digital (L63), digiberries-paris (L70), pallax-media (L67), screenfire-media (L65), single-grain (L61), stratagemma-studio (L66), studiodigital (L70), upraw-media (L63), work-and-co (L66).
+- **A3** Sí: agencia-buffalo (L65), artefact (L68), blueorange-digital (L63), code-and-theory (L64), devibi (L61), instrument (L62), monopo (L62), screenfire-media (L65), single-grain (L61), tescanet (L68), trajectory-web-design (L66), upraw-media (L63), work-and-co (L66). No: digiberries-paris (L70), dogstudio (L64), media-monks (L65), pallax-media (L67), sitelabs (L65), stratagemma-studio (L66), studiodigital (L70).
+- **A4** Sí: agencia-buffalo (L65), artefact (L68), media-monks (L70), studiodigital (L70). No: —.
+- **V1** Sí: artefact (L74), blueorange-digital (L69), code-and-theory (L70), instrument (L68), media-monks (L68), single-grain (L67), tescanet (L73), work-and-co (L72). No: —.
+- **V2** Sí: agencia-buffalo (L70), code-and-theory (L70), digiberries-paris (L75), sitelabs (L70), stratagemma-studio (L71), work-and-co (L72). No: —.
+- **V3** Sí: blueorange-digital (L69), code-and-theory (L70), dogstudio (L65), single-grain (L67), stratagemma-studio (L71), studiodigital (L75), upraw-media (L69). No: agencia-buffalo (L70), devibi (L66), digiberries-paris (L75), instrument (L68), pallax-media (L72), sitelabs (L70), work-and-co (L72).
+- **V4** Sí: artefact (L75), blueorange-digital (L64), devibi (L62), dogstudio (L66), instrument (L69), monopo (L63), single-grain (L68), tescanet (L74), upraw-media (L64). No: —.
+- **V5** Sí: artefact (L69), digiberries-paris (L71), instrument (L63), screenfire-media (L66), single-grain (L62), trajectory-web-design (L67), upraw-media (L64). No: —.
+- **V6** Sí: artefact (L69), blueorange-digital (L64), single-grain (L62), sitelabs (L66), studiodigital (L71). No: —.
+- **V7** Sí: artefact (L69), code-and-theory (L65), digiberries-paris (L71), pallax-media (L68), upraw-media (L64), work-and-co (L67). No: —.
+
+### 2.3 Capturas de ejemplo
+
+Estas dos capturas son de TASK-001 y se han mirado para este documento:
+
+- **Fondo oscuro (V3, Sí):** [blueorange-digital-home.png](../investigacion/capturas/blueorange-digital-home.png). La portada tiene fondo azul marino oscuro y un panel de métricas en el bloque superior. La ficha dice que las métricas se animan (líneas 64 y 69); una captura fija no muestra la animación, así que ese punto no se confirma aquí.
+- **Vídeo en la portada (V4, Sí):** [instrument-home.png](../investigacion/capturas/instrument-home.png). Se ve un vídeo enmarcado sobre fondo crema, con el botón de pausa abajo a la izquierda, como dice la ficha en las líneas 68 y 69. La captura tiene el banner de cookies sin aceptar. No se ha aceptado nada.
+
+---
+
+## 3. Contraste con la web de assets
+
+Esta tabla pone juntos lo que hay en la web de assets (medido en `sistema-web-assets.md`) y lo que muestra el benchmark. Es un contraste de evidencia. Cada fila termina en opciones; ninguna es una recomendación.
+
+| Patrón | Web de assets (medido) | Benchmark (Sí · No · NC) | Opciones con evidencia para `RFC-002` |
+| --- | --- | --- | --- |
+| **A1** CTA en el encabezado | Sí: «Contáctanos» como botón morado grande en la cabecera de `index.html`. | 14 · 0 · 6 | Opción A: conservar el botón de contacto tal cual. Opción B: cambiar su texto por una acción distinta, como ya hacen «Agendar una reunión» (`agencia-buffalo`, L65), «Presupuesto» (`sitelabs`, L68) o «Start a project» (`devibi`, L64). |
+| **A2** Casos en el menú | Sí: «Portafolio» en el menú de `index.html`. | 10 · 10 · 0 | Las agencias que llevan casos en el menú lo nombran «Work», «Trabajos», «Portafolio» o «Our Cases». El benchmark se reparte 10 y 10: en la mitad de las fichas el menú no nombra casos. |
+| **A3** Blog o noticias en el menú | Sí: «Blog» en el menú, con enlace a `blog.html`, que no está en `assets/`. | 13 · 7 · 0 | Opción A: mantener la entrada de blog. Opción B: sustituirla por «Press», «Insights» o «Learn», como hacen algunas fichas. El enlace roto es un pendiente de la web de assets, no del benchmark. |
+| **A4** Selector de idioma | No: la cabecera de `index.html` no tiene selector. | 4 · 0 · 16 | Solo cuatro fichas describen selector. Con tan pocas observaciones, el dato no permite decidir. |
+| **V1** Serif en titulares | No: la pila declarada es Poppins con respaldo `sans-serif`; no hay serif. | 8 · 0 · 12 | Las ocho fichas con serif lo usan en titulares o en el texto principal, sobre todo en casos y en la portada. Opción A: mantener la tipografía sans. Opción B: introducir una serif en titulares de casos, con el coste de cargar otra familia. |
+| **V2** Sans en titulares | Sí: Poppins es sans, y la pila la declara primero. | 6 · 0 · 14 | Las fichas que lo describen coinciden con la web de assets. Casi todo lo demás no consta. |
+| **V3** Fondo oscuro principal | No como fondo general: `#ffffff` y `#f0f5f8` en las secciones; el héroe es morado (`#7c56e9`) y el pie es `#00113b`. | 7 · 7 · 6 | El benchmark se reparte por igual entre fondo oscuro y claro. Opción A: mantener fondo claro con héroe de color. Opción B: fondo oscuro en la portada, con las fichas `blueorange-digital` (L69) y `single-grain` (L67) como ejemplos. |
+| **V4** Vídeo o animación en la portada | Animación: sí, con AOS (9 atributos `data-aos` en `index.html`). Vídeo incrustado: no; la portada solo tiene un icono de YouTube. | 9 · 0 · 11 | El benchmark usa vídeo o animación en 9 de 20 portadas, pero la mayoría no consta. Opción A: animaciones ligeras como las de AOS. Opción B: vídeo de fondo, como `instrument`. |
+| **V5** Clientes en la portada | Sí: bloque de clientes con deslizador (`c-clients`), con imágenes de `images/components/clients/`. | 7 · 0 · 13 | Coincide en presencia. Las 13 fichas que no lo describen no permiten concluir nada. |
+| **V6** Cifras en la portada | No: la portada de `index.html` no tiene bloque de cifras. | 5 · 0 · 15 | Cinco fichas tienen cifras en portada (`artefact`, `blueorange-digital`, `single-grain`, `sitelabs`, `studiodigital`). Opción A: sin cifras. Opción B: un bloque de cifras, con la fuente de cada cifra en la web de Pharmaco. |
+| **V7** Testimonios o citas | No: `index.html` no tiene bloque de testimonios ni de citas. | 6 · 0 · 14 | Las seis fichas que lo describen usan testimonios, valoraciones o citas de prensa. Opción A: sin bloque. Opción B: bloque de testimonios, con la fuente de cada cita. |
+
+---
+
+## 4. Lo que no se puede concluir
+
+- **NC es la mayoría en casi todos los patrones.** Las fichas describen lo que revisaron, y en muchos casos solo la portada o un menú. Los conteos son frecuencias de lo descrito, no de lo que existe en cada web.
+- **Con 20 agencias no hay estadística.** Las frecuencias sirven para ver qué aparece en la muestra, no para decir qué hace el mercado.
+- **Dos estudios con portada sin contenido legible** (`monopo` y `dogstudio`) aportan datos de animación y de cargador, no de diseño.
+- **Las fichas no siempre distinguen portada y web.** Cuando una ficha dice «fondo negro» sin indicar página (`code-and-theory`), se cuenta como Sí en la web, y así figura en la evidencia.
+- **Recalcular si cambia TASK-001.** Esta matriz depende de las fichas aceptadas; si una ficha se corrige, se corrige la celda y el conteo.
