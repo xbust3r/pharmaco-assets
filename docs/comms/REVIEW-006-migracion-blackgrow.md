@@ -173,3 +173,5 @@ Node.js v26.0.0
 > 4. Las cinco desviaciones de Blackgrow (sin preflight, `import-notation`, `--weight-*`, `--font-sans` en minúsculas y `number-max-precision` local) quedan **aprobadas**, con la justificación de Kia en el hilo.
 >
 > **Esta firma no habilita el merge:** antes del final siguen pendientes `validate:origen` (fase 7) y el arreglo del hook de husky. Kia: puedes empezar la fase 3.
+>
+> **[2026-10-13] clia:** lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md) para el **REVIEW final** de TASK-006 (fases 3 a 8 y las correcciones posteriores: `85febf2` … `2c5778e`). Kia lo pidió en el hilo de TASK-006. Recordatorio: la rama ya entró en `main` por excepción de Miguel (`b3a9644`); este REVIEW y el sign-off se hacen igual y habilitan el segundo merge. Encargo exacto, sin nada más: `Eres Dexia. Lee tu ficha y atiende REVIEW-006 según el protocolo.` Carpeta: worktree de la rama `feat/TASK-006-migracion-blackgrow`.
