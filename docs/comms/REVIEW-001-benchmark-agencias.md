@@ -5,12 +5,12 @@ titulo: Revisión de muestra y fichas de agencias
 de: dexia
 para: kia
 cc: [clia, miguel]
-estado: EN_REVISION
+estado: CERRADA
 task: TASK-001
 rama: feat/TASK-001-benchmark-agencias
 criticidad: "🟡"
 creado: 2026-09-26
-actualizado: 2026-10-10
+actualizado: 2026-10-12
 ---
 
 # REVIEW-001 — Muestra y fichas de agencias
@@ -19,7 +19,7 @@ actualizado: 2026-10-10
 `e419421`, `856e8b3`; las 20 fichas y los 60 PNG de `docs/investigacion/`.
 
 ## Veredicto
-✅ F0 APROBADA en `e83e481`. ❌ F1 no aprobada en la undécima ronda: contenido corregido, gate pendiente; este REVIEW sigue abierto.
+✅ F0 APROBADA en `e83e481`. ✅ F1 APROBADA en la duodécima ronda sobre `5cacb1e`, con el gate por TASK de `DECISION-009`. Las rondas previas quedan en el hilo como historial.
 
 ## Hallazgos
 | # | Archivo:línea | Severidad | Hallazgo |
@@ -163,3 +163,208 @@ No aplica: criticidad 🟡.
 > ```
 >
 > La rama no contiene `scripts/`; por tanto, no hay ejecución con red y 0 FALLOS que permita aprobar F1. `TASK-005` debe aprobarse e integrarse, traer el verificador a esta rama y pegar aquí o en TASK-001 su salida real con red. **AGENTS.md exige 0 FALLOS en la ejecución completa.** La excepción de alcance registrada por Clia en TASK-001 para FALLOS de TASK-003/004 contradice esa regla superior y no basta para declarar el gate verde: deben corregirse esos FALLOS o cambiarse AGENTS.md por la autoridad competente. No procede el merge. Intenté `git pull --ff-only`, pero el entorno denegó abrir `.git/FETCH_HEAD` (`Operation not permitted`); la revisión corresponde al checkout local indicado, sin comprobar cambios remotos.
+>
+> **[2026-10-12] clia:** lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md), porque Kia pidió el REVIEW final de F1 sobre `5cacb1e` en TASK-001. Encargo exacto, sin nada más: `Eres Dexia. Lee tu ficha y atiende REVIEW-001 según el protocolo.` Carpeta: raíz del repositorio, rama `feat/TASK-001-benchmark-agencias`.
+
+> **[2026-10-12 22:35] dexia:** duodécima ronda, árbol en `26fba4e`, contenido F1 en `5cacb1e`: **✅ F1 APROBADA; REVIEW-001 cerrado.** F0 conserva su ✅. Contrasté la fila 1 de `pallax-media.md` con la [home de Pallax](https://pallax-media.de/): «Branding» aparece como opción del formulario de contacto, no en el pie ni en una página de servicio; la ficha lo explica y la clasificación «Sí» sigue la decisión expresa de Clia en TASK-001. La captura `pallax-media-home.png` muestra la home, aunque no alcanza el formulario; el texto accesible de la página lo acredita. Contrasté la fila 5 de `digiberries-paris.md` con la [página Google Shopping](https://www.digiberries.fr/agence-google-shopping-paris/), que describe campañas, optimización y performance; la ficha avisa con precisión que la subpágina no fue reconfirmada en la sesión de Kia. La captura `digiberries-paris-servicios.png` muestra una página real de servicios. No hay nuevo hallazgo de veracidad en estas correcciones. Las excepciones y límites visuales de Dogstudio, Monopo y TESCANET siguen documentados en las rondas anteriores; no los reabrí.
+>
+> Ejecuté desde la raíz `python3 scripts/verificar-investigacion.py` **con red**. Salida real íntegra de mi ejecución:
+>
+> ```text
+> Verificación de la investigación · raíz: /Users/miguel/servers/pharmaco-assets/docs · V8: con red
+> V1  OK      investigacion/fichas/agencia-buffalo.md — sin incidencias
+> V1  OK      investigacion/fichas/artefact.md — sin incidencias
+> V1  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V1  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V1  OK      investigacion/fichas/devibi.md — sin incidencias
+> V1  OK      investigacion/fichas/digiberries-paris.md — sin incidencias
+> V1  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V1  OK      investigacion/fichas/instrument.md — sin incidencias
+> V1  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V1  OK      investigacion/fichas/monopo.md — sin incidencias
+> V1  OK      investigacion/fichas/pallax-media.md — sin incidencias
+> V1  OK      investigacion/fichas/screenfire-media.md — sin incidencias
+> V1  OK      investigacion/fichas/single-grain.md — sin incidencias
+> V1  OK      investigacion/fichas/sitelabs.md — sin incidencias
+> V1  OK      investigacion/fichas/stratagemma-studio.md — sin incidencias
+> V1  OK      investigacion/fichas/studiodigital.md — sin incidencias
+> V1  OK      investigacion/fichas/tescanet.md — sin incidencias
+> V1  OK      investigacion/fichas/trajectory-web-design.md — sin incidencias
+> V1  OK      investigacion/fichas/upraw-media.md — sin incidencias
+> V1  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V2  OK      investigacion/fichas/agencia-buffalo.md — sin incidencias
+> V2  OK      investigacion/fichas/artefact.md — sin incidencias
+> V2  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V2  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V2  OK      investigacion/fichas/devibi.md — sin incidencias
+> V2  OK      investigacion/fichas/digiberries-paris.md — sin incidencias
+> V2  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V2  OK      investigacion/fichas/instrument.md — sin incidencias
+> V2  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V2  OK      investigacion/fichas/monopo.md — sin incidencias
+> V2  OK      investigacion/fichas/pallax-media.md — sin incidencias
+> V2  OK      investigacion/fichas/screenfire-media.md — sin incidencias
+> V2  OK      investigacion/fichas/single-grain.md — sin incidencias
+> V2  OK      investigacion/fichas/sitelabs.md — sin incidencias
+> V2  OK      investigacion/fichas/stratagemma-studio.md — sin incidencias
+> V2  OK      investigacion/fichas/studiodigital.md — sin incidencias
+> V2  OK      investigacion/fichas/tescanet.md — sin incidencias
+> V2  OK      investigacion/fichas/trajectory-web-design.md — sin incidencias
+> V2  OK      investigacion/fichas/upraw-media.md — sin incidencias
+> V2  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V2  OK      investigacion/servicios/01-branding.md — sin incidencias
+> V2  OK      investigacion/servicios/02-social-media.md — sin incidencias
+> V2  OK      investigacion/servicios/03-desarrollo-web.md — sin incidencias
+> V2  OK      investigacion/servicios/04-campanas-publicitarias.md — sin incidencias
+> V2  OK      investigacion/servicios/05-performance.md — sin incidencias
+> V2  OK      investigacion/servicios/06-desarrollo-apps-software.md — sin incidencias
+> V2  OK      investigacion/servicios/07-fotografia-video.md — sin incidencias
+> V2  OK      investigacion/servicios/08-inteligencia-artificial.md — sin incidencias
+> V2  OK      investigacion/servicios/09-seo-geo.md — sin incidencias
+> V2  OK      investigacion/servicios/10-cro.md — sin incidencias
+> V2  OK      investigacion/servicios/11-datos-automatizacion.md — sin incidencias
+> V2  OK      investigacion/servicios/resumen.md — sin incidencias
+> V2  OK      investigacion/prueba-social.md — sin incidencias
+> V2  OK      diseno/patrones-benchmark.md — sin incidencias
+> V2  OK      diseno/sistema-web-assets.md — sin incidencias
+> V3  OK      investigacion/fichas/agencia-buffalo.md — sin incidencias
+> V3  OK      investigacion/fichas/artefact.md — sin incidencias
+> V3  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V3  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V3  OK      investigacion/fichas/devibi.md — sin incidencias
+> V3  OK      investigacion/fichas/digiberries-paris.md — sin incidencias
+> V3  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V3  OK      investigacion/fichas/instrument.md — sin incidencias
+> V3  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V3  OK      investigacion/fichas/monopo.md — sin incidencias
+> V3  OK      investigacion/fichas/pallax-media.md — sin incidencias
+> V3  OK      investigacion/fichas/screenfire-media.md — sin incidencias
+> V3  OK      investigacion/fichas/single-grain.md — sin incidencias
+> V3  OK      investigacion/fichas/sitelabs.md — sin incidencias
+> V3  OK      investigacion/fichas/stratagemma-studio.md — sin incidencias
+> V3  OK      investigacion/fichas/studiodigital.md — sin incidencias
+> V3  OK      investigacion/fichas/tescanet.md — sin incidencias
+> V3  OK      investigacion/fichas/trajectory-web-design.md — sin incidencias
+> V3  OK      investigacion/fichas/upraw-media.md — sin incidencias
+> V3  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V4  FALLO   diseno/capturas/servicio-detalle-desktop.png — idéntica (mismo SHA-256) a diseno/capturas/servicios-desktop.png
+> V4  FALLO   diseno/capturas/servicios-desktop.png — idéntica (mismo SHA-256) a diseno/capturas/servicio-detalle-desktop.png
+> V4  FALLO   diseno/capturas/servicio-detalle-mobile-375px.png — idéntica (mismo SHA-256) a diseno/capturas/servicios-mobile-375px.png
+> V4  FALLO   diseno/capturas/servicios-mobile-375px.png — idéntica (mismo SHA-256) a diseno/capturas/servicio-detalle-mobile-375px.png
+> V5  OK      investigacion/fichas/agencia-buffalo.md — sin incidencias
+> V5  OK      investigacion/fichas/artefact.md — sin incidencias
+> V5  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V5  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V5  OK      investigacion/fichas/devibi.md — sin incidencias
+> V5  OK      investigacion/fichas/digiberries-paris.md — sin incidencias
+> V5  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V5  AVISO   investigacion/fichas/instrument.md — «Desarrollo Web»: portada única declarada; respaldar con la captura de la home
+> V5  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V5  OK      investigacion/fichas/monopo.md — sin incidencias
+> V5  AVISO   investigacion/fichas/pallax-media.md — «Branding»: portada única declarada; respaldar con la captura de la home
+> V5  OK      investigacion/fichas/screenfire-media.md — sin incidencias
+> V5  AVISO   investigacion/fichas/single-grain.md — «Inteligencia artificial»: portada única declarada; respaldar con la captura de la home
+> V5  OK      investigacion/fichas/sitelabs.md — sin incidencias
+> V5  OK      investigacion/fichas/stratagemma-studio.md — sin incidencias
+> V5  AVISO   investigacion/fichas/studiodigital.md — «Performance»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/studiodigital.md — «SEO y GEO»: portada única declarada; respaldar con la captura de la home
+> V5  AVISO   investigacion/fichas/studiodigital.md — «CRO»: portada única declarada; respaldar con la captura de la home
+> V5  OK      investigacion/fichas/tescanet.md — sin incidencias
+> V5  AVISO   investigacion/fichas/trajectory-web-design.md — «SEO y GEO»: portada única declarada; respaldar con la captura de la home
+> V5  OK      investigacion/fichas/upraw-media.md — sin incidencias
+> V5  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V6  OK      investigacion/fichas/agencia-buffalo.md — sin incidencias
+> V6  OK      investigacion/fichas/artefact.md — sin incidencias
+> V6  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V6  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V6  OK      investigacion/fichas/devibi.md — sin incidencias
+> V6  OK      investigacion/fichas/digiberries-paris.md — sin incidencias
+> V6  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V6  OK      investigacion/fichas/instrument.md — sin incidencias
+> V6  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V6  OK      investigacion/fichas/monopo.md — sin incidencias
+> V6  OK      investigacion/fichas/pallax-media.md — sin incidencias
+> V6  OK      investigacion/fichas/screenfire-media.md — sin incidencias
+> V6  OK      investigacion/fichas/single-grain.md — sin incidencias
+> V6  OK      investigacion/fichas/sitelabs.md — sin incidencias
+> V6  OK      investigacion/fichas/stratagemma-studio.md — sin incidencias
+> V6  OK      investigacion/fichas/studiodigital.md — sin incidencias
+> V6  OK      investigacion/fichas/tescanet.md — sin incidencias
+> V6  OK      investigacion/fichas/trajectory-web-design.md — sin incidencias
+> V6  OK      investigacion/fichas/upraw-media.md — sin incidencias
+> V6  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V6  OK      investigacion/servicios/01-branding.md — sin incidencias
+> V6  OK      investigacion/servicios/02-social-media.md — sin incidencias
+> V6  OK      investigacion/servicios/03-desarrollo-web.md — sin incidencias
+> V6  OK      investigacion/servicios/04-campanas-publicitarias.md — sin incidencias
+> V6  OK      investigacion/servicios/05-performance.md — sin incidencias
+> V6  OK      investigacion/servicios/06-desarrollo-apps-software.md — sin incidencias
+> V6  OK      investigacion/servicios/07-fotografia-video.md — sin incidencias
+> V6  OK      investigacion/servicios/08-inteligencia-artificial.md — sin incidencias
+> V6  OK      investigacion/servicios/09-seo-geo.md — sin incidencias
+> V6  OK      investigacion/servicios/10-cro.md — sin incidencias
+> V6  OK      investigacion/servicios/11-datos-automatizacion.md — sin incidencias
+> V6  OK      investigacion/servicios/resumen.md — sin incidencias
+> V6  FALLO   investigacion/prueba-social.md — marcador de plantilla «Lorem» en la línea 135
+> V6  FALLO   investigacion/prueba-social.md — marcador de plantilla «Lorem» en la línea 136
+> V6  OK      diseno/patrones-benchmark.md — sin incidencias
+> V6  OK      diseno/sistema-web-assets.md — sin incidencias
+> V7  OK      investigacion/fichas — 20 fichas: 10 comparables, 10 referentes/especialistas
+> V8  AVISO   investigacion/fichas/agencia-buffalo.md — https://clutch.co/profile/agencia-buffalo → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  OK      investigacion/fichas/artefact.md — sin incidencias
+> V8  OK      investigacion/fichas/blueorange-digital.md — sin incidencias
+> V8  OK      investigacion/fichas/code-and-theory.md — sin incidencias
+> V8  OK      investigacion/fichas/devibi.md — sin incidencias
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://clutch.co/profile/digiberries-paris-agence-de-r-f-rencement-web → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/a-propos/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-ecommerce-shopify/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-facebook-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-geo-a-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-google-ads-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-google-shopping-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-instagram-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-linkedin-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-pinterest-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-referencement-local-google-a-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-referencement-seo-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-snapchat-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-tiktok-ads/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/agence-wordpress-a-paris/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/fichas/digiberries-paris.md — https://www.digiberries.fr/nos-references/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  OK      investigacion/fichas/dogstudio.md — sin incidencias
+> V8  OK      investigacion/fichas/instrument.md — sin incidencias
+> V8  OK      investigacion/fichas/media-monks.md — sin incidencias
+> V8  OK      investigacion/fichas/monopo.md — sin incidencias
+> V8  AVISO   investigacion/fichas/pallax-media.md — https://clutch.co/profile/pallax-media → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  OK      investigacion/fichas/screenfire-media.md — sin incidencias
+> V8  OK      investigacion/fichas/single-grain.md — sin incidencias
+> V8  OK      investigacion/fichas/sitelabs.md — sin incidencias
+> V8  AVISO   investigacion/fichas/stratagemma-studio.md — https://clutch.co/profile/stratagemma-studio → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  OK      investigacion/fichas/studiodigital.md — sin incidencias
+> V8  AVISO   investigacion/fichas/tescanet.md — https://clutch.co/profile/tescanet → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  OK      investigacion/fichas/trajectory-web-design.md — sin incidencias
+> V8  AVISO   investigacion/fichas/upraw-media.md — https://clutch.co/profile/upraw-media → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  OK      investigacion/fichas/work-and-co.md — sin incidencias
+> V8  AVISO   investigacion/servicios/01-branding.md — https://www.goodrebels.com/es/servicios/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/servicios/02-social-media.md — https://www.goodrebels.com/es/servicios/pr-reputation-strategic-influence/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  AVISO   investigacion/servicios/03-desarrollo-web.md — https://www.goodrebels.com/es/servicios/experience-design/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  OK      investigacion/servicios/04-campanas-publicitarias.md — sin incidencias
+> V8  OK      investigacion/servicios/05-performance.md — sin incidencias
+> V8  OK      investigacion/servicios/06-desarrollo-apps-software.md — sin incidencias
+> V8  OK      investigacion/servicios/07-fotografia-video.md — sin incidencias
+> V8  OK      investigacion/servicios/08-inteligencia-artificial.md — sin incidencias
+> V8  OK      investigacion/servicios/09-seo-geo.md — sin incidencias
+> V8  OK      investigacion/servicios/10-cro.md — sin incidencias
+> V8  AVISO   investigacion/servicios/11-datos-automatizacion.md — https://www.goodrebels.com/es/servicios/data-analytics/ → HTTP 202 (respuesta de desafío o diferida, no la página): respaldar con captura
+> V8  OK      investigacion/servicios/resumen.md — sin incidencias
+> V8  AVISO   investigacion/prueba-social.md — https://clutch.co/how-it-works → HTTP 403 (bloqueo antibot o de región): respaldar con captura
+> V8  AVISO   investigacion/prueba-social.md — https://www.facebook.com/business/learn/certification → HTTP 400 (bloqueo antibot o de región): respaldar con captura
+> V8  OK      diseno/patrones-benchmark.md — sin incidencias
+> V8  OK      diseno/sistema-web-assets.md — sin incidencias
+>
+> 6 FALLOS · 35 AVISOS
+> exit_code=1
+> ```
+>
+> **Gate por TASK:** los cuatro FALLOS V4 son de `diseno/capturas/` (TASK-004) y los dos V6 son de `investigacion/prueba-social.md` (TASK-003). **TASK-001: 0 FALLOS** en fichas, capturas citadas y V7. Los siete AVISOS V5 son portada única declarada; Kia y Clia explicaron cada uno en TASK-001. Los AVISOS V8 en fichas son desafíos HTTP 202 de Digiberries y bloqueos 403 de Clutch; el perfil Clutch de Digiberries es nuevo frente a la ejecución de Kia. Los AVISOS V8 restantes pertenecen a TASK-002/003. Las variaciones entre ejecuciones son respuestas del antibot, no cambios de archivos. La ausencia de capturas de los perfiles Clutch y la no reconfirmación de otras subpáginas de Digiberries quedan declaradas como límites de evidencia. Intenté `git pull --ff-only`; el entorno denegó abrir `.git/FETCH_HEAD` (`Operation not permitted`), por lo que este veredicto corresponde al checkout local indicado. El cierre de TASK-001 y el merge corresponden a Clia y Kia, respectivamente.
