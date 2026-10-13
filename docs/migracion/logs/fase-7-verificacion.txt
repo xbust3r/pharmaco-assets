@@ -1,0 +1,185 @@
+# Salida real de la verificacion de AGENTS.md, fase 7 de TASK-006 (2026-10-13 00:47)
+
+$ pnpm optimize
+$ node plugins/convertWebp.js
+Start image optimization
+------------------------------------------------
+✅  Completed in 0.02s
+   • Processed: 0
+   • Skipped:  0
+------------------------------------------------
+[exit 0]
+
+$ pnpm lint
+$ run-p lint:pug lint:css lint:js
+$ markuplint "src/**/*.pug"
+$ stylelint "src/**/*.css" --fix --cache --cache-location .stylelintcache
+$ eslint "src/**/*.js" --fix --cache --cache-location .eslintcache
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/layouts/main-template.pug
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/pages/servicios.pug
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/pages/servicio-detalle.pug
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/pages/portafolio.pug
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/pages/nosotros.pug
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/pages/index.pug
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/pages/diseño-de-personajes.pug
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/pages/contactanos.pug
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/pages/campana-stralis.pug
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/pages/campana-iveco.pug
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/pages/campana-cyberwow.pug
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/components/ui.pug
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/components/site-header.pug
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/components/site-footer.pug
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/components/repetidos.pug
+<markuplint> passed /Users/miguel/servers/pharmaco-assets/.claude/worktrees/task-006-migracion/src/components/head-base.pug
+[exit 0]
+
+$ pnpm validate
+$ node plugins/validate-assets.js
+🔍 Iniciando validación estricta de assets...
+✔ Todos los assets existen. Procediendo...
+
+[exit 0]
+
+$ pnpm build
+AVISO index.html  3 elementos comparten las mismas 7 clases (`[height:100%] [overflow:hidden] [transition:all_.2s_ease,outline_0s] b…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 11 clases (`[height:auto] [left:50%] [max-width:none] [min-height:100%] [min-width…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 8 clases (`[padding-bottom:34px] [padding-left:24px] [padding-right:24px] [paddin…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 7 clases (`[text-decoration:none] [transition:all_.2s_ease,outline_0s] group-focu…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  5 elementos comparten las mismas 9 clases (`[height:auto] [margin-bottom:0] [margin-left:auto] [margin-right:auto]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  3 elementos comparten las mismas 6 clases (`[padding-bottom:62px] [padding-left:0] [padding-right:0] [padding-top:…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  3 elementos comparten las mismas 7 clases (`[height:360px] [max-width:360px] [overflow:hidden] [width:100%] deskto…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  3 elementos comparten las mismas 10 clases (`[height:360px] [object-fit:cover] [overflow:hidden] [transition:all_.2…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  4 elementos comparten las mismas 19 clases (`[height:250px] [margin-bottom:35px] [margin-left:0] [margin-right:0] […`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  4 elementos comparten las mismas 6 clases (`[height:100%] [overflow:hidden] [transition:all_.2s_ease,outline_0s] b…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  3 elementos comparten las mismas 22 clases (`[align-items:center] [box-shadow:none] [flex-direction:column] [height…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  3 elementos comparten las mismas 6 clases (`[margin-top:2px] [text-align:center] desktop:text-14 inline-block text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  10 elementos comparten las mismas 6 clases (`[padding-left:30px] [padding-top:2px] before:content-[ block relative …`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  7 elementos comparten las mismas 17 clases (`[border:0]! [clip-path:inset(50%)]! [clip:rect(0_0_0_0)]! [height:1px]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  7 elementos comparten las mismas 6 clases (`[padding-bottom:62px] [padding-left:0] [padding-right:0] [padding-top:…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  6 elementos comparten las mismas 10 clases (`[line-height:1.16] [margin-top:10px] [text-align:center] desktop:[line…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  6 elementos comparten las mismas 6 clases (`[line-height:1.4] [margin-top:20px] [text-align:center] desktop:text-1…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 10 clases (`[height:270px] [margin-bottom:12px] [width:calc(50%_-_6px)] block desk…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 6 clases (`[height:320px] [overflow:hidden] [width:50%] desktop:[height:639px] de…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 7 clases (`[height:100%] [overflow:hidden] [transition:all_.2s_ease,outline_0s] […`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 6 clases (`[margin-bottom:10px] [max-height:550px] [width:calc(50%_-_5px)] deskto…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  3 elementos comparten las mismas 6 clases (`[margin-bottom:10px] [max-height:initial] [width:calc(50%_-_5px)] desk…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  3 elementos comparten las mismas 14 clases (`[height:100%] [margin-bottom:0] [margin-left:auto] [margin-right:auto]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  3 elementos comparten las mismas 7 clases (`[height:100%] [margin-bottom:0] [margin-left:auto] [margin-right:auto]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  5 elementos comparten las mismas 6 clases (`[padding-bottom:62px] [padding-left:0] [padding-right:0] [padding-top:…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  4 elementos comparten las mismas 10 clases (`[line-height:1.16] [margin-top:10px] [text-align:center] desktop:[line…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  4 elementos comparten las mismas 6 clases (`[line-height:1.4] [margin-top:20px] [text-align:center] desktop:text-1…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  3 elementos comparten las mismas 6 clases (`[height:100%] [max-height:initial] [object-fit:cover] [width:100%] blo…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  10 elementos comparten las mismas 6 clases (`[padding-bottom:62px] [padding-left:0] [padding-right:0] [padding-top:…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  8 elementos comparten las mismas 10 clases (`[line-height:1.16] [margin-top:10px] [text-align:center] desktop:[line…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  6 elementos comparten las mismas 6 clases (`[line-height:1.4] [margin-top:20px] [text-align:center] desktop:text-1…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  3 elementos comparten las mismas 9 clases (`[height:292px] [margin-bottom:initial] [margin-top:9px] [width:292px] …`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  8 elementos comparten las mismas 7 clases (`[height:491px] [overflow:hidden] [width:276px] desktop:[height:639px] …`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  8 elementos comparten las mismas 7 clases (`[height:100%] [overflow:hidden] [transition:all_.2s_ease,outline_0s] […`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  4 elementos comparten las mismas 6 clases (`[margin-bottom:10px] [max-height:550px] [width:calc(50%_-_5px)] deskto…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  3 elementos comparten las mismas 7 clases (`[margin-bottom:10px] [max-height:initial] [width:100%] desktop:[margin…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+------------------------------------------------
+Páginas revisadas: 10  ·  assets medidos: 51
+[exit 0]
+
+$ pnpm verify:render
+AVISO index.html  3 elementos comparten las mismas 7 clases (`[height:100%] [overflow:hidden] [transition:all_.2s_ease,outline_0s] b…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 11 clases (`[height:auto] [left:50%] [max-width:none] [min-height:100%] [min-width…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 8 clases (`[padding-bottom:34px] [padding-left:24px] [padding-right:24px] [paddin…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  3 elementos comparten las mismas 7 clases (`[text-decoration:none] [transition:all_.2s_ease,outline_0s] group-focu…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  5 elementos comparten las mismas 9 clases (`[height:auto] [margin-bottom:0] [margin-left:auto] [margin-right:auto]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO index.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  3 elementos comparten las mismas 6 clases (`[padding-bottom:62px] [padding-left:0] [padding-right:0] [padding-top:…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  3 elementos comparten las mismas 7 clases (`[height:360px] [max-width:360px] [overflow:hidden] [width:100%] deskto…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  3 elementos comparten las mismas 10 clases (`[height:360px] [object-fit:cover] [overflow:hidden] [transition:all_.2…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  4 elementos comparten las mismas 19 clases (`[height:250px] [margin-bottom:35px] [margin-left:0] [margin-right:0] […`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  4 elementos comparten las mismas 6 clases (`[height:100%] [overflow:hidden] [transition:all_.2s_ease,outline_0s] b…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO diseño-de-personajes.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  3 elementos comparten las mismas 22 clases (`[align-items:center] [box-shadow:none] [flex-direction:column] [height…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  3 elementos comparten las mismas 6 clases (`[margin-top:2px] [text-align:center] desktop:text-14 inline-block text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  10 elementos comparten las mismas 6 clases (`[padding-left:30px] [padding-top:2px] before:content-[ block relative …`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  7 elementos comparten las mismas 17 clases (`[border:0]! [clip-path:inset(50%)]! [clip:rect(0_0_0_0)]! [height:1px]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO contactanos.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  7 elementos comparten las mismas 6 clases (`[padding-bottom:62px] [padding-left:0] [padding-right:0] [padding-top:…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  6 elementos comparten las mismas 10 clases (`[line-height:1.16] [margin-top:10px] [text-align:center] desktop:[line…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  6 elementos comparten las mismas 6 clases (`[line-height:1.4] [margin-top:20px] [text-align:center] desktop:text-1…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 10 clases (`[height:270px] [margin-bottom:12px] [width:calc(50%_-_6px)] block desk…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 6 clases (`[height:320px] [overflow:hidden] [width:50%] desktop:[height:639px] de…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 7 clases (`[height:100%] [overflow:hidden] [transition:all_.2s_ease,outline_0s] […`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  4 elementos comparten las mismas 6 clases (`[margin-bottom:10px] [max-height:550px] [width:calc(50%_-_5px)] deskto…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  3 elementos comparten las mismas 6 clases (`[margin-bottom:10px] [max-height:initial] [width:calc(50%_-_5px)] desk…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  3 elementos comparten las mismas 14 clases (`[height:100%] [margin-bottom:0] [margin-left:auto] [margin-right:auto]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  3 elementos comparten las mismas 7 clases (`[height:100%] [margin-bottom:0] [margin-left:auto] [margin-right:auto]…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-stralis.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  5 elementos comparten las mismas 6 clases (`[padding-bottom:62px] [padding-left:0] [padding-right:0] [padding-top:…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  4 elementos comparten las mismas 10 clases (`[line-height:1.16] [margin-top:10px] [text-align:center] desktop:[line…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  4 elementos comparten las mismas 6 clases (`[line-height:1.4] [margin-top:20px] [text-align:center] desktop:text-1…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  3 elementos comparten las mismas 6 clases (`[height:100%] [max-height:initial] [object-fit:cover] [width:100%] blo…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-iveco.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  4 elementos comparten las mismas 6 clases (`desktop:last:mr-0 desktop:mx-3.75 desktop:relative list-none ml-0 wide…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  4 elementos comparten las mismas 20 clases (`block desktop:focus:text-white desktop:hover:text-white desktop:is-act…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  10 elementos comparten las mismas 6 clases (`[padding-bottom:62px] [padding-left:0] [padding-right:0] [padding-top:…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  8 elementos comparten las mismas 10 clases (`[line-height:1.16] [margin-top:10px] [text-align:center] desktop:[line…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  6 elementos comparten las mismas 6 clases (`[line-height:1.4] [margin-top:20px] [text-align:center] desktop:text-1…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  3 elementos comparten las mismas 9 clases (`[height:292px] [margin-bottom:initial] [margin-top:9px] [width:292px] …`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  8 elementos comparten las mismas 7 clases (`[height:491px] [overflow:hidden] [width:276px] desktop:[height:639px] …`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  8 elementos comparten las mismas 7 clases (`[height:100%] [overflow:hidden] [transition:all_.2s_ease,outline_0s] […`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  4 elementos comparten las mismas 6 clases (`[margin-bottom:10px] [max-height:550px] [width:calc(50%_-_5px)] deskto…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  3 elementos comparten las mismas 7 clases (`[margin-bottom:10px] [max-height:initial] [width:100%] desktop:[margin…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  5 elementos comparten las mismas 10 clases (`bg-purple flex h-8.5 items-center justify-center ml-4.5 rounded-6 text…`): eso es un componente, va en un mixin de `src/components/`
+AVISO campana-cyberwow.html  5 elementos comparten las mismas 15 clases (`after:-translate-y-1/2 after:absolute after:bg-purple after:block afte…`): eso es un componente, va en un mixin de `src/components/`
+------------------------------------------------
+Páginas revisadas: 10  ·  assets medidos: 51
+[exit 0]
+
+$ pnpm validate:origen
+$ node plugins/validate-origen.js
+Validador · fidelidad contra assets/ (texto y hooks)
+------------------------------------------------
+OK    campana-cyberwow.html: texto y 6 hooks js-* coinciden
+OK    campana-iveco.html: texto y 6 hooks js-* coinciden
+OK    campana-stralis.html: texto y 6 hooks js-* coinciden
+OK    contactanos.html: texto y 17 hooks js-* coinciden
+OK    diseño-de-personajes.html: texto y 6 hooks js-* coinciden
+OK    index.html: texto y 10 hooks js-* coinciden
+OK    nosotros.html: texto y 10 hooks js-* coinciden
+OK    portafolio.html: texto y 6 hooks js-* coinciden
+OK    servicio-detalle.html: texto y 9 hooks js-* coinciden
+OK    servicios.html: texto y 6 hooks js-* coinciden
+------------------------------------------------
+10 páginas revisadas · 0 FALLO
+[exit 0]

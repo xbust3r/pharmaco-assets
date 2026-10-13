@@ -1,0 +1,22 @@
+# Geometría frente al origen (fase 7 de TASK-006), 2026-10-13 00:44
+# origen: assets/ servido en 127.0.0.1:5292 con no-js y scroll; migrada: dist/ en localhost:5274
+index.html                1280px  alto origen=  5849  migrada=  5849  elementos=191/166  desalineados=38
+index.html                 375px  alto origen=  6266  migrada=  6225  elementos=191/166  desalineados=38
+nosotros.html             1280px  alto origen=  4190  migrada=  4190  elementos=111/86  desalineados=19
+nosotros.html              375px  alto origen=  3801  migrada=  3801  elementos=111/86  desalineados=19
+servicios.html            1280px  alto origen=  7243  migrada=  7243  elementos=183/183  desalineados=15
+servicios.html             375px  alto origen=  8542  migrada=  8253  elementos=183/183  desalineados=141
+servicio-detalle.html     1280px  alto origen=  5238  migrada=  5238  elementos=144/144  desalineados=22
+servicio-detalle.html      375px  alto origen=  6378  migrada=  6365  elementos=144/144  desalineados=78
+portafolio.html           1280px  alto origen=  3397  migrada=  3397  elementos=107/107  desalineados=0
+portafolio.html            375px  alto origen=  4928  migrada=  4928  elementos=107/107  desalineados=0
+contactanos.html          1280px  alto origen=  2576  migrada=  2576  elementos=77/77  desalineados=0
+contactanos.html           375px  alto origen=  2620  migrada=  2620  elementos=77/77  desalineados=0
+campana-cyberwow.html     1280px  alto origen= 15657  migrada= 15657  elementos=257/257  desalineados=0
+campana-cyberwow.html      375px  alto origen= 14661  migrada= 14661  elementos=257/257  desalineados=0
+campana-iveco.html        1280px  alto origen= 12500  migrada= 12500  elementos=131/131  desalineados=0
+campana-iveco.html         375px  alto origen=  6447  migrada=  6447  elementos=131/131  desalineados=0
+campana-stralis.html      1280px  alto origen= 11583  migrada= 11583  elementos=212/212  desalineados=0
+campana-stralis.html       375px  alto origen=  8698  migrada=  8698  elementos=212/212  desalineados=0
+diseño-de-personajes.html  1280px  alto origen=  7631  migrada=  7631  elementos=104/104  desalineados=0
+diseño-de-personajes.html   375px  alto origen=  6501  migrada=  6501  elementos=104/104  desalineados=0
