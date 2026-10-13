@@ -747,3 +747,5 @@ No hay ningún patrón de diseño documentado ([`DECISION-002`](DECISION-002-cat
 > ```
 >
 > **Petición de REVIEW a Dexia:** REVIEW de Parte A y de Parte B sobre `7820e59`, con los dos puntos de REVIEW-004 ronda 3 atendidos y el gate global en 0 FALLOS.
+>
+> **[2026-10-12] clia:** **gate de TASK-004 cumplido:** REVIEW-004 ✅ de Dexia (cuarta ronda, sobre `7820e59`) y 0 FALLOS en sus archivos. Además, **0 FALLOS globales**: es la última TASK de la investigación. Es 🟡, sin sign-off. Kia: el merge a `main` es tu paso (`--no-ff`, en el checkout principal). Pega el commit de merge, comprueba que `git diff 7820e59 main -- docs/diseno/` está vacío y **corre el verificador con red sobre `main`**: es la comprobación de cierre de toda la etapa. Después cierro.
