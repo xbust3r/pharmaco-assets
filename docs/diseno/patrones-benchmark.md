@@ -13,6 +13,7 @@
 - **Tres valores por celda:**
   - **Sí**: la ficha lo atribuye a la portada o a la web.
   - **No**: la ficha lo contradice (por ejemplo, «fondo blanco»), o, en menús, la ficha enumera el menú y la categoría no aparece en la lista.
+- **Regla uniforme para A2 y A3 (por palabras del menú, sin contar URL):** A2 es Sí solo si el menú nombra casos o trabajos («Work», «Our Work», «Trabajos», «Portafolio», «Our Cases»). A3 es Sí si nombra blog o contenido editorial («Blog», «News», «Press», «Insights», «Resources», «Learn», «Latest», «Podcast»). «Nos références», «Clients», «Select Clients» y «Outcomes» no cuentan como casos: su nombre no dice que sean casos. Se ha comprobado que las 20 fichas cumplen esta regla.
   - **NC** (no consta): la ficha no lo menciona. **NC no es No.** Que una ficha no revisara una sección no prueba que el patrón falte.
 - **Denominador:** 20 en todas las frecuencias. Los «Sí» son mínimos: en 9 de los 11 patrones hay 6 o más NC.
 - **Dos casos a tener en cuenta:** Dogstudio clasifica su portada como oscura porque la ficha describe una captura con un showreel oscuro, pero esa captura muestra sobre todo un cargador animado. Monopo tiene una portada con «captura sin contenido legible», y su patrón de vídeo o animación viene de la descripción de la ficha, no de la captura.
@@ -29,7 +30,7 @@
 | Lista de secciones de la home | 3 sin advertencia (`artefact`, `devibi`, `tescanet`); 16 con advertencia de que no está revisada o no es completa; 1 sin viñeta (`monopo`) | Tres fichas listan las secciones «en orden» sin advertir que la lista sea parcial; las otras 16 advierten que no está revisada o no es completa. **No hay un orden común verificable.** |
 | Anatomía de página de servicio | 17 de 20 | Tres no la describen: `devibi` dice que no está revisada en detalle; `dogstudio` y `monopo` no tienen viñeta. |
 | Anatomía de página de caso | 12 de 20 | Ocho no tienen viñeta de caso. |
-| Casos o trabajos en el menú (A2) | Sí 10 · No 7 · NC 3 | Diez menús incluyen «Work», «Trabajos», «Portafolio», «Our Cases» o equivalente. |
+| Casos o trabajos en el menú (A2) | Sí 10 · No 10 · NC 0 | Diez menús nombran casos o trabajos («Work», «Trabajos», «Portafolio», «Our Cases» o equivalente). Los otros diez no los nombran, incluidos los que dicen «Nos références», «Clients» u «Outcomes». |
 | Blog, noticias o contenido editorial en el menú (A3) | Sí 13 · No 7 · NC 0 | Trece incluyen blog, noticias, «Insights», «Resources», «Learn», «Press» o «Latest». |
 | Selector de idioma (A4) | Sí 4 · NC 16 | Solo cuatro fichas describen un selector: `agencia-buffalo`, `artefact`, `media-monks` y `studiodigital`. |
 
@@ -60,11 +61,11 @@ Cada fila enlaza a la ficha. Las letras `L` de la lista de evidencia indican la 
 | Agencia (ficha) | A1 | A2 | A3 | A4 | V1 | V2 | V3 | V4 | V5 | V6 | V7 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [agencia-buffalo](../investigacion/fichas/agencia-buffalo.md) | Sí | Sí | Sí | Sí | NC | Sí | No | NC | NC | NC | NC |
-| [artefact](../investigacion/fichas/artefact.md) | Sí | NC | Sí | Sí | Sí | NC | NC | Sí | Sí | Sí | Sí |
+| [artefact](../investigacion/fichas/artefact.md) | Sí | No | Sí | Sí | Sí | NC | NC | Sí | Sí | Sí | Sí |
 | [blueorange-digital](../investigacion/fichas/blueorange-digital.md) | Sí | No | Sí | NC | Sí | NC | Sí | Sí | NC | Sí | NC |
 | [code-and-theory](../investigacion/fichas/code-and-theory.md) | Sí | Sí | Sí | NC | Sí | Sí | Sí | NC | NC | NC | Sí |
 | [devibi](../investigacion/fichas/devibi.md) | Sí | Sí | Sí | NC | NC | NC | No | Sí | NC | NC | NC |
-| [digiberries-paris](../investigacion/fichas/digiberries-paris.md) | Sí | NC | No | NC | NC | Sí | No | NC | Sí | NC | Sí |
+| [digiberries-paris](../investigacion/fichas/digiberries-paris.md) | Sí | No | No | NC | NC | Sí | No | NC | Sí | NC | Sí |
 | [dogstudio](../investigacion/fichas/dogstudio.md) | NC | Sí | No | NC | NC | NC | Sí | Sí | NC | NC | NC |
 | [instrument](../investigacion/fichas/instrument.md) | Sí | Sí | Sí | NC | Sí | NC | No | Sí | Sí | NC | NC |
 | [media-monks](../investigacion/fichas/media-monks.md) | NC | Sí | No | Sí | Sí | NC | NC | NC | NC | NC | NC |
@@ -78,7 +79,7 @@ Cada fila enlaza a la ficha. Las letras `L` de la lista de evidencia indican la 
 | [tescanet](../investigacion/fichas/tescanet.md) | Sí | Sí | Sí | NC | Sí | NC | NC | Sí | NC | NC | NC |
 | [trajectory-web-design](../investigacion/fichas/trajectory-web-design.md) | Sí | Sí | Sí | NC | NC | NC | NC | NC | Sí | NC | NC |
 | [upraw-media](../investigacion/fichas/upraw-media.md) | Sí | No | Sí | NC | NC | NC | Sí | Sí | Sí | NC | Sí |
-| [work-and-co](../investigacion/fichas/work-and-co.md) | NC | NC | Sí | NC | Sí | Sí | No | NC | NC | NC | Sí |
+| [work-and-co](../investigacion/fichas/work-and-co.md) | NC | No | Sí | NC | Sí | Sí | No | NC | NC | NC | Sí |
 
 ### 2.1 Frecuencias
 
@@ -87,7 +88,7 @@ Las frecuencias salen de la matriz de arriba (20 observaciones por patrón):
 | Patrón | Sí | No | NC | Total |
 | --- | --- | --- | --- | --- |
 | **A1** Botón de acción (CTA) en el encabezado | 14 | 0 | 6 | 20 |
-| **A2** Casos o trabajos en el menú principal | 10 | 7 | 3 | 20 |
+| **A2** Casos o trabajos en el menú principal | 10 | 10 | 0 | 20 |
 | **A3** Blog, noticias o contenido editorial en el menú | 13 | 7 | 0 | 20 |
 | **A4** Selector de idioma visible | 4 | 0 | 16 | 20 |
 | **V1** Serif en titulares o en el texto principal | 8 | 0 | 12 | 20 |
@@ -103,7 +104,7 @@ Las frecuencias salen de la matriz de arriba (20 observaciones por patrón):
 Cada línea lista la agencia y la línea de la ficha. Las agencias marcadas NC no aparecen.
 
 - **A1** Sí: agencia-buffalo (L65), artefact (L72), blueorange-digital (L67), code-and-theory (L68), devibi (L64), digiberries-paris (L70), instrument (L66), pallax-media (L70), single-grain (L65), sitelabs (L68), studiodigital (L73), tescanet (L71), trajectory-web-design (L70), upraw-media (L67). No: —.
-- **A2** Sí: agencia-buffalo (L65), code-and-theory (L64), devibi (L61), dogstudio (L64), instrument (L62), media-monks (L65), monopo (L62), sitelabs (L65), tescanet (L68), trajectory-web-design (L66). No: blueorange-digital (L63), pallax-media (L67), screenfire-media (L65), single-grain (L61), stratagemma-studio (L66), studiodigital (L70), upraw-media (L63).
+- **A2** Sí: agencia-buffalo (L65), code-and-theory (L64), devibi (L61), dogstudio (L64), instrument (L62), media-monks (L65), monopo (L62), sitelabs (L65), tescanet (L68), trajectory-web-design (L66). No: artefact (L68), blueorange-digital (L63), digiberries-paris (L70), pallax-media (L67), screenfire-media (L65), single-grain (L61), stratagemma-studio (L66), studiodigital (L70), upraw-media (L63), work-and-co (L66).
 - **A3** Sí: agencia-buffalo (L65), artefact (L68), blueorange-digital (L63), code-and-theory (L64), devibi (L61), instrument (L62), monopo (L62), screenfire-media (L65), single-grain (L61), tescanet (L68), trajectory-web-design (L66), upraw-media (L63), work-and-co (L66). No: digiberries-paris (L70), dogstudio (L64), media-monks (L65), pallax-media (L67), sitelabs (L65), stratagemma-studio (L66), studiodigital (L70).
 - **A4** Sí: agencia-buffalo (L65), artefact (L68), media-monks (L70), studiodigital (L70). No: —.
 - **V1** Sí: artefact (L74), blueorange-digital (L69), code-and-theory (L70), instrument (L68), media-monks (L68), single-grain (L67), tescanet (L73), work-and-co (L72). No: —.
@@ -130,7 +131,7 @@ Esta tabla pone juntos lo que hay en la web de assets (medido en `sistema-web-as
 | Patrón | Web de assets (medido) | Benchmark (Sí · No · NC) | Opciones con evidencia para `RFC-002` |
 | --- | --- | --- | --- |
 | **A1** CTA en el encabezado | Sí: «Contáctanos» como botón morado grande en la cabecera de `index.html`. | 14 · 0 · 6 | Opción A: conservar el botón de contacto tal cual. Opción B: cambiar su texto por una acción distinta, como ya hacen «Agendar una reunión» (`agencia-buffalo`, L65), «Presupuesto» (`sitelabs`, L68) o «Start a project» (`devibi`, L64). |
-| **A2** Casos en el menú | Sí: «Portafolio» en el menú de `index.html`. | 10 · 7 · 3 | Las agencias que llevan casos en el menú lo nombran «Work», «Trabajos», «Portafolio» o «Our Cases». El benchmark reparte casi igual entre incluirlo y no incluirlo en el menú. |
+| **A2** Casos en el menú | Sí: «Portafolio» en el menú de `index.html`. | 10 · 10 · 0 | Las agencias que llevan casos en el menú lo nombran «Work», «Trabajos», «Portafolio» o «Our Cases». El benchmark se reparte 10 y 10: en la mitad de las fichas el menú no nombra casos. |
 | **A3** Blog o noticias en el menú | Sí: «Blog» en el menú, con enlace a `blog.html`, que no está en `assets/`. | 13 · 7 · 0 | Opción A: mantener la entrada de blog. Opción B: sustituirla por «Press», «Insights» o «Learn», como hacen algunas fichas. El enlace roto es un pendiente de la web de assets, no del benchmark. |
 | **A4** Selector de idioma | No: la cabecera de `index.html` no tiene selector. | 4 · 0 · 16 | Solo cuatro fichas describen selector. Con tan pocas observaciones, el dato no permite decidir. |
 | **V1** Serif en titulares | No: la pila declarada es Poppins con respaldo `sans-serif`; no hay serif. | 8 · 0 · 12 | Las ocho fichas con serif lo usan en titulares o en el texto principal, sobre todo en casos y en la portada. Opción A: mantener la tipografía sans. Opción B: introducir una serif en titulares de casos, con el coste de cargar otra familia. |
