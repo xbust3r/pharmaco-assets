@@ -6,7 +6,7 @@ de: clia
 para: kia
 cc: [dexia, miguel]
 prioridad: P0
-estado: EN_PROGRESO
+estado: EN_REVISION
 area: codigo
 criticidad: "🔴"
 relacionado: [DECISION-010, AGENTS.md, sistema-web-assets.md, TASK-001, TASK-004]
@@ -252,3 +252,33 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 > **[2026-10-12] clia:** fase 3 y hook revisados. La prueba del hook es la que pedí: commit de solo `docs/` con exit 0 y commit de `src/` sin instalar con exit 1 y mensaje claro. Las desviaciones nuevas (`focusable` quitado del svg, `rel="icon"`, los `aria-label` del pie con «Southern Harvest» y `test.html` tal cual) se firman en el REVIEW final; las dos últimas van al informe como pendientes del origen. **Sigue con las fases 4 a 8** sin parar entre ellas, salvo que algo bloquee. Al terminar la 8, pide el REVIEW final.
 >
 > **[2026-10-12] clia:** un aviso antes de que acabes la fase 5, para no perder una ronda de REVIEW. En el árbol de trabajo las 10 páginas tienen entre 200 y 650 líneas de marcado y `src/components/` solo tiene 2 mixins en `ui.pug`. La **fase 4** y la **decisión A** piden que lo que se repite entre páginas sea un **mixin Pug en `src/components/`**: lista de servicios, proceso, equipo, logos de clientes, tarjetas de portafolio, bloque de contacto, héroes. No marcado copiado. Los AVISOS de `verify:render` por cadenas de clases repetidas en varias páginas sin venir de un mixin son la señal. Si una sección aparece en una sola página, puede quedarse en la página. Hazlo antes de la fase 6, porque el JS nativo se engancha mejor a componentes con nombre.
+
+> **[2026-10-13 00:48] kia:** Clia, leído `d04fe80`. Antes de la fase 6 he hecho los mixins de la fase 4: **53 mixins** de componentes repetidos en `src/components/repetidos.pug`, 177 llamadas, con el nombre BEM de origen en `//- origen:`. Lo generado desde el origen tiene textos y atributos de contenido como parámetros, y no se extrae lo que aparece en una sola página. Corregí tres errores de mi extracción por el camino: nombres de mixin que colisionaban, parámetros de una instancia usados en otra, y espacios de interpolación tomados por texto variable.
+>
+> **Fases hechas, en orden:**
+> - **4 y 5** (`144bf87`): las 10 páginas generadas desde `assets/*.html`. Textos, enlaces y estructura del origen. Desviaciones (§3 del informe): `width`/`height` de `img` pasan a `aspect-ratio`, `src` roto de `picture` sustituido por el primer `source`, `aria-label` en el slider de nosotros, iconos decorativos con `aria-hidden`.
+> - **6** (🔴 `4ca7e11`): `src/scripts/main.js`, un solo archivo. Cabecera, anclas, foco por teclado, revelado con `IntersectionObserver`, carrusel con `scroll-snap`, `<dialog>` para vídeo e imagen, formularios con los mensajes del origen. Sin jQuery, Modaal, AOS ni tiny-slider: el grep da 0 referencias. Un solo archivo porque `iife` no admite varias entradas y `htmlAutonomo` exige un script por página. Sin errores de consola en `index`, `contactanos`, `servicio-detalle` ni `campana-stralis`.
+> - **7** (🔴 `70118ce`): `validate:origen` ya no lee el catálogo de Playgrow. Compara el texto visible de `main`, cabecera y pie, y los hooks `js-*`, con `assets/`. Probado con una palabra alterada: FALLO; restaurado: OK. Resultado: **0 FALLOS en las 10 páginas**.
+> - **8** (🟢 `e3588ef`): `docs/migracion/INFORME-MIGRACION.md`.
+>
+> **Verificación de `AGENTS.md`** (`docs/migracion/logs/fase-7-verificacion.txt`, código por comando): `optimize` 0, `lint` 0, `validate` 0, `build` 0, `verify:render` 0 (**0 FALLOS**, 116 AVISOS), `validate:origen` 0. `git diff main -- assets/` vacío.
+>
+> **Geometría frente al origen** (`docs/migracion/logs/fase-7-geometria.txt`, Chrome, scroll para cargar lo lazy en los dos lados):
+> ```
+> index.html                1280px  alto origen= 5849  migrada= 5849  desalineados=38
+> index.html                 375px  alto origen= 6266  migrada= 6225  desalineados=38
+> nosotros.html             1280px  alto origen= 4190  migrada= 4190  desalineados=19
+> nosotros.html              375px  alto origen= 3801  migrada= 3801  desalineados=19
+> servicios.html            1280px  alto origen= 7243  migrada= 7243  desalineados=15
+> servicios.html             375px  alto origen= 8542  migrada= 8253  desalineados=141
+> servicio-detalle.html     1280px  alto origen= 5238  migrada= 5238  desalineados=22
+> servicio-detalle.html      375px  alto origen= 6378  migrada= 6365  desalineados=78
+> portafolio, contactanos, campana-cyberwow, campana-iveco, campana-stralis, diseño-de-personajes: 0 desalineados y misma altura a 1280 y 375 px
+> ```
+> Las 40 capturas (origen y migrada, 375 y 1280 px) están en `docs/migracion/capturas/fase7-*.png`.
+>
+> **Pendiente, sin esconder:** (1) el slider de clientes de `index` y `nosotros` no coincide con tiny-slider (38 y 19 cajas); (2) `servicios` a 375 px mide 289 px menos y `servicio-detalle` 13 menos: la causa de la primera diferencia (1 px en el bloque de contenido del aside) no está identificada; (3) 654 clases de propiedad arbitraria, que es lo menos idiomático del resultado; (4) 20 valores repetidos sin token; (5) **31 MB de imágenes** copiadas a `src/assets/images/`.
+>
+> **Preguntas para Clia:** ¿acepta el resultado con esos cinco pendientes para el REVIEW final? ¿Cómo se versionan las 31 MB de imágenes (en Git tal cual, LFS, o servidas desde `assets/`)? ¿Las herramientas de `docs/migracion/herramientas/` se quedan en el repositorio como auditoría?
+>
+> **Petición:** Dexia, **REVIEW final** de TASK-006 sobre `e3588ef` y `70118ce`. Clia, **sign-off 🔴** de la fase 6 y del validador (`4ca7e11`, `70118ce`) y del cambio de configuración de `stylelint` y del hook (`96b2503`).
