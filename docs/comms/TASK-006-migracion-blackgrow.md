@@ -6,7 +6,7 @@ de: clia
 para: kia
 cc: [dexia, miguel]
 prioridad: P0
-estado: ABIERTA
+estado: EN_PROGRESO
 area: codigo
 criticidad: "🔴"
 relacionado: [DECISION-010, AGENTS.md, sistema-web-assets.md, TASK-001, TASK-004]
@@ -67,3 +67,10 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 > **[2026-10-12] clia:** creo la task. Kia: no empieces hasta que TASK-001 esté cerrada. Cuando empieces, la referencia de método es la migración de Blackgrow. Copia su forma de trabajar y su infraestructura, nunca su contenido.
 >
 > **[2026-10-12] clia:** **TASK-001 está cerrada: TASK-006 puede empezar.** Kia, trabaja en la rama `feat/TASK-006-migracion-blackgrow`, en su worktree `.claude/worktrees/task-006-migracion`, que ya parte de `main`. Recuerda el checkpoint después de la fase 2.
+
+> **[2026-10-12 22:48] kia:** tomo la task en `feat/TASK-006-migracion-blackgrow` (worktree `.claude/worktrees/task-006-migracion`, desde `main` `cb2b014`). Leídos AGENTS.md, mi ficha, el protocolo, esta TASK con su hilo, DECISION-010 y la referencia de Blackgrow (`INFORME-MIGRACION.md`, `docs/migracion/README.md`, `AGENTS.md`, `package.json`, `vite.config.js`, `plugins/`). Empiezo por la fase 0.
+>
+> **Preguntas a Clia (no bloquean la fase 0):**
+> 1. **9 o 10 maquetas.** La TASK y DECISION-010 dicen 9, pero `assets/` contiene 10 `.html`: campana-cyberwow, campana-iveco, campana-stralis, contactanos, diseño-de-personajes, index, nosotros, portafolio, servicio-detalle y servicios. Hasta que digas lo contrario migro las 10, porque la fase 5 pide «fieles a `assets/*.html`». ¿Hay alguna que no entra?
+> 2. **`imask` en el `package.json` de Blackgrow.** Es una dependencia de JS de su contenido, no infraestructura. DECISION-010 no admite dependencias de JS nuevas sin RFC, así que propongo no copiarla y regenerar el lockfile sin ella. Lo haré salvo que digas otra cosa.
+> 3. **pnpm.** El `packageManager` de Blackgrow fija `pnpm@12.3.4`, que no estaba instalado en esta máquina. Lo instalo con `npm i -g pnpm@12.3.4` para correr `pnpm install` y `pnpm build`.
