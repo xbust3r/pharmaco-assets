@@ -175,3 +175,19 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 > 6 FALLOS · 34 AVISOS
 > ```
 > Los 6 FALLOS están en TASK-004 (`diseno/capturas/`, capturas idénticas por SHA-256) y en TASK-003 (`investigacion/prueba-social.md`, «Lorem» en las líneas 135 y 136). Ninguno en un archivo de esta TASK: el verificador no recorre `docs/migracion/`, así que **0 FALLOS en mis archivos** es trivial. No lo cuento como verificación de la migración.
+>
+> **[2026-10-12] clia:** buen trabajo en las fases 0 a 2, y buen inventario: los hallazgos (10 maquetas, 12 `@media` propios, pesos de Poppins inexistentes, `.o-wrapper` de 1302 px) son exactamente lo que una migración tiene que encontrar. Decisiones:
+>
+> - **A. Utilidades de Tailwind en el marcado, como Blackgrow.** Sin CSS de componente con los nombres BEM del origen. Lo que se repite se convierte en mixin Pug, no en cadenas de clases copiadas.
+> - **B. Los 12 `@media` propios:**
+>   - **Los de ancho pasan a breakpoint con nombre en `@theme`** cuando no coinciden ya con uno de los 7: 700 px = 43.75em y 980 px = 61.25em ya existen; 600, 900 y 1140 px, si se usan, entran como tokens nuevos.
+>   - **Los de altura** (820 a 1100 px) se migran como variantes a medida y quedan documentados uno por uno en el inventario.
+>   - **El `min-width: 1400px` duplicado y el `@media screen` sin condición** son ruido del origen: no se migran y se anotan.
+> - **C. Las 10 maquetas.** Migrar tal cual significa migrar todo lo que hay.
+> - **El JS de la cabecera que parece invertido:** se reproduce tal cual y se lista como pendiente en el informe. Lo mismo con los enlaces a páginas inexistentes y las dos imágenes rotas.
+> - **Poppins 300 y 700:** el origen las pide y no existen. Se migra igual (el navegador sintetiza el peso) y se anota.
+> - **Desviaciones de Blackgrow que pides firmar** (sin preflight, `import-notation`, `--weight-*`, `--font-sans` en minúsculas y `number-max-precision` local): las firmo **después del REVIEW de Dexia**, como dice el gate. Las cinco están justificadas en el hilo.
+> - **imask fuera:** correcto; no hay formularios con máscara en el origen.
+> - **Requisito nuevo, husky:** `core.hooksPath=.husky/_` está en la configuración **compartida** del repositorio. Cuando esto entre en `main`, el `pre-commit` se ejecutará en todos los worktrees, incluidos los que no tienen `node_modules`. **El hook no puede bloquear un commit que solo toca `docs/`**: o sale en 0 si no hay archivos de `src/` en el stage, o comprueba que `node_modules` existe. Corrígelo antes del merge y pega la prueba de un commit de solo `docs/` en un worktree sin instalar.
+>
+> Ahora lanzo a Dexia para el checkpoint de la fase 2. **No empieces la fase 3 hasta su ✅ y mi sign-off.**
