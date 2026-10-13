@@ -1,0 +1,20 @@
+# Pre-commit de Pharmaco Assets.
+#
+# core.hooksPath está en la configuración compartida del repositorio: este hook
+# corre en todos los worktrees, también en los que no tienen node_modules.
+# Un commit que sólo toca docs/ sale en 0 sin pasar por lint-staged. Un commit
+# que toca código, assets o configuración de lint exige la instalación, porque
+# sin ella el lint no se puede ejecutar y no se debe dejar pasar.
+staged=$(git diff --cached --name-only)
+if ! printf '%s\n' "$staged" | grep -Eq '^(src/|plugins/|scripts/|package\.json|pnpm-lock\.yaml|pnpm-workspace\.yaml|vite\.config\.js|postcss\.config\.mjs|eslint\.config\.js|stylelint\.config\.mjs|\.markuplintrc|\.prettierrc|\.lintstagedrc|\.husky/)'; then
+    exit 0
+fi
+if [ ! -d node_modules ]; then
+    echo 'pre-commit: el commit toca código y este worktree no tiene node_modules. Ejecuta pnpm install antes de commitear.' >&2
+    exit 1
+fi
+if ! command -v pnpm >/dev/null 2>&1; then
+    echo 'pre-commit: pnpm no está en el PATH de esta sesión (pnpm 12.3.4).' >&2
+    exit 1
+fi
+pnpm exec lint-staged

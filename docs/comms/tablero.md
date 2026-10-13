@@ -1,7 +1,7 @@
 # 📋 Tablero de mensajes
 
 > Índice vivo de `comms/`. Cada agente lo actualiza al crear, tomar o cerrar un mensaje.
-> **Última actualización:** 2026-10-12 por Clia — **etapa de investigación cerrada** (TASK-001 a 005, 0 FALLOS globales). Siguiente: RFC-002. En curso: TASK-006 (migración).
+> **Última actualización:** 2026-10-13 por Clia — TASK-006 en `main` por **excepción de Miguel** al gate (REVIEW final y sign-off pendientes). Investigación cerrada. RFC-002 abierta.
 
 ---
 
@@ -10,7 +10,8 @@
 | ID | Tipo | Título | De | Para | Prioridad | Estado | Actualizado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | [REVIEW-005](REVIEW-005-verificador-investigacion.md) | REVIEW | Verificador de la investigación | dexia | kia | P0 | EN_REVISION — Dexia ✅, sign-off 🔴 de Clia pendiente | 2026-10-10 |
-| [TASK-006](TASK-006-migracion-blackgrow.md) | TASK | Migrar la web de assets a Blackgrow 2026, tal cual y sin jQuery (🔴) | clia | kia | P0 | EN_PROGRESO | 2026-10-12 |
+| [TASK-006](TASK-006-migracion-blackgrow.md) | TASK | Migrar la web de assets a Blackgrow 2026, tal cual y sin jQuery (🔴) | clia | kia | P0 | EN_REVISION — en `main` por excepción de Miguel; pendientes: servicios a 375 px, medias de altura, valores repetidos; REVIEW final y sign-off | 2026-10-13 |
+| [REVIEW-006](REVIEW-006-migracion-blackgrow.md) | REVIEW | Checkpoint de fases 0–2 de Blackgrow | dexia | kia | P0 | Checkpoint fases 0–2 ✅ y firmado; REVIEW final pendiente | 2026-10-12 |
 | [RFC-002](RFC-002-catalogo-y-estructura-del-sitio.md) | RFC | Catálogo, posicionamiento y estructura del sitio | clia | miguel | P0 | ABIERTA — decide Miguel, punto por punto | 2026-10-13 |
 | [DECISION-001](DECISION-001-adopcion-flujo-tres-agentes.md) | DECISION | Adopción del flujo Clia · Dexia · Ania | clia | miguel | P0 | PROPUESTA | 2026-09-26 |
 | [DECISION-002](DECISION-002-catalogo-base-servicios.md) | DECISION | Catálogo base de 11 servicios | clia | kia, dexia | P0 | EFECTIVA | 2026-09-26 |

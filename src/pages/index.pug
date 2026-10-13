@@ -1,0 +1,240 @@
+extends ../layouts/main-template
+
+block title
+    title Laboratorio digital de Marketing &amp; Software 👋 | Pharmaco
+block description
+    meta(name='description', content="Pharmaco | Laboratorio digital de Marketing &amp; Software")
+block content
+    include ../components/repetidos
+    | #{' '}
+    //- origen: c-hero
+    div(class="[padding-top:116px] [height:675px] relative bg-purple-original tablet:[height:745px] desktop:[padding-top:230px] desktop:[height:815px] wide:[height:890px]", data-hero="purple-original")
+        | #{' '}
+        //- origen: c-hero__content
+        div(class="relative [z-index:1] [max-width:1440px] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto]")
+            | #{' '}
+            div(class="wrapper")
+                | #{' '}
+                //- origen: c-hero__title
+                h1(class="weight-semibold [line-height:1.4] text-16 text-white [width:80%] [max-width:600px] tablet:text-17 desktop:text-18 wide:text-20") Laboratorio digital de Marketing &amp; Software. 👋.
+                | #{' '}
+                //- origen: c-hero__subtitle
+                h2(class="[margin-top:10px] weight-semibold [line-height:1.048] text-35 text-white [width:90%] [max-width:600px] tablet:text-49 desktop:[margin-top:15px] desktop:[line-height:1] desktop:text-63 wide:text-77") Creamos química entre tu marca y tu audiencia
+                | #{' '}
+                //- origen: c-hero__button
+                div(class="[margin-top:38px] desktop:[margin-top:50px]")
+                    | #{' '}
+                    //- origen: c-button
+                    a(class="inline-flex [align-items:center] [justify-content:center] [text-align:center] [height:48px] rounded-15 [padding-top:0] [padding-right:30px] [padding-bottom:0] [padding-left:30px] text-14 [text-decoration:none] weight-medium [line-height:1.2] [transition:all_.2s_ease,outline_0s] [box-shadow:none] focus:[transition:all_.2s_ease,outline_0s] focus:shadow-soft hover:[transition:all_.2s_ease,outline_0s] hover:shadow-soft bg-blue text-white focus:bg-blue-hover hover:bg-blue-hover disabled:[opacity:.6] disabled:[cursor:not-allowed] wide:[height:64px] wide:rounded-20 wide:text-18", href="contactanos.html")
+                        | Empecemos#{' '}
+                        //- origen: o-icon
+                        +repIcon("/src/assets/images/sprite.svg#icon-arrow-right")
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+        //- origen: c-hero__pic
+        +repHeroPic("/src/assets/images/components/hero/hero-home-lg.webp, /src/assets/images/components/hero/hero-home-lg@2x.webp 2x", "/src/assets/images/components/hero/hero-home-sm.webp, /src/assets/images/components/hero/hero-home-sm@2x.webp 2x", "/src/assets/images/components/hero/hero-home-lg.webp", "", "fade-in")
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:62px] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-top:152px] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper")
+            | #{' '}
+            //- origen: c-media-block
+            div(class="[display:initial] [flex-direction:initial] [align-items:initial] [justify-content:initial] desktop:flex desktop:[flex-direction:row-reverse] desktop:[align-items:center] desktop:[justify-content:space-between]")
+                | #{' '}
+                //- origen: c-media-block__content
+                +repMediaBlockContent("Qué nos inspira?", "Colaborar con marcas atrevidas.", "En nuestro laboratorio con sede en Perú, unimos nuestra pasión por el diseño centrado en más personas con...", "nosotros.html", "/src/assets/images/sprite.svg#icon-arrow-right")
+                | #{' '}
+                //- origen: c-media-block__media
+                +repMediaBlockMedia("fade-right", "/src/assets/images/components/home/robot-lg.webp, /src/assets/images/components/home/robot-lg.webp 2x", "/src/assets/images/components/home/robot-sm.webp, /src/assets/images/components/home/robot-sm.webp 2x", "Not a valid alt", "/src/assets/images/components/home/robot-lg.webp")
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-section-gray [padding-top:62px] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-top:152px] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper")
+            | #{' '}
+            //- origen: c-section__title
+            h2(class="weight-semibold [line-height:1.6] text-16 text-blue tablet:text-17 desktop:text-18 wide:text-20") Servicios
+            | #{' '}
+            //- origen: c-section__subtitle
+            h3(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 tablet:text-49 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-63 wide:text-77")
+                | Elije el que necesites#{' '}
+                br
+                | #{' '}y logra resultados efectivos.#{' '}
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-services-teasers
+                div
+                    | #{' '}
+                    //- origen: o-list-bare
+                    ul(class="[list-style:none] [margin-top:-25px] [margin-right:0] [margin-bottom:0] [margin-left:0] [padding-top:0] [padding-right:0] [padding-bottom:0] [padding-left:0] flex [flex-wrap:wrap] [width:initial] tablet:[margin-left:-46px] tablet:[width:calc(100%_+_46px)] desktop:[margin-top:-40px]")
+                        | #{' '}
+                        //- origen: o-list-bare__item
+                        +repListBareItem("fade-right", "50", "/src/assets/images/components/services/service-1.webp", "alt", "Branding", "Diseñamos desde cero la identidad corporativa de tu marca...", "servicio-detalle.html", "acerca de Branding", "/src/assets/images/sprite.svg#icon-chevron-right")
+                        | #{' '}
+                        //- origen: o-list-bare__item
+                        +repListBareItem2("fade-right", "100", "/src/assets/images/components/services/service-2.webp", "alt", "Social Media", "Te ayudamos a conectar con tu audiencia, ganar visualización...", "servicio-detalle.html", "acerca de Social Media", "/src/assets/images/sprite.svg#icon-chevron-right")
+                        | #{' '}
+                        //- origen: o-list-bare__item
+                        +repListBareItem3("fade-right", "150", "/src/assets/images/components/services/service-3.webp", "alt", "Desarrollo Web", "Diseñamos y desarrollamos páginas web no solo se ven...", "servicio-detalle.html", "acerca de Desarrollo Web", "/src/assets/images/sprite.svg#icon-chevron-right")
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-button__wrapper
+                    div(class="flex [align-items:flex-start] [justify-content:flex-start] [flex-wrap:wrap] [margin-top:40px] [margin-right:0] [margin-bottom:0] [margin-left:0] desktop:[margin-top:62px]")
+                        | #{' '}
+                        //- origen: c-button
+                        a(class="inline-flex [align-items:center] [justify-content:center] [text-align:center] [height:48px] rounded-15 [padding-top:0] [padding-right:30px] [padding-bottom:0] [padding-left:30px] text-14 [text-decoration:none] weight-medium [line-height:1.2] [transition:all_.2s_ease,outline_0s] [box-shadow:none] focus:[transition:all_.2s_ease,outline_0s] focus:shadow-soft hover:[transition:all_.2s_ease,outline_0s] hover:shadow-soft bg-blue text-white focus:bg-blue-hover hover:bg-blue-hover disabled:[opacity:.6] disabled:[cursor:not-allowed] wide:[height:64px] wide:rounded-20 wide:text-18", href="nosotros.html")
+                            | Ver todos los servicios#{' '}
+                            //- origen: o-icon
+                            +repIcon("/src/assets/images/sprite.svg#icon-arrow-right")
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-section-gray [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper")
+            | #{' '}
+            //- origen: c-section__title
+            h2(class="weight-semibold [line-height:1.6] text-16 text-blue tablet:text-17 desktop:text-18 wide:text-20") Mira nuestras soluciones
+            | #{' '}
+            //- origen: c-section__subtitle
+            h3(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 tablet:text-49 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-63 wide:text-77") Portafolio
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-button__wrapper
+                div(class="flex [align-items:flex-start] [justify-content:center] [flex-wrap:wrap] [margin-top:0] [margin-right:0] [margin-bottom:40px] [margin-left:0] desktop:[margin-bottom:62px]")
+                    | #{' '}
+                    //- origen: c-button-view-all
+                    a(class="flex [align-items:center] [justify-content:center] [text-decoration:none] text-16 [margin-left:auto] [margin-right:0] weight-semibold text-purple [transition:all_.2s_ease,outline_0s] focus:[transition:all_.2s_ease,outline_0s] focus:text-blue-strong hover:[transition:all_.2s_ease,outline_0s] hover:text-blue-strong desktop:text-20", href="portafolio.html")
+                        | Ver todos los proyectos#{' '}
+                        //- origen: o-icon
+                        +repIcon("/src/assets/images/sprite.svg#icon-arrow-right")
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+                //- origen: c-projects-teasers
+                div
+                    | #{' '}
+                    //- origen: o-list-bare
+                    ul(class="[list-style:none] [margin-top:-25px] [margin-right:0] [margin-bottom:0] [margin-left:0] [padding-top:0] [padding-right:0] [padding-bottom:0] [padding-left:0] flex [flex-wrap:wrap] [width:initial] tablet:[margin-left:-46px] tablet:[width:calc(100%_+_46px)] desktop:[margin-top:-40px]")
+                        | #{' '}
+                        //- origen: o-list-bare__item
+                        +repListBareItem4("fade-left", "50", "portafolio-detalle.html", "alt", "/src/assets/images/components/projects/project-1.webp", "portafolio-detalle.html", "Modelado 3D", "Lorem ipsum")
+                        | #{' '}
+                        //- origen: o-list-bare__item
+                        +repListBareItem4("fade-left", "100", "portafolio-detalle.html", "alt", "/src/assets/images/components/projects/project-1.webp", "portafolio-detalle.html", "Branding Venturi", "Lorem ipsum")
+                        | #{' '}
+                        //- origen: o-list-bare__item
+                        +repListBareItem4("fade-left", "150", "portafolio-detalle.html", "alt", "/src/assets/images/components/projects/project-1.webp", "portafolio-detalle.html", "Campaña Iveco", "Lorem ipsum")
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-section-gray [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] [background-image:url(/src/assets/images/components/clients/clients-bg.webp)] [background-repeat:no-repeat] [background-position:center_calc(100%_-_90px)] [background-size:300px] desktop:[padding-bottom:152px] desktop:[background-position:center_calc(100%_-_180px)] desktop:[background-size:675px]")
+        | #{' '}
+        div(class="wrapper")
+            | #{' '}
+            //- origen: c-section__title
+            h2(class="weight-semibold [line-height:1.6] text-16 text-blue [text-align:center] tablet:text-17 desktop:text-18 wide:text-20") Casos de éxito
+            | #{' '}
+            //- origen: c-section__subtitle
+            +repSectionSubtitle()
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:70px] desktop:[margin-top:210px]")
+                | #{' '}
+                //- origen: c-clients
+                div(class="relative")
+                    | #{' '}
+                    //- origen: c-clients__slider
+                    +repClientsSlider("/src/assets/images/components/clients/client-1.svg", "alt", "/src/assets/images/components/clients/client-2.svg", "alt", "/src/assets/images/components/clients/client-3.svg", "alt", "/src/assets/images/components/clients/client-4.svg", "alt", "/src/assets/images/components/clients/client-5.svg", "alt")
+                    | #{' '}
+                    //- origen: c-clients__slider-controls
+                    div(class="js-clients-slider-controls absolute [width:100%] [height:100%] [top:0] [left:0] [right:0] [bottom:0]")
+                        | #{' '}
+                        //- origen: c-clients__slider-control
+                        button(class="js-clients-slider-prev absolute flex [align-items:center] [justify-content:center] bg-gray-button text-gray-icon [width:20px] [height:20px] rounded-circle text-10 [top:50%] [transform:translateY(-50%)]", type="button", aria-label="Anterior slide")
+                            | #{' '}
+                            //- origen: o-icon
+                            +repIcon2("/src/assets/images/sprite.svg#icon-arrow-left")
+                            | #{' '}
+                        | #{' '}
+                        //- origen: c-clients__slider-control
+                        button(class="js-clients-slider-next absolute flex [align-items:center] [justify-content:center] bg-gray-button text-gray-icon [width:20px] [height:20px] rounded-circle text-10 [top:50%] [transform:translateY(-50%)] [right:0]", type="button", aria-label="Siguiente slide")
+                            | #{' '}
+                            //- origen: o-icon
+                            +repIcon2("/src/assets/images/sprite.svg#icon-arrow-right")
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:62px] [padding-right:0] [padding-bottom:62px] [padding-left:0] [box-shadow:initial] desktop:bg-section-contact desktop:[padding-top:0] desktop:[padding-bottom:0] desktop:shadow-section-contact")
+        | #{' '}
+        div(class="wrapper bg-white [max-width:1242px] [padding-top:initial] [padding-right:initial] [padding-bottom:initial] [padding-left:initial] [border-radius:initial] desktop:[padding-top:100px] desktop:[padding-right:100px] desktop:[padding-bottom:100px] desktop:[padding-left:100px] desktop:rounded-18")
+            | #{' '}
+            //- origen: c-media-block
+            div(class="[display:initial] [flex-direction:initial] [align-items:initial] [justify-content:initial] desktop:flex desktop:[flex-direction:row] desktop:[align-items:center] desktop:[justify-content:space-between]")
+                | #{' '}
+                //- origen: c-media-block__content
+                div(class="[width:initial] [margin-right:initial] desktop:[width:536px] desktop:[margin-right:50px] wide:[margin-right:80px]")
+                    | #{' '}
+                    //- origen: c-section__title
+                    h2(class="weight-semibold [line-height:1.6] text-16 text-blue tablet:text-17 desktop:text-18 wide:text-20") Contacto
+                    | #{' '}
+                    //- origen: c-section__subtitle
+                    h3(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 tablet:text-49 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-63 wide:text-77") ¿Deseas hablar sobre tu proyecto?
+                    | #{' '}
+                    //- origen: c-section__content
+                    div(class="[margin-top:15px] [max-width:initial] desktop:[margin-top:34px] desktop:[max-width:80%]")
+                        | #{' '}
+                        //- origen: s-cms-content
+                        div(class="text-16 [line-height:1.56] [margin-bottom:20px] text-gray-muted desktop:[margin-bottom:30px]")
+                            | #{' '}
+                            p(class="[margin-top:0] [margin-right:0] [margin-bottom:0] [margin-left:0]")
+                                | Hagamos un#{' '}
+                                strong(class="[font-weight:700]") gran trabajo
+                                | #{' '}juntos.
+                            | #{' '}
+                        | #{' '}
+                        //- origen: c-button__wrapper
+                        div(class="flex [align-items:flex-start] [justify-content:flex-start] [flex-wrap:wrap] [margin-top:40px] [margin-right:0] [margin-bottom:0] [margin-left:0] desktop:[margin-top:48px]")
+                            | #{' '}
+                            //- origen: c-button
+                            a(class="inline-flex [align-items:center] [justify-content:center] [text-align:center] [height:48px] rounded-15 [padding-top:0] [padding-right:30px] [padding-bottom:0] [padding-left:30px] text-14 [text-decoration:none] weight-medium [line-height:1.2] [transition:all_.2s_ease,outline_0s] [box-shadow:none] focus:[transition:all_.2s_ease,outline_0s] focus:shadow-soft hover:[transition:all_.2s_ease,outline_0s] hover:shadow-soft bg-blue text-white focus:bg-blue-hover hover:bg-blue-hover disabled:[opacity:.6] disabled:[cursor:not-allowed] wide:[height:64px] wide:rounded-20 wide:text-18", href="contactanos.html")
+                                | Contáctanos#{' '}
+                                //- origen: o-icon
+                                +repIcon("/src/assets/images/sprite.svg#icon-arrow-right")
+                                | #{' '}
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+                //- origen: c-media-block__media
+                +repMediaBlockMedia("fade-left", "/src/assets/images/components/home/robot-contact-lg.webp, /src/assets/images/components/home/robot-contact-lg@2x.webp 2x", "/src/assets/images/components/home/robot-contact-sm.webp, /src/assets/images/components/home/robot-contact-sm@2x.webp 2x", "Not a valid alt", "/src/assets/images/components/home/robot-contact-lg.webp")
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}

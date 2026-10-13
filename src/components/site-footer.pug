@@ -1,0 +1,40 @@
+include ui
+
+//- Enlace de redes del pie. El icono va en su caja de 35 px; el texto del origen es el aria-label.
+mixin socialLink(titulo, icono, etiqueta)
+    a(class='ml-4.5 flex h-8.5 w-8.5 items-center justify-center rounded-6 bg-purple text-35 text-white', href='test.html', aria-label=etiqueta)
+        +svgIcon(icono, titulo, '', 'flex')
+
+//- Elemento de la lista de navegación del pie. El marcador cuadrado o redondo es `::after`.
+mixin footerLink(href, texto)
+    li(class='relative mb-2.5 list-none pl-6 desktop:w-third desktop:pr-2.5 after:absolute after:top-1/2 after:left-0 after:block after:size-3 after:-translate-y-1/2 after:rounded-circle after:bg-purple after:content-[\'\'] first:after:rounded-none first:after:bg-blue')
+        a(class='link-underline text-16 text-white no-underline', href=href)= texto
+
+//- Pie del origen (.c-site-footer). Los textos y enlaces se copian tal cual, con sus
+//- aria-label del origen (incluido «Southern Harvest», que es resto de plantilla; ver inventario).
+mixin siteFooter()
+    footer(class='bg-dark-blue bg-no-repeat bg-[center_top] bg-blend-overlay footer-bg py-footer desktop:footer-bg-lg desktop:py-footer-wide')
+        div(class='wrapper desktop:flex desktop:flex-wrap desktop:items-start desktop:justify-between')
+            div(class='desktop:max-w-[305px]')
+                h2(class='sr-only') Pharmaco
+                img(class='block h-auto w-[231px]', src='/src/assets/images/components/site-header/pharmaco-logo.svg', alt='Pharmaco logo', width='231', height='17', loading='lazy')
+                div(class='mt-5 text-16 weight-medium leading-[1.46] text-white')
+                    p(class='m-0 mb-5 last:mb-0') Desinf anything from simple clean style to fully featured websites.
+                div(class='mt-8.5 -ml-4.5 flex items-center justify-start')
+                    +socialLink('Facebook', 'facebook', "Go to Southern Harvest's Facebook")
+                    +socialLink('Instagram', 'instagram', "Go to Southern Harvest's Instagram")
+                    +socialLink('YouTube', 'youtube', "Go to Southern Harvest's YouTube")
+                    +socialLink('Web', 'web', "Go to Southern Harvest's Web")
+                    +socialLink('LinkedIn', 'linkedin', "Go to Southern Harvest's LinkedIn")
+            div(class='mt-10 desktop:mt-0 desktop:w-[500px] wide:w-[600px]')
+                h3(class='weight-semibold text-16 text-white') Contenido
+                ul(class='m-0 mt-5.5 list-none p-0 desktop:flex desktop:flex-wrap')
+                    +footerLink('nosotros.html', 'Nosotros')
+                    +footerLink('servicios.html', 'Servicios')
+                    +footerLink('portafolio.html', 'Portafolio')
+                    +footerLink('blog.html', 'Blog')
+                    +footerLink('contactanos.html', 'Contacto')
+            p(class='mb-0 mt-15 text-16 weight-medium text-white desktop:mt-[130px] desktop:w-[calc(100%_-_200px)]') Pharmaco 2021 - Todos los derechos reservados
+            a(class='js-site-footer-to-top mt-9 inline-flex items-center justify-center rounded-15 bg-transparent py-2.5 pr-5 pl-0 text-16 weight-medium text-white no-underline transition-all duration-200 ease-origin hover:bg-white hover:text-dark-blue desktop:mt-[130px]', href='#main', aria-label='Volver arriba')
+                +svgIcon('to-top', 'Volver', 'mr-1.5 text-20', 'inline-block')
+                span Volver

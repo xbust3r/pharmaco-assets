@@ -1,0 +1,24 @@
+include ../components/site-header
+include ../components/site-footer
+
+//- Plantilla de página del origen: cabecera, `main#main` y pie. Cada página la extiende
+//- y rellena `title`, `description` y `content`.
+doctype html
+html(lang='es-PE')
+    head
+        include ../components/head-base
+        block title
+            title Pharmaco
+        block description
+            meta(name='description', content='Pharmaco | Laboratorio digital de Marketing & Software')
+    body
+        +siteHeader()
+        main#main(class='relative')
+            block content
+        +siteFooter()
+        //- Diálogo único para vídeo e imagen (sustituye al plugin de modales). Lo abre src/scripts/modal.js.
+        dialog(class='js-modal', aria-label='Contenido ampliado')
+            button(class='js-modal-close ml-auto flex h-10 w-10 items-center justify-center bg-transparent text-24 text-ink', type='button', aria-label='Cerrar')
+                | ×
+            div(class='js-modal-content')
+        script(type='module', src='/src/scripts/main.js')

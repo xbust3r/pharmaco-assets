@@ -1,0 +1,338 @@
+extends ../layouts/main-template
+
+block title
+    title Conoce nuestras soluciones | Pharmaco
+block description
+    meta(name='description', content="Pharmaco | Laboratorio digital de Marketing &amp; Software")
+block content
+    include ../components/repetidos
+    | #{' '}
+    //- origen: c-hero
+    div(class="[padding-top:116px] [height:675px] relative bg-strong-blue tablet:[height:745px] desktop:[padding-top:230px] desktop:[height:815px] wide:[height:890px]", data-hero="strong-blue")
+        | #{' '}
+        //- origen: c-hero__content
+        div(class="relative [z-index:1] [max-width:1440px] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto]")
+            | #{' '}
+            div(class="wrapper")
+                | #{' '}
+                //- origen: c-hero__subtitle
+                h1(class="[margin-top:10px] weight-semibold [line-height:1.048] text-35 text-white [width:90%] [max-width:600px] [margin-right:initial] [margin-bottom:initial] [margin-left:initial] tablet:text-49 desktop:[margin-top:15px] desktop:[line-height:1] desktop:text-63 desktop:[margin-right:0] desktop:[margin-bottom:0] desktop:[margin-left:auto] wide:text-77")
+                    | Campaña#{' '}
+                    br
+                    | #{' '}CyberWow#{' '}
+                | #{' '}
+                //- origen: c-hero__text
+                +repHeroText2("Brand: Motored")
+                | #{' '}
+            | #{' '}
+        | #{' '}
+        //- origen: c-hero__pic
+        +repHeroPic("/src/assets/images/components/hero/hero-diseño-de-personajes-lg.webp, /src/assets/images/components/hero/hero-diseño-de-personajes-lg@2x.webp 2x", "/src/assets/images/components/hero/hero-diseño-de-personajes-sm.webp, /src/assets/images/components/hero/hero-diseño-de-personajes-sm@2x.webp 2x", "/src/assets/images/components/hero/hero-diseño-de-personajes-lg.webp", "", "fade-in")
+        | #{' '}
+    | #{' '}
+    //- origen: c-page-breadcrumb
+    +repPageBreadcrumb("Your location in the site", "./", "Home", "/src/assets/images/sprite.svg#icon-chevron-right", "#", "Portafolio", "/src/assets/images/sprite.svg#icon-chevron-right", "#", "Motored")
+    | #{' '}
+    //- origen: c-section
+    +repSection("Brand: Motored", "Lorem Ipsum is simply", "it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using", "Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editorsnow use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). Now use Lorem Ipsum as their default model text", "PageMaker")
+    | #{' '}
+    //- origen: c-section
+    +repSection2("/src/assets/images/components/portafolio/campaña-cyberwow/simple-banner-lg.webp, /src/assets/images/components/portafolio/campaña-cyberwow/simple-banner-lg@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-cyberwow/simple-banner-sm.webp , /src/assets/images/components/portafolio/campaña-cyberwow/simple-banner-sm@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-cyberwow/simple-banner-lg.webp", "#")
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1120px]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Contenido Web
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-web-content
+                div
+                    | #{' '}
+                    //- origen: c-web-content__pic
+                    picture(class="block [width:100%] [height:auto] wide:[height:695px]")
+                        | #{' '}
+                        source(media="(min-width: 43.75rem)", srcset="/src/assets/images/components/portafolio/campaña-cyberwow/laptop-lg.webp", type="image/webp")
+                        | #{' '}
+                        source(srcset="/src/assets/images/components/portafolio/campaña-cyberwow/laptop-sm.webp", type="image/webp")
+                        | #{' '}
+                        //- origen: c-web-content__image
+                        img(class="[width:100%] [height:auto] block [object-fit:cover] wide:[height:695px]", src="/src/assets/images/components/portafolio/campaña-cyberwow/laptop-lg.webp", alt="#")
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Facebook Ads
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro2("Albúm")
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-format-album
+                div(class="flex [justify-content:space-between] [align-items:center] [flex-wrap:wrap] [padding-top:initial] [padding-right:initial] [padding-bottom:initial] [padding-left:initial] wide:[padding-top:0] wide:[padding-right:20px] wide:[padding-bottom:0] wide:[padding-left:20px]")
+                    | #{' '}
+                    //- origen: c-format-album__item
+                    div(class="[width:100%] desktop:[width:66%]")
+                        | #{' '}
+                        //- origen: c-format-album__pic
+                        picture(class="block [width:292px] [height:447px] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] desktop:[width:100%] desktop:[height:902px] desktop:[margin-top:initial] desktop:[margin-right:initial] desktop:[margin-bottom:initial] desktop:[margin-left:initial] wide:[height:1352px]")
+                            | #{' '}
+                            source(media="(min-width: 43.75rem)", srcset="/src/assets/images/components/portafolio/campaña-cyberwow/album-big-lg.webp", type="image/webp")
+                            | #{' '}
+                            source(srcset="/src/assets/images/components/portafolio/campaña-cyberwow/album-big-sm.webp", type="image/webp")
+                            | #{' '}
+                            //- origen: c-format-album__image
+                            img(class="[width:100%] [height:100%] block [object-fit:cover]", src="/src/assets/images/components/portafolio/campaña-cyberwow/album-big-lg.webp", alt="#")
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-format-album__item
+                    div(class="[max-width:442px] block [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] [width:initial] desktop:[max-width:initial] desktop:[width:33%]")
+                        | #{' '}
+                        //- origen: c-format-album__pic
+                        +repFormatAlbumPic("/src/assets/images/components/portafolio/campaña-cyberwow/album-2-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/album-2-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/album-2-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-format-album__pic
+                        +repFormatAlbumPic("/src/assets/images/components/portafolio/campaña-cyberwow/album-3-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/album-3-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/album-3-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-format-album__pic
+                        +repFormatAlbumPic("/src/assets/images/components/portafolio/campaña-cyberwow/album-4-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/album-4-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/album-4-lg.webp", "#")
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px]")
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:0]")
+                | #{' '}
+                //- origen: c-format-album
+                div(class="flex [justify-content:space-between] [align-items:center] [flex-wrap:wrap] [padding-top:initial] [padding-right:initial] [padding-bottom:initial] [padding-left:initial] wide:[padding-top:0] wide:[padding-right:20px] wide:[padding-bottom:0] wide:[padding-left:20px]")
+                    | #{' '}
+                    //- origen: c-format-album__item
+                    +repFormatAlbumItem("/src/assets/images/components/portafolio/campaña-cyberwow/album-5-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/album-5-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/album-5-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-format-album__item
+                    +repFormatAlbumItem("/src/assets/images/components/portafolio/campaña-cyberwow/album-6-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/album-6-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/album-6-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-format-album__item
+                    +repFormatAlbumItem("/src/assets/images/components/portafolio/campaña-cyberwow/album-7-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/album-7-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/album-7-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-format-album__item
+                    +repFormatAlbumItem("/src/assets/images/components/portafolio/campaña-cyberwow/album-8-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/album-8-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/album-8-lg.webp", "#")
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Anuncios destacados
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro2("Facebook")
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-featured-ads
+                div(class="flex [justify-content:space-between] [flex-wrap:wrap]")
+                    | #{' '}
+                    //- origen: c-featured-ads__item
+                    +repFeaturedAdsItem("/src/assets/images/components/portafolio/campaña-cyberwow/featured-ads1-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/featured-ads1-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/featured-ads1-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-featured-ads__item
+                    +repFeaturedAdsItem("/src/assets/images/components/portafolio/campaña-cyberwow/featured-ads2-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/featured-ads2-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/featured-ads2-lg.webp", "#")
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    +repSection3("Instagram Ads", "Formato Carrusel", "/src/assets/images/components/portafolio/campaña-cyberwow/banner-instagram-lg.webp, /src/assets/images/components/portafolio/campaña-cyberwow/banner-instagram-lg@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-cyberwow/banner-instagram-sm.webp , /src/assets/images/components/portafolio/campaña-cyberwow/banner-instagram-sm@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-cyberwow/banner-instagram-lg.webp", "#")
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Facebook Ads
+            | #{' '}
+            //- origen: c-section__content
+            +repSectionContent3("/src/assets/images/components/portafolio/campaña-cyberwow/banner-facebook-lg.webp, /src/assets/images/components/portafolio/campaña-cyberwow/banner-facebook-lg@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-cyberwow/banner-facebook-sm.webp , /src/assets/images/components/portafolio/campaña-cyberwow/banner-facebook-sm@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-cyberwow/banner-facebook-lg.webp", "#")
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px] [padding-left:0] [padding-right:0]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Historias destacadas
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro2("Instagram & Facebook")
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-featured-stories
+                div(class="flex [flex-wrap:wrap] [justify-content:center]")
+                    | #{' '}
+                    //- origen: c-featured-stories__item
+                    +repFeaturedStoriesItem("/src/assets/images/components/portafolio/campaña-cyberwow/stories1-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories1-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories1-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-featured-stories__item
+                    +repFeaturedStoriesItem("/src/assets/images/components/portafolio/campaña-cyberwow/stories2-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories2-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories2-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-featured-stories__item
+                    +repFeaturedStoriesItem("/src/assets/images/components/portafolio/campaña-cyberwow/stories3-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories3-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories3-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-featured-stories__item
+                    +repFeaturedStoriesItem("/src/assets/images/components/portafolio/campaña-cyberwow/stories4-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories4-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories4-lg.webp", "#")
+                    | #{' '}
+                | #{' '}
+                //- origen: c-featured-stories
+                div(class="flex [flex-wrap:wrap] [justify-content:center] [margin-top:45px] desktop:[margin-top:145px]")
+                    | #{' '}
+                    //- origen: c-featured-stories__item
+                    +repFeaturedStoriesItem("/src/assets/images/components/portafolio/campaña-cyberwow/stories5-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories1-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories5-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-featured-stories__item
+                    +repFeaturedStoriesItem("/src/assets/images/components/portafolio/campaña-cyberwow/stories6-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories2-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories6-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-featured-stories__item
+                    +repFeaturedStoriesItem("/src/assets/images/components/portafolio/campaña-cyberwow/stories7-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories3-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories7-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-featured-stories__item
+                    +repFeaturedStoriesItem("/src/assets/images/components/portafolio/campaña-cyberwow/stories8-lg.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories4-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/stories8-lg.webp", "#")
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Videos
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro2("Instagram & Facebook")
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-videos
+                div
+                    | #{' '}
+                    //- origen: c-videos-banner
+                    div(class="[margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] [height:auto] [width:100%]")
+                        | #{' '}
+                        //- origen: c-videos-banner__item
+                        div(class="[height:100%] block [width:100%] [overflow:hidden]")
+                            | #{' '}
+                            //- origen: c-videos-banner__img-link
+                            a(class="video-modal-js relative block [transition:all_.2s_ease,outline_0s] [overflow:hidden] hover:[transform:scale(1.05)] hover:[transition:all_.2s_ease,outline_0s] before:content-[''] before:absolute before:[background-image:url(../../images/components/icon-videos.svg)] before:[background-repeat:no-repeat] before:[background-size:contain] before:[background-position:center] before:[width:16%] before:[top:0] before:[bottom:0] before:[left:0] before:[right:0] before:[margin-top:0] before:[margin-right:auto] before:[margin-bottom:0] before:[margin-left:auto] before:flex before:[justify-content:center] before:[align-items:center] before:[z-index:100]", href="https://www.youtube.com/embed/pa-A2g0wxPs")
+                                | #{' '}
+                                //- origen: c-videos-banner__pic
+                                picture(class="[width:100%] block [height:100%] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] mobile-small:[width:302px] mobile-small:[height:298px] desktop:[width:700px] desktop:[height:702px] wide:[width:1068px] wide:[height:1056px]")
+                                    | #{' '}
+                                    source(media="(min-width: 43.75rem)", srcset="/src/assets/images/components/portafolio/campaña-cyberwow/video-lg.webp", type="image/webp")
+                                    | #{' '}
+                                    source(srcset="/src/assets/images/components/portafolio/campaña-cyberwow/video-sm.webp", type="image/webp")
+                                    | #{' '}
+                                    //- src roto en el origen, sin archivo: components/portafolio/campaña-cyberwow/video1-l (webp)
+                                    img(src="/src/assets/images/components/portafolio/campaña-cyberwow/video-lg.webp", class="[width:100%] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] [object-fit:cover] [height:100%]", alt="#")
+                                    | #{' '}
+                                | #{' '}
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px] [padding-left:0] [padding-right:0]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Social Media
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro2("Instagram & Facebook")
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-gallery
+                div(class="[max-width:317px] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] tablet:[max-width:initial] tablet:[margin-top:initial] tablet:[margin-right:initial] tablet:[margin-bottom:initial] tablet:[margin-left:initial]")
+                    | #{' '}
+                    //- origen: c-gallery-grid
+                    div(class="flex [flex-wrap:wrap] [justify-content:space-between] [max-width:360px] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto] tablet:[max-width:initial]")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem("/src/assets/images/components/portafolio/campaña-cyberwow/gallery1-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery1-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/gallery1-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem("/src/assets/images/components/portafolio/campaña-cyberwow/gallery2-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery2-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/gallery2-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem("/src/assets/images/components/portafolio/campaña-cyberwow/gallery3-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery3-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/gallery3-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem("/src/assets/images/components/portafolio/campaña-cyberwow/gallery4-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery4-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery4-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem2("/src/assets/images/components/portafolio/campaña-cyberwow/gallery5-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery5-sm.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery5-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        div(class="[margin-bottom:10px] [width:100%] [max-height:initial] tablet:[width:calc(50%_-_5px)] desktop:[margin-bottom:12px] desktop:[width:calc(33.33%_-_10px)] desktop:[max-height:479px]")
+                            | #{' '}
+                            //- origen: c-gallery-grid__pic
+                            +repGalleryGridPic("/src/assets/images/components/portafolio/campaña-cyberwow/gallery6-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery6-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/gallery6-lg.webp", "#")
+                            | #{' '}
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem3("/src/assets/images/components/portafolio/campaña-cyberwow/gallery7-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery7-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/gallery7-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem3("/src/assets/images/components/portafolio/campaña-cyberwow/gallery8-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery8-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/gallery8-lg.webp", "#")
+                        | #{' '}
+                        //- origen: c-gallery-grid__item
+                        +repGalleryGridItem3("/src/assets/images/components/portafolio/campaña-cyberwow/gallery9-lg.webp", "/src/assets/images/components/portafolio/campaña-stralis/gallery9-sm.webp", "/src/assets/images/components/portafolio/campaña-cyberwow/gallery9-lg.webp", "#")
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}

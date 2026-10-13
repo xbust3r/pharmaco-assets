@@ -1,0 +1,205 @@
+extends ../layouts/main-template
+
+block title
+    title Conoce nuestras soluciones | Pharmaco
+block description
+    meta(name='description', content="Pharmaco | Laboratorio digital de Marketing &amp; Software")
+block content
+    include ../components/repetidos
+    | #{' '}
+    //- origen: c-hero
+    div(class="[padding-top:116px] [height:675px] relative bg-medium-blue tablet:[height:745px] desktop:[padding-top:230px] desktop:[height:815px] wide:[height:890px]", data-hero="medium-blue")
+        | #{' '}
+        //- origen: c-hero__content
+        div(class="relative [z-index:1] [max-width:1440px] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto]")
+            | #{' '}
+            div(class="wrapper")
+                | #{' '}
+                //- origen: c-hero__subtitle
+                h1(class="[margin-top:10px] weight-semibold [line-height:1.048] text-35 text-white [width:90%] [max-width:600px] [margin-right:initial] [margin-bottom:initial] [margin-left:initial] tablet:text-49 desktop:[margin-top:15px] desktop:[line-height:1] desktop:text-63 desktop:[margin-right:0] desktop:[margin-bottom:0] desktop:[margin-left:auto] wide:text-77")
+                    | Campaña#{' '}
+                    br
+                    | #{' '}Iveco#{' '}
+                | #{' '}
+                //- origen: c-hero__text
+                +repHeroText2("Brand: Iveco")
+                | #{' '}
+            | #{' '}
+        | #{' '}
+        //- origen: c-hero__pic
+        +repHeroPic("/src/assets/images/components/hero/hero-diseño-de-personajes-lg.webp, /src/assets/images/components/hero/hero-diseño-de-personajes-lg@2x.webp 2x", "/src/assets/images/components/hero/hero-diseño-de-personajes-sm.webp, /src/assets/images/components/hero/hero-diseño-de-personajes-sm@2x.webp 2x", "/src/assets/images/components/hero/hero-diseño-de-personajes-lg.webp", "", "fade-in")
+        | #{' '}
+    | #{' '}
+    //- origen: c-page-breadcrumb
+    +repPageBreadcrumb("Your location in the site", "./", "Home", "/src/assets/images/sprite.svg#icon-chevron-right", "#", "Portafolio", "/src/assets/images/sprite.svg#icon-chevron-right", "#", "Iveco")
+    | #{' '}
+    //- origen: c-section
+    +repSection("Brand: Iveco", "Lorem Ipsum is simply", "it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using", "Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editorsnow use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). Now use Lorem Ipsum as their default model text", "PageMaker")
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px] [padding-left:0] [padding-right:0]")
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:0]")
+                | #{' '}
+                //- origen: c-format-magazine
+                div(class="flex [justify-content:space-between] [flex-wrap:wrap]")
+                    | #{' '}
+                    //- origen: c-format-magazine__item
+                    +repFormatMagazineItem("/src/assets/images/components/portafolio/campaña-iveco/revista-5-lg.webp", "/src/assets/images/components/portafolio/campaña-iveco/revista-5-sm.webp", "/src/assets/images/components/portafolio/campaña-iveco/revista-5-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-format-magazine__item
+                    +repFormatMagazineItem2("/src/assets/images/components/portafolio/campaña-iveco/revista-6-lg.webp", "/src/assets/images/components/portafolio/campaña-iveco/revista-6-sm.webp", "/src/assets/images/components/portafolio/campaña-iveco/revista-6-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-format-magazine__item
+                    +repFormatMagazineItem2("/src/assets/images/components/portafolio/campaña-iveco/revista-7-lg.webp", "/src/assets/images/components/portafolio/campaña-iveco/revista-7-sm.webp", "/src/assets/images/components/portafolio/campaña-iveco/revista-7-lg.webp", "#")
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px] [padding-left:0] [padding-right:0]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Publicación
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro2("Formato Billboard")
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-publication
+                div
+                    | #{' '}
+                    //- origen: c-publication__item
+                    +repPublicationItem("/src/assets/images/components/portafolio/campaña-iveco/publicacion1-lg.webp, /src/assets/images/components/portafolio/campaña-iveco/publicacion1-lg@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-iveco/publicacion1-sm.webp, /src/assets/images/components/portafolio/campaña-iveco/publicacion1-sm@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-iveco/publicacion1-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-publication__item
+                    div(class="[width:100%] [height:auto] [margin-top:7px] tablet:[margin-top:45px]")
+                        | #{' '}
+                        //- origen: c-publication__pic
+                        +repPublicationPic("/src/assets/images/components/portafolio/campaña-iveco/publicacion2-lg.webp, /src/assets/images/components/portafolio/campaña-iveco/publicacion2-lg@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-iveco/publicacion2-sm.webp, /src/assets/images/components/portafolio/campaña-iveco/publicacion2-sm@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-iveco/publicacion2-lg.webp", "#")
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px] [padding-left:0] [padding-right:0]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Publicación
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro2("Formato Aviso de Revista")
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-publication
+                div
+                    | #{' '}
+                    //- origen: c-publication__item
+                    div(class="[width:100%] [height:auto]")
+                        | #{' '}
+                        //- origen: c-publication__pic
+                        picture(class="[width:100%] [height:100%] block")
+                            | #{' '}
+                            source(media="(min-width: 43.75rem)", srcset="/src/assets/images/components/portafolio/campaña-iveco/publicacion-revista1-lg.webp, /src/assets/images/components/portafolio/campaña-iveco/publicacion-revista1-lg@2x.webp 2x", type="image/webp")
+                            | #{' '}
+                            source(srcset="/src/assets/images/components/portafolio/campaña-iveco/publicacion-revista1-sm.webp, /src/assets/images/components/portafolio/campaña-iveco/publicacion-revista1-sm@2x.webp 2x", type="image/webp")
+                            | #{' '}
+                            //- src roto en el origen, sin archivo: components/portafolio/campaña-iveco/publicacion-revista-revista1-lg (webp)
+                            img(src="/src/assets/images/components/portafolio/campaña-iveco/publicacion-revista1-lg.webp", class="[width:100%] [height:100%] block [object-fit:cover]", alt="#", loading="lazy")
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-publication__item
+                    +repPublicationItem("/src/assets/images/components/portafolio/campaña-iveco/publicacion-revista2-lg.webp, /src/assets/images/components/portafolio/campaña-iveco/publicacion-revista2-lg@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-iveco/publicacion-revista2-sm.webp, /src/assets/images/components/portafolio/campaña-iveco/publicacion-revista2-sm@2x.webp 2x", "/src/assets/images/components/portafolio/campaña-iveco/publicacion-revista2-lg.webp", "#")
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1440px] [padding-left:0] [padding-right:0]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Proceso de montaje
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro2("Formato Aviso de Revista")
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-format-magazine
+                div(class="flex [justify-content:space-between] [flex-wrap:wrap]")
+                    | #{' '}
+                    //- origen: c-format-magazine__item
+                    +repFormatMagazineItem3("/src/assets/images/components/portafolio/campaña-iveco/revista-2-lg.webp", "/src/assets/images/components/portafolio/campaña-iveco/revista-2-sm.webp", "/src/assets/images/components/portafolio/campaña-iveco/revista-2-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-format-magazine__item
+                    +repFormatMagazineItem3("/src/assets/images/components/portafolio/campaña-iveco/revista-3-lg.webp", "/src/assets/images/components/portafolio/campaña-iveco/revista-3-sm.webp", "/src/assets/images/components/portafolio/campaña-iveco/revista-3-lg.webp", "#")
+                    | #{' '}
+                    //- origen: c-format-magazine__item
+                    div(class="[margin-bottom:5px] [width:calc(50%_-_2.5px)] hidden min-[601px]:[display:initial] tablet:[margin-bottom:13px] tablet:[width:calc(33.33%_-_6.5px)]")
+                        | #{' '}
+                        //- origen: c-format-magazine__pic
+                        +repFormatMagazinePic("/src/assets/images/components/portafolio/campaña-iveco/revista-4-lg.webp", "/src/assets/images/components/portafolio/campaña-iveco/revista-4-sm.webp", "/src/assets/images/components/portafolio/campaña-iveco/revista-4-lg.webp", "#")
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-format-magazine__item
+                    +repFormatMagazineItem("/src/assets/images/components/portafolio/campaña-iveco/revista-1-lg.webp", "/src/assets/images/components/portafolio/campaña-iveco/revista-1-sm.webp", "/src/assets/images/components/portafolio/campaña-iveco/revista-1-lg.webp", "#")
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:0] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper")
+            | #{' '}
+            //- origen: c-section__subtitle
+            h2(class="[margin-top:10px] weight-semibold [line-height:1.16] text-35 [text-align:center] tablet:text-37 desktop:[margin-top:15px] desktop:[line-height:1.03] desktop:text-39 wide:text-40") Landing Page
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro2("Formato Web")
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-format-web
+                div
+                    | #{' '}
+                    //- origen: c-format-web__item
+                    div(class="[width:100%]")
+                        | #{' '}
+                        //- origen: c-format-web__pic
+                        picture(class="[width:100%] [height:100%] block desktop:[height:713px]")
+                            | #{' '}
+                            source(media="(min-width: 43.75rem)", srcset="/src/assets/images/components/portafolio/campaña-iveco/landing-lg.webp, /src/assets/images/components/portafolio/campaña-iveco/landing-lg@2x.webp 2x", type="image/webp")
+                            | #{' '}
+                            source(srcset="/src/assets/images/components/portafolio/campaña-iveco/landing-sm.webp, /src/assets/images/components/portafolio/campaña-iveco/landing-sm@2x.webp 2x", type="image/webp")
+                            | #{' '}
+                            //- origen: c-format-web__image
+                            img(class="[width:100%] [height:100%] block [object-fit:cover]", src="/src/assets/images/components/portafolio/campaña-iveco/landing-lg.webp", alt="#", loading="lazy")
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}

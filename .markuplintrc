@@ -1,0 +1,63 @@
+{
+    "parser": {
+        "\\.pug$": "@markuplint/pug-parser"
+    },
+    "rules": {
+        "doctype": true,
+        "attr-duplication": true,
+        "character-reference": false,
+        "deprecated-element": true,
+        "permitted-contents": true,
+        "require-accessible-name": true,
+        "wai-aria": true,
+        "id-duplication": true,
+        "require-datetime": true,
+        "invalid-attr": true,
+        "required-attr": true
+    },
+    "nodeRules": [
+        {
+            "selector": "svg",
+            "rules": {
+                "permitted-contents": false
+            }
+        },
+        {
+            "selector": "[media]",
+            "rules": {
+                "invalid-attr": {
+                    "options": {
+                        "allowAttrs": [
+                            {
+                                "name": "media",
+                                "value": {
+                                    "pattern": "/^\\([^)]+\\d+(\\.\\d+)?rem\\)$/"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "selector": "link[rel='preload'][as='image']",
+            "rules": {
+                "invalid-attr": {
+                    "options": {
+                        "allowAttrs": [
+                            {
+                                "name": "media",
+                                "value": {
+                                    "pattern": "/^\\([^)]+\\d+(\\.\\d+)?rem\\)$/"
+                                }
+                            },
+                            "imagesrcset",
+                            "fetchpriority"
+                        ]
+                    }
+                },
+                "required-attr": false
+            }
+        }
+    ]
+}

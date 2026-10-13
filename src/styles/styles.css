@@ -1,0 +1,551 @@
+/* Orden de capas: las utilidades ganan siempre al reset (base), como ganaban los componentes al reset en el origen. */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/*
+ * Fase 2 de TASK-006. Tokens con los valores exactos de assets/css/main.css.
+ * No hay preflight: el origen trae su propio reset (normalize e inuitCSS), y
+ * importar el de Tailwind cambiaría el render antes de tocar un solo componente.
+ */
+
+@font-face {
+    font-family: Poppins;
+    src: url("../assets/fonts/Poppins-Regular.woff2") format("woff2"), url("../assets/fonts/Poppins-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url("../assets/fonts/Poppins-Medium.woff2") format("woff2"), url("../assets/fonts/Poppins-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url("../assets/fonts/Poppins-SemiBold.woff2") format("woff2"), url("../assets/fonts/Poppins-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    /* Se borran los valores por defecto de Tailwind: lo que no esté aquí no existe. */
+    --color-*: initial;
+    --font-*: initial;
+    --text-*: initial;
+    --breakpoint-*: initial;
+    --radius-*: initial;
+    --shadow-*: initial;
+    --container-*: initial;
+
+    /* Color (main.css, 57 hex y 4 rgba) */
+    --color-white: #fff;
+    --color-black: #000;
+    --color-ink: #111029;
+    --color-purple: #5956e9;
+    --color-purple-hover: #433fe6;
+    --color-purple-soft: rgb(89 86 233 / 20%);
+    --color-purple-original: #7c56e9;
+    --color-deep-purple: #3a30a0;
+    --color-deep-purple-hover: #392f9c;
+    --color-dark-purple: #4d30a0;
+    --color-dark-purple-hover: #442a8c;
+    --color-blue: #4c40f7;
+    --color-blue-hover: #473bf7;
+    --color-blue-strong: #2d29e3;
+    --color-medium-blue: #2565b8;
+    --color-orange: #fa832b;
+    --color-strong-blue: #0030ff;
+    --color-dark-blue: #00113b;
+    --color-sky-blue: #b8defa;
+    --color-sky-blue-hover: #b3dcfa;
+    --color-yellow: #ffd027;
+    --color-red: #be0000;
+    --color-rust: #b93d0c;
+    --color-highlight: #ff0;
+    --color-gray-dark: #2f2f2f;
+    --color-gray-body: #6b6b6b;
+    --color-gray-text: #6e7177;
+    --color-gray-subtitle: #787878;
+    --color-gray-soft: #999fae;
+    --color-gray-muted: #a7a7a7;
+    --color-gray-icon: #9da4ac;
+    --color-gray-border: #cfcfcf;
+    --color-gray-button: #d6dade;
+    --color-gray-input: #f4f4f4;
+    --color-gray-tag-bg: #eaeaeb;
+    --color-gray-tag-text: #929292;
+    --color-gray-modal: #afb7bc;
+    --color-gray-666: #666;
+    --color-gray-555: #555;
+    --color-section-gray: #f0f5f8;
+    --color-section-contact: #edf0f3;
+    --color-overlay: rgb(0 0 0 / 40%);
+    --color-modal-control: rgb(0 0 0 / 70%);
+    --color-transparent: rgb(0 0 0 / 0%);
+    --color-paleturquoise: #afe7e9;
+    --color-paleturquoise-text: #73dcde;
+    --color-turquoise-service: #7ad5f2;
+    --color-service-ads: #6490ff;
+    --color-service-software: #8082c0;
+    --color-service-pink: #ff99fb;
+    --color-service-photos: #b896ff;
+    --color-service-marketing: #888;
+    --color-service-branding: #7d7afa;
+    --color-service-photo: #b27afa;
+    --color-service-mktdg: #bb85e5;
+    --color-teaser-yellow: #ffeddc;
+    --color-teaser-purple: #bddeff;
+    --color-teaser-blue: #bdf8ff;
+    --color-teaser-pink: #f3d1ff;
+    --color-teaser-violet: #d9c7ff;
+    --color-teaser-red: #ffe2e2;
+
+    /* Tipografía. Poppins es la única familia del origen. */
+    --font-sans: poppins, arial, helvetica, sans-serif;
+    --font-mono: monospace, monospace;
+
+    /* Pesos como propiedades (no como utilidades): verify-render lee --font-* como familias. */
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --text-9: 9px;
+    --text-10: 10px;
+    --text-12: 12px;
+    --text-14: 14px;
+    --text-16: 16px;
+    --text-17: 17px;
+    --text-18: 18px;
+    --text-19: 19px;
+    --text-20: 20px;
+    --text-21: 21px;
+    --text-22: 22px;
+    --text-24: 24px;
+    --text-27: 27px;
+    --text-28: 28px;
+    --text-30: 30px;
+    --text-32: 32px;
+    --text-35: 35px;
+    --text-37: 37px;
+    --text-39: 39px;
+    --text-40: 40px;
+    --text-42: 42px;
+    --text-44: 44px;
+    --text-49: 49px;
+    --text-63: 63px;
+    --text-64: 64px;
+    --text-77: 77px;
+    --text-84: 84px;
+
+    /* Breakpoints: los 7 de sass-mq, en em con base 16 px, como en el origen. */
+    --breakpoint-mobile-small: 22.5em;
+    --breakpoint-mobile-mid: 26.5625em;
+    --breakpoint-mobile-wide: 31.25em;
+    --breakpoint-tablet: 43.75em;
+    --breakpoint-desktop: 61.25em;
+    --breakpoint-wide: 75em;
+    --breakpoint-ultrawide: 87.5em;
+
+    /* Contenedor (.o-wrapper): máximo 1302 px, variantes small y large. */
+    --container-wrapper: 1302px;
+    --container-wrapper-small: 1120px;
+    --container-wrapper-large: 1440px;
+    --wrapper-padding: 30px;
+
+    /* Radios (border-radius de main.css). */
+    --radius-3: 3px;
+    --radius-4: 4px;
+    --radius-5: 5px;
+    --radius-6: 6px;
+    --radius-8: 8px;
+    --radius-9: 9px;
+    --radius-10: 10px;
+    --radius-12: 12px;
+    --radius-14: 14px;
+    --radius-15: 15px;
+    --radius-16: 16px;
+    --radius-18: 18px;
+    --radius-20: 20px;
+    --radius-28: 28px;
+    --radius-40: 40px;
+    --radius-circle: 50%;
+    --radius-round: 100%;
+
+    /* Sombras. El nombre dice el uso; ver inventario, sección 5.5. */
+
+    /* .c-button:focus/hover, .c-project-teaser, .c-contact-options__option:focus/hover */
+    --shadow-soft: 4px 5px 13px rgb(0 0 0 / 8%);
+
+    /* .o-wrapper-body */
+    --shadow-wrapper-body: 0 4px 8px rgb(0 0 0 / 8%);
+
+    /* .c-carrousel-format.facebook, .c-featured-ads__pic */
+    /* stylelint-disable-next-line number-max-precision -- valor exacto de main.css (1.58463px); redondear cambiaría el origen */
+    --shadow-media: 1.58463px 1.58463px 6.33854px rgb(0 0 0 / 15%);
+
+    /* .c-format-canvas__item */
+    --shadow-canvas: 6px 10px 24px rgb(0 0 0 / 10%);
+
+    /* .c-contact-form label.js-form-error */
+    --shadow-error: 0 3px 6px 0 rgb(0 0 0 / 16%);
+
+    /* .c-contact-form-radios__input:focus, .c-contact-form-checkboxes__input:focus */
+    --shadow-focus: 0 0 0 2px var(--color-yellow);
+
+    /* .c-section--contact */
+    --shadow-section-contact: 0 -48px 0 0 var(--color-dark-blue) inset;
+
+    /* Contenedor del diálogo del origen (se sustituye en fase 6). */
+    --shadow-modal: 0 4px 15px rgb(0 0 0 / 20%);
+
+    /* Contenedor de vídeo del diálogo del origen. */
+    --shadow-modal-video: 0 0 10px rgb(0 0 0 / 30%);
+}
+
+/* Fuentes que Tailwind escanea: marcado y JavaScript del proyecto. */
+@source "../**/*.pug";
+@source "../**/*.js";
+
+/* El estado de un componente vive en su clase, como en el origen (`is-active`). */
+@custom-variant is-active (&.is-active);
+
+/* Espaciados de cabecera y pie: los valores verticales del origen. */
+@theme {
+    --spacing-header: 46px;
+    --spacing-header-wide: 72px;
+    --spacing-footer: 64px;
+    --spacing-footer-wide: 160px;
+
+    /* Easing y ancho de tercio, tal como los escribe el origen. */
+    --ease-origin: ease;
+    --width-third: 33.33%;
+}
+
+/* .o-wrapper: contenedor con ancho máximo y márgenes laterales del origen. */
+@utility wrapper {
+    max-width: var(--container-wrapper);
+    margin-inline: auto;
+    padding-inline: var(--wrapper-padding);
+}
+
+/* stylelint-disable nesting-selector-no-missing-scoping-root -- @utility de Tailwind: & es su raíz */
+
+/* Pesos del origen como utilidades (--weight-* en @theme). */
+@utility weight-regular {
+    font-weight: var(--weight-regular);
+}
+
+@utility weight-medium {
+    font-weight: var(--weight-medium);
+}
+
+@utility weight-semibold {
+    font-weight: var(--weight-semibold);
+}
+
+/* .o-icon: caja de icono del sprite, con el tamaño heredado del texto. */
+@utility icon {
+    display: inline-block;
+    line-height: 0.6;
+
+        & > svg {
+        display: inline-block;
+        font-size: inherit;
+        width: 1em;
+        height: 1em;
+        overflow: hidden;
+        stroke-width: 0;
+        stroke: currentcolor;
+        fill: currentcolor;
+    }
+}
+
+/* .c-button-line: subrayado que crece al pasar el ratón o al enfocar. */
+@utility link-underline {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    background-image: linear-gradient(transparent calc(100% - 2px), var(--color-white) 2px);
+    transition: background-size 0.2s;
+
+        &:hover,
+    &:focus {
+        transition: color 0.3s ease, background-size 0.2s;
+        background-size: 100% 100%;
+    }
+}
+
+/* stylelint-enable nesting-selector-no-missing-scoping-root */
+
+/* Fondo del pie: pequeño por defecto, grande desde desktop. */
+@utility footer-bg {
+    background-image: url('../assets/images/components/site-footer/footer-bg-sm.webp');
+}
+
+@utility footer-bg-lg {
+    background-image: url('../assets/images/components/site-footer/footer-bg-lg.webp');
+}
+
+@layer base {
+    /* stylelint-disable no-duplicate-selectors -- reset copiado del origen: normalize e inuitCSS repiten selectores */
+
+    /* Reset del origen (normalize-scss e inuitCSS genéricos), sin animaciones de librería. Los hex son tokens. */
+    body {
+        margin:0;
+    }
+
+    article,
+    aside,
+    footer,
+    header,
+    nav,
+    section {
+        display:block;
+    }
+
+    h1 {
+        font-size:2em;
+        margin:.67em 0;
+    }
+
+    figure {
+        margin:1em 40px;
+    }
+
+    hr {
+        box-sizing:content-box;
+        height:0;
+        overflow:visible;
+    }
+
+    main {
+        display:block;
+    }
+
+    pre {
+        font-family: monospace;
+        font-size:1em;
+    }
+
+    a {
+        background-color:transparent;
+    }
+
+    abbr[title] {
+        border-bottom:none;
+        text-decoration:underline;
+        text-decoration:underline dotted;
+    }
+
+
+    b,
+    strong {
+        font-weight:bolder;
+    }
+
+    mark {
+        background-color:var(--color-highlight);
+        color:var(--color-black);
+    }
+
+    small {
+        font-size:80%;
+    }
+
+    sub,
+    sup {
+        font-size:75%;
+        line-height:0;
+        position:relative;
+        vertical-align:baseline;
+    }
+
+    sub {
+        bottom:-.25em;
+    }
+
+    sup {
+        top:-.5em;
+    }
+
+    audio,
+    video {
+        display:inline-block;
+    }
+
+    audio:not([controls]) {
+        display:none;
+        height:0;
+    }
+
+    img {
+        border-style:none;
+    }
+
+    svg:not(:root) {
+        overflow:hidden;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+        font-family:sans-serif;
+        font-size:100%;
+        line-height:1.15;
+        margin:0;
+    }
+
+    button {
+        overflow:visible;
+    }
+
+    button,
+    select {
+        text-transform:none;
+    }
+
+    input {
+        overflow:visible;
+    }
+
+    ::-webkit-file-upload-button {
+        font:inherit;
+    }
+
+    fieldset {
+        padding:.35em .75em .625em;
+    }
+
+    progress {
+        display:inline-block;
+        vertical-align:baseline;
+    }
+
+    textarea {
+        overflow:auto;
+    }
+
+    html {
+        box-sizing:border-box;
+    }
+
+    *,
+    ::after,
+    ::before {
+        box-sizing:inherit;
+    }
+
+    :focus {
+        outline:0;
+    }
+
+    :active {
+        outline:0;
+    }
+
+    html {
+        color:var(--color-ink);
+        font-family:Poppins,Arial,Helvetica,sans-serif;
+        font-size:16px;
+        line-height:1.5;
+        min-height:100%;
+        overflow-x:hidden;
+        width:100%;
+    }
+
+    body {
+        overflow-x:hidden;
+        width:100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin:0;
+    }
+
+    button {
+        font-family:inherit;
+        border:none;
+        padding:0;
+        line-height:inherit;
+        cursor:pointer;
+    }
+
+    input,
+    select {
+        font-family:inherit;
+    }
+
+
+    select::-ms-expand {
+        display:none;
+    }
+    /* stylelint-enable no-duplicate-selectors */
+}
+
+/* Estados globales del origen que cuelgan del body: foco por teclado y parada de transiciones al redimensionar. */
+@layer base {
+    .is-keyboard-pressed :focus {
+        outline: 2px solid var(--color-yellow);
+    }
+
+    .u-resize-animation-stopper * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Revelado al entrar en pantalla (sustituye a la animación de librería del origen). Sin movimiento si el usuario lo pide. */
+@layer components {
+    @media (prefers-reduced-motion: no-preference) {
+        [data-reveal]:not(.is-revealed) {
+            opacity: 0;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            transition-delay: var(--reveal-delay, 0ms);
+        }
+
+        [data-reveal='fade-left']:not(.is-revealed) {
+            transform: translate3d(100px, 0, 0);
+        }
+
+        [data-reveal='fade-right']:not(.is-revealed) {
+            transform: translate3d(-100px, 0, 0);
+        }
+
+        [data-reveal='zoom-in']:not(.is-revealed) {
+            transform: scale(0.6);
+        }
+
+        [data-reveal].is-revealed {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    /* Diálogo de vídeo e imagen (sustituye al plugin de modales). El fondo es el overlay del origen. */
+    dialog.js-modal {
+        margin: auto;
+        max-width: min(1000px, calc(100% - 30px));
+        width: 100%;
+        padding: 30px;
+        border: 0;
+        background: var(--color-white);
+        box-shadow: var(--shadow-modal);
+    }
+
+    dialog.js-modal::backdrop {
+        background: var(--color-overlay);
+    }
+}

@@ -1,0 +1,144 @@
+extends ../layouts/main-template
+
+block title
+    title Conoce Nuestro Laboratorio | Pharmaco
+block description
+    meta(name='description', content="Pharmaco | Laboratorio digital de Marketing &amp; Software")
+block content
+    include ../components/repetidos
+    | #{' '}
+    //- origen: c-hero
+    div(class="[padding-top:116px] [height:675px] relative bg-purple tablet:[height:745px] desktop:[padding-top:230px] desktop:[height:815px] wide:[height:890px]", data-hero="light-purple")
+        | #{' '}
+        //- origen: c-hero__content
+        div(class="relative [z-index:1] [max-width:1440px] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto]")
+            | #{' '}
+            div(class="wrapper")
+                | #{' '}
+                //- origen: c-hero__title
+                h1(class="weight-semibold [line-height:1.4] text-16 text-white [width:80%] [max-width:600px] tablet:text-17 desktop:text-18 wide:text-20") Conoce 👋.
+                | #{' '}
+                //- origen: c-hero__subtitle
+                h2(class="[margin-top:10px] weight-semibold [line-height:1.048] text-35 text-white [width:90%] [max-width:600px] tablet:text-49 desktop:[margin-top:15px] desktop:[line-height:1] desktop:text-63 wide:text-77") Nuestro Laboratorio
+                | #{' '}
+                //- origen: c-hero__text
+                +repHeroText("En nuestro laboratorio con sede en Perú, unimos nuestra pasión por el diseño centrado en más personas con...")
+                | #{' '}
+                //- origen: c-hero__button
+                div(class="[margin-top:38px] desktop:[margin-top:50px]")
+                    | #{' '}
+                    //- origen: c-button
+                    a(class="inline-flex [align-items:center] [justify-content:center] [text-align:center] [height:48px] rounded-15 [padding-top:0] [padding-right:30px] [padding-bottom:0] [padding-left:30px] text-14 [text-decoration:none] weight-medium [line-height:1.2] [transition:all_.2s_ease,outline_0s] [box-shadow:none] focus:[transition:all_.2s_ease,outline_0s] focus:shadow-soft hover:[transition:all_.2s_ease,outline_0s] hover:shadow-soft bg-deep-purple text-white focus:bg-deep-purple-hover hover:bg-deep-purple-hover disabled:[opacity:.6] disabled:[cursor:not-allowed] wide:[height:64px] wide:rounded-20 wide:text-18", href="contactanos.html")
+                        | Empecemos#{' '}
+                        //- origen: o-icon
+                        +repIcon("/src/assets/images/sprite.svg#icon-arrow-right")
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+        //- origen: c-hero__pic
+        +repHeroPic("/src/assets/images/components/hero/hero-us-lg.webp, /src/assets/images/components/hero/hero-us-lg@2x.webp 2x", "/src/assets/images/components/hero/hero-us-sm.webp, /src/assets/images/components/hero/hero-us-sm@2x.webp 2x", "/src/assets/images/components/hero/hero-us-lg.webp", "", "fade-in")
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:62px] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-top:152px] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper")
+            | #{' '}
+            //- origen: c-media-block
+            div(class="[display:initial] [flex-direction:initial] [align-items:initial] [justify-content:initial] desktop:flex desktop:[flex-direction:row-reverse] desktop:[align-items:center] desktop:[justify-content:space-between]")
+                | #{' '}
+                //- origen: c-media-block__content
+                +repMediaBlockContent("Qué nos inspira?", "Colaborar con marcas atrevidas.", "En nuestro laboratorio con sede en Perú, unimos nuestra pasión por el diseño centrado en más personas con...", "nosotros.html", "/src/assets/images/sprite.svg#icon-arrow-right")
+                | #{' '}
+                //- origen: c-media-block__media
+                picture(class="[margin-top:38px] [margin-right:auto] [margin-bottom:0] [margin-left:auto] [width:248px] block tablet:[width:350px] desktop:[margin-top:0] desktop:[margin-right:0] desktop:[margin-left:0] desktop:[width:550px]", data-reveal="fade-right")
+                    | #{' '}
+                    source(media="(min-width: 43.75rem)", srcset="/src/assets/images/components/about-us/doctor-lg.webp, /src/assets/images/components/about-us/doctor-lg.webp 2x", type="image/webp")
+                    | #{' '}
+                    source(srcset="/src/assets/images/components/about-us/doctor-sm.webp, /src/assets/images/components/about-us/doctor-sm.webp 2x", type="image/webp")
+                    | #{' '}
+                    //- origen: c-media-block__img
+                    img(class="[width:100%] [height:auto] block [margin-bottom:-62px] [transform:initial] desktop:[margin-bottom:0] desktop:[transform:translateY(160px)]", alt="Not a valid alt", src="/src/assets/images/components/about-us/doctor-lg.webp", loading="lazy")
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-purple [padding-top:62px] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-top:152px] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper [max-width:1120px]")
+            | #{' '}
+            //- origen: c-section__subtitle
+            +repSectionSubtitle2()
+            | #{' '}
+            //- origen: c-section__intro
+            +repSectionIntro()
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-team-members
+                div(class="[padding-top:44px] [border-top:2px_solid_#fff] desktop:[padding-top:38px]")
+                    | #{' '}
+                    //- origen: c-team-members__list
+                    div(class="[margin-top:-30px] flex [flex-wrap:wrap] [margin-left:initial] [width:initial] tablet:[margin-left:-100px] tablet:[width:calc(100%_+_100px)] desktop:[margin-top:-40px]")
+                        | #{' '}
+                        //- origen: c-team-members__item
+                        +repTeamMembersItem("fade-left", "50", "/src/assets/images/components/about-us/member-1.webp", "alt", "Mario Arce", "Director")
+                        | #{' '}
+                        //- origen: c-team-members__item
+                        +repTeamMembersItem("fade-left", "100", "/src/assets/images/components/about-us/member-1.webp", "alt", "Pamela Vaca", "Diseñadora gráfica Jr.")
+                        | #{' '}
+                        //- origen: c-team-members__item
+                        +repTeamMembersItem("fade-left", "150", "/src/assets/images/components/about-us/member-1.webp", "alt", "Rosa Castro", "Medios digitales")
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-section-gray [padding-top:62px] [padding-right:0] [padding-bottom:62px] [padding-left:0] [background-image:url(/src/assets/images/components/clients/clients-bg.webp)] [background-repeat:no-repeat] [background-position:center_calc(100%_-_90px)] [background-size:300px] desktop:[padding-top:152px] desktop:[padding-bottom:152px] desktop:[background-position:center_calc(100%_-_180px)] desktop:[background-size:675px]")
+        | #{' '}
+        div(class="wrapper")
+            | #{' '}
+            //- origen: c-section__title
+            h2(class="weight-semibold [line-height:1.6] text-16 text-blue [text-align:center] tablet:text-17 desktop:text-18 wide:text-20") Casos de éxito
+            | #{' '}
+            //- origen: c-section__subtitle
+            +repSectionSubtitle()
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:70px] desktop:[margin-top:210px]")
+                | #{' '}
+                //- origen: c-clients
+                div(class="relative")
+                    | #{' '}
+                    //- origen: c-clients__slider
+                    +repClientsSlider("/src/assets/images/components/clients/client-1.svg", "alt", "/src/assets/images/components/clients/client-2.svg", "alt", "/src/assets/images/components/clients/client-3.svg", "alt", "/src/assets/images/components/clients/client-4.svg", "alt", "/src/assets/images/components/clients/client-5.svg", "alt")
+                    | #{' '}
+                    //- origen: c-clients__slider-controls
+                    div(class="js-clients-slider-controls absolute [width:100%] [height:100%] [top:0] [left:0] [right:0] [bottom:0]")
+                        | #{' '}
+                        //- origen: c-clients__slider-control
+                        button(class="js-clients-slider-prev absolute flex [align-items:center] [justify-content:center] bg-gray-button text-gray-icon [width:20px] [height:20px] rounded-circle text-10 [top:50%] [transform:translateY(-50%)]", aria-label="Anterior slide")
+                            | #{' '}
+                            //- origen: o-icon
+                            +repIcon2("/src/assets/images/sprite.svg#icon-arrow-left")
+                            | #{' '}
+                        | #{' '}
+                        //- origen: c-clients__slider-control
+                        button(class="js-clients-slider-next absolute flex [align-items:center] [justify-content:center] bg-gray-button text-gray-icon [width:20px] [height:20px] rounded-circle text-10 [top:50%] [transform:translateY(-50%)] [right:0]", aria-label="Siguiente slide")
+                            | #{' '}
+                            //- origen: o-icon
+                            +repIcon2("/src/assets/images/sprite.svg#icon-arrow-right")
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}

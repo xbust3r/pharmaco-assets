@@ -1,0 +1,17 @@
+# Pruebas del pre-commit en un worktree sin node_modules (2026-10-12 23:07)
+worktree: /private/tmp/claude-502/-Users-miguel-servers-pharmaco-assets/628bef5e-2ce6-469e-bb61-14e50d4f299c/scratchpad/wt-sin-install
+node_modules: ausente
+git config core.hooksPath (compartido): .husky/_
+existe .husky/_ en este worktree: no
+
+## P1: commit de solo docs/, forzando el hook (-c core.hooksPath=.husky)
+[exit 0]
+4f240da prueba docs
+
+## P2: commit que toca src/, forzando el hook
+pre-commit: el commit toca código y este worktree no tiene node_modules. Ejecuta pnpm install antes de commitear.
+[exit 1]
+
+## P3: commit de docs/ con la configuracion por defecto (sin forzar)
+[exit 0]
+9f32b11 prueba docs defecto

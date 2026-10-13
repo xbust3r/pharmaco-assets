@@ -1,0 +1,18 @@
+//- Mixins compartidos. Un componente que se repite vive aquí, no como cadena de clases copiada.
+//- La caja (`display`) se pasa siempre como parámetro: un mismo elemento no puede llevar
+//- dos `display` sin que gane uno al azar.
+
+//- Icono del sprite (src/assets/icons/icon-<nombre>.svg). `caja` es su `display`; `cls`, clases extra.
+mixin svgIcon(name, title, cls, caja)
+    span(class=['icon', caja || 'inline-block', cls])
+        svg(role='img')
+            title= title
+            use(href='/src/assets/images/sprite.svg#icon-' + name)
+
+//- Botón del origen (.c-button). `variant` es el color de fondo; `large` aplica el tamaño de cabecera.
+mixin button(label, href, variant, large, cls, caja)
+    - var fondo = variant === 'purple' ? 'bg-purple text-white hover:bg-purple-hover focus:bg-purple-hover' : ''
+    a(
+        class=[caja || 'inline-flex', 'items-center justify-center text-center h-12 rounded-15 px-7.5 text-14 weight-medium leading-[1.2] no-underline shadow-none transition-all duration-200 ease-origin hover:shadow-soft focus:shadow-soft', fondo, large ? 'desktop:h-18 desktop:text-20 wide:h-16 wide:text-18 wide:rounded-20' : '', cls]
+        href=href
+        ) #{label}

@@ -1,0 +1,102 @@
+extends ../layouts/main-template
+
+block title
+    title Conoce nuestras soluciones | Pharmaco
+block description
+    meta(name='description', content="Pharmaco | Laboratorio digital de Marketing &amp; Software")
+block content
+    include ../components/repetidos
+    | #{' '}
+    //- origen: c-hero
+    div(class="[padding-top:116px] [height:675px] relative bg-purple tablet:[height:745px] desktop:[padding-top:230px] desktop:[height:815px] wide:[height:890px]", data-hero="light-purple")
+        | #{' '}
+        //- origen: c-hero__content
+        div(class="relative [z-index:1] [max-width:1440px] [margin-top:0] [margin-right:auto] [margin-bottom:0] [margin-left:auto]")
+            | #{' '}
+            div(class="wrapper")
+                | #{' '}
+                //- origen: c-hero__subtitle
+                h1(class="[margin-top:10px] weight-semibold [line-height:1.048] text-35 text-white [width:90%] [max-width:600px] tablet:text-49 desktop:[margin-top:15px] desktop:[line-height:1] desktop:text-63 wide:text-77") Conoce nuestras soluciones
+                | #{' '}
+                //- origen: c-hero__text
+                +repHeroText("Algunos de nuestros proyectos realizados 👋")
+                | #{' '}
+                //- origen: c-hero__button
+                div(class="[margin-top:38px] desktop:[margin-top:50px]")
+                    | #{' '}
+                    //- origen: c-button
+                    a(class="inline-flex [align-items:center] [justify-content:center] [text-align:center] [height:48px] rounded-15 [padding-top:0] [padding-right:30px] [padding-bottom:0] [padding-left:30px] text-14 [text-decoration:none] weight-medium [line-height:1.2] [transition:all_.2s_ease,outline_0s] [box-shadow:none] focus:[transition:all_.2s_ease,outline_0s] focus:shadow-soft hover:[transition:all_.2s_ease,outline_0s] hover:shadow-soft bg-dark-purple text-white focus:bg-dark-purple-hover hover:bg-dark-purple-hover disabled:[opacity:.6] disabled:[cursor:not-allowed] wide:[height:64px] wide:rounded-20 wide:text-18", href="contactanos.html")
+                        | Contáctanos#{' '}
+                        //- origen: o-icon
+                        +repIcon("/src/assets/images/sprite.svg#icon-arrow-right")
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+        //- origen: c-hero__pic
+        +repHeroPic("/src/assets/images/components/hero/hero-portafolio-lg.webp, /src/assets/images/components/hero/hero-portafolio-lg@2x.webp 2x", "/src/assets/images/components/hero/hero-portafolio-sm.webp, /src/assets/images/components/hero/hero-portafolio-sm@2x.webp 2x", "/src/assets/images/components/hero/hero-portafolio-lg.webp", "", "fade-in")
+        | #{' '}
+    | #{' '}
+    //- origen: c-section
+    div(class="bg-white [padding-top:62px] [padding-right:0] [padding-bottom:62px] [padding-left:0] desktop:[padding-top:152px] desktop:[padding-bottom:152px]")
+        | #{' '}
+        div(class="wrapper")
+            | #{' '}
+            //- origen: c-section__title
+            h2(class="weight-semibold [line-height:1.6] text-16 text-blue tablet:text-17 desktop:text-18 wide:text-20") Portafolio
+            | #{' '}
+            //- origen: c-section__subtitle
+            +repSectionSubtitle3()
+            | #{' '}
+            //- origen: c-section__content
+            div(class="[margin-top:50px]")
+                | #{' '}
+                //- origen: c-projects-teasers
+                div
+                    | #{' '}
+                    //- origen: o-list-bare
+                    ul(class="[list-style:none] [margin-top:-25px] [margin-right:0] [margin-bottom:0] [margin-left:0] [padding-top:0] [padding-right:0] [padding-bottom:0] [padding-left:0] flex [flex-wrap:wrap] [width:initial] tablet:[margin-left:-46px] tablet:[width:calc(100%_+_46px)] desktop:[margin-top:-40px]")
+                        | #{' '}
+                        //- origen: o-list-bare__item
+                        +repListBareItem4("fade-left", "50", "diseño-de-personajes.html", "alt", "/src/assets/images/components/projects/project-1.webp", "diseño-de-personajes.html", "Diseño de Personajes", "Lorem ipsum")
+                        | #{' '}
+                        //- origen: o-list-bare__item
+                        +repListBareItem4("fade-left", "100", "campana-stralis.html", "alt", "/src/assets/images/components/projects/project-1.webp", "campana-stralis.html", "Campaña Stralis", "Lorem ipsum")
+                        | #{' '}
+                        //- origen: o-list-bare__item
+                        +repListBareItem4("fade-left", "150", "campana-iveco.html", "alt", "/src/assets/images/components/projects/project-1.webp", "campana-iveco.html", "Campaña Iveco", "Lorem ipsum")
+                        | #{' '}
+                        //- origen: o-list-bare__item
+                        +repListBareItem4("fade-right", "50", "campana-cyberwow.html", "alt", "/src/assets/images/components/projects/project-1.webp", "campana-cyberwow.html", "Campaña CyberWow", "Lorem ipsum")
+                        | #{' '}
+                        //- origen: o-list-bare__item
+                        +repListBareItem4("fade-right", "100", "portafolio-detalle.html", "alt", "/src/assets/images/components/projects/project-1.webp", "portafolio-detalle.html", "Branding Venturi", "Lorem ipsum")
+                        | #{' '}
+                        //- origen: o-list-bare__item
+                        +repListBareItem4("fade-right", "150", "portafolio-detalle.html", "alt", "/src/assets/images/components/projects/project-1.webp", "portafolio-detalle.html", "Campaña Iveco", "Lorem ipsum")
+                        | #{' '}
+                        //- origen: o-list-bare__item
+                        +repListBareItem4("fade-left", "50", "portafolio-detalle.html", "alt", "/src/assets/images/components/projects/project-1.webp", "portafolio-detalle.html", "Modelado 3D", "Lorem ipsum")
+                        | #{' '}
+                        //- origen: o-list-bare__item
+                        +repListBareItem4("fade-left", "100", "portafolio-detalle.html", "alt", "/src/assets/images/components/projects/project-1.webp", "portafolio-detalle.html", "Branding Venturi", "Lorem ipsum")
+                        | #{' '}
+                        //- origen: o-list-bare__item
+                        +repListBareItem4("fade-left", "150", "portafolio-detalle.html", "alt", "/src/assets/images/components/projects/project-1.webp", "portafolio-detalle.html", "Campaña Iveco", "Lorem ipsum")
+                        | #{' '}
+                    | #{' '}
+                    //- origen: c-button__wrapper
+                    div(class="flex [align-items:flex-start] [justify-content:center] [flex-wrap:wrap] [margin-top:34px] [margin-right:0] [margin-bottom:0] [margin-left:0] desktop:[margin-top:54px]")
+                        | #{' '}
+                        //- origen: c-button
+                        a(class="inline-flex [align-items:center] [justify-content:center] [text-align:center] [height:48px] rounded-15 [padding-top:0] [padding-right:30px] [padding-bottom:0] [padding-left:30px] text-14 [text-decoration:none] weight-medium [line-height:1.2] [transition:all_.2s_ease,outline_0s] [box-shadow:none] focus:[transition:all_.2s_ease,outline_0s] focus:shadow-soft hover:[transition:all_.2s_ease,outline_0s] hover:shadow-soft bg-blue text-white focus:bg-blue-hover hover:bg-blue-hover disabled:[opacity:.6] disabled:[cursor:not-allowed] wide:[height:64px] wide:rounded-20 wide:text-18", href="#")
+                            | Ver más#{' '}
+                            span(class="[border:0]! [clip:rect(0_0_0_0)]! [clip-path:inset(50%)]! [height:1px]! [margin-top:-1px]! [margin-right:-1px]! [margin-bottom:-1px]! [margin-left:-1px]! [overflow:hidden]! [padding-top:0]! [padding-right:0]! [padding-bottom:0]! [padding-left:0]! absolute! [white-space:nowrap]! [width:1px]!") trabajo del portafolio
+                            | #{' '}
+                        | #{' '}
+                    | #{' '}
+                | #{' '}
+            | #{' '}
+        | #{' '}
+    | #{' '}
