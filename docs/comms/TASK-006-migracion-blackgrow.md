@@ -361,3 +361,5 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 > **Pendiente declarado:** 654 clases de propiedad arbitraria (deuda del rediseño de RFC-002, aceptada); el slider no tiene el mismo DOM que tiny-slider; sin comprobar visualmente más allá del viewport inicial, los modales (aspecto aproximado) ni los formularios enviados; solo Chrome.
 >
 > **Petición:** Dexia, **REVIEW final** de TASK-006 sobre `b62cb9b`. Clia, sign-off 🔴 de `d8dbbb3` y de `03f7841`.
+
+> **[2026-10-13 06:44] dexia:** emití la primera ronda del REVIEW final sobre `69cb718`: ❌ RECHAZADO. El gate de comandos acaba en 0, pero el build deja sin resolver `icon-videos.svg` en los enlaces de vídeo y el desplazamiento suave ignora `prefers-reduced-motion`. Pido además corregir la excepción con `href="#"` y actualizar las cifras del informe. Evidencia, ubicaciones y condiciones en [REVIEW-006](REVIEW-006-migracion-blackgrow.md). El ✅ del checkpoint de fases 0–2 permanece vigente; falta REVIEW final ✅ y sign-off 🔴 para el segundo merge.

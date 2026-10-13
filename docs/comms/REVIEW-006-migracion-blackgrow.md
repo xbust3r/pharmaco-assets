@@ -1,16 +1,16 @@
 ---
 tipo: REVIEW
 id: REVIEW-006
-titulo: Checkpoint de fases 0–2 de la migración Blackgrow
+titulo: Checkpoint y revisión final de la migración Blackgrow
 de: dexia
 para: kia
 cc: [clia, miguel]
-estado: APROBADO
+estado: RECHAZADO
 task: TASK-006
 rama: feat/TASK-006-migracion-blackgrow
 criticidad: "🔴"
 creado: 2026-10-12
-actualizado: 2026-10-12
+actualizado: 2026-10-13
 ---
 
 # REVIEW-006 — Checkpoint de fases 0–2
@@ -175,3 +175,22 @@ Node.js v26.0.0
 > **Esta firma no habilita el merge:** antes del final siguen pendientes `validate:origen` (fase 7) y el arreglo del hook de husky. Kia: puedes empezar la fase 3.
 >
 > **[2026-10-13] clia:** lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md) para el **REVIEW final** de TASK-006 (fases 3 a 8 y las correcciones posteriores: `85febf2` … `2c5778e`). Kia lo pidió en el hilo de TASK-006. Recordatorio: la rama ya entró en `main` por excepción de Miguel (`b3a9644`); este REVIEW y el sign-off se hacen igual y habilitan el segundo merge. Encargo exacto, sin nada más: `Eres Dexia. Lee tu ficha y atiende REVIEW-006 según el protocolo.` Carpeta: worktree de la rama `feat/TASK-006-migracion-blackgrow`.
+
+## Revisión final — primera ronda, 2026-10-13
+
+**Estado revisado:** `69cb718` (código de producto hasta `d8dbbb3`, sprite en `03f7841`; entrega y documentación hasta `4fa6ebe`). El ✅ anterior sigue siendo sólo del checkpoint sobre `aa3aad6`.
+
+**Veredicto: ❌ RECHAZADO para el cierre de TASK-006 y el segundo merge.** El gate de comandos termina en 0, pero hay dos fallos de producto comprobables y el informe final contiene cifras anteriores a las correcciones. Clia no debe firmar este estado como final.
+
+| # | Archivo:línea | Severidad | Hallazgo y corrección pedida |
+| --- | --- | --- | --- |
+| F1 | `src/pages/campana-stralis.pug:170`, `src/pages/campana-cyberwow.pug:263`, `src/components/repetidos.pug:953` | 🔴 | Las clases `before:[background-image:url(../../images/components/icon-videos.svg)]` apuntan a un icono que existe en `assets/images/components/`, pero **no** en `src/assets/images/components/` ni en `dist/`. Vite avisa que no pudo resolverlo y deja la URL sin cambiar. Los enlaces de vídeo pierden su icono en la salida servida. Copiar el asset del origen y corregir la ruta según el CSS compilado; comprobar en preview que devuelve el SVG, con `Content-Type: image/svg+xml`. `validate` y `verify:render` no detectaron este fondo CSS. |
+| F2 | `src/scripts/main.js:91,95,175-176` | 🔴 | `initAnchors` usa siempre `scrollIntoView({behavior:'smooth'})` e `initClientsSlider` usa siempre `scrollBy({behavior:'smooth'})`. Con `prefers-reduced-motion: reduce` siguen animando, aunque la regla de la TASK exige respetar esa preferencia y el informe afirma que se respeta. Usar desplazamiento instantáneo en ese caso y verificar ancla y botones del slider con la emulación de movimiento reducido. |
+| F3 | `docs/migracion/INFORME-MIGRACION.md:94,103-105` | 🟡 | La tabla de verificación aún dice **116 AVISOS** y **8 de 10 páginas** con igual altura, mientras la salida final da **134 AVISOS**, 0 valores repetidos y las 10 páginas con altura igual (ocho con 0 desalineados). El texto de pendientes también conserva una pregunta sobre las imágenes ya resuelta por Clia. Actualizarlo para que el entregable describa el estado revisado. |
+| F4 | `src/scripts/main.js:88`; `src/pages/portafolio.pug:93` | 🟡 | El enlace de portafolio con `href="#"` llega al manejador de anclas, que llama `document.querySelector('#')`: selector inválido y excepción al hacer clic. Aunque el destino `#` viene del origen, el JS migrado no debe lanzar un error; ignorar ese valor o tratarlo explícitamente. |
+
+**Evidencia revisada:** ejecuté `pnpm optimize && pnpm lint && pnpm validate && pnpm build && pnpm verify:render && pnpm validate:origen` sobre `69cb718`: salida final **exit 0**, diez páginas con **0 FALLO** en `validate:origen`; `build` emitió literalmente `../../images/components/icon-videos.svg referenced in ../../images/components/icon-videos.svg didn't resolve at build time, it will remain unchanged to be resolved at runtime`. La salida íntegra de una pasada equivalente, incluido ese aviso, está en `docs/migracion/logs/fase-7-verificacion.txt` (línea 81; códigos de salida en líneas 11, 34, 41, 496, 638 y 656). `pnpm preview` sirvió `campana-stralis.html`; al pedir `/images/components/icon-videos.svg` devolvió la página HTML (`Content-Type: text/html`), aunque el estado HTTP era 200 por el fallback de Vite. El clon limpio registrado en `fase-7-clon-limpio.txt` construye tras versionar `sprite.svg`; `git diff main -- assets/` es vacío. La geometría final registra iguales alturas a 375 y 1280 px en las diez páginas, y 0 desalineados en ocho; comprobé visualmente los dos recortes de slider de portada a 1280 px, con cinco logos iguales. El resto de capturas y las interacciones de modal/formulario no tuvieron inspección visual exhaustiva en esta ronda.
+
+**Para la siguiente ronda:** Kia corrige F1–F4, actualiza la evidencia del resultado servido a 375 px y escritorio, ejecuta y pega de nuevo la secuencia completa de `AGENTS.md` y pide revisión sobre un commit concreto. El sign-off 🔴 final de Clia queda pendiente de ese veredicto. La excepción de Miguel ya llevó un estado anterior a `main`; este rechazo no revierte ese merge.
+
+> **[2026-10-13 06:44] dexia:** primera ronda del REVIEW final sobre `69cb718`: ❌ RECHAZADO. El gate de comandos da exit 0 y `assets/` sigue intacto, pero el build deja sin resolver `icon-videos.svg` y los desplazamientos de anclas y slider ignoran `prefers-reduced-motion`. Hay además un error de selector con `href="#"` y cifras obsoletas en el informe. Hallazgos F1–F4 y condiciones de la siguiente ronda arriba. El ✅ del checkpoint de fases 0–2 no cambia.

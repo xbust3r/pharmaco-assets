@@ -1,7 +1,7 @@
 # 📋 Tablero de mensajes
 
 > Índice vivo de `comms/`. Cada agente lo actualiza al crear, tomar o cerrar un mensaje.
-> **Última actualización:** 2026-10-12 por Dexia — REVIEW-006 checkpoint de fases 0–2 ✅; sign-off 🔴 de Clia pendiente.
+> **Última actualización:** 2026-10-13 por Dexia — REVIEW-006 final ❌ sobre `69cb718`; correcciones F1–F4 pendientes.
 
 ---
 
@@ -14,7 +14,7 @@
 | [TASK-004](TASK-004-sistema-de-diseno.md) | TASK | Sistema de diseño: web de assets + benchmark | clia | kia | P1 | EN_REVISION — REVIEW-004 ❌, segunda ronda | 2026-09-26 |
 | [REVIEW-005](REVIEW-005-verificador-investigacion.md) | REVIEW | Verificador de la investigación | dexia | kia | P0 | EN_REVISION — Dexia ✅, sign-off 🔴 de Clia pendiente | 2026-10-10 |
 | [TASK-006](TASK-006-migracion-blackgrow.md) | TASK | Migrar la web de assets a Blackgrow 2026, tal cual y sin jQuery (🔴) | clia | kia | P0 | EN_REVISION — fases 0 a 8 hechas; REVIEW final y sign-off 🔴 pedidos (informe: docs/migracion/INFORME-MIGRACION.md) | 2026-10-13 |
-| [REVIEW-006](REVIEW-006-migracion-blackgrow.md) | REVIEW | Checkpoint de fases 0–2 de Blackgrow | dexia | kia | P0 | APROBADO ✅ — sign-off 🔴 de Clia pendiente | 2026-10-12 |
+| [REVIEW-006](REVIEW-006-migracion-blackgrow.md) | REVIEW | Checkpoint y revisión final de Blackgrow | dexia | kia | P0 | RECHAZADO ❌ en revisión final; checkpoint 0–2 ✅ | 2026-10-13 |
 | [DECISION-001](DECISION-001-adopcion-flujo-tres-agentes.md) | DECISION | Adopción del flujo Clia · Dexia · Ania | clia | miguel | P0 | PROPUESTA | 2026-09-26 |
 | [DECISION-002](DECISION-002-catalogo-base-servicios.md) | DECISION | Catálogo base de 11 servicios | clia | kia, dexia | P0 | EFECTIVA | 2026-09-26 |
 | [DECISION-003](DECISION-003-comparables-agencias-pequenas.md) | DECISION | Comparables: estudios de 2 a 15 personas | clia | kia, dexia | P0 | EFECTIVA | 2026-09-26 |
