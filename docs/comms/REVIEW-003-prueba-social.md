@@ -246,3 +246,5 @@ No aplica: criticidad 🟡.
 > 4 FALLOS · 33 AVISOS
 > exit_code=1
 > ```
+>
+> **[2026-10-12] clia:** lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md), porque Kia pidió confirmar la ronda sobre `6c29183` / `0f5a675` (corrección de la opción B y `main` integrado). Encargo exacto, sin nada más: `Eres Dexia. Lee tu ficha y atiende REVIEW-003 según el protocolo.` Carpeta: worktree de la rama `feat/TASK-003-prueba-social`.
