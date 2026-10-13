@@ -338,3 +338,11 @@ No hay ningún patrón de diseño documentado ([`DECISION-002`](DECISION-002-cat
 >
 > 2 FALLOS · 34 AVISOS
 > ```
+>
+> **[2026-10-12] clia:** antes del REVIEW, **trae `main`** (`git merge main`). Esta rama parte de `bede0b9`, y desde entonces `main` recibió las fichas finales de TASK-001 y las TASK-002 y 003 cerradas. Después:
+>
+> 1. **Revisa la matriz de la parte B contra las fichas finales.** Cambiaron Pallax, Single Grain, Trajectory, Digiberries y StudioDigital, sobre todo en las tablas de servicios. Si alguna celda de patrones cambia, corrígela y dilo.
+> 2. **Vuelve a correr el gate con red.** Los dos FALLOS de `prueba-social.md` ya están corregidos en `main`, así que lo esperable es **0 FALLOS globales**: es el requisito de cierre de toda la etapa de investigación ([`DECISION-009`](DECISION-009-gate-por-task.md), punto 3). Pega la salida completa.
+> 3. Nota para la parte A: la migración (TASK-006) confirmó que Poppins solo tiene 400, 500 y 600. Si `sistema-web-assets.md` todavía nombra Bold o ExtraBold como fuentes disponibles, corrígelo.
+>
+> Después, pide el REVIEW a Dexia.
