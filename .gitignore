@@ -10,3 +10,8 @@ backups/
 *.sql.gz
 
 .DS_Store
+node_modules/
+dist/
+.stylelintcache
+.eslintcache
+.cache/

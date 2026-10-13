@@ -95,3 +95,37 @@ Rama `feat/TASK-006-migracion-blackgrow`, desde `main`. Por fases, **un commit o
 > Pendiente: lo de `tiny-slider` con `controlsContainer` y todo lo visual, que es de fases 6 y 7.
 >
 > Siguiente: fase 1 (🔴, infraestructura de Blackgrow). Espero las respuestas de Clia a 1, 2 y 3 antes de tocar `package.json` y el lockfile; si no llegan, sigo con lo que no depende de ellas.
+
+> **[2026-10-12 22:55] kia:** 🔴 **fase 1 hecha: base del proyecto.** Infraestructura copiada de Blackgrow: `package.json`, `pnpm-lock.yaml`, `pnpm-workspace.yaml`, `vite.config.js`, `postcss.config.mjs`, configs de lint (`eslint`, `stylelint`, `markuplint`), `.prettierrc`, `.lintstagedrc`, `.gitattributes`, `.husky/pre-commit`, `plugins/`, `requirements-fonts.txt`, `figma-assets.json` y la sección `.gitignore` que faltaba. **Nada de su contenido, marca, páginas ni assets.**
+>
+> Cambios respecto a Blackgrow, que hago sin esperar respuesta (son reversibles):
+> - **`imask` no se copia.** Era dependencia de JS de su contenido. Lockfile regenerado sin ella.
+> - `name` pasa a `pharmaco-assets`. Sin `dependencies`.
+> - `pnpm` 12.3.4 instalado en `~/.local/bin`: la instalación global en `/usr/local` pide permisos de root.
+> - Una página vacía (`src/pages/index.pug`), un `src/styles/styles.css` y un `src/scripts/main.js` de una línea. Los lint necesitan al menos un archivo de cada tipo; no hay tokens ni JS de producto todavía.
+> - `git config core.hooksPath` = `.husky/_`, puesto por `husky`. Es configuración del repositorio compartido por los worktrees; en `main` no hay `.husky/_`, así que allí no corre el hook.
+>
+> **Verificación, salida real de `AGENTS.md`** (sin `--sin-red`, sin pasos saltados; sólo quito los códigos de color):
+> ```
+> $ pnpm optimize && pnpm lint && pnpm validate && pnpm build && pnpm verify:render && pnpm validate:origen
+> $ node plugins/convertWebp.js
+> Start image optimization … ✅ Completed in 0.03s · Processed: 0 · Skipped: 0
+> $ node plugins/validate-assets.js
+> ✔ Todos los assets existen. Procediendo...
+> $ markuplint "src/**/*.pug"   → <markuplint> passed src/pages/index.pug
+> $ stylelint … / eslint …       → sin salida de error
+> $ vite build                   → ✓ built in 430ms (dist/index.html, dist/assets/styles/styles.css, dist/assets/scripts/main.js)
+> $ node plugins/verify-render.js
+> AVISO fuentes  ningún token de `@theme` nombra una familia y no hay ningún `@font-face`: si el diseño lleva fuente propia, todavía no se ha entregado
+> Páginas revisadas: 1 · assets medidos: 0
+> $ node plugins/validate-origen.js
+> Error: ENOENT: no such file or directory, open '…/docs/migracion/origen-comportamientos.json'
+> ELIFECYCLE Command failed with exit code 1
+> ```
+> Resultado: **`pnpm build` y `pnpm verify:render` en verde** (0 FALLOS, 1 AVISO esperado). **`pnpm validate:origen` falla** y lo hará hasta la fase 7: lee `origen-comportamientos.json`, que es el catálogo de Playgrow en Blackgrow. Lo adapto en la fase 7, como pide la TASK. No lo doy por verde.
+>
+> `src/assets/images/sprite.svg` lo genera el build y está vacío (no hay iconos todavía). No se versiona en esta fase.
+>
+> Siguiente: fase 2 (tokens en `@theme`, 🔴). Es checkpoint, así que la paro después y pido REVIEW y sign-off.
+>
+> Salida completa, con el código de salida de cada comando: `docs/migracion/logs/fase-1-verificacion.txt`. Los extractos de arriba están abreviados; el registro es el literal. `lint`, `build` y `verify:render` salen con código 0; `validate:origen` sale con código 1.

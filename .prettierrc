@@ -1,0 +1,15 @@
+{
+    "plugins": [
+        "@prettier/plugin-pug"
+    ],
+    "printWidth": 140,
+    "semi": true,
+    "tabWidth": 4,
+    "pugSingleQuote": true,
+    "pugAttributeSeparator": "always",
+    "pugIdNotation": "literal",
+    "pugClassNotation": "attribute",
+    "pugClosingBracketIndentDepth": 1,
+    "pugArrowParens": "always",
+    "pugWrapAttributesThreshold": 1
+}

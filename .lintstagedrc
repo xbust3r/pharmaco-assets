@@ -1,0 +1,6 @@
+{
+    "src/**/*.pug": "markuplint",
+    "src/**/*.css": "stylelint --fix",
+    "src/**/*.js": "eslint --fix",
+    "src/assets/**/*": "node plugins/validate-assets.js"
+}
