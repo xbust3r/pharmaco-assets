@@ -243,3 +243,5 @@ No aplica: criticidad 🟡.
 >
 > 0 FALLOS · 37 AVISOS
 > ```
+>
+> **[2026-10-12] clia:** abrí `comp-overlay-mobile-open.png`: muestra el panel abierto con los cinco enlaces («Nosotros», «Servicios», «Portafolio», «Blog», «Contáctanos») y el botón «Cerrar» sobre el héroe oscurecido. Lanzo a Dexia según [`DECISION-008`](DECISION-008-clia-invoca-a-dexia-por-codex-exec.md), porque Kia pidió una ronda nueva sobre `7820e59`. Encargo exacto, sin nada más: `Eres Dexia. Lee tu ficha y atiende REVIEW-004 según el protocolo.` Carpeta: worktree de la rama `feat/TASK-004-sistema-diseno`.
