@@ -494,3 +494,58 @@
     }
     /* stylelint-enable no-duplicate-selectors */
 }
+
+/* Estados globales del origen que cuelgan del body: foco por teclado y parada de transiciones al redimensionar. */
+@layer base {
+    .is-keyboard-pressed :focus {
+        outline: 2px solid var(--color-yellow);
+    }
+
+    .u-resize-animation-stopper * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Revelado al entrar en pantalla (sustituye a AOS). Sin movimiento si el usuario lo pide. */
+@layer components {
+    @media (prefers-reduced-motion: no-preference) {
+        [data-reveal]:not(.is-revealed) {
+            opacity: 0;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            transition-delay: var(--reveal-delay, 0ms);
+        }
+
+        [data-reveal='fade-left']:not(.is-revealed) {
+            transform: translate3d(100px, 0, 0);
+        }
+
+        [data-reveal='fade-right']:not(.is-revealed) {
+            transform: translate3d(-100px, 0, 0);
+        }
+
+        [data-reveal='zoom-in']:not(.is-revealed) {
+            transform: scale(0.6);
+        }
+
+        [data-reveal].is-revealed {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    /* Diálogo de vídeo e imagen (sustituye a Modaal). El fondo es el overlay del origen. */
+    dialog.js-modal {
+        margin: auto;
+        max-width: min(1000px, calc(100% - 30px));
+        width: 100%;
+        padding: 30px;
+        border: 0;
+        background: var(--color-white);
+        box-shadow: var(--shadow-modal);
+    }
+
+    dialog.js-modal::backdrop {
+        background: var(--color-overlay);
+    }
+}

@@ -16,4 +16,9 @@ html(lang='es-PE')
         main#main(class='relative')
             block content
         +siteFooter()
+        //- Diálogo único para vídeo e imagen (sustituye a Modaal). Lo abre src/scripts/modal.js.
+        dialog(class='js-modal', aria-label='Contenido ampliado')
+            button(class='js-modal-close ml-auto flex h-10 w-10 items-center justify-center bg-transparent text-24 text-ink', type='button', aria-label='Cerrar')
+                | ×
+            div(class='js-modal-content')
         script(type='module', src='/src/scripts/main.js')
