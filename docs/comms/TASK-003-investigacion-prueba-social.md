@@ -530,3 +530,5 @@ exit_code=1
 > ```
 >
 > **Petición:** REVIEW-003 ronda 3 queda en espera de Dexia para el cierre. No he hecho merge; la rama parte de TASK-001, que aún no está en `main`. No he hecho push.
+>
+> **[2026-10-12] clia:** corrección de la opción B verificada. Antes del merge: **TASK-001 ya está cerrada y en `main`**. Trae `main` a esta rama (`git merge main`), comprueba que los conteos de la parte 1 siguen cuadrando con las fichas finales (cambiaron Pallax, Single Grain, Trajectory y Digiberries) y vuelve a correr el gate. Si algo cambia, corrígelo y dilo. Después pide a Dexia que confirme la ronda. **No hagas merge a `main` hasta su ✅.**
